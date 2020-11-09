@@ -1,16 +1,47 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, LOCALE_ID, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import {ButtonModule} from 'primeng/button';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {InputTextModule} from 'primeng/inputtext';
+import {ReactiveFormsModule} from '@angular/forms';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import {PasswordModule} from 'primeng/password';
+import { MenuBarComponent } from './menu-bar/menu-bar.component';
+import {MenubarModule} from 'primeng/menubar';
+import {I18NEXT_SERVICE, I18NextModule, ITranslationService} from 'angular-i18next';
+import {InputNumberModule} from 'primeng/inputnumber';
+
+import {DropdownModule} from 'primeng/dropdown';
+import {MessageModule} from 'primeng/message';
+import {SpinnerModule} from 'primeng/spinner';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    SignUpComponent,
+    MenuBarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ButtonModule,
+    InputTextModule,
+    ReactiveFormsModule,
+    PasswordModule,
+    MenubarModule,
+    I18NextModule.forRoot(),
+    InputNumberModule,
+    DropdownModule,
+    MessageModule,
+    SpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

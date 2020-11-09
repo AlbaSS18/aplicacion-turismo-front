@@ -11,7 +11,8 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~10.2.0",
+    "@angular/animations": "^10.2.2",
+    "@angular/cdk": "^10.2.7",
     "@angular/common": "~10.2.0",
     "@angular/compiler": "~10.2.0",
     "@angular/core": "~10.2.0",
@@ -19,6 +20,12 @@
     "@angular/platform-browser": "~10.2.0",
     "@angular/platform-browser-dynamic": "~10.2.0",
     "@angular/router": "~10.2.0",
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "angular-i18next": "^10.0.0",
+    "font-awesome": "4.7.0",
+    "i18next": "^19.8.3",
+    "primeicons": "^2.0.0",
+    "primeng": "^9.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
