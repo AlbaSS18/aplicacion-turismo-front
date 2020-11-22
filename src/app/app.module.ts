@@ -19,13 +19,23 @@ import {DropdownModule} from 'primeng/dropdown';
 import {MessageModule} from 'primeng/message';
 import {SpinnerModule} from 'primeng/spinner';
 import { HttpClientModule } from '@angular/common/http';
+import { RecommendationComponent } from './recommendation/recommendation.component';
+import {interceptorProvider} from './interceptors/interceptor.service';
+import { MapComponent } from './map/map.component';
+import { ModifyPreferencesComponent } from './modify-preferences/modify-preferences.component';
+import { TableActivitiesComponent } from './table-activities/table-activities.component';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignUpComponent,
-    MenuBarComponent
+    MenuBarComponent,
+    RecommendationComponent,
+    MapComponent,
+    ModifyPreferencesComponent,
+    TableActivitiesComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,9 +51,10 @@ import { HttpClientModule } from '@angular/common/http';
     InputNumberModule,
     DropdownModule,
     MessageModule,
-    SpinnerModule
+    SpinnerModule,
+    TableModule
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

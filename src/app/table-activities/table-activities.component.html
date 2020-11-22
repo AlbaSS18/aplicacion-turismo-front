@@ -1,0 +1,25 @@
+<p-table [value]="activities">
+  <ng-template pTemplate="header">
+    <tr>
+      <th *ngFor="let col of cols">
+        {{col.header}}
+      </th>
+      <th>
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-activity>
+    <tr>
+      <td>{{activity.photo}}</td>
+      <td>{{activity.name}}</td>
+      <td>{{activity.description}}</td>
+      <td>{{activity.latitude}}</td>
+      <td>{{activity.longitude}}</td>
+      <td>{{activity.city}}</td>
+      <td>{{activity.interest}}</td>
+      <td>
+        <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text"></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
