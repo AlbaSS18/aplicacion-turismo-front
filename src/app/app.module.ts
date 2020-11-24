@@ -7,7 +7,7 @@ import { LoginComponent } from './login/login.component';
 import {ButtonModule} from 'primeng/button';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {InputTextModule} from 'primeng/inputtext';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {PasswordModule} from 'primeng/password';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
@@ -25,6 +25,12 @@ import { MapComponent } from './map/map.component';
 import { ModifyPreferencesComponent } from './modify-preferences/modify-preferences.component';
 import { TableActivitiesComponent } from './table-activities/table-activities.component';
 import {TableModule} from 'primeng/table';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {ConfirmationService} from 'primeng/api';
+import {ToolbarModule} from 'primeng/toolbar';
+import {DialogModule} from 'primeng/dialog';
+import {FileUploadModule} from 'primeng/fileupload';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -52,9 +58,18 @@ import {TableModule} from 'primeng/table';
     DropdownModule,
     MessageModule,
     SpinnerModule,
-    TableModule
+    TableModule,
+    ConfirmDialogModule,
+    ToolbarModule,
+    DialogModule,
+    FileUploadModule,
+    InputTextareaModule,
+    FormsModule
   ],
-  providers: [interceptorProvider],
+  providers: [
+    interceptorProvider,
+    ConfirmationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

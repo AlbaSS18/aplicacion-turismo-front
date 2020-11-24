@@ -1,0 +1,33 @@
+.card{
+  display: inline-flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-activity-container, .latitude-container, .longitude-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.latitude-container, .longitude-container {
+  width: 50%;
+}
+
+.coordenates-container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.myDialog{
+  width: 40vw;
+}
+
+#field-description{
+  max-width: 30.5vw;
+}
+
+.p-dialog-footer {
+  float: right;
+}

@@ -19,4 +19,8 @@ export class ActivityService {
   public getActivities(): Observable<Activity[]> {
     return this.httpClient.get<Activity[]>(this.activityUrl + '/list', cabecera);
   }
+
+  public addActivity(activity): Observable<any> {
+    return this.httpClient.post<any>(this.activityUrl + '/add', activity, cabecera);
+  }
 }
