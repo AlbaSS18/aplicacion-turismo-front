@@ -1,0 +1,5 @@
+.list-container-interest, .list-header-interest {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -1,0 +1,30 @@
+<p-virtualScroller [value]="cities" scrollHeight="150px" [itemSize]="50">
+  <p-header class="list-header">
+    Lista de ciudades
+    <p-button label="Añadir ciudad" icon="fas fa-plus" iconPos="left" (onClick)="openPanel($event)"></p-button>
+  </p-header>
+  <ng-template pTemplate="item" let-city>
+    <div class="list-container-cities">
+      <div class="city-details">
+        <b>{{city.name}}</b>
+      </div>
+      <div class="group-buttons">
+        <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text"></button>
+      </div>
+    </div>
+  </ng-template>
+</p-virtualScroller>
+
+<p-dialog [(visible)]="display">
+  <p-header>
+    Añadir ciudad
+  </p-header>
+  <form [formGroup]="formAddCity">
+    <label for="field-name-city">Nombre*:</label>
+    <input id="field-name-city" type="text" pInputText formControlName="name">
+  </form>
+  <p-footer>
+    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="onSubmit(formAddCity.value)"></button>
+    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text"></button>
+  </p-footer>
+</p-dialog>

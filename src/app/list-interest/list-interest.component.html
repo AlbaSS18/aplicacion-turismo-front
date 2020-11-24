@@ -1,0 +1,30 @@
+<p-virtualScroller [value]="interest" scrollHeight="150px" [itemSize]="50">
+  <p-header class="list-header-interest">
+    Lista de intereses
+    <p-button label="Añadir interés" icon="fas fa-plus" iconPos="left" (onClick)="openPanel($event)"></p-button>
+  </p-header>
+  <ng-template pTemplate="item" let-interest>
+    <div class="list-container-interest">
+      <div class="interest-details">
+        <b>{{interest.nameInterest}}</b>
+      </div>
+      <div class="group-buttons-interest">
+        <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text"></button>
+      </div>
+    </div>
+  </ng-template>
+</p-virtualScroller>
+
+<p-dialog [(visible)]="display">
+  <p-header>
+    Añadir interés
+  </p-header>
+  <form [formGroup]="formAddInterest">
+    <label for="field-name-interest">Nombre*:</label>
+    <input id="field-name-interest" type="text" pInputText formControlName="name">
+  </form>
+  <p-footer>
+    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="onSubmit(formAddInterest.value)"></button>
+    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text"></button>
+  </p-footer>
+</p-dialog>

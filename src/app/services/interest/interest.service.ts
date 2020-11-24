@@ -20,4 +20,7 @@ export class InterestService {
     return this.httpClient.get<Interest[]>(this.interestURL + '/list', cabecera);
   }
 
+  public addInterests(interest): Observable<any> {
+    return this.httpClient.post<any>(this.interestURL + '/add', interest, cabecera);
+  }
 }

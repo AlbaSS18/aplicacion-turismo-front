@@ -31,6 +31,10 @@ import {ToolbarModule} from 'primeng/toolbar';
 import {DialogModule} from 'primeng/dialog';
 import {FileUploadModule} from 'primeng/fileupload';
 import {InputTextareaModule} from 'primeng/inputtextarea';
+import { ListCitiesComponent } from './list-cities/list-cities.component';
+import {VirtualScrollerModule} from 'primeng/virtualscroller';
+import {OrderListModule} from 'primeng/orderlist';
+import { ListInterestComponent } from './list-interest/list-interest.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +46,8 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
     MapComponent,
     ModifyPreferencesComponent,
     TableActivitiesComponent,
+    ListCitiesComponent,
+    ListInterestComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +70,9 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
     DialogModule,
     FileUploadModule,
     InputTextareaModule,
-    FormsModule
+    FormsModule,
+    VirtualScrollerModule,
+    OrderListModule
   ],
   providers: [
     interceptorProvider,
