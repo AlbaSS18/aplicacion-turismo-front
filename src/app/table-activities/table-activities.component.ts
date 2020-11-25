@@ -1,9 +1,8 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {ActivityService} from '../services/activity/activity.service';
 import {ConfirmationService, SelectItem} from 'primeng/api';
-import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CityService} from '../services/city/city.service';
-import {City} from '../models/city';
 import {Interest} from '../models/interest';
 import {InterestService} from '../services/interest/interest.service';
 
@@ -11,6 +10,7 @@ import {InterestService} from '../services/interest/interest.service';
   selector: 'app-table-activities',
   templateUrl: './table-activities.component.html',
   styleUrls: ['./table-activities.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TableActivitiesComponent implements OnInit {
 
@@ -31,7 +31,6 @@ export class TableActivitiesComponent implements OnInit {
 
   ngOnInit(): void {
     this.cols = [
-      { field: 'photo', header: 'Imagen'},
       { field: 'name', header: 'Nombre' },
       { field: 'description', header: 'Descripción' },
       { field: 'latitude', header: 'Latitud' },

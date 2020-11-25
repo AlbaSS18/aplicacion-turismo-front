@@ -31,3 +31,12 @@
 .p-dialog-footer {
   float: right;
 }
+
+.p-datatable .p-datatable-tbody > tr > td {
+  border: 0 none;
+  border-bottom: 1px solid #c8c8c8;
+}
+
+.table-activities{
+  padding-top: 15px;
+}

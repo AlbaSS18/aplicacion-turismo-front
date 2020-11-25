@@ -10,6 +10,7 @@ import {ModifyPreferencesComponent} from './modify-preferences/modify-preference
 import {TableActivitiesComponent} from './table-activities/table-activities.component';
 import {ListCitiesComponent} from './list-cities/list-cities.component';
 import {ListInterestComponent} from './list-interest/list-interest.component';
+import {ListUserComponent} from './list-user/list-user.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'activities', component: TableActivitiesComponent},
   {path: 'cities', component: ListCitiesComponent},
   {path: 'interest', component: ListInterestComponent},
+  {path: 'user', component: ListUserComponent},
   {path: '**', redirectTo: 'login', pathMatch: 'full'}
 ];
 

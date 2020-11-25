@@ -1,19 +1,24 @@
-<p-virtualScroller [value]="cities" scrollHeight="150px" [itemSize]="50">
-  <p-header class="list-header">
-    Lista de ciudades
-    <p-button label="Añadir ciudad" icon="fas fa-plus" iconPos="left" (onClick)="openPanel($event)"></p-button>
-  </p-header>
-  <ng-template pTemplate="item" let-city>
-    <div class="list-container-cities">
-      <div class="city-details">
-        <b>{{city.name}}</b>
+<app-menu-bar></app-menu-bar>
+<h1>Lista de ciudades</h1>
+<p-card header="Lista de ciudades">
+  <p-virtualScroller [value]="cities" scrollHeight="200px" [itemSize]="50">
+    <p-header class="list-header">
+      Nombre de la ciudad
+      <p-button label="Añadir ciudad" icon="fas fa-plus" iconPos="left" (onClick)="openPanel($event)"></p-button>
+    </p-header>
+    <ng-template pTemplate="item" let-city>
+      <div class="list-container-cities">
+        <div class="city-details">
+          <b>{{city.name}}</b>
+        </div>
+        <div class="group-buttons">
+          <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text"></button>
+        </div>
       </div>
-      <div class="group-buttons">
-        <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text"></button>
-      </div>
-    </div>
-  </ng-template>
-</p-virtualScroller>
+    </ng-template>
+  </p-virtualScroller>
+</p-card>
+
 
 <p-dialog [(visible)]="display">
   <p-header>

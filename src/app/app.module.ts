@@ -35,6 +35,10 @@ import { ListCitiesComponent } from './list-cities/list-cities.component';
 import {VirtualScrollerModule} from 'primeng/virtualscroller';
 import {OrderListModule} from 'primeng/orderlist';
 import { ListInterestComponent } from './list-interest/list-interest.component';
+import { ListUserComponent } from './list-user/list-user.component';
+import {TabViewModule} from 'primeng/tabview';
+import {TabMenuModule} from 'primeng/tabmenu';
+import {CardModule} from 'primeng/card';
 
 @NgModule({
   declarations: [
@@ -48,6 +52,7 @@ import { ListInterestComponent } from './list-interest/list-interest.component';
     TableActivitiesComponent,
     ListCitiesComponent,
     ListInterestComponent,
+    ListUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +77,10 @@ import { ListInterestComponent } from './list-interest/list-interest.component';
     InputTextareaModule,
     FormsModule,
     VirtualScrollerModule,
-    OrderListModule
+    OrderListModule,
+    TabViewModule,
+    TabMenuModule,
+    CardModule
   ],
   providers: [
     interceptorProvider,
