@@ -4,7 +4,7 @@ import {TokenService} from '../services/token/token.service';
 @Component({
   selector: 'app-recommendation',
   templateUrl: './recommendation.component.html',
-  styleUrls: ['./recommendation.component.css']
+  styleUrls: ['./recommendation.component.scss']
 })
 export class RecommendationComponent implements OnInit {
 

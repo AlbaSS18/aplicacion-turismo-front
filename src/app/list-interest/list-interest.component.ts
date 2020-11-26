@@ -5,7 +5,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 @Component({
   selector: 'app-list-interest',
   templateUrl: './list-interest.component.html',
-  styleUrls: ['./list-interest.component.css']
+  styleUrls: ['./list-interest.component.scss']
 })
 export class ListInterestComponent implements OnInit {
 

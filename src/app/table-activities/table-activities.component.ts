@@ -9,7 +9,7 @@ import {InterestService} from '../services/interest/interest.service';
 @Component({
   selector: 'app-table-activities',
   templateUrl: './table-activities.component.html',
-  styleUrls: ['./table-activities.component.css'],
+  styleUrls: ['./table-activities.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class TableActivitiesComponent implements OnInit {

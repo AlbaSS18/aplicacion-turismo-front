@@ -5,7 +5,7 @@ import {ConfirmationService} from 'primeng/api';
 @Component({
   selector: 'app-list-user',
   templateUrl: './list-user.component.html',
-  styleUrls: ['./list-user.component.css']
+  styleUrls: ['./list-user.component.scss']
 })
 export class ListUserComponent implements OnInit {
 
@@ -19,6 +19,7 @@ export class ListUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.cols = [
+      { field: 'id', header: 'Id' },
       { field: 'username', header: 'Username' },
       { field: 'email', header: 'Email' },
       { field: 'password', header: 'Password' },
@@ -40,11 +41,12 @@ export class ListUserComponent implements OnInit {
     );
   }
 
-  confirmDelete(){
+  confirmDelete(user){
+    console.log(user);
     this.confirmationService.confirm({
       message: '¿Estás seguro que quieres eliminar esta ciudad? Se eliminarán todos los datos relacionados',
       accept: () => {
-
+        //this.userService.deleteUser(id);
       },
       reject: () => {
 
