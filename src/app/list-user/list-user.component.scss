@@ -1,3 +1,25 @@
+@import "src/assets/sass/_variables";
+@import "src/assets/sass/utility/_mixins.scss";
+
+.user-panel {
+  @include custom-panel;
+  width: 100%;
+  min-height: 300px;
+  min-width: 800px;
+}
+
+.user-container{
+  display: inline-flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
 td {
   word-wrap:break-word
+}
+
+.table-user{
+  padding-top: 15px;
 }

@@ -1,4 +1,9 @@
+@import "src/assets/sass/_variables";
+@import "src/assets/sass/utility/_mixins.scss";
+
+
 .imgview-panel {
+  @include custom-panel;
   width: 100%;
   min-height: 300px;
   min-width: 800px;
@@ -46,3 +51,5 @@
 .table-activities{
   padding-top: 15px;
 }
+
+
