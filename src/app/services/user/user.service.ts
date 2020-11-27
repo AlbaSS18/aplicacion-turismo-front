@@ -18,4 +18,8 @@ export class UserService {
   public getUser(): Observable<User[]> {
     return this.httpClient.get<User[]>(this.userURL + '/list', cabecera);
   }
+
+  public editUser(): Observable<User[]> {
+    return this.httpClient.get<User[]>(this.userURL + '/list', cabecera);
+  }
 }

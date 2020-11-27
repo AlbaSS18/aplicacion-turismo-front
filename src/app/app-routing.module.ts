@@ -11,6 +11,7 @@ import {TableActivitiesComponent} from './table-activities/table-activities.comp
 import {ListCitiesComponent} from './list-cities/list-cities.component';
 import {ListInterestComponent} from './list-interest/list-interest.component';
 import {ListUserComponent} from './list-user/list-user.component';
+import {EditUserComponent} from './edit-user/edit-user.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -22,7 +23,11 @@ const routes: Routes = [
   {path: 'activities', component: TableActivitiesComponent},
   {path: 'cities', component: ListCitiesComponent},
   {path: 'interest', component: ListInterestComponent},
-  {path: 'user', component: ListUserComponent},
+  {path: 'user', component: ListUserComponent,
+  children: [
+    {path: '', component: ListUserComponent},
+    {path: 'edit/:id', component: EditUserComponent}
+  ]},
   {path: '**', redirectTo: 'login', pathMatch: 'full'}
 ];
 

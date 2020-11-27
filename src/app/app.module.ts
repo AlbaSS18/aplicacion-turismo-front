@@ -39,6 +39,7 @@ import { ListUserComponent } from './list-user/list-user.component';
 import {TabViewModule} from 'primeng/tabview';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {CardModule} from 'primeng/card';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import {CardModule} from 'primeng/card';
     ListCitiesComponent,
     ListInterestComponent,
     ListUserComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,

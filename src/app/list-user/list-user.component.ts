@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../services/user/user.service';
 import {ConfirmationService} from 'primeng/api';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-list-user',
@@ -14,7 +15,8 @@ export class ListUserComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -52,6 +54,10 @@ export class ListUserComponent implements OnInit {
 
       }
     });
+  }
+
+  editUser(userId){
+    this.router.navigateByUrl('/user/edit/' + userId);
   }
 
 
