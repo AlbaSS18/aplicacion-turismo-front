@@ -3,6 +3,11 @@
   color: rebeccapurple;
 }
 
-.menu-bar, .p-menubar {
-  background-color: #47475c;
+::ng-deep .menu-bar {
+  background-color: black;
 }
+
+::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text,
+::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon{
+  color: white;
+};
