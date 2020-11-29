@@ -36,7 +36,7 @@ import {VirtualScrollerModule} from 'primeng/virtualscroller';
 import {OrderListModule} from 'primeng/orderlist';
 import { ListInterestComponent } from './list-interest/list-interest.component';
 import { ListUserComponent } from './list-user/list-user.component';
-import {TabViewModule} from 'primeng/tabview';
+import {TabPanel, TabViewModule} from 'primeng/tabview';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {CardModule} from 'primeng/card';
 import { EditUserComponent } from './edit-user/edit-user.component';
@@ -82,7 +82,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     OrderListModule,
     TabViewModule,
     TabMenuModule,
-    CardModule
+    CardModule,
   ],
   providers: [
     interceptorProvider,
