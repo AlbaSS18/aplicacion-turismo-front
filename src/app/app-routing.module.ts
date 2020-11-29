@@ -23,11 +23,8 @@ const routes: Routes = [
   {path: 'activities', component: TableActivitiesComponent},
   {path: 'cities', component: ListCitiesComponent},
   {path: 'interest', component: ListInterestComponent},
-  {path: 'user', component: ListUserComponent,
-  children: [
-    {path: '', component: ListUserComponent},
-    {path: 'edit/:id', component: EditUserComponent}
-  ]},
+  {path: 'user', component: ListUserComponent},
+  {path: 'user/edit/:id', component: EditUserComponent},
   {path: '**', redirectTo: 'login', pathMatch: 'full'}
 ];
 

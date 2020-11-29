@@ -33,7 +33,7 @@ export class ListUserComponent implements OnInit {
   }
 
   loadUsers(){
-    this.userService.getUser().subscribe(
+    this.userService.getUsers().subscribe(
       data => {
         this.users = data;
       },
@@ -48,7 +48,15 @@ export class ListUserComponent implements OnInit {
     this.confirmationService.confirm({
       message: '¿Estás seguro que quieres eliminar esta ciudad? Se eliminarán todos los datos relacionados',
       accept: () => {
-        //this.userService.deleteUser(id);
+        this.userService.deleteUser(user.id).subscribe(
+          data => {
+            this.loadUsers();
+            console.log(data);
+          },
+          err => {
+            console.log(err);
+          }
+        );
       },
       reject: () => {
 
@@ -56,8 +64,9 @@ export class ListUserComponent implements OnInit {
     });
   }
 
-  editUser(userId){
-    this.router.navigateByUrl('/user/edit/' + userId);
+  editUser(user){
+    this.userService.sendUser(user);
+    this.router.navigateByUrl('/user/edit/' + user.id);
   }
 
 

@@ -1,0 +1,26 @@
+@import "src/assets/sass/_variables";
+@import "src/assets/sass/utility/_mixins.scss";
+
+.edit-panel {
+  @include custom-panel;
+  width: 100%;
+  min-height: 300px;
+  min-width: 800px;
+}
+
+h1{
+  text-align:center;
+}
+
+
+.buttonSave {
+  width: auto;
+  float: right;
+}
+
+.form-user-container{
+  width: 50%;
+  /*Para centrar*/
+  margin-left: auto;
+  margin-right: auto;
+}
