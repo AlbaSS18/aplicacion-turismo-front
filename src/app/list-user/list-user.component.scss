@@ -31,16 +31,7 @@ td {
     vertical-align: middle;
   }
 
-  span {
+  .span-tab {
     margin: 0 .5rem;
   }
-}
-
-:host ::ng-deep .p-button {
-  margin-right: .25rem;
-}
-
-:host ::ng-deep .p-tabview p {
-  line-height: 1.5;
-  margin: 0;
 }

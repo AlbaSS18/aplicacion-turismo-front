@@ -6,7 +6,7 @@
       <p-tabPanel>
         <ng-template pTemplate = "header">
           <i class="fas fa-users"></i>
-          <span>Usuarios</span>
+          <span class="span-tab">Usuarios</span>
         </ng-template>
         <div class="user-container">
           <p-table [value]="users" class="table-user" styleClass="p-datatable-striped"
@@ -36,7 +36,7 @@
             <ng-template pTemplate="body" let-user>
               <tr>
                 <td>
-                  <p-tableCheckbox [value]="product"></p-tableCheckbox>
+                  <p-tableCheckbox [value]="user"></p-tableCheckbox>
                 </td>
                 <td>{{user.id}}</td>
                 <td>{{user.userName}}</td>
@@ -57,7 +57,7 @@
       <p-tabPanel header="Header II">
         <ng-template pTemplate = "header">
           <i class="fas fa-id-badge"></i>
-          <span>Roles</span>
+          <span class="span-tab">Roles</span>
         </ng-template>
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
           architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
