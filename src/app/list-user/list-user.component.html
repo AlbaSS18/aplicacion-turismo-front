@@ -9,22 +9,19 @@
           <span class="span-tab">Usuarios</span>
         </ng-template>
         <div class="user-container">
-          <p-table [value]="users" class="table-user" styleClass="p-datatable-striped"
-                   [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]" >
+          <p-table #dt [value]="users" class="table-user" styleClass="p-datatable-striped" [scrollable]="true" scrollHeight="250px"
+                   [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]" [globalFilterFields]="['username','email','role']" >
             <ng-template pTemplate="caption">
               <div class="p-d-flex p-ai-center p-jc-between">
                 <h2 class="p-m-0">Lista de usuarios</h2>
                 <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
-                    <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
+                    <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Buscar..." />
                 </span>
               </div>
             </ng-template>
             <ng-template pTemplate="header">
               <tr>
-                <th style="width: 3rem">
-                  <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
-                </th>
                 <th *ngFor="let col of cols" [pSortableColumn]="col.field">
                   {{col.header}}
                   <p-sortIcon field="code"></p-sortIcon>
@@ -35,9 +32,6 @@
             </ng-template>
             <ng-template pTemplate="body" let-user>
               <tr>
-                <td>
-                  <p-tableCheckbox [value]="user"></p-tableCheckbox>
-                </td>
                 <td>{{user.id}}</td>
                 <td>{{user.userName}}</td>
                 <td>{{user.email}}</td>
@@ -59,9 +53,37 @@
           <i class="fas fa-id-badge"></i>
           <span class="span-tab">Roles</span>
         </ng-template>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-          architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-          voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.</p>
+        <p-table [value]="roles">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Code</th>
+              <th>Name</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-rol>
+            <tr>
+              <td>{{rol.id}}</td>
+              <td>{{rol.rolName}}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+        <p-virtualScroller [value]="roles" scrollHeight="150px" [itemSize]="50">
+          <p-header class="list-header-interest">
+            Lista de intereses
+            <p-button label="Añadir interés" icon="fas fa-plus" iconPos="left" (onClick)="openPanel($event)"></p-button>
+          </p-header>
+          <ng-template pTemplate="item" let-rol>
+            <div class="list-container-interest">
+              <div class="interest-details">
+                <b>{{rol.rolName}}</b>
+              </div>
+              <div class="group-buttons-interest">
+                <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text"></button>
+              </div>
+            </div>
+          </ng-template>
+        </p-virtualScroller>
+
       </p-tabPanel>
     </p-tabView>
 

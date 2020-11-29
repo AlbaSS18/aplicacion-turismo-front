@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from '../services/user/user.service';
 import {ConfirmationService} from 'primeng/api';
 import {Router} from '@angular/router';
+import {RolService} from '../services/rol/rol.service';
+import {Rol} from '../models/rol';
+import {forkJoin} from 'rxjs';
 
 @Component({
   selector: 'app-list-user',
@@ -12,11 +15,13 @@ export class ListUserComponent implements OnInit {
 
   users;
   cols: any[];
+  roles: Rol[];
 
   constructor(
     private userService: UserService,
     private confirmationService: ConfirmationService,
-    private router: Router
+    private router: Router,
+    private rolService: RolService
   ) { }
 
   ngOnInit(): void {
@@ -29,7 +34,17 @@ export class ListUserComponent implements OnInit {
       { field: 'age', header: 'Age' },
       { field: 'role', header: 'Role'}
     ];
-    this.loadUsers();
+    //this.loadUsers();
+    //this.loadRol();
+    forkJoin([
+      this.userService.getUsers(), //observable 1
+      this.rolService.getRoles() //observable 2
+    ]).subscribe(([response1, response2]) => {
+      // When Both are done loading do something
+      this.users = response1;
+      this.roles = response2;
+      console.log(this.roles);
+    });
   }
 
   loadUsers(){
@@ -39,6 +54,14 @@ export class ListUserComponent implements OnInit {
       },
       err => {
         console.log(err);
+      }
+    );
+  }
+
+  loadRol(){
+    this.rolService.getRoles().subscribe(
+      data => {
+        this.roles = data;
       }
     );
   }
