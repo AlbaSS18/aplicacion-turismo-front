@@ -1,7 +1,7 @@
-.custom-icon {
- /* background: rebeccapurple url('../../assets/images/user.png');*/
-  color: rebeccapurple;
+:host ::ng-deep .menu-bar {
+  min-width: 800px;
 }
+
 
 // :host ::ng-deep .menu-bar,
 // :host ::ng-deep .p-menubar .p-submenu-list{

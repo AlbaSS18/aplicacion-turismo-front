@@ -2,7 +2,6 @@
 @import "src/assets/sass/utility/_mixins.scss";
 
 .login-component {
-
   @include custom-panel;
   width: 100%;
   min-height: 300px;
@@ -11,13 +10,24 @@
   display: flex;
 }
 
+//Container left
 .left-container {
   height: calc(100vh - 140px);
   width: 50%;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  justify-content: center;
+  min-height: 310px;
 }
 
+.container-login{
+  height: 50%;
+}
+
+//Container right
 .right-container {
+  min-height: 310px;
   height: calc(100vh - 140px);
   width: 50%;
   display: flex;
@@ -25,8 +35,11 @@
   align-items: center;
 }
 
-#img-icon-user {
+.container-form{
+  width: 50%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 form {
@@ -38,8 +51,19 @@ form {
   justify-content: space-evenly;
 }
 
-#img_logo, #img-icon-user{
-  max-width: 100%;
-  height: auto;
-  width: auto\9;
+//Todo lo relativo a las imágenes
+
+.container-img-logo{
+  height: 50%;
 }
+
+
+#img_logo, #img-icon-user{
+  max-width:100%;
+  width: auto\9;
+  max-height:100%;
+}
+
+
+
+

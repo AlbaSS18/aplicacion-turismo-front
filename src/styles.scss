@@ -4,14 +4,14 @@ h1, label,p {
 }
 body {
   //background: -webkit-gradient(linear, left top, left bottom, from(#cbccc8), to(#fff)) fixed;
-  background-image: url("assets/images/html-color-codes-color-tutorials-hero.jpg");
+  background-image: url("assets/images/8dab2ccfd0d3573d36a2764357b3d467.jpg");
   background-repeat: no-repeat;
   background-color: var(--on-background);
-        background-position: top;
-        background-size: 100% 215px;
-        padding: 15px;
-        margin-left: 0px;
-        height: calc(100vh - 50px);
-        overflow: auto;
-
+  background-position: top;
+  background-size: 100% 215px;
+  padding: 15px;
+  margin-left: 0px;
+  height: calc(100vh - 50px);
+  overflow: auto;
+  background-attachment: fixed; //Para que al sacar el panel de inspeccionar, no saque el color blanco
 }

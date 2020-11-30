@@ -1,30 +1,37 @@
 <app-menu-bar></app-menu-bar>
 <div class="login-component">
   <div class="left-container">
-    <p>Es una aplicación para recomendar sitios turísticos</p>
-    <img src="../../assets/images/diseno-logotipo-playa-vector-plantilla_56473-139.jpg" alt="Logo de la aplicación" id="img_logo"/> 
+    <div class="container-login">
+      <p id="paragraph-login">Es una aplicación para recomendar sitios turísticosEs una aplicación para recomendar sitios turísticosEs una aplicación para recomendar sitios turísticosEs una aplicación para recomendar sitios turísticos</p>
+    </div>
+    <div class="container-img-logo">
+      <img src="../../assets/images/diseno-logotipo-playa-vector-plantilla_56473-139.jpg" alt="Logo de la aplicación" id="img_logo"/>
+    </div>
   </div>
 
   <div class="right-container">
-    <img id="img-icon-user" src="../../assets/images/user.png" alt="User icon"/>
-    <form [formGroup]="loginForm" #myForm="ngForm" (ngSubmit)="onSubmit()">
-        <span class="p-float-label">
-          <input id="float-input-email" type="text" size="30" pInputText formControlName="email">
-          <label for="float-input-email">Email</label>
-        </span>
-        <p-message severity="error" text="El email es obligatorio"
-                 *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].dirty"></p-message>
-        <span class="p-float-label">
-          <input id="float-input-password" type="password" size="30" pPassword formControlName="password">
-          <label for="float-input-password">Password</label>
-        </span>
-        <p-message severity="error" text="La constraseña es obligatoria"
-                 *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].dirty"></p-message>
-        <p-message severity="error" text="Los datos no son correctos"
-                 *ngIf="myForm.submitted && isLoginFail"></p-message>
-        <button pButton type="submit" icon="fas fa-sign-in-alt" label="Log in" [disabled]="loginForm.invalid"></button>
-    </form>
-    <a routerLink="/signup">Sign up</a>
-
+    <div class="container-img-logo">
+      <img id="img-icon-user" src="../../assets/images/user.png" alt="User icon"/>
+    </div>
+    <div class="container-form">
+      <form [formGroup]="loginForm" #myForm="ngForm" (ngSubmit)="onSubmit()">
+          <span class="p-float-label">
+            <input id="float-input-email" type="text" size="30" pInputText formControlName="email">
+            <label for="float-input-email">Email</label>
+          </span>
+          <p-message severity="error" text="El email es obligatorio"
+                   *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].dirty"></p-message>
+          <span class="p-float-label">
+            <input id="float-input-password" type="password" size="30" pPassword formControlName="password">
+            <label for="float-input-password">Password</label>
+          </span>
+          <p-message severity="error" text="La constraseña es obligatoria"
+                   *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].dirty"></p-message>
+          <p-message severity="error" text="Los datos no son correctos"
+                   *ngIf="myForm.submitted && isLoginFail"></p-message>
+          <button pButton type="submit" icon="fas fa-sign-in-alt" label="Log in" [disabled]="loginForm.invalid"></button>
+      </form>
+      <a routerLink="/signup">Sign up</a>
+    </div>
   </div>
 </div>
