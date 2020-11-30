@@ -17,7 +17,6 @@ import {InputNumberModule} from 'primeng/inputnumber';
 
 import {DropdownModule} from 'primeng/dropdown';
 import {MessageModule} from 'primeng/message';
-import {SpinnerModule} from 'primeng/spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { RecommendationComponent } from './recommendation/recommendation.component';
 import {interceptorProvider} from './interceptors/interceptor.service';
@@ -40,6 +39,7 @@ import {TabPanel, TabViewModule} from 'primeng/tabview';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {CardModule} from 'primeng/card';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import {StepsModule} from 'primeng/steps';
 
 @NgModule({
   declarations: [
@@ -70,7 +70,6 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     InputNumberModule,
     DropdownModule,
     MessageModule,
-    SpinnerModule,
     TableModule,
     ConfirmDialogModule,
     ToolbarModule,
@@ -83,6 +82,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     TabViewModule,
     TabMenuModule,
     CardModule,
+    StepsModule
   ],
   providers: [
     interceptorProvider,

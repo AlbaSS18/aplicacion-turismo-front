@@ -2,7 +2,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {InterestService} from '../services/interest/interest.service';
 import {AuthService} from '../services/auth/auth.service';
-import {SelectItem} from 'primeng/api';
+import {MenuItem, SelectItem} from 'primeng/api';
 
 
 @Component({
@@ -17,6 +17,7 @@ export class SignUpComponent implements OnInit {
   genreSelected: string;
   interestArray;
   isRegisterFail = false;
+  items: MenuItem[];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -41,6 +42,10 @@ export class SignUpComponent implements OnInit {
       {label: 'Select City', value: null},
       {label: 'Hombre', value: 'Hombre'},
       {label: 'Mujer', value: 'Mujer'}
+    ];
+    this.items = [
+      {label: 'Información personal'},
+      {label: 'Intereses'}
     ];
   }
 

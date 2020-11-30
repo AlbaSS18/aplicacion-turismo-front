@@ -2,55 +2,80 @@
 <div class="signup-panel">
   <h1>Sign up</h1>
   <form [formGroup]="formGroup" #formSign="ngForm" (ngSubmit)="onSubmit(formGroup.value)">
-    <label for="field-name">Nombre*</label>
-    <div class="p-inputgroup">
-      <span class="p-inputgroup-addon"><i class="fas fa-user" style="line-height: 1.25;"></i></span>
-      <input id="field-name" type="text" pInputText placeholder="Username" formControlName="name">
-      <p-message severity="error" text="El nombre de usuario es obligatorio"
-                 *ngIf="!formGroup.controls['name'].valid&&formGroup.controls['name'].dirty"></p-message>
-    </div>
-    <label for="field-email">Email*</label>
-    <div class="p-inputgroup">
-      <span class="p-inputgroup-addon"><i class="fas fa-at" style="line-height: 1.25;"></i></span>
-      <input id="field-email" type="text" pInputText placeholder="Email" formControlName="email">
-    </div>
-    <label for="field-age">Edad*</label>
-    <div class="p-inputgroup">
-      <span class="p-inputgroup-addon"><i class="far fa-calendar-alt" style="line-height: 1.25;"></i></span>
-      <p-inputNumber id="field-age" placeholder="Age" formControlName="age" [min]=0></p-inputNumber>
-    </div>
-    <label for="field-password">Contraseña*</label>
-    <div class="p-inputgroup">
-      <span class="p-inputgroup-addon"><i class="fas fa-lock" style="line-height: 1.25;"></i></span>
-      <input id="field-password" type="password" pPassword formControlName="password" placeholder="Contraseña"/>
-      <p-message severity="error"
-                 [text]="formGroup.controls['password'].errors['required'] ? 'El campo Contraseña es obligatorio' : formGroup.controls['password'].errors['minlength'] ? 'Debe tener al menos 7 caracteres' : ''"
-                 *ngIf="!formGroup.controls['password'].valid&&formGroup.controls['password'].dirty"></p-message>
-    </div>
-    <label for="field-password-repeat">Contraseña repetida*</label>
-    <div class="p-inputgroup">
-      <span class="p-inputgroup-addon"><i class="fas fa-lock" style="line-height: 1.25;"></i></span>
-      <input id="field-password-repeat" type="password" pPassword formControlName="repeatPassword"
-             placeholder="Contraseña repetida"/>
-    </div>
-    <label for="field-genre">Género*</label>
-    <div class="p-inputgroup">
-      <span class="p-inputgroup-addon"><i class="fas fa-restroom" style="line-height: 1.25;"></i></span>
-      <p-dropdown id="field-genre" [options]="genre" [(ngModel)]="genreSelected" formControlName="genre"></p-dropdown>
-    </div>
-    <ng-container formArrayName="interest">
-      <div *ngFor="let interest of interest.controls; let i=index">
-        <label for="{{interestArray[i]}}">{{interestArray[i].nameInterest}}</label>
-        <ng-container [formGroupName]="i">
-          <p-spinner id="{{interestArray[i]}}" formControlName="priority" [min]="0" [max]="10"></p-spinner>
+    <div class="form-signup-container p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-6">
+        <label for="field-name">Nombre*</label>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="fas fa-user" style="line-height: 1.25;"></i></span>
+          <input id="field-name" type="text" pInputText placeholder="Username" formControlName="name">
+          <p-message severity="error" text="El nombre de usuario es obligatorio"
+                     *ngIf="!formGroup.controls['name'].valid&&formGroup.controls['name'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="p-field p-col-12 p-md-6">
+        <label for="field-email">Email*</label>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="fas fa-at" style="line-height: 1.25;"></i></span>
+          <input id="field-email" type="text" pInputText placeholder="Email" formControlName="email">
+        </div>
+      </div>
+
+      <div class="p-field p-col-12 p-md-6">
+        <label for="field-password">Contraseña*</label>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="fas fa-lock" style="line-height: 1.25;"></i></span>
+          <input id="field-password" type="password" pPassword formControlName="password" placeholder="Contraseña"/>
+          <p-message severity="error"
+                     [text]="formGroup.controls['password'].errors['required'] ? 'El campo Contraseña es obligatorio' : formGroup.controls['password'].errors['minlength'] ? 'Debe tener al menos 7 caracteres' : ''"
+                     *ngIf="!formGroup.controls['password'].valid&&formGroup.controls['password'].dirty"></p-message>
+        </div>
+      </div>
+
+      <div class="p-field p-col-12 p-md-6">
+        <label for="field-password-repeat">Contraseña repetida*</label>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="fas fa-lock" style="line-height: 1.25;"></i></span>
+          <input id="field-password-repeat" type="password" pPassword formControlName="repeatPassword"
+                 placeholder="Contraseña repetida"/>
+        </div>
+      </div>
+      <div class="p-field p-col-12 p-md-3">
+        <label for="field-age">Edad*</label>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="far fa-calendar-alt" style="line-height: 1.25;"></i></span>
+          <p-inputNumber id="field-age" placeholder="Age" formControlName="age" [min]=0></p-inputNumber>
+        </div>
+      </div>
+
+      <div class="p-field p-col-12 p-md-3">
+        <label for="field-genre">Género*</label>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="fas fa-restroom" style="line-height: 1.25;"></i></span>
+          <p-dropdown id="field-genre" [options]="genre" [(ngModel)]="genreSelected" formControlName="genre"></p-dropdown>
+        </div>
+      </div>
+      <div class="p-field p-col-12">
+        <ng-container formArrayName="interest">
+          <div *ngFor="let interest of interest.controls; let i=index">
+            <label for="{{interestArray[i]}}">{{interestArray[i].nameInterest}}</label>
+            <ng-container [formGroupName]="i">
+              <p-inputNumber formControlName="priority" id="{{interestArray[i]}}" inputId="{{interestArray[i]}}" [min]="0" [max]="10" [showButtons]="true">
+              </p-inputNumber>
+            </ng-container>
+          </div>
         </ng-container>
       </div>
-    </ng-container>
-    <p-message severity="error" text="Los datos no son correctos"
-               *ngIf="formSign.submitted && isRegisterFail"></p-message>
-    <div>
-      <button pButton type="submit" label="Submit" [disabled]="!formGroup.valid"></button>
+
+
+      <p-message severity="error" text="Los datos no son correctos"
+                 *ngIf="formSign.submitted && isRegisterFail"></p-message>
+      <div class="p-field p-col-12">
+        <button pButton type="submit" label="Submit" icon="pi pi-check" [disabled]="!formGroup.valid" class="button_signup"></button>
+
+      </div>
+
     </div>
+
   </form>
 </div>
 
