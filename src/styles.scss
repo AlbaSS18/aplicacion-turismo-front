@@ -2,3 +2,6 @@
 h1, label {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#cbccc8), to(#fff)) fixed;
+}

@@ -3,13 +3,16 @@
   color: rebeccapurple;
 }
 
-::ng-deep .menu-bar {
-  background-color: black;
-}
+// :host ::ng-deep .menu-bar,
+// :host ::ng-deep .p-menubar .p-submenu-list{
+//   background-color: black;
+// }
 
-::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text,
-::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon{
-  color: white;
-};
+// :host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text,
+// :host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon,
+// :host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-submenu-icon,
+// :host ::ng-deep .p-menubar .p-menubar-button{
+//   color: white;
+// };
 
 
