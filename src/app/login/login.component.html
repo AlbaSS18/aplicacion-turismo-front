@@ -1,11 +1,12 @@
 <app-menu-bar></app-menu-bar>
 <div class="login-component">
   <div class="left-container">
-    <p>adios</p>
+    <p>Es una aplicación para recomendar sitios turísticos</p>
+    <img src="../../assets/images/diseno-logotipo-playa-vector-plantilla_56473-139.jpg" alt="Logo de la aplicación" id="img_logo"/> 
   </div>
 
   <div class="right-container">
-    <img id="img-icon-user" src="../../assets/images/user.png" alt="User icon" height="200" width="200"/>
+    <img id="img-icon-user" src="../../assets/images/user.png" alt="User icon"/>
     <form [formGroup]="loginForm" #myForm="ngForm" (ngSubmit)="onSubmit()">
         <span class="p-float-label">
           <input id="float-input-email" type="text" size="30" pInputText formControlName="email">

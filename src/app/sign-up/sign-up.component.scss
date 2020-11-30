@@ -1,4 +1,13 @@
-.form-containter {
-  display: flex; /* or inline-flex */
-  flex-direction: column
+@import "src/assets/sass/_variables";
+@import "src/assets/sass/utility/_mixins.scss";
+
+.signup-panel{
+  @include custom-panel;
+  width: 100%;
+  min-height: 300px;
+  min-width: 800px;
+}
+
+h1{
+  text-align:center;
 }

@@ -1,12 +1,20 @@
+@import "src/assets/sass/_variables";
+@import "src/assets/sass/utility/_mixins.scss";
+
 .login-component {
+
+  @include custom-panel;
+  width: 100%;
+  min-height: 300px;
+  min-width: 800px;
+  
   display: flex;
-  min-height: 75vh;
-  min-width: 540px;
 }
 
 .left-container {
   height: calc(100vh - 140px);
   width: 50%;
+  text-align: center;
 }
 
 .right-container {
@@ -28,4 +36,10 @@ form {
   min-height: 30vh;
   align-items: center;
   justify-content: space-evenly;
+}
+
+#img_logo, #img-icon-user{
+  max-width: 100%;
+  height: auto;
+  width: auto\9;
 }
