@@ -18,6 +18,8 @@ export class SignUpComponent implements OnInit {
   interestArray;
   isRegisterFail = false;
   items: MenuItem[];
+  openSecondForm = false;
+  isContinueFail = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -39,7 +41,7 @@ export class SignUpComponent implements OnInit {
     });
     this.loadInterest();
     this.genre = [
-      {label: 'Select City', value: null},
+      {label: 'Select Genre', value: null},
       {label: 'Hombre', value: 'Hombre'},
       {label: 'Mujer', value: 'Mujer'}
     ];
@@ -87,5 +89,22 @@ export class SignUpComponent implements OnInit {
       (err) => {
         this.isRegisterFail = true;
       });
+  }
+
+  continueSecondPartForm(){
+    console.log(this.formGroup)
+    if (this.formGroup.get('name').valid && this.formGroup.get('email').valid && this.formGroup.get('age').valid &&
+      this.formGroup.get('password').valid && this.formGroup.get('repeatPassword').valid && this.formGroup.get('genre').valid){
+      this.openSecondForm = true;
+      this.isContinueFail = false;
+    }
+    else{
+      this.isContinueFail = true;
+    }
+    console.log(this.formGroup);
+  }
+
+  returnFirstPartForm(){
+    this.openSecondForm = false;
   }
 }

@@ -13,13 +13,27 @@ h1{
 }
 
 .button_signup{
-  width: auto;
   float: right;
+}
+
+
+.button_return{
+  float: left;
+}
+
+.button_return, .button_signup{
+  width: auto;
 }
 
 .form-signup-container{
   width: 80%;
-  /*Para centrar*/
+}
+
+.form-signup-container, .form-signup-second-container{
   margin-left: auto;
   margin-right: auto;
+}
+
+.form-signup-second-container{
+  width: 50%;
 }
