@@ -29,7 +29,6 @@ export class ListUserComponent implements OnInit {
       { field: 'id', header: 'Id' },
       { field: 'username', header: 'Username' },
       { field: 'email', header: 'Email' },
-      { field: 'password', header: 'Password' },
       { field: 'genre', header: 'Genre' },
       { field: 'age', header: 'Age' },
       { field: 'role', header: 'Role'}
@@ -50,6 +49,7 @@ export class ListUserComponent implements OnInit {
   loadUsers(){
     this.userService.getUsers().subscribe(
       data => {
+        console.log(data);
         this.users = data;
       },
       err => {

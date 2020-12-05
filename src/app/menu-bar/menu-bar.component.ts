@@ -1,17 +1,28 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {MenuItem} from 'primeng/api';
+import {TokenService} from '../services/token/token.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-menu-bar',
   templateUrl: './menu-bar.component.html',
-  styleUrls: ['./menu-bar.component.scss'],
+  styleUrls: [
+    './menu-bar.component.scss'
+  ],
 })
 export class MenuBarComponent implements OnInit {
   items: MenuItem[];
+  isLogin = false;
 
-  constructor() { }
+  constructor(
+    private tokenService: TokenService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    if (this.tokenService.getToken()){
+      this.isLogin = true;
+    }
     this.items = [
       {
         label: 'Idioma',
@@ -40,8 +51,18 @@ export class MenuBarComponent implements OnInit {
         label: 'Interés',
         icon: 'fas fa-camera',
         routerLink: '/interest'
+      },
+      {
+        label: 'Logout',
+        icon: 'fas fa-sign-out-alt'
       }
     ];
+  }
+
+  logOut(): void {
+    this.tokenService.logOut();
+    this.isLogin = false;
+    this.router.navigateByUrl('/login');
   }
 
 }

@@ -4,7 +4,7 @@ export class User {
   email: string;
   age: number;
   genre: string;
-  password: string;
+  roles: string[];
 }
 
 export class UserLogin {

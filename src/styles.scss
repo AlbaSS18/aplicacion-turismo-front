@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-h1, label,p {
+
+
+h1, label, p, a {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 body {
@@ -13,7 +15,7 @@ body {
   margin-left: 0px;
   height: calc(100vh - 50px);
   overflow: auto;
-  background-attachment: fixed; //Para que al sacar el panel de inspeccionar, no saque el color blanco
+  background-attachment: fixed; //Para que al sacar el panel de inspeccionar, no saque el color blanco de la imagen
 }
 
 .p-inputtext.ng-dirty.ng-invalid , .p-inputtext.ng-untouched.ng-invalid{
@@ -22,9 +24,32 @@ body {
   //box-shadow: 0 0 5px 1px rgba(255, 0, 0, 0.2) inset !important;
 }
 
-p-inputnumber.ng-dirty.ng-invalid .p-inputtext ,
+/*p-inputnumber.ng-dirty.ng-invalid .p-inputtext ,
 p-inputnumber.ng-touched.ng-invalid .p-inputtext {
   border: 1px solid red !important;
   background: rgba(255, 0, 0, 0.35);
   box-shadow: 0 0 5px 1px rgba(255, 0, 0, 0.2) inset !important;
+}*/
+
+//body .p-inputtext.ng-dirty.ng-invalid,
+//body p-dropdown.ng-dirty.ng-invalid>.p-dropdown {
+//  border: 1px solid #dc3545;
+//}
+
+p-dropdown.ng-invalid:not(form)>div {
+  border: 1px solid red;
 }
+
+p-dropdown.ng-invalid.ng-touched.p-inputwrapper-focus:not(form) > div {
+  box-shadow: 0 0 0 0.05em red;
+  border: 1px solid red;
+  border-radius: 2px;
+}
+
+p-dropdown.ng-invalid.ng-untouched.p-inputwrapper-focus:not(form) > div {
+  box-shadow: 0 0 0 0.05em red;
+  border: 1px solid red;
+  border-radius: 2px;
+}
+
+

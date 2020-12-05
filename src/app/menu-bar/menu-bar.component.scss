@@ -1,7 +1,14 @@
+@import "~bootstrap/scss/bootstrap";
+//@import "~bootstrap/dist/css/bootstrap.css";
+
 :host ::ng-deep .menu-bar {
   min-width: 800px;
+  border-radius: 3px;
 }
 
+.part-right{
+  float: right;
+}
 
 // :host ::ng-deep .menu-bar,
 // :host ::ng-deep .p-menubar .p-submenu-list{

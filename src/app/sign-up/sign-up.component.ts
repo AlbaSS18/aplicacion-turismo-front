@@ -36,12 +36,12 @@ export class SignUpComponent implements OnInit {
       age: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(minPassLength)]],
       repeatPassword: ['', [Validators.required, Validators.minLength(minPassLength)]],
-      genre: '',
+      genre: ['', Validators.required],
       interest: new FormArray([])
     });
     this.loadInterest();
     this.genre = [
-      {label: 'Select Genre', value: null},
+      {label: 'Select Genre', value: ''},
       {label: 'Hombre', value: 'Hombre'},
       {label: 'Mujer', value: 'Mujer'}
     ];

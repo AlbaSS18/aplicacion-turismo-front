@@ -1,1 +1,40 @@
-<p-menubar [model]="items" styleClass="menu-bar p-shadow-6"></p-menubar>
+<!--<p-menubar [model]="items" styleClass="menu-bar p-shadow-6">
+  <button pButton label="Logout" icon="fas fa-sign-out-alt"></button>
+</p-menubar>-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light menu-bar p-shadow-6">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/user" ><span class="fas fa-users"></span> Usuarios<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/cities"><i class="fas fa-city"></i> Ciudades</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/activities"><i class="fas fa-map-marked-alt"></i> Actividades</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/interest"><i class="fas fa-camera"></i> Interés</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <p>Usted es: alba</p>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Idioma
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#"><img src="../../assets/images/flag_spain.png" alt="" width="20" height="20"> Español</a>
+          <a class="dropdown-item" href="#"><img src="../../assets/images/flag_english.png" alt="" width="20" height="20"> Inglés</a>
+        </div>
+      </li>
+      <li *ngIf="isLogin" class="nav-item">
+        <a class="nav-link" (click)="logOut()"><i class="fas fa-sign-out-alt"></i> Log out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
