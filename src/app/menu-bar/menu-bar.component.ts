@@ -13,6 +13,9 @@ import {Router} from '@angular/router';
 export class MenuBarComponent implements OnInit {
   items: MenuItem[];
   isLogin = false;
+  roles: string[];
+  authority: string;
+  email;
 
   constructor(
     private tokenService: TokenService,
@@ -20,8 +23,18 @@ export class MenuBarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.email = this.tokenService.getEmail();
     if (this.tokenService.getToken()){
       this.isLogin = true;
+      this.roles = [];
+      this.roles = this.tokenService.getAuthorities();
+      if (this.roles.includes("ROLE_ADMIN")){
+        this.authority = 'admin';
+      }
+      else{
+        this.authority = 'user';
+      }
+      console.log(this.authority);
     }
     this.items = [
       {
@@ -62,6 +75,7 @@ export class MenuBarComponent implements OnInit {
   logOut(): void {
     this.tokenService.logOut();
     this.isLogin = false;
+    this.authority = '';
     this.router.navigateByUrl('/login');
   }
 

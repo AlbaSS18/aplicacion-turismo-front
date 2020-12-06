@@ -12,6 +12,7 @@ import {ListCitiesComponent} from './list-cities/list-cities.component';
 import {ListInterestComponent} from './list-interest/list-interest.component';
 import {ListUserComponent} from './list-user/list-user.component';
 import {EditUserComponent} from './edit-user/edit-user.component';
+import {RoleGuardService} from './guards/RoleGuard/role-guard.service';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -20,11 +21,31 @@ const routes: Routes = [
   {path: 'recommendation', component: RecommendationComponent, canActivate: [AuthGuardService]},
   {path: 'map', component: MapComponent},
   {path: 'modifyPreferences', component: ModifyPreferencesComponent},
-  {path: 'activities', component: TableActivitiesComponent},
-  {path: 'cities', component: ListCitiesComponent},
-  {path: 'interest', component: ListInterestComponent},
-  {path: 'user', component: ListUserComponent},
-  {path: 'user/edit/:id', component: EditUserComponent},
+  {path: 'activities', component: TableActivitiesComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRol: 'admin'
+  }},
+  {path: 'cities', component: ListCitiesComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRol: 'admin'
+    }},
+  {path: 'interest', component: ListInterestComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRol: 'admin'
+  }},
+  {path: 'user', component: ListUserComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRol: 'admin'
+  }},
+  {path: 'user/edit/:id', component: EditUserComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRol: 'admin'
+  }},
   {path: '**', redirectTo: 'login', pathMatch: 'full'}
 ];
 

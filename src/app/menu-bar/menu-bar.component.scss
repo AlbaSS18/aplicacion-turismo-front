@@ -10,6 +10,12 @@
   float: right;
 }
 
+.container-name{
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
+
 // :host ::ng-deep .menu-bar,
 // :host ::ng-deep .p-menubar .p-submenu-list{
 //   background-color: black;
