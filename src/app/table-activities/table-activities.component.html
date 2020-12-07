@@ -27,7 +27,7 @@
       </ng-template>
       <ng-template pTemplate="body" let-activity>
         <tr>
-          <td>{{activity.photo}}</td>
+          <td><img src="http://localhost:8090/images/museoferrocarril.jpg" />{{activity.pathImage}}</td>
           <td>{{activity.name}}</td>
           <td>{{activity.description}}</td>
           <td>{{activity.latitude}}</td>
@@ -67,9 +67,7 @@
       <p-dropdown id="field-city" [options]="cities" formControlName="city" appendTo="body"></p-dropdown>
       <label for="field-interest">Interest</label>
       <p-dropdown id="field-interest" [options]="interest" formControlName="nameInterest" appendTo="body"></p-dropdown>
-
-
-      <!--<p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000"></p-fileUpload>-->
+      <p-fileUpload mode="basic" name="myfile[]" accept="image/jpeg, image/png" maxFileSize="2000000" (onSelect)="dealWithFiles($event)"></p-fileUpload>
     </form>
     <p-footer>
       <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="onSubmit(formAdd.value)"></button>

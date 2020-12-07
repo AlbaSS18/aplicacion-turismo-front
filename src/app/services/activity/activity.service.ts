@@ -5,7 +5,7 @@ import {Observable} from 'rxjs';
 import {JwtModel} from '../../models/jwt_model';
 import {Activity} from '../../models/activity';
 
-const cabecera = {headers: new HttpHeaders({'Content-TYpe': 'application/json'})};
+const cabecera = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class ActivityService {
     return this.httpClient.get<Activity[]>(this.activityUrl + '/list', cabecera);
   }
 
-  public addActivity(activity): Observable<any> {
-    return this.httpClient.post<any>(this.activityUrl + '/add', activity, cabecera);
+  public addActivity(formData): Observable<any> {
+    return this.httpClient.post<any>(this.activityUrl + '/add', formData);
   }
 }

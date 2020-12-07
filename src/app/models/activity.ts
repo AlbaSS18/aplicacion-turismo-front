@@ -6,4 +6,5 @@ export class Activity {
   pathImage: string;
   city: string;
   interest: string;
+  image: any;
 }

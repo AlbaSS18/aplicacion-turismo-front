@@ -5,6 +5,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CityService} from '../services/city/city.service';
 import {Interest} from '../models/interest';
 import {InterestService} from '../services/interest/interest.service';
+import {ImagesService} from '../services/images/images.service';
 
 @Component({
   selector: 'app-table-activities',
@@ -20,13 +21,15 @@ export class TableActivitiesComponent implements OnInit {
   formAddActivity: FormGroup;
   cities: SelectItem[];
   interest: SelectItem[];
+  files;
 
   constructor(
     private activityService: ActivityService,
     private confirmationService: ConfirmationService,
     private formBuilder: FormBuilder,
     private cityService: CityService,
-    private interestService: InterestService
+    private interestService: InterestService,
+    private imagesService: ImagesService
   ) { }
 
   ngOnInit(): void {
@@ -86,6 +89,14 @@ export class TableActivitiesComponent implements OnInit {
     this.activityService.getActivities().subscribe(
       data => {
         this.activities = data;
+        /*this.activities.forEach(act => {
+          this.imagesService.getImages("museoferrocarril.jpg").subscribe(
+            imagePhoto => {
+              act.image = imagePhoto;
+            }
+          );
+          }
+        );*/
       },
       (err) => {
         console.log(err);
@@ -109,19 +120,15 @@ export class TableActivitiesComponent implements OnInit {
   }
 
   onSubmit(value: string){
-    console.log(this.formAddActivity.get('city').value);
-    console.log(value);
-    var activity = {
-      name: this.formAddActivity.get('name').value,
-      description: this.formAddActivity.get('description').value,
-      latitude: this.formAddActivity.get('latitude').value,
-      longitude: this.formAddActivity.get('longitude').value,
-      pathImage: 'src/app/img/' + this.formAddActivity.get('name').value + '.jpg',
-      city: this.formAddActivity.get('city').value,
-      interest: this.formAddActivity.get('nameInterest').value
-    }
-    console.log(activity);
-    this.activityService.addActivity(activity).subscribe(
+    const formData = new FormData();
+    formData.append('image', this.files);
+    formData.append('name', this.formAddActivity.get('name').value);
+    formData.append('description', this.formAddActivity.get('description').value);
+    formData.append('latitude', this.formAddActivity.get('latitude').value);
+    formData.append('longitude', this.formAddActivity.get('longitude').value);
+    formData.append('city', this.formAddActivity.get('city').value);
+    formData.append('interest', this.formAddActivity.get('nameInterest').value);
+    this.activityService.addActivity(formData).subscribe(
       (data) => {
         this.productDialog = false;
       },
@@ -129,6 +136,10 @@ export class TableActivitiesComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  dealWithFiles(event){
+    this.files = event.files[0];
   }
 
 }
