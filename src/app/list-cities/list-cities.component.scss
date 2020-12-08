@@ -1,5 +1,16 @@
+@import "src/assets/sass/_variables";
+@import "src/assets/sass/utility/_mixins.scss";
+
 .list-container-cities, .list-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
+.cities-panel {
+  @include custom-panel;
+  width: 100%;
+  min-height: 300px;
+  min-width: 800px;
+}
+

@@ -16,6 +16,7 @@ export class ListUserComponent implements OnInit {
   users;
   cols: any[];
   roles: Rol[];
+  scrollTabSelected;
 
   constructor(
     private userService: UserService,
@@ -90,6 +91,10 @@ export class ListUserComponent implements OnInit {
   editUser(user){
     this.userService.sendUser(user);
     this.router.navigateByUrl('/user/edit/' + user.id);
+  }
+
+  changeTab(ev) {
+    this.scrollTabSelected = ev.index === 1;
   }
 
 

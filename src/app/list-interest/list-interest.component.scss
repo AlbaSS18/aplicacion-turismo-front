@@ -1,5 +1,18 @@
+@import "src/assets/sass/_variables";
+@import "src/assets/sass/utility/_mixins.scss";
+
+
+.interest-panel {
+  @include custom-panel;
+  width: 100%;
+  min-height: 300px;
+  min-width: 800px;
+}
+
 .list-container-interest, .list-header-interest {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
+

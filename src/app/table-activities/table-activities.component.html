@@ -2,7 +2,7 @@
 <app-menu-bar></app-menu-bar>
 <div class="imgview-panel">
   <div class="card p-d-flex p-flex-column">
-    <p-toolbar>
+    <p-toolbar class="toolbar-activities">
       <div>
         <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2" (click)="openNew()"></button>
         <button pButton pRipple icon="pi pi-trash" class="p-button-danger"></button>
@@ -11,6 +11,11 @@
 
     <p-table [value]="activities" class="table-buttons-activities table-activities" [scrollable]="true" scrollHeight="350px"
              [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]" currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} entradas">
+      <ng-template pTemplate="caption">
+        <div class="p-d-flex p-ai-center p-jc-between">
+          <h2 class="p-m-0">Lista de actividades</h2>
+        </div>
+      </ng-template>
       <ng-template pTemplate="header">
         <tr>
           <th>
