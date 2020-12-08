@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InformationActivitiesComponent } from './information-activities.component';
+import {DynamicDialogConfig, DynamicDialogRef} from 'primeng/dynamicdialog';
 
 describe('InformationActivitiesComponent', () => {
   let component: InformationActivitiesComponent;
@@ -8,7 +9,11 @@ describe('InformationActivitiesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InformationActivitiesComponent ]
+      declarations: [ InformationActivitiesComponent ],
+      providers: [
+        DynamicDialogRef,
+        DynamicDialogConfig
+      ]
     })
     .compileComponents();
   });

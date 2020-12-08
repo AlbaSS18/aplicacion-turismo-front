@@ -5,6 +5,10 @@ import {DialogModule} from 'primeng/dialog';
 import {VirtualScrollerModule} from 'primeng/virtualscroller';
 import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {ButtonModule} from 'primeng/button';
+import {CardModule} from 'primeng/card';
+import {MenuBarComponent} from '../menu-bar/menu-bar.component';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('ListInterestComponent', () => {
   let component: ListInterestComponent;
@@ -18,8 +22,11 @@ describe('ListInterestComponent', () => {
         FormsModule,
         ReactiveFormsModule,
         HttpClientTestingModule,
+        ButtonModule,
+        CardModule,
+        RouterTestingModule
       ],
-      declarations: [ ListInterestComponent ]
+      declarations: [ ListInterestComponent, MenuBarComponent ]
     })
     .compileComponents();
   });

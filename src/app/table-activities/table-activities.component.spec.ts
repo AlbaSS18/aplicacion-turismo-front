@@ -14,6 +14,10 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {DialogModule} from 'primeng/dialog';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {DropdownModule} from 'primeng/dropdown';
+import {DialogService} from 'primeng/dynamicdialog';
+import {FileUploadModule} from 'primeng/fileupload';
+import {MenuBarComponent} from '../menu-bar/menu-bar.component';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('TableActivitiesComponent', () => {
   let component: TableActivitiesComponent;
@@ -21,7 +25,7 @@ describe('TableActivitiesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TableActivitiesComponent ],
+      declarations: [ TableActivitiesComponent, MenuBarComponent ],
       imports: [
         HttpClientTestingModule,
         FormsModule,
@@ -33,14 +37,17 @@ describe('TableActivitiesComponent', () => {
         DialogModule,
         SharedModule,
         InputNumberModule,
-        DropdownModule
+        DropdownModule,
+        FileUploadModule,
+        RouterTestingModule
       ],
       providers: [
         ConfirmationService,
         ActivityService,
         CityService,
         InterestService,
-        FormBuilder
+        FormBuilder,
+        DialogService
       ]
     })
     .compileComponents();

@@ -6,6 +6,9 @@ import {ToolbarModule} from 'primeng/toolbar';
 import {TableModule} from 'primeng/table';
 import {ConfirmationService} from 'primeng/api';
 import {RouterTestingModule} from '@angular/router/testing';
+import {TabViewModule} from 'primeng/tabview';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 
 describe('ListUserComponent', () => {
   let component: ListUserComponent;
@@ -13,12 +16,14 @@ describe('ListUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListUserComponent ],
+      declarations: [ ListUserComponent, MenuBarComponent ],
       imports: [
         HttpClientTestingModule,
         ToolbarModule,
         TableModule,
-        RouterTestingModule
+        RouterTestingModule,
+        TabViewModule,
+        ConfirmDialogModule
       ],
       providers: [
         ConfirmationService

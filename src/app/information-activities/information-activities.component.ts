@@ -14,7 +14,9 @@ export class InformationActivitiesComponent implements OnInit {
   constructor(private ref: DynamicDialogRef, public config: DynamicDialogConfig) { }
 
   ngOnInit(): void {
-    this.activity = this.config.data.activity;
+    if (this.activity){
+      this.activity = this.config.data.activity;
+    }
   }
 
 }

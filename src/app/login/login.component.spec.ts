@@ -6,6 +6,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {RouterTestingModule} from '@angular/router/testing';
+import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -13,7 +14,7 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ],
+      declarations: [ LoginComponent, MenuBarComponent ],
       imports: [
         ButtonModule,
         InputTextModule,

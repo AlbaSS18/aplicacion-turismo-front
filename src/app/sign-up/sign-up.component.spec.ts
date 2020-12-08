@@ -6,6 +6,7 @@ import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {RouterTestingModule} from '@angular/router/testing';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {DropdownModule} from 'primeng/dropdown';
+import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 
 describe('SignUpComponent', () => {
   let component: SignUpComponent;
@@ -13,12 +14,13 @@ describe('SignUpComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SignUpComponent ],
+      declarations: [ SignUpComponent, MenuBarComponent ],
       imports: [
         ReactiveFormsModule,
         HttpClientTestingModule,
         InputNumberModule,
-        DropdownModule
+        DropdownModule,
+        RouterTestingModule
       ]
     })
     .compileComponents();

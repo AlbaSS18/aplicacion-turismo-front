@@ -6,6 +6,8 @@ import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {DropdownModule} from 'primeng/dropdown';
 import {RouterModule} from '@angular/router';
+import {MenuBarComponent} from '../menu-bar/menu-bar.component';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('EditUserComponent', () => {
   let component: EditUserComponent;
@@ -13,13 +15,13 @@ describe('EditUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditUserComponent ],
+      declarations: [ EditUserComponent, MenuBarComponent ],
       imports: [
         ReactiveFormsModule,
         HttpClientTestingModule,
         InputNumberModule,
         DropdownModule,
-        RouterModule.forRoot([]),
+        RouterTestingModule
       ]
     })
     .compileComponents();
