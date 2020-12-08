@@ -6,12 +6,12 @@ import {CityService} from '../services/city/city.service';
 import {Interest} from '../models/interest';
 import {InterestService} from '../services/interest/interest.service';
 import {ImagesService} from '../services/images/images.service';
+import {DialogService} from 'primeng/dynamicdialog';
 
 @Component({
   selector: 'app-table-activities',
   templateUrl: './table-activities.component.html',
-  styleUrls: ['./table-activities.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./table-activities.component.scss']
 })
 export class TableActivitiesComponent implements OnInit {
 
@@ -29,7 +29,8 @@ export class TableActivitiesComponent implements OnInit {
     private formBuilder: FormBuilder,
     private cityService: CityService,
     private interestService: InterestService,
-    private imagesService: ImagesService
+    private imagesService: ImagesService,
+    private dialogService: DialogService
   ) { }
 
   ngOnInit(): void {

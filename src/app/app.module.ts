@@ -40,6 +40,8 @@ import {TabMenuModule} from 'primeng/tabmenu';
 import {CardModule} from 'primeng/card';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import {StepsModule} from 'primeng/steps';
+import {DialogService} from 'primeng/dynamicdialog';
+import {TooltipModule} from 'primeng/tooltip';
 
 @NgModule({
   declarations: [
@@ -82,11 +84,13 @@ import {StepsModule} from 'primeng/steps';
     TabViewModule,
     TabMenuModule,
     CardModule,
-    StepsModule
+    StepsModule,
+    TooltipModule
   ],
   providers: [
     interceptorProvider,
-    ConfirmationService
+    ConfirmationService,
+    DialogService
   ],
   bootstrap: [AppComponent]
 })

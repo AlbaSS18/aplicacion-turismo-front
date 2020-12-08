@@ -3,13 +3,13 @@
 <div class="imgview-panel">
   <div class="card p-d-flex p-flex-column">
     <p-toolbar class="toolbar-activities">
-      <div>
-        <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2" (click)="openNew()"></button>
-        <button pButton pRipple icon="pi pi-trash" class="p-button-danger"></button>
+      <div class="p-toolbar-group-left"></div>
+      <div class="p-toolbar-group-right">
+        <button pButton pRipple label="Añadir actividad" icon="pi pi-plus" class="p-button-raised p-button-rounded" (click)="openNew()"></button>
       </div>
     </p-toolbar>
 
-    <p-table [value]="activities" class="table-buttons-activities table-activities" [scrollable]="true" scrollHeight="350px"
+    <p-table [value]="activities" class="table-activities" [scrollable]="true" scrollHeight="350px"
              [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]" currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} entradas">
       <ng-template pTemplate="caption">
         <div class="p-d-flex p-ai-center p-jc-between">
@@ -32,14 +32,16 @@
       </ng-template>
       <ng-template pTemplate="body" let-activity>
         <tr>
-          <td><img src="http://localhost:8090/images/museoferrocarril.jpg" />{{activity.pathImage}}</td>
+          <td><img src="http://localhost:8090/images/museoferrocarril.jpg" /></td>
           <td>{{activity.name}}</td>
-          <td>{{activity.description}}</td>
+          <td class="p-text-nowrap p-text-truncate" pTooltip="{{activity.description}}">{{activity.description}}</td>
           <td>{{activity.latitude}}</td>
           <td>{{activity.longitude}}</td>
           <td>{{activity.city}}</td>
           <td>{{activity.interest}}</td>
           <td>
+            <button pButton pRipple type="button" icon="fas fa-info" class="p-button-rounded p-button-text" (click)="seeMoreInfo()"></button>
+            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text"></button>
             <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="confirm()"></button>
           </td>
         </tr>

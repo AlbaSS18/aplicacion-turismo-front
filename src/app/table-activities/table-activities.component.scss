@@ -45,14 +45,34 @@
 
 
 .table-activities{
-  .p-datatable-tbody > tr > td {
+  //.p-datatable-tbody > tr > td {
+  //  border: 0 none;
+  //  border-bottom: 1px solid #c8c8c8;
+  //}
+
+  ::ng-deep .p-datatable-tbody > tr > td,
+  ::ng-deep .p-datatable-thead > tr > th,
+  ::ng-deep .p-paginator,
+  ::ng-deep .p-datatable-header{
     border: 0 none;
+  }
+
+
+
+
+  ::ng-deep .p-datatable-tbody > tr > td,
+  ::ng-deep .p-datatable-thead > tr > th{
     border-bottom: 1px solid #c8c8c8;
+  }
+
+  ::ng-deep .p-datatable-thead > tr > th{
+    border-top: 1px solid #c8c8c8;
   }
 }
 
 .toolbar-activities, .table-activities{
   padding: 15px;
 }
+
 
 

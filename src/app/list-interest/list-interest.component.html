@@ -1,22 +1,23 @@
 <app-menu-bar></app-menu-bar>
 <div class="interest-panel">
-  <p-virtualScroller [value]="interest" scrollHeight="150px" [itemSize]="50">
-    <p-header class="list-header-interest">
-      Lista de intereses
-      <p-button label="Añadir interés" icon="fas fa-plus" iconPos="left" (onClick)="openPanel($event)"></p-button>
-    </p-header>
-    <ng-template pTemplate="item" let-interest>
-      <div class="list-container-interest">
-        <div class="interest-details">
-          <b>{{interest.nameInterest}}</b>
+  <p-card header="Lista de intereses">
+    <p-virtualScroller [value]="interest" scrollHeight="150px" [itemSize]="50" >
+      <p-header class="list-header-interest">
+        Intereses
+        <p-button label="Añadir interés" icon="fas fa-plus" iconPos="left" (onClick)="openPanel($event)"></p-button>
+      </p-header>
+      <ng-template pTemplate="item" let-interest>
+        <div class="list-container-interest">
+          <div class="interest-details">
+            <b>{{interest.nameInterest}}</b>
+          </div>
+          <div class="group-buttons-interest">
+            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text"></button>
+          </div>
         </div>
-        <div class="group-buttons-interest">
-          <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text"></button>
-        </div>
-      </div>
-    </ng-template>
-  </p-virtualScroller>
-
+      </ng-template>
+    </p-virtualScroller>
+  </p-card>
   <p-dialog [(visible)]="display">
     <p-header>
       Añadir interés
