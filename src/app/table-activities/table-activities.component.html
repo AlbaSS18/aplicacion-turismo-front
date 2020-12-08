@@ -9,11 +9,16 @@
       </div>
     </p-toolbar>
 
-    <p-table [value]="activities" class="table-activities" [scrollable]="true" scrollHeight="350px"
-             [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]" currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} entradas">
+    <p-table #tableActivities [value]="activities" class="table-activities" [scrollable]="true" scrollHeight="350px"
+             [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]" currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} entradas"
+             [globalFilterFields]="['name','city','interest']">
       <ng-template pTemplate="caption">
         <div class="p-d-flex p-ai-center p-jc-between">
           <h2 class="p-m-0">Lista de actividades</h2>
+          <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="tableActivities.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
+          </span>
         </div>
       </ng-template>
       <ng-template pTemplate="header">
