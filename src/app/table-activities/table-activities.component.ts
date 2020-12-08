@@ -6,7 +6,8 @@ import {CityService} from '../services/city/city.service';
 import {Interest} from '../models/interest';
 import {InterestService} from '../services/interest/interest.service';
 import {ImagesService} from '../services/images/images.service';
-import {DialogService} from 'primeng/dynamicdialog';
+import {DialogService, DynamicDialogRef} from 'primeng/dynamicdialog';
+import {InformationActivitiesComponent} from '../information-activities/information-activities.component';
 
 @Component({
   selector: 'app-table-activities',
@@ -22,6 +23,7 @@ export class TableActivitiesComponent implements OnInit {
   cities: SelectItem[];
   interest: SelectItem[];
   files;
+  ref: DynamicDialogRef;
 
   constructor(
     private activityService: ActivityService,
@@ -141,6 +143,27 @@ export class TableActivitiesComponent implements OnInit {
 
   dealWithFiles(event){
     this.files = event.files[0];
+  }
+
+  seeMoreInfo(activity){
+    this.ref = this.dialogService.open(InformationActivitiesComponent,
+      {
+        data: {
+          "activity" : activity,
+        },
+        header: "Información de la actividad: " + activity.name,
+        width: '70%'
+      });
+
+    this.ref.onClose.subscribe((activity) => {
+      console.log("Aqui");
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.ref){
+      this.ref.close();
+    }
   }
 
 }

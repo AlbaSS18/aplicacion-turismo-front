@@ -42,6 +42,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import {StepsModule} from 'primeng/steps';
 import {DialogService} from 'primeng/dynamicdialog';
 import {TooltipModule} from 'primeng/tooltip';
+import { InformationActivitiesComponent } from './information-activities/information-activities.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import {TooltipModule} from 'primeng/tooltip';
     ListInterestComponent,
     ListUserComponent,
     EditUserComponent,
+    InformationActivitiesComponent,
   ],
   imports: [
     BrowserModule,

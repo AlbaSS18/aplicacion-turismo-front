@@ -1,0 +1,13 @@
+.contaiter-info-activities{
+  display: flex;
+  flex-direction: column;
+}
+
+.container-name, .container-description-activity, .container-coordenates, .container-interest, .container-city{
+  display: flex;
+}
+
+.label-container, .content-container{
+  width: 50%;
+}
+
