@@ -26,8 +26,6 @@ export class UserService {
   }
 
   public editUser(id, user): Observable<any> {
-    console.log(user);
-    console.log(id)
     return this.httpClient.put<any>(this.userURL + '/update/' + id, user, cabecera);
   }
 

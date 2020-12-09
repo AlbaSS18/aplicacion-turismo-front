@@ -23,4 +23,8 @@ export class InterestService {
   public addInterests(interest): Observable<any> {
     return this.httpClient.post<any>(this.interestURL + '/add', interest, cabecera);
   }
+
+  public deleteInterest(interest): Observable<any> {
+    return this.httpClient.delete<any>(this.interestURL + '/delete/' + interest.id, cabecera);
+  }
 }

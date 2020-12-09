@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {InterestService} from '../services/interest/interest.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ConfirmationService} from 'primeng/api';
+import {map, mergeMap, switchMap} from 'rxjs/operators';
+import {forkJoin} from 'rxjs';
 
 @Component({
   selector: 'app-list-interest',
@@ -15,7 +18,8 @@ export class ListInterestComponent implements OnInit {
 
   constructor(
     private interestService: InterestService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private confirmationService: ConfirmationService
   ) { }
 
   ngOnInit(): void {
@@ -42,13 +46,41 @@ export class ListInterestComponent implements OnInit {
 
   onSubmit(value: string){
     var interest = {
-      name: this.formAddInterest.get('name').value
+      nameInterest: this.formAddInterest.get('name').value
     };
-    /*this.interestService.addInterests(interest).subscribe(
-      data => {
+    this.interestService.addInterests(interest).pipe(
+      mergeMap( message => {
+        return this.interestService.getInterests().pipe(
+          map(data => {
+            this.interest = data;
+          })
+        );
+      })
+    ).subscribe( data => {
         this.display = false;
-        this.loadInterest();
       }
-    )*/
+    );
+  }
+
+  cancel(){
+    this.display = false;
+  }
+
+  deleteInterest(interest) {
+    this.confirmationService.confirm({
+      message: '¿Estás seguro de qué deseas eliminar este interés?',
+      accept: () => {
+        this.interestService.deleteInterest(interest).pipe(
+          mergeMap( message => {
+            return this.interestService.getInterests().pipe(
+              map(data => {
+                this.interest = data;
+              })
+            );
+          })
+        ).subscribe( data => {}
+        );
+      }
+    });
   }
 }

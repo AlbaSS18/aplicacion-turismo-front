@@ -4,7 +4,7 @@
     <p-virtualScroller [value]="interest" scrollHeight="150px" [itemSize]="50" >
       <p-header class="list-header-interest">
         Intereses
-        <p-button label="Añadir interés" icon="fas fa-plus" iconPos="left" (onClick)="openPanel($event)"></p-button>
+        <button pButton pRipple type="button" label="Añadir interés" icon="fas fa-plus" iconPos="left" class="p-button-rounded" (click)="openPanel($event)"></button>
       </p-header>
       <ng-template pTemplate="item" let-interest>
         <div class="list-container-interest">
@@ -12,7 +12,7 @@
             <b>{{interest.nameInterest}}</b>
           </div>
           <div class="group-buttons-interest">
-            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text"></button>
+            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="deleteInterest(interest)"></button>
           </div>
         </div>
       </ng-template>
@@ -23,12 +23,17 @@
       Añadir interés
     </p-header>
     <form [formGroup]="formAddInterest">
-      <label for="field-name-interest">Nombre*:</label>
-      <input id="field-name-interest" type="text" pInputText formControlName="name">
+      <div class="p-field p-grid">
+        <label for="field-name-interest" class="p-col-fixed">Nombre*:</label>
+        <div class="p-col">
+          <input id="field-name-interest" type="text" pInputText formControlName="name">
+        </div>
+      </div>
     </form>
     <p-footer>
       <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="onSubmit(formAddInterest.value)"></button>
-      <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text"></button>
+      <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="cancel()"></button>
     </p-footer>
   </p-dialog>
+  <p-confirmDialog header="Confirmar" acceptLabel="Eliminar" rejectLabel="Cancelar" icon="pi pi-exclamation-triangle"></p-confirmDialog>
 </div>
