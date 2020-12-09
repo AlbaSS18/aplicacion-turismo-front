@@ -8,17 +8,17 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li *ngIf="this.authority=='admin'" class="nav-item active">
-        <a class="nav-link" routerLink="/user" ><span class="fas fa-users"></span> Usuarios<span class="sr-only">(current)</span></a>
+      <li *ngIf="this.authority=='admin'" class="nav-item">
+        <a class="nav-link" [routerLinkActive]="['active']" routerLink="/user" ><span class="fas fa-users"></span> Usuarios<span class="sr-only">(current)</span></a>
       </li>
       <li *ngIf="this.authority=='admin'" class="nav-item">
-        <a class="nav-link" routerLink="/cities"><i class="fas fa-city"></i> Ciudades</a>
+        <a class="nav-link" [routerLinkActive]="['active']" routerLink="/cities"><i class="fas fa-city"></i> Ciudades</a>
       </li>
       <li *ngIf="this.authority=='admin'" class="nav-item">
-        <a class="nav-link" routerLink="/activities"><i class="fas fa-map-marked-alt"></i> Actividades</a>
+        <a class="nav-link" [routerLinkActive]="['active']" routerLink="/activities"><i class="fas fa-map-marked-alt"></i> Actividades</a>
       </li>
       <li *ngIf="this.authority=='admin'" class="nav-item">
-        <a class="nav-link" routerLink="/interest"><i class="fas fa-camera"></i> Interés</a>
+        <a class="nav-link" [routerLinkActive]="['active']" routerLink="/interest"><i class="fas fa-camera"></i> Interés</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
