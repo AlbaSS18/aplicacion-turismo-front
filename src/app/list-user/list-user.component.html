@@ -9,7 +9,7 @@
           <span class="span-tab">Usuarios</span>
         </ng-template>
         <div class="user-container">
-          <p-table #dt [value]="users" class="table-user" [scrollable]="true" scrollHeight="250px"
+          <p-table #dt [value]="users" class="table-user" [scrollable]="true" scrollHeight="250px" sortField="username"
                    [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]" [globalFilterFields]="['username','email','role']" >
             <ng-template pTemplate="caption">
               <div class="p-d-flex p-ai-center p-jc-between">
@@ -24,7 +24,7 @@
               <tr>
                 <th *ngFor="let col of cols" [pSortableColumn]="col.field">
                   {{col.header}}
-                  <p-sortIcon field="code"></p-sortIcon>
+                  <p-sortIcon [field]="col.field"></p-sortIcon>
                 </th>
                 <th>
                 </th>

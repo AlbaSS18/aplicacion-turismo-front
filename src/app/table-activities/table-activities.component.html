@@ -9,7 +9,7 @@
       </div>
     </p-toolbar>
 
-    <p-table #tableActivities [value]="activities" class="table-activities" [scrollable]="true" scrollHeight="350px"
+    <p-table #tableActivities [value]="activities" class="table-activities" [scrollable]="true" scrollHeight="350px" sortField="name"
              [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]" currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} entradas"
              [globalFilterFields]="['name','city','interest']">
       <ng-template pTemplate="caption">
@@ -28,7 +28,7 @@
           </th>
           <th *ngFor="let col of cols" [pSortableColumn]="col.field">
             {{col.header}}
-            <p-sortIcon field="col.field"></p-sortIcon>
+            <p-sortIcon [field]="col.field"></p-sortIcon>
           </th>
 
           <th>
@@ -56,30 +56,42 @@
 
   <p-confirmDialog header="Delete" icon="pi pi-info-circle"></p-confirmDialog>
 
-  <p-dialog [(visible)]="productDialog" styleClass="myDialog">
+  <p-dialog [(visible)]="productDialog" styleClass="myDialog" *ngIf="productDialog" modal="true" [draggable]="false" >
     <p-header>
       Añadir actividad
     </p-header>
     <form [formGroup]="formAddActivity" #formAdd="ngForm" class="form-activity-container">
-      <label for="field-name-Activity">Nombre*</label>
-      <input id="field-name-Activity" type="text" pInputText formControlName="name">
-      <label for="field-description">Descripción*</label>
-      <textarea id="field-description" pInputTextarea formControlName="description" required rows="5" cols="20"></textarea>
-      <div class="coordenates-container">
-        <div class="latitude-container">
+      <div class="p-fluid p-formgrid p-grid grid-container">
+        <div class="p-field p-col-12">
+          <label for="field-name-Activity">Nombre*</label>
+          <input id="field-name-Activity" type="text" pInputText formControlName="name">
+        </div>
+        <div class="p-field p-col-12">
+          <label for="field-description">Descripción*</label>
+          <textarea id="field-description" pInputTextarea formControlName="description" [rows]="4" [cols]="30" autoResize="autoResize"></textarea>
+        </div>
+        <div class="p-field p-col-12 p-md-6">
           <label for="field-latitude">Latitud</label>
           <p-inputNumber id="field-latitude" formControlName="latitude" mode="decimal"></p-inputNumber>
         </div>
-        <div class="longitude-container">
+        <div class="p-field p-col-12 p-md-6">
           <label for="field-longitude">Longitud</label>
           <p-inputNumber id="field-longitude" formControlName="longitude" mode="decimal"></p-inputNumber>
         </div>
+        <div class="p-field p-col-12 p-md-6">
+          <label for="field-city">Ciudad</label>
+          <p-dropdown id="field-city" [options]="cities" formControlName="city" appendTo="body"></p-dropdown>
+        </div>
+        <div class="p-field p-col-12 p-md-6">
+          <label for="field-interest">Interest</label>
+          <p-dropdown id="field-interest" [options]="interest" formControlName="nameInterest" appendTo="body"></p-dropdown>
+        </div>
+        <div class="p-field p-col-12 p-md-6">
+          <p-fileUpload mode="basic" name="myfile[]" accept="image/jpeg, image/png" maxFileSize="2000000" (onSelect)="dealWithFiles($event)"></p-fileUpload>
+        </div>
+
       </div>
-      <label for="field-city">Ciudad</label>
-      <p-dropdown id="field-city" [options]="cities" formControlName="city" appendTo="body"></p-dropdown>
-      <label for="field-interest">Interest</label>
-      <p-dropdown id="field-interest" [options]="interest" formControlName="nameInterest" appendTo="body"></p-dropdown>
-      <p-fileUpload mode="basic" name="myfile[]" accept="image/jpeg, image/png" maxFileSize="2000000" (onSelect)="dealWithFiles($event)"></p-fileUpload>
+
     </form>
     <p-footer>
       <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="onSubmit(formAdd.value)"></button>

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {InterestService} from '../services/interest/interest.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ConfirmationService} from 'primeng/api';
+import {ConfirmationService, MessageService} from 'primeng/api';
 import {map, mergeMap, switchMap} from 'rxjs/operators';
-import {forkJoin} from 'rxjs';
 
 @Component({
   selector: 'app-list-interest',
@@ -15,11 +14,13 @@ export class ListInterestComponent implements OnInit {
   interest;
   display: boolean = false;
   formAddInterest: FormGroup;
+  errorAddInterest: boolean = false;
 
   constructor(
     private interestService: InterestService,
     private formBuilder: FormBuilder,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService
   ) { }
 
   ngOnInit(): void {
@@ -57,9 +58,20 @@ export class ListInterestComponent implements OnInit {
         );
       })
     ).subscribe( data => {
+        var message = 'El interés ' + this.formAddInterest.get('name').value + ' ha sido añadido con éxito';
         this.display = false;
+        this.formAddInterest.reset();
+        this.messageService.add({key: 'interest', severity:'success', summary:'Interés añadido', detail: message });
+      },
+      err => {
+        this.errorAddInterest = true;
       }
     );
+  }
+
+  hideDialogInterest(){
+    this.formAddInterest.reset();
+    this.errorAddInterest = false;
   }
 
   cancel(){
@@ -78,7 +90,14 @@ export class ListInterestComponent implements OnInit {
               })
             );
           })
-        ).subscribe( data => {}
+        ).subscribe( data => {
+          var message = 'El interés ' + interest.nameInterest + ' ha sido eliminado con éxito';
+          this.messageService.add({key: 'interest', severity:'success', summary:'Interés eliminado', detail: message });
+          },
+          (err) => {
+          var message = 'Ha ocurrido un error inesperado. Inténtelo de nuevo más tarde';
+          this.messageService.add({key: 'interest', severity:'error', summary:'Error', detail: message });
+          }
         );
       }
     });

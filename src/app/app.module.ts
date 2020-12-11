@@ -25,7 +25,7 @@ import { ModifyPreferencesComponent } from './modify-preferences/modify-preferen
 import { TableActivitiesComponent } from './table-activities/table-activities.component';
 import {TableModule} from 'primeng/table';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
-import {ConfirmationService} from 'primeng/api';
+import {ConfirmationService, MessageService} from 'primeng/api';
 import {ToolbarModule} from 'primeng/toolbar';
 import {DialogModule} from 'primeng/dialog';
 import {FileUploadModule} from 'primeng/fileupload';
@@ -43,6 +43,7 @@ import {StepsModule} from 'primeng/steps';
 import {DialogService} from 'primeng/dynamicdialog';
 import {TooltipModule} from 'primeng/tooltip';
 import { InformationActivitiesComponent } from './information-activities/information-activities.component';
+import {ToastModule} from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -87,12 +88,14 @@ import { InformationActivitiesComponent } from './information-activities/informa
     TabMenuModule,
     CardModule,
     StepsModule,
-    TooltipModule
+    TooltipModule,
+    ToastModule
   ],
   providers: [
     interceptorProvider,
     ConfirmationService,
-    DialogService
+    DialogService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })
