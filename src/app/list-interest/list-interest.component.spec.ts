@@ -9,6 +9,9 @@ import {ButtonModule} from 'primeng/button';
 import {CardModule} from 'primeng/card';
 import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 import {RouterTestingModule} from '@angular/router/testing';
+import {ConfirmationService, MessageService} from 'primeng/api';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {ToastModule} from 'primeng/toast';
 
 describe('ListInterestComponent', () => {
   let component: ListInterestComponent;
@@ -24,9 +27,15 @@ describe('ListInterestComponent', () => {
         HttpClientTestingModule,
         ButtonModule,
         CardModule,
-        RouterTestingModule
+        RouterTestingModule,
+        ConfirmDialogModule,
+        ToastModule
       ],
-      declarations: [ ListInterestComponent, MenuBarComponent ]
+      declarations: [ ListInterestComponent, MenuBarComponent ],
+      providers: [
+        ConfirmationService,
+        MessageService
+      ]
     })
     .compileComponents();
   });
