@@ -3,7 +3,7 @@ export class Activity {
   description: string;
   latitude: number;
   longitude: number;
-  pathImage: string;
+  pathImage?: string;
   city: string;
   interest: string;
   image: any;

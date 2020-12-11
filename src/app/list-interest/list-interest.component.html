@@ -19,7 +19,7 @@
       </ng-template>
     </p-virtualScroller>
   </p-card>
-  <p-dialog [(visible)]="display" (onHide)="hideDialogInterest()">
+  <p-dialog [(visible)]="display" (onHide)="hideDialogInterest()" modal="true" [draggable]="false">
     <p-header>
       Añadir interés
     </p-header>

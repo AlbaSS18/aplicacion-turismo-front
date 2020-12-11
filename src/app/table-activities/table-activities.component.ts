@@ -49,9 +49,8 @@ export class TableActivitiesComponent implements OnInit {
       description: ['', [Validators.required]],
       latitude: ['', [Validators.required]],
       longitude: ['', [Validators.required]],
-      pathImage: ['', [Validators.required]],
-      city: '',
-      nameInterest: ''
+      city: ['', [Validators.required]],
+      nameInterest: ['', [Validators.required]]
     });
     this.loadCities();
     this.loadInterest();
@@ -164,6 +163,11 @@ export class TableActivitiesComponent implements OnInit {
     if (this.ref){
       this.ref.close();
     }
+  }
+
+  onCancel(){
+    this.productDialog = false;
+    console.log(this.formAddActivity);
   }
 
 }

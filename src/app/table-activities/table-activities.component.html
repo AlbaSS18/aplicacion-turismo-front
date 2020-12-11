@@ -94,8 +94,8 @@
 
     </form>
     <p-footer>
-      <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="onSubmit(formAdd.value)"></button>
-      <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text"></button>
+      <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="onSubmit(formAdd.value)" [disabled]="formAddActivity.invalid"></button>
+      <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="onCancel()"></button>
     </p-footer>
 
   </p-dialog>
