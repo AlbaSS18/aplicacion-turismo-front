@@ -44,6 +44,7 @@ import {DialogService} from 'primeng/dynamicdialog';
 import {TooltipModule} from 'primeng/tooltip';
 import { InformationActivitiesComponent } from './information-activities/information-activities.component';
 import {ToastModule} from 'primeng/toast';
+import { EditActivitiesComponent } from './edit-activities/edit-activities.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import {ToastModule} from 'primeng/toast';
     ListUserComponent,
     EditUserComponent,
     InformationActivitiesComponent,
+    EditActivitiesComponent,
   ],
   imports: [
     BrowserModule,

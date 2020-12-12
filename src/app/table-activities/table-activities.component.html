@@ -37,7 +37,7 @@
       </ng-template>
       <ng-template pTemplate="body" let-activity>
         <tr>
-          <td><img src="http://localhost:8090/images/museoferrocarril.jpg" /></td>
+          <td><img src="http://localhost:8090/images/{{activity.name}}/{{activity.pathImage}}" width="100" height="100" /></td>
           <td>{{activity.name}}</td>
           <td class="p-text-nowrap p-text-truncate" pTooltip="{{activity.description}}">{{activity.description}}</td>
           <td>{{activity.latitude}}</td>
@@ -71,19 +71,19 @@
           <textarea id="field-description" pInputTextarea formControlName="description" [rows]="4" [cols]="30" autoResize="autoResize"></textarea>
         </div>
         <div class="p-field p-col-12 p-md-6">
-          <label for="field-latitude">Latitud</label>
+          <label for="field-latitude">Latitud*</label>
           <p-inputNumber id="field-latitude" formControlName="latitude" mode="decimal"></p-inputNumber>
         </div>
         <div class="p-field p-col-12 p-md-6">
-          <label for="field-longitude">Longitud</label>
+          <label for="field-longitude">Longitud*</label>
           <p-inputNumber id="field-longitude" formControlName="longitude" mode="decimal"></p-inputNumber>
         </div>
         <div class="p-field p-col-12 p-md-6">
-          <label for="field-city">Ciudad</label>
+          <label for="field-city">Ciudad*</label>
           <p-dropdown id="field-city" [options]="cities" formControlName="city" appendTo="body"></p-dropdown>
         </div>
         <div class="p-field p-col-12 p-md-6">
-          <label for="field-interest">Interest</label>
+          <label for="field-interest">Interest*</label>
           <p-dropdown id="field-interest" [options]="interest" formControlName="nameInterest" appendTo="body"></p-dropdown>
         </div>
         <div class="p-field p-col-12 p-md-6">
