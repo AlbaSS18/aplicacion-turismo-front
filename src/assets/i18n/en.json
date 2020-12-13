@@ -47,5 +47,15 @@
   "repeat_password": "Repeat password",
   "current_page": "Showing {{first}} to {{last}} of {{totalRecords}} entries",
   "select_city": "Select city",
-  "select_interest": "Select interest"
+  "select_interest": "Select interest",
+  "name_required": "Username is required",
+  "male": "Male",
+  "female": "Female",
+  "select_genre": "Select genre",
+  "data_incorrect": "The data are not correct",
+  "return": "Return",
+  "submit": "Submit",
+  "email_required": "Email is required",
+  "password_length": "Password must be at least 7 characters",
+  "password_required": "Password is required"
 }

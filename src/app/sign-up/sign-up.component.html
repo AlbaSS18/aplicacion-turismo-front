@@ -1,15 +1,15 @@
 <app-menu-bar></app-menu-bar>
 <div class="signup-panel">
-  <h1>Sign up</h1>
+  <h1>{{ 'sign_up' | translate }}</h1>
   <form [formGroup]="formGroup" #formSign="ngForm" (ngSubmit)="onSubmit(formGroup.value)">
     <div *ngIf="!openSecondForm; else showSecondForm">
       <div class="form-signup-container p-fluid p-formgrid p-grid">
         <div class="p-field p-col-12 p-md-6">
-          <label for="field-name">Nombre*</label>
+          <label for="field-name">{{ 'username' | translate }}*</label>
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="fas fa-user" style="line-height: 1.25;"></i></span>
-            <input id="field-name" type="text" pInputText placeholder="Username" formControlName="name">
-            <p-message severity="error" text="El nombre de usuario es obligatorio"
+            <input id="field-name" type="text" pInputText placeholder="{{ 'username' | translate }}" formControlName="name">
+            <p-message severity="error" text="{{ 'name_required' | translate }}"
                        *ngIf="!formGroup.controls['name'].valid&&formGroup.controls['name'].dirty"></p-message>
           </div>
         </div>
@@ -18,50 +18,58 @@
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="fas fa-at" style="line-height: 1.25;"></i></span>
             <input id="field-email" type="text" pInputText placeholder="Email" formControlName="email">
-            <p-message severity="error" text="El campo Email es obligatorio"
+            <p-message severity="error" text="{{ 'email_required' | translate }}"
                        *ngIf="!formGroup.controls['email'].valid&&formGroup.controls['email'].dirty"></p-message>
           </div>
         </div>
 
         <div class="p-field p-col-12 p-md-6">
-          <label for="field-password">Contraseña*</label>
+          <label for="field-password">{{ 'password' | translate }}*</label>
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="fas fa-lock" style="line-height: 1.25;"></i></span>
-            <input id="field-password" type="password" pPassword formControlName="password" placeholder="Contraseña"/>
+            <input id="field-password" type="password" pPassword formControlName="password" placeholder="{{ 'password' | translate }}"/>
             <p-message severity="error"
-                       [text]="formGroup.controls['password'].errors['required'] ? 'El campo Contraseña es obligatorio' : formGroup.controls['password'].errors['minlength'] ? 'Debe tener al menos 7 caracteres' : ''"
+                       text="{{(formGroup.controls['password'].errors['required'] ? 'password_required' :
+                       formGroup.controls['password'].errors['minlength'] ? 'password_length' : '')| translate}}"
                        *ngIf="!formGroup.controls['password'].valid&&formGroup.controls['password'].dirty"></p-message>
           </div>
         </div>
 
         <div class="p-field p-col-12 p-md-6">
-          <label for="field-password-repeat">Contraseña repetida*</label>
+          <label for="field-password-repeat">{{ 'repeat_password' | translate }}*</label>
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="fas fa-lock" style="line-height: 1.25;"></i></span>
             <input id="field-password-repeat" type="password" pPassword formControlName="repeatPassword"
-                   placeholder="Contraseña repetida"/>
+                   placeholder="{{ 'repeat_password' | translate }}"/>
           </div>
         </div>
         <div class="p-field p-col-12 p-md-3">
-          <label for="field-age">Edad*</label>
+          <label for="field-age">{{ 'age' | translate }}*</label>
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="far fa-calendar-alt" style="line-height: 1.25;"></i></span>
-            <p-inputNumber id="field-age" placeholder="Age" formControlName="age" [min]=0 class="p-invalid"></p-inputNumber>
+            <p-inputNumber id="field-age" formControlName="age" [min]=0 class="p-invalid"></p-inputNumber>
           </div>
         </div>
 
         <div class="p-field p-col-12 p-md-3">
-          <label for="field-genre">Género*</label>
+          <label for="field-genre">{{ 'genre' | translate }}*</label>
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="fas fa-restroom" style="line-height: 1.25;"></i></span>
-            <p-dropdown id="field-genre" [options]="genre" formControlName="genre"></p-dropdown>
+            <p-dropdown id="field-genre" [options]="genre" formControlName="genre">
+              <ng-template let-item pTemplate="selectedItem">
+                <span>{{ item.label | translate }}</span>
+              </ng-template>
+              <ng-template let-genre pTemplate="item">
+                <div>{{ genre.label | translate }}</div>
+              </ng-template>
+            </p-dropdown>
           </div>
         </div>
 
         <div class="p-field p-col-12">
-          <p-message severity="error" text="Los datos no son correctos" *ngIf="(this.formGroup.get('name').invalid || this.formGroup.get('email').invalid ||
+          <p-message severity="error" text="{{ 'data_incorrect' | translate }}" *ngIf="(this.formGroup.get('name').invalid || this.formGroup.get('email').invalid ||
       this.formGroup.get('password').invalid || this.formGroup.get('repeatPassword').invalid || this.formGroup.get('genre').invalid || this.formGroup.get('age').invalid) && isContinueFail"></p-message>
-          <button pButton type="button" label="Continuar" icon="fas fa-arrow-right" class="button_signup" (click)="continueSecondPartForm()"></button>
+          <button pButton type="button" label="{{ 'continue' | translate }}" icon="fas fa-arrow-right" class="button_signup" (click)="continueSecondPartForm()"></button>
         </div>
       </div>
     </div>
@@ -79,10 +87,10 @@
             </ng-container>
           </div>
         </ng-container>
-        <p-message severity="error" text="Los datos no son correctos"
+        <p-message severity="error" text="{{ 'data_incorrect' | translate }}"
                    *ngIf="formSign.submitted && isRegisterFail"></p-message>
-        <button pButton type="button" label="Volver" icon="fas fa-arrow-left" class="button_return" (click)="returnFirstPartForm()"></button>
-        <button pButton type="submit" label="Submit" icon="pi pi-check" [disabled]="!formGroup.valid" class="button_signup"></button>
+        <button pButton type="button" label="{{ 'return' | translate }}" icon="fas fa-arrow-left" class="button_return" (click)="returnFirstPartForm()"></button>
+        <button pButton type="submit" label="{{ 'submit' | translate }}" icon="pi pi-check" [disabled]="!formGroup.valid" class="button_signup"></button>
       </div>
     </ng-template>
 

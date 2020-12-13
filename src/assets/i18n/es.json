@@ -47,5 +47,15 @@
   "repeat_password": "Repetir contraseña",
   "current_page": "Mostrando {{first}} a {{last}} de {{totalRecords}} entradas",
   "select_city": "Seleccionar ciudad",
-  "select_interest": "Seleccionar interés"
+  "select_interest": "Seleccionar interés",
+  "name_required": "El nombre de usuario es obligatorio",
+  "male": "Masculino",
+  "female": "Femenino",
+  "select_genre": "Seleccionar género",
+  "data_incorrect": "Los datos no son correctos",
+  "return": "Regresar",
+  "submit": "Enviar",
+  "email_required": "El email es obligatorio",
+  "password_length": "Debe tener al menos 7 caracteres",
+  "password_required": "La contraseña es obligatoria"
 }

@@ -41,13 +41,9 @@ export class SignUpComponent implements OnInit {
     });
     this.loadInterest();
     this.genre = [
-      {label: 'Select Genre', value: ''},
-      {label: 'Hombre', value: 'Hombre'},
-      {label: 'Mujer', value: 'Mujer'}
-    ];
-    this.items = [
-      {label: 'Información personal'},
-      {label: 'Intereses'}
+      {label: 'select_genre', value: ''},
+      {label: 'male', value: 'Hombre'},
+      {label: 'female', value: 'Mujer'}
     ];
   }
 
