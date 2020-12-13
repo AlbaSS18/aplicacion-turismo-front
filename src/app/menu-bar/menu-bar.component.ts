@@ -2,6 +2,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {MenuItem} from 'primeng/api';
 import {TokenService} from '../services/token/token.service';
 import {Router} from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-menu-bar',
@@ -19,8 +20,10 @@ export class MenuBarComponent implements OnInit {
 
   constructor(
     private tokenService: TokenService,
-    private router: Router
-  ) { }
+    private router: Router,
+    public translate: TranslateService
+  ) {
+  }
 
   ngOnInit(): void {
     this.email = this.tokenService.getEmail();
@@ -34,42 +37,7 @@ export class MenuBarComponent implements OnInit {
       else{
         this.authority = 'user';
       }
-      console.log(this.authority);
     }
-    this.items = [
-      {
-        label: 'Idioma',
-        icon: 'fas fa-globe',
-        items: [
-          {label: 'Español'},
-          {label: 'Inglés' }
-        ],
-      },
-      {
-        label: 'Usuarios',
-        icon: 'fas fa-users',
-        routerLink: '/user'
-      },
-      {
-        label: 'Ciudades',
-        icon: 'fas fa-city',
-        routerLink: '/cities'
-      },
-      {
-        label: 'Actividades',
-        icon: 'fas fa-map-marked-alt',
-        routerLink: '/activities'
-      },
-      {
-        label: 'Interés',
-        icon: 'fas fa-camera',
-        routerLink: '/interest'
-      },
-      {
-        label: 'Logout',
-        icon: 'fas fa-sign-out-alt'
-      }
-    ];
   }
 
   logOut(): void {
@@ -77,6 +45,10 @@ export class MenuBarComponent implements OnInit {
     this.isLogin = false;
     this.authority = '';
     this.router.navigateByUrl('/login');
+  }
+
+  switchLang(lang: string) {
+    this.translate.use(lang);
   }
 
 }

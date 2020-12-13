@@ -8,6 +8,7 @@ import {InterestService} from '../services/interest/interest.service';
 import {ImagesService} from '../services/images/images.service';
 import {DialogService, DynamicDialogRef} from 'primeng/dynamicdialog';
 import {InformationActivitiesComponent} from '../information-activities/information-activities.component';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-table-activities',
@@ -32,17 +33,18 @@ export class TableActivitiesComponent implements OnInit {
     private cityService: CityService,
     private interestService: InterestService,
     private imagesService: ImagesService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private translateService: TranslateService
   ) { }
 
   ngOnInit(): void {
     this.cols = [
-      { field: 'name', header: 'Nombre' },
-      { field: 'description', header: 'Descripción' },
-      { field: 'latitude', header: 'Latitud' },
-      { field: 'longitude', header: 'Longitud' },
-      { field: 'city', header: 'Ciudad' },
-      { field: 'interest', header: 'Interest'}
+      { field: 'name', header: 'name_activity' },
+      { field: 'description', header: 'description_activity' },
+      { field: 'latitude', header: 'latitude' },
+      { field: 'longitude', header: 'longitude' },
+      { field: 'city', header: 'city' },
+      { field: 'interest', header: 'interest'}
     ];
     this.formAddActivity = this.formBuilder.group({
       name: ['', Validators.required],
@@ -107,7 +109,7 @@ export class TableActivitiesComponent implements OnInit {
 
   confirm(){
     this.confirmationService.confirm({
-      message: '¿Estás seguro que quieres eliminar esta actividad? Se eliminarán todos los datos relacionados',
+      message: this.translateService.instant('message_delete_activity'),
       accept: () => {
 
       },
@@ -148,9 +150,9 @@ export class TableActivitiesComponent implements OnInit {
     this.ref = this.dialogService.open(InformationActivitiesComponent,
       {
         data: {
-          "activity" : activity,
+          'activity' : activity,
         },
-        header: "Información de la actividad: " + activity.name,
+        header: this.translateService.instant('info_dialog_title') + activity.name,
         width: '70%'
       });
 

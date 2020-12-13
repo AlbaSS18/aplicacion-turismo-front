@@ -5,29 +5,30 @@
     <p-toolbar class="toolbar-activities">
       <div class="p-toolbar-group-left"></div>
       <div class="p-toolbar-group-right">
-        <button pButton pRipple label="Añadir actividad" icon="pi pi-plus" class="p-button-raised p-button-rounded" (click)="openNew()"></button>
+        <button pButton pRipple label="{{ 'add_activity' | translate }}" icon="pi pi-plus" class="p-button-raised p-button-rounded" (click)="openNew()"></button>
       </div>
     </p-toolbar>
 
     <p-table #tableActivities [value]="activities" class="table-activities" [scrollable]="true" scrollHeight="350px" sortField="name"
-             [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]" currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} entradas"
+             [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]"
+             currentPageReportTemplate="{{ 'current_page' | translate:{'first': '{first}', 'last': '{last}', 'totalRecords': '{totalRecords}' } }}"
              [globalFilterFields]="['name','city','interest']">
       <ng-template pTemplate="caption">
         <div class="p-d-flex p-ai-center p-jc-between">
-          <h2 class="p-m-0">Lista de actividades</h2>
+          <h2 class="p-m-0">{{ 'list_activities' | translate }}</h2>
           <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
-                    <input pInputText type="text" (input)="tableActivities.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
+                    <input pInputText type="text" (input)="tableActivities.filterGlobal($event.target.value, 'contains')" placeholder="{{ 'search' | translate }}" />
           </span>
         </div>
       </ng-template>
       <ng-template pTemplate="header">
         <tr>
           <th>
-            Imagen
+            {{ 'image' | translate }}
           </th>
           <th *ngFor="let col of cols" [pSortableColumn]="col.field">
-            {{col.header}}
+            {{ col.header | translate }}
             <p-sortIcon [field]="col.field"></p-sortIcon>
           </th>
 
@@ -54,37 +55,38 @@
     </p-table>
   </div>
 
-  <p-confirmDialog header="Delete" icon="pi pi-info-circle"></p-confirmDialog>
+  <p-confirmDialog header="{{ 'delete' | translate }}" icon="pi pi-info-circle"></p-confirmDialog>
 
   <p-dialog [(visible)]="productDialog" styleClass="myDialog" *ngIf="productDialog" modal="true" [draggable]="false" >
     <p-header>
-      Añadir actividad
+      {{ 'add_activity' | translate }}
     </p-header>
     <form [formGroup]="formAddActivity" #formAdd="ngForm" class="form-activity-container">
       <div class="p-fluid p-formgrid p-grid grid-container">
         <div class="p-field p-col-12">
-          <label for="field-name-Activity">Nombre*</label>
+          <label for="field-name-Activity">{{ 'name_activity' | translate }}*</label>
           <input id="field-name-Activity" type="text" pInputText formControlName="name">
         </div>
         <div class="p-field p-col-12">
-          <label for="field-description">Descripción*</label>
+          <label for="field-description">{{ 'description_activity' | translate }}*</label>
           <textarea id="field-description" pInputTextarea formControlName="description" [rows]="4" [cols]="30" autoResize="autoResize"></textarea>
         </div>
         <div class="p-field p-col-12 p-md-6">
-          <label for="field-latitude">Latitud*</label>
+          <label for="field-latitude">{{ 'latitude' | translate }}*</label>
           <p-inputNumber id="field-latitude" formControlName="latitude" mode="decimal"></p-inputNumber>
         </div>
         <div class="p-field p-col-12 p-md-6">
-          <label for="field-longitude">Longitud*</label>
+          <label for="field-longitude">{{ 'longitude' | translate }}*</label>
           <p-inputNumber id="field-longitude" formControlName="longitude" mode="decimal"></p-inputNumber>
         </div>
         <div class="p-field p-col-12 p-md-6">
-          <label for="field-city">Ciudad*</label>
+          <label for="field-city">{{ 'city' | translate }}*</label>
           <p-dropdown id="field-city" [options]="cities" formControlName="city" appendTo="body"></p-dropdown>
         </div>
         <div class="p-field p-col-12 p-md-6">
-          <label for="field-interest">Interest*</label>
-          <p-dropdown id="field-interest" [options]="interest" formControlName="nameInterest" appendTo="body"></p-dropdown>
+          <label for="field-interest">{{ 'interest' | translate }}*</label>
+          <p-dropdown id="field-interest" [options]="interest" formControlName="nameInterest" appendTo="body">
+          </p-dropdown>
         </div>
         <div class="p-field p-col-12 p-md-6">
           <p-fileUpload mode="basic" name="myfile[]" accept="image/jpeg, image/png" maxFileSize="2000000" (onSelect)="dealWithFiles($event)"></p-fileUpload>
@@ -94,8 +96,8 @@
 
     </form>
     <p-footer>
-      <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="onSubmit(formAdd.value)" [disabled]="formAddActivity.invalid"></button>
-      <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="onCancel()"></button>
+      <button pButton pRipple label="{{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" (click)="onSubmit(formAdd.value)" [disabled]="formAddActivity.invalid"></button>
+      <button pButton pRipple label="{{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="onCancel()"></button>
     </p-footer>
 
   </p-dialog>

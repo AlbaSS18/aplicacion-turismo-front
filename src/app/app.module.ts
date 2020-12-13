@@ -12,12 +12,11 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import {PasswordModule} from 'primeng/password';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import {MenubarModule} from 'primeng/menubar';
-import {I18NEXT_SERVICE, I18NextModule, ITranslationService} from 'angular-i18next';
 import {InputNumberModule} from 'primeng/inputnumber';
 
 import {DropdownModule} from 'primeng/dropdown';
 import {MessageModule} from 'primeng/message';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RecommendationComponent } from './recommendation/recommendation.component';
 import {interceptorProvider} from './interceptors/interceptor.service';
 import { MapComponent } from './map/map.component';
@@ -45,6 +44,8 @@ import {TooltipModule} from 'primeng/tooltip';
 import { InformationActivitiesComponent } from './information-activities/information-activities.component';
 import {ToastModule} from 'primeng/toast';
 import { EditActivitiesComponent } from './edit-activities/edit-activities.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,6 @@ import { EditActivitiesComponent } from './edit-activities/edit-activities.compo
     ReactiveFormsModule,
     PasswordModule,
     MenubarModule,
-    I18NextModule.forRoot(),
     InputNumberModule,
     DropdownModule,
     MessageModule,
@@ -91,7 +91,14 @@ import { EditActivitiesComponent } from './edit-activities/edit-activities.compo
     CardModule,
     StepsModule,
     TooltipModule,
-    ToastModule
+    ToastModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     interceptorProvider,
@@ -101,4 +108,9 @@ import { EditActivitiesComponent } from './edit-activities/edit-activities.compo
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
+
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
