@@ -6,24 +6,24 @@
       <p-tabPanel>
         <ng-template pTemplate = "header">
           <i class="fas fa-users"></i>
-          <span class="span-tab">Usuarios</span>
+          <span class="span-tab">{{ 'users' | translate }}</span>
         </ng-template>
         <div class="user-container">
           <p-table #dt [value]="users" class="table-user" [scrollable]="true" scrollHeight="250px" sortField="username"
                    [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]" [globalFilterFields]="['username','email','role']" >
             <ng-template pTemplate="caption">
               <div class="p-d-flex p-ai-center p-jc-between">
-                <h2 class="p-m-0">Lista de usuarios</h2>
+                <h2 class="p-m-0">{{ 'list_user' | translate }}</h2>
                 <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
-                    <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Buscar..." />
+                    <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="{{ 'search' | translate }}" />
                 </span>
               </div>
             </ng-template>
             <ng-template pTemplate="header">
               <tr>
                 <th *ngFor="let col of cols" [pSortableColumn]="col.field">
-                  {{col.header}}
+                  {{ col.header | translate }}
                   <p-sortIcon [field]="col.field"></p-sortIcon>
                 </th>
                 <th>
@@ -57,7 +57,7 @@
           <span class="span-tab">Roles</span>
         </ng-template>
         <div *ngIf="scrollTabSelected">
-          <h2>Lista de roles</h2>
+          <h2>{{ 'list_roles' | translate }}</h2>
           <p-virtualScroller [value]="roles" scrollHeight="150px" [itemSize]="50">
             <p-header class="list-header-interest">
               Roles
@@ -78,5 +78,5 @@
     </p-tabView>
 
 
-  <p-confirmDialog header="Delete" icon="pi pi-info-circle"></p-confirmDialog>
+  <p-confirmDialog header="{{ 'delete' | translate }}" icon="pi pi-info-circle"></p-confirmDialog>
 </div>

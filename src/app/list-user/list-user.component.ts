@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import {RolService} from '../services/rol/rol.service';
 import {Rol} from '../models/rol';
 import {forkJoin} from 'rxjs';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-list-user',
@@ -22,16 +23,17 @@ export class ListUserComponent implements OnInit {
     private userService: UserService,
     private confirmationService: ConfirmationService,
     private router: Router,
-    private rolService: RolService
+    private rolService: RolService,
+    private translateService: TranslateService
   ) { }
 
   ngOnInit(): void {
     this.cols = [
       { field: 'id', header: 'Id' },
-      { field: 'username', header: 'Username' },
+      { field: 'username', header: 'username' },
       { field: 'email', header: 'Email' },
-      { field: 'genre', header: 'Genre' },
-      { field: 'age', header: 'Age' },
+      { field: 'genre', header: 'genre' },
+      { field: 'age', header: 'age' },
       { field: 'role', header: 'Role'}
     ];
     //this.loadUsers();
@@ -70,7 +72,7 @@ export class ListUserComponent implements OnInit {
   confirmDelete(user){
     console.log(user);
     this.confirmationService.confirm({
-      message: '¿Estás seguro que quieres eliminar esta ciudad? Se eliminarán todos los datos relacionados',
+      message: this.translateService.instant('message_delete_user'),
       accept: () => {
         this.userService.deleteUser(user.id).subscribe(
           data => {
