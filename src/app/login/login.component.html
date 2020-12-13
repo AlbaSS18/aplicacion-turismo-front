@@ -20,19 +20,19 @@
             <input id="float-input-email" type="text" size="30" pInputText formControlName="email">
             <label for="float-input-email">Email</label>
           </span>
-          <p-message severity="error" text="El email es obligatorio"
+          <p-message severity="error" text="{{ 'email_required' | translate }}"
                    *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].dirty"></p-message>
           <span class="p-float-label">
             <input id="float-input-password" type="password" size="30" pPassword formControlName="password">
-            <label for="float-input-password">Password</label>
+            <label for="float-input-password">{{ 'password' | translate }}</label>
           </span>
-          <p-message severity="error" text="La constraseña es obligatoria"
+          <p-message severity="error" text="{{ 'password_required' | translate }}"
                    *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].dirty"></p-message>
-          <p-message severity="error" text="Los datos no son correctos"
+          <p-message severity="error" text="{{ 'data_incorrect' | translate }}"
                    *ngIf="myForm.submitted && isLoginFail"></p-message>
-          <button pButton type="submit" icon="fas fa-sign-in-alt" label="Log in" [disabled]="loginForm.invalid"></button>
+          <button pButton type="submit" icon="fas fa-sign-in-alt" label=" {{ 'log_in' | translate }}" [disabled]="loginForm.invalid"></button>
       </form>
-      <a routerLink="/signup">Sign up</a>
+      <a routerLink="/signup">{{ 'sign_up' | translate }}</a>
     </div>
   </div>
 </div>
