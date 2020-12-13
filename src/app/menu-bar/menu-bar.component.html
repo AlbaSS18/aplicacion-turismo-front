@@ -24,15 +24,15 @@
       </div>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Idioma
+          {{ 'language' | translate }}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" (click)="switchLang('es')"><img src="../../assets/images/flag_spain.png" alt="" width="20" height="20"> Español</a>
-          <a class="dropdown-item" (click)="switchLang('en')"><img src="../../assets/images/flag_english.png" alt="" width="20" height="20"> Inglés</a>
+          <a class="dropdown-item" (click)="switchLang('es')"><img src="../../assets/images/flag_spain.png" alt="" width="20" height="20"> {{ 'spanish' | translate }}</a>
+          <a class="dropdown-item" (click)="switchLang('en')"><img src="../../assets/images/flag_english.png" alt="" width="20" height="20"> {{ 'english' | translate }}</a>
         </div>
       </li>
       <li *ngIf="isLogin" class="nav-item">
-        <a class="nav-link" (click)="logOut()"><i class="fas fa-sign-out-alt"></i> Log out</a>
+        <a class="nav-link" (click)="logOut()"><i class="fas fa-sign-out-alt"></i> {{ 'log_out' | translate }}</a>
       </li>
     </ul>
   </div>
