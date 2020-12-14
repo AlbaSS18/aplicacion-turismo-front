@@ -1,27 +1,27 @@
-<img src="http://localhost:8090/images/{{activity.name}}/{{activity.pathImage}}" />
+<img id="image-activity" src="http://localhost:8090/images/{{activity.name}}/{{activity.pathImage}}"/>
 <div class="contaiter-info-activities" *ngIf="activity">
   <div class="container-name">
-    <div class="label-container"><b>Nombre</b></div>
+    <div class="label-container"><b>{{ 'name_activity' | translate }}</b></div>
     <div class="content-container">{{activity.name}}</div>
   </div>
   <div class="container-description-activity">
-    <div class="label-container"><b>Descripción</b></div>
+    <div class="label-container"><b>{{ 'description_activity' | translate }}</b></div>
     <div class="content-container">{{activity.description}}</div>
   </div>
   <div class="container-coordenates">
-    <div class="label-container"><b>Latitud</b></div>
+    <div class="label-container"><b>{{ 'latitude' | translate }}</b></div>
     <div class="content-container">{{activity.latitude}}</div>
   </div>
   <div class="container-coordenates">
-    <div class="label-container"><b>Longitud</b></div>
+    <div class="label-container"><b>{{ 'longitude' | translate }}</b></div>
     <div class="content-container">{{activity.longitude}}</div>
   </div>
   <div class="container-interest">
-    <div class="label-container"><b>Interés</b></div>
+    <div class="label-container"><b>{{ 'interest' | translate }}</b></div>
     <div class="content-container">{{activity.interest}}</div>
   </div>
   <div class="container-city">
-    <div class="label-container"><b>Ciudad</b></div>
+    <div class="label-container"><b>{{ 'city' | translate }}</b></div>
     <div class="content-container">{{activity.city}}</div>
   </div>
 </div>

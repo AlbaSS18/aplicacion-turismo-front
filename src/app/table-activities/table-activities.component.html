@@ -38,7 +38,7 @@
       </ng-template>
       <ng-template pTemplate="body" let-activity>
         <tr>
-          <td><img src="http://localhost:8090/images/{{activity.name}}/{{activity.pathImage}}" width="100" height="100" /></td>
+          <td><img id="image-activity-table" src="http://localhost:8090/images/{{activity.name}}/{{activity.pathImage}}" /></td>
           <td>{{activity.name}}</td>
           <td class="p-text-nowrap p-text-truncate" pTooltip="{{activity.description}}">{{activity.description}}</td>
           <td>{{activity.latitude}}</td>
