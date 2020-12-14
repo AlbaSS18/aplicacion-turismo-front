@@ -1,11 +1,11 @@
 <app-menu-bar></app-menu-bar>
 <p-toast  key="interest"></p-toast>
 <div class="interest-panel">
-  <p-card header="Lista de intereses">
+  <p-card header="{{ 'list_interest' | translate }}">
     <p-virtualScroller [value]="interest" scrollHeight="150px" [itemSize]="50" >
       <p-header class="list-header-interest">
-        Intereses
-        <button pButton pRipple type="button" label="Añadir interés" icon="fas fa-plus" iconPos="left" class="p-button-rounded" (click)="openPanel($event)"></button>
+        {{ 'interests' | translate }}
+        <button pButton pRipple type="button" label=" {{ 'add_interest' | translate }}" icon="pi pi-plus" iconPos="left" class="p-button-raised p-button-rounded" (click)="openPanel($event)"></button>
       </p-header>
       <ng-template pTemplate="item" let-interest>
         <div class="list-container-interest">
@@ -21,23 +21,23 @@
   </p-card>
   <p-dialog [(visible)]="display" (onHide)="hideDialogInterest()" modal="true" [draggable]="false">
     <p-header>
-      Añadir interés
+      {{ 'add_interest' | translate }}
     </p-header>
     <form [formGroup]="formAddInterest" #formInterest="ngForm" id="ngForm" (ngSubmit)="onSubmit(formAddInterest.value)" >
       <div class="p-field p-grid">
-        <label for="field-name-interest" class="p-col-fixed">Nombre*:</label>
+        <label for="field-name-interest" class="p-col-fixed">{{ 'name_interest' | translate }}*:</label>
         <div class="p-col buttons-add-interest">
           <input id="field-name-interest" type="text" pInputText formControlName="name">
           <small *ngIf="formAddInterest.controls['name'].invalid &&
-            (formAddInterest.controls['name'].dirty || formAddInterest.controls['name'].touched)" class="p-invalid">El nombre es requerido</small>
-          <small *ngIf="formInterest.submitted && errorAddInterest" class="p-invalid">Ya hay un interés con ese nombre</small>
+            (formAddInterest.controls['name'].dirty || formAddInterest.controls['name'].touched)" class="p-invalid">{{ 'name_interest_required' | translate }}</small>
+          <small *ngIf="formInterest.submitted && errorAddInterest" class="p-invalid">{{ 'name_interest_repetead' | translate }}</small>
         </div>
       </div>
     </form>
     <p-footer>
-      <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" form="ngForm" [disabled]="formAddInterest.invalid"></button>
-      <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="cancel()"></button>
+      <button pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngForm" [disabled]="formAddInterest.invalid"></button>
+      <button pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancel()"></button>
     </p-footer>
   </p-dialog>
-  <p-confirmDialog header="Confirmar" acceptLabel="Eliminar" rejectLabel="Cancelar" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+  <p-confirmDialog header="{{ 'confirm' | translate }}" acceptLabel="{{ 'delete' | translate }}" rejectLabel="{{ 'cancel' | translate }}" icon="pi pi-exclamation-triangle"></p-confirmDialog>
 </div>

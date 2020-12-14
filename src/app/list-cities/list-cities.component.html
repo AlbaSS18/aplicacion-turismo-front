@@ -5,7 +5,7 @@
     <p-virtualScroller [value]="cities" scrollHeight="250px" [itemSize]="50">
       <p-header class="list-header">
         Ciudades
-        <p-button label="Añadir ciudad" icon="fas fa-plus" iconPos="left" (onClick)="openPanel($event)"></p-button>
+        <button pButton pRipple label="Añadir ciudad" icon="pi pi-plus" class="p-button-raised p-button-rounded" (click)="openPanel($event)"></button>
       </p-header>
       <ng-template pTemplate="item" let-city>
         <div class="list-container-cities">

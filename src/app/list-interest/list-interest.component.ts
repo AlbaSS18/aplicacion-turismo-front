@@ -3,6 +3,7 @@ import {InterestService} from '../services/interest/interest.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import {map, mergeMap, switchMap} from 'rxjs/operators';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-list-interest',
@@ -20,7 +21,8 @@ export class ListInterestComponent implements OnInit {
     private interestService: InterestService,
     private formBuilder: FormBuilder,
     private confirmationService: ConfirmationService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private translateService: TranslateService
   ) { }
 
   ngOnInit(): void {
@@ -58,10 +60,10 @@ export class ListInterestComponent implements OnInit {
         );
       })
     ).subscribe( data => {
-        var message = 'El interés ' + this.formAddInterest.get('name').value + ' ha sido añadido con éxito';
+        var message = this.translateService.instant('interest_add_message',{ 'nameInterest': this.formAddInterest.get('name').value });
         this.display = false;
         this.formAddInterest.reset();
-        this.messageService.add({key: 'interest', severity:'success', summary:'Interés añadido', detail: message });
+        this.messageService.add({key: 'interest', severity:'success', summary: this.translateService.instant('interest_add'), detail: message });
       },
       err => {
         this.errorAddInterest = true;
@@ -80,7 +82,7 @@ export class ListInterestComponent implements OnInit {
 
   deleteInterest(interest) {
     this.confirmationService.confirm({
-      message: '¿Estás seguro de qué deseas eliminar este interés?',
+      message: this.translateService.instant('message_delete_interest'),
       accept: () => {
         this.interestService.deleteInterest(interest).pipe(
           mergeMap( message => {
@@ -91,15 +93,16 @@ export class ListInterestComponent implements OnInit {
             );
           })
         ).subscribe( data => {
-          var message = 'El interés ' + interest.nameInterest + ' ha sido eliminado con éxito';
-          this.messageService.add({key: 'interest', severity:'success', summary:'Interés eliminado', detail: message });
+          var message = this.translateService.instant('interest_delete_message',{ 'nameInterest': interest.nameInterest });
+          this.messageService.add({key: 'interest', severity:'success', summary: this.translateService.instant('interest_delete'), detail: message });
           },
           (err) => {
-          var message = 'Ha ocurrido un error inesperado. Inténtelo de nuevo más tarde';
-          this.messageService.add({key: 'interest', severity:'error', summary:'Error', detail: message });
+          var message = this.translateService.instant('error_interest_delete_message');
+          this.messageService.add({key: 'interest', severity:'error', summary: this.translateService.instant('error'), detail: message });
           }
         );
       }
     });
   }
+
 }

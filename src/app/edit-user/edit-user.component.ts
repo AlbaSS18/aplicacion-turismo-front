@@ -31,9 +31,8 @@ export class EditUserComponent implements OnInit {
       genre: ['', Validators.required]
     });
     this.genre = [
-      {label:'Selecciona género', value:null},
-      {label:'Mujer', value: "Mujer"},
-      {label:'Hombre', value:"Hombre"},
+      {label:'male', value: "Mujer"},
+      {label:'female', value:"Hombre"},
     ];
     this.userService.getUser(this.userId).subscribe(
       res => {

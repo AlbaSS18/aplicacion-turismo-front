@@ -51,11 +51,20 @@
   "name_required": "El nombre de usuario es obligatorio",
   "male": "Masculino",
   "female": "Femenino",
-  "select_genre": "Seleccionar género",
   "data_incorrect": "Los datos no son correctos",
   "return": "Regresar",
   "submit": "Enviar",
   "email_required": "El email es obligatorio",
   "password_length": "Debe tener al menos 7 caracteres",
-  "password_required": "La contraseña es obligatoria"
+  "password_required": "La contraseña es obligatoria",
+  "name_interest": "Nombre",
+  "name_interest_repetead": "Ya hay un interés con ese nombre",
+  "name_interest_required": "El nombre es obligatorio",
+  "confirm": "Confirmar",
+  "interest_delete_message": "El interés {{nameInterest}} ha sido eliminado con éxito",
+  "interest_delete": "Interés eliminado",
+  "interest_add_message": "El interés {{nameInterest}} ha sido añadido con éxito",
+  "interest_add": "Interés añadido",
+  "error_interest_delete_message": "Ha ocurrido un error inesperado. Inténtelo de nuevo más tarde",
+  "error": "Error"
 }

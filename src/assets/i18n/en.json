@@ -51,11 +51,20 @@
   "name_required": "Username is required",
   "male": "Male",
   "female": "Female",
-  "select_genre": "Select genre",
   "data_incorrect": "The data are not correct",
   "return": "Return",
   "submit": "Submit",
   "email_required": "Email is required",
   "password_length": "Password must be at least 7 characters",
-  "password_required": "Password is required"
+  "password_required": "Password is required",
+  "name_interest": "Name",
+  "name_interest_repetead": "There is a interest with that name",
+  "name_interest_required": "Name is required",
+  "confirm": "Confirm",
+  "interest_delete_message": "The interest {{nameInterest}} has been successfully removed",
+  "interest_delete": "Interest removed",
+  "interest_add_message": "The interest {{nameInterest}} has been successfully added",
+  "interest_add": "Interest add",
+  "error_interest_delete_message": "An unexpected error has occurred. Try again later",
+  "error": "Error"
 }

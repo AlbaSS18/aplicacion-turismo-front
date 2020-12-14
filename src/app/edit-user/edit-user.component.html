@@ -1,27 +1,34 @@
 <app-menu-bar></app-menu-bar>
 <div class="edit-panel">
-  <h1>Editar información personal</h1>
+  <h1>{{ 'edit_title' | translate }}</h1>
   <form [formGroup]="editUserForm" (ngSubmit)="sendForm()">
     <div class="form-user-container p-fluid">
       <div class="p-field p-grid">
-        <label for="float-input-username" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">Nombre de usuario</label>
+        <label for="float-input-username" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{ 'username' | translate }}</label>
         <div class="p-col-12 p-md-10">
           <input id="float-input-username" type="text" size="30" pInputText formControlName="userName">
         </div>
         </div>
       <div class="p-field p-grid">
-        <label for="float-input-age" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">Edad</label>
+        <label for="float-input-age" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{ 'age' | translate }}</label>
         <div class="p-col-12 p-md-10">
           <p-inputNumber id="float-input-age" formControlName="age"></p-inputNumber>
         </div>
       </div>
       <div class="p-field p-grid">
-        <label for="float-input-genre" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">Género</label>
+        <label for="float-input-genre" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{ 'genre' | translate }}</label>
         <div class="p-col-12 p-md-10">
-          <p-dropdown id="float-input-genre" [options]="genre" formControlName="genre"></p-dropdown>
+          <p-dropdown id="float-input-genre" [options]="genre" formControlName="genre">
+            <ng-template let-item pTemplate="selectedItem">
+              <span>{{ item.label | translate }}</span>
+            </ng-template>
+            <ng-template let-genre pTemplate="item">
+              <div>{{ genre.label | translate }}</div>
+            </ng-template>
+          </p-dropdown>
         </div>
       </div>
-      <button pButton type="submit" label="Enviar" icon="pi pi-check" iconPos="left" class="buttonSave"></button>
+      <button pButton type="submit" label=" {{ 'send' | translate }}" icon="pi pi-check" iconPos="left" class="buttonSave"></button>
       </div>
   </form>
 </div>
