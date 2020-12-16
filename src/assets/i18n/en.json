@@ -70,5 +70,7 @@
   "activity_delete_message": "The activity {{nameActivity}} has been successfully removed",
   "activity_add_message": "The activity {{nameActivity}} has been successfully added",
   "invalid_file_message_detail": "Invalid file. Allow formats are: {{formats}}",
-  "invalid_type_message_summary": "Invalid file type {{nameFile}}"
+  "invalid_type_message_summary": "Invalid file type {{nameFile}}",
+  "invalid_file_size_message_detail": "Maximum upload size is {{size}}",
+  "invalid_file_size_message_summary": "Invalid file size: {{file}}"
 }

@@ -91,7 +91,9 @@
         <div class="p-field p-col-12">
           <p-fileUpload mode="basic" name="myfile[]" accept="image/jpeg, image/png" maxFileSize="2000000" (onSelect)="dealWithFiles($event)"
                         invalidFileTypeMessageDetail="{{ 'invalid_file_message_detail' | translate:{formats:'{0}'} }} "
-                        invalidFileTypeMessageSummary="{{ 'invalid_type_message_summary' | translate:{nameFile:'{0}'} }}" ></p-fileUpload>
+                        invalidFileTypeMessageSummary="{{ 'invalid_type_message_summary' | translate:{nameFile:'{0}'} }}"
+                        invalidFileSizeMessageDetail="{{ 'invalid_file_size_message_detail' | translate:{size:'{0}'} }}"
+                        invalidFileSizeMessageSummary="{{ 'invalid_file_size_message_summary' | translate:{file:'{0}'} }}" ></p-fileUpload>
         </div>
 
       </div>

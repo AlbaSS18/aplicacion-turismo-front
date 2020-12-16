@@ -70,6 +70,8 @@
   "activity_delete_message": "La actividad {{nameActivity}} ha sido eliminada con éxito",
   "activity_add_message": "La actividad {{nameActivity}} ha sido añadida con éxito",
   "invalid_file_message_detail": "Archivo inválido. Los formatos permitidos son: {{formats}}",
-  "invalid_type_message_summary": "Tipo de archivo inválido {{nameFile}}"
+  "invalid_type_message_summary": "Tipo de archivo inválido {{nameFile}}",
+  "invalid_file_size_message_detail": "Máximo tamaño de subida es {{size}}",
+  "invalid_file_size_message_summary": "Tamaño inválido del archivo: {{file}}"
 
 }
