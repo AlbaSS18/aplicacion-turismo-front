@@ -9,6 +9,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {TabViewModule} from 'primeng/tabview';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {MenuBarComponent} from '../menu-bar/menu-bar.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('ListUserComponent', () => {
   let component: ListUserComponent;
@@ -23,7 +24,8 @@ describe('ListUserComponent', () => {
         TableModule,
         RouterTestingModule,
         TabViewModule,
-        ConfirmDialogModule
+        ConfirmDialogModule,
+        TranslateModule.forRoot(),
       ],
       providers: [
         ConfirmationService

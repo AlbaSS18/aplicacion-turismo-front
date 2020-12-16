@@ -5,6 +5,7 @@ import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -15,6 +16,7 @@ describe('AppComponent', () => {
         InputTextModule,
         ReactiveFormsModule,
         HttpClientTestingModule,
+        TranslateModule.forRoot(),
       ],
       declarations: [
         AppComponent

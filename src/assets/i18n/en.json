@@ -66,5 +66,9 @@
   "interest_add_message": "The interest {{nameInterest}} has been successfully added",
   "interest_add": "Interest add",
   "error_interest_delete_message": "An unexpected error has occurred. Try again later",
-  "error": "Error"
+  "error": "Error",
+  "activity_delete_message": "The activity {{nameActivity}} has been successfully removed",
+  "activity_add_message": "The activity {{nameActivity}} has been successfully added",
+  "invalid_file_message_detail": "Invalid file. Allow formats are: {{formats}}",
+  "invalid_type_message_summary": "Invalid file type {{nameFile}}"
 }

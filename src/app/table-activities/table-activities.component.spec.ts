@@ -18,6 +18,7 @@ import {DialogService} from 'primeng/dynamicdialog';
 import {FileUploadModule} from 'primeng/fileupload';
 import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 import {RouterTestingModule} from '@angular/router/testing';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('TableActivitiesComponent', () => {
   let component: TableActivitiesComponent;
@@ -39,7 +40,8 @@ describe('TableActivitiesComponent', () => {
         InputNumberModule,
         DropdownModule,
         FileUploadModule,
-        RouterTestingModule
+        RouterTestingModule,
+        TranslateModule.forRoot(),
       ],
       providers: [
         ConfirmationService,

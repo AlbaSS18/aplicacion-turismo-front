@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MenuBarComponent } from './menu-bar.component';
 import {RouterTestingModule} from '@angular/router/testing';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('MenuBarComponent', () => {
   let component: MenuBarComponent;
@@ -11,7 +12,8 @@ describe('MenuBarComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ MenuBarComponent ],
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        TranslateModule.forRoot(),
       ]
     })
     .compileComponents();

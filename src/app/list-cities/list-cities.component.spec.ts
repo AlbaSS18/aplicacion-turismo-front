@@ -9,6 +9,7 @@ import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
 import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 import {RouterTestingModule} from '@angular/router/testing';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('ListCitiesComponent', () => {
   let component: ListCitiesComponent;
@@ -24,7 +25,8 @@ describe('ListCitiesComponent', () => {
         ReactiveFormsModule,
         CardModule,
         ButtonModule,
-        RouterTestingModule
+        RouterTestingModule,
+        TranslateModule.forRoot(),
       ],
       declarations: [ ListCitiesComponent, MenuBarComponent ]
     })

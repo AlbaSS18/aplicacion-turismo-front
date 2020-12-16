@@ -12,6 +12,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ToastModule} from 'primeng/toast';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('ListInterestComponent', () => {
   let component: ListInterestComponent;
@@ -29,7 +30,8 @@ describe('ListInterestComponent', () => {
         CardModule,
         RouterTestingModule,
         ConfirmDialogModule,
-        ToastModule
+        ToastModule,
+        TranslateModule.forRoot(),
       ],
       declarations: [ ListInterestComponent, MenuBarComponent ],
       providers: [

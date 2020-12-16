@@ -5,7 +5,7 @@
     <p-toolbar class="toolbar-activities">
       <div class="p-toolbar-group-left"></div>
       <div class="p-toolbar-group-right">
-        <button pButton pRipple label="{{ 'add_activity' | translate }}" icon="pi pi-plus" class="p-button-raised p-button-rounded" (click)="openNew()"></button>
+        <button pButton pRipple label=" {{ 'add_activity' | translate }}" icon="pi pi-plus" class="p-button-raised p-button-rounded" (click)="openNew()"></button>
       </div>
     </p-toolbar>
 
@@ -48,7 +48,7 @@
           <td>
             <button pButton pRipple type="button" icon="fas fa-info" class="p-button-rounded p-button-text" (click)="seeMoreInfo(activity)"></button>
             <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text"></button>
-            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="confirm()"></button>
+            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="confirm(activity)"></button>
           </td>
         </tr>
       </ng-template>
@@ -57,7 +57,7 @@
 
   <p-confirmDialog header="{{ 'delete' | translate }}" icon="pi pi-info-circle"></p-confirmDialog>
 
-  <p-dialog [(visible)]="productDialog" styleClass="myDialog" *ngIf="productDialog" modal="true" [draggable]="false" >
+  <p-dialog [(visible)]="productDialog" styleClass="myDialog" *ngIf="productDialog" modal="true" [draggable]="false" [closable]="false" >
     <p-header>
       {{ 'add_activity' | translate }}
     </p-header>
@@ -73,11 +73,11 @@
         </div>
         <div class="p-field p-col-12 p-md-6">
           <label for="field-latitude">{{ 'latitude' | translate }}*</label>
-          <p-inputNumber id="field-latitude" formControlName="latitude" mode="decimal"></p-inputNumber>
+          <p-inputNumber id="field-latitude" formControlName="latitude" mode="decimal" [minFractionDigits]="2" [maxFractionDigits]="7"></p-inputNumber>
         </div>
         <div class="p-field p-col-12 p-md-6">
           <label for="field-longitude">{{ 'longitude' | translate }}*</label>
-          <p-inputNumber id="field-longitude" formControlName="longitude" mode="decimal"></p-inputNumber>
+          <p-inputNumber id="field-longitude" formControlName="longitude" mode="decimal" [minFractionDigits]="2" [maxFractionDigits]="7"></p-inputNumber>
         </div>
         <div class="p-field p-col-12 p-md-6">
           <label for="field-city">{{ 'city' | translate }}*</label>
@@ -88,8 +88,10 @@
           <p-dropdown id="field-interest" [options]="interest" formControlName="nameInterest" appendTo="body">
           </p-dropdown>
         </div>
-        <div class="p-field p-col-12 p-md-6">
-          <p-fileUpload mode="basic" name="myfile[]" accept="image/jpeg, image/png" maxFileSize="2000000" (onSelect)="dealWithFiles($event)"></p-fileUpload>
+        <div class="p-field p-col-12">
+          <p-fileUpload mode="basic" name="myfile[]" accept="image/jpeg, image/png" maxFileSize="2000000" (onSelect)="dealWithFiles($event)"
+                        invalidFileTypeMessageDetail="{{ 'invalid_file_message_detail' | translate:{formats:'{0}'} }} "
+                        invalidFileTypeMessageSummary="{{ 'invalid_type_message_summary' | translate:{nameFile:'{0}'} }}" ></p-fileUpload>
         </div>
 
       </div>

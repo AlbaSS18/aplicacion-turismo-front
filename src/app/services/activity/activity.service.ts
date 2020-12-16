@@ -23,4 +23,12 @@ export class ActivityService {
   public addActivity(formData): Observable<any> {
     return this.httpClient.post<any>(this.activityUrl + '/add', formData);
   }
+
+  public deleteActivity(id): Observable<any> {
+    return this.httpClient.delete<any>(this.activityUrl + '/delete/' + id, cabecera);
+  }
+
+  public editActivity(id, activity): Observable<any> {
+    return this.httpClient.put<any>(this.activityUrl + '/update/' + id, activity, cabecera);
+  }
 }

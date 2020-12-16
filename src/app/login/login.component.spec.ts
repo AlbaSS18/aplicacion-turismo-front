@@ -7,6 +7,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {RouterTestingModule} from '@angular/router/testing';
 import {MenuBarComponent} from '../menu-bar/menu-bar.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -20,7 +21,8 @@ describe('LoginComponent', () => {
         InputTextModule,
         ReactiveFormsModule,
         HttpClientTestingModule,
-        RouterTestingModule
+        RouterTestingModule,
+        TranslateModule.forRoot(),
       ]
     })
     .compileComponents();

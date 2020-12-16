@@ -7,6 +7,8 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {DropdownModule} from 'primeng/dropdown';
 import {MenuBarComponent} from '../menu-bar/menu-bar.component';
+import {TranslateModule} from '@ngx-translate/core';
+import {ButtonModule} from 'primeng/button';
 
 describe('SignUpComponent', () => {
   let component: SignUpComponent;
@@ -20,7 +22,9 @@ describe('SignUpComponent', () => {
         HttpClientTestingModule,
         InputNumberModule,
         DropdownModule,
-        RouterTestingModule
+        RouterTestingModule,
+        TranslateModule.forRoot(),
+        ButtonModule
       ]
     })
     .compileComponents();

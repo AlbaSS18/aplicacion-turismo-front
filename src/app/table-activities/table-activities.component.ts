@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {ActivityService} from '../services/activity/activity.service';
-import {ConfirmationService, SelectItem} from 'primeng/api';
+import {ConfirmationService, MessageService, SelectItem} from 'primeng/api';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CityService} from '../services/city/city.service';
 import {Interest} from '../models/interest';
@@ -9,6 +9,7 @@ import {ImagesService} from '../services/images/images.service';
 import {DialogService, DynamicDialogRef} from 'primeng/dynamicdialog';
 import {InformationActivitiesComponent} from '../information-activities/information-activities.component';
 import {TranslateService} from '@ngx-translate/core';
+import {map, mergeMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-table-activities',
@@ -34,7 +35,8 @@ export class TableActivitiesComponent implements OnInit {
     private interestService: InterestService,
     private imagesService: ImagesService,
     private dialogService: DialogService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private messageService: MessageService
   ) { }
 
   ngOnInit(): void {
@@ -93,25 +95,33 @@ export class TableActivitiesComponent implements OnInit {
     this.activityService.getActivities().subscribe(
       data => {
         this.activities = data;
-        /*this.activities.forEach(act => {
-          this.imagesService.getImages("museoferrocarril.jpg").subscribe(
-            imagePhoto => {
-              act.image = imagePhoto;
-            }
-          );
-          }
-        );*/
       },
       (err) => {
         console.log(err);
       });
   }
 
-  confirm(){
+  confirm(activity){
     this.confirmationService.confirm({
       message: this.translateService.instant('message_delete_activity'),
       accept: () => {
-
+        this.activityService.deleteActivity(activity.id).pipe(
+          mergeMap( message => {
+            return this.activityService.getActivities().pipe(
+              map(data => {
+                this.activities = data;
+              })
+            );
+          })
+        ).subscribe( data => {
+            var message = this.translateService.instant('activity_delete_message',{ 'nameActivity': activity.name });
+            this.messageService.add({key: 'interest', severity:'success', summary: this.translateService.instant('interest_delete'), detail: message });
+          },
+          (err) => {
+            var message = this.translateService.instant('error_interest_delete_message');
+            this.messageService.add({key: 'interest', severity:'error', summary: this.translateService.instant('error'), detail: message });
+          }
+        );
       },
       reject: () => {
 
@@ -132,12 +142,22 @@ export class TableActivitiesComponent implements OnInit {
     formData.append('longitude', this.formAddActivity.get('longitude').value);
     formData.append('city', this.formAddActivity.get('city').value);
     formData.append('interest', this.formAddActivity.get('nameInterest').value);
-    this.activityService.addActivity(formData).subscribe(
-      (data) => {
+    this.activityService.addActivity(formData).pipe(
+      mergeMap( message => {
+        return this.activityService.getActivities().pipe(
+          map(data => {
+            this.activities = data;
+          })
+        );
+      })
+    ).subscribe( data => {
+        var message = this.translateService.instant('activity_add_message',{ 'nameActivity': this.formAddActivity.get('name').value });
         this.productDialog = false;
+        //this.formAddInterest.reset();
+        this.messageService.add({key: 'interest', severity:'success', summary: this.translateService.instant('interest_add'), detail: message });
       },
       err => {
-        console.log(err);
+        //this.errorAddInterest = true;
       }
     );
   }
@@ -169,6 +189,12 @@ export class TableActivitiesComponent implements OnInit {
 
   onCancel(){
     this.productDialog = false;
+    this.formAddActivity.reset();
+  }
+
+  hideDialogActivity(){
+    this.productDialog = false;
+    this.formAddActivity.reset();
     console.log(this.formAddActivity);
   }
 
