@@ -115,11 +115,11 @@ export class TableActivitiesComponent implements OnInit {
           })
         ).subscribe( data => {
             var message = this.translateService.instant('activity_delete_message',{ 'nameActivity': activity.name });
-            this.messageService.add({key: 'interest', severity:'success', summary: this.translateService.instant('interest_delete'), detail: message });
+            this.messageService.add({key: 'activity', severity:'success', summary: this.translateService.instant('interest_delete'), detail: message });
           },
           (err) => {
-            var message = this.translateService.instant('error_interest_delete_message');
-            this.messageService.add({key: 'interest', severity:'error', summary: this.translateService.instant('error'), detail: message });
+            var message = this.translateService.instant('error_delete_message');
+            this.messageService.add({key: 'activity', severity:'error', summary: this.translateService.instant('error'), detail: message });
           }
         );
       },
@@ -154,7 +154,7 @@ export class TableActivitiesComponent implements OnInit {
         var message = this.translateService.instant('activity_add_message',{ 'nameActivity': this.formAddActivity.get('name').value });
         this.productDialog = false;
         //this.formAddInterest.reset();
-        this.messageService.add({key: 'interest', severity:'success', summary: this.translateService.instant('interest_add'), detail: message });
+        this.messageService.add({key: 'activity', severity:'success', summary: this.translateService.instant('interest_add'), detail: message });
       },
       err => {
         //this.errorAddInterest = true;
@@ -190,12 +190,6 @@ export class TableActivitiesComponent implements OnInit {
   onCancel(){
     this.productDialog = false;
     this.formAddActivity.reset();
-  }
-
-  hideDialogActivity(){
-    this.productDialog = false;
-    this.formAddActivity.reset();
-    console.log(this.formAddActivity);
   }
 
 }

@@ -1,5 +1,6 @@
 
 <app-menu-bar></app-menu-bar>
+<p-toast  key="activity"></p-toast>
 <div class="imgview-panel">
   <div class="card p-d-flex p-flex-column">
     <p-toolbar class="toolbar-activities">
@@ -89,6 +90,7 @@
           </p-dropdown>
         </div>
         <div class="p-field p-col-12">
+          <label>{{ 'image' | translate }}</label>
           <p-fileUpload mode="basic" name="myfile[]" accept="image/jpeg, image/png" maxFileSize="2000000" (onSelect)="dealWithFiles($event)"
                         invalidFileTypeMessageDetail="{{ 'invalid_file_message_detail' | translate:{formats:'{0}'} }} "
                         invalidFileTypeMessageSummary="{{ 'invalid_type_message_summary' | translate:{nameFile:'{0}'} }}"

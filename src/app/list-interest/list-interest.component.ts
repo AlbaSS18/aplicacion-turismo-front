@@ -97,7 +97,7 @@ export class ListInterestComponent implements OnInit {
           this.messageService.add({key: 'interest', severity:'success', summary: this.translateService.instant('interest_delete'), detail: message });
           },
           (err) => {
-          var message = this.translateService.instant('error_interest_delete_message');
+          var message = this.translateService.instant('error_delete_message');
           this.messageService.add({key: 'interest', severity:'error', summary: this.translateService.instant('error'), detail: message });
           }
         );

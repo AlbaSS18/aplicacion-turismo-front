@@ -65,13 +65,15 @@
   "interest_delete": "Interés eliminado",
   "interest_add_message": "El interés {{nameInterest}} ha sido añadido con éxito",
   "interest_add": "Interés añadido",
-  "error_interest_delete_message": "Ha ocurrido un error inesperado. Inténtelo de nuevo más tarde",
+  "error_delete_message": "Ha ocurrido un error inesperado. Inténtelo de nuevo más tarde",
   "error": "Error",
   "activity_delete_message": "La actividad {{nameActivity}} ha sido eliminada con éxito",
   "activity_add_message": "La actividad {{nameActivity}} ha sido añadida con éxito",
   "invalid_file_message_detail": "Archivo inválido. Los formatos permitidos son: {{formats}}",
   "invalid_type_message_summary": "Tipo de archivo inválido {{nameFile}}",
   "invalid_file_size_message_detail": "Máximo tamaño de subida es {{size}}",
-  "invalid_file_size_message_summary": "Tamaño inválido del archivo: {{file}}"
-
+  "invalid_file_size_message_summary": "Tamaño inválido del archivo: {{file}}",
+  "city_delete_message": "El interés {{nameCity}} ha sido eliminado con éxito",
+  "city_delete": "Ciudad eliminada",
+  "message_delete_city": "¿Estás seguro de qué quieres eliminar esta ciudad? Se eliminarán todos los datos relacionados"
 }

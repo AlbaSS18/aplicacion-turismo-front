@@ -24,4 +24,8 @@ export class CityService {
   public addCity(city): Observable<any> {
     return this.httpClient.post<any>(this.cityURL + '/add', city, cabecera);
   }
+
+  public deleteCity(city): Observable<any> {
+    return this.httpClient.post<any>(this.cityURL + '/delete/' + city.id, cabecera);
+  }
 }

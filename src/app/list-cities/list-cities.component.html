@@ -1,11 +1,11 @@
 <app-menu-bar></app-menu-bar>
-
+<p-toast key="city"></p-toast>
 <div class="cities-panel">
-  <p-card header="Lista de ciudades">
+  <p-card header="{{ 'list_cities' | translate }}">
     <p-virtualScroller [value]="cities" scrollHeight="250px" [itemSize]="50">
       <p-header class="list-header">
-        Ciudades
-        <button pButton pRipple label="Añadir ciudad" icon="pi pi-plus" class="p-button-raised p-button-rounded" (click)="openPanel($event)"></button>
+        {{ 'cities' | translate }}
+        <button pButton pRipple label=" {{ 'add_city' | translate }}" icon="pi pi-plus" class="p-button-raised p-button-rounded" (click)="openPanel($event)"></button>
       </p-header>
       <ng-template pTemplate="item" let-city>
         <div class="list-container-cities">
@@ -13,7 +13,7 @@
             <b>{{city.name}}</b>
           </div>
           <div class="group-buttons">
-            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text"></button>
+            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="removeCity(city)"></button>
           </div>
         </div>
       </ng-template>
@@ -23,17 +23,18 @@
 
   <p-dialog [(visible)]="display" modal="true" [draggable]="false">
     <p-header>
-      Añadir ciudad
+      {{ 'add_city' | translate }}
     </p-header>
     <form [formGroup]="formAddCity">
-      <label for="field-name-city">Nombre*:</label>
+      <label for="field-name-city">{{ 'name_city' | translate }}*:</label>
       <input id="field-name-city" type="text" pInputText formControlName="name">
     </form>
     <p-footer>
-      <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="onSubmit(formAddCity.value)"></button>
-      <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text"></button>
+      <button pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" (click)="onSubmit(formAddCity.value)"></button>
+      <button pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text"></button>
     </p-footer>
   </p-dialog>
 
+  <p-confirmDialog header="{{ 'confirm' | translate }}" icon="pi pi-exclamation-triangle" acceptLabel="{{ 'delete' | translate }}" rejectLabel="{{ 'cancel' | translate }}"></p-confirmDialog>
 </div>
 
