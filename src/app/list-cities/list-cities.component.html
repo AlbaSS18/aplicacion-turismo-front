@@ -21,17 +21,24 @@
   </p-card>
 
 
-  <p-dialog [(visible)]="display" modal="true" [draggable]="false">
+  <p-dialog [(visible)]="display" modal="true" [draggable]="false" (onHide)="hideDialogCity()">
     <p-header>
       {{ 'add_city' | translate }}
     </p-header>
-    <form [formGroup]="formAddCity">
-      <label for="field-name-city">{{ 'name_city' | translate }}*:</label>
-      <input id="field-name-city" type="text" pInputText formControlName="name">
+    <form [formGroup]="formAddCity" #formCity="ngForm" id="ngFormCity" (ngSubmit)="onSubmit()">
+      <div class="p-field p-grid">
+        <label for="field-name-city" class="p-col-fixed">{{ 'name_city' | translate }}*:</label>
+        <div class="p-col buttons-add-city">
+          <input id="field-name-city" type="text" pInputText formControlName="name">
+          <small *ngIf="formAddCity.controls['name'].invalid &&
+            (formAddCity.controls['name'].dirty || formAddCity.controls['name'].touched)" class="p-invalid">{{ 'name_city_required' | translate }}</small>
+          <small *ngIf="formCity.submitted && errorAddCity" class="p-invalid">{{ 'name_city_repetead' | translate }}</small>
+        </div>
+      </div>
     </form>
     <p-footer>
-      <button pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" (click)="onSubmit(formAddCity.value)"></button>
-      <button pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text"></button>
+      <button pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormCity" [disabled]="formAddCity.invalid"></button>
+      <button pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancel()"></button>
     </p-footer>
   </p-dialog>
 

@@ -73,7 +73,11 @@
   "invalid_type_message_summary": "Tipo de archivo inválido {{nameFile}}",
   "invalid_file_size_message_detail": "Máximo tamaño de subida es {{size}}",
   "invalid_file_size_message_summary": "Tamaño inválido del archivo: {{file}}",
-  "city_delete_message": "El interés {{nameCity}} ha sido eliminado con éxito",
+  "city_delete_message": "La ciudad {{nameCity}} ha sido eliminada con éxito",
   "city_delete": "Ciudad eliminada",
-  "message_delete_city": "¿Estás seguro de qué quieres eliminar esta ciudad? Se eliminarán todos los datos relacionados"
+  "message_delete_city": "¿Estás seguro de qué quieres eliminar esta ciudad? Se eliminarán todos los datos relacionados",
+  "city_add_message": "La ciudad {{nameCity}} ha sido añadida con éxito",
+  "city_add": "Ciudad añadida",
+  "name_city_required": "El nombre es obligatorio",
+  "name_city_repetead": "Ya hay una ciudad con ese nombre"
 }

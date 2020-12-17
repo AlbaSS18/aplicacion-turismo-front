@@ -16,6 +16,7 @@ export class ListCitiesComponent implements OnInit {
   cities: City[];
   display: boolean = false;
   formAddCity: FormGroup;
+  errorAddCity: boolean = false;
 
   constructor(
     private cityService: CityService,
@@ -26,7 +27,6 @@ export class ListCitiesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
     this.formAddCity = this.formBuilder.group({
       name: ['', Validators.required]
     });
@@ -45,17 +45,26 @@ export class ListCitiesComponent implements OnInit {
     );
   }
 
-  onSubmit(value: string){
+  onSubmit(){
     var city = {
       name: this.formAddCity.get('name').value
     };
-    this.cityService.addCity(city).subscribe(
-      data => {
+    this.cityService.addCity(city).pipe(
+      mergeMap( message => {
+        return this.cityService.getCities().pipe(
+          map(data => {
+            this.cities = data;
+          })
+        );
+      })
+    ).subscribe( data => {
+        var message = this.translateService.instant('city_add_message',{ 'nameCity': this.formAddCity.get('name').value });
         this.display = false;
-        this.loadCities();
+        this.formAddCity.reset();
+        this.messageService.add({key: 'city', severity:'success', summary: this.translateService.instant('city_add'), detail: message });
       },
       err => {
-        console.log(err);
+        this.errorAddCity = true;
       }
     );
   }
@@ -83,5 +92,14 @@ export class ListCitiesComponent implements OnInit {
         );
       }
     });
+  }
+
+  hideDialogCity(){
+    this.formAddCity.reset();
+    this.errorAddCity = false;
+  }
+
+  cancel(){
+    this.display = false;
   }
 }
