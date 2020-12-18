@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TableActivitiesComponent } from './table-activities.component';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {ConfirmationService, SharedModule} from 'primeng/api';
+import {ConfirmationService, MessageService, SharedModule} from 'primeng/api';
 import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ActivityService} from '../services/activity/activity.service';
 import {CityService} from '../services/city/city.service';
@@ -19,6 +19,7 @@ import {FileUploadModule} from 'primeng/fileupload';
 import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {TranslateModule} from '@ngx-translate/core';
+import {ToastModule} from 'primeng/toast';
 
 describe('TableActivitiesComponent', () => {
   let component: TableActivitiesComponent;
@@ -42,6 +43,7 @@ describe('TableActivitiesComponent', () => {
         FileUploadModule,
         RouterTestingModule,
         TranslateModule.forRoot(),
+        ToastModule
       ],
       providers: [
         ConfirmationService,
@@ -49,7 +51,8 @@ describe('TableActivitiesComponent', () => {
         CityService,
         InterestService,
         FormBuilder,
-        DialogService
+        DialogService,
+        MessageService
       ]
     })
     .compileComponents();

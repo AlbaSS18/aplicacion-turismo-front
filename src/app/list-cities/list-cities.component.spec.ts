@@ -10,6 +10,9 @@ import {ButtonModule} from 'primeng/button';
 import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {TranslateModule} from '@ngx-translate/core';
+import {ConfirmationService, MessageService} from 'primeng/api';
+import {ToastModule} from 'primeng/toast';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 describe('ListCitiesComponent', () => {
   let component: ListCitiesComponent;
@@ -27,8 +30,14 @@ describe('ListCitiesComponent', () => {
         ButtonModule,
         RouterTestingModule,
         TranslateModule.forRoot(),
+        ToastModule,
+        ConfirmDialogModule
       ],
-      declarations: [ ListCitiesComponent, MenuBarComponent ]
+      declarations: [ ListCitiesComponent, MenuBarComponent ],
+      providers: [
+        ConfirmationService,
+        MessageService
+      ]
     })
     .compileComponents();
   });
