@@ -32,7 +32,7 @@
         <label class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{ 'roles' | translate }}</label>
         <div *ngIf="this.roles">
           <div class="p-col-12 p-md-10" *ngFor="let rol of this.roles" class="p-field-checkbox">
-            <p-checkbox id="rol" value="rol" [value]="rol.rolName" [formControl]="editUserForm.controls['roles']"></p-checkbox>
+            <p-checkbox id="rol" [value]="rol.rolName" [formControl]="editUserForm.controls['roles']"></p-checkbox>
             <label [for]="rol">{{rol.rolName}}</label>
           </div>
         </div>

@@ -71,15 +71,14 @@ export class EditUserComponent implements OnInit {
       genre: this.editUserForm.get("genre").value,
       roles: this.editUserForm.get("roles").value
     };
-    console.log(user);
-    /*this.userService.editUser(this.userId, user).subscribe(
+    this.userService.editUser(this.userId, user).subscribe(
       data => {
         console.log(data);
       },
       err => {
         console.log(err);
       }
-    );*/
+    );
   }
 
 }
