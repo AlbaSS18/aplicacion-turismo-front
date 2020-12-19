@@ -46,6 +46,7 @@ import {ToastModule} from 'primeng/toast';
 import { EditActivitiesComponent } from './edit-activities/edit-activities.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import {CheckboxModule} from 'primeng/checkbox';
 
 @NgModule({
   declarations: [
@@ -92,6 +93,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     StepsModule,
     TooltipModule,
     ToastModule,
+    CheckboxModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
