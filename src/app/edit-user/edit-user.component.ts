@@ -6,6 +6,7 @@ import {User} from '../models/user';
 import {ActivatedRoute} from '@angular/router';
 import {RolService} from '../services/rol/rol.service';
 import {Rol} from '../models/rol';
+import {forkJoin} from 'rxjs';
 
 @Component({
   selector: 'app-edit-user',
@@ -19,6 +20,7 @@ export class EditUserComponent implements OnInit {
   user: User;
   userId;
   roles: Rol[];
+  valueUnchanged: boolean = true;
 
   constructor(
     private fb: FormBuilder,
@@ -43,25 +45,18 @@ export class EditUserComponent implements OnInit {
       {label:'male', value: "Mujer"},
       {label:'female', value:"Hombre"},
     ];
-    this.rolesService.getRoles().subscribe(
-      data => {
-        this.roles = data;
-      }
-    )
-    this.userService.getUser(this.userId).subscribe(
-      res => {
-        this.user = res;
-        this.editUserForm.patchValue({
-          userName: this.user.userName,
-          age: this.user.age,
-          genre: this.user.genre,
-        });
-        this.editUserForm.controls['roles'].setValue(this.user.roles);
-      },
-      err => {
-        console.log(err);
-      }
-    );
+
+    forkJoin([this.rolesService.getRoles(), this.userService.getUser(this.userId)]).subscribe(results => {
+      this.roles = results[0];
+      this.user = results[1];
+      this.editUserForm.patchValue({
+        userName: this.user.userName,
+        age: this.user.age,
+        genre: this.user.genre,
+      });
+      this.editUserForm.controls['roles'].setValue(this.user.roles);
+      this.observeChanges();
+    });
   }
 
   sendForm(){
@@ -80,5 +75,32 @@ export class EditUserComponent implements OnInit {
       }
     );
   }
+
+  observeChanges() {
+    this.editUserForm.valueChanges.subscribe((values) => {
+      this.isEquivalent(this.user, values);
+    });
+  }
+
+  isEquivalent(a, b) {
+    this.valueUnchanged = true;
+    var aProps = Object.keys(a);
+    var bProps = Object.keys(b);
+    for (var i = 0; i < bProps.length; i++) {
+      let propName = bProps[i];
+      if (propName == "roles"){
+        this.valueUnchanged = a[propName].length === b[propName].length && a[propName].every((value, index) => value === b[propName][index]);
+        return a[propName].length === b[propName].length && a[propName].every((value, index) => value === b[propName][index]);
+      }
+      else{
+          if (a[propName] !== b[propName]) {
+            this.valueUnchanged = false;
+            return false;
+          }
+        }
+      }
+  }
+
+
 
 }

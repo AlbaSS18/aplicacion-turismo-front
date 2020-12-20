@@ -37,7 +37,7 @@
           </div>
         </div>
       </div>
-      <button pButton pRipple type="submit" label=" {{ 'save' | translate }}" icon="pi pi-check" class="buttonSave"></button>
+      <button pButton pRipple type="submit" label=" {{ 'save' | translate }}" icon="pi pi-check" class="buttonSave" [disabled]="valueUnchanged" ></button>
       </div>
   </form>
 </div>

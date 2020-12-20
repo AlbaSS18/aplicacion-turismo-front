@@ -36,23 +36,19 @@ export class ListUserComponent implements OnInit {
       { field: 'age', header: 'age' },
       { field: 'role', header: 'Role'}
     ];
-    //this.loadUsers();
-    //this.loadRol();
     forkJoin([
-      this.userService.getUsers(), //observable 1
-      this.rolService.getRoles() //observable 2
+      this.userService.getUsers(),
+      this.rolService.getRoles()
     ]).subscribe(([response1, response2]) => {
       // When Both are done loading do something
       this.users = response1;
       this.roles = response2;
-      console.log(this.roles);
     });
   }
 
   loadUsers(){
     this.userService.getUsers().subscribe(
       data => {
-        console.log(data);
         this.users = data;
       },
       err => {
@@ -70,14 +66,12 @@ export class ListUserComponent implements OnInit {
   }
 
   confirmDelete(user){
-    console.log(user);
     this.confirmationService.confirm({
       message: this.translateService.instant('message_delete_user'),
       accept: () => {
         this.userService.deleteUser(user.id).subscribe(
           data => {
             this.loadUsers();
-            console.log(data);
           },
           err => {
             console.log(err);
