@@ -10,8 +10,9 @@ import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {TranslateModule} from '@ngx-translate/core';
 import {UserService} from '../services/user/user.service';
+import {ButtonModule} from 'primeng/button';
 
-xdescribe('EditUserComponent', () => {
+describe('EditUserComponent', () => {
   let component: EditUserComponent;
   let fixture: ComponentFixture<EditUserComponent>;
 
@@ -26,6 +27,7 @@ xdescribe('EditUserComponent', () => {
         RouterTestingModule,
         FormsModule,
         TranslateModule.forRoot(),
+        ButtonModule
       ],
       providers: [
         UserService
