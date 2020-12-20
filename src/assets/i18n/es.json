@@ -79,5 +79,7 @@
   "city_add_message": "La ciudad {{nameCity}} ha sido añadida con éxito",
   "city_add": "Ciudad añadida",
   "name_city_required": "El nombre es obligatorio",
-  "name_city_repetead": "Ya hay una ciudad con ese nombre"
+  "name_city_repetead": "Ya hay una ciudad con ese nombre",
+  "user_edit_message": "El usuario {{nameUser}} ha sido editado con éxito",
+  "user_edit": "Usuario editado"
 }

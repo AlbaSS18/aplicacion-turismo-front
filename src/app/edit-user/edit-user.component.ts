@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {SelectItem} from 'primeng/api';
+import {MessageService, SelectItem} from 'primeng/api';
 import {UserService} from '../services/user/user.service';
 import {User} from '../models/user';
 import {ActivatedRoute} from '@angular/router';
 import {RolService} from '../services/rol/rol.service';
 import {Rol} from '../models/rol';
 import {forkJoin} from 'rxjs';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-edit-user',
@@ -26,7 +27,9 @@ export class EditUserComponent implements OnInit {
     private fb: FormBuilder,
     private userService: UserService,
     private activatedRoute: ActivatedRoute,
-    private rolesService: RolService
+    private rolesService: RolService,
+    private messageService: MessageService,
+    private translateService: TranslateService
   ) {}
 
   ngOnInit(): void {
@@ -68,10 +71,12 @@ export class EditUserComponent implements OnInit {
     };
     this.userService.editUser(this.userId, user).subscribe(
       data => {
-        console.log(data);
+        var message = this.translateService.instant('user_edit_message',{ 'nameUser': this.editUserForm.get('userName').value });
+        this.messageService.add({key: 'edit-user', severity:'success', summary: this.translateService.instant('user_edit'), detail: message});
       },
       err => {
-        console.log(err);
+        var message = this.translateService.instant('error_delete_message');
+        this.messageService.add({key: 'edit-user', severity:'error', summary: this.translateService.instant('error'), detail: message});
       }
     );
   }
