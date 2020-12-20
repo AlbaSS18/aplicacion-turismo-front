@@ -42,8 +42,8 @@ export class EditUserComponent implements OnInit {
       roles: ['', Validators.required]
     });
     this.genre = [
-      {label:'male', value: "Mujer"},
-      {label:'female', value:"Hombre"},
+      {label:'male', value: "Hombre"},
+      {label:'female', value:"Mujer"},
     ];
 
     forkJoin([this.rolesService.getRoles(), this.userService.getUser(this.userId)]).subscribe(results => {
@@ -78,8 +78,16 @@ export class EditUserComponent implements OnInit {
 
   observeChanges() {
     this.editUserForm.valueChanges.subscribe((values) => {
+      console.log("va")
       this.isEquivalent(this.user, values);
     });
+  }
+
+  isChangeNumber(a, b){
+    this.valueUnchanged = true;
+    if (a !== b){
+      this.valueUnchanged = false;
+    }
   }
 
   isEquivalent(a, b) {
