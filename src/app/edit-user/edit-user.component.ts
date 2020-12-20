@@ -78,7 +78,6 @@ export class EditUserComponent implements OnInit {
 
   observeChanges() {
     this.editUserForm.valueChanges.subscribe((values) => {
-      console.log("va")
       this.isEquivalent(this.user, values);
     });
   }

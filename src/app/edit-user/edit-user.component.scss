@@ -14,13 +14,19 @@ h1{
 
 
 .buttonSave {
-  width: auto;
-  float: right;
+  width: 120px;
 }
 
 .form-user-container{
   width: 50%;
+  padding-bottom: 5px;
   /*Para centrar*/
   margin-left: auto;
   margin-right: auto;
+  padding-top: 5px;
+}
+
+.group-buttons-edit-user{
+  display: flex;
+  justify-content: flex-end;
 }

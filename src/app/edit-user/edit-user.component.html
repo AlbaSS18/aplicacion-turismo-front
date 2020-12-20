@@ -37,7 +37,9 @@
           </div>
         </div>
       </div>
-      <button pButton pRipple type="submit" label=" {{ 'save' | translate }}" icon="pi pi-check" class="buttonSave" [disabled]="valueUnchanged || editUserForm.invalid || formEdit.submitted" ></button>
+      <div class="p-field p-grid group-buttons-edit-user">
+        <button pButton pRipple type="submit" label=" {{ 'save' | translate }}" icon="pi pi-check" class="buttonSave" [disabled]="valueUnchanged || editUserForm.invalid || formEdit.submitted" ></button>
+      </div>
       </div>
   </form>
 </div>

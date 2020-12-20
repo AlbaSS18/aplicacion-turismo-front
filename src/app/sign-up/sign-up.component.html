@@ -69,7 +69,7 @@
         <div class="p-field p-col-12">
           <p-message severity="error" text="{{ 'data_incorrect' | translate }}" *ngIf="(this.formGroup.get('name').invalid || this.formGroup.get('email').invalid ||
       this.formGroup.get('password').invalid || this.formGroup.get('repeatPassword').invalid || this.formGroup.get('genre').invalid || this.formGroup.get('age').invalid) && isContinueFail"></p-message>
-          <button pButton type="button" label="{{ 'continue' | translate }}" icon="fas fa-arrow-right" class="button_signup" (click)="continueSecondPartForm()"></button>
+          <button pButton type="button" label=" {{ 'continue' | translate }}" icon="fas fa-arrow-right" class="button_signup" (click)="continueSecondPartForm()"></button>
         </div>
       </div>
     </div>
