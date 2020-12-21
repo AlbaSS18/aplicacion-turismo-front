@@ -82,5 +82,6 @@
   "name_city_repetead": "There is a city with that name",
   "user_edit_message": "El usuario {{nameUser}} has been successfully edited",
   "user_edit": "User edit",
-  "password_not_same": "Passwords do not match"
+  "password_not_same": "Passwords do not match",
+  "age_invalid": "Age should be greater than 16"
 }

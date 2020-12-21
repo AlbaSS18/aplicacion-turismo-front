@@ -4,6 +4,7 @@ import {InterestService} from '../services/interest/interest.service';
 import {AuthService} from '../services/auth/auth.service';
 import {MenuItem, SelectItem} from 'primeng/api';
 import {validadorPasswordSame} from './validatorPasswordSame.directive';
+import {validadorAgeGreaterThan} from './validatorGreaterThan.directive';
 
 
 @Component({
@@ -34,7 +35,7 @@ export class SignUpComponent implements OnInit {
     this.formGroup = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      age: ['', Validators.required],
+      age: ['', [Validators.required, validadorAgeGreaterThan()]],
       password: ['', [Validators.required, Validators.minLength(minPassLength)]],
       repeatPassword: ['', [Validators.required, Validators.minLength(minPassLength)]],
       genre: ['', Validators.required],
