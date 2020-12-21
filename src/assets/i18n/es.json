@@ -81,5 +81,6 @@
   "name_city_required": "El nombre es obligatorio",
   "name_city_repetead": "Ya hay una ciudad con ese nombre",
   "user_edit_message": "El usuario {{nameUser}} ha sido editado con éxito",
-  "user_edit": "Usuario editado"
+  "user_edit": "Usuario editado",
+  "password_not_same": "Las contraseñas no coinciden"
 }

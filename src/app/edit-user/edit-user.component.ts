@@ -3,7 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MessageService, SelectItem} from 'primeng/api';
 import {UserService} from '../services/user/user.service';
 import {User} from '../models/user';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {RolService} from '../services/rol/rol.service';
 import {Rol} from '../models/rol';
 import {forkJoin} from 'rxjs';
@@ -29,14 +29,11 @@ export class EditUserComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private rolesService: RolService,
     private messageService: MessageService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
-    var role = {
-      id: 1,
-      roleName: "ROLE_ADMIN"
-    }
     this.userId = this.activatedRoute.snapshot.paramMap.get('id');
     this.editUserForm = this.fb.group({
       userName: ['', [Validators.required]],
@@ -73,6 +70,10 @@ export class EditUserComponent implements OnInit {
       data => {
         var message = this.translateService.instant('user_edit_message',{ 'nameUser': this.editUserForm.get('userName').value });
         this.messageService.add({key: 'edit-user', severity:'success', summary: this.translateService.instant('user_edit'), detail: message});
+        // Para que se muestre el mensaje
+        setTimeout(() => {
+          this.router.navigate(['/user']);
+        }, 1500);
       },
       err => {
         var message = this.translateService.instant('error_delete_message');

@@ -1,8 +1,9 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators} from '@angular/forms';
 import {InterestService} from '../services/interest/interest.service';
 import {AuthService} from '../services/auth/auth.service';
 import {MenuItem, SelectItem} from 'primeng/api';
+import {validadorPasswordSame} from './validatorPasswordSame.directive';
 
 
 @Component({
@@ -38,7 +39,10 @@ export class SignUpComponent implements OnInit {
       repeatPassword: ['', [Validators.required, Validators.minLength(minPassLength)]],
       genre: ['', Validators.required],
       interest: new FormArray([])
-    });
+    },
+      {
+        validator: validadorPasswordSame()
+      });
     this.loadInterest();
     this.genre = [
       {label: 'select_genre', value: ''},
