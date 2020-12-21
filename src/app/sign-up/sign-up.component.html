@@ -10,8 +10,10 @@
             <span class="p-inputgroup-addon"><i class="fas fa-user" style="line-height: 1.25;"></i></span>
             <input id="field-name" type="text" pInputText placeholder="{{ 'username' | translate }}" formControlName="name">
           </div>
-          <p-message class="message_error_sign" severity="error" text="{{ 'name_required' | translate }}"
-                     *ngIf="formGroup.controls['name'].invalid&&(formGroup.controls['name'].dirty || formGroup.controls['name'].touched)"></p-message>
+          <div class="message_error_sign_container">
+            <p-message severity="error" text="{{ 'name_required' | translate }}"
+                       *ngIf="formGroup.controls['name'].invalid&&(formGroup.controls['name'].dirty || formGroup.controls['name'].touched)"></p-message>
+          </div>
         </div>
         <div class="p-field p-col-12 p-md-6">
           <label for="field-email">Email*</label>
@@ -19,8 +21,10 @@
             <span class="p-inputgroup-addon"><i class="fas fa-at" style="line-height: 1.25;"></i></span>
             <input id="field-email" type="text" pInputText placeholder="Email" formControlName="email">
           </div>
-          <p-message severity="error" text="{{ 'email_required' | translate }}"
-                     *ngIf="!formGroup.controls['email'].valid&&(formGroup.controls['email'].dirty || formGroup.controls['email'].touched)"></p-message>
+          <div class="message_error_sign_container">
+            <p-message severity="error" text="{{ 'email_required' | translate }}"
+                       *ngIf="!formGroup.controls['email'].valid&&(formGroup.controls['email'].dirty || formGroup.controls['email'].touched)"></p-message>
+          </div>
         </div>
 
         <div class="p-field p-col-12 p-md-6">
@@ -29,10 +33,12 @@
             <span class="p-inputgroup-addon"><i class="fas fa-lock" style="line-height: 1.25;"></i></span>
             <input id="field-password" type="password" pPassword formControlName="password" placeholder="{{ 'password' | translate }}"/>
            </div>
-          <p-message severity="error"
-                     text="{{(formGroup.controls['password'].errors['required'] ? 'password_required' :
+          <div class="message_error_sign_container">
+            <p-message severity="error"
+                       text="{{(formGroup.controls['password'].errors['required'] ? 'password_required' :
                        formGroup.controls['password'].errors['minlength'] ? 'password_length' : '')| translate}}"
-                     *ngIf="!formGroup.controls['password'].valid&& (formGroup.controls['password'].dirty || formGroup.controls['password'].touched )"></p-message>
+                       *ngIf="!formGroup.controls['password'].valid&& (formGroup.controls['password'].dirty || formGroup.controls['password'].touched )"></p-message>
+          </div>
         </div>
 
         <div class="p-field p-col-12 p-md-6">
@@ -42,23 +48,24 @@
             <input id="field-password-repeat" type="password" pPassword formControlName="repeatPassword"
                    placeholder="{{ 'repeat_password' | translate }}"/>
           </div>
-          <p-message severity="error"
-                     text="{{ 'password_not_same'| translate}}"
-                     *ngIf="this.formGroup.hasError('noSonIguales') && this.formGroup.get('password').dirty && this.formGroup.get('repeatPassword').dirty;"></p-message>
+          <div class="message_error_sign_container">
+            <p-message severity="error"
+                       text="{{ 'password_not_same'| translate}}"
+                       *ngIf="this.formGroup.hasError('noSonIguales') && this.formGroup.get('password').dirty && this.formGroup.get('repeatPassword').dirty;"></p-message>
+          </div>
         </div>
-        <div class="p-field p-col-12 p-md-3">
+        <div class="p-field p-col-12 p-md-6">
           <label for="field-age">{{ 'age' | translate }}*</label>
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="far fa-calendar-alt" style="line-height: 1.25;"></i></span>
-            <p-inputNumber id="field-age" formControlName="age" [min]=0 class="p-invalid"></p-inputNumber>
+            <p-inputNumber id="field-age" formControlName="age" [min]=0 class="p-invalid" class="input-age"></p-inputNumber>
           </div>
         </div>
-
-        <div class="p-field p-col-12 p-md-3">
+        <div class="p-field p-col-12 p-md-6">
           <label for="field-genre">{{ 'genre' | translate }}*</label>
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="fas fa-restroom" style="line-height: 1.25;"></i></span>
-            <p-dropdown id="field-genre" [options]="genre" formControlName="genre">
+            <p-dropdown id="field-genre" [options]="genre" formControlName="genre" class="dropdown-genre">
               <ng-template let-item pTemplate="selectedItem">
                 <span>{{ item.label | translate }}</span>
               </ng-template>
