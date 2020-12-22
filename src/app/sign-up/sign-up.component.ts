@@ -16,10 +16,8 @@ import {validadorAgeGreaterThan} from './validatorGreaterThan.directive';
 export class SignUpComponent implements OnInit {
   formGroup: FormGroup;
   genre: SelectItem[];
-  genreSelected: string;
   interestArray;
   isRegisterFail = false;
-  items: MenuItem[];
   openSecondForm = false;
   isContinueFail = false;
 
@@ -61,6 +59,7 @@ export class SignUpComponent implements OnInit {
         this.interestArray = data;
         this.interestArray.forEach(interest => {
           const control = new FormGroup({
+            nameInterest: new FormControl(interest.nameInterest, Validators.required),
             priority: new FormControl(0, [Validators.required])
           });
           this.interest.push(control);
@@ -73,16 +72,15 @@ export class SignUpComponent implements OnInit {
 
   onSubmit(value: string) {
     const user = {
-      nameUser: this.formGroup.get('name').value,
+      userName: this.formGroup.get('name').value,
       email: this.formGroup.get('email').value,
       age: this.formGroup.get('age').value,
       genre: this.formGroup.get('genre').value,
       password: this.formGroup.get('password').value,
-      passwordRepeated: this.formGroup.get('repeatPassword').value,
+      passwordConfirm: this.formGroup.get('repeatPassword').value,
       roles: ['user'],
-      interest: this.interest.value,
+      interest: this.interest.value
     };
-    console.log(user);
     this.authService.signUp(user).subscribe(
       data => {
         this.isRegisterFail = false;

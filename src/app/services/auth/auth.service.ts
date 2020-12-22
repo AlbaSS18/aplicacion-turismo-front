@@ -21,6 +21,6 @@ export class AuthService {
   }
 
   public signUp(user: UserSignUp): Observable<any> {
-    return this.httpClient.post<any>(this.authURL + '/signup', cabecera);
+    return this.httpClient.post<any>(this.authURL + '/signup', user, cabecera);
   }
 }

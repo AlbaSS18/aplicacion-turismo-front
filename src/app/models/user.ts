@@ -13,12 +13,17 @@ export class UserLogin {
 }
 
 export class UserSignUp {
-  nameUser: string;
+  userName: string;
   email: string;
   age: number;
   genre: string;
   password: string;
-  passwordRepeated: string;
+  passwordConfirm: string;
   roles: string[];
-  interest: string[];
+  interest: Interest[];
+}
+
+export class Interest {
+  nameInterest: string;
+  priority: number;
 }
