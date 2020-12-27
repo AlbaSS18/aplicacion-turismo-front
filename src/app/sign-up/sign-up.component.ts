@@ -2,9 +2,11 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {InterestService} from '../services/interest/interest.service';
 import {AuthService} from '../services/auth/auth.service';
-import {MenuItem, SelectItem} from 'primeng/api';
+import {MenuItem, MessageService, SelectItem} from 'primeng/api';
 import {validadorPasswordSame} from './validatorPasswordSame.directive';
 import {validadorAgeGreaterThan} from './validatorGreaterThan.directive';
+import {ActivatedRoute, Router} from '@angular/router';
+import {NotificationService} from '../services/message/notification.service';
 
 
 @Component({
@@ -24,7 +26,10 @@ export class SignUpComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private interestService: InterestService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router,
+    private messageService: MessageService,
+    private notificationService: NotificationService
   ) {
   }
 
@@ -84,6 +89,8 @@ export class SignUpComponent implements OnInit {
     this.authService.signUp(user).subscribe(
       data => {
         this.isRegisterFail = false;
+        this.notificationService.success("sign_up_successful_message_detail", "sign_up_successful_message_summary");
+        this.router.navigate(['login']);
       },
       (err) => {
         this.isRegisterFail = true;

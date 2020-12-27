@@ -24,7 +24,7 @@ import { ModifyPreferencesComponent } from './modify-preferences/modify-preferen
 import { TableActivitiesComponent } from './table-activities/table-activities.component';
 import {TableModule} from 'primeng/table';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
-import {ConfirmationService, MessageService} from 'primeng/api';
+import {ConfirmationService, Message, MessageService} from 'primeng/api';
 import {ToolbarModule} from 'primeng/toolbar';
 import {DialogModule} from 'primeng/dialog';
 import {FileUploadModule} from 'primeng/fileupload';
@@ -47,6 +47,8 @@ import { EditActivitiesComponent } from './edit-activities/edit-activities.compo
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {CheckboxModule} from 'primeng/checkbox';
+import {MessagesModule} from 'primeng/messages';
+import {NotificationService} from './services/message/notification.service';
 
 @NgModule({
   declarations: [
@@ -94,6 +96,7 @@ import {CheckboxModule} from 'primeng/checkbox';
     TooltipModule,
     ToastModule,
     CheckboxModule,
+    MessagesModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -106,7 +109,8 @@ import {CheckboxModule} from 'primeng/checkbox';
     interceptorProvider,
     ConfirmationService,
     DialogService,
-    MessageService
+    MessageService,
+    NotificationService
   ],
   bootstrap: [AppComponent]
 })

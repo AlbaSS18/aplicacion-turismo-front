@@ -1,38 +1,50 @@
 <app-menu-bar></app-menu-bar>
 <div class="login-component">
-  <div class="left-container">
-    <div class="container-img-logo">
-      <img src="../../assets/images/diseno-logotipo-playa-vector-plantilla_56473-139.jpg" alt="Logo de la aplicación" id="img_logo"/>
-    </div>
-    <div class="container-login">
-      <p id="paragraph-login">Es una aplicación para recomendar sitios turísticosEs una aplicación para recomendar sitios turísticosEs una aplicación para recomendar sitios turísticosEs una aplicación para recomendar sitios turísticos</p>
-    </div>
-
+  <div *ngIf="infoMessage[0]">
+    <p-messages class="message_register_success" severity="{{infoMessage[0].severity}}" [showTransitionOptions]="'300ms'" [hideTransitionOptions]="'200ms'">
+      <ng-template pTemplate>
+        <span class="p-message-icon pi pi-check"></span>
+        <span class="p-message-summary">{{infoMessage[0].summary}}</span>
+        <span class="p-message-detail">{{infoMessage[0].detail}}</span>
+        <button pButton pRipple type="button" class="p-message-close p-button-rounded p-button-text" icon="pi pi-times" (click)="closeMessage($event)"></button>
+      </ng-template>
+    </p-messages>
+    <p-messages class="message_register_success" [(value)]="infoMessage">
+    </p-messages>
   </div>
-
-  <div class="right-container">
-    <div class="container-img-logo">
-      <img id="img-icon-user" src="../../assets/images/user.png" alt="User icon"/>
+  <div class="container-login-of-container">
+    <div class="left-container">
+      <div class="container-img-logo">
+        <img src="../../assets/images/diseno-logotipo-playa-vector-plantilla_56473-139.jpg" alt="Logo de la aplicación" id="img_logo"/>
+      </div>
+      <div class="container-login">
+        <p id="paragraph-login">Es una aplicación para recomendar sitios turísticosEs una aplicación para recomendar sitios turísticosEs una aplicación para recomendar sitios turísticosEs una aplicación para recomendar sitios turísticos</p>
+      </div>
     </div>
-    <div class="container-form">
-      <form [formGroup]="loginForm" #myForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="right-container">
+      <div class="container-img-logo">
+        <img id="img-icon-user" src="../../assets/images/user.png" alt="User icon"/>
+      </div>
+      <div class="container-form">
+        <form [formGroup]="loginForm" #myForm="ngForm" (ngSubmit)="onSubmit()">
           <span class="p-float-label">
             <input id="float-input-email" type="text" size="30" pInputText formControlName="email">
             <label for="float-input-email">Email</label>
           </span>
           <p-message severity="error" text="{{ 'email_required' | translate }}"
-                   *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].dirty"></p-message>
+                     *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].dirty"></p-message>
           <span class="p-float-label">
             <input id="float-input-password" type="password" size="30" pPassword formControlName="password">
             <label for="float-input-password">{{ 'password' | translate }}</label>
           </span>
           <p-message severity="error" text="{{ 'password_required' | translate }}"
-                   *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].dirty"></p-message>
+                     *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].dirty"></p-message>
           <p-message severity="error" text="{{ 'data_incorrect' | translate }}"
-                   *ngIf="myForm.submitted && isLoginFail"></p-message>
+                     *ngIf="myForm.submitted && isLoginFail"></p-message>
           <button pButton type="submit" icon="fas fa-sign-in-alt" label=" {{ 'log_in' | translate }}" [disabled]="loginForm.invalid"></button>
-      </form>
-      <a routerLink="/signup">{{ 'sign_up' | translate }}</a>
+        </form>
+        <a routerLink="/signup">{{ 'sign_up' | translate }}</a>
+      </div>
     </div>
   </div>
 </div>

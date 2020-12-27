@@ -8,6 +8,11 @@
   min-width: 800px;
   
   display: flex;
+  flex-direction: column;
+}
+
+.container-login-of-container{
+  display: flex;
 }
 
 //Container left
@@ -62,6 +67,11 @@ form {
   max-width:100%;
   width: auto\9;
   max-height:100%;
+}
+
+::ng-deep .p-messages {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 
