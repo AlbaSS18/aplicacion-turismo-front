@@ -9,6 +9,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {ButtonModule} from 'primeng/button';
+import {MessageService} from 'primeng/api';
 
 describe('SignUpComponent', () => {
   let component: SignUpComponent;
@@ -25,6 +26,8 @@ describe('SignUpComponent', () => {
         RouterTestingModule,
         TranslateModule.forRoot(),
         ButtonModule
+      ],
+      providers: [
       ]
     })
     .compileComponents();

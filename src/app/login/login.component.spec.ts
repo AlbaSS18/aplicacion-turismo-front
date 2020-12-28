@@ -8,6 +8,8 @@ import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {RouterTestingModule} from '@angular/router/testing';
 import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 import {TranslateModule} from '@ngx-translate/core';
+import {MessageService} from 'primeng/api';
+import {MessagesModule} from 'primeng/messages';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -23,6 +25,10 @@ describe('LoginComponent', () => {
         HttpClientTestingModule,
         RouterTestingModule,
         TranslateModule.forRoot(),
+        MessagesModule
+      ],
+      providers: [
+        MessageService
       ]
     })
     .compileComponents();

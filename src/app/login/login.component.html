@@ -1,14 +1,6 @@
 <app-menu-bar></app-menu-bar>
 <div class="login-component">
-  <div *ngIf="infoMessage[0]">
-    <p-messages class="message_register_success" severity="{{infoMessage[0].severity}}" [showTransitionOptions]="'300ms'" [hideTransitionOptions]="'200ms'">
-      <ng-template pTemplate>
-        <span class="p-message-icon pi pi-check"></span>
-        <span class="p-message-summary">{{infoMessage[0].summary}}</span>
-        <span class="p-message-detail">{{infoMessage[0].detail}}</span>
-        <button pButton pRipple type="button" class="p-message-close p-button-rounded p-button-text" icon="pi pi-times" (click)="closeMessage($event)"></button>
-      </ng-template>
-    </p-messages>
+  <div>
     <p-messages class="message_register_success" [(value)]="infoMessage">
     </p-messages>
   </div>

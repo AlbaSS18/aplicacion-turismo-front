@@ -5,7 +5,7 @@ import {UserLogin} from '../models/user';
 import {TokenService} from '../services/token/token.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Message, MessageService} from 'primeng/api';
-import {TranslateService} from '@ngx-translate/core';
+import {LangChangeEvent, TranslateService} from '@ngx-translate/core';
 import {NotificationService} from '../services/message/notification.service';
 
 @Component({
@@ -31,12 +31,27 @@ export class LoginComponent implements OnInit {
     private notification: NotificationService) {}
 
   ngOnInit(): void {
+    this.processMessageTranslation(this.getMessages());
     this.infoMessage = this.getMessages();
+    this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.processMessageTranslation(this.getMessages());
+    })
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
     });
   }
+
+  processMessageTranslation(messages): void {
+    this.infoMessage = [];
+    for (let message of messages){
+      var mAux = message;
+      mAux.summary = this.translateService.instant("sign_up_successful_message_summary");
+      mAux.detail = this.translateService.instant("sign_up_successful_message_detail");
+      this.infoMessage.push(mAux);
+    }
+  }
+
 
   getMessages(): Message[] {
     return this.notification.message;

@@ -28,7 +28,6 @@ export class SignUpComponent implements OnInit {
     private interestService: InterestService,
     private authService: AuthService,
     private router: Router,
-    private messageService: MessageService,
     private notificationService: NotificationService
   ) {
   }

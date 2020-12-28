@@ -11,6 +11,8 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {TranslateModule} from '@ngx-translate/core';
 import {UserService} from '../services/user/user.service';
 import {ButtonModule} from 'primeng/button';
+import {MessageService} from 'primeng/api';
+import {ToastModule} from 'primeng/toast';
 
 describe('EditUserComponent', () => {
   let component: EditUserComponent;
@@ -27,10 +29,12 @@ describe('EditUserComponent', () => {
         RouterTestingModule,
         FormsModule,
         TranslateModule.forRoot(),
-        ButtonModule
+        ButtonModule,
+        ToastModule
       ],
       providers: [
-        UserService
+        UserService,
+        MessageService
       ]
     })
     .compileComponents();
