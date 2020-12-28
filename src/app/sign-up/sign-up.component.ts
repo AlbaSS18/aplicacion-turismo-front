@@ -22,6 +22,7 @@ export class SignUpComponent implements OnInit {
   isRegisterFail = false;
   openSecondForm = false;
   isContinueFail = false;
+  message;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -93,6 +94,7 @@ export class SignUpComponent implements OnInit {
       },
       (err) => {
         this.isRegisterFail = true;
+        this.message = err.error.mensaje;
       });
   }
 
