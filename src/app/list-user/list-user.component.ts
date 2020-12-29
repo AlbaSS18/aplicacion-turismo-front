@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../services/user/user.service';
-import {ConfirmationService} from 'primeng/api';
+import {ConfirmationService, MessageService} from 'primeng/api';
 import {Router} from '@angular/router';
 import {RolService} from '../services/rol/rol.service';
 import {Rol} from '../models/rol';
 import {forkJoin} from 'rxjs';
 import {TranslateService} from '@ngx-translate/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {TokenService} from '../services/token/token.service';
+import {map, mergeMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-list-user',
@@ -24,7 +27,9 @@ export class ListUserComponent implements OnInit {
     private confirmationService: ConfirmationService,
     private router: Router,
     private rolService: RolService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private token: TokenService,
+    private messageService: MessageService
   ) { }
 
   ngOnInit(): void {
@@ -42,44 +47,33 @@ export class ListUserComponent implements OnInit {
     ]).subscribe(([response1, response2]) => {
       // When Both are done loading do something
       this.users = response1;
+      this.users = this.users.filter(user => user.email !== this.token.getEmail());
       this.roles = response2;
     });
-  }
-
-  loadUsers(){
-    this.userService.getUsers().subscribe(
-      data => {
-        this.users = data;
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
-
-  loadRol(){
-    this.rolService.getRoles().subscribe(
-      data => {
-        this.roles = data;
-      }
-    );
   }
 
   confirmDelete(user){
     this.confirmationService.confirm({
       message: this.translateService.instant('message_delete_user'),
       accept: () => {
-        this.userService.deleteUser(user.id).subscribe(
-          data => {
-            this.loadUsers();
+        this.userService.deleteUser(user.id).pipe(
+          mergeMap( message => {
+            return this.userService.getUsers().pipe(
+              map(data => {
+                this.users = data;
+                this.users = this.users.filter(restUser => restUser.email !== this.token.getEmail());
+              })
+            );
+          })
+        ).subscribe( data => {
+            var message = this.translateService.instant('user_delete_message',{ 'email': user.email });
+            this.messageService.add({key: 'user', severity:'success', summary: this.translateService.instant('user_delete'), detail: message });
           },
-          err => {
-            console.log(err);
+          (err) => {
+            var message = this.translateService.instant('error_delete_message');
+            this.messageService.add({key: 'user', severity:'error', summary: this.translateService.instant('error'), detail: message });
           }
         );
-      },
-      reject: () => {
-
       }
     });
   }

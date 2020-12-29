@@ -85,5 +85,8 @@
   "password_not_same": "Las contraseñas no coinciden",
   "age_invalid": "Edad debería ser mayor que 16",
   "sign_up_successful_message_detail": "¡Usuario registrado con éxito! Por favor, ¡inicia sesión!",
-  "sign_up_successful_message_summary": "Registro completado"
+  "sign_up_successful_message_summary": "Registro completado",
+  "add_role": "Añadir rol",
+  "user_delete_message": "El usuario {{email}} ha sido eliminado con éxito",
+  "user_delete": "Usuario eliminado"
 }

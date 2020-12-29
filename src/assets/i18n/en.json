@@ -85,5 +85,8 @@
   "password_not_same": "Passwords do not match",
   "age_invalid": "Age should be greater than 16",
   "sign_up_successful_message_detail": "Registration Successful! Please Login!",
-  "sign_up_successful_message_summary": "Registration completed"
+  "sign_up_successful_message_summary": "Registration completed",
+  "add_role": "Add role",
+  "user_delete_message": "The user {{email}} has been successfully removed",
+  "user_delete": "User removed"
 }

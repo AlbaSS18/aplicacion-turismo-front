@@ -1,5 +1,5 @@
 <app-menu-bar></app-menu-bar>
-
+<p-toast  key="user"></p-toast>
 <div class="user-panel">
 
     <p-tabView styleClass="tabview-custom" (onChange)="changeTab($event)">
@@ -66,9 +66,6 @@
               <div class="list-container-user">
                 <div class="user-details">
                   <b>{{rol.rolName}}</b>
-                </div>
-                <div class="group-buttons-user">
-                  <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text"></button>
                 </div>
               </div>
             </ng-template>
