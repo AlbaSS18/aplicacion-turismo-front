@@ -24,17 +24,12 @@ body {
   //box-shadow: 0 0 5px 1px rgba(255, 0, 0, 0.2) inset !important;
 }
 
-/*p-inputnumber.ng-dirty.ng-invalid .p-inputtext ,
-p-inputnumber.ng-touched.ng-invalid .p-inputtext {
+p-inputnumber.ng-dirty.ng-invalid .p-inputtext ,
+p-inputnumber.ng-untouched.ng-invalid .p-inputtext {
   border: 1px solid red !important;
-  background: rgba(255, 0, 0, 0.35);
-  box-shadow: 0 0 5px 1px rgba(255, 0, 0, 0.2) inset !important;
-}*/
-
-//body .p-inputtext.ng-dirty.ng-invalid,
-//body p-dropdown.ng-dirty.ng-invalid>.p-dropdown {
-//  border: 1px solid #dc3545;
-//}
+  //background: rgba(255, 0, 0, 0.35);
+  //box-shadow: 0 0 5px 1px rgba(255, 0, 0, 0.2) inset !important;
+}
 
 p-dropdown.ng-invalid:not(form)>div {
   border: 1px solid red;
