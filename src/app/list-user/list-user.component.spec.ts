@@ -4,12 +4,13 @@ import { ListUserComponent } from './list-user.component';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {ToolbarModule} from 'primeng/toolbar';
 import {TableModule} from 'primeng/table';
-import {ConfirmationService} from 'primeng/api';
+import {ConfirmationService, MessageService} from 'primeng/api';
 import {RouterTestingModule} from '@angular/router/testing';
 import {TabViewModule} from 'primeng/tabview';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 import {TranslateModule} from '@ngx-translate/core';
+import {ToastModule} from 'primeng/toast';
 
 describe('ListUserComponent', () => {
   let component: ListUserComponent;
@@ -26,9 +27,11 @@ describe('ListUserComponent', () => {
         TabViewModule,
         ConfirmDialogModule,
         TranslateModule.forRoot(),
+        ToastModule
       ],
       providers: [
-        ConfirmationService
+        ConfirmationService,
+        MessageService
       ]
     })
     .compileComponents();

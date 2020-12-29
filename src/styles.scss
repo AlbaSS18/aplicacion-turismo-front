@@ -18,14 +18,14 @@ body {
   background-attachment: fixed; //Para que al sacar el panel de inspeccionar, no saque el color blanco de la imagen
 }
 
-.p-inputtext.ng-dirty.ng-invalid , .p-inputtext.ng-untouched.ng-invalid{
+.p-inputtext.ng-dirty.ng-invalid , .p-inputtext.ng-untouched.ng-invalid, .p-inputtext.ng-touched.ng-invalid{
   border: 1px solid red !important;
   //background: rgba(255, 0, 0, 0.35);
   //box-shadow: 0 0 5px 1px rgba(255, 0, 0, 0.2) inset !important;
 }
 
 p-inputnumber.ng-dirty.ng-invalid .p-inputtext ,
-p-inputnumber.ng-untouched.ng-invalid .p-inputtext {
+p-inputnumber.ng-untouched.ng-invalid .p-inputtext, p-inputnumber.ng-touched.ng-invalid .p-inputtext {
   border: 1px solid red !important;
   //background: rgba(255, 0, 0, 0.35);
   //box-shadow: 0 0 5px 1px rgba(255, 0, 0, 0.2) inset !important;
