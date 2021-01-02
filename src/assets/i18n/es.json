@@ -88,5 +88,7 @@
   "sign_up_successful_message_summary": "Registro completado",
   "add_role": "Añadir rol",
   "user_delete_message": "El usuario {{email}} ha sido eliminado con éxito",
-  "user_delete": "Usuario eliminado"
+  "user_delete": "Usuario eliminado",
+  "choose_file": "Elegir archivo",
+  "remove_file": "Eliminar archivo"
 }

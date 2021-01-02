@@ -26,6 +26,7 @@ export class TableActivitiesComponent implements OnInit {
   interest: SelectItem[];
   files;
   ref: DynamicDialogRef;
+  noFiles: boolean = true;
 
   constructor(
     private activityService: ActivityService,
@@ -134,36 +135,45 @@ export class TableActivitiesComponent implements OnInit {
   }
 
   onSubmit(value: string){
-    const formData = new FormData();
-    formData.append('image', this.files);
-    formData.append('name', this.formAddActivity.get('name').value);
-    formData.append('description', this.formAddActivity.get('description').value);
-    formData.append('latitude', this.formAddActivity.get('latitude').value);
-    formData.append('longitude', this.formAddActivity.get('longitude').value);
-    formData.append('city', this.formAddActivity.get('city').value);
-    formData.append('interest', this.formAddActivity.get('nameInterest').value);
-    this.activityService.addActivity(formData).pipe(
-      mergeMap( message => {
-        return this.activityService.getActivities().pipe(
-          map(data => {
-            this.activities = data;
-          })
-        );
-      })
-    ).subscribe( data => {
-        var message = this.translateService.instant('activity_add_message',{ 'nameActivity': this.formAddActivity.get('name').value });
-        this.productDialog = false;
-        //this.formAddInterest.reset();
-        this.messageService.add({key: 'activity', severity:'success', summary: this.translateService.instant('interest_add'), detail: message });
-      },
-      err => {
-        //this.errorAddInterest = true;
-      }
-    );
+    if (this.files.length !== 0 && this.formAddActivity.valid){
+      const formData = new FormData();
+      formData.append('image', this.files);
+      formData.append('name', this.formAddActivity.get('name').value);
+      formData.append('description', this.formAddActivity.get('description').value);
+      formData.append('latitude', this.formAddActivity.get('latitude').value);
+      formData.append('longitude', this.formAddActivity.get('longitude').value);
+      formData.append('city', this.formAddActivity.get('city').value);
+      formData.append('interest', this.formAddActivity.get('nameInterest').value);
+      this.activityService.addActivity(formData).pipe(
+        mergeMap( message => {
+          return this.activityService.getActivities().pipe(
+            map(data => {
+              this.activities = data;
+            })
+          );
+        })
+      ).subscribe( data => {
+          var message = this.translateService.instant('activity_add_message',{ 'nameActivity': this.formAddActivity.get('name').value });
+          this.productDialog = false;
+          //this.formAddInterest.reset();
+          this.messageService.add({key: 'activity', severity:'success', summary: this.translateService.instant('interest_add'), detail: message });
+        },
+        err => {
+          //this.errorAddInterest = true;
+        }
+      );
+    }
+
   }
 
   dealWithFiles(event){
     this.files = event.files[0];
+    this.noFiles = false;
+  }
+
+  deleteFiles(event){
+    this.files = [];
+    this.noFiles = true;
   }
 
   seeMoreInfo(activity){
