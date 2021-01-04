@@ -10,6 +10,8 @@ import {DialogService, DynamicDialogRef} from 'primeng/dynamicdialog';
 import {InformationActivitiesComponent} from '../information-activities/information-activities.component';
 import {TranslateService} from '@ngx-translate/core';
 import {map, mergeMap} from 'rxjs/operators';
+import {Router} from '@angular/router';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-table-activities',
@@ -37,7 +39,8 @@ export class TableActivitiesComponent implements OnInit {
     private imagesService: ImagesService,
     private dialogService: DialogService,
     private translateService: TranslateService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -200,6 +203,10 @@ export class TableActivitiesComponent implements OnInit {
   onCancel(){
     this.productDialog = false;
     this.formAddActivity.reset();
+  }
+
+  editActivity(activity){
+    this.router.navigateByUrl('activities/edit/' + activity.id);
   }
 
 }

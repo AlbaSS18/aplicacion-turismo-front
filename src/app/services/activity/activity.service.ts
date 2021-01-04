@@ -20,6 +20,10 @@ export class ActivityService {
     return this.httpClient.get<Activity[]>(this.activityUrl + '/list', cabecera);
   }
 
+  public getActivity(id): Observable<Activity> {
+    return this.httpClient.get<Activity>(this.activityUrl + '/details/' + id, cabecera);
+  }
+
   public addActivity(formData): Observable<any> {
     return this.httpClient.post<any>(this.activityUrl + '/add', formData);
   }

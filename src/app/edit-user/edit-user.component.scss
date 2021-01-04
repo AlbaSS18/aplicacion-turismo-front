@@ -1,4 +1,3 @@
-@import "src/assets/sass/_variables";
 @import "src/assets/sass/utility/_mixins.scss";
 
 .edit-panel {
@@ -6,12 +5,11 @@
   width: 100%;
   min-height: 300px;
   min-width: 800px;
-}
 
-h1{
-  text-align:center;
+  h1{
+    text-align:center;
+  }
 }
-
 
 .buttonSave {
   width: 120px;

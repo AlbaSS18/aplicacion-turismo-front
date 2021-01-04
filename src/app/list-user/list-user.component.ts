@@ -79,7 +79,6 @@ export class ListUserComponent implements OnInit {
   }
 
   editUser(user){
-    this.userService.sendUser(user);
     this.router.navigateByUrl('/user/edit/' + user.id);
   }
 

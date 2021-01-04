@@ -13,6 +13,7 @@ import {ListInterestComponent} from './list-interest/list-interest.component';
 import {ListUserComponent} from './list-user/list-user.component';
 import {EditUserComponent} from './edit-user/edit-user.component';
 import {RoleGuardService} from './guards/RoleGuard/role-guard.service';
+import {EditActivitiesComponent} from './edit-activities/edit-activities.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -22,6 +23,11 @@ const routes: Routes = [
   {path: 'map', component: MapComponent},
   {path: 'modifyPreferences', component: ModifyPreferencesComponent},
   {path: 'activities', component: TableActivitiesComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRol: 'admin'
+  }},
+  {path: 'activities/edit/:id', component: EditActivitiesComponent,
     canActivate: [RoleGuardService],
     data: {
       expectedRol: 'admin'

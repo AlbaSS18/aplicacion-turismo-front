@@ -90,5 +90,6 @@
   "user_delete_message": "The user {{email}} has been successfully removed",
   "user_delete": "User removed",
   "choose_file": "Choose file",
-  "remove_file": "Remove file"
+  "remove_file": "Remove file",
+  "edit_title_activity": "Edit activity"
 }
