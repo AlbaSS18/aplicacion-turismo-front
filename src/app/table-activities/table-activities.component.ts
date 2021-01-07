@@ -147,6 +147,7 @@ export class TableActivitiesComponent implements OnInit {
       formData.append('longitude', this.formAddActivity.get('longitude').value);
       formData.append('city', this.formAddActivity.get('city').value);
       formData.append('interest', this.formAddActivity.get('nameInterest').value);
+      console.log(formData);
       this.activityService.addActivity(formData).pipe(
         mergeMap( message => {
           return this.activityService.getActivities().pipe(

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Interest} from '../../models/interest';
+import {Interest, InterestByUser} from '../../models/interest';
 import {Observable} from 'rxjs';
 
 
@@ -26,5 +26,9 @@ export class InterestService {
 
   public deleteInterest(interest): Observable<any> {
     return this.httpClient.delete<any>(this.interestURL + '/delete/' + interest.id, cabecera);
+  }
+
+  public getInterestByUser(id): Observable<InterestByUser[]> {
+    return this.httpClient.get<InterestByUser[]>(this.interestURL + '/list/user/' + id, cabecera);
   }
 }

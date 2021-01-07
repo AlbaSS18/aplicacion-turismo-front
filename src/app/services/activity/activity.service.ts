@@ -33,6 +33,6 @@ export class ActivityService {
   }
 
   public editActivity(id, activity): Observable<any> {
-    return this.httpClient.put<any>(this.activityUrl + '/update/' + id, activity, cabecera);
+    return this.httpClient.put<any>(this.activityUrl + '/update/' + id, activity);
   }
 }

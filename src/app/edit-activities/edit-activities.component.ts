@@ -39,6 +39,7 @@ export class EditActivitiesComponent implements OnInit {
       city: ['', Validators.required],
       interest: ['', Validators.required]
     });
+    this.file =
     forkJoin([
       this.cityService.getCities(),
       this.interestService.getInterests(),
@@ -67,6 +68,7 @@ export class EditActivitiesComponent implements OnInit {
 
   editActivity(){
     const formData = new FormData();
+    console.log(this.editActivitiesForm.controls);
     formData.append('image', this.file);
     formData.append('description', this.editActivitiesForm.get('description').value);
     formData.append('latitude', this.editActivitiesForm.get('latitude').value);
@@ -74,14 +76,17 @@ export class EditActivitiesComponent implements OnInit {
     formData.append('city', this.editActivitiesForm.get('city').value);
     formData.append('interest', this.editActivitiesForm.get('interest').value);
     console.log(formData);
-    /*this.activityService.editActivity(this.activityId, formData).subscribe(
+    formData.forEach(p => {
+      console.log(p);
+    });
+    this.activityService.editActivity(this.activityId, formData).subscribe(
       data => {
         console.log(data);
       },
       err => {
         console.log(err);
       }
-    );*/
+    );
   }
 
   changeImage(event){
