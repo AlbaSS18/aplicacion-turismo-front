@@ -4,7 +4,7 @@ export class Interest {
 }
 
 export class InterestByUser {
-  id: number;
+  interestID: number;
   nameInterest: string;
   priority: number;
 }

@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {InterestService} from '../services/interest/interest.service';
+import {TokenService} from '../services/token/token.service';
+import {UserService} from '../services/user/user.service';
+import {map, mergeMap} from 'rxjs/operators';
+import {forkJoin} from 'rxjs';
 
 @Component({
   selector: 'app-modify-preferences',
@@ -10,21 +14,48 @@ import {InterestService} from '../services/interest/interest.service';
 export class ModifyPreferencesComponent implements OnInit {
 
   modifyPreferencesForm: FormGroup;
+  interestByUser;
+  interestList;
 
-  constructor(private fb: FormBuilder, private interestService: InterestService) { }
-n
+  constructor(private fb: FormBuilder, private interestService: InterestService, private tokenService: TokenService, private userService: UserService) { }
+
   ngOnInit(): void {
-    // Service que me devuelva los intereses del usuario
-    this.interestService.getInterestByUser(5).subscribe(
-      data => {
-        console.log(data);
+    this.modifyPreferencesForm = this.fb.group({
+      interests: this.fb.array([])
+    });
+    this.userService.getUsers().pipe(
+      map (data => data.filter(p => p.email === this.tokenService.getEmail())),
+      mergeMap ( user => {
+        return forkJoin([this.interestService.getInterestByUser(user[0].id), this.interestService.getInterests()]).pipe();
+      })
+    ).subscribe(
+      ([response1, response2]) => {
+        this.interestByUser = response1;
+        this.interestList = response2;
+        this.interestList.forEach(
+          interest => {
+            var priorityInterest = this.interestByUser.filter(interestByUser => interestByUser.interestID === interest.id).map(prio => prio.priority);
+            var newItem = this.fb.group({
+              nameInterest: [interest.nameInterest, Validators.required],
+              priority: [priorityInterest, Validators.required]
+            });
+            this.interests.push(newItem);
+          }
+        );
       }
     );
-    this.modifyPreferencesForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(2)]],
-      password: ['', Validators.required],
-      passwordRepeat: ['', Validators.required]
-    });
+
   }
 
+  get interests(): FormArray {
+    return this.modifyPreferencesForm.get('interests') as FormArray;
+  }
+
+  addInterest(){
+    var newItem = this.fb.group({
+      nameInterest: ['', Validators.required],
+      priority: ['', Validators.required]
+    });
+    this.interests.push(newItem);
+  }
 }

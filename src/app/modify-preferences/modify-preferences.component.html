@@ -1,3 +1,12 @@
 <app-menu-bar></app-menu-bar>
 <p>modify-preferences works!</p>
+<form [formGroup]="modifyPreferencesForm">
+  <div formArrayName="interests" *ngFor="let item of interests.controls; let i = index;">
+    <div [formGroupName]="i">
+      <label for="{{interestList[i]}}">{{interestList[i].nameInterest}}</label>
+      <p-inputNumber formControlName="priority" id="{{interestList[i]}}" [min]="0" [max]="10" [showButtons]="true">
+      </p-inputNumber>
+    </div>
+  </div>
+</form>
 
