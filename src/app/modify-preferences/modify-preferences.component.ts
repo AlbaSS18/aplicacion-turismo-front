@@ -35,10 +35,19 @@ export class ModifyPreferencesComponent implements OnInit {
         this.interestList.forEach(
           interest => {
             var priorityInterest = this.interestByUser.filter(interestByUser => interestByUser.interestID === interest.id).map(prio => prio.priority);
-            var newItem = this.fb.group({
-              nameInterest: [interest.nameInterest, Validators.required],
-              priority: [priorityInterest, Validators.required]
-            });
+            var newItem;
+            if (priorityInterest.length === 0){
+              newItem = this.fb.group({
+                nameInterest: [interest.nameInterest, Validators.required],
+                priority: [0, Validators.required]
+              });
+            }
+            else{
+              newItem = this.fb.group({
+                nameInterest: [interest.nameInterest, Validators.required],
+                priority: [priorityInterest[0], Validators.required]
+              });
+            }
             this.interests.push(newItem);
           }
         );
@@ -51,11 +60,7 @@ export class ModifyPreferencesComponent implements OnInit {
     return this.modifyPreferencesForm.get('interests') as FormArray;
   }
 
-  addInterest(){
-    var newItem = this.fb.group({
-      nameInterest: ['', Validators.required],
-      priority: ['', Validators.required]
-    });
-    this.interests.push(newItem);
+  editPreferences(){
+    console.log(this.modifyPreferencesForm);
   }
 }

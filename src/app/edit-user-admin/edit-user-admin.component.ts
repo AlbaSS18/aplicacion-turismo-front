@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MessageService, SelectItem} from 'primeng/api';
-import {UserService} from '../services/user/user.service';
 import {User} from '../models/user';
+import {Rol} from '../models/rol';
+import {UserService} from '../services/user/user.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {RolService} from '../services/rol/rol.service';
-import {Rol} from '../models/rol';
-import {forkJoin} from 'rxjs';
 import {TranslateService} from '@ngx-translate/core';
+import {forkJoin} from 'rxjs';
 
 @Component({
-  selector: 'app-edit-user',
-  templateUrl: './edit-user.component.html',
-  styleUrls: ['./edit-user.component.scss'],
+  selector: 'app-edit-user-admin',
+  templateUrl: './edit-user-admin.component.html',
+  styleUrls: ['./edit-user-admin.component.scss']
 })
-export class EditUserComponent implements OnInit {
+export class EditUserAdminComponent implements OnInit {
 
   editUserForm: FormGroup;
   genre: SelectItem[];
@@ -106,14 +106,13 @@ export class EditUserComponent implements OnInit {
         return a[propName].length === b[propName].length && a[propName].every((value, index) => value === b[propName][index]);
       }
       else{
-          if (a[propName] !== b[propName]) {
-            this.valueUnchanged = false;
-            return false;
-          }
+        if (a[propName] !== b[propName]) {
+          this.valueUnchanged = false;
+          return false;
         }
       }
+    }
   }
-
 
 
 }

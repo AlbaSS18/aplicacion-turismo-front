@@ -79,7 +79,7 @@ export class ListUserComponent implements OnInit {
   }
 
   editUser(user){
-    this.router.navigateByUrl('/user/edit/' + user.id);
+    this.router.navigateByUrl('admin/user/edit/' + user.id);
   }
 
   changeTab(ev) {

@@ -37,7 +37,6 @@ import { ListUserComponent } from './list-user/list-user.component';
 import {TabPanel, TabViewModule} from 'primeng/tabview';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {CardModule} from 'primeng/card';
-import { EditUserComponent } from './edit-user/edit-user.component';
 import {StepsModule} from 'primeng/steps';
 import {DialogService} from 'primeng/dynamicdialog';
 import {TooltipModule} from 'primeng/tooltip';
@@ -49,6 +48,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {CheckboxModule} from 'primeng/checkbox';
 import {MessagesModule} from 'primeng/messages';
 import {NotificationService} from './services/message/notification.service';
+import { EditUserAdminComponent } from './edit-user-admin/edit-user-admin.component';
 
 @NgModule({
   declarations: [
@@ -63,9 +63,9 @@ import {NotificationService} from './services/message/notification.service';
     ListCitiesComponent,
     ListInterestComponent,
     ListUserComponent,
-    EditUserComponent,
     InformationActivitiesComponent,
     EditActivitiesComponent,
+    EditUserAdminComponent,
   ],
   imports: [
     BrowserModule,
