@@ -91,5 +91,6 @@
   "user_delete": "Usuario eliminado",
   "choose_file": "Elegir archivo",
   "remove_file": "Eliminar archivo",
-  "edit_title_activity": "Editar actividad"
+  "edit_title_activity": "Editar actividad",
+  "modifyPreferences": "Modificar preferencias"
 }

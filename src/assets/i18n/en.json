@@ -91,5 +91,6 @@
   "user_delete": "User removed",
   "choose_file": "Choose file",
   "remove_file": "Remove file",
-  "edit_title_activity": "Edit activity"
+  "edit_title_activity": "Edit activity",
+  "modifyPreferences": "Modify preferences"
 }

@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'signup', component: SignUpComponent},
   {path: 'recommendation', component: RecommendationComponent, canActivate: [AuthGuardService]},
   {path: 'map', component: MapComponent},
-  {path: 'modifyPreferences', component: ModifyPreferencesComponent},
+  {path: 'modifyPreferences', component: ModifyPreferencesComponent, canActivate: [AuthGuardService]},
   {path: 'activities', component: TableActivitiesComponent,
     canActivate: [RoleGuardService],
     data: {

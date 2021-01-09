@@ -17,6 +17,9 @@
       <li *ngIf="this.authority=='admin'" class="nav-item">
         <a class="nav-link" [routerLinkActive]="['active']" routerLink="/interest"><i class="fas fa-camera"></i> {{'interest' | translate }}<span class="sr-only">(current)</span></a>
       </li>
+      <li *ngIf="this.authority=='admin' || this.authority=='user'" class="nav-item">
+        <a class="nav-link" [routerLinkActive]="['active']" routerLink="/modifyPreferences"><i class="fas fa-edit"></i> {{'modifyPreferences' | translate }}<span class="sr-only">(current)</span></a>
+      </li>
     </ul>
     <ul class="navbar-nav ml-auto">
       <div class="container-name" *ngIf="isLogin">

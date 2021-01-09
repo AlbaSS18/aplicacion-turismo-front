@@ -12,7 +12,6 @@ import {TranslateService} from '@ngx-translate/core';
   ],
 })
 export class MenuBarComponent implements OnInit {
-  items: MenuItem[];
   isLogin = false;
   roles: string[];
   authority: string;
