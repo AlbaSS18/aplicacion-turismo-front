@@ -1,0 +1,26 @@
+@import "src/assets/sass/utility/_mixins.scss";
+
+.edit-profile-user-panel{
+  @include custom-panel;
+  width: 100%;
+  min-height: 300px;
+  min-width: 800px;
+
+  h1 {
+    text-align: center;
+  }
+}
+
+.fieldset{
+  border: 0;
+}
+
+.legend-container{
+  border-bottom: 1px solid;
+  margin-bottom: 16px;
+  border-color: #c4c6c8;
+}
+
+legend {
+  font-size:1.5em;
+}

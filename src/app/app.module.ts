@@ -49,6 +49,7 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {MessagesModule} from 'primeng/messages';
 import {NotificationService} from './services/message/notification.service';
 import { EditUserAdminComponent } from './edit-user-admin/edit-user-admin.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { EditUserAdminComponent } from './edit-user-admin/edit-user-admin.compon
     InformationActivitiesComponent,
     EditActivitiesComponent,
     EditUserAdminComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,

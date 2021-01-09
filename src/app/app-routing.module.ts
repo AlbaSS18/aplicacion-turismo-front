@@ -22,7 +22,6 @@ const routes: Routes = [
   {path: 'signup', component: SignUpComponent},
   {path: 'recommendation', component: RecommendationComponent, canActivate: [AuthGuardService]},
   {path: 'map', component: MapComponent},
-  {path: 'modifyPreferences', component: ModifyPreferencesComponent, canActivate: [AuthGuardService]},
   {path: 'activities', component: TableActivitiesComponent,
     canActivate: [RoleGuardService],
     data: {
@@ -53,6 +52,7 @@ const routes: Routes = [
     data: {
       expectedRol: 'admin'
   }},
+  {path: 'profile/edit', component: EditUserComponent, canActivate: [AuthGuardService]},
   {path: '**', redirectTo: 'login', pathMatch: 'full'}
 ];
 

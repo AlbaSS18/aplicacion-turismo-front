@@ -46,7 +46,7 @@ export class EditUserAdminComponent implements OnInit {
       {label:'female', value:"Mujer"},
     ];
 
-    forkJoin([this.rolesService.getRoles(), this.userService.getUser(this.userId)]).subscribe(results => {
+    forkJoin([this.rolesService.getRoles(), this.userService.getUserForAdmin(this.userId)]).subscribe(results => {
       this.roles = results[0];
       this.user = results[1];
       this.editUserForm.patchValue({
@@ -66,7 +66,7 @@ export class EditUserAdminComponent implements OnInit {
       genre: this.editUserForm.get("genre").value,
       roles: this.editUserForm.get("roles").value
     };
-    this.userService.editUser(this.userId, user).subscribe(
+    this.userService.editUserByAdmin(this.userId, user).subscribe(
       data => {
         var message = this.translateService.instant('user_edit_message',{ 'nameUser': this.editUserForm.get('userName').value });
         this.messageService.add({key: 'edit-user', severity:'success', summary: this.translateService.instant('user_edit'), detail: message});
