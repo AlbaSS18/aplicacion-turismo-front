@@ -3,7 +3,7 @@
   "users": "Users",
   "cities": "Cities",
   "activities": "Activities",
-  "interests": "Interests",
+  "interest": "Interests",
   "roles": "Roles",
   "list_user": "List of users",
   "search": "Search...",
@@ -15,7 +15,7 @@
   "message_delete_user": "Are you sure you want to delete this user? All related data will delete",
   "delete_user": "Remove user",
   "cancel": "Cancel",
-  "edit_title": "Edit personal info",
+  "edit_title": "Edit personal information",
   "send": "Send",
   "list_cities": "List of cities",
   "add_city": "Add city",
@@ -92,5 +92,6 @@
   "choose_file": "Choose file",
   "remove_file": "Remove file",
   "edit_title_activity": "Edit activity",
-  "yourPerfile": "Your profile"
+  "yourPerfile": "Your profile",
+  "personal_info": "Personal information"
 }

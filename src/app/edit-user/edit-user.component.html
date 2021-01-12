@@ -1,10 +1,10 @@
 <app-menu-bar></app-menu-bar>
 <div class="edit-profile-user-panel">
   <h1>{{ 'edit_title' | translate }}</h1>
-  <form (ngSubmit)="updateUserProfile()" [formGroup]="editUserProfile">
+  <form (ngSubmit)="updateUserProfile()" [formGroup]="editUserProfile" #formEdit="ngForm">
     <fieldset class="fieldset">
       <div class="legend-container">
-        <legend>Información personal:</legend>
+        <legend>{{ 'personal_info' | translate }}: </legend>
       </div>
       <div class="p-fluid form-edit-profile-container">
         <div class="p-field p-grid">
@@ -16,7 +16,8 @@
         <div class="p-field p-grid">
           <label for="age" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{'age' | translate}}:</label>
           <div class="p-col-12 p-md-10">
-            <input id="age" type="text" pInputText formControlName="age"/>
+            <p-inputNumber formControlName="age" id="age" [min]="18" [showButtons]="true">
+            </p-inputNumber>
           </div>
         </div>
         <div class="p-field p-grid">
@@ -29,10 +30,10 @@
     </fieldset>
     <fieldset class="fieldset">
       <div class="legend-container">
-        <legend>Intereses:</legend>
+        <legend>{{ 'interest' | translate }}:</legend>
       </div>
       <div class="p-fluid form-edit-profile-container">
-        <div formArrayName="interests" *ngFor="let item of interests.controls; let i = index;" class="p-field p-grid">
+        <div formArrayName="interest" *ngFor="let item of interest.controls; let i = index;" class="p-field p-grid">
           <label for="{{interestList[i]}}" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{interestList[i].nameInterest}}:</label>
           <div [formGroupName]="i" class="p-col-12 p-md-10">
             <p-inputNumber formControlName="priority" id="{{interestList[i]}}" [min]="0" [max]="10" [showButtons]="true">
@@ -41,7 +42,9 @@
         </div>
       </div>
     </fieldset>
-    <p-button label="{{ 'submit' | translate }}" type="submit"></p-button>
+    <div class="button_edit_user_submit_container">
+      <p-button label="{{ 'submit' | translate }}" type="submit" class="button_edit_user_submit" [disabled]="editUserProfile.invalid || valueUnchanged || formEdit.submitted"></p-button>
+    </div>
   </form>
 </div>
 

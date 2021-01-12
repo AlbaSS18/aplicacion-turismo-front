@@ -5,8 +5,8 @@ import {forkJoin} from 'rxjs';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {TokenService} from '../services/token/token.service';
 import {InterestService} from '../services/interest/interest.service';
-import {SelectItem} from 'primeng/api';
 import {LangChangeEvent, TranslateService} from '@ngx-translate/core';
+import {validadorAgeGreaterThan} from '../sign-up/validatorGreaterThan.directive';
 
 @Component({
   selector: 'app-edit-user',
@@ -19,6 +19,7 @@ export class EditUserComponent implements OnInit {
   interestList;
   user;
   genre;
+  valueUnchanged: boolean = true;
 
   constructor(
     private userService: UserService,
@@ -42,9 +43,9 @@ export class EditUserComponent implements OnInit {
       this.genre = aux;
     })
     this.editUserProfile = this.fb.group({
-      age: ['', Validators.required],
+      age: ['', [Validators.required, validadorAgeGreaterThan()]],
       genre: ['', Validators.required],
-      interests: this.fb.array([]),
+      interest: this.fb.array([]),
       userName: ['', Validators.required]
     });
     this.userService.getUsers().pipe(
@@ -69,29 +70,69 @@ export class EditUserComponent implements OnInit {
             var newItem;
             if (priorityInterest.length === 0){
               newItem = this.fb.group({
+                interestID: [interest.id, Validators.required],
                 nameInterest: [interest.nameInterest, Validators.required],
                 priority: [0, Validators.required]
               });
             }
             else{
               newItem = this.fb.group({
+                interestID: [interest.id, Validators.required],
                 nameInterest: [interest.nameInterest, Validators.required],
                 priority: [priorityInterest[0], Validators.required]
               });
             }
-            this.interests.push(newItem);
+            this.interest.push(newItem);
+            this.observeChanges();
           }
         );
       }
     );
   }
 
-  get interests(): FormArray {
-    return this.editUserProfile.get('interests') as FormArray;
+  get interest(): FormArray {
+    return this.editUserProfile.get('interest') as FormArray;
   }
 
   updateUserProfile(){
     console.log(this.editUserProfile);
+    var user = {
+      age: this.editUserProfile.get("age").value,
+      userName: this.editUserProfile.get("userName").value,
+      genre: this.editUserProfile.get("genre").value,
+      interest: this.interest.value,
+      roles: this.user.roles
+    };
+    console.log(user);
+    this.userService.editUser(this.user.id, user).subscribe(
+      data => {
+        console.log(data);
+      }
+    );
+
+  }
+
+  observeChanges() {
+    this.editUserProfile.valueChanges.subscribe((values) => {
+      this.isEquivalent(this.user, values);
+    });
+  }
+
+  isEquivalent(a, b) {
+    this.valueUnchanged = true;
+    var aProps = Object.keys(a);
+    var bProps = Object.keys(b);
+    for (var i = 0; i < bProps.length; i++) {
+      let propName = bProps[i];
+      console.log(propName)
+      console.log(a[propName]);
+      console.log(b[propName])
+      if (a[propName] !== b[propName]) {
+        console.log("a")
+        this.valueUnchanged = false;
+        return false;
+      }
+    }
   }
 
 

@@ -21,7 +21,7 @@ export class ModifyPreferencesComponent implements OnInit {
 
   ngOnInit(): void {
     this.modifyPreferencesForm = this.fb.group({
-      interests: this.fb.array([])
+      interest: this.fb.array([])
     });
     this.userService.getUsers().pipe(
       map (data => data.filter(p => p.email === this.tokenService.getEmail())),
@@ -48,7 +48,7 @@ export class ModifyPreferencesComponent implements OnInit {
                 priority: [priorityInterest[0], Validators.required]
               });
             }
-            this.interests.push(newItem);
+            this.interest.push(newItem);
           }
         );
       }

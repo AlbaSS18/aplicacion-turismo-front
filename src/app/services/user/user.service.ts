@@ -23,10 +23,6 @@ export class UserService {
     return this.httpClient.get<User>(this.userURL + '/details/' + id, cabecera);
   }
 
-  public editUserByAdmin(id, user): Observable<any> {
-    return this.httpClient.put<any>(this.userURL + '/admin/update/' + id, user, cabecera);
-  }
-
   public getUser(id): Observable<User> {
     return this.httpClient.get<User>(this.userURL + '/details/' + id, cabecera);
   }

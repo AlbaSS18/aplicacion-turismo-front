@@ -3,7 +3,7 @@
   "users": "Usuarios",
   "cities": "Ciudades",
   "activities": "Actividades",
-  "interests": "Intereses",
+  "interest": "Intereses",
   "roles": "Roles",
   "list_user": "Lista de usuarios",
   "search": "Buscar...",
@@ -92,5 +92,6 @@
   "choose_file": "Elegir archivo",
   "remove_file": "Eliminar archivo",
   "edit_title_activity": "Editar actividad",
-  "yourPerfile": "Tú perfil"
+  "yourPerfile": "Tú perfil",
+  "personal_info": "Información personal"
 }

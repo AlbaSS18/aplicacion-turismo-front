@@ -66,7 +66,7 @@ export class EditUserAdminComponent implements OnInit {
       genre: this.editUserForm.get("genre").value,
       roles: this.editUserForm.get("roles").value
     };
-    this.userService.editUserByAdmin(this.userId, user).subscribe(
+    this.userService.editUser(this.userId, user).subscribe(
       data => {
         var message = this.translateService.instant('user_edit_message',{ 'nameUser': this.editUserForm.get('userName').value });
         this.messageService.add({key: 'edit-user', severity:'success', summary: this.translateService.instant('user_edit'), detail: message});
@@ -86,13 +86,6 @@ export class EditUserAdminComponent implements OnInit {
     this.editUserForm.valueChanges.subscribe((values) => {
       this.isEquivalent(this.user, values);
     });
-  }
-
-  isChangeNumber(a, b){
-    this.valueUnchanged = true;
-    if (a !== b){
-      this.valueUnchanged = false;
-    }
   }
 
   isEquivalent(a, b) {
