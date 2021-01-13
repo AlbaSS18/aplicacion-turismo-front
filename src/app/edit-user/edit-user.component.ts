@@ -7,6 +7,7 @@ import {TokenService} from '../services/token/token.service';
 import {InterestService} from '../services/interest/interest.service';
 import {LangChangeEvent, TranslateService} from '@ngx-translate/core';
 import {validadorAgeGreaterThan} from '../sign-up/validatorGreaterThan.directive';
+import {SelectItem} from 'primeng/api';
 
 @Component({
   selector: 'app-edit-user',
@@ -18,7 +19,7 @@ export class EditUserComponent implements OnInit {
   editUserProfile: FormGroup;
   interestList;
   user;
-  genre;
+  genre: SelectItem[];
   valueUnchanged: boolean = true;
 
   constructor(
@@ -30,18 +31,23 @@ export class EditUserComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    var auxGenre = [
+      {label:'Masculino', id: "male"},
+      {label:'Femenino', id: "female"},
+    ];
     this.genre = [
-      {label:'Masculino', value: "Masculino", id: "male"},
-      {label:'Femenino', value:"Femenino", id: "female"},
+      {label: this.translateService.instant('male'), value: 'Hombre'},
+      {label: this.translateService.instant('female'), value: 'Mujer'}
     ];
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
-      var aux = [];
-      for (let item of this.genre){
-        item.label = this.translateService.instant(item.id);
-        aux.push(item);
-      }
-      this.genre = aux;
-    })
+        this.genre = [];
+        var aux = [];
+        for (let item of auxGenre){
+          item.label = this.translateService.instant(item.id);
+          aux.push(item);
+        }
+        this.genre = aux;
+      })
     this.editUserProfile = this.fb.group({
       age: ['', [Validators.required, validadorAgeGreaterThan()]],
       genre: ['', Validators.required],
@@ -83,9 +89,9 @@ export class EditUserComponent implements OnInit {
               });
             }
             this.interest.push(newItem);
-            this.observeChanges();
           }
         );
+        this.observeChanges();
       }
     );
   }
@@ -103,7 +109,6 @@ export class EditUserComponent implements OnInit {
       interest: this.interest.value,
       roles: this.user.roles
     };
-    console.log(user);
     this.userService.editUser(this.user.id, user).subscribe(
       data => {
         console.log(data);
@@ -114,7 +119,9 @@ export class EditUserComponent implements OnInit {
 
   observeChanges() {
     this.editUserProfile.valueChanges.subscribe((values) => {
+      console.log(values);
       this.isEquivalent(this.user, values);
+      console.log(this.valueUnchanged);
     });
   }
 
@@ -122,15 +129,25 @@ export class EditUserComponent implements OnInit {
     this.valueUnchanged = true;
     var aProps = Object.keys(a);
     var bProps = Object.keys(b);
+    console.log(bProps)
     for (var i = 0; i < bProps.length; i++) {
       let propName = bProps[i];
       console.log(propName)
       console.log(a[propName]);
-      console.log(b[propName])
-      if (a[propName] !== b[propName]) {
-        console.log("a")
-        this.valueUnchanged = false;
-        return false;
+      console.log(b[propName]);
+      console.log("a")
+      console.log(a)
+      console.log("b")
+      console.log(b)
+      if (propName === "interest"){
+        //this.valueUnchanged = a[propName].length === b[propName].length && a[propName].every((value, index) => value === b[propName][index]);
+
+      }
+      else{
+        if (a[propName] !== b[propName]) {
+          this.valueUnchanged = false;
+          return false;
+        }
       }
     }
   }
