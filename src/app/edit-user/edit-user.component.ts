@@ -32,8 +32,8 @@ export class EditUserComponent implements OnInit {
 
   ngOnInit(): void {
     var auxGenre = [
-      {label:'Masculino', id: "male"},
-      {label:'Femenino', id: "female"},
+      {label:'Masculino', value:'Hombre', id: "male"},
+      {label:'Femenino', value:'Mujer', id: "female"},
     ];
     this.genre = [
       {label: this.translateService.instant('male'), value: 'Hombre'},
@@ -44,7 +44,8 @@ export class EditUserComponent implements OnInit {
         var aux = [];
         for (let item of auxGenre){
           item.label = this.translateService.instant(item.id);
-          aux.push(item);
+          var itemAux = {label: item.label, value: item.value}
+          aux.push(itemAux);
         }
         this.genre = aux;
       })
@@ -141,7 +142,7 @@ export class EditUserComponent implements OnInit {
       console.log(b)
       if (propName === "interest"){
         //this.valueUnchanged = a[propName].length === b[propName].length && a[propName].every((value, index) => value === b[propName][index]);
-
+        //return a[propName].length === b[propName].length && a[propName].every((value, index) => value === b[propName][index]);
       }
       else{
         if (a[propName] !== b[propName]) {
