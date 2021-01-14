@@ -62,16 +62,27 @@ export class EditUserComponent implements OnInit {
       })
     ).subscribe(
       ([response1, response2]) => {
-        console.log(response1);
-        console.log(response2);
         this.user = response1;
+        console.log(response1)
         this.interestList = response2;
         this.editUserProfile.patchValue({
           userName: this.user.userName,
           age: this.user.age,
           genre: this.user.genre,
         });
-        this.interestList.forEach(
+        this.user.interest.forEach(
+          infoInterest => {
+            console.log(infoInterest)
+            var newItem = this.fb.group({
+              interestID: [infoInterest.interestID, Validators.required],
+              nameInterest: [infoInterest.nameInterest, Validators.required],
+              priority: [infoInterest.priority, Validators.required]
+            });
+            this.interest.push(newItem);
+          }
+        )
+        console.log(this.interest.controls)
+        /*this.interestList.forEach(
           interest => {
             var priorityInterest = this.user.interest.filter(interestByUser => interestByUser.interestID === interest.id).map(prio => prio.priority);
             var newItem;
@@ -91,7 +102,7 @@ export class EditUserComponent implements OnInit {
             }
             this.interest.push(newItem);
           }
-        );
+        );*/
         this.observeChanges();
       }
     );
@@ -102,7 +113,6 @@ export class EditUserComponent implements OnInit {
   }
 
   updateUserProfile(){
-    console.log(this.editUserProfile);
     var user = {
       age: this.editUserProfile.get("age").value,
       userName: this.editUserProfile.get("userName").value,
@@ -110,19 +120,18 @@ export class EditUserComponent implements OnInit {
       interest: this.interest.value,
       roles: this.user.roles
     };
-    this.userService.editUser(this.user.id, user).subscribe(
-      data => {
-        console.log(data);
-      }
-    );
+    console.log(user);
+    // this.userService.editUser(this.user.id, user).subscribe(
+    //   data => {
+    //     console.log(data);
+    //   }
+    // );
 
   }
 
   observeChanges() {
     this.editUserProfile.valueChanges.subscribe((values) => {
-      console.log(values);
       this.isEquivalent(this.user, values);
-      console.log(this.valueUnchanged);
     });
   }
 
@@ -130,19 +139,17 @@ export class EditUserComponent implements OnInit {
     this.valueUnchanged = true;
     var aProps = Object.keys(a);
     var bProps = Object.keys(b);
-    console.log(bProps)
     for (var i = 0; i < bProps.length; i++) {
       let propName = bProps[i];
-      console.log(propName)
-      console.log(a[propName]);
-      console.log(b[propName]);
-      console.log("a")
-      console.log(a)
-      console.log("b")
-      console.log(b)
       if (propName === "interest"){
-        //this.valueUnchanged = a[propName].length === b[propName].length && a[propName].every((value, index) => value === b[propName][index]);
-        //return a[propName].length === b[propName].length && a[propName].every((value, index) => value === b[propName][index]);
+        // Sort array
+        var array1Sort = a[propName].sort((a, b) => (a.interestID < b.interestID ? -1 : 1));
+        var array2Sort = b[propName].sort((a, b) => (a.interestID < b.interestID ? -1 : 1));
+        var check = array1Sort.length === array2Sort.length && array1Sort.every((value, index) => JSON.stringify(value) === JSON.stringify(array2Sort[index]));
+        if (check === false){
+          this.valueUnchanged = check;
+          return array1Sort.length === array2Sort.length && array1Sort.every((value, index) => JSON.stringify(value) === JSON.stringify(array2Sort[index]));
+        }
       }
       else{
         if (a[propName] !== b[propName]) {

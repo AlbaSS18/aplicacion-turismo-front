@@ -34,9 +34,9 @@
       </div>
       <div class="p-fluid form-edit-profile-container">
         <div formArrayName="interest" *ngFor="let item of interest.controls; let i = index;" class="p-field p-grid">
-          <label for="{{interestList[i]}}" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{interestList[i].nameInterest}}:</label>
+          <label for='{{item.value.nameInterest}}' class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{item.value.nameInterest}}:</label>
           <div [formGroupName]="i" class="p-col-12 p-md-10">
-            <p-inputNumber formControlName="priority" id="{{interestList[i]}}" [min]="0" [max]="10" [showButtons]="true">
+            <p-inputNumber formControlName="priority" id="{{item.value.nameInterest}}" [min]="0" [max]="10" [showButtons]="true">
             </p-inputNumber>
           </div>
         </div>
