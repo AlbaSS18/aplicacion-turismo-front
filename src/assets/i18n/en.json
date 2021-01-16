@@ -80,7 +80,7 @@
   "city_add": "City add",
   "name_city_required": "Name is required",
   "name_city_repetead": "There is a city with that name",
-  "user_edit_message": "El usuario {{nameUser}} has been successfully edited",
+  "user_edit_message": "The user {{nameUser}} has been successfully edited",
   "user_edit": "User edit",
   "password_not_same": "Passwords do not match",
   "age_invalid": "Age should be greater than 16",
@@ -93,5 +93,7 @@
   "remove_file": "Remove file",
   "edit_title_activity": "Edit activity",
   "yourPerfile": "Your profile",
-  "personal_info": "Personal information"
+  "personal_info": "Personal information",
+  "user_profile_edit_message": "Your profile has been successfully edited",
+  "user_profile_edit": "User profile edit"
 }

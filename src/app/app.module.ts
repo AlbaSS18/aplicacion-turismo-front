@@ -50,6 +50,7 @@ import {MessagesModule} from 'primeng/messages';
 import {NotificationService} from './services/message/notification.service';
 import { EditUserAdminComponent } from './edit-user-admin/edit-user-admin.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import {ScrollPanelModule} from 'primeng/scrollpanel';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     InformationActivitiesComponent,
     EditActivitiesComponent,
     EditUserAdminComponent,
-    EditUserComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
@@ -99,6 +100,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     ToastModule,
     CheckboxModule,
     MessagesModule,
+    ScrollPanelModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

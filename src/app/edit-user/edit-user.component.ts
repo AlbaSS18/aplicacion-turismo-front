@@ -7,7 +7,7 @@ import {TokenService} from '../services/token/token.service';
 import {InterestService} from '../services/interest/interest.service';
 import {LangChangeEvent, TranslateService} from '@ngx-translate/core';
 import {validadorAgeGreaterThan} from '../sign-up/validatorGreaterThan.directive';
-import {SelectItem} from 'primeng/api';
+import {MessageService, SelectItem} from 'primeng/api';
 
 @Component({
   selector: 'app-edit-user',
@@ -17,10 +17,10 @@ import {SelectItem} from 'primeng/api';
 export class EditUserComponent implements OnInit {
 
   editUserProfile: FormGroup;
-  interestList;
   user;
   genre: SelectItem[];
   valueUnchanged: boolean = true;
+  infoMessage = [];
 
   constructor(
     private userService: UserService,
@@ -44,7 +44,7 @@ export class EditUserComponent implements OnInit {
         var aux = [];
         for (let item of auxGenre){
           item.label = this.translateService.instant(item.id);
-          var itemAux = {label: item.label, value: item.value}
+          var itemAux = {label: item.label, value: item.value};
           aux.push(itemAux);
         }
         this.genre = aux;
@@ -58,13 +58,11 @@ export class EditUserComponent implements OnInit {
     this.userService.getUsers().pipe(
       map (data => data.filter(p => p.email === this.tokenService.getEmail())),
       mergeMap ( user => {
-        return forkJoin([this.userService.getUser(user[0].id), this.interestService.getInterests()]).pipe();
+        return forkJoin([this.userService.getUser(user[0].id)]).pipe();
       })
     ).subscribe(
-      ([response1, response2]) => {
+      ([response1]) => {
         this.user = response1;
-        console.log(response1)
-        this.interestList = response2;
         this.editUserProfile.patchValue({
           userName: this.user.userName,
           age: this.user.age,
@@ -72,7 +70,6 @@ export class EditUserComponent implements OnInit {
         });
         this.user.interest.forEach(
           infoInterest => {
-            console.log(infoInterest)
             var newItem = this.fb.group({
               interestID: [infoInterest.interestID, Validators.required],
               nameInterest: [infoInterest.nameInterest, Validators.required],
@@ -81,28 +78,6 @@ export class EditUserComponent implements OnInit {
             this.interest.push(newItem);
           }
         )
-        console.log(this.interest.controls)
-        /*this.interestList.forEach(
-          interest => {
-            var priorityInterest = this.user.interest.filter(interestByUser => interestByUser.interestID === interest.id).map(prio => prio.priority);
-            var newItem;
-            if (priorityInterest.length === 0){
-              newItem = this.fb.group({
-                interestID: [interest.id, Validators.required],
-                nameInterest: [interest.nameInterest, Validators.required],
-                priority: [0, Validators.required]
-              });
-            }
-            else{
-              newItem = this.fb.group({
-                interestID: [interest.id, Validators.required],
-                nameInterest: [interest.nameInterest, Validators.required],
-                priority: [priorityInterest[0], Validators.required]
-              });
-            }
-            this.interest.push(newItem);
-          }
-        );*/
         this.observeChanges();
       }
     );
@@ -120,13 +95,38 @@ export class EditUserComponent implements OnInit {
       interest: this.interest.value,
       roles: this.user.roles
     };
-    console.log(user);
-    // this.userService.editUser(this.user.id, user).subscribe(
-    //   data => {
-    //     console.log(data);
-    //   }
-    // );
-
+    this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      var aux = this.infoMessage;
+      this.infoMessage = [];
+      for (let message of aux){
+        var mAux = message;
+        mAux.summary = this.translateService.instant("user_profile_edit");
+        mAux.detail = this.translateService.instant("user_profile_edit_message");
+        this.infoMessage.push(mAux);
+      }
+    });
+    this.userService.editUser(this.user.id, user).pipe(
+      map( data => {
+        this.valueUnchanged = true;
+        var message = this.translateService.instant('user_profile_edit_message');
+        this.infoMessage = [
+          {key: 'edit_profile_user', severity:'success', summary: this.translateService.instant('user_profile_edit'), detail: message}
+          ];
+      }),
+      mergeMap( () => {
+        return this.userService.getUser(this.user.id).pipe();
+      })
+    ).subscribe(
+      data => {
+        this.user = data;
+      },
+      (err) => {
+        var message = this.translateService.instant('error_delete_message');
+        this.infoMessage = [
+          { key: 'edit_profile_user', severity:'error', summary: this.translateService.instant('error'), detail: message}
+        ];
+      }
+    );
   }
 
   observeChanges() {
