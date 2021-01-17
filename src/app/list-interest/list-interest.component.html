@@ -2,7 +2,7 @@
 <p-toast  key="interest"></p-toast>
 <div class="interest-panel">
   <p-card header="{{ 'list_interest' | translate }}">
-    <p-virtualScroller [value]="interest" scrollHeight="150px" [itemSize]="50" >
+    <p-virtualScroller [value]="interest" scrollHeight="250px" [itemSize]="50" >
       <p-header class="list-header-interest">
         {{ 'interest' | translate }}
         <button pButton pRipple type="button" label=" {{ 'add_interest' | translate }}" icon="pi pi-plus" iconPos="left" class="p-button-raised p-button-rounded" (click)="openPanel($event)"></button>
