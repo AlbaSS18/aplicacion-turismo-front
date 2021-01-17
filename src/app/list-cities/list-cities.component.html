@@ -13,6 +13,7 @@
             <b>{{city.name}}</b>
           </div>
           <div class="group-buttons">
+            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editCity(city)"></button>
             <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="removeCity(city)"></button>
           </div>
         </div>
@@ -43,5 +44,23 @@
   </p-dialog>
 
   <p-confirmDialog header="{{ 'confirm' | translate }}" icon="pi pi-exclamation-triangle" acceptLabel="{{ 'delete' | translate }}" rejectLabel="{{ 'cancel' | translate }}"></p-confirmDialog>
+
+  <p-dialog header="{{ 'edit_title_city' | translate }}" [draggable]="false" [(visible)]="displayEditPanel" [modal]="true" (onHide)="hideDialogEditCity()">
+    <form [formGroup]="formEditCity" #formCityToEdit="ngForm" id="ngFormEditCity" (ngSubmit)="onEditSubmit()">
+      <div class="p-field p-grid">
+        <label for="field-edit-name-city" class="p-col-fixed">{{ 'name_city' | translate }}*:</label>
+        <div class="p-col buttons-add-city">
+          <input id="field-edit-name-city" type="text" pInputText formControlName="name">
+          <small *ngIf="formEditCity.controls['name'].invalid &&
+            (formEditCity.controls['name'].dirty || formEditCity.controls['name'].touched)" class="p-invalid">{{ 'name_city_required' | translate }}</small>
+          <small *ngIf="formCityToEdit.submitted && errorEditCity" class="p-invalid">{{ 'name_city_repetead' | translate }}</small>
+        </div>
+      </div>
+    </form>
+    <p-footer>
+      <button pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormEditCity" [disabled]="formEditCity.invalid"></button>
+      <button pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancelEdit()"></button>
+    </p-footer>
+  </p-dialog>
 </div>
 

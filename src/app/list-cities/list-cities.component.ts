@@ -17,6 +17,9 @@ export class ListCitiesComponent implements OnInit {
   display: boolean = false;
   formAddCity: FormGroup;
   errorAddCity: boolean = false;
+  errorEditCity: boolean = false;
+  displayEditPanel: boolean = false;
+  formEditCity: FormGroup;
 
   constructor(
     private cityService: CityService,
@@ -28,6 +31,10 @@ export class ListCitiesComponent implements OnInit {
 
   ngOnInit(): void {
     this.formAddCity = this.formBuilder.group({
+      name: ['', Validators.required]
+    });
+    this.formEditCity = this.formBuilder.group({
+      id: ['', Validators.required],
       name: ['', Validators.required]
     });
     this.loadCities();
@@ -99,7 +106,48 @@ export class ListCitiesComponent implements OnInit {
     this.errorAddCity = false;
   }
 
+  hideDialogEditCity(){
+    this.formEditCity.reset();
+    this.errorEditCity = false;
+  }
+
   cancel(){
     this.display = false;
   }
+
+  editCity(city){
+    this.displayEditPanel = true;
+    this.formEditCity.patchValue({
+        id: city.id,
+        name : city.name
+      }
+    );
+  }
+
+  onEditSubmit(){
+    var city = {
+      name : this.formEditCity.get('name').value
+    };
+
+    this.cityService.editCity(this.formEditCity.get('id').value, city).pipe(
+      mergeMap(message => {
+        return this.cityService.getCities().pipe();
+      })
+    ).subscribe( data => {
+      this.displayEditPanel = false;
+      var message = this.translateService.instant('city_edit_message',{ 'nameCity': city.name });
+      this.messageService.add({key: 'city', severity:'success', summary: this.translateService.instant('city_edit'), detail: message });
+      this.cities = data;
+    },
+      err => {
+        var message = this.translateService.instant('error_delete_message');
+        this.messageService.add({key: 'city', severity:'error', summary: this.translateService.instant('error'), detail: message });
+      });
+  }
+
+  cancelEdit(){
+    this.displayEditPanel = false;
+  }
+
+
 }

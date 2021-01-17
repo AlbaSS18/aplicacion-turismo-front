@@ -95,5 +95,9 @@
   "yourPerfile": "Your profile",
   "personal_info": "Personal information",
   "user_profile_edit_message": "Your profile has been successfully edited",
-  "user_profile_edit": "User profile edit"
+  "user_profile_edit": "User profile edit",
+  "edit_title_city": "Edit city",
+  "city_edit_message": "The city {{nameCity}} has been successfully edited",
+  "interest_edit_message": "The interest {{nameInterest}} has been successfully edited",
+  "city_edit": "City edited"
 }
