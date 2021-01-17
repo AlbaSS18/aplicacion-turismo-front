@@ -60,11 +60,6 @@
             <span class="p-inputgroup-addon"><i class="far fa-calendar-alt" style="line-height: 1.25;"></i></span>
             <p-inputNumber id="field-age" formControlName="age" [min]=18 class="p-invalid" class="input-age" [showButtons]="true"></p-inputNumber>
           </div>
-          <div class="message_error_sign_container">
-            <p-message severity="error"
-                       text="{{ 'age_invalid' | translate }}"
-                       *ngIf="formGroup.get('age').errors && formGroup.get('age').dirty && formGroup.get('age').errors.menorDeEdad"></p-message>
-          </div>
         </div>
         <div class="p-field p-col-12 p-md-6">
           <label for="field-genre">{{ 'genre' | translate }}*</label>
