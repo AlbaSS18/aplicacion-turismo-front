@@ -8,6 +8,7 @@ import {validadorAgeGreaterThan} from '../validators/validatorGreaterThan.direct
 import {ActivatedRoute, Router} from '@angular/router';
 import {NotificationService} from '../services/message/notification.service';
 import {validadorPriorityNumberOfInterest} from '../validators/validatorPriorityNumber.directive';
+import {TranslateService} from '@ngx-translate/core';
 
 
 @Component({
@@ -31,6 +32,7 @@ export class SignUpComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private notificationService: NotificationService,
+    private translateService: TranslateService
   ) {
   }
 

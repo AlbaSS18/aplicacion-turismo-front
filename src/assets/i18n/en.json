@@ -104,5 +104,6 @@
   "error_message": "An unexpected error has occurred. Try again later",
   "delete_activity": "Remove activity",
   "delete_city": "Remove city",
-  "delete_interest": "Remove interest"
+  "delete_interest": "Remove interest",
+  "Ya existe ese email": "That email already exists"
 }

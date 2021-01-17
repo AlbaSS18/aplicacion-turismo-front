@@ -97,7 +97,7 @@
             </ng-container>
           </div>
         </ng-container>
-        <p-message severity="error" text="{{ 'data_incorrect' | translate }}: {{message}}"
+        <p-message severity="error" text="{{ 'data_incorrect' | translate }}: {{message | translate}}"
                    *ngIf="formSign.submitted && isRegisterFail"></p-message>
         <button pButton type="button" label="{{ 'return' | translate }}" icon="fas fa-arrow-left" class="button_return" (click)="returnFirstPartForm()"></button>
         <button pButton type="submit" label="{{ 'submit' | translate }}" icon="pi pi-check" [disabled]="!formGroup.valid" class="button_signup"></button>

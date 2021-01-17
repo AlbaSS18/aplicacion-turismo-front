@@ -104,5 +104,6 @@
   "error_message": "Ha ocurrido un error inesperado. Inténtelo de nuevo más tarde",
   "delete_activity": "Eliminar actividad",
   "delete_city": "Eliminar ciudad",
-  "delete_interest": "Eliminar interés"
+  "delete_interest": "Eliminar interés",
+  "Ya existe ese email": "Ya existe ese email"
 }
