@@ -3,7 +3,7 @@
   "users": "Usuarios",
   "cities": "Ciudades",
   "activities": "Actividades",
-  "interest": "Intereses",
+  "interests": "Intereses",
   "roles": "Roles",
   "list_user": "Lista de usuarios",
   "search": "Buscar...",
@@ -99,5 +99,8 @@
   "edit_title_city": "Editar ciudad",
   "city_edit_message": "La ciudad {{nameCity}} ha sido modificada con éxito",
   "interest_edit_message": "El interés {{nameInterest}} ha sido modificado con éxito",
-  "city_edit": "Ciudad editada"
+  "city_edit": "Ciudad editada",
+  "edit_title_interest": "Editar interés",
+  "interest_edit": "Interés editado",
+  "error_message": "Ha ocurrido un error inesperado. Inténtelo de nuevo más tarde"
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {InterestService} from '../services/interest/interest.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ConfirmationService, MessageService} from 'primeng/api';
-import {map, mergeMap, switchMap} from 'rxjs/operators';
+import {map, mergeMap} from 'rxjs/operators';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({
@@ -16,6 +16,9 @@ export class ListInterestComponent implements OnInit {
   display: boolean = false;
   formAddInterest: FormGroup;
   errorAddInterest: boolean = false;
+  displayEditDialog: boolean = false;
+  formEditInterest: FormGroup;
+  errorEditInterest: boolean = false;
 
   constructor(
     private interestService: InterestService,
@@ -27,6 +30,10 @@ export class ListInterestComponent implements OnInit {
 
   ngOnInit(): void {
     this.formAddInterest = this.formBuilder.group({
+      name: ['', Validators.required]
+    });
+    this.formEditInterest = this.formBuilder.group({
+      id: ['', Validators.required],
       name: ['', Validators.required]
     });
     this.loadInterest();
@@ -104,5 +111,45 @@ export class ListInterestComponent implements OnInit {
       }
     });
   }
+
+  editInterest(interest){
+    this.displayEditDialog = true;
+    this.formEditInterest.patchValue({
+      id: interest.id,
+      name: interest.nameInterest
+    });
+    console.log(this.formEditInterest.value);
+  }
+
+  onEditSubmit(){
+    var interest = {
+      nameInterest: this.formEditInterest.get('name').value
+    }
+    console.log(this.formEditInterest.get('id').value)
+    this.interestService.editInterest(this.formEditInterest.get('id').value, interest).pipe(
+      mergeMap( data => {
+        return this.interestService.getInterests().pipe();
+      })
+    ).subscribe(
+      data => {
+        this.displayEditDialog = false;
+        var message = this.translateService.instant('interest_edit_message',{ 'nameInterest': interest.nameInterest });
+        this.messageService.add({key: 'interest', severity:'success', summary: this.translateService.instant('interest_edit'), detail: message });
+        this.interest = data;
+      },
+      err => {
+        this.errorEditInterest = true;
+      }
+    );
+  }
+
+  cancelEdit(){
+    this.displayEditDialog = false;
+  }
+
+  hideDialogEditInterest(){
+    this.errorEditInterest = false;
+  }
+
 
 }

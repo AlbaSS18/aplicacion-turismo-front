@@ -3,7 +3,7 @@
   "users": "Users",
   "cities": "Cities",
   "activities": "Activities",
-  "interest": "Interests",
+  "interests": "Interests",
   "roles": "Roles",
   "list_user": "List of users",
   "search": "Search...",
@@ -99,5 +99,8 @@
   "edit_title_city": "Edit city",
   "city_edit_message": "The city {{nameCity}} has been successfully edited",
   "interest_edit_message": "The interest {{nameInterest}} has been successfully edited",
-  "city_edit": "City edited"
+  "city_edit": "City edited",
+  "edit_title_interest": "Edit interest",
+  "interest_edit": "Interest edited",
+  "error_message": "An unexpected error has occurred. Try again later"
 }

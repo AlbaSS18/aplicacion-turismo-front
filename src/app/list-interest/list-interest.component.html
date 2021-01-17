@@ -4,7 +4,7 @@
   <p-card header="{{ 'list_interest' | translate }}">
     <p-virtualScroller [value]="interest" scrollHeight="150px" [itemSize]="50" >
       <p-header class="list-header-interest">
-        {{ 'interests' | translate }}
+        {{ 'interest' | translate }}
         <button pButton pRipple type="button" label=" {{ 'add_interest' | translate }}" icon="pi pi-plus" iconPos="left" class="p-button-raised p-button-rounded" (click)="openPanel($event)"></button>
       </p-header>
       <ng-template pTemplate="item" let-interest>
@@ -13,6 +13,7 @@
             <b>{{interest.nameInterest}}</b>
           </div>
           <div class="group-buttons-interest">
+            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editInterest(interest)"></button>
             <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="deleteInterest(interest)"></button>
           </div>
         </div>
@@ -40,4 +41,22 @@
     </p-footer>
   </p-dialog>
   <p-confirmDialog header="{{ 'confirm' | translate }}" acceptLabel="{{ 'delete' | translate }}" rejectLabel="{{ 'cancel' | translate }}" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+
+  <p-dialog header="{{ 'edit_title_interest' | translate }}" [(visible)]="displayEditDialog" modal="true" [draggable]="false" (onHide)="hideDialogEditInterest()">
+    <form [formGroup]="formEditInterest"  #formInterestToEdit="ngForm"  id="ngFormEditInterest" (ngSubmit)="onEditSubmit()" >
+      <div class="p-field p-grid">
+        <label for="field-edit-name-interest" class="p-col-fixed">{{ 'name_interest' | translate }}*:</label>
+        <div class="p-col buttons-add-interest">
+          <input id="field-edit-name-interest" type="text" pInputText formControlName="name">
+          <small *ngIf="formEditInterest.controls['name'].invalid &&
+            (formEditInterest.controls['name'].dirty || formEditInterest.controls['name'].touched)" class="p-invalid">{{ 'name_interest_required' | translate }}</small>
+          <small *ngIf="formInterestToEdit.submitted && errorEditInterest" class="p-invalid">{{ 'name_interest_repetead' | translate }}</small>
+        </div>
+      </div>
+    </form>
+    <p-footer>
+      <button pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormEditInterest" [disabled]="formEditInterest.invalid"></button>
+      <button pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancelEdit()"></button>
+    </p-footer>
+  </p-dialog>
 </div>

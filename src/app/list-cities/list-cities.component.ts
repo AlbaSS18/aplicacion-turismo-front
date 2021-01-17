@@ -3,7 +3,7 @@ import {CityService} from '../services/city/city.service';
 import {City} from '../models/city';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ConfirmationService, MessageService} from 'primeng/api';
-import {map, mergeMap} from 'rxjs/operators';
+import {catchError, map, mergeMap} from 'rxjs/operators';
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({
@@ -107,7 +107,6 @@ export class ListCitiesComponent implements OnInit {
   }
 
   hideDialogEditCity(){
-    this.formEditCity.reset();
     this.errorEditCity = false;
   }
 
@@ -140,8 +139,7 @@ export class ListCitiesComponent implements OnInit {
       this.cities = data;
     },
       err => {
-        var message = this.translateService.instant('error_delete_message');
-        this.messageService.add({key: 'city', severity:'error', summary: this.translateService.instant('error'), detail: message });
+        this.errorEditCity = true;
       });
   }
 

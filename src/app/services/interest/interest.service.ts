@@ -31,4 +31,8 @@ export class InterestService {
   public getInterestByUser(id): Observable<InterestByUser[]> {
     return this.httpClient.get<InterestByUser[]>(this.interestURL + '/list/user/' + id, cabecera);
   }
+
+  public editInterest(id, interest): Observable<any> {
+    return this.httpClient.put<any>(this.interestURL + '/update/' + id, interest, cabecera);
+  }
 }
