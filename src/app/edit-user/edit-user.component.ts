@@ -6,8 +6,9 @@ import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {TokenService} from '../services/token/token.service';
 import {InterestService} from '../services/interest/interest.service';
 import {LangChangeEvent, TranslateService} from '@ngx-translate/core';
-import {validadorAgeGreaterThan} from '../sign-up/validatorGreaterThan.directive';
+import {validadorAgeGreaterThan} from '../validators/validatorGreaterThan.directive';
 import {MessageService, SelectItem} from 'primeng/api';
+import {validadorPriorityNumberOfInterest} from '../validators/validatorPriorityNumber.directive';
 
 @Component({
   selector: 'app-edit-user',
@@ -73,7 +74,7 @@ export class EditUserComponent implements OnInit {
             var newItem = this.fb.group({
               interestID: [infoInterest.interestID, Validators.required],
               nameInterest: [infoInterest.nameInterest, Validators.required],
-              priority: [infoInterest.priority, Validators.required]
+              priority: [infoInterest.priority, [Validators.required, validadorPriorityNumberOfInterest()]]
             });
             this.interest.push(newItem);
           }

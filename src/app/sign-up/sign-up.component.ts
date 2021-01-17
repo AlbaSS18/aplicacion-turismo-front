@@ -3,10 +3,11 @@ import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angul
 import {InterestService} from '../services/interest/interest.service';
 import {AuthService} from '../services/auth/auth.service';
 import {MenuItem, MessageService, SelectItem} from 'primeng/api';
-import {validadorPasswordSame} from './validatorPasswordSame.directive';
-import {validadorAgeGreaterThan} from './validatorGreaterThan.directive';
+import {validadorPasswordSame} from '../validators/validatorPasswordSame.directive';
+import {validadorAgeGreaterThan} from '../validators/validatorGreaterThan.directive';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NotificationService} from '../services/message/notification.service';
+import {validadorPriorityNumberOfInterest} from '../validators/validatorPriorityNumber.directive';
 
 
 @Component({
@@ -65,7 +66,7 @@ export class SignUpComponent implements OnInit {
         this.interestArray.forEach(interest => {
           const control = new FormGroup({
             nameInterest: new FormControl(interest.nameInterest, Validators.required),
-            priority: new FormControl(0, [Validators.required])
+            priority: new FormControl(0, [Validators.required, validadorPriorityNumberOfInterest()])
           });
           this.interest.push(control);
         });

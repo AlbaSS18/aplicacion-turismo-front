@@ -8,7 +8,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {RolService} from '../services/rol/rol.service';
 import {TranslateService} from '@ngx-translate/core';
 import {forkJoin} from 'rxjs';
-import {validadorAgeGreaterThan} from '../sign-up/validatorGreaterThan.directive';
+import {validadorAgeGreaterThan} from '../validators/validatorGreaterThan.directive';
 
 @Component({
   selector: 'app-edit-user-admin',
