@@ -58,7 +58,7 @@
           <label for="field-age">{{ 'age' | translate }}*</label>
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="far fa-calendar-alt" style="line-height: 1.25;"></i></span>
-            <p-inputNumber id="field-age" formControlName="age" [min]=0 class="p-invalid" class="input-age"></p-inputNumber>
+            <p-inputNumber id="field-age" formControlName="age" [min]=18 class="p-invalid" class="input-age" [showButtons]="true"></p-inputNumber>
           </div>
           <div class="message_error_sign_container">
             <p-message severity="error"
