@@ -60,7 +60,6 @@
   "name_interest": "Name",
   "name_interest_repetead": "There is a interest with that name",
   "name_interest_required": "Name is required",
-  "confirm": "Confirm",
   "interest_delete_message": "The interest {{nameInterest}} has been successfully removed",
   "interest_delete": "Interest removed",
   "interest_add_message": "The interest {{nameInterest}} has been successfully added",
@@ -102,5 +101,8 @@
   "city_edit": "City edited",
   "edit_title_interest": "Edit interest",
   "interest_edit": "Interest edited",
-  "error_message": "An unexpected error has occurred. Try again later"
+  "error_message": "An unexpected error has occurred. Try again later",
+  "delete_activity": "Remove activity",
+  "delete_city": "Remove city",
+  "delete_interest": "Remove interest"
 }

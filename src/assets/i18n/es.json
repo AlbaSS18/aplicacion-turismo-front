@@ -60,7 +60,6 @@
   "name_interest": "Nombre",
   "name_interest_repetead": "Ya hay un interés con ese nombre",
   "name_interest_required": "El nombre es obligatorio",
-  "confirm": "Confirmar",
   "interest_delete_message": "El interés {{nameInterest}} ha sido eliminado con éxito",
   "interest_delete": "Interés eliminado",
   "interest_add_message": "El interés {{nameInterest}} ha sido añadido con éxito",
@@ -102,5 +101,8 @@
   "city_edit": "Ciudad editada",
   "edit_title_interest": "Editar interés",
   "interest_edit": "Interés editado",
-  "error_message": "Ha ocurrido un error inesperado. Inténtelo de nuevo más tarde"
+  "error_message": "Ha ocurrido un error inesperado. Inténtelo de nuevo más tarde",
+  "delete_activity": "Eliminar actividad",
+  "delete_city": "Eliminar ciudad",
+  "delete_interest": "Eliminar interés"
 }

@@ -43,7 +43,7 @@
     </p-footer>
   </p-dialog>
 
-  <p-confirmDialog header="{{ 'confirm' | translate }}" icon="pi pi-exclamation-triangle" acceptLabel="{{ 'delete' | translate }}" rejectLabel="{{ 'cancel' | translate }}"></p-confirmDialog>
+  <p-confirmDialog header="{{ 'delete_city' | translate }}" icon="pi pi-exclamation-triangle" acceptLabel="{{ 'delete' | translate }}" rejectLabel="{{ 'cancel' | translate }}"></p-confirmDialog>
 
   <p-dialog header="{{ 'edit_title_city' | translate }}" [draggable]="false" [(visible)]="displayEditPanel" [modal]="true" (onHide)="hideDialogEditCity()">
     <form [formGroup]="formEditCity" #formCityToEdit="ngForm" id="ngFormEditCity" (ngSubmit)="onEditSubmit()">

@@ -43,8 +43,8 @@
                   </span>
                 </td>
                 <td>
-                  <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="confirmDelete(user)"></button>
                   <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editUser(user)"></button>
+                  <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="confirmDelete(user)"></button>
                 </td>
               </tr>
             </ng-template>
@@ -75,5 +75,5 @@
     </p-tabView>
 
 
-  <p-confirmDialog header="{{ 'delete' | translate }}" icon="pi pi-info-circle"></p-confirmDialog>
+  <p-confirmDialog header="{{ 'delete_user' | translate }}" icon="pi pi-info-circle" acceptLabel="{{ 'delete' | translate }}" rejectLabel="{{ 'cancel' | translate }}"></p-confirmDialog>
 </div>

@@ -56,7 +56,7 @@
     </p-table>
   </div>
 
-  <p-confirmDialog header="{{ 'delete' | translate }}" icon="pi pi-info-circle"></p-confirmDialog>
+  <p-confirmDialog header="{{ 'delete_activity' | translate }}" icon="pi pi-info-circle" acceptLabel="{{ 'delete' | translate }}" rejectLabel="{{ 'cancel' | translate }}"></p-confirmDialog>
 
   <p-dialog [(visible)]="productDialog" styleClass="myDialog" *ngIf="productDialog" modal="true" [draggable]="false" [closable]="false" >
     <p-header>

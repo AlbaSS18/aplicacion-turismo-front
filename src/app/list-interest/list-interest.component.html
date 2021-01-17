@@ -40,7 +40,7 @@
       <button pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancel()"></button>
     </p-footer>
   </p-dialog>
-  <p-confirmDialog header="{{ 'confirm' | translate }}" acceptLabel="{{ 'delete' | translate }}" rejectLabel="{{ 'cancel' | translate }}" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+  <p-confirmDialog header="{{ 'delete_interest' | translate }}" acceptLabel="{{ 'delete' | translate }}" rejectLabel="{{ 'cancel' | translate }}" icon="pi pi-exclamation-triangle"></p-confirmDialog>
 
   <p-dialog header="{{ 'edit_title_interest' | translate }}" [(visible)]="displayEditDialog" modal="true" [draggable]="false" (onHide)="hideDialogEditInterest()">
     <form [formGroup]="formEditInterest"  #formInterestToEdit="ngForm"  id="ngFormEditInterest" (ngSubmit)="onEditSubmit()" >
