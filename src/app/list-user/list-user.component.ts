@@ -19,7 +19,6 @@ export class ListUserComponent implements OnInit {
 
   users;
   cols: any[];
-  roles: Rol[];
   scrollTabSelected;
 
   constructor(
@@ -40,14 +39,9 @@ export class ListUserComponent implements OnInit {
       { field: 'age', header: 'age' },
       { field: 'role', header: 'Role'}
     ];
-    forkJoin([
-      this.userService.getUsers(),
-      this.rolService.getRoles()
-    ]).subscribe(([response1, response2]) => {
-      // When Both are done loading do something
-      this.users = response1;
+    this.userService.getUsers().subscribe(response => {
+      this.users = response;
       this.users = this.users.filter(user => user.email !== this.token.getEmail());
-      this.roles = response2;
     });
   }
 

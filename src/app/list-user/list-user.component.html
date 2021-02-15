@@ -1,78 +1,48 @@
 <app-menu-bar></app-menu-bar>
 <p-toast  key="user"></p-toast>
 <div class="user-panel">
-
-    <p-tabView styleClass="tabview-custom" (onChange)="changeTab($event)">
-      <p-tabPanel>
-        <ng-template pTemplate = "header">
-          <i class="fas fa-users"></i>
-          <span class="span-tab">{{ 'users' | translate }}</span>
-        </ng-template>
-        <div class="user-container">
-          <p-table #dt [value]="users" class="table-user" [scrollable]="true" scrollHeight="250px" sortField="username"
-                   [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]" [globalFilterFields]="['username','email','role']" >
-            <ng-template pTemplate="caption">
-              <div class="p-d-flex p-ai-center p-jc-between">
-                <h2 class="p-m-0">{{ 'list_user' | translate }}</h2>
-                <span class="p-input-icon-left">
+  <div class="user-container">
+    <p-table #dt [value]="users" class="table-user" [scrollable]="true" scrollHeight="250px" sortField="username"
+             [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]" [globalFilterFields]="['username','email','role']" >
+      <ng-template pTemplate="caption">
+        <div class="p-d-flex p-ai-center p-jc-between">
+          <h2 class="p-m-0">{{ 'list_user' | translate }}</h2>
+          <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
                     <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="{{ 'search' | translate }}" />
                 </span>
-              </div>
-            </ng-template>
-            <ng-template pTemplate="header">
-              <tr>
-                <th *ngFor="let col of cols" [pSortableColumn]="col.field">
-                  {{ col.header | translate }}
-                  <p-sortIcon [field]="col.field"></p-sortIcon>
-                </th>
-                <th>
-                </th>
-              </tr>
-            </ng-template>
-            <ng-template pTemplate="body" let-user>
-              <tr>
-                <td>{{user.userName}}</td>
-                <td>{{user.email}}</td>
-                <td>{{user.genre}}</td>
-                <td>{{user.age}}</td>
-                <td>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th *ngFor="let col of cols" [pSortableColumn]="col.field">
+            {{ col.header | translate }}
+            <p-sortIcon [field]="col.field"></p-sortIcon>
+          </th>
+          <th>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-user>
+        <tr>
+          <td>{{user.userName}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.genre}}</td>
+          <td>{{user.age}}</td>
+          <td>
                   <span *ngFor="let rol of user.roles">
                       {{rol}}
                   </span>
-                </td>
-                <td>
-                  <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editUser(user)"></button>
-                  <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="confirmDelete(user)"></button>
-                </td>
-              </tr>
-            </ng-template>
-          </p-table>
-        </div>
-      </p-tabPanel>
-      <p-tabPanel header="Header II">
-        <ng-template pTemplate = "header">
-          <i class="fas fa-id-badge"></i>
-          <span class="span-tab">Roles</span>
-        </ng-template>
-        <div *ngIf="scrollTabSelected">
-          <h2>{{ 'list_roles' | translate }}</h2>
-          <p-virtualScroller [value]="roles" scrollHeight="150px" [itemSize]="50">
-            <p-header class="list-header-interest">
-              Roles
-            </p-header>
-            <ng-template pTemplate="item" let-rol>
-              <div class="list-container-user">
-                <div class="user-details">
-                  <b>{{rol.rolName}}</b>
-                </div>
-              </div>
-            </ng-template>
-          </p-virtualScroller>
-        </div>
-      </p-tabPanel>
-    </p-tabView>
+          </td>
+          <td>
+            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editUser(user)"></button>
+            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="confirmDelete(user)"></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
 
 
-  <p-confirmDialog header="{{ 'delete_user' | translate }}" icon="pi pi-info-circle" acceptLabel="{{ 'delete' | translate }}" rejectLabel="{{ 'cancel' | translate }}"></p-confirmDialog>
+<p-confirmDialog header="{{ 'delete_user' | translate }}" icon="pi pi-info-circle" acceptLabel="{{ 'delete' | translate }}" rejectLabel="{{ 'cancel' | translate }}"></p-confirmDialog>
 </div>
