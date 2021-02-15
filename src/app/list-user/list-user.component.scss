@@ -40,38 +40,3 @@ td {
   }
 
 }
-
-:host ::ng-deep .tabview-custom {
-  padding: 15px;
-
-  i, span {
-    vertical-align: middle;
-  }
-
-  .span-tab {
-    margin: 0 .5rem;
-  }
-}
-
-.list-container-user {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  width: 100%;
-  flex-wrap: nowrap;
-}
-
-.user-details, .group-buttons-user {
-  width: 50%;
-}
-
-.group-buttons-user{
-  display: flex;
-  justify-content: flex-end;
-}
-
-.list-header-interest{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
