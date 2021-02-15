@@ -34,7 +34,6 @@ export class ListUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.cols = [
-      { field: 'id', header: 'Id' },
       { field: 'username', header: 'username' },
       { field: 'email', header: 'Email' },
       { field: 'genre', header: 'genre' },
