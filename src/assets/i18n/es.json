@@ -9,7 +9,7 @@
   "search": "Buscar...",
   "username": "Nombre de usuario",
   "genre": "Género",
-  "age": "Edad",
+  "date_birth": "Fecha de nacimiento",
   "list_roles": "Lista de roles",
   "delete": "Eliminar",
   "message_delete_user": "¿Estás seguro de qué quieres eliminar este usuario? Se eliminarán todos los datos relacionados",
@@ -82,7 +82,7 @@
   "user_edit_message": "El usuario {{nameUser}} ha sido editado con éxito",
   "user_edit": "Usuario editado",
   "password_not_same": "Las contraseñas no coinciden",
-  "age_invalid": "Edad debería ser mayor que 16",
+  "age_invalid": "Edad debería ser mayor que 18",
   "sign_up_successful_message_detail": "¡Usuario registrado con éxito! Por favor, ¡inicia sesión!",
   "sign_up_successful_message_summary": "Registro completado",
   "add_role": "Añadir rol",
@@ -105,5 +105,10 @@
   "delete_activity": "Eliminar actividad",
   "delete_city": "Eliminar ciudad",
   "delete_interest": "Eliminar interés",
-  "Ya existe ese email": "Ya existe ese email"
+  "Ya existe ese email": "Ya existe ese email",
+  "prompt_label": "Por favor, introduzca una contraseña",
+  "weak_label": "Débil",
+  "medium_label": "Medio",
+  "strong_label": "Fuerte",
+  "birthday_required": "La fecha de nacimiento es obligatoria"
 }

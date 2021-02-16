@@ -30,6 +30,11 @@ p-inputnumber.ng-untouched.ng-invalid .p-inputtext, p-inputnumber.ng-touched.ng-
   //box-shadow: 0 0 5px 1px rgba(255, 0, 0, 0.2) inset !important;
 }
 
+p-calendar.ng-dirty.ng-invalid .p-inputtext ,
+p-calendar.ng-untouched.ng-invalid .p-inputtext, p-calendar.ng-touched.ng-invalid .p-inputtext {
+  border: 1px solid red !important;
+}
+
 p-dropdown.ng-invalid:not(form)>div {
   border: 1px solid red;
 }

@@ -51,6 +51,8 @@ import {NotificationService} from './services/message/notification.service';
 import { EditUserAdminComponent } from './edit-user-admin/edit-user-admin.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import {CalendarModule} from 'primeng/calendar';
 
 @NgModule({
   declarations: [
@@ -101,6 +103,8 @@ import {ScrollPanelModule} from 'primeng/scrollpanel';
     CheckboxModule,
     MessagesModule,
     ScrollPanelModule,
+    RadioButtonModule,
+    CalendarModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

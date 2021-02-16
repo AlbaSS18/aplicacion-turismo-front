@@ -15,8 +15,7 @@ export class UserLogin {
 export class UserSignUp {
   userName: string;
   email: string;
-  age: number;
-  genre: string;
+  dateBirthday: string;
   password: string;
   passwordConfirm: string;
   roles: string[];

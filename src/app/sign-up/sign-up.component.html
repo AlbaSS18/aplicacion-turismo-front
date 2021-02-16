@@ -16,6 +16,20 @@
           </div>
         </div>
         <div class="p-field p-col-12 p-md-6">
+          <label for="field-age">{{ 'date_birth' | translate }}*</label>
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="far fa-calendar-alt" style="line-height: 1.25;"></i></span>
+            <p-calendar id="field-age" formControlName="dateBirthday" placeholder="dd/mm/yyyy" [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:2030" class="input-age" dateFormat="dd/mm/yy"></p-calendar>
+          </div>
+          <div class="message_error_sign_container">
+            <p-message severity="error" text="{{ 'age_invalid' | translate }}"
+                       *ngIf="formGroup.get('dateBirthday').errors && formGroup.get('dateBirthday').dirty && formGroup.get('dateBirthday').errors.menorDeEdad"></p-message>
+            <p-message severity="error" text="{{ 'birthday_required' | translate }}"
+                       *ngIf="formGroup.get('dateBirthday').errors?.required && (formGroup.controls['dateBirthday'].dirty || formGroup.controls['dateBirthday'].touched )"></p-message>
+          </div>
+
+        </div>
+        <div class="p-field p-col-12">
           <label for="field-email">Email*</label>
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="fas fa-at" style="line-height: 1.25;"></i></span>
@@ -26,12 +40,12 @@
                        *ngIf="!formGroup.controls['email'].valid&&(formGroup.controls['email'].dirty || formGroup.controls['email'].touched)"></p-message>
           </div>
         </div>
-
         <div class="p-field p-col-12 p-md-6">
           <label for="field-password">{{ 'password' | translate }}*</label>
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="fas fa-lock" style="line-height: 1.25;"></i></span>
-            <input id="field-password" type="password" pPassword formControlName="password" placeholder="{{ 'password' | translate }}"/>
+            <input id="field-password" type="password" pPassword formControlName="password" placeholder="{{ 'password' | translate }}"
+                   promptLabel="{{ 'prompt_label' | translate }}" weakLabel="{{ 'weak_label' | translate }}" mediumLabel="{{ 'medium_label' | translate }}" strongLabel="{{ 'strong_label' | translate }}"/>
            </div>
           <div class="message_error_sign_container">
             <p-message severity="error"
@@ -45,8 +59,8 @@
           <label for="field-password-repeat">{{ 'repeat_password' | translate }}*</label>
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="fas fa-lock" style="line-height: 1.25;"></i></span>
-            <input id="field-password-repeat" type="password" pPassword formControlName="repeatPassword"
-                   placeholder="{{ 'repeat_password' | translate }}"/>
+            <input id="field-password-repeat" type="password" pPassword formControlName="repeatPassword" placeholder="{{ 'repeat_password' | translate }}"
+                   promptLabel="{{ 'prompt_label' | translate }}" weakLabel="{{ 'weak_label' | translate }}" mediumLabel="{{ 'medium_label' | translate }}" strongLabel="{{ 'strong_label' | translate }}"/>
           </div>
           <div class="message_error_sign_container">
             <p-message severity="error"
@@ -54,31 +68,10 @@
                        *ngIf="this.formGroup.hasError('noSonIguales') && this.formGroup.get('password').dirty && this.formGroup.get('repeatPassword').dirty;"></p-message>
           </div>
         </div>
-        <div class="p-field p-col-12 p-md-6">
-          <label for="field-age">{{ 'age' | translate }}*</label>
-          <div class="p-inputgroup">
-            <span class="p-inputgroup-addon"><i class="far fa-calendar-alt" style="line-height: 1.25;"></i></span>
-            <p-inputNumber id="field-age" formControlName="age" [min]=18 class="p-invalid" class="input-age" [showButtons]="true"></p-inputNumber>
-          </div>
-        </div>
-        <div class="p-field p-col-12 p-md-6">
-          <label for="field-genre">{{ 'genre' | translate }}*</label>
-          <div class="p-inputgroup">
-            <span class="p-inputgroup-addon"><i class="fas fa-restroom" style="line-height: 1.25;"></i></span>
-            <p-dropdown id="field-genre" [options]="genre" formControlName="genre" class="dropdown-genre">
-              <ng-template let-item pTemplate="selectedItem">
-                <span>{{ item.label | translate }}</span>
-              </ng-template>
-              <ng-template let-genre pTemplate="item">
-                <div>{{ genre.label | translate }}</div>
-              </ng-template>
-            </p-dropdown>
-          </div>
-        </div>
 
         <div class="p-field p-col-12">
           <p-message severity="error" text="{{ 'data_incorrect' | translate }}" *ngIf="(this.formGroup.get('name').invalid || this.formGroup.get('email').invalid ||
-      this.formGroup.get('password').invalid || this.formGroup.get('repeatPassword').invalid || this.formGroup.get('genre').invalid || this.formGroup.get('age').invalid) && isContinueFail"></p-message>
+      this.formGroup.get('password').invalid || this.formGroup.get('repeatPassword').invalid || this.formGroup.get('dateBirthday').invalid) && isContinueFail"></p-message>
           <button pButton type="button" label=" {{ 'continue' | translate }}" icon="fas fa-arrow-right" class="button_signup" (click)="continueSecondPartForm()"></button>
         </div>
       </div>
@@ -88,11 +81,20 @@
       <div class="form-signup-second-container p-fluid">
         <ng-container formArrayName="interest">
           <div *ngFor="let interest of interest.controls; let i=index" class="p-field p-grid">
-            <label for="{{interestArray[i]}}" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{interestArray[i].nameInterest}}</label>
+            <label class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{interestArray[i].nameInterest}}</label>
             <ng-container [formGroupName]="i">
               <div class="p-col-12 p-md-10">
-                <p-inputNumber formControlName="priority" id="{{interestArray[i]}}" inputId="{{interestArray[i]}}" [min]="0" [max]="10" [showButtons]="true">
-                </p-inputNumber>
+                <p-radioButton name="{{interestArray[i]}}" value="0" formControlName="priority" label="0"></p-radioButton>
+                <p-radioButton name="{{interestArray[i]}}" value="1" formControlName="priority" label="1"></p-radioButton>
+                <p-radioButton name="{{interestArray[i]}}" value="2" formControlName="priority" label="2"></p-radioButton>
+                <p-radioButton name="{{interestArray[i]}}" value="3" formControlName="priority" label="3"></p-radioButton>
+                <p-radioButton name="{{interestArray[i]}}" value="4" formControlName="priority" label="4"></p-radioButton>
+                <p-radioButton name="{{interestArray[i]}}" value="5" formControlName="priority" label="5"></p-radioButton>
+                <p-radioButton name="{{interestArray[i]}}" value="6" formControlName="priority" label="6"></p-radioButton>
+                <p-radioButton name="{{interestArray[i]}}" value="7" formControlName="priority" label="7"></p-radioButton>
+                <p-radioButton name="{{interestArray[i]}}" value="8" formControlName="priority" label="8"></p-radioButton>
+                <p-radioButton name="{{interestArray[i]}}" value="9" formControlName="priority" label="9"></p-radioButton>
+                <p-radioButton name="{{interestArray[i]}}" value="10" formControlName="priority" label="10"></p-radioButton>
               </div>
             </ng-container>
           </div>

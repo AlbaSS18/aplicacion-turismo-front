@@ -19,7 +19,6 @@ import {TranslateService} from '@ngx-translate/core';
 
 export class SignUpComponent implements OnInit {
   formGroup: FormGroup;
-  genre: SelectItem[];
   interestArray;
   isRegisterFail = false;
   openSecondForm = false;
@@ -41,21 +40,20 @@ export class SignUpComponent implements OnInit {
     this.formGroup = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      age: [18, [Validators.required, validadorAgeGreaterThan()]],
+      dateBirthday: ['', [Validators.required, validadorAgeGreaterThan()]],
       password: ['', [Validators.required, Validators.minLength(minPassLength)]],
       repeatPassword: ['', [Validators.required, Validators.minLength(minPassLength)]],
-      genre: ['', Validators.required],
       interest: new FormArray([])
     },
       {
         validator: validadorPasswordSame()
       });
     this.loadInterest();
-    this.genre = [
-      {label: 'select_genre', value: ''},
-      {label: 'male', value: 'Hombre'},
-      {label: 'female', value: 'Mujer'}
-    ];
+
+    // Podría sobrar si actualizo a Angular 11
+    this.formGroup.valueChanges.subscribe(e => {
+      this.formGroup.setValue(e, {emitEvent: false});
+    });
   }
 
   get interest(): FormArray {
@@ -79,11 +77,13 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit(value: string) {
+    var dateBirthday = new Date(this.formGroup.get('dateBirthday').value);
+    const offset = dateBirthday.getTimezoneOffset()
+    dateBirthday = new Date(dateBirthday.getTime() - (offset * 60 * 1000))
     const user = {
       userName: this.formGroup.get('name').value,
       email: this.formGroup.get('email').value,
-      age: this.formGroup.get('age').value,
-      genre: this.formGroup.get('genre').value,
+      dateBirthday: dateBirthday.toISOString().split('T')[0],
       password: this.formGroup.get('password').value,
       passwordConfirm: this.formGroup.get('repeatPassword').value,
       roles: ['user'],
@@ -102,16 +102,14 @@ export class SignUpComponent implements OnInit {
   }
 
   continueSecondPartForm(){
-    console.log(this.formGroup)
-    if (this.formGroup.get('name').valid && this.formGroup.get('email').valid && this.formGroup.get('age').valid &&
-      this.formGroup.get('password').valid && this.formGroup.get('repeatPassword').valid && this.formGroup.get('genre').valid){
+    if (this.formGroup.get('name').valid && this.formGroup.get('email').valid && this.formGroup.get('dateBirthday').valid &&
+      this.formGroup.get('password').valid && this.formGroup.get('repeatPassword').valid){
       this.openSecondForm = true;
       this.isContinueFail = false;
     }
     else{
       this.isContinueFail = true;
     }
-    console.log(this.formGroup);
   }
 
   returnFirstPartForm(){

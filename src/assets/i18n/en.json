@@ -9,7 +9,7 @@
   "search": "Search...",
   "username": "Username",
   "genre": "Genre",
-  "age": "Age",
+  "date_birth": "Day of birth",
   "list_roles": "List of roles",
   "delete": "Delete",
   "message_delete_user": "Are you sure you want to delete this user? All related data will delete",
@@ -82,7 +82,7 @@
   "user_edit_message": "The user {{nameUser}} has been successfully edited",
   "user_edit": "User edit",
   "password_not_same": "Passwords do not match",
-  "age_invalid": "Age should be greater than 16",
+  "age_invalid": "Age should be greater than 18",
   "sign_up_successful_message_detail": "Registration Successful! Please Login!",
   "sign_up_successful_message_summary": "Registration completed",
   "add_role": "Add role",
@@ -105,5 +105,10 @@
   "delete_activity": "Remove activity",
   "delete_city": "Remove city",
   "delete_interest": "Remove interest",
-  "Ya existe ese email": "That email already exists"
+  "Ya existe ese email": "That email already exists",
+  "prompt_label": "Please, enter a password",
+  "weak_label": "Weak",
+  "medium_label": "Medium",
+  "strong_label": "Strong",
+  "birthday_required": "Day of birth is required"
 }
