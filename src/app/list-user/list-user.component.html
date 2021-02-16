@@ -27,8 +27,7 @@
         <tr>
           <td>{{user.userName}}</td>
           <td>{{user.email}}</td>
-          <td>{{user.genre}}</td>
-          <td>{{user.age}}</td>
+          <td>{{user.dateBirthday| date: 'dd/MM/yyyy'}}</td>
           <td>
                   <span *ngFor="let rol of user.roles">
                       {{rol}}

@@ -34,8 +34,7 @@ export class ListUserComponent implements OnInit {
     this.cols = [
       { field: 'username', header: 'username' },
       { field: 'email', header: 'Email' },
-      { field: 'genre', header: 'genre' },
-      { field: 'age', header: 'age' },
+      { field: 'dateBirthday', header: 'date_birth' },
       { field: 'role', header: 'Role'}
     ];
     this.userService.getUsers().subscribe(response => {
