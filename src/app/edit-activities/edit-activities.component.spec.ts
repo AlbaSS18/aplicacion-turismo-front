@@ -22,7 +22,7 @@ describe('EditActivitiesComponent', () => {
         HttpClientTestingModule,
         FormsModule,
         TranslateModule.forRoot(),
-        RouterModule.forRoot([]),
+        RouterModule.forRoot([], { relativeLinkResolution: 'legacy' }),
         FileUploadModule,
         InputNumberModule,
         DropdownModule

@@ -26,7 +26,7 @@ describe('EditUserComponent', () => {
         ButtonModule,
         MessagesModule,
         InputNumberModule,
-        RouterModule.forRoot([]),
+        RouterModule.forRoot([], { relativeLinkResolution: 'legacy' }),
         DropdownModule
       ]
     })

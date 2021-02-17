@@ -131,12 +131,9 @@ export class EditUserComponent implements OnInit {
         }
       }
       else if (propName === "dateBirthday"){
-        console.log(a[propName]);
-        console.log(b[propName]);
-        const offset = b[propName].getTimezoneOffset()
-        var dateCalendar = new Date(b[propName].getTime() - (offset * 60 * 1000));
-        if (new Date(a[propName]).getTime() !== dateCalendar.getTime()){
-          console.log("ae");
+        var d1 = new Date(new Date(a[propName]).toDateString());
+        var d2 = new Date(b[propName].toDateString());
+        if (d1.getTime() !== d2.getTime()){
           this.valueUnchanged = false;
           return false;
         }
