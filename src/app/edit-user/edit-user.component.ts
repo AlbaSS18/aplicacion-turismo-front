@@ -68,8 +68,11 @@ export class EditUserComponent implements OnInit {
   }
 
   updateUserProfile(){
+    var dateBirthday = new Date(this.editUserProfile.get('dateBirthday').value);
+    const offset = dateBirthday.getTimezoneOffset()
+    dateBirthday = new Date(dateBirthday.getTime() - (offset * 60 * 1000))
     var user = {
-      dateBirthday: this.editUserProfile.get("dateBirthday").value,
+      dateBirthday: dateBirthday.toISOString().split('T')[0],
       userName: this.editUserProfile.get("userName").value,
       interest: this.interest.value,
       roles: this.user.roles
