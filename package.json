@@ -28,6 +28,7 @@
     "font-awesome": "4.7.0",
     "jquery": "^3.5.1",
     "leaflet": "^1.7.1",
+    "leaflet-control-geocoder": "^2.1.0",
     "primeflex": "^2.0.0",
     "primeicons": "^4.0.0",
     "primeng": "^11.0.0",

@@ -10,6 +10,7 @@ import {InputNumberModule} from 'primeng/inputnumber';
 import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 import {RouterModule} from '@angular/router';
 import {DropdownModule} from 'primeng/dropdown';
+import {CalendarModule} from 'primeng/calendar';
 
 describe('EditUserComponent', () => {
   let component: EditUserComponent;
@@ -27,7 +28,8 @@ describe('EditUserComponent', () => {
         MessagesModule,
         InputNumberModule,
         RouterModule.forRoot([], { relativeLinkResolution: 'legacy' }),
-        DropdownModule
+        DropdownModule,
+        CalendarModule
       ]
     })
     .compileComponents();

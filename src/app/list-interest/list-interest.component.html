@@ -30,8 +30,8 @@
         <div class="p-col buttons-add-interest">
           <input id="field-name-interest" type="text" pInputText formControlName="name">
           <small *ngIf="formAddInterest.controls['name'].invalid &&
-            (formAddInterest.controls['name'].dirty || formAddInterest.controls['name'].touched)" class="p-invalid">{{ 'name_interest_required' | translate }}</small>
-          <small *ngIf="formInterest.submitted && errorAddInterest" class="p-invalid">{{ 'name_interest_repetead' | translate }}</small>
+            (formAddInterest.controls['name'].dirty || formAddInterest.controls['name'].touched)" class="p-error">{{ 'name_interest_required' | translate }}</small>
+          <small *ngIf="formInterest.submitted && errorAddInterest" class="p-error">{{ 'name_interest_repetead' | translate }}</small>
         </div>
       </div>
     </form>
@@ -49,8 +49,8 @@
         <div class="p-col buttons-add-interest">
           <input id="field-edit-name-interest" type="text" pInputText formControlName="name">
           <small *ngIf="formEditInterest.controls['name'].invalid &&
-            (formEditInterest.controls['name'].dirty || formEditInterest.controls['name'].touched)" class="p-invalid">{{ 'name_interest_required' | translate }}</small>
-          <small *ngIf="formInterestToEdit.submitted && errorEditInterest" class="p-invalid">{{ 'name_interest_repetead' | translate }}</small>
+            (formEditInterest.controls['name'].dirty || formEditInterest.controls['name'].touched)" class="p-error">{{ 'name_interest_required' | translate }}</small>
+          <small *ngIf="formInterestToEdit.submitted && errorEditInterest" class="p-error">{{ 'name_interest_repetead' | translate }}</small>
         </div>
       </div>
     </form>

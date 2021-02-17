@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SignUpComponent } from './sign-up.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {RouterTestingModule} from '@angular/router/testing';
 import {InputNumberModule} from 'primeng/inputnumber';
@@ -10,6 +10,8 @@ import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {ButtonModule} from 'primeng/button';
 import {MessageService} from 'primeng/api';
+import {CalendarModule} from 'primeng/calendar';
+import {PasswordModule} from 'primeng/password';
 
 describe('SignUpComponent', () => {
   let component: SignUpComponent;
@@ -25,7 +27,9 @@ describe('SignUpComponent', () => {
         DropdownModule,
         RouterTestingModule,
         TranslateModule.forRoot(),
-        ButtonModule
+        ButtonModule,
+        CalendarModule,
+        PasswordModule
       ],
       providers: [
       ]

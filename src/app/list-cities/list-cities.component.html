@@ -32,8 +32,8 @@
         <div class="p-col buttons-add-city">
           <input id="field-name-city" type="text" pInputText formControlName="name">
           <small *ngIf="formAddCity.controls['name'].invalid &&
-            (formAddCity.controls['name'].dirty || formAddCity.controls['name'].touched)" class="p-invalid">{{ 'name_city_required' | translate }}</small>
-          <small *ngIf="formCity.submitted && errorAddCity" class="p-invalid">{{ 'name_city_repetead' | translate }}</small>
+            (formAddCity.controls['name'].dirty || formAddCity.controls['name'].touched)" class="p-error">{{ 'name_city_required' | translate }}</small>
+          <small *ngIf="formCity.submitted && errorAddCity" class="p-error">{{ 'name_city_repetead' | translate }}</small>
         </div>
       </div>
     </form>
@@ -52,8 +52,8 @@
         <div class="p-col buttons-add-city">
           <input id="field-edit-name-city" type="text" pInputText formControlName="name">
           <small *ngIf="formEditCity.controls['name'].invalid &&
-            (formEditCity.controls['name'].dirty || formEditCity.controls['name'].touched)" class="p-invalid">{{ 'name_city_required' | translate }}</small>
-          <small *ngIf="formCityToEdit.submitted && errorEditCity" class="p-invalid">{{ 'name_city_repetead' | translate }}</small>
+            (formEditCity.controls['name'].dirty || formEditCity.controls['name'].touched)" class="p-error">{{ 'name_city_required' | translate }}</small>
+          <small *ngIf="formCityToEdit.submitted && errorEditCity" class="p-error">{{ 'name_city_repetead' | translate }}</small>
         </div>
       </div>
     </form>
