@@ -19,7 +19,6 @@ export class EditUserComponent implements OnInit {
 
   editUserProfile: FormGroup;
   user;
-  genre: SelectItem[];
   valueUnchanged: boolean = true;
   infoMessage = [];
 
@@ -32,27 +31,8 @@ export class EditUserComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    var auxGenre = [
-      {label:'Masculino', value:'Hombre', id: "male"},
-      {label:'Femenino', value:'Mujer', id: "female"},
-    ];
-    this.genre = [
-      {label: this.translateService.instant('male'), value: 'Hombre'},
-      {label: this.translateService.instant('female'), value: 'Mujer'}
-    ];
-    this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
-        this.genre = [];
-        var aux = [];
-        for (let item of auxGenre){
-          item.label = this.translateService.instant(item.id);
-          var itemAux = {label: item.label, value: item.value};
-          aux.push(itemAux);
-        }
-        this.genre = aux;
-      })
     this.editUserProfile = this.fb.group({
-      age: ['', [Validators.required, validadorAgeGreaterThan()]],
-      genre: ['', Validators.required],
+      dateBirthday: ['', [Validators.required, validadorAgeGreaterThan()]],
       interest: this.fb.array([]),
       userName: ['', Validators.required]
     });
@@ -66,8 +46,7 @@ export class EditUserComponent implements OnInit {
         this.user = response1;
         this.editUserProfile.patchValue({
           userName: this.user.userName,
-          age: this.user.age,
-          genre: this.user.genre,
+          dateBirthday: new Date(this.user.dateBirthday)
         });
         this.user.interest.forEach(
           infoInterest => {
@@ -90,9 +69,8 @@ export class EditUserComponent implements OnInit {
 
   updateUserProfile(){
     var user = {
-      age: this.editUserProfile.get("age").value,
+      dateBirthday: this.editUserProfile.get("dateBirthday").value,
       userName: this.editUserProfile.get("userName").value,
-      genre: this.editUserProfile.get("genre").value,
       interest: this.interest.value,
       roles: this.user.roles
     };
@@ -150,6 +128,17 @@ export class EditUserComponent implements OnInit {
         if (check === false){
           this.valueUnchanged = check;
           return array1Sort.length === array2Sort.length && array1Sort.every((value, index) => JSON.stringify(value) === JSON.stringify(array2Sort[index]));
+        }
+      }
+      else if (propName === "dateBirthday"){
+        console.log(a[propName]);
+        console.log(b[propName]);
+        const offset = b[propName].getTimezoneOffset()
+        var dateCalendar = new Date(b[propName].getTime() - (offset * 60 * 1000));
+        if (new Date(a[propName]).getTime() !== dateCalendar.getTime()){
+          console.log("ae");
+          this.valueUnchanged = false;
+          return false;
         }
       }
       else{
