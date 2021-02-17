@@ -110,5 +110,9 @@
   "weak_label": "Weak",
   "medium_label": "Medium",
   "strong_label": "Strong",
-  "birthday_required": "Day of birth is required"
+  "birthday_required": "Day of birth is required",
+  "primeng": {
+    "monthNames": ["January","February","March","April","May","June","July","August","September","October","November","December"],
+    "dayNamesMin": ["Su","Mo","Tu","We","Th","Fr","Sa"]
+  }
 }

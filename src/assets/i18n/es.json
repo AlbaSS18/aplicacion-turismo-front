@@ -110,5 +110,9 @@
   "weak_label": "Débil",
   "medium_label": "Medio",
   "strong_label": "Fuerte",
-  "birthday_required": "La fecha de nacimiento es obligatoria"
+  "birthday_required": "La fecha de nacimiento es obligatoria",
+  "primeng": {
+    "monthNames": ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
+    "dayNamesMin": ["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"]
+  }
 }
