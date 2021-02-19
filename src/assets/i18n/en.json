@@ -114,5 +114,7 @@
   "primeng": {
     "monthNames": ["January","February","March","April","May","June","July","August","September","October","November","December"],
     "dayNamesMin": ["Su","Mo","Tu","We","Th","Fr","Sa"]
-  }
+  },
+  "message_valuation_one": "Please, rate from 0 (the least) to 10 (the most) each one of interests shown below to improve the recommendations.",
+  "message_valuation_two": "If you wish, you will be able to modify these ratings later, in the \"Your profile\" section."
 }

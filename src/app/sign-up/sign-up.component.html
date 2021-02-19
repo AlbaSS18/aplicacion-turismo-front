@@ -16,10 +16,10 @@
           </div>
         </div>
         <div class="p-field p-col-12 p-md-6">
-          <label for="field-age">{{ 'date_birth' | translate }}*</label>
+          <label for="field-birth">{{ 'date_birth' | translate }}*</label>
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="far fa-calendar-alt" style="line-height: 1.25;"></i></span>
-            <p-calendar id="field-age" formControlName="dateBirthday" placeholder="dd/mm/yyyy" [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:2030" class="input-age" dateFormat="dd/mm/yy"></p-calendar>
+            <p-calendar id="field-birth" formControlName="dateBirthday" placeholder="dd/mm/yyyy" [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:2030" class="input-birth" dateFormat="dd/mm/yy"></p-calendar>
           </div>
           <div class="message_error_sign_container">
             <p-message severity="error" text="{{ 'age_invalid' | translate }}"
@@ -78,13 +78,17 @@
     </div>
 
     <ng-template #showSecondForm>
+      <div class="message_valuation_container">
+        <p>{{ 'message_valuation_one' | translate }}</p>
+        <p>{{ 'message_valuation_two' | translate }}</p>
+      </div>
       <div class="form-signup-second-container p-fluid">
         <ng-container formArrayName="interest">
           <div *ngFor="let interest of interest.controls; let i=index" class="p-field p-grid">
             <label class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{interestArray[i].nameInterest}}</label>
             <ng-container [formGroupName]="i">
               <div class="p-col-12 p-md-10">
-                <p-radioButton name="{{interestArray[i]}}" value="0" formControlName="priority" label="0"></p-radioButton>
+                <!--<p-radioButton name="{{interestArray[i]}}" value="0" formControlName="priority" label="0"></p-radioButton>
                 <p-radioButton name="{{interestArray[i]}}" value="1" formControlName="priority" label="1"></p-radioButton>
                 <p-radioButton name="{{interestArray[i]}}" value="2" formControlName="priority" label="2"></p-radioButton>
                 <p-radioButton name="{{interestArray[i]}}" value="3" formControlName="priority" label="3"></p-radioButton>
@@ -94,7 +98,61 @@
                 <p-radioButton name="{{interestArray[i]}}" value="7" formControlName="priority" label="7"></p-radioButton>
                 <p-radioButton name="{{interestArray[i]}}" value="8" formControlName="priority" label="8"></p-radioButton>
                 <p-radioButton name="{{interestArray[i]}}" value="9" formControlName="priority" label="9"></p-radioButton>
-                <p-radioButton name="{{interestArray[i]}}" value="10" formControlName="priority" label="10"></p-radioButton>
+                <p-radioButton name="{{interestArray[i]}}" value="10" formControlName="priority" label="10"></p-radioButton>-->
+                <input class="form-check-input" type="radio" [value]="0" formControlName="priority" id="{{'zero' + i}}">
+                <label class="form-check-label" for="{{'zero' + i}}">
+                  0
+                </label>
+
+                <input class="form-check-input" type="radio" [value]="1" formControlName="priority" id="{{'one' + i}}">
+                <label class="form-check-label" for="{{'one' + i}}">
+                  1
+                </label>
+
+                <input class="form-check-input" type="radio" [value]="2" formControlName="priority" id="{{'two' + i}}">
+                <label class="form-check-label" for="{{'two' + i}}">
+                  2
+                </label>
+
+                <input class="form-check-input" type="radio" [value]="3" formControlName="priority" id="{{'three' + i}}">
+                <label class="form-check-label" for="{{'three' + i}}">
+                  3
+                </label>
+
+                <input class="form-check-input" type="radio" [value]="4" formControlName="priority" id="{{'four' + i}}">
+                <label class="form-check-label" for="{{'four' + i}}">
+                  4
+                </label>
+
+                <input class="form-check-input" type="radio" [value]="5" formControlName="priority" id="{{'five' + i}}">
+                <label class="form-check-label" for="{{'five' + i}}">
+                  5
+                </label>
+
+                <input class="form-check-input" type="radio" [value]="6" formControlName="priority" id="{{'six' + i}}">
+                <label class="form-check-label" for="{{'six' + i}}">
+                  6
+                </label>
+
+                <input class="form-check-input" type="radio" [value]="7" formControlName="priority" id="{{'seven' + i}}">
+                <label class="form-check-label" for="{{'seven' + i}}">
+                  7
+                </label>
+
+                <input class="form-check-input" type="radio" [value]="8" formControlName="priority" id="{{'eight' + i}}">
+                <label class="form-check-label" for="{{'eight' + i}}">
+                  8
+                </label>
+
+                <input class="form-check-input" type="radio" [value]="9" formControlName="priority" id="{{'nine' + i}}">
+                <label class="form-check-label" for="{{'nine' + i}}">
+                  9
+                </label>
+
+                <input class="form-check-input" type="radio" [value]="10" formControlName="priority" id="{{'ten' + i}}">
+                <label class="form-check-label" for="{{'ten' + i}}">
+                  10
+                </label>
               </div>
             </ng-container>
           </div>
