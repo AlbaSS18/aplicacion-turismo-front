@@ -2,7 +2,7 @@ export class User {
   id: number;
   userName: string;
   email: string;
-  age: number;
+  dateBirthday: Date;
   genre: string;
   roles: string[];
 }

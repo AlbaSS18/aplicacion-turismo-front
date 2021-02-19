@@ -32,10 +32,10 @@ export class ListUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.cols = [
-      { field: 'username', header: 'username' },
+      { field: 'userName', header: 'username' },
       { field: 'email', header: 'Email' },
       { field: 'dateBirthday', header: 'date_birth' },
-      { field: 'role', header: 'Role'}
+      { field: 'roles', header: 'Role'}
     ];
     this.userService.getUsers().subscribe(response => {
       this.users = response;

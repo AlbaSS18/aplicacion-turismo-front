@@ -18,7 +18,6 @@ import {validadorAgeGreaterThan} from '../validators/validatorGreaterThan.direct
 export class EditUserAdminComponent implements OnInit {
 
   editUserForm: FormGroup;
-  genre: SelectItem[];
   user: User;
   userId;
   roles: Rol[];
@@ -38,22 +37,16 @@ export class EditUserAdminComponent implements OnInit {
     this.userId = this.activatedRoute.snapshot.paramMap.get('id');
     this.editUserForm = this.fb.group({
       userName: ['', [Validators.required]],
-      age: ['', [Validators.required, validadorAgeGreaterThan()]],
-      genre: ['', Validators.required],
+      dateBirthday: ['', [Validators.required, validadorAgeGreaterThan()]],
       roles: ['', Validators.required]
     });
-    this.genre = [
-      {label:'male', value: "Hombre"},
-      {label:'female', value:"Mujer"},
-    ];
 
     forkJoin([this.rolesService.getRoles(), this.userService.getUserForAdmin(this.userId)]).subscribe(results => {
       this.roles = results[0];
       this.user = results[1];
       this.editUserForm.patchValue({
         userName: this.user.userName,
-        age: this.user.age,
-        genre: this.user.genre,
+        dateBirthday: new Date(this.user.dateBirthday)
       });
       this.editUserForm.controls['roles'].setValue(this.user.roles);
       this.observeChanges();
@@ -61,10 +54,13 @@ export class EditUserAdminComponent implements OnInit {
   }
 
   sendForm(){
+    var dateBirthday = new Date(this.editUserForm.get('dateBirthday').value);
+    const offset = dateBirthday.getTimezoneOffset()
+    dateBirthday = new Date(dateBirthday.getTime() - (offset * 60 * 1000))
+
     var user = {
       userName: this.editUserForm.get("userName").value,
-      age: this.editUserForm.get("age").value,
-      genre: this.editUserForm.get("genre").value,
+      dateBirthday: dateBirthday.toISOString().split('T')[0],
       roles: this.editUserForm.get("roles").value
     };
     this.userService.editUser(this.userId, user).subscribe(
@@ -98,6 +94,14 @@ export class EditUserAdminComponent implements OnInit {
       if (propName == "roles"){
         this.valueUnchanged = a[propName].length === b[propName].length && a[propName].every((value, index) => value === b[propName][index]);
         return a[propName].length === b[propName].length && a[propName].every((value, index) => value === b[propName][index]);
+      }
+      else if (propName === "dateBirthday"){
+        var d1 = new Date(new Date(a[propName]).toDateString());
+        var d2 = new Date(b[propName].toDateString());
+        if (d1.getTime() !== d2.getTime()){
+          this.valueUnchanged = false;
+          return false;
+        }
       }
       else{
         if (a[propName] !== b[propName]) {

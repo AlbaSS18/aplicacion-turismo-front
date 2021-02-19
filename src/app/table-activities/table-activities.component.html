@@ -72,6 +72,7 @@
           <label for="field-description">{{ 'description_activity' | translate }}*</label>
           <textarea id="field-description" pInputTextarea formControlName="description" [rows]="4" [cols]="30" autoResize="autoResize"></textarea>
         </div>
+        <div id="mapActivity" style="width: 500px; height: 200px;"></div>
         <div class="p-field p-col-12 p-md-6">
           <label for="field-latitude">{{ 'latitude' | translate }}*</label>
           <p-inputNumber id="field-latitude" formControlName="latitude" mode="decimal" [minFractionDigits]="2" [maxFractionDigits]="7"></p-inputNumber>

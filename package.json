@@ -31,7 +31,7 @@
     "leaflet-control-geocoder": "^2.1.0",
     "primeflex": "^2.0.0",
     "primeicons": "^4.0.0",
-    "primeng": "^11.0.0",
+    "primeng": "^11.2.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

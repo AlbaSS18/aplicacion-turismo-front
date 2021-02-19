@@ -15,6 +15,7 @@ import {EditUserComponent} from './edit-user/edit-user.component';
 import {RoleGuardService} from './guards/RoleGuard/role-guard.service';
 import {EditActivitiesComponent} from './edit-activities/edit-activities.component';
 import {EditUserAdminComponent} from './edit-user-admin/edit-user-admin.component';
+import {AddActivityComponent} from './add-activity/add-activity.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -32,6 +33,11 @@ const routes: Routes = [
     data: {
       expectedRol: 'admin'
   }},
+  {path: 'activities/add', component: AddActivityComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRol: 'admin'
+    }},
   {path: 'cities', component: ListCitiesComponent,
     canActivate: [RoleGuardService],
     data: {

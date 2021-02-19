@@ -15,11 +15,6 @@
   justify-content: space-between;
 }
 
-
-td {
-  word-wrap:break-word
-}
-
 .table-user{
   padding: 15px;
 
@@ -33,6 +28,12 @@ td {
   ::ng-deep .p-datatable-tbody > tr > td,
   ::ng-deep .p-datatable-thead > tr > th{
     border-bottom: 1px solid #c8c8c8;
+  }
+
+  ::ng-deep .p-datatable-tbody > tr > td,
+  ::ng-deep .p-datatable-thead > tr > th{
+    word-wrap:break-word;
+    text-align: center;
   }
 
   ::ng-deep .p-datatable-thead > tr > th{

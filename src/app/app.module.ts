@@ -53,6 +53,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {CalendarModule} from 'primeng/calendar';
+import {AddActivityComponent} from './add-activity/add-activity.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import {CalendarModule} from 'primeng/calendar';
     InformationActivitiesComponent,
     EditActivitiesComponent,
     EditUserAdminComponent,
-    EditUserComponent
+    EditUserComponent,
+    AddActivityComponent
   ],
   imports: [
     BrowserModule,

@@ -11,22 +11,9 @@
         </div>
       </div>
       <div class="p-field p-grid">
-        <label for="float-input-age" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{ 'age' | translate }}</label>
+        <label for="float-input-birthday" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{ 'date_birth' | translate }}</label>
         <div class="p-col-12 p-md-10">
-          <p-inputNumber id="float-input-age" formControlName="age" [min]="18" [showButtons]="true"></p-inputNumber>
-        </div>
-      </div>
-      <div class="p-field p-grid">
-        <label for="float-input-genre" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{ 'genre' | translate }}</label>
-        <div class="p-col-12 p-md-10">
-          <p-dropdown id="float-input-genre" [options]="genre" formControlName="genre">
-            <ng-template let-item pTemplate="selectedItem">
-              <span>{{ item.label | translate }}</span>
-            </ng-template>
-            <ng-template let-genre pTemplate="item">
-              <div>{{ genre.label | translate }}</div>
-            </ng-template>
-          </p-dropdown>
+          <p-calendar id="float-input-birthday" formControlName="dateBirthday" dateFormat="dd/mm/yy"></p-calendar>
         </div>
       </div>
       <div class="p-field p-grid">

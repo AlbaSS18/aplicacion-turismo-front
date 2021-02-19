@@ -1,9 +1,8 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivityService} from '../services/activity/activity.service';
 import {ConfirmationService, MessageService, SelectItem} from 'primeng/api';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CityService} from '../services/city/city.service';
-import {Interest} from '../models/interest';
 import {InterestService} from '../services/interest/interest.service';
 import {ImagesService} from '../services/images/images.service';
 import {DialogService, DynamicDialogRef} from 'primeng/dynamicdialog';
@@ -11,7 +10,8 @@ import {InformationActivitiesComponent} from '../information-activities/informat
 import {TranslateService} from '@ngx-translate/core';
 import {map, mergeMap} from 'rxjs/operators';
 import {Router} from '@angular/router';
-import {DomSanitizer} from '@angular/platform-browser';
+import * as L from 'leaflet';
+import 'leaflet-control-geocoder';
 
 @Component({
   selector: 'app-table-activities',
@@ -60,6 +60,7 @@ export class TableActivitiesComponent implements OnInit {
       city: ['', [Validators.required]],
       nameInterest: ['', [Validators.required]]
     });
+
     this.loadCities();
     this.loadInterest();
     this.loadActivities();
@@ -135,6 +136,37 @@ export class TableActivitiesComponent implements OnInit {
 
   openNew(){
     this.productDialog = true;
+    //this.router.navigate(['activities/add']);
+
+    // El container tiene que ser añadido al DOM antes de llamar al L.Map. Al poner un setTimeout, añadimos tiempo
+    var map;
+    setTimeout(() => {
+      map = L.map('mapActivity').setView([43.333333, -6], 8);
+
+      const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+
+      var opciones = {
+        placeholder: "Escriba la dirección...",
+        errorMessage: "No se han encontrado direcciones",
+      };
+
+      var latitud;
+      var control = L.Control.geocoder(opciones).addTo(map).on('markgeocode', function (e) {
+
+        latitud = e.geocode.center.lat;
+        console.log(this.formAddActivity);
+        this.formAddActivity.controls['latitude'].setValue(latitud);
+        console.log(latitud);
+        var longitud = e.geocode.center.lng;
+        this.formAddActivity.controls['longitude'].setValue(longitud);
+        console.log(longitud);
+
+      }.bind(this));
+
+    }, 1000);
+
   }
 
   onSubmit(value: string){
