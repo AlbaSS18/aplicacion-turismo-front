@@ -42,6 +42,10 @@
   ::ng-deep .p-datatable-thead > tr > th{
     border-top: 1px solid #c8c8c8;
   }
+
+  .td-text-wrap{
+    word-wrap:break-word;
+  }
 }
 
 .toolbar-activities, .table-activities{

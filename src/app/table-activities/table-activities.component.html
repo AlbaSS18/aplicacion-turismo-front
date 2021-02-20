@@ -40,12 +40,12 @@
       <ng-template pTemplate="body" let-activity>
         <tr>
           <td><img id="image-activity-table" src="http://localhost:8090/images/{{activity.name}}/{{activity.pathImage}}" /></td>
-          <td>{{activity.name}}</td>
+          <td class="td-text-wrap">{{activity.name}}</td>
           <td class="p-text-nowrap p-text-truncate" pTooltip="{{activity.description}}">{{activity.description}}</td>
-          <td>{{activity.latitude}}</td>
-          <td>{{activity.longitude}}</td>
-          <td>{{activity.city}}</td>
-          <td>{{activity.interest}}</td>
+          <td class="td-text-wrap">{{activity.latitude}}</td>
+          <td class="td-text-wrap">{{activity.longitude}}</td>
+          <td class="td-text-wrap">{{activity.city}}</td>
+          <td class="td-text-wrap">{{activity.interest}}</td>
           <td>
             <button pButton pRipple type="button" icon="fas fa-info" class="p-button-rounded p-button-text" (click)="seeMoreInfo(activity)"></button>
             <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editActivity(activity)"></button>
