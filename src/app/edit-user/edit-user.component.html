@@ -2,7 +2,7 @@
 <div class="edit-profile-user-panel">
   <h1>{{ 'edit_title' | translate }}</h1>
   <p-messages key="edit_profile_user" [(value)]="infoMessage"></p-messages>
-  <form (ngSubmit)="updateUserProfile()" [formGroup]="editUserProfile" #formEdit="ngForm">
+  <form (ngSubmit)="updateUserProfile()" [formGroup]="editUserProfile">
     <fieldset class="fieldset">
       <div class="legend-container">
         <legend>{{ 'personal_info' | translate }}:</legend>
@@ -11,12 +11,19 @@
         <label for="username" class="p-col-fixed" style="width:200px">{{'username' | translate}}:</label>
         <div class="p-col">
           <input id="username" type="text" pInputText formControlName="userName"/>
+          <p-message class="message_error_username" severity="error" text="{{ 'name_required' | translate }}"
+                     *ngIf="editUserProfile.controls['userName'].invalid&&(editUserProfile.controls['userName'].dirty || editUserProfile.controls['userName'].touched)"></p-message>
         </div>
       </div>
       <div class="p-field p-grid">
         <label for="age" class="p-col-fixed" style="width:200px">{{ 'date_birth' | translate }}:</label>
         <div class="p-col" #calendarContainer>
-          <p-calendar [appendTo]="calendarContainer" formControlName="dateBirthday" id="age" dateFormat="dd/mm/yy"></p-calendar>
+          <p-calendar [appendTo]="calendarContainer" formControlName="dateBirthday" id="age" dateFormat="dd/mm/yy"
+                      [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:2030" ></p-calendar>
+          <p-message class="message_error_age" severity="error" text="{{ 'age_invalid' | translate }}"
+                     *ngIf="editUserProfile.get('dateBirthday').errors && editUserProfile.get('dateBirthday').dirty && editUserProfile.get('dateBirthday').errors.menorDeEdad"></p-message>
+          <p-message class="message_error_age" severity="error" text="{{ 'birthday_required' | translate }}"
+                     *ngIf="editUserProfile.get('dateBirthday').errors?.required && (editUserProfile.controls['dateBirthday'].dirty || editUserProfile.controls['dateBirthday'].touched )"></p-message>
         </div>
       </div>
     </fieldset>

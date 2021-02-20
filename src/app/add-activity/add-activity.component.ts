@@ -7,9 +7,8 @@ import * as L from 'leaflet';
 import 'leaflet-control-geocoder';
 import 'leaflet/dist/images/marker-shadow.png';
 import 'leaflet/dist/images/marker-icon-2x.png';
-import {map, mergeMap} from 'rxjs/operators';
 import {ActivityService} from '../services/activity/activity.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-activity',
@@ -57,18 +56,14 @@ export class AddActivityComponent implements OnInit {
     var control = L.Control.geocoder(opciones).on('markgeocode', function (e) {
 
       var latitud = e.geocode.center.lat;
-      console.log(this.formAddActivity);
       this.formAddActivity.controls['latitude'].setValue(latitud);
-      console.log(latitud);
+
       var longitud = e.geocode.center.lng;
-      console.log(e.geocode.properties.address.city);
       this.formAddActivity.controls['longitude'].setValue(longitud);
+
       this.formAddActivity.controls['city'].setValue(e.geocode.properties.address.city);
-      console.log(longitud);
 
     }.bind(this)).addTo(map);
-
-    console.log(L.Icon.Default.prototype._getIconUrl());
 
     this.loadCities();
     this.loadInterest();
