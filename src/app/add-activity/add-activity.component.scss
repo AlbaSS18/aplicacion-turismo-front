@@ -1,0 +1,45 @@
+@import "src/assets/sass/utility/_mixins.scss";
+
+.add-activity-container {
+  @include custom-panel;
+  width: 100%;
+  min-height: 300px;
+  min-width: 800px;
+
+  h1{
+    text-align:center;
+  }
+}
+
+.button_save_activity{
+  text-align: right;
+}
+
+
+
+
+.form_add_activity_container{
+  display: flex;
+}
+
+.input_container, .map_container{
+  width: 50%;
+}
+
+.grid-container{
+  width: 40vw;
+  min-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5px;
+}
+
+.button_add_activity_container{
+  text-align: right;
+
+  ::ng-deep .p-button{
+    margin: 5px;
+  }
+}
+
+

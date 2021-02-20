@@ -135,11 +135,11 @@ export class TableActivitiesComponent implements OnInit {
   }
 
   openNew(){
-    this.productDialog = true;
-    //this.router.navigate(['activities/add']);
+    //this.productDialog = true;
+    this.router.navigate(['activities/add']);
 
     // El container tiene que ser añadido al DOM antes de llamar al L.Map. Al poner un setTimeout, añadimos tiempo
-    var map;
+    /*var map;
     setTimeout(() => {
       map = L.map('mapActivity').setView([43.333333, -6], 8);
 
@@ -165,7 +165,7 @@ export class TableActivitiesComponent implements OnInit {
 
       }.bind(this));
 
-    }, 1000);
+    }, 1000);*/
 
   }
 
