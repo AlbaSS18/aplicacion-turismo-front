@@ -26,7 +26,8 @@
           <p-message severity="error" text="{{ 'email_required' | translate }}"
                      *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].dirty"></p-message>
           <span class="p-float-label">
-            <input id="float-input-password" type="password" size="30" pPassword formControlName="password">
+            <input id="float-input-password" type="password" size="30" pPassword formControlName="password" promptLabel="{{ 'prompt_label' | translate }}"
+                   weakLabel="{{ 'weak_label' | translate }}" mediumLabel="{{ 'medium_label' | translate }}" strongLabel="{{ 'strong_label' | translate }}">
             <label for="float-input-password">{{ 'password' | translate }}</label>
           </span>
           <p-message severity="error" text="{{ 'password_required' | translate }}"
