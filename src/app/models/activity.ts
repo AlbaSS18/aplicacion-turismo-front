@@ -8,4 +8,5 @@ export class Activity {
   city: string;
   interest: string;
   image: any;
+  address: string;
 }

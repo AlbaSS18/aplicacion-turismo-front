@@ -11,17 +11,22 @@
   }
 }
 
-.form-edit-activity-container {
+.file-upload-edit-activity{
+  margin-bottom: 16px;
+}
+
+
+
+
+.edit_activity_container{
+  display: flex;
+}
+
+.left_container, .right_container{
   width: 50%;
-  padding-bottom: 5px;
-  /*Para centrar*/
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 5px;
 }
 
 #image-edit-activity{
-  width: 100%;
   max-width: 300px;
   height: auto;
   text-align: center;
@@ -33,6 +38,20 @@
   width: 50%;
 }
 
-.file-upload-edit-activity{
-  margin-bottom: 16px;
+.form-edit-activity-container {
+  width: 70%;
+  /*Para centrar*/
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.button_edit_activity_container{
+  text-align: right;
+
+  ::ng-deep .p-button{
+    margin: 5px;
+  }
+}
+
+
+

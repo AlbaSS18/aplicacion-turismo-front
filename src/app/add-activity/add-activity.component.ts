@@ -105,6 +105,7 @@ export class AddActivityComponent implements OnInit {
   }
 
   deleteFiles(event){
+    console.log(this.files);
     this.files = [];
     this.noFiles = true;
   }

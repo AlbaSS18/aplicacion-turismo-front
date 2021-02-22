@@ -2,6 +2,51 @@
 <div class="edit-activities-panel">
   <h1>{{ 'edit_title_activity' | translate }}</h1>
   <form [formGroup]="editActivitiesForm" (ngSubmit)="editActivity()">
+    <div class="edit_activity_container">
+      <div class="p-fluid left_container">
+        <div class="form-edit-activity-container">
+          <div class="p-field">
+            <label for="field-name">{{ 'name_activity' | translate }}*</label>
+            <input id="field-name" type="text" pInputText formControlName="name">
+          </div>
+          <div class="p-field">
+            <label for="field-description">{{ 'description_activity' | translate }}*</label>
+            <textarea id="field-description" pInputTextarea formControlName="description" [rows]="4" [cols]="30" autoResize="autoResize"></textarea>
+          </div>
+          <div class="p-field">
+            <label for="field-interest">{{ 'interest' | translate }}*</label>
+            <p-dropdown id="field-interest" [options]="interest" formControlName="interest" appendTo="body">
+            </p-dropdown>
+          </div>
+          <div class="p-field">
+            <div class="p-field p-grid">
+              <img *ngIf="activity" id="image-edit-activity" src="http://localhost:8090/images/{{activity.name}}/{{activity.pathImage}}" />
+            </div>
+            <p-fileUpload name="myfile[]" accept="image/jpeg, image/png" maxFileSize="2000000"
+                          invalidFileTypeMessageDetail="{{ 'invalid_file_message_detail' | translate:{formats:'{0}'} }} "
+                          invalidFileTypeMessageSummary="{{ 'invalid_type_message_summary' | translate:{nameFile:'{0}'} }}"
+                          invalidFileSizeMessageDetail="{{ 'invalid_file_size_message_detail' | translate:{size:'{0}'} }}"
+                          invalidFileSizeMessageSummary="{{ 'invalid_file_size_message_summary' | translate:{file:'{0}'} }}"
+                          chooseLabel="{{ 'choose_file' | translate }}"
+                          cancelLabel="{{ 'remove_file' | translate }}"
+                          [showUploadButton]="false" (onSelect)="changeImage($event)">
+            </p-fileUpload>
+          </div>
+        </div>
+      </div>
+      <div class="right_container">
+        <p>{{ 'message_info_map' | translate }}</p>
+        <div id="mapActivity" style="width: 45vw; height: 40vw;"></div>
+      </div>
+    </div>
+    <div class="button_edit_activity_container">
+      <button pButton label="{{ 'save' | translate }}" type="submit"></button>
+    </div>
+  </form>
+
+
+
+  <!--<form [formGroup]="editActivitiesForm" (ngSubmit)="editActivity()">
     <div class="form-edit-activity-container p-fluid">
       <div class="p-field p-grid">
         <img *ngIf="activity" id="image-edit-activity" src="http://localhost:8090/images/{{activity.name}}/{{activity.pathImage}}" />
@@ -50,7 +95,7 @@
       </div>
       <button pButton type="button" label="Submit" type="submit"></button>
     </div>
-  </form>
+  </form>-->
 </div>
 
 
