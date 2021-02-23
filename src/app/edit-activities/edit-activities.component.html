@@ -29,7 +29,7 @@
                           invalidFileSizeMessageSummary="{{ 'invalid_file_size_message_summary' | translate:{file:'{0}'} }}"
                           chooseLabel="{{ 'choose_file' | translate }}"
                           cancelLabel="{{ 'remove_file' | translate }}"
-                          [showUploadButton]="false" (onSelect)="changeImage($event)">
+                          [showUploadButton]="false" (onSelect)="changeImage($event)" (onRemove)="deleteFiles($event)" (onClear)="deleteFiles($event)">
             </p-fileUpload>
           </div>
         </div>
@@ -40,7 +40,7 @@
       </div>
     </div>
     <div class="button_edit_activity_container">
-      <button pButton label="{{ 'save' | translate }}" type="submit"></button>
+      <button pButton label="{{ 'save' | translate }}" type="submit" [disabled]="editActivitiesForm.invalid || valueUnchanged "></button>
     </div>
   </form>
 

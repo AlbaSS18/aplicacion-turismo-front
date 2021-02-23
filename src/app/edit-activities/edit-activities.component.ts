@@ -6,7 +6,7 @@ import {forkJoin} from 'rxjs';
 import {CityService} from '../services/city/city.service';
 import {InterestService} from '../services/interest/interest.service';
 import {ActivityService} from '../services/activity/activity.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import * as L from 'leaflet';
 
 @Component({
@@ -22,13 +22,15 @@ export class EditActivitiesComponent implements OnInit {
   activityId;
   activity;
   file;
+  valueUnchanged: boolean = true;
 
   constructor(
     private fb: FormBuilder,
     private cityService: CityService,
     private interestService: InterestService,
     private activityService: ActivityService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -43,6 +45,8 @@ export class EditActivitiesComponent implements OnInit {
       interest: ['', Validators.required],
       address: ['', Validators.required]
     });
+
+    this.observeChanges();
 
     forkJoin([
       this.cityService.getCities(),
@@ -92,6 +96,7 @@ export class EditActivitiesComponent implements OnInit {
 
         this.editActivitiesForm.controls['city'].setValue(e.geocode.properties.address.city);
 
+        this.editActivitiesForm.controls['address'].setValue(e.geocode.name);
       }.bind(this)).addTo(map);
 
       control.options.geocoder.geocode(response3.address, function(results) {
@@ -101,9 +106,27 @@ export class EditActivitiesComponent implements OnInit {
         }
       );
 
-      console.log(response4);
       this.file = new File([response4], response3.pathImage);
     });
+  }
+
+  observeChanges() {
+    this.editActivitiesForm.valueChanges.subscribe((values) => {
+      this.isEquivalent(this.activity, values);
+    });
+  }
+
+  isEquivalent(a, b) {
+    this.valueUnchanged = true;
+    var aProps = Object.keys(a);
+    var bProps = Object.keys(b);
+    for (var i = 0; i < bProps.length; i++) {
+      let propName = bProps[i];
+      if (a[propName] !== b[propName]) {
+        this.valueUnchanged = false;
+        return false;
+      }
+    }
   }
 
   editActivity(){
@@ -123,7 +146,7 @@ export class EditActivitiesComponent implements OnInit {
     });
     this.activityService.editActivity(this.activityId, formData).subscribe(
       data => {
-        console.log(data);
+        this.router.navigate(['/activities']);
       },
       err => {
         console.log(err);
@@ -136,9 +159,19 @@ export class EditActivitiesComponent implements OnInit {
       var src = URL.createObjectURL(event.files[0]);
       var preview = document.getElementById("image-edit-activity").setAttribute( 'src', src);
       this.file = event.files[0];
-      //preview.src = src;
-      //preview.style.display = "block";
+      this.valueUnchanged = false;
     }
+  }
+
+  deleteFiles(event){
+    this.activityService.getImage(this.activityId).subscribe(
+      data => {
+        this.valueUnchanged = true;
+        this.file = new File([data], this.activity.pathImage);
+        var src = URL.createObjectURL(this.file);
+        var preview = document.getElementById("image-edit-activity").setAttribute( 'src', src);
+      }
+    )
   }
 
 }
