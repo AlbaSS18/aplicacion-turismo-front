@@ -12,6 +12,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {TranslateModule} from '@ngx-translate/core';
 import {ButtonModule} from 'primeng/button';
 import {ToastModule} from 'primeng/toast';
+import {CalendarModule} from 'primeng/calendar';
 
 describe('EditUserAdminComponent', () => {
   let component: EditUserAdminComponent;
@@ -23,13 +24,13 @@ describe('EditUserAdminComponent', () => {
       imports: [
         ReactiveFormsModule,
         HttpClientTestingModule,
-        InputNumberModule,
         DropdownModule,
         RouterTestingModule,
         FormsModule,
         TranslateModule.forRoot(),
         ButtonModule,
-        ToastModule
+        ToastModule,
+        CalendarModule
       ],
       providers: [
         UserService,
