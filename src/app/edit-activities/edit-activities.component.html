@@ -29,7 +29,7 @@
                           invalidFileSizeMessageSummary="{{ 'invalid_file_size_message_summary' | translate:{file:'{0}'} }}"
                           chooseLabel="{{ 'choose_file' | translate }}"
                           cancelLabel="{{ 'remove_file' | translate }}"
-                          [showUploadButton]="false" (onSelect)="changeImage($event)" (onRemove)="deleteFiles($event)" (onClear)="deleteFiles($event)">
+                          [showUploadButton]="false" (onSelect)="changeImage($event)" (onRemove)="deleteFiles($event)" (onClear)="deleteFiles($event)" class="fileUploadEditActivity">
             </p-fileUpload>
           </div>
         </div>

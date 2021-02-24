@@ -49,6 +49,18 @@
   min-width: 390px;
 }
 
+.fileUploadAddActivity {
+  ::ng-deep .p-fileupload-row{
+    div:nth-child(2) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+  }
+}
+
+
 
 
 
