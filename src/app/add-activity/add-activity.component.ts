@@ -8,7 +8,7 @@ import 'leaflet-control-geocoder';
 import 'leaflet/dist/images/marker-shadow.png';
 import 'leaflet/dist/images/marker-icon-2x.png';
 import {ActivityService} from '../services/activity/activity.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-activity',
@@ -32,7 +32,6 @@ export class AddActivityComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    L.Icon.Default.ImagePath = 'assests/leaflet/';
     this.formAddActivity = this.formBuilder.group({
       name: ['', Validators.required],
       description: ['', [Validators.required]],
@@ -49,8 +48,8 @@ export class AddActivityComponent implements OnInit {
     }).addTo(map);
 
     var opciones = {
-      placeholder: "Escriba la dirección...",
-      errorMessage: "No se han encontrado direcciones",
+      placeholder: 'Escriba la dirección...',
+      errorMessage: 'No se han encontrado direcciones'
     };
 
     var control = L.Control.geocoder(opciones).on('markgeocode', function (e) {

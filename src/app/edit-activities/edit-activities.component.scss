@@ -39,7 +39,8 @@
 }
 
 .form-edit-activity-container {
-  width: 70%;
+  width: 40vw;
+  min-width: 375px;
   /*Para centrar*/
   margin-left: auto;
   margin-right: auto;
@@ -51,6 +52,13 @@
   ::ng-deep .p-button{
     margin: 5px;
   }
+}
+
+#mapActivityEdit{
+  width: 45vw;
+  height: 40vw;
+  min-height: 480px;
+  min-width: 390px;
 }
 
 

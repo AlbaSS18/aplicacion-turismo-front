@@ -117,5 +117,7 @@
   },
   "message_valuation_one": "Please, rate from 0 (the least) to 10 (the most) each one of interests shown below to improve the recommendations.",
   "message_valuation_two": "If you wish, you will be able to modify these ratings later, in the \"Your profile\" section.",
-  "message_info_map": "Use the map to find the address of the activity:"
+  "message_info_map": "Use the map to find the address of the activity:",
+  "write_address": "Please, enter the address...",
+  "not_found_address": "No address found"
 }

@@ -28,7 +28,7 @@
 
 .grid-container{
   width: 40vw;
-  min-width: 300px;
+  min-width: 375px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 5px;
@@ -41,5 +41,14 @@
     margin: 5px;
   }
 }
+
+#mapActivity{
+  width: 45vw;
+  height: 40vw;
+  min-height: 400px;
+  min-width: 390px;
+}
+
+
 
 

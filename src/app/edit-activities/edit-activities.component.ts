@@ -75,7 +75,7 @@ export class EditActivitiesComponent implements OnInit {
         }
       );
 
-      var map = L.map('mapActivity').setView([response3.latitude, response3.longitude], 8);
+      var map = L.map('mapActivityEdit').setView([response3.latitude, response3.longitude], 8);
 
       const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
