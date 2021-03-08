@@ -97,7 +97,7 @@ export class EditUserAdminComponent implements OnInit {
       }
       else if (propName === "dateBirthday"){
         var d1 = new Date(new Date(a[propName]).toDateString());
-        var d2 = new Date(b[propName].toDateString());
+        var d2 = new Date(b[propName]?.toDateString());
         if (d1.getTime() !== d2.getTime()){
           this.valueUnchanged = false;
           return false;

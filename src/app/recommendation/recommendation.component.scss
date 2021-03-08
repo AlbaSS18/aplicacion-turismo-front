@@ -1,0 +1,8 @@
+@import "src/assets/sass/utility/_mixins.scss";
+
+.recommendation-panel{
+  @include custom-panel;
+  width: 100%;
+  min-height: 300px;
+  min-width: 800px;
+}

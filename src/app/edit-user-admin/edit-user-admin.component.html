@@ -8,6 +8,10 @@
         <label for="float-input-username" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{ 'username' | translate }}</label>
         <div class="p-col-12 p-md-10">
           <input id="float-input-username" type="text" size="30" pInputText formControlName="userName">
+          <small id="username-help" class="p-error" *ngIf="editUserForm.controls['userName'].invalid&&(editUserForm.controls['userName'].dirty || editUserForm.controls['userName'].touched)">{{ 'name_required' | translate }}</small>
+          <!--<p-message class="message_error_username" severity="error" text="{{ 'name_required' | translate }}"
+                     *ngIf="editUserForm.controls['userName'].invalid&&(editUserForm.controls['userName'].dirty || editUserForm.controls['userName'].touched)"></p-message>
+-->
         </div>
       </div>
       <div class="p-field p-grid">

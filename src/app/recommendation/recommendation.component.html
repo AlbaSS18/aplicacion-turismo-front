@@ -1,12 +1,25 @@
-<div *ngIf="info.token; else loggedOut">
-  <div class="container">
-    <p><strong>Tu nombre de usuario: </strong>{{ info.nombreUsuario}}</p>
-    <p><strong>Este es el token: </strong>{{ info.token}}</p>
-    <p><strong>Tus privilegios: </strong>{{ info.authorities}}</p>
+<app-menu-bar></app-menu-bar>
+<div class="recommendation-panel">
+  <div *ngIf="info.token; else loggedOut">
+    <div class="container">
+      <p><strong>Tu nombre de usuario: </strong>{{ info.nombreUsuario}}</p>
+      <p><strong>Este es el token: </strong>{{ info.token}}</p>
+      <p><strong>Tus privilegios: </strong>{{ info.authorities}}</p>
+    </div>
+    <p-card>
+      <label for="number-recommendations">¿Cuántas actividades desea que tenga tú recomendación?</label>
+      <p-inputNumber id="number-recommendations" [(ngModel)]="numberRecommendations" [showButtons]="true" [min]="0"></p-inputNumber>
+      <!--<label for="type-recommendations">¿Qué tipo de actividades desea qué tenga tú recomendación?</label>-->
+      <ng-container *ngFor="let interest of interestList">
+        <p-checkbox label="{{interest.nameInterest}}" name="groupname" value="{{interest}}" [(ngModel)]="typeselected"></p-checkbox>
+      </ng-container>
+    </p-card>
+
   </div>
+  <ng-template #loggedOut>
+    <div class="container">
+      No has iniciado sesión
+    </div>
+  </ng-template>
 </div>
-<ng-template #loggedOut>
-  <div class="container">
-    No has iniciado sesión
-  </div>
-</ng-template>
+
