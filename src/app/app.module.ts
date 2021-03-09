@@ -57,6 +57,8 @@ import {AddActivityComponent} from './add-activity/add-activity.component';
 import { ListActivitiesEvaluateComponent } from './list-activities-evaluate/list-activities-evaluate.component';
 import {DataViewModule} from 'primeng/dataview';
 import {RatingModule} from 'primeng/rating';
+import {ChipModule} from 'primeng/chip';
+import {TagModule} from 'primeng/tag';
 
 @NgModule({
   declarations: [
@@ -113,6 +115,7 @@ import {RatingModule} from 'primeng/rating';
     CalendarModule,
     DataViewModule,
     RatingModule,
+    TagModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

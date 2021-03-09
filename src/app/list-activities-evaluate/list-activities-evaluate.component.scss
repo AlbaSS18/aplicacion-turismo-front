@@ -15,6 +15,10 @@
     margin: 15px;
 }
 
+::ng-deep .p-dataview.p-dataview-list .p-dataview-content > .p-grid > div{
+  border-width: 1px 0 1px 0;
+}
+
 
 .activities-list-item{
     display: flex;

@@ -16,36 +16,50 @@ export class ListActivitiesEvaluateComponent implements OnInit {
       {
         name: "Museos de Gijón",
         description: "Museo de Gijón que se encuentra en Gijón",
+        interest: "Museos",
+        address: "Calle Laboratorios",
         rating: "3"
       },
       {
         name: "Catedral de Sevilla",
         description: "Catedral muy bonita que se encuentra en Sevilla",
+        interest: "Catedral",
+        address: "Calle Laboratorios",
+        rating: "2"
+      },
+      {
+        name: "Catedral de Sevilla",
+        description: "Catedral muy bonita que se encuentra en Sevilla",
+        interest: "Catedral",
+        address: "Calle Laboratorios",
+        rating: "1"
+      },
+      {
+        name: "Catedral de Sevilla",
+        description: "Catedral muy bonita que se encuentra en Sevilla",
+        interest: "Catedral",
+        address: "Calle Laboratorios",
+        rating: "0"
+      },
+      {
+        name: "Catedral de Sevilla",
+        description: "Catedral muy bonita que se encuentra en Sevilla",
+        interest: "Catedral",
+        address: "Calle Laboratorios",
         rating: "5"
       },
       {
         name: "Catedral de Sevilla",
         description: "Catedral muy bonita que se encuentra en Sevilla",
+        interest: "Catedral",
+        address: "Calle Laboratorios",
         rating: "5"
       },
       {
         name: "Catedral de Sevilla",
         description: "Catedral muy bonita que se encuentra en Sevilla",
-        rating: "5"
-      },
-      {
-        name: "Catedral de Sevilla",
-        description: "Catedral muy bonita que se encuentra en Sevilla",
-        rating: "5"
-      },
-      {
-        name: "Catedral de Sevilla",
-        description: "Catedral muy bonita que se encuentra en Sevilla",
-        rating: "5"
-      },
-      {
-        name: "Catedral de Sevilla",
-        description: "Catedral muy bonita que se encuentra en Sevilla",
+        interest: "Catedral",
+        address: "Calle Laboratorios",
         rating: "5"
       }
     ];

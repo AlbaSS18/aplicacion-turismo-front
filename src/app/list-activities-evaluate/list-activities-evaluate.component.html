@@ -5,13 +5,22 @@
         <ng-template let-activity pTemplate="listItem">
             <div class="p-col-12">
                 <div class="activities-list-item">
-                    <img src="https://www.turismoasturias.es/documents/11022/84856/Museo+del+Ferrocarril+en+Gij%C3%B3n.jpg/f6a2617d-8286-4db7-9a38-2112fd857821?t=1541695783632" />
+                    <div>
+                      <img src="https://www.turismoasturias.es/documents/11022/84856/Museo+del+Ferrocarril+en+Gij%C3%B3n.jpg/f6a2617d-8286-4db7-9a38-2112fd857821?t=1541695783632" />
+                      <div>
+                        <em>{{activity.address}}</em>
+                      </div>
+                    </div>
                     <div class="activities-list-detail">
                         <div class="activity-name">
                             {{activity.name}}
                         </div>
                         <div>
-                            <p>{{activity.description}}</p> 
+                          <p>{{activity.description}}</p>
+                        </div>
+
+                        <div>
+                          <p-tag value="{{activity.interest}}" [rounded]="true"></p-tag>
                         </div>
                     </div>
 
