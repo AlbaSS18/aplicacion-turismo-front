@@ -1,0 +1,20 @@
+<app-menu-bar></app-menu-bar>
+<div class="activities-evaluates-panel">
+    <h1>Actividades evaluadas</h1>
+    <p-dataView [value]="listActivities" [paginator]="true" [rows]="5">
+        <ng-template let-activity pTemplate="listItem">
+            <div class="p-col-12">
+                <div class="product-list-item">
+                    <img src="https://www.turismoasturias.es/documents/11022/84856/Museo+del+Ferrocarril+en+Gij%C3%B3n.jpg/f6a2617d-8286-4db7-9a38-2112fd857821?t=1541695783632" />
+                    <div>
+                        {{activity.name}}
+                    </div>
+                    <div>
+                        {{activity.description}}
+                    </div>
+                    <p-rating [ngModel]="activity.rating" [readonly]="true" stars="5" [cancel]="false"></p-rating>
+                </div>
+            </div>
+        </ng-template>
+    </p-dataView>
+</div>

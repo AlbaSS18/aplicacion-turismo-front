@@ -54,6 +54,9 @@ import {ScrollPanelModule} from 'primeng/scrollpanel';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {CalendarModule} from 'primeng/calendar';
 import {AddActivityComponent} from './add-activity/add-activity.component';
+import { ListActivitiesEvaluateComponent } from './list-activities-evaluate/list-activities-evaluate.component';
+import {DataViewModule} from 'primeng/dataview';
+import {RatingModule} from 'primeng/rating';
 
 @NgModule({
   declarations: [
@@ -72,7 +75,8 @@ import {AddActivityComponent} from './add-activity/add-activity.component';
     EditActivitiesComponent,
     EditUserAdminComponent,
     EditUserComponent,
-    AddActivityComponent
+    AddActivityComponent,
+    ListActivitiesEvaluateComponent
   ],
   imports: [
     BrowserModule,
@@ -107,6 +111,8 @@ import {AddActivityComponent} from './add-activity/add-activity.component';
     ScrollPanelModule,
     RadioButtonModule,
     CalendarModule,
+    DataViewModule,
+    RatingModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

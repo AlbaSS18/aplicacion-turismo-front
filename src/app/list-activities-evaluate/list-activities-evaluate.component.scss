@@ -1,0 +1,21 @@
+@import "src/assets/sass/utility/_mixins.scss";
+
+.activities-evaluates-panel{
+    @include custom-panel;
+    width: 100%;
+    min-height: 300px;
+    min-width: 800px;
+}
+
+.product-list-item{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+
+    img {
+        width: 150px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        margin-right: 2rem;
+    }
+}

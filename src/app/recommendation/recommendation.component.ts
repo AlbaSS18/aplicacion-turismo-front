@@ -14,6 +14,7 @@ export class RecommendationComponent implements OnInit {
   numberRecommendations: number = 0;
   typeselected: string[] = [];
   interestList: Interest[] = [];
+  
 
   constructor(private tokenService: TokenService, private interestService: InterestService) { }
 
