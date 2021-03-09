@@ -15,11 +15,21 @@
     margin: 15px;
 }
 
-.product-list-item{
+
+.activities-list-item{
     display: flex;
     align-items: center;
     padding: 1rem;
     width: 100%;
+
+
+    /* .activities-list-action, .activities-list-action{
+        width: 50%;
+    } */
+
+    .activities-list-detail{
+        flex: 1 1 0;
+    }
 
     img {
         width: 150px;
@@ -31,4 +41,8 @@
         font-size: 1.5rem;
         font-weight: 700;
     }
+
 }
+
+
+
