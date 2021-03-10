@@ -9,6 +9,12 @@
   h1 {
     text-align: center;
   }
+
+  ::ng-deep .p-card, .button_create_recommendation {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .question_recommendations_container{
@@ -20,11 +26,7 @@
   }
 }
 
-::ng-deep .p-card, .button_create_recommendation {
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 
 .button_create_recommendation {
   text-align: right;

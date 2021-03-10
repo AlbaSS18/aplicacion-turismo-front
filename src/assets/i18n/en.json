@@ -124,5 +124,6 @@
   "placeholder_search_activities_evaluate": "Search by Name",
   "create_recommendation": "Create recommendation",
   "question_number_recommendation": "How many activities would you like your recommendation to have?",
-  "question_type_activities_recommendation": "What kind of activities would you like your recommendation to have?"
+  "question_type_activities_recommendation": "What kind of activities would you like your recommendation to have?",
+  "recommendation": "Recommendation"
 }
