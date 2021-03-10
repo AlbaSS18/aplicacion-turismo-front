@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SelectItem } from 'primeng/api';
 
 @Component({
   selector: 'app-list-activities-evaluate',
@@ -8,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class ListActivitiesEvaluateComponent implements OnInit {
 
   listActivities = [];
+  sortOptions: SelectItem[];
 
   constructor() { }
 
   ngOnInit(): void {
+    this.sortOptions = [
+      {label: 'Rating High to Low', value: '!rating'},
+      {label: 'Rating Low to High', value: 'rating'}
+  ];
     this.listActivities = [
       {
         name: "Museos de Gijón",
