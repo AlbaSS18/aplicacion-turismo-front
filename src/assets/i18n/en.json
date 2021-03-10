@@ -120,5 +120,6 @@
   "message_info_map": "Use the map to find the address of the activity:",
   "write_address": "Please, enter the address...",
   "not_found_address": "No address found",
-  "activities_valued": "Valued activities"
+  "activities_valued": "Valued activities",
+  "placeholder_search_activities_evaluate": "Search by Name"
 }

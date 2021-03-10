@@ -1,8 +1,16 @@
 <app-menu-bar></app-menu-bar>
 <div class="activities-evaluates-panel">
     <h1>{{ 'activities_valued' | translate }}</h1>
-    <p-dataView [value]="listActivities" [paginator]="true" [rows]="5">
-        <ng-template let-activity pTemplate="listItem">
+    <p-dataView #dv [value]="listActivities" [paginator]="true" [rows]="5" filterBy="name">
+      <ng-template pTemplate="header">
+        <div class="search_input_container">
+          <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input type="search" pInputText placeholder="{{ 'placeholder_search_activities_evaluate' | translate }}" (input)="dv.filter($event.target.value)">
+          </span>
+        </div>
+      </ng-template>
+      <ng-template let-activity pTemplate="listItem">
             <div class="p-col-12">
                 <div class="activities-list-item">
                     <div>
