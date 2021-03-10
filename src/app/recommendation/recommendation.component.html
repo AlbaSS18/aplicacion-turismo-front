@@ -1,25 +1,41 @@
 <app-menu-bar></app-menu-bar>
 <div class="recommendation-panel">
-  <div *ngIf="info.token; else loggedOut">
+  <!--<div *ngIf="info.token; else loggedOut">
     <div class="container">
       <p><strong>Tu nombre de usuario: </strong>{{ info.nombreUsuario}}</p>
       <p><strong>Este es el token: </strong>{{ info.token}}</p>
       <p><strong>Tus privilegios: </strong>{{ info.authorities}}</p>
     </div>
-    <p-card>
-      <label for="number-recommendations">¿Cuántas actividades desea que tenga tú recomendación?</label>
-      <p-inputNumber id="number-recommendations" [(ngModel)]="numberRecommendations" [showButtons]="true" [min]="0"></p-inputNumber>
-      <!--<label for="type-recommendations">¿Qué tipo de actividades desea qué tenga tú recomendación?</label>-->
-      <ng-container *ngFor="let interest of interestList">
-        <p-checkbox label="{{interest.nameInterest}}" name="groupname" value="{{interest}}" [(ngModel)]="typeselected"></p-checkbox>
-      </ng-container>
-    </p-card>
+
 
   </div>
   <ng-template #loggedOut>
     <div class="container">
       No has iniciado sesión
     </div>
-  </ng-template>
+  </ng-template>-->
+
+  <h1>{{ 'create_recommendation' | translate }}</h1>
+  <p-card styleClass="p-shadow-3" >
+    <div class="question_recommendations_container">
+      <div class="question_container">
+        <label for="number-recommendations">{{ 'question_number_recommendation' | translate }}</label>
+      </div>
+      <div class="question_container">
+        <p-inputNumber id="number-recommendations" [(ngModel)]="numberRecommendations" [showButtons]="true" [min]="0"></p-inputNumber>
+      </div>
+      <div class="question_container">
+        <label>{{ 'question_type_activities_recommendation' | translate }}</label>
+      </div>
+      <div class="question_container">
+        <div *ngFor="let interest of interestList">
+          <p-checkbox label="{{interest.nameInterest}}" name="groupname" [value]="interest" [(ngModel)]="typeselected"></p-checkbox>
+        </div>
+      </div>
+    </div>
+  </p-card>
+  <div class="button_create_recommendation">
+    <p-button label="{{ 'create_recommendation' | translate }}" ></p-button>
+  </div>
 </div>
 

@@ -3,6 +3,30 @@
 .recommendation-panel{
   @include custom-panel;
   width: 100%;
-  min-height: 300px;
+  min-height: 380px;
   min-width: 800px;
+
+  h1 {
+    text-align: center;
+  }
+}
+
+.question_recommendations_container{
+  display: flex;
+  flex-direction:column;
+
+  .question_container{
+    margin: 5px;
+  }
+}
+
+::ng-deep .p-card, .button_create_recommendation {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button_create_recommendation {
+  text-align: right;
+  margin-top: 10px;
 }

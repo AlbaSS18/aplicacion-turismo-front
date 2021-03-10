@@ -121,6 +121,9 @@
   "write_address": "Escriba la dirección...",
   "not_found_address": "No se han encontrado direcciones",
   "activities_valued": "Actividades valoradas",
-  "placeholder_search_activities_evaluate": "Buscar por nombre"
+  "placeholder_search_activities_evaluate": "Buscar por nombre",
+  "create_recommendation": "Crear recomendación",
+  "question_number_recommendation": "¿Cuántas actividades desea que tenga tú recomendación?",
+  "question_type_activities_recommendation": "¿Qué tipo de actividades desea qué tenga tú recomendación?"
 
 }

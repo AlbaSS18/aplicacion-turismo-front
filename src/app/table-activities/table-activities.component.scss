@@ -25,22 +25,6 @@
 
 .table-activities{
 
-  ::ng-deep .p-datatable-tbody > tr > td,
-  ::ng-deep .p-datatable-thead > tr > th,
-  ::ng-deep .p-paginator,
-  ::ng-deep .p-datatable-header{
-    border: 0 none;
-  }
-
-  ::ng-deep .p-datatable-tbody > tr > td,
-  ::ng-deep .p-datatable-thead > tr > th{
-    border-bottom: 1px solid #c8c8c8;
-  }
-
-  ::ng-deep .p-datatable-thead > tr > th{
-    border-top: 1px solid #c8c8c8;
-  }
-
   .td-text-wrap{
     word-wrap:break-word;
   }
