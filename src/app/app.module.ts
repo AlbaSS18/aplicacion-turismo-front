@@ -59,6 +59,7 @@ import {DataViewModule} from 'primeng/dataview';
 import {RatingModule} from 'primeng/rating';
 import {ChipModule} from 'primeng/chip';
 import {TagModule} from 'primeng/tag';
+import {RecommendationMapComponent} from './recommendation-map/recommendation-map.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import {TagModule} from 'primeng/tag';
     EditUserAdminComponent,
     EditUserComponent,
     AddActivityComponent,
-    ListActivitiesEvaluateComponent
+    ListActivitiesEvaluateComponent,
+    RecommendationMapComponent
   ],
   imports: [
     BrowserModule,

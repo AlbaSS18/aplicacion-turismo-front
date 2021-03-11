@@ -1,0 +1,26 @@
+<app-menu-bar></app-menu-bar>
+<div class="recommendation-map-panel">
+  <div class="table_recommendation">
+    <p-dataView [value]="activitiesRecommendation">
+      <ng-template let-activity pTemplate="listItem">
+        <div class="p-col-12">
+          <div class="activity-recommendation-list-item">
+            <!--<p-checkbox name="groupname" binary="true" [(ngModel)]="activitiesSelected"></p-checkbox>-->
+            <p-checkbox name="group1" [value]="activity.name" [(ngModel)]="activitiesSelected" (onChange)="changeMap($event, activity)" ></p-checkbox>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Gij%C3%B3n_old_FEVE_station.JPG"/>
+            <div class="activity-recommendation-list-detail">
+              {{activity.name}}
+            </div>
+            <div class="activity-recommendation-list-action">
+              {{activity.description}}
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-dataView>
+  </div>
+  <div class="map_recommendation">
+    <div id="mapActivityRecommendation"></div>
+  </div>
+
+</div>

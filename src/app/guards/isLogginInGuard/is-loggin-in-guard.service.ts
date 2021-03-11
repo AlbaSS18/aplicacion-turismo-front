@@ -11,7 +11,14 @@ export class IsLogginInGuardService implements Resolve<any>{
 
   resolve() {
     if (this.tokenService.getToken()) {
-      this.router.navigate(['/recommendation']);
+      const roles = this.tokenService.getAuthorities();
+      if (roles.includes("ROLE_ADMIN")){
+        console.log("e")
+        this.router.navigate(['/user']);
+      }
+      else{
+        this.router.navigate(['/recommendation']);
+      }
     }
   }
 }

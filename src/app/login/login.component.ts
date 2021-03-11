@@ -69,7 +69,12 @@ export class LoginComponent implements OnInit {
         this.tokenService.setAuthorities(data.authorities);
         this.isLoginFail = false;
         this.roles = this.tokenService.getAuthorities();
-        this.router.navigateByUrl('/recommendation');
+        if (this.roles.includes("ROLE_ADMIN")){
+          this.router.navigate(['/user']);
+        }
+        else{
+          this.router.navigate(['/recommendation']);
+        }
       },
       (err: any) => {
         this.isLoginFail = true;

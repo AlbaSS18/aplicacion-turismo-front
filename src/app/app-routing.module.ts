@@ -17,12 +17,17 @@ import {EditActivitiesComponent} from './edit-activities/edit-activities.compone
 import {EditUserAdminComponent} from './edit-user-admin/edit-user-admin.component';
 import {AddActivityComponent} from './add-activity/add-activity.component';
 import { ListActivitiesEvaluateComponent } from './list-activities-evaluate/list-activities-evaluate.component';
+import {RecommendationMapComponent} from './recommendation-map/recommendation-map.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent, resolve: [IsLogginInGuardService]},
   {path: 'signup', component: SignUpComponent},
-  {path: 'recommendation', component: RecommendationComponent, canActivate: [AuthGuardService]},
+  {path: 'recommendation', component: RecommendationComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRol: 'user'
+  }},
   {path: 'map', component: MapComponent},
   {path: 'activities', component: TableActivitiesComponent,
     canActivate: [RoleGuardService],
@@ -60,6 +65,7 @@ const routes: Routes = [
       expectedRol: 'admin'
   }},
   {path: 'profile/edit', component: EditUserComponent, canActivate: [AuthGuardService]},
+  {path: 'recommendationMap', component: RecommendationMapComponent},
   {path: 'activitiesEvaluate', component: ListActivitiesEvaluateComponent},
   {path: '**', redirectTo: 'login', pathMatch: 'full'}
 ];
