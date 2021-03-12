@@ -38,7 +38,8 @@ export class AddActivityComponent implements OnInit {
       latitude: ['', [Validators.required]],
       longitude: ['', [Validators.required]],
       city: ['', [Validators.required]],
-      nameInterest: ['', [Validators.required]]
+      nameInterest: ['', [Validators.required]],
+      address: ['', Validators.required]
     });
 
     var map = L.map('mapActivity').setView([43.333333, -6], 8);
@@ -61,6 +62,8 @@ export class AddActivityComponent implements OnInit {
       this.formAddActivity.controls['longitude'].setValue(longitud);
 
       this.formAddActivity.controls['city'].setValue(e.geocode.properties.address.city);
+
+      this.formAddActivity.controls['address'].setValue(e.geocode.name);
 
     }.bind(this)).addTo(map);
 
@@ -118,6 +121,7 @@ export class AddActivityComponent implements OnInit {
       formData.append('longitude', this.formAddActivity.get('longitude').value);
       formData.append('city', this.formAddActivity.get('city').value);
       formData.append('interest', this.formAddActivity.get('nameInterest').value);
+      formData.append('address', this.formAddActivity.get('address').value);
       console.log(formData);
       this.activityService.addActivity(formData).subscribe(
         data => {

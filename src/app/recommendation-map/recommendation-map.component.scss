@@ -19,6 +19,10 @@
   padding: 1rem;
   width: 100%;
 
+  .checkBoxActivityRecommendation{
+    margin: 5px;
+  }
+
   img {
     width: 150px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -27,6 +31,15 @@
 
   .activity-recommendation-list-detail {
     flex: 1 1 0;
+  }
+
+  .activity-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .activity-description {
+    margin: 0 0 1rem 0;
   }
 }
 
