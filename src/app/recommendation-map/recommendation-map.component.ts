@@ -46,15 +46,21 @@ export class RecommendationMapComponent implements OnInit {
   }
 
   changeMap(event, activity){
-    console.log(this.markerList);
-    var marker = L.marker([activity.latitude, activity.longitude]);
-    var f = this.markerList.filter((act) => {
-      return act._latlng.lat === activity.latitude && act._latlng.lng === activity.longitude;
-    });
-    console.log(f);
-    //console.log(this.markerList[0]);
-    //this.markerList.p
-    this.map.removeLayer(f[0]);
+    if (event.checked){
+      var marker = L.marker([activity.latitude, activity.longitude]).addTo(this.map);
+      this.markerList.push(marker);
+    }
+    else{
+      var marker = L.marker([activity.latitude, activity.longitude]);
+      var f = this.markerList.filter((act) => {
+        return act._latlng.lat === activity.latitude && act._latlng.lng === activity.longitude;
+      });
+      const index = this.markerList.indexOf(f[0]);
+      if (index > -1) {
+        this.markerList.splice(index, 1);
+      }
+      this.map.removeLayer(f[0]);
+    }
   }
 
 }
