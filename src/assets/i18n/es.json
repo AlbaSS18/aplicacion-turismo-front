@@ -125,6 +125,9 @@
   "create_recommendation": "Crear recomendación",
   "question_number_recommendation": "¿Cuántas actividades desea que tenga tú recomendación?",
   "question_type_activities_recommendation": "¿Qué tipo de actividades desea qué tenga tú recomendación?",
-  "recommendation": "Recomendación"
+  "recommendation": "Recomendación",
+  "rate_activity": "Puntuar actividad",
+  "message_rate_activity": "Por favor, valora la actividad",
+  "submessage_rate_activity": "Tu opinión nos ayuda a ofrecerte continuamente las mejores actividades"
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivityService} from '../services/activity/activity.service';
 import * as L from 'leaflet';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-recommendation-map',
@@ -13,8 +14,14 @@ export class RecommendationMapComponent implements OnInit {
   activitiesSelected:string[] = [];
   map;
   markerList = [];
+  displayPanelRating: boolean = false;
+  formToRatingActivity: FormGroup;
 
-  constructor(private activitiesService: ActivityService) { }
+  constructor(private activitiesService: ActivityService, private fb: FormBuilder) {
+    this.formToRatingActivity = this.fb.group({
+      rating: ['', Validators.required],
+    });
+  }
 
   ngOnInit(): void {
 
@@ -42,7 +49,6 @@ export class RecommendationMapComponent implements OnInit {
 
     });
 
-
   }
 
   changeMap(event, activity){
@@ -61,6 +67,18 @@ export class RecommendationMapComponent implements OnInit {
       }
       this.map.removeLayer(f[0]);
     }
+  }
+
+  openPanelToRating(event){
+    this.formToRatingActivity.patchValue({
+      rating: ['']
+    });
+
+    this.displayPanelRating = true;
+  }
+
+  sendRatingActivity(){
+
   }
 
 }

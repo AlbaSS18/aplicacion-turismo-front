@@ -1,7 +1,7 @@
 <app-menu-bar></app-menu-bar>
 <div class="recommendation-map-panel">
   <div class="table_recommendation">
-    <p-dataView [value]="activitiesRecommendation">
+    <p-dataView [value]="activitiesRecommendation" [paginator]="true" [rows]="3">
       <ng-template let-activity pTemplate="listItem">
         <div class="p-col-12">
           <div class="activity-recommendation-list-item">
@@ -10,10 +10,7 @@
             <div class="activity-recommendation-list-detail">
               <div class="activity-name">{{activity.name}}</div>
               <div class="activity-description">{{activity.description}}</div>
-              <button pButton type="button" label="Link" class="p-button-link"></button>
-            </div>
-            <div class="activity-recommendation-list-action">
-
+              <button pButton type="button" label="{{ 'rate_activity' | translate }}" class="p-button-link" (click)="openPanelToRating($event)"></button>
             </div>
           </div>
         </div>
@@ -24,4 +21,14 @@
     <div id="mapActivityRecommendation"></div>
   </div>
 
+  <p-dialog header="{{ 'rate_activity' | translate }}" [(visible)]="displayPanelRating" modal="true" [draggable]="false">
+    <form [formGroup]="formToRatingActivity" (ngSubmit)="sendRatingActivity()">
+      <p-rating formControlName="rating" [cancel]="false"></p-rating>
+      <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" type="submit" label="Ok" styleClass="p-button-text"></p-button>
+      </ng-template>
+    </form>
+  </p-dialog>
 </div>
+
+
