@@ -16,6 +16,7 @@ export class RecommendationMapComponent implements OnInit {
   markerList = [];
   displayPanelRating: boolean = false;
   formToRatingActivity: FormGroup;
+  activitySelectedToRate;
 
   constructor(private activitiesService: ActivityService, private fb: FormBuilder) {
     this.formToRatingActivity = this.fb.group({
@@ -57,28 +58,40 @@ export class RecommendationMapComponent implements OnInit {
       this.markerList.push(marker);
     }
     else{
-      var marker = L.marker([activity.latitude, activity.longitude]);
-      var f = this.markerList.filter((act) => {
-        return act._latlng.lat === activity.latitude && act._latlng.lng === activity.longitude;
-      });
+      this.removeMarkerFromMap(activity);
+    }
+  }
+
+  openPanelToRating(event, activity){
+    this.formToRatingActivity.patchValue({
+      rating: ['']
+    });
+    this.activitySelectedToRate = activity;
+    this.displayPanelRating = true;
+  }
+
+  sendRatingActivity(){
+    this.displayPanelRating = false;
+    var aux = this.activitiesRecommendation;
+    const index = aux.indexOf(this.activitySelectedToRate);
+    if (index > -1) {
+      aux.splice(index, 1);
+    }
+    this.activitiesRecommendation = [...aux];
+    this.removeMarkerFromMap(this.activitySelectedToRate);
+  }
+
+  removeMarkerFromMap(activity){
+    var f = this.markerList.filter((act) => {
+      return act._latlng.lat === activity.latitude && act._latlng.lng === activity.longitude;
+    });
+    if (f.length !== 0){
       const index = this.markerList.indexOf(f[0]);
       if (index > -1) {
         this.markerList.splice(index, 1);
       }
       this.map.removeLayer(f[0]);
     }
-  }
-
-  openPanelToRating(event){
-    this.formToRatingActivity.patchValue({
-      rating: ['']
-    });
-
-    this.displayPanelRating = true;
-  }
-
-  sendRatingActivity(){
-
   }
 
 }
