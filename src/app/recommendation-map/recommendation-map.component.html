@@ -23,12 +23,12 @@
 
   <p-dialog header="{{ 'rate_activity' | translate }}" [(visible)]="displayPanelRating" modal="true" [draggable]="false" >
     <form [formGroup]="formToRatingActivity" (ngSubmit)="sendRatingActivity()" id="ratingForm">
-      <p>{{ 'message_rate_activity' | translate }}</p>
+      <p class="messageRateActivity">{{ 'message_rate_activity' | translate }}</p>
+      <p-rating class="rateActivity" formControlName="rating" [cancel]="false"></p-rating>
       <p>{{ 'submessage_rate_activity' | translate }}</p>
-      <p-rating formControlName="rating" [cancel]="false"></p-rating>
     </form>
     <ng-template pTemplate="footer">
-      <button pButton icon="pi pi-check" label="{{ 'submit' | translate }}" class="p-button-text" form="ratingForm"></button>
+      <button pButton icon="pi pi-check" label="{{ 'submit' | translate }}" class="p-button-text" form="ratingForm" [disabled]="formToRatingActivity.invalid"></button>
     </ng-template>
   </p-dialog>
 </div>

@@ -64,7 +64,7 @@ export class RecommendationMapComponent implements OnInit {
 
   openPanelToRating(event, activity){
     this.formToRatingActivity.patchValue({
-      rating: ['']
+      rating: []
     });
     this.activitySelectedToRate = activity;
     this.displayPanelRating = true;
@@ -79,6 +79,7 @@ export class RecommendationMapComponent implements OnInit {
     }
     this.activitiesRecommendation = [...aux];
     this.removeMarkerFromMap(this.activitySelectedToRate);
+    console.log(this.formToRatingActivity);
   }
 
   removeMarkerFromMap(activity){
