@@ -44,7 +44,24 @@ export class RecommendationMapComponent implements OnInit {
 
       this.activitiesRecommendation.forEach(activity => {
         this.activitiesSelected.push(activity.name);
-        var marker = L.marker([activity.latitude, activity.longitude]).addTo(this.map);
+
+        var greenIcon = L.icon({
+          iconUrl: '../../assets/images/landscape.png',
+          iconSize: [35, 35], // size of the icon
+        });
+
+        var photoImg = '<img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Gij%C3%B3n_old_FEVE_station.JPG" width="100%"/>';
+
+        const popupContent =
+          photoImg +
+          '<div>' +
+          '<h2>' +
+          activity.name  +
+          '</h2>' + '<div><i class="fas fa-map-marker-alt"></i> ' + activity.address + '</div>' + '<div><i class="fas fa-tags"></i> ' + activity.interest + '</div>'  + '</div>';
+
+        var marker = L.marker([activity.latitude, activity.longitude], {icon: greenIcon}).addTo(this.map).bindPopup(popupContent, {
+          maxWidth : 250
+        });
         this.markerList.push(marker);
       });
 
@@ -54,7 +71,24 @@ export class RecommendationMapComponent implements OnInit {
 
   changeMap(event, activity){
     if (event.checked){
-      var marker = L.marker([activity.latitude, activity.longitude]).addTo(this.map);
+      var greenIcon = L.icon({
+        iconUrl: '../../assets/images/landscape.png',
+        iconSize: [35, 35], // size of the icon
+      });
+
+      var photoImg = '<img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Gij%C3%B3n_old_FEVE_station.JPG" width="100%"/>';
+
+      const popupContent =
+        photoImg +
+        '<div>' +
+        '<h2>' +
+        activity.name  +
+        '</h2>' + '<div><i class="fas fa-map-marker-alt"></i> ' + activity.address + '</div>' + '<div><i class="fas fa-tags"></i> ' + activity.interest + '</div>'  + '</div>';
+
+
+      var marker = L.marker([activity.latitude, activity.longitude], {icon: greenIcon}).addTo(this.map).bindPopup(popupContent, {
+        maxWidth : 250
+      });
       this.markerList.push(marker);
     }
     else{
@@ -86,6 +120,7 @@ export class RecommendationMapComponent implements OnInit {
     var f = this.markerList.filter((act) => {
       return act._latlng.lat === activity.latitude && act._latlng.lng === activity.longitude;
     });
+    // Puede haber un marcador con la misma longitude y latitude
     if (f.length !== 0){
       const index = this.markerList.indexOf(f[0]);
       if (index > -1) {
