@@ -5,6 +5,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {InterestService} from '../services/interest/interest.service';
 import {Interest} from '../models/interest';
 import {SelectItem} from 'primeng/api';
+import {CityService} from '../services/city/city.service';
 
 @Component({
   selector: 'app-recommendation-map',
@@ -22,10 +23,12 @@ export class RecommendationMapComponent implements OnInit {
   activitySelectedToRate;
   listInterest: SelectItem[] = [];
   selectedInterest;
+  listCities: SelectItem[] = [];
+  selectedCity;
 
   @ViewChild('dv') dataView;
 
-  constructor(private activitiesService: ActivityService, private fb: FormBuilder, private interestService: InterestService) {
+  constructor(private activitiesService: ActivityService, private fb: FormBuilder, private interestService: InterestService, private cityService: CityService) {
     this.formToRatingActivity = this.fb.group({
       rating: ['', Validators.required],
     });
@@ -80,6 +83,11 @@ export class RecommendationMapComponent implements OnInit {
       });
     });
 
+    this.cityService.getCities().subscribe(cities => {
+      cities.forEach(city => {
+        this.listCities.push({label: city.name, value: city});
+      });
+    });
   }
 
   changeMap(event, activity){
@@ -147,6 +155,15 @@ export class RecommendationMapComponent implements OnInit {
     var aux = [];
     event.value.forEach(p => {
       aux.push(p.nameInterest);
+    })
+    this.dataView.filter(aux, 'in');
+  }
+
+  filterDataViewToNameCity(event){
+    console.log(event);
+    var aux = [];
+    event.value.forEach(p => {
+      aux.push(p.name);
     })
     this.dataView.filter(aux, 'in');
   }

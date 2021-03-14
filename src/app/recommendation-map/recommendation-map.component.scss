@@ -59,3 +59,8 @@
 :host ::ng-deep .p-multiselect {
   min-width: 12rem;
 }
+
+.filter_container{
+  display: flex;
+  justify-content: space-between;
+}
