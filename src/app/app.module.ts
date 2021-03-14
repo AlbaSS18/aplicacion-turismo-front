@@ -60,6 +60,7 @@ import {RatingModule} from 'primeng/rating';
 import {ChipModule} from 'primeng/chip';
 import {TagModule} from 'primeng/tag';
 import {RecommendationMapComponent} from './recommendation-map/recommendation-map.component';
+import {MultiSelectModule} from 'primeng/multiselect';
 
 @NgModule({
   declarations: [
@@ -118,6 +119,7 @@ import {RecommendationMapComponent} from './recommendation-map/recommendation-ma
     DataViewModule,
     RatingModule,
     TagModule,
+    MultiSelectModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

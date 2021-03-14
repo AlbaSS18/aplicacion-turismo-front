@@ -55,3 +55,7 @@
 .messageRateActivity{
   font-weight: 700;
 }
+
+:host ::ng-deep .p-multiselect {
+  min-width: 12rem;
+}

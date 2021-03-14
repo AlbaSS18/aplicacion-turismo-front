@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ActivityService} from '../services/activity/activity.service';
 import * as L from 'leaflet';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {InterestService} from '../services/interest/interest.service';
+import {Interest} from '../models/interest';
+import {SelectItem} from 'primeng/api';
 
 @Component({
   selector: 'app-recommendation-map',
@@ -17,8 +20,12 @@ export class RecommendationMapComponent implements OnInit {
   displayPanelRating: boolean = false;
   formToRatingActivity: FormGroup;
   activitySelectedToRate;
+  listInterest: SelectItem[] = [];
+  selectedInterest;
 
-  constructor(private activitiesService: ActivityService, private fb: FormBuilder) {
+  @ViewChild('dv') dataView;
+
+  constructor(private activitiesService: ActivityService, private fb: FormBuilder, private interestService: InterestService) {
     this.formToRatingActivity = this.fb.group({
       rating: ['', Validators.required],
     });
@@ -65,6 +72,12 @@ export class RecommendationMapComponent implements OnInit {
         this.markerList.push(marker);
       });
 
+    });
+
+    this.interestService.getInterests().subscribe(data => {
+      data.forEach(interest => {
+        this.listInterest.push({label: interest.nameInterest, value: interest});
+      });
     });
 
   }
@@ -120,7 +133,7 @@ export class RecommendationMapComponent implements OnInit {
     var f = this.markerList.filter((act) => {
       return act._latlng.lat === activity.latitude && act._latlng.lng === activity.longitude;
     });
-    // Puede haber un marcador con la misma longitude y latitude
+    // NOTE: Puede haber un marcador con la misma longitude y latitude. Cuidado
     if (f.length !== 0){
       const index = this.markerList.indexOf(f[0]);
       if (index > -1) {
@@ -130,4 +143,11 @@ export class RecommendationMapComponent implements OnInit {
     }
   }
 
+  filterDataViewToNameInterest(event){
+    var aux = [];
+    event.value.forEach(p => {
+      aux.push(p.nameInterest);
+    })
+    this.dataView.filter(aux, 'in');
+  }
 }

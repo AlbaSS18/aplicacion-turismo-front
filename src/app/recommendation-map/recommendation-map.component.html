@@ -1,7 +1,12 @@
 <app-menu-bar></app-menu-bar>
 <div class="recommendation-map-panel">
   <div class="table_recommendation">
-    <p-dataView [value]="activitiesRecommendation" [paginator]="true" [rows]="3">
+    <p-dataView #dv [value]="activitiesRecommendation" [paginator]="true" [rows]="3" filterBy="interest">
+      <ng-template pTemplate="header">
+        <div>
+          <p-multiSelect [options]="listInterest" [(ngModel)]="selectedInterest" defaultLabel="{{ 'select_interest' | translate }}" (onChange)="filterDataViewToNameInterest($event)"></p-multiSelect>
+        </div>
+      </ng-template>
       <ng-template let-activity pTemplate="listItem">
         <div class="p-col-12">
           <div class="activity-recommendation-list-item">
