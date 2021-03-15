@@ -27,6 +27,7 @@ export class RecommendationMapComponent implements OnInit {
   selectedCity;
 
   @ViewChild('dv') dataView;
+  arrayFilterAux = [];
 
   constructor(private activitiesService: ActivityService, private fb: FormBuilder, private interestService: InterestService, private cityService: CityService) {
     this.formToRatingActivity = this.fb.group({
@@ -107,7 +108,7 @@ export class RecommendationMapComponent implements OnInit {
         '</h2>' + '<div><i class="fas fa-map-marker-alt"></i> ' + activity.address + '</div>' + '<div><i class="fas fa-tags"></i> ' + activity.interest + '</div>'  + '</div>';
 
 
-      var marker = L.marker([activity.latitude, activity.longitude], {icon: greenIcon}).addTo(this.map).bindPopup(popupContent, {
+      var marker = L.marker([activity.latitude, activity.longitude]).addTo(this.map).bindPopup(popupContent, {
         maxWidth : 250
       });
       this.markerList.push(marker);
@@ -152,19 +153,22 @@ export class RecommendationMapComponent implements OnInit {
   }
 
   filterDataViewToNameInterest(event){
-    var aux = [];
+    // NOTE: No funcionan completos. Si quito uno, no funciona
+    console.log(event);
     event.value.forEach(p => {
-      aux.push(p.nameInterest);
+      this.arrayFilterAux.push(p.nameInterest);
     })
-    this.dataView.filter(aux, 'in');
+
+    this.dataView.filter(this.arrayFilterAux, 'in');
   }
 
   filterDataViewToNameCity(event){
     console.log(event);
-    var aux = [];
     event.value.forEach(p => {
-      aux.push(p.name);
+      this.arrayFilterAux.push(p.name);
     })
-    this.dataView.filter(aux, 'in');
+
+
+    this.dataView.filter(this.arrayFilterAux, 'in');
   }
 }
