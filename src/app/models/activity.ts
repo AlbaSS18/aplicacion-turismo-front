@@ -9,4 +9,9 @@ export class Activity {
   interest: string;
   image: any;
   address: string;
+  metadataImage: {
+    filename: string;
+    mimeType: string;
+    data: string;
+  };
 }

@@ -12,6 +12,7 @@ import {map, mergeMap} from 'rxjs/operators';
 import {Router} from '@angular/router';
 import * as L from 'leaflet';
 import 'leaflet-control-geocoder';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-table-activities',
@@ -29,6 +30,7 @@ export class TableActivitiesComponent implements OnInit {
   files;
   ref: DynamicDialogRef;
   noFiles: boolean = true;
+  image;
 
   constructor(
     private activityService: ActivityService,
@@ -40,7 +42,8 @@ export class TableActivitiesComponent implements OnInit {
     private dialogService: DialogService,
     private translateService: TranslateService,
     private messageService: MessageService,
-    private router: Router
+    private router: Router,
+    private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit(): void {
@@ -240,6 +243,11 @@ export class TableActivitiesComponent implements OnInit {
 
   editActivity(activity){
     this.router.navigateByUrl('activities/edit/' + activity.id);
+  }
+
+  photoURL(activity){
+    var url = 'data:' + activity.metadataImage.mimeType + ';base64,' + activity.metadataImage.data;
+    return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 
 }

@@ -1,4 +1,4 @@
-<img *ngIf="activity" id="image-activity" src="http://localhost:8090/images/{{activity.name}}/{{activity.pathImage}}"/>
+<img *ngIf="activity" id="image-activity" [src]="image"/>
 <div class="contaiter-info-activities" *ngIf="activity">
   <div class="container-name">
     <div class="label-container"><b>{{ 'name_activity' | translate }}</b></div>

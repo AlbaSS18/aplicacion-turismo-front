@@ -20,7 +20,7 @@
           </div>
           <div class="p-field">
             <div class="p-field p-grid">
-              <img *ngIf="activity" id="image-edit-activity" src="http://localhost:8090/images/{{activity.name}}/{{activity.pathImage}}" />
+              <img *ngIf="activity" id="image-edit-activity" [src]="image" />
             </div>
             <p-fileUpload name="myfile[]" accept="image/jpeg, image/png" maxFileSize="2000000"
                           invalidFileTypeMessageDetail="{{ 'invalid_file_message_detail' | translate:{formats:'{0}'} }} "

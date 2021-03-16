@@ -8,6 +8,7 @@ import {InterestService} from '../services/interest/interest.service';
 import {ActivityService} from '../services/activity/activity.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import * as L from 'leaflet';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-edit-activities',
@@ -22,6 +23,7 @@ export class EditActivitiesComponent implements OnInit {
   activityId;
   activity;
   file;
+  image;
   valueUnchanged: boolean = true;
 
   constructor(
@@ -30,7 +32,8 @@ export class EditActivitiesComponent implements OnInit {
     private interestService: InterestService,
     private activityService: ActivityService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit(): void {
@@ -51,9 +54,8 @@ export class EditActivitiesComponent implements OnInit {
     forkJoin([
       this.cityService.getCities(),
       this.interestService.getInterests(),
-      this.activityService.getActivity(this.activityId),
-      this.activityService.getImage(this.activityId)
-    ]).subscribe(([response1, response2, response3, response4]) => {
+      this.activityService.getActivity(this.activityId)
+    ]).subscribe(([response1, response2, response3]) => {
       this.cities = [];
       response1.forEach( i => {
         this.cities.push({label: i.name, value: i.name});
@@ -106,7 +108,11 @@ export class EditActivitiesComponent implements OnInit {
         }
       );
 
-      this.file = new File([response4], response3.pathImage);
+      var url = 'data:' + this.activity.metadataImage.mimeType + ';base64,' + this.activity.metadataImage.data;
+      this.image = this.sanitizer.bypassSecurityTrustUrl(url);
+      const blob = new Blob([this.image], { type: this.activity.metadataImage.mimeType });
+
+      this.file = new File([blob], response3.pathImage);
     });
   }
 
@@ -164,14 +170,9 @@ export class EditActivitiesComponent implements OnInit {
   }
 
   deleteFiles(event){
-    this.activityService.getImage(this.activityId).subscribe(
-      data => {
-        this.valueUnchanged = true;
-        this.file = new File([data], this.activity.pathImage);
-        var src = URL.createObjectURL(this.file);
-        var preview = document.getElementById("image-edit-activity").setAttribute( 'src', src);
-      }
-    )
+    this.valueUnchanged = true;
+    var url = 'data:' + this.activity.metadataImage.mimeType + ';base64,' + this.activity.metadataImage.data;
+    this.image = this.sanitizer.bypassSecurityTrustUrl(url);
   }
 
 }

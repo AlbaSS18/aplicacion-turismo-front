@@ -35,8 +35,4 @@ export class ActivityService {
   public editActivity(id, activity): Observable<any> {
     return this.httpClient.put<any>(this.activityUrl + '/update/' + id, activity);
   }
-
-  public getImage(id): Observable<any> {
-    return this.httpClient.get<any>(this.activityUrl + '/picture/' + id,  { observe: 'body', responseType: 'blob' as 'json' });
-  }
 }
