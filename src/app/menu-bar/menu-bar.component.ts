@@ -3,6 +3,7 @@ import {MenuItem} from 'primeng/api';
 import {TokenService} from '../services/token/token.service';
 import {Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
+import {LocalStorageService} from '../services/local-storage/local-storage.service';
 
 @Component({
   selector: 'app-menu-bar',
@@ -20,16 +21,17 @@ export class MenuBarComponent implements OnInit {
   constructor(
     private tokenService: TokenService,
     private router: Router,
-    public translate: TranslateService
+    public translate: TranslateService,
+    private localStorageService: LocalStorageService
   ) {
   }
 
   ngOnInit(): void {
-    this.email = this.tokenService.getEmail();
-    if (this.tokenService.getToken()){
+    this.email = this.tokenService.getEmailUser();
+    if (this.localStorageService.getToken()){
       this.isLogin = true;
       this.roles = [];
-      this.roles = this.tokenService.getAuthorities();
+      this.roles = this.tokenService.getRolesUser();
       if (this.roles.includes("ROLE_ADMIN")){
         this.authority = 'admin';
       }
@@ -40,7 +42,7 @@ export class MenuBarComponent implements OnInit {
   }
 
   logOut(): void {
-    this.tokenService.logOut();
+    this.localStorageService.logOut();
     this.isLogin = false;
     this.authority = '';
     this.router.navigateByUrl('/login');

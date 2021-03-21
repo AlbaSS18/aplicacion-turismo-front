@@ -37,7 +37,7 @@ export class EditUserComponent implements OnInit {
       userName: ['', Validators.required]
     });
     this.userService.getUsers().pipe(
-      map (data => data.filter(p => p.email === this.tokenService.getEmail())),
+      map (data => data.filter(p => p.email === this.tokenService.getEmailUser())),
       mergeMap ( user => {
         return forkJoin([this.userService.getUser(user[0].id)]).pipe();
       })

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {TokenService} from '../services/token/token.service';
 import {InterestService} from '../services/interest/interest.service';
 import {Interest} from '../models/interest';
+import {LocalStorageService} from '../services/local-storage/local-storage.service';
 
 @Component({
   selector: 'app-recommendation',
@@ -15,13 +16,13 @@ export class RecommendationComponent implements OnInit {
   typeselected: any[];
   interestList: Interest[] = [];
 
-  constructor(private tokenService: TokenService, private interestService: InterestService) { }
+  constructor(private tokenService: TokenService, private interestService: InterestService, private localStorageService: LocalStorageService) { }
 
   ngOnInit() {
     this.info = {
-      token: this.tokenService.getToken(),
-      nombreUsuario: this.tokenService.getEmail(),
-      authorities: this.tokenService.getAuthorities()
+      token: this.localStorageService.getToken(),
+      nombreUsuario: this.tokenService.getEmailUser(),
+      authorities: this.tokenService.getRolesUser()
     };
     this.interestService.getInterests().subscribe(
       interestList => {

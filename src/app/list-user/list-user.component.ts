@@ -39,7 +39,7 @@ export class ListUserComponent implements OnInit {
     ];
     this.userService.getUsers().subscribe(response => {
       this.users = response;
-      this.users = this.users.filter(user => user.email !== this.token.getEmail());
+      this.users = this.users.filter(user => user.email !== this.token.getEmailUser());
     });
   }
 
@@ -52,7 +52,7 @@ export class ListUserComponent implements OnInit {
             return this.userService.getUsers().pipe(
               map(data => {
                 this.users = data;
-                this.users = this.users.filter(restUser => restUser.email !== this.token.getEmail());
+                this.users = this.users.filter(restUser => restUser.email !== this.token.getEmailUser());
               })
             );
           })

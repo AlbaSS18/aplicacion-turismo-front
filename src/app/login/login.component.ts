@@ -7,6 +7,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Message, MessageService} from 'primeng/api';
 import {LangChangeEvent, TranslateService} from '@ngx-translate/core';
 import {NotificationService} from '../services/message/notification.service';
+import {LocalStorageService} from '../services/local-storage/local-storage.service';
+
 
 @Component({
   selector: 'app-login',
@@ -28,14 +30,15 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private messageService: MessageService,
     private translateService: TranslateService,
-    private notification: NotificationService) {}
+    private notification: NotificationService,
+    private localStorageService: LocalStorageService) {}
 
   ngOnInit(): void {
     this.processMessageTranslation(this.getMessages());
     this.infoMessage = this.getMessages();
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       this.processMessageTranslation(this.getMessages());
-    })
+    });
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
@@ -65,10 +68,9 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(usuario).subscribe(data => {
         this.tokenService.setToken(data.token);
-        this.tokenService.setEmail(data.email);
-        this.tokenService.setAuthorities(data.authorities);
+        this.localStorageService.setToken(data.token);
         this.isLoginFail = false;
-        this.roles = this.tokenService.getAuthorities();
+        this.roles = this.tokenService.getRolesUser();
         if (this.roles.includes("ROLE_ADMIN")){
           this.router.navigate(['/user']);
         }
