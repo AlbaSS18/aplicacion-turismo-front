@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HTTP_INTERCEPTORS, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {TokenService} from '../services/token/token.service';
 import {LocalStorageService} from '../services/local-storage/local-storage.service';
 
 @Injectable({

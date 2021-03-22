@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {TokenService} from '../services/token/token.service';
 import {InterestService} from '../services/interest/interest.service';
 import {Interest} from '../models/interest';
 import {LocalStorageService} from '../services/local-storage/local-storage.service';
@@ -16,13 +15,13 @@ export class RecommendationComponent implements OnInit {
   typeselected: any[];
   interestList: Interest[] = [];
 
-  constructor(private tokenService: TokenService, private interestService: InterestService, private localStorageService: LocalStorageService) { }
+  constructor(private interestService: InterestService, private localStorageService: LocalStorageService) { }
 
   ngOnInit() {
     this.info = {
       token: this.localStorageService.getToken(),
-      nombreUsuario: this.tokenService.getEmailUser(),
-      authorities: this.tokenService.getRolesUser()
+      nombreUsuario: this.localStorageService.getEmailUser(),
+      authorities: this.localStorageService.getRolesUser()
     };
     this.interestService.getInterests().subscribe(
       interestList => {

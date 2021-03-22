@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../services/auth/auth.service';
-import {UserLogin} from '../models/user';
-import {TokenService} from '../services/token/token.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Message, MessageService} from 'primeng/api';
 import {LangChangeEvent, TranslateService} from '@ngx-translate/core';
@@ -25,7 +23,6 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private formBuilder: FormBuilder,
-    private tokenService: TokenService,
     private router: Router,
     private route: ActivatedRoute,
     private messageService: MessageService,
@@ -55,7 +52,6 @@ export class LoginComponent implements OnInit {
     }
   }
 
-
   getMessages(): Message[] {
     return this.notification.message;
   }
@@ -67,10 +63,9 @@ export class LoginComponent implements OnInit {
     };
 
     this.authService.login(usuario).subscribe(data => {
-        this.tokenService.setToken(data.token);
         this.localStorageService.setToken(data.token);
         this.isLoginFail = false;
-        this.roles = this.tokenService.getRolesUser();
+        this.roles = this.localStorageService.getRolesUser();
         if (this.roles.includes("ROLE_ADMIN")){
           this.router.navigate(['/user']);
         }

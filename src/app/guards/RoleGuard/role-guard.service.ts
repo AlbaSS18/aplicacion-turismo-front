@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from '@angular/router';
-import {TokenService} from '../../services/token/token.service';
-import {decode} from 'querystring';
 import {LocalStorageService} from '../../services/local-storage/local-storage.service';
 
 @Injectable({
@@ -11,11 +9,11 @@ export class RoleGuardService implements CanActivate{
 
   rol: string;
 
-  constructor(private tokenService: TokenService, private localStorageService: LocalStorageService, private router: Router) { }
+  constructor(private localStorageService: LocalStorageService, private router: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const expectedRol = route.data.expectedRol;
-    const roles = this.tokenService.getRolesUser();
+    const roles = this.localStorageService.getRolesUser();
     if (roles.includes("ROLE_ADMIN")){
       this.rol = 'admin';
     }

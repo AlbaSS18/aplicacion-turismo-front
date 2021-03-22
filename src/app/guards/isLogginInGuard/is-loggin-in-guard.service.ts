@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {Resolve, Router} from '@angular/router';
-import {TokenService} from '../../services/token/token.service';
 import {LocalStorageService} from '../../services/local-storage/local-storage.service';
 
 @Injectable({
@@ -8,13 +7,12 @@ import {LocalStorageService} from '../../services/local-storage/local-storage.se
 })
 export class IsLogginInGuardService implements Resolve<any>{
 
-  constructor(private router: Router, private localStorageService: LocalStorageService, private tokenService: TokenService) { }
+  constructor(private router: Router, private localStorageService: LocalStorageService) { }
 
   resolve() {
     if (this.localStorageService.getToken()) {
-      const roles = this.tokenService.getRolesUser();
+      const roles = this.localStorageService.getRolesUser();
       if (roles.includes("ROLE_ADMIN")){
-        console.log("e")
         this.router.navigate(['/user']);
       }
       else{

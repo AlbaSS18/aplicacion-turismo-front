@@ -3,12 +3,9 @@ import {UserService} from '../services/user/user.service';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import {Router} from '@angular/router';
 import {RolService} from '../services/rol/rol.service';
-import {Rol} from '../models/rol';
-import {forkJoin} from 'rxjs';
 import {TranslateService} from '@ngx-translate/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {TokenService} from '../services/token/token.service';
 import {map, mergeMap} from 'rxjs/operators';
+import {LocalStorageService} from '../services/local-storage/local-storage.service';
 
 @Component({
   selector: 'app-list-user',
@@ -26,7 +23,7 @@ export class ListUserComponent implements OnInit {
     private router: Router,
     private rolService: RolService,
     private translateService: TranslateService,
-    private token: TokenService,
+    private localStorageService: LocalStorageService,
     private messageService: MessageService
   ) { }
 
@@ -39,7 +36,7 @@ export class ListUserComponent implements OnInit {
     ];
     this.userService.getUsers().subscribe(response => {
       this.users = response;
-      this.users = this.users.filter(user => user.email !== this.token.getEmailUser());
+      this.users = this.users.filter(user => user.email !== this.localStorageService.getEmailUser());
     });
   }
 
@@ -52,7 +49,7 @@ export class ListUserComponent implements OnInit {
             return this.userService.getUsers().pipe(
               map(data => {
                 this.users = data;
-                this.users = this.users.filter(restUser => restUser.email !== this.token.getEmailUser());
+                this.users = this.users.filter(restUser => restUser.email !== this.localStorageService.getEmailUser());
               })
             );
           })

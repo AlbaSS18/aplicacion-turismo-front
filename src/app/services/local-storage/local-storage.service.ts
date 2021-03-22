@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
+import jwt_decode from 'jwt-decode';
 
 const TOKEN_KEY = 'AuthToken';
-const EMAIL_KEY = 'AuthEmail';
-const AUTHORITIES_KEY = 'AutAuthorities';
 
 @Injectable({
   providedIn: 'root'
@@ -12,15 +11,33 @@ export class LocalStorageService {
   constructor() { }
 
   public setToken(token: string): void {
-    window.sessionStorage.removeItem(TOKEN_KEY);
-    window.sessionStorage.setItem(TOKEN_KEY, token);
+    window.localStorage.removeItem(TOKEN_KEY);
+    window.localStorage.setItem(TOKEN_KEY, token);
   }
 
   public getToken(): string {
-    return sessionStorage.getItem(TOKEN_KEY);
+    return localStorage.getItem(TOKEN_KEY);
   }
 
   public logOut(): void {
-    window.sessionStorage.clear();
+    window.localStorage.clear();
+  }
+
+  getEmailUser() {
+    var token = this.getToken();
+    var decodedToken = this.decodeToken(token);
+    return decodedToken ? decodedToken.sub : null;
+  }
+
+  getRolesUser() {
+    var token = this.getToken();
+    var decodedToken = this.decodeToken(token);
+    return decodedToken ? decodedToken.ROLES : [];
+  }
+
+  decodeToken(token): any {
+    if (token) {
+      return jwt_decode(token);
+    }
   }
 }

@@ -1,6 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {MenuItem} from 'primeng/api';
-import {TokenService} from '../services/token/token.service';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
 import {LocalStorageService} from '../services/local-storage/local-storage.service';
@@ -19,7 +17,6 @@ export class MenuBarComponent implements OnInit {
   email;
 
   constructor(
-    private tokenService: TokenService,
     private router: Router,
     public translate: TranslateService,
     private localStorageService: LocalStorageService
@@ -27,11 +24,11 @@ export class MenuBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.email = this.tokenService.getEmailUser();
+    this.email = this.localStorageService.getEmailUser();
     if (this.localStorageService.getToken()){
       this.isLogin = true;
       this.roles = [];
-      this.roles = this.tokenService.getRolesUser();
+      this.roles = this.localStorageService.getRolesUser();
       if (this.roles.includes("ROLE_ADMIN")){
         this.authority = 'admin';
       }

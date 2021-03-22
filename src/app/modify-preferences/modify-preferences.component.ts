@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormGroup} from '@angular/forms';
 import {InterestService} from '../services/interest/interest.service';
-import {TokenService} from '../services/token/token.service';
 import {UserService} from '../services/user/user.service';
-import {map, mergeMap} from 'rxjs/operators';
-import {forkJoin} from 'rxjs';
 
 @Component({
   selector: 'app-modify-preferences',
@@ -17,7 +14,7 @@ export class ModifyPreferencesComponent implements OnInit {
   interestByUser;
   interestList;
 
-  constructor(private fb: FormBuilder, private interestService: InterestService, private tokenService: TokenService, private userService: UserService) { }
+  constructor(private fb: FormBuilder, private interestService: InterestService, private userService: UserService) { }
 
   ngOnInit(): void {
     // this.modifyPreferencesForm = this.fb.group({
