@@ -6,6 +6,7 @@ import {InterestService} from '../services/interest/interest.service';
 import {Interest} from '../models/interest';
 import {SelectItem} from 'primeng/api';
 import {CityService} from '../services/city/city.service';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-recommendation-map',
@@ -29,7 +30,12 @@ export class RecommendationMapComponent implements OnInit {
   @ViewChild('dv') dataView;
   arrayFilterAux = [];
 
-  constructor(private activitiesService: ActivityService, private fb: FormBuilder, private interestService: InterestService, private cityService: CityService) {
+  constructor(
+    private activitiesService: ActivityService,
+    private fb: FormBuilder,
+    private interestService: InterestService,
+    private cityService: CityService,
+    private sanitizer: DomSanitizer) {
     this.formToRatingActivity = this.fb.group({
       rating: ['', Validators.required],
     });
@@ -61,7 +67,7 @@ export class RecommendationMapComponent implements OnInit {
           iconSize: [35, 35], // size of the icon
         });
 
-        var photoImg = '<img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Gij%C3%B3n_old_FEVE_station.JPG" width="100%"/>';
+        var photoImg = '<img src="data:' + activity.metadataImage.mimeType  + ';base64,' + activity.metadataImage.data  + '" width="100%" height="100%"/>';
 
         const popupContent =
           photoImg +
@@ -98,7 +104,7 @@ export class RecommendationMapComponent implements OnInit {
         iconSize: [35, 35], // size of the icon
       });
 
-      var photoImg = '<img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Gij%C3%B3n_old_FEVE_station.JPG" width="100%"/>';
+      var photoImg = '<img src="data:' + activity.metadataImage.mimeType  + ';base64,' + activity.metadataImage.data  + '" width="100%"/>';
 
       const popupContent =
         photoImg +
@@ -108,7 +114,7 @@ export class RecommendationMapComponent implements OnInit {
         '</h2>' + '<div><i class="fas fa-map-marker-alt"></i> ' + activity.address + '</div>' + '<div><i class="fas fa-tags"></i> ' + activity.interest + '</div>'  + '</div>';
 
 
-      var marker = L.marker([activity.latitude, activity.longitude]).addTo(this.map).bindPopup(popupContent, {
+      var marker = L.marker([activity.latitude, activity.longitude], {icon: greenIcon}).addTo(this.map).bindPopup(popupContent, {
         maxWidth : 250
       });
       this.markerList.push(marker);
@@ -170,5 +176,10 @@ export class RecommendationMapComponent implements OnInit {
 
 
     this.dataView.filter(this.arrayFilterAux, 'in');
+  }
+
+  photoURL(activity){
+    var url = 'data:' + activity.metadataImage.mimeType + ';base64,' + activity.metadataImage.data;
+    return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 }

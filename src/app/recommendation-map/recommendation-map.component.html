@@ -16,7 +16,7 @@
         <div class="p-col-12">
           <div class="activity-recommendation-list-item">
             <p-checkbox class="checkBoxActivityRecommendation" name="group1" [value]="activity.name" [(ngModel)]="activitiesSelected" (onChange)="changeMap($event, activity)" ></p-checkbox>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Gij%C3%B3n_old_FEVE_station.JPG"/>
+            <img [src]='photoURL(activity)'/>
             <div class="activity-recommendation-list-detail">
               <div class="activity-name">{{activity.name}}</div>
               <div class="activity-description">{{activity.description}}</div>
