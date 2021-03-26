@@ -50,8 +50,6 @@ export class TableActivitiesComponent implements OnInit {
     this.cols = [
       { field: 'name', header: 'name_activity' },
       { field: 'description', header: 'description_activity' },
-      { field: 'latitude', header: 'latitude' },
-      { field: 'longitude', header: 'longitude' },
       { field: 'city', header: 'city' },
       { field: 'interest', header: 'interest'}
     ];

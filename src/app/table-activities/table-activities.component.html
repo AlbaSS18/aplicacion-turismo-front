@@ -32,7 +32,6 @@
             {{ col.header | translate }}
             <p-sortIcon [field]="col.field"></p-sortIcon>
           </th>
-
           <th>
           </th>
         </tr>
@@ -41,9 +40,7 @@
         <tr>
           <td><img id="image-activity-table" [src]='photoURL(activity)' /></td>
           <td class="td-text-wrap">{{activity.name}}</td>
-          <td class="p-text-nowrap p-text-truncate" pTooltip="{{activity.description}}">{{activity.description}}</td>
-          <td class="td-text-wrap">{{activity.latitude}}</td>
-          <td class="td-text-wrap">{{activity.longitude}}</td>
+          <td class="p-text-nowrap p-text-truncate">{{activity.description}}</td>
           <td class="td-text-wrap">{{activity.city}}</td>
           <td class="td-text-wrap">{{activity.interest}}</td>
           <td>
