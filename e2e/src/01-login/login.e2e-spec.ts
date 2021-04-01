@@ -1,7 +1,7 @@
 import {LoginPage} from './login.po';
 import {browser} from 'protractor';
 
-describe('login component', () => {
+describe('01-login component', () => {
   let page: LoginPage;
 
   beforeEach(() => {
