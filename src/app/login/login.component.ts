@@ -61,7 +61,6 @@ export class LoginComponent implements OnInit {
       email: this.loginForm.get('email').value,
       password: this.loginForm.get('password').value
     };
-
     this.authService.login(usuario).subscribe(data => {
         this.localStorageService.setToken(data.token);
         this.isLoginFail = false;

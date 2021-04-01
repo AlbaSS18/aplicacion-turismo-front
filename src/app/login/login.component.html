@@ -32,9 +32,9 @@
           </span>
           <p-message severity="error" text="{{ 'password_required' | translate }}"
                      *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].dirty"></p-message>
-          <p-message severity="error" text="{{ 'data_incorrect' | translate }}"
+          <p-message id="message_error_login" severity="error" text="{{ 'data_incorrect' | translate }}"
                      *ngIf="myForm.submitted && isLoginFail"></p-message>
-          <button pButton type="submit" icon="fas fa-sign-in-alt" label=" {{ 'log_in' | translate }}" [disabled]="loginForm.invalid"></button>
+          <button id="login_btn" pButton type="submit" icon="fas fa-sign-in-alt" label=" {{ 'log_in' | translate }}" [disabled]="loginForm.invalid"></button>
         </form>
         <a routerLink="/signup">{{ 'sign_up' | translate }}</a>
       </div>

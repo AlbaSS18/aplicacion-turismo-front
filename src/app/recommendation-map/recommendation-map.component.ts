@@ -4,9 +4,10 @@ import * as L from 'leaflet';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {InterestService} from '../services/interest/interest.service';
 import {Interest} from '../models/interest';
-import {SelectItem} from 'primeng/api';
+import {FilterService, SelectItem} from 'primeng/api';
 import {CityService} from '../services/city/city.service';
 import {DomSanitizer} from '@angular/platform-browser';
+import {ObjectUtils} from 'primeng/utils';
 
 @Component({
   selector: 'app-recommendation-map',
@@ -28,14 +29,16 @@ export class RecommendationMapComponent implements OnInit {
   selectedCity;
 
   @ViewChild('dv') dataView;
-  arrayFilterAux = [];
+  arrayCitiesFilterAux = [];
+  arrayInterestFilterAux = [];
 
   constructor(
     private activitiesService: ActivityService,
     private fb: FormBuilder,
     private interestService: InterestService,
     private cityService: CityService,
-    private sanitizer: DomSanitizer) {
+    private sanitizer: DomSanitizer,
+    private filterService: FilterService) {
     this.formToRatingActivity = this.fb.group({
       rating: ['', Validators.required],
     });
@@ -156,26 +159,6 @@ export class RecommendationMapComponent implements OnInit {
       }
       this.map.removeLayer(f[0]);
     }
-  }
-
-  filterDataViewToNameInterest(event){
-    // NOTE: No funcionan completos. Si quito uno, no funciona
-    console.log(event);
-    event.value.forEach(p => {
-      this.arrayFilterAux.push(p.nameInterest);
-    })
-
-    this.dataView.filter(this.arrayFilterAux, 'in');
-  }
-
-  filterDataViewToNameCity(event){
-    console.log(event);
-    event.value.forEach(p => {
-      this.arrayFilterAux.push(p.name);
-    })
-
-
-    this.dataView.filter(this.arrayFilterAux, 'in');
   }
 
   photoURL(activity){
