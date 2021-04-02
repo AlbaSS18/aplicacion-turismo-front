@@ -2,7 +2,7 @@ import {AppPage} from '../app.po';
 import {browser, logging} from 'protractor';
 import {EditUserPage} from './edit_user.po';
 
-describe('Edit user page', () => {
+describe('03 - Edit user page', () => {
   let page: EditUserPage;
 
   beforeAll(() => {

@@ -9,7 +9,7 @@
           <h2 class="p-m-0">{{ 'list_user' | translate }}</h2>
           <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
-                    <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="{{ 'search' | translate }}" />
+                    <input id="input_search_user_table" pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="{{ 'search' | translate }}" />
                 </span>
         </div>
       </ng-template>
@@ -34,8 +34,8 @@
                   </span>
           </td>
           <td>
-            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editUser(user)"></button>
-            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="confirmDelete(user)"></button>
+            <button id="edit_user_btn" pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editUser(user)"></button>
+            <button id="delete_user_btn" pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="confirmDelete(user)"></button>
           </td>
         </tr>
       </ng-template>
