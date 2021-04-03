@@ -4,6 +4,7 @@ import { InformationActivitiesComponent } from './information-activities.compone
 import {DynamicDialogConfig, DynamicDialogRef} from 'primeng/dynamicdialog';
 import {TranslateModule} from '@ngx-translate/core';
 import {ButtonModule} from 'primeng/button';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('InformationActivitiesComponent', () => {
   let component: InformationActivitiesComponent;
@@ -15,6 +16,7 @@ describe('InformationActivitiesComponent', () => {
       imports: [
         TranslateModule.forRoot(),
         ButtonModule,
+        HttpClientTestingModule
       ],
       providers: [
         DynamicDialogRef,
