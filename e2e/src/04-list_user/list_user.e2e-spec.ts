@@ -1,5 +1,4 @@
-import {AppPage} from '../app.po';
-import {browser, Key, logging} from 'protractor';
+import {Key} from 'protractor';
 import {ListUserPage} from './list_user.po';
 
 describe('04 - List user component', () => {
@@ -21,11 +20,11 @@ describe('04 - List user component', () => {
     page.getInputSearchUser().sendKeys(Key.chord('w', Key.BACK_SPACE));
   });
 
-  it('should a dialog when it wants to delete a user', () => {
-   page.getDeleteUserBtn().click();
-   expect(page.getConfirmDialog().isPresent()).toBe(true);
-   page.getButtonCancel().click();
-   expect(page.tableUser().isPresent()).toBe(true);
+  it('should delete a user', () => {
+    page.getDeleteUserBtnWithTextSpecifyc().click();
+    expect(page.getConfirmDialog().isPresent()).toBe(true);
+    page.getButtonRemove().click();
+    expect(page.getDeleteUserBtnWithTextSpecifyc().isPresent()).toBe(false);
   });
 
 

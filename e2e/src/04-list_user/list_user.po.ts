@@ -26,7 +26,11 @@ export class ListUserPage {
     return element(by.css('p-confirmdialog .p-confirm-dialog'));
   }
 
-  getButtonCancel(){
-    return element(by.css('.p-dialog-footer .p-confirm-dialog-reject'));
+  getButtonRemove(){
+    return element(by.css('.p-dialog-footer .p-confirm-dialog-accept'));
+  }
+
+  getDeleteUserBtnWithTextSpecifyc(){
+    return element(by.xpath('//td[contains(text(), "newUser@email.com")]/following-sibling::*[3]/button[2]'));
   }
 }
