@@ -11,6 +11,9 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {ToastModule} from 'primeng/toast';
+import {User} from '../models/user';
+import {UserService} from '../services/user/user.service';
+import {MockUserService} from '../services/user/user-service-mock';
 
 describe('ListUserComponent', () => {
   let component: ListUserComponent;
@@ -31,7 +34,8 @@ describe('ListUserComponent', () => {
       ],
       providers: [
         ConfirmationService,
-        MessageService
+        MessageService,
+        {provide: UserService, useClass: MockUserService}
       ]
     })
     .compileComponents();
@@ -46,4 +50,37 @@ describe('ListUserComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should return all users', () => {
+    expect(component.users.length).toBe(1);
+  });
+
+  it('should add a user', () => {
+    const newUser: User = {
+      id: 1,
+      userName: 'test',
+      email: 'test@email.com',
+      dateBirthday: new Date(),
+      roles: ['ROLE_ADMIN', 'ROLE_USER']
+    };
+    component.users.push(newUser);
+    expect(component.users.length).toBe(2);
+  });
+
+  it('should remove the user', () => {
+    const newUser: User = {
+      id: 1,
+      userName: 'test',
+      email: 'test@email.com',
+      dateBirthday: new Date(),
+      roles: ['ROLE_ADMIN', 'ROLE_USER']
+    };
+    component.confirmDelete(newUser);
+    expect(component.users.length).toBe(1);
+  });
+
+
+
+
+
 });

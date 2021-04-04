@@ -6,6 +6,7 @@ import {RolService} from '../services/rol/rol.service';
 import {TranslateService} from '@ngx-translate/core';
 import {map, mergeMap} from 'rxjs/operators';
 import {LocalStorageService} from '../services/local-storage/local-storage.service';
+import {User} from '../models/user';
 
 @Component({
   selector: 'app-list-user',
@@ -14,7 +15,7 @@ import {LocalStorageService} from '../services/local-storage/local-storage.servi
 })
 export class ListUserComponent implements OnInit {
 
-  users;
+  users: User[] = [];
   cols: any[];
 
   constructor(

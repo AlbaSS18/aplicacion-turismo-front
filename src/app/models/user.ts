@@ -3,7 +3,6 @@ export class User {
   userName: string;
   email: string;
   dateBirthday: Date;
-  genre: string;
   roles: string[];
 }
 
