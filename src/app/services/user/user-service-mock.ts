@@ -1,7 +1,9 @@
 import {UserService} from './user.service';
 import {Observable, of} from 'rxjs';
 import {User} from '../../models/user';
+import {Injectable} from '@angular/core';
 
+@Injectable()
 export class MockUserService extends UserService {
 
   listUsers = [
