@@ -1,7 +1,7 @@
 <app-menu-bar></app-menu-bar>
 <div class="signup-panel">
   <h1>{{ 'sign_up' | translate }}</h1>
-  <form [formGroup]="formGroup" #formSign="ngForm" (ngSubmit)="onSubmit(formGroup.value)">
+  <form [formGroup]="formGroup" #formSign="ngForm" (ngSubmit)="onSubmit()">
     <div *ngIf="!openSecondForm; else showSecondForm">
       <div class="form-signup-container p-fluid p-formgrid p-grid">
         <div class="p-field p-col-12 p-md-6">

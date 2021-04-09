@@ -46,7 +46,7 @@ export class SignUpComponent implements OnInit {
       interest: new FormArray([])
     },
       {
-        validator: validadorPasswordSame()
+        validators: validadorPasswordSame()
       });
     this.loadInterest();
 
@@ -76,7 +76,7 @@ export class SignUpComponent implements OnInit {
       });
   }
 
-  onSubmit(value: string) {
+  onSubmit() {
     var dateBirthday = new Date(this.formGroup.get('dateBirthday').value);
     const offset = dateBirthday.getTimezoneOffset()
     dateBirthday = new Date(dateBirthday.getTime() - (offset * 60 * 1000))
