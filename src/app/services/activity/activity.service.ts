@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {UserLogin} from '../../models/user';
 import {Observable} from 'rxjs';
 import {JwtModel} from '../../models/jwt_model';
-import {Activity} from '../../models/activity';
+import {Activity, ActivityRecommended} from '../../models/activity';
 
 const cabecera = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 
@@ -34,5 +34,13 @@ export class ActivityService {
 
   public editActivity(id, activity): Observable<any> {
     return this.httpClient.put<any>(this.activityUrl + '/update/' + id, activity);
+  }
+
+  public postRateActivity(activityRate): Observable<any>{
+    return this.httpClient.post<any>(this.activityUrl + '/rate', activityRate);
+  }
+
+  public getRecommendedActivities(idUser): Observable<ActivityRecommended[]> {
+    return this.httpClient.get<ActivityRecommended[]>(this.activityUrl + '/recommedation/' + idUser, cabecera);
   }
 }

@@ -8,6 +8,12 @@ import {FilterService, SelectItem} from 'primeng/api';
 import {CityService} from '../services/city/city.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {ObjectUtils} from 'primeng/utils';
+import {UserService} from '../services/user/user.service';
+import {map, mergeMap} from 'rxjs/operators';
+import {forkJoin} from 'rxjs';
+import {LocalStorageService} from '../services/local-storage/local-storage.service';
+import {ActivityRecommended} from '../models/activity';
+import {User} from '../models/user';
 
 @Component({
   selector: 'app-recommendation-map',
@@ -16,21 +22,16 @@ import {ObjectUtils} from 'primeng/utils';
 })
 export class RecommendationMapComponent implements OnInit {
 
-  activitiesRecommendation;
-  activitiesSelected:string[] = [];
+  activitiesRecommendation: ActivityRecommended[];
+  activitiesSelected: string[] = [];
   map;
   markerList = [];
   displayPanelRating: boolean = false;
   formToRatingActivity: FormGroup;
-  activitySelectedToRate;
-  listInterest: SelectItem[] = [];
-  selectedInterest;
-  listCities: SelectItem[] = [];
-  selectedCity;
+  activitySelectedToRate: ActivityRecommended;
+  userLogged: User;
 
   @ViewChild('dv') dataView;
-  arrayCitiesFilterAux = [];
-  arrayInterestFilterAux = [];
 
   constructor(
     private activitiesService: ActivityService,
@@ -38,7 +39,9 @@ export class RecommendationMapComponent implements OnInit {
     private interestService: InterestService,
     private cityService: CityService,
     private sanitizer: DomSanitizer,
-    private filterService: FilterService) {
+    private filterService: FilterService,
+    private localStorageService: LocalStorageService,
+    private userService: UserService) {
     this.formToRatingActivity = this.fb.group({
       rating: ['', Validators.required],
     });
@@ -58,45 +61,38 @@ export class RecommendationMapComponent implements OnInit {
 
     tiles.addTo(this.map);
 
+    this.userService.getUsers().pipe(
+      map (data => data.filter(p => p.email === this.localStorageService.getEmailUser())),
+      mergeMap ( user => {
+        this.userLogged = user[0];
+        return forkJoin([this.activitiesService.getRecommendedActivities(user[0].id)]).pipe();
+      })
+    ).subscribe(
+      ([response1]) => {
+        this.activitiesRecommendation = response1;
 
-    this.activitiesService.getActivities().subscribe(data => {
-      this.activitiesRecommendation = data;
+        this.activitiesRecommendation.forEach(activity => {
+          this.activitiesSelected.push(activity.name);
 
-      this.activitiesRecommendation.forEach(activity => {
-        this.activitiesSelected.push(activity.name);
+          var greenIcon = L.icon({
+            iconUrl: '../../assets/images/landscape.png',
+            iconSize: [35, 35], // size of the icon
+          });
 
-        var greenIcon = L.icon({
-          iconUrl: '../../assets/images/landscape.png',
-          iconSize: [35, 35], // size of the icon
+          var photoImg = '<img src="data:' + activity.metadataImage.mimeType  + ';base64,' + activity.metadataImage.data  + '" width="100%" height="100%"/>';
+
+          const popupContent =
+            photoImg +
+            '<div>' +
+            '<h2>' +
+            activity.name  +
+            '</h2>' + '<div><i class="fas fa-map-marker-alt"></i> ' + activity.address + '</div>' + '<div><i class="fas fa-tags"></i> ' + activity.interest + '</div>'  + '</div>';
+
+          var marker = L.marker([activity.latitude, activity.longitude], {icon: greenIcon}).addTo(this.map).bindPopup(popupContent, {
+            maxWidth : 250
+          });
+          this.markerList.push(marker);
         });
-
-        var photoImg = '<img src="data:' + activity.metadataImage.mimeType  + ';base64,' + activity.metadataImage.data  + '" width="100%" height="100%"/>';
-
-        const popupContent =
-          photoImg +
-          '<div>' +
-          '<h2>' +
-          activity.name  +
-          '</h2>' + '<div><i class="fas fa-map-marker-alt"></i> ' + activity.address + '</div>' + '<div><i class="fas fa-tags"></i> ' + activity.interest + '</div>'  + '</div>';
-
-        var marker = L.marker([activity.latitude, activity.longitude], {icon: greenIcon}).addTo(this.map).bindPopup(popupContent, {
-          maxWidth : 250
-        });
-        this.markerList.push(marker);
-      });
-
-    });
-
-    this.interestService.getInterests().subscribe(data => {
-      data.forEach(interest => {
-        this.listInterest.push({label: interest.nameInterest, value: interest});
-      });
-    });
-
-    this.cityService.getCities().subscribe(cities => {
-      cities.forEach(city => {
-        this.listCities.push({label: city.name, value: city});
-      });
     });
   }
 
@@ -136,15 +132,25 @@ export class RecommendationMapComponent implements OnInit {
   }
 
   sendRatingActivity(){
-    this.displayPanelRating = false;
-    var aux = this.activitiesRecommendation;
-    const index = aux.indexOf(this.activitySelectedToRate);
-    if (index > -1) {
-      aux.splice(index, 1);
+    var rateActivity = {
+      activity_id : this.activitySelectedToRate.id,
+      email_user: this.localStorageService.getEmailUser(),
+      rate: this.formToRatingActivity.get('rating').value
     }
-    this.activitiesRecommendation = [...aux];
-    this.removeMarkerFromMap(this.activitySelectedToRate);
-    console.log(this.formToRatingActivity);
+
+    this.activitiesService.postRateActivity(rateActivity).pipe(
+      mergeMap(
+        data => {
+          this.displayPanelRating = false;
+          this.removeMarkerFromMap(this.activitySelectedToRate);
+          return this.activitiesService.getRecommendedActivities(this.userLogged.id).pipe();
+        }
+      )
+    ).subscribe(
+      data => {
+        this.activitiesRecommendation = data;
+      }
+    );
   }
 
   removeMarkerFromMap(activity){

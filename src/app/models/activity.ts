@@ -7,11 +7,14 @@ export class Activity {
   pathImage?: string;
   city: string;
   interest: string;
-  image: any;
   address: string;
   metadataImage: {
     filename: string;
     mimeType: string;
     data: string;
   };
+}
+
+export class ActivityRecommended extends Activity{
+  score: number;
 }
