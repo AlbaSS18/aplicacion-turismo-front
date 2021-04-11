@@ -24,6 +24,20 @@
 
     .activities-list-detail{
         flex: 1 1 0;
+
+      .activity-badge.status-catedrales{
+        background: #feedaf;
+        color: #8a5340;
+      }
+
+      .activity-badge{
+        border-radius: 2px;
+        padding: .25em .5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: .3px;
+      }
     }
 
     img {

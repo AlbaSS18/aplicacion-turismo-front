@@ -43,4 +43,8 @@ export class ActivityService {
   public getRecommendedActivities(idUser): Observable<ActivityRecommended[]> {
     return this.httpClient.get<ActivityRecommended[]>(this.activityUrl + '/recommedation/' + idUser, cabecera);
   }
+
+  public getRatedActivities(idUser): Observable<ActivityRecommended[]> {
+    return this.httpClient.get<ActivityRecommended[]>(this.activityUrl + '/ratedActivities/' + idUser, cabecera);
+  }
 }
