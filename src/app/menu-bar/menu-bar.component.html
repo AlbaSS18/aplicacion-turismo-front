@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li *ngIf="this.authority=='user'" class="nav-item">
-        <a class="nav-link" [routerLinkActive]="['active']" routerLink="/recommendation"><i class="fas fa-landmark"></i> {{'recommendation' | translate }}<span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLinkActive]="['active']" routerLink="/recommendationMap"><i class="fas fa-landmark"></i> {{'recommendation' | translate }}<span class="sr-only">(current)</span></a>
       </li>
       <li *ngIf="this.authority=='user'" class="nav-item">
         <a class="nav-link" [routerLinkActive]="['active']" routerLink="/activitiesEvaluate"><i class="fas fa-star"></i> {{'activities_valued' | translate }}<span class="sr-only">(current)</span></a>

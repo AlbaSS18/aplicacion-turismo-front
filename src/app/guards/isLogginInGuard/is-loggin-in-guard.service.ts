@@ -16,7 +16,7 @@ export class IsLogginInGuardService implements Resolve<any>{
         this.router.navigate(['/user']);
       }
       else{
-        this.router.navigate(['/recommendation']);
+        this.router.navigate(['/recommendationMap']);
       }
     }
   }

@@ -69,7 +69,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/user']);
         }
         else{
-          this.router.navigate(['/recommendation']);
+          this.router.navigate(['/recommendationMap']);
         }
       },
       (err: any) => {
