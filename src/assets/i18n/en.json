@@ -128,6 +128,7 @@
   "recommendation": "Recommendation",
   "rate_activity": "Rate activity",
   "message_rate_activity": "Please, rate the activity",
-  "submessage_rate_activity": "Your feedback helps us to continously provide you with the best activities"
-
+  "submessage_rate_activity": "Your feedback helps us to continously provide you with the best activities",
+  "error_city_council": "The city council is not among those available",
+  "activity_add": "Activity add"
 }

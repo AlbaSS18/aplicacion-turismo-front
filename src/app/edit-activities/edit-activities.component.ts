@@ -96,7 +96,9 @@ export class EditActivitiesComponent implements OnInit {
         var longitud = e.geocode.center.lng;
         this.editActivitiesForm.controls['longitude'].setValue(longitud);
 
-        this.editActivitiesForm.controls['city'].setValue(e.geocode.properties.address.city);
+        var council = e.geocode.properties.address.city || e.geocode.properties.address.town || e.geocode.properties.address.village;
+        console.log(council);
+        this.editActivitiesForm.controls['city'].setValue(council);
 
         this.editActivitiesForm.controls['address'].setValue(e.geocode.name);
       }.bind(this)).addTo(map);

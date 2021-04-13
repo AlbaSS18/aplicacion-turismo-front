@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CityService} from '../services/city/city.service';
 import {InterestService} from '../services/interest/interest.service';
-import {SelectItem} from 'primeng/api';
+import {MessageService, SelectItem} from 'primeng/api';
 import * as L from 'leaflet';
 import 'leaflet-control-geocoder';
 import 'leaflet/dist/images/marker-shadow.png';
 import 'leaflet/dist/images/marker-icon-2x.png';
 import {ActivityService} from '../services/activity/activity.service';
 import {Router} from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-add-activity',
@@ -23,12 +24,16 @@ export class AddActivityComponent implements OnInit {
   files;
   noFiles: boolean = true;
 
+  messageError: boolean = false;
+
   constructor(
     private formBuilder: FormBuilder,
     private cityService: CityService,
     private interestService: InterestService,
     private activityService: ActivityService,
-    private router: Router
+    private router: Router,
+    private translateService: TranslateService,
+    private messageService: MessageService
   ) { }
 
   ngOnInit(): void {
@@ -61,10 +66,12 @@ export class AddActivityComponent implements OnInit {
       var longitud = e.geocode.center.lng;
       this.formAddActivity.controls['longitude'].setValue(longitud);
 
-      this.formAddActivity.controls['city'].setValue(e.geocode.properties.address.city);
+
+      var council = e.geocode.properties.address.city || e.geocode.properties.address.town || e.geocode.properties.address.village;
+      console.log(council);
+      this.formAddActivity.controls['city'].setValue(council);
 
       this.formAddActivity.controls['address'].setValue(e.geocode.name);
-
     }.bind(this)).addTo(map);
 
     this.loadCities();
@@ -122,11 +129,21 @@ export class AddActivityComponent implements OnInit {
       formData.append('city', this.formAddActivity.get('city').value);
       formData.append('interest', this.formAddActivity.get('nameInterest').value);
       formData.append('address', this.formAddActivity.get('address').value);
-      console.log(formData);
       this.activityService.addActivity(formData).subscribe(
         data => {
-          console.log(data);
-          this.router.navigate(['activities']);
+
+          var message = this.translateService.instant('activity_add_message',{ 'nameActivity': this.formAddActivity.get('name').value });
+          this.messageService.add({key: 'activity_added', severity: 'success', summary: this.translateService.instant('activity_add'), detail:message});
+
+          setTimeout(() => {
+            this.router.navigate(['/activities']);
+          }, 1500);
+        },
+        err => {
+          console.log(err);
+          if (err.error = "La ciudad no existe"){
+            this.messageError = true;
+          }
         }
       );
     }

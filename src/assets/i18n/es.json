@@ -128,6 +128,8 @@
   "recommendation": "Recomendación",
   "rate_activity": "Puntuar actividad",
   "message_rate_activity": "Por favor, valora la actividad",
-  "submessage_rate_activity": "Tu opinión nos ayuda a ofrecerte continuamente las mejores actividades"
+  "submessage_rate_activity": "Tu opinión nos ayuda a ofrecerte continuamente las mejores actividades",
+  "error_city_council": "El concejo no se encuentra entre los disponibles",
+  "activity_add": "Actividad añadida"
 
 }

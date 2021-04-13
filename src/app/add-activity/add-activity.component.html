@@ -1,4 +1,5 @@
 <app-menu-bar></app-menu-bar>
+<p-toast key="activity_added"></p-toast>
 <div class="add-activity-container">
   <h1>{{ 'add_activity' | translate }}</h1>
   <form [formGroup]="formAddActivity" (ngSubmit)="addActivity()">
@@ -34,11 +35,14 @@
       <div class="map_container">
         <p>{{ 'message_info_map' | translate }}</p>
         <div id="mapActivity"></div>
+        <div class="error_city_add_activity_container">
+          <p-message *ngIf="messageError" severity="error" text="{{ 'error_city_council' | translate }}"></p-message>
+        </div>
       </div>
     </div>
     <!--<button pButton pRipple label="{{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" [disabled]="formAddActivity.invalid || noFiles"></button>-->
     <div class="button_add_activity_container">
-      <p-button type="submit" class="button_add_activity" label="{{ 'save' | translate }}" [disabled]="formAddActivity.invalid || noFiles"></p-button>
+      <p-button id="addActivityBtn" type="submit" class="button_add_activity" label="{{ 'save' | translate }}" [disabled]="formAddActivity.invalid || noFiles"></p-button>
     </div>
   </form>
 
