@@ -16,7 +16,10 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class ListActivitiesEvaluateComponent implements OnInit {
 
   listActivities: ActivityRecommended[];
+
   sortOptions: SelectItem[];
+  sortOrder: number;
+  sortField: string;
 
   constructor(
     private userService: UserService,
@@ -27,8 +30,8 @@ export class ListActivitiesEvaluateComponent implements OnInit {
 
   ngOnInit(): void {
     this.sortOptions = [
-      {label: 'Rating High to Low', value: '!rating'},
-      {label: 'Rating Low to High', value: 'rating'}
+      {label: 'Rating High to Low', value: '!score'},
+      {label: 'Rating Low to High', value: 'score'}
   ];
     this.userService.getUsers().pipe(
       map (data => data.filter(p => p.email === this.localStorageService.getEmailUser())),
@@ -45,6 +48,19 @@ export class ListActivitiesEvaluateComponent implements OnInit {
   photoURL(activity){
     var url = 'data:' + activity.metadataImage.mimeType + ';base64,' + activity.metadataImage.data;
     return this.sanitizer.bypassSecurityTrustUrl(url);
+  }
+
+  onSortChange(event) {
+    let value = event.value;
+
+    if (value.indexOf('!') === 0) {
+      this.sortOrder = -1;
+      this.sortField = value.substring(1, value.length);
+    }
+    else {
+      this.sortOrder = 1;
+      this.sortField = value;
+    }
   }
 
 }

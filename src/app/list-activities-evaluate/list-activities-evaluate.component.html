@@ -1,9 +1,9 @@
 <app-menu-bar></app-menu-bar>
 <div class="activities-evaluates-panel">
     <h1>{{ 'activities_valued' | translate }}</h1>
-    <p-dataView #dv [value]="listActivities" [paginator]="true" [rows]="5" filterBy="name">
+    <p-dataView #dv [value]="listActivities" [paginator]="true" [rows]="5" filterBy="name" [sortField]="sortField" [sortOrder]="sortOrder">
       <ng-template pTemplate="header">
-        <div class="search_input_container">
+        <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
           <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By Rating" (onChange)="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0"></p-dropdown>
           <span class="p-input-icon-left">
             <i class="pi pi-search"></i>
@@ -31,7 +31,7 @@
                     </div>
 
                     <div class="activities-list-action">
-                        <p-rating [ngModel]="activity.score" [readonly]="true" stars="5" [cancel]="false"></p-rating>
+                        <p-rating [(ngModel)]="activity.score" [readonly]="true" stars="5" [cancel]="false"></p-rating>
                     </div>
                 </div>
                 
