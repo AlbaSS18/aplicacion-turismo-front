@@ -130,5 +130,8 @@
   "message_rate_activity": "Please, rate the activity",
   "submessage_rate_activity": "Your feedback helps us to continously provide you with the best activities",
   "error_city_council": "The city council is not among those available",
-  "activity_add": "Activity add"
+  "activity_add": "Activity add",
+  "rating_down": "Rating High to Low",
+  "rating_up": "Rating Low to High",
+  "sort_by_rating": "Sort by rating"
 }

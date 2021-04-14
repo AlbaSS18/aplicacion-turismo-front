@@ -30,8 +30,8 @@ export class ListActivitiesEvaluateComponent implements OnInit {
 
   ngOnInit(): void {
     this.sortOptions = [
-      {label: 'Rating High to Low', value: '!score'},
-      {label: 'Rating Low to High', value: 'score'}
+      {label: 'rating_down', value: '!score'},
+      {label: 'rating_up', value: 'score'}
   ];
     this.userService.getUsers().pipe(
       map (data => data.filter(p => p.email === this.localStorageService.getEmailUser())),

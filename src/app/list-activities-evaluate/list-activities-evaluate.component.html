@@ -1,10 +1,17 @@
 <app-menu-bar></app-menu-bar>
 <div class="activities-evaluates-panel">
     <h1>{{ 'activities_valued' | translate }}</h1>
-    <p-dataView #dv [value]="listActivities" [paginator]="true" [rows]="5" filterBy="name" [sortField]="sortField" [sortOrder]="sortOrder">
+    <p-dataView #dv [value]="listActivities" [paginator]="true" [rows]="3" filterBy="name" [sortField]="sortField" [sortOrder]="sortOrder">
       <ng-template pTemplate="header">
         <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
-          <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By Rating" (onChange)="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0"></p-dropdown>
+          <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="{{ 'sort_by_rating' | translate }}" (onChange)="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0">
+            <ng-template pTemplate="item" let-item>
+              {{item.label | translate}}
+            </ng-template>
+            <ng-template let-selectedItem pTemplate="selectedItem">
+              {{selectedItem.label | translate}}
+            </ng-template>
+          </p-dropdown>
           <span class="p-input-icon-left">
             <i class="pi pi-search"></i>
             <input type="search" pInputText placeholder="{{ 'placeholder_search_activities_evaluate' | translate }}" (input)="dv.filter($event.target.value)">
