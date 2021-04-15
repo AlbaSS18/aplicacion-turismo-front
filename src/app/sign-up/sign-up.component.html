@@ -19,7 +19,7 @@
           <label for="field-birth">{{ 'date_birth' | translate }}*</label>
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="far fa-calendar-alt" style="line-height: 1.25;"></i></span>
-            <p-calendar id="field-birth" formControlName="dateBirthday" placeholder="dd/mm/yyyy" [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:2030" class="input-birth" dateFormat="dd/mm/yy"></p-calendar>
+            <p-calendar appendTo="body" id="field-birth" formControlName="dateBirthday" placeholder="dd/mm/yyyy" [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:2030" class="input-birth" dateFormat="dd/mm/yy"></p-calendar>
           </div>
           <div class="message_error_sign_container">
             <p-message severity="error" text="{{ 'age_invalid' | translate }}"
