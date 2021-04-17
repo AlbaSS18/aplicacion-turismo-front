@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
 import {LocalStorageService} from '../services/local-storage/local-storage.service';
+import {PrimeNGConfig} from 'primeng/api';
 
 @Component({
   selector: 'app-menu-bar',
@@ -19,7 +20,8 @@ export class MenuBarComponent implements OnInit {
   constructor(
     private router: Router,
     public translate: TranslateService,
-    private localStorageService: LocalStorageService
+    private localStorageService: LocalStorageService,
+    private config: PrimeNGConfig
   ) {
   }
 
@@ -47,6 +49,7 @@ export class MenuBarComponent implements OnInit {
 
   switchLang(lang: string) {
     this.translate.use(lang);
+    this.translate.get('primeng').subscribe(res => this.config.setTranslation(res));
   }
 
 }

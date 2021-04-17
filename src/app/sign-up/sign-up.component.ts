@@ -2,7 +2,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {InterestService} from '../services/interest/interest.service';
 import {AuthService} from '../services/auth/auth.service';
-import {MenuItem, MessageService, SelectItem} from 'primeng/api';
+import {MenuItem, MessageService, PrimeNGConfig, SelectItem} from 'primeng/api';
 import {validadorPasswordSame} from '../validators/validatorPasswordSame.directive';
 import {validadorAgeGreaterThan} from '../validators/validatorGreaterThan.directive';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -30,8 +30,7 @@ export class SignUpComponent implements OnInit {
     private interestService: InterestService,
     private authService: AuthService,
     private router: Router,
-    private notificationService: NotificationService,
-    private translateService: TranslateService
+    private notificationService: NotificationService
   ) {
   }
 
@@ -50,7 +49,7 @@ export class SignUpComponent implements OnInit {
       });
     this.loadInterest();
 
-    // Podría sobrar si actualizo a Angular 11
+    // Podría sobrar si actualizo a Angular 11 (no sé si lo necesito)
     this.formGroup.valueChanges.subscribe(e => {
       this.formGroup.setValue(e, {emitEvent: false});
     });
