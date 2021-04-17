@@ -160,7 +160,7 @@
         <p-message severity="error" text="{{ 'data_incorrect' | translate }}: {{message | translate}}"
                    *ngIf="formSign.submitted && isRegisterFail"></p-message>
         <div class="p-field p-col-12">
-          <button pButton type="button" label="{{ 'return' | translate }}" icon="fas fa-arrow-left" class="button_return" (click)="returnFirstPartForm()"></button>
+          <button pButton type="button" label="{{ 'return' | translate }}" icon="fas fa-arrow-left" class="button_return p-button-outlined p-button-secondary" (click)="returnFirstPartForm()"></button>
           <button pButton type="submit" label="{{ 'submit' | translate }}" icon="pi pi-check" [disabled]="!formGroup.valid" class="button_signup"></button>
         </div>
       </div>
