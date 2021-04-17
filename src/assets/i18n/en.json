@@ -118,7 +118,7 @@
   },
   "message_valuation_one": "Please, rate from 0 (the least) to 10 (the most) each one of interests shown below to improve the recommendations.",
   "message_valuation_two": "If you wish, you will be able to modify these ratings later, in the \"Your profile\" section.",
-  "message_info_map": "Use the map to find the address of the activity:",
+  "message_info_map": "Use the map to find the address of the activity",
   "write_address": "Please, enter the address...",
   "not_found_address": "No address found",
   "activities_valued": "Valued activities",
@@ -134,5 +134,7 @@
   "activity_add": "Activity add",
   "rating_down": "Rating High to Low",
   "rating_up": "Rating Low to High",
-  "sort_by_rating": "Sort by rating"
+  "sort_by_rating": "Sort by rating",
+  "message_file_required": "Please, select a image",
+  "error_activity_repeated": "There is already an activity with that name"
 }

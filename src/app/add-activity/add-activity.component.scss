@@ -9,6 +9,11 @@
   h1{
     text-align:center;
   }
+
+  ::ng-deep .p-messages{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 }
 
 .form_add_activity_container{
@@ -53,12 +58,10 @@
   }
 }
 
-.map_container{
-  .error_city_add_activity_container{
-    margin-top: 5px;
-  }
-}
+.message-error{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
+}
 
 
 

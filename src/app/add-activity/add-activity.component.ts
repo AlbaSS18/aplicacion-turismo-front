@@ -23,7 +23,7 @@ export class AddActivityComponent implements OnInit {
   files;
   noFiles: boolean = true;
 
-  messageError: boolean = false;
+  infoMessage = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,7 +32,7 @@ export class AddActivityComponent implements OnInit {
     private activityService: ActivityService,
     private router: Router,
     private translateService: TranslateService,
-    private messageService: MessageService
+    private messageService: MessageService,
   ) { }
 
   ngOnInit(): void {
@@ -57,7 +57,7 @@ export class AddActivityComponent implements OnInit {
       errorMessage: 'No se han encontrado direcciones'
     };
 
-    var control = L.Control.geocoder(opciones).on('markgeocode', function (e) {
+    var control = L.Control.geocoder(opciones).on('markgeocode', function(e) {
 
       var latitud = e.geocode.center.lat;
       this.formAddActivity.controls['latitude'].setValue(latitud);
@@ -110,6 +110,18 @@ export class AddActivityComponent implements OnInit {
       formData.append('city', this.formAddActivity.get('city').value);
       formData.append('interest', this.formAddActivity.get('nameInterest').value);
       formData.append('address', this.formAddActivity.get('address').value);
+
+      this.translateService.onLangChange.subscribe(event => {
+        var aux = this.infoMessage;
+        this.infoMessage = [];
+        for (let message of aux){
+          var mAux = message;
+          mAux.summary = this.translateService.instant("error");
+          mAux.detail = this.translateService.instant(message.keyTranslate);
+          this.infoMessage.push(mAux);
+        }
+      });
+
       this.activityService.addActivity(formData).subscribe(
         data => {
 
@@ -121,9 +133,17 @@ export class AddActivityComponent implements OnInit {
           }, 1500);
         },
         err => {
-          console.log(err);
-          if (err.error = "La ciudad no existe"){
-            this.messageError = true;
+          if (err.error.mensaje === "La ciudad no existe"){
+            var message = this.translateService.instant('error_city_council');
+            this.infoMessage = [
+              { key: 'add_activity_error', severity:'error', summary: this.translateService.instant('error'), detail: message, keyTranslate: 'error_city_council'}
+            ];
+          }
+          else if (err.error.mensaje.includes("Ya existe una actividad con el nombre")){
+            var message = this.translateService.instant('error_activity_repeated');
+            this.infoMessage = [
+              { key: 'add_activity_error', severity:'error', summary: this.translateService.instant('error'), detail: message, keyTranslate: 'error_activity_repeated'}
+            ];
           }
         }
       );

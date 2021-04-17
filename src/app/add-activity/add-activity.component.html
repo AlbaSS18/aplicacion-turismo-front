@@ -2,6 +2,7 @@
 <p-toast key="activity_added"></p-toast>
 <div class="add-activity-container">
   <h1>{{ 'add_activity' | translate }}</h1>
+  <p-messages key="add_activity_error" [(value)]="infoMessage"></p-messages>
   <form [formGroup]="formAddActivity" (ngSubmit)="addActivity()">
     <div class="form_add_activity_container">
       <div class="p-fluid input_container">
@@ -28,16 +29,15 @@
                           invalidFileSizeMessageSummary="{{ 'invalid_file_size_message_summary' | translate:{file:'{0}'} }}"
                           chooseLabel="{{ 'choose_file' | translate }}"
                           cancelLabel="{{ 'remove_file' | translate }}"
-                          [showUploadButton]="false" class="fileUploadAddActivity" ></p-fileUpload>
+                          [showUploadButton]="false" class="fileUploadAddActivity">
+            </p-fileUpload>
+            <small *ngIf="noFiles" class="message-error p-error">{{ 'message_file_required' | translate }}</small>
           </div>
         </div>
       </div>
       <div class="map_container">
-        <p>{{ 'message_info_map' | translate }}</p>
+        <p>{{ 'message_info_map' | translate }}*:</p>
         <div id="mapActivity"></div>
-        <div class="error_city_add_activity_container">
-          <p-message *ngIf="messageError" severity="error" text="{{ 'error_city_council' | translate }}"></p-message>
-        </div>
       </div>
     </div>
     <div class="button_add_activity_container">

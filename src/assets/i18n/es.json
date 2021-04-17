@@ -118,7 +118,7 @@
   },
   "message_valuation_one": "Por favor, valore de 0 (lo que menos) a 10 (lo que más) cada uno de los intereses mostrados a continuación para mejorar las recomendaciones.",
   "message_valuation_two": "Si lo desea, podrá modificar estas valoraciones más tarde, en la sección \"Tú perfil\"",
-  "message_info_map": "Utilice el mapa para buscar la dirección de la actividad:",
+  "message_info_map": "Utilice el mapa para buscar la dirección de la actividad",
   "write_address": "Escriba la dirección...",
   "not_found_address": "No se han encontrado direcciones",
   "activities_valued": "Actividades valoradas",
@@ -134,6 +134,8 @@
   "activity_add": "Actividad añadida",
   "rating_down": "Calificación de alta a baja",
   "rating_up": "Calificación de baja a alta",
-  "sort_by_rating": "Ordenar por calificación"
+  "sort_by_rating": "Ordenar por calificación",
+  "message_file_required": "Por favor, seleccione una imagen",
+  "error_activity_repeated": "Ya hay una actividad con ese nombre"
 
 }
