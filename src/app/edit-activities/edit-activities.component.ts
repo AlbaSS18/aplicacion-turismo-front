@@ -9,6 +9,7 @@ import {ActivityService} from '../services/activity/activity.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import * as L from 'leaflet';
 import {DomSanitizer} from '@angular/platform-browser';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-edit-activities',
@@ -25,6 +26,8 @@ export class EditActivitiesComponent implements OnInit {
   image;
   valueUnchanged: boolean = true;
 
+  infoMessage = [];
+
   constructor(
     private fb: FormBuilder,
     private cityService: CityService,
@@ -32,7 +35,8 @@ export class EditActivitiesComponent implements OnInit {
     private activityService: ActivityService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private translateService: TranslateService
   ) { }
 
   ngOnInit(): void {
@@ -154,7 +158,6 @@ export class EditActivitiesComponent implements OnInit {
 
   editActivity(){
     const formData = new FormData();
-    console.log(this.editActivitiesForm.controls);
     formData.append('image', this.file);
     formData.append('name', this.editActivitiesForm.get('name').value);
     formData.append('description', this.editActivitiesForm.get('description').value);
@@ -163,16 +166,47 @@ export class EditActivitiesComponent implements OnInit {
     formData.append('city', this.editActivitiesForm.get('city').value);
     formData.append('interest', this.editActivitiesForm.get('interest').value);
     formData.append('address', this.editActivitiesForm.get('address').value);
-    console.log(formData);
-    formData.forEach(p => {
-      console.log(p);
+
+    this.translateService.onLangChange.subscribe(event => {
+      var aux = this.infoMessage;
+      this.infoMessage = [];
+      for (let message of aux){
+        var mAux = message;
+        mAux.summary = this.translateService.instant("error");
+        mAux.detail = this.translateService.instant(message.keyTranslate);
+        this.infoMessage.push(mAux);
+      }
     });
+
     this.activityService.editActivity(this.activityId, formData).subscribe(
       data => {
         this.router.navigate(['/activities']);
       },
       err => {
-        console.log(err);
+        if (err.error.mensaje === "La ciudad no existe"){
+          var message = this.translateService.instant('error_city_council');
+          this.infoMessage = [
+            {
+              key: 'edit_activity_error',
+              severity: 'error',
+              summary: this.translateService.instant('error'),
+              detail: message,
+              keyTranslate: 'error_city_council'
+            }
+          ];
+        }
+        else if (err.error.mensaje.includes("Ya hay una actividad con ese nombre")) {
+          var message = this.translateService.instant('error_activity_repeated');
+          this.infoMessage = [
+            {
+              key: 'edit_activity_error',
+              severity: 'error',
+              summary: this.translateService.instant('error'),
+              detail: message,
+              keyTranslate: 'error_activity_repeated'
+            }
+          ];
+        }
       }
     );
   }

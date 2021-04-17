@@ -1,6 +1,7 @@
 <app-menu-bar></app-menu-bar>
 <div class="edit-activities-panel">
   <h1>{{ 'edit_title_activity' | translate }}</h1>
+  <p-messages key="edit_activity_error" [(value)]="infoMessage"></p-messages>
   <form [formGroup]="editActivitiesForm" (ngSubmit)="editActivity()">
     <div class="edit_activity_container">
       <div class="p-fluid left_container">
@@ -35,7 +36,7 @@
         </div>
       </div>
       <div class="right_container">
-        <p>{{ 'message_info_map' | translate }}</p>
+        <p>{{ 'message_info_map' | translate }}:*</p>
         <div id="mapActivityEdit"></div>
       </div>
     </div>
