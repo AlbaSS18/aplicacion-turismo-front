@@ -28,6 +28,7 @@
   "description_activity": "Descripción",
   "latitude": "Latitud",
   "longitude": "Longitud",
+  "address": "Dirección",
   "city": "Ciudad",
   "interest": "Interés",
   "info_dialog_title": "Información de la actividad: ",
@@ -136,6 +137,7 @@
   "rating_up": "Calificación de baja a alta",
   "sort_by_rating": "Ordenar por calificación",
   "message_file_required": "Por favor, seleccione una imagen",
-  "error_activity_repeated": "Ya hay una actividad con ese nombre"
-
+  "error_activity_repeated": "Ya hay una actividad con ese nombre",
+  "activity_edit": "Actividad modificada",
+  "activity_edit_message": "La actividad {{nameActivity}} ha sido añadida con éxito"
 }

@@ -28,6 +28,7 @@
   "description_activity": "Description",
   "latitude": "Latitude",
   "longitude": "Longitude",
+  "address": "Address",
   "city": "City",
   "interest": "Interest",
   "info_dialog_title": "Activity information: ",
@@ -136,5 +137,7 @@
   "rating_up": "Rating Low to High",
   "sort_by_rating": "Sort by rating",
   "message_file_required": "Please, select a image",
-  "error_activity_repeated": "There is already an activity with that name"
+  "error_activity_repeated": "There is already an activity with that name",
+  "activity_edit": "Activity modified",
+  "activity_edit_message": "The activity {{nameActivity}} has been successfully edited"
 }
