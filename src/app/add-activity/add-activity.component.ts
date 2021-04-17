@@ -19,7 +19,6 @@ import {TranslateService} from '@ngx-translate/core';
 export class AddActivityComponent implements OnInit {
 
   formAddActivity: FormGroup;
-  cities: SelectItem[];
   interest: SelectItem[];
   files;
   noFiles: boolean = true;
@@ -66,31 +65,13 @@ export class AddActivityComponent implements OnInit {
       var longitud = e.geocode.center.lng;
       this.formAddActivity.controls['longitude'].setValue(longitud);
 
-
       var council = e.geocode.properties.address.city || e.geocode.properties.address.town || e.geocode.properties.address.village;
-      console.log(council);
       this.formAddActivity.controls['city'].setValue(council);
 
       this.formAddActivity.controls['address'].setValue(e.geocode.name);
     }.bind(this)).addTo(map);
 
-    this.loadCities();
     this.loadInterest();
-  }
-
-  loadCities(){
-    this.cityService.getCities().subscribe(
-      (data) => {
-        this.cities = [];
-        this.cities.push({label: 'Selecciona ciudad', value: null});
-        data.forEach( i => {
-          this.cities.push({label: i.name, value: i.name});
-        });
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
   }
 
   loadInterest(){

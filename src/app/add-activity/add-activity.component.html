@@ -40,58 +40,9 @@
         </div>
       </div>
     </div>
-    <!--<button pButton pRipple label="{{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" [disabled]="formAddActivity.invalid || noFiles"></button>-->
     <div class="button_add_activity_container">
       <p-button id="addActivityBtn" type="submit" class="button_add_activity" label="{{ 'save' | translate }}" [disabled]="formAddActivity.invalid || noFiles"></p-button>
     </div>
   </form>
-
-
-
-  <!--<form [formGroup]="formAddActivity">
-    <div class="p-fluid p-formgrid p-grid grid-container">
-      <div class="p-field p-col-12">
-        <label for="field-name-Activity">{{ 'name_activity' | translate }}*</label>
-        <input id="field-name-Activity" type="text" pInputText formControlName="name">
-      </div>
-      <div class="p-field p-col-12">
-        <label for="field-description">{{ 'description_activity' | translate }}*</label>
-        <textarea id="field-description" pInputTextarea formControlName="description" [rows]="4" [cols]="30" autoResize="autoResize"></textarea>
-      </div>
-      <div id="mapActivity" style="width: 500px; height: 500px;"></div>
-      <div class="p-field p-col-12 p-md-6">
-        <label for="field-latitude">{{ 'latitude' | translate }}*</label>
-        <p-inputNumber id="field-latitude" formControlName="latitude" mode="decimal" [minFractionDigits]="2" [maxFractionDigits]="7"></p-inputNumber>
-      </div>
-      <div class="p-field p-col-12 p-md-6">
-        <label for="field-longitude">{{ 'longitude' | translate }}*</label>
-        <p-inputNumber id="field-longitude" formControlName="longitude" mode="decimal" [minFractionDigits]="2" [maxFractionDigits]="7"></p-inputNumber>
-      </div>
-      <div class="p-field p-col-12 p-md-6">
-        <label for="field-city">{{ 'city' | translate }}*</label>
-        <p-dropdown id="field-city" [options]="cities" formControlName="city" appendTo="body"></p-dropdown>
-      </div>
-      <div class="p-field p-col-12 p-md-6">
-        <label for="field-interest">{{ 'interest' | translate }}*</label>
-        <p-dropdown id="field-interest" [options]="interest" formControlName="nameInterest" appendTo="body">
-        </p-dropdown>
-      </div>
-    </div>
-    <div class="p-field grid-container">
-      <label>{{ 'image' | translate }}*</label>
-      <p-fileUpload name="myfile[]" accept="image/jpeg, image/png" maxFileSize="2000000" (onSelect)="dealWithFiles($event)" (onRemove)="deleteFiles($event)" (onClear)="deleteFiles($event)"
-                    invalidFileTypeMessageDetail="{{ 'invalid_file_message_detail' | translate:{formats:'{0}'} }} "
-                    invalidFileTypeMessageSummary="{{ 'invalid_type_message_summary' | translate:{nameFile:'{0}'} }}"
-                    invalidFileSizeMessageDetail="{{ 'invalid_file_size_message_detail' | translate:{size:'{0}'} }}"
-                    invalidFileSizeMessageSummary="{{ 'invalid_file_size_message_summary' | translate:{file:'{0}'} }}"
-                    chooseLabel="{{ 'choose_file' | translate }}"
-                    cancelLabel="{{ 'remove_file' | translate }}"
-                    [showUploadButton]="false" ></p-fileUpload>
-    </div>
-    <div class="grid-container button_save_activity">
-      <p-button label="Click" ></p-button>
-    </div>
-
-  </form>-->
 
 </div>
