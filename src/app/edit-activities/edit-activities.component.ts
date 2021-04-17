@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {City} from '../models/city';
-import {SelectItem} from 'primeng/api';
+import {MessageService, SelectItem} from 'primeng/api';
 import {forkJoin} from 'rxjs';
 import {CityService} from '../services/city/city.service';
 import {InterestService} from '../services/interest/interest.service';
@@ -36,7 +36,8 @@ export class EditActivitiesComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private sanitizer: DomSanitizer,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private messageService: MessageService
   ) { }
 
   ngOnInit(): void {
@@ -180,7 +181,13 @@ export class EditActivitiesComponent implements OnInit {
 
     this.activityService.editActivity(this.activityId, formData).subscribe(
       data => {
-        this.router.navigate(['/activities']);
+
+        var message = this.translateService.instant('activity_edit_message',{ 'nameActivity': this.editActivitiesForm.get('name').value });
+        this.messageService.add({key: 'activity_edited', severity: 'success', summary: this.translateService.instant('activity_edit'), detail: message});
+
+        setTimeout(() => {
+          this.router.navigate(['/activities']);
+        }, 1500);
       },
       err => {
         if (err.error.mensaje === "La ciudad no existe"){
