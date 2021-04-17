@@ -43,59 +43,6 @@
       <button pButton label="{{ 'save' | translate }}" type="submit" [disabled]="editActivitiesForm.invalid || valueUnchanged "></button>
     </div>
   </form>
-
-
-
-  <!--<form [formGroup]="editActivitiesForm" (ngSubmit)="editActivity()">
-    <div class="form-edit-activity-container p-fluid">
-      <div class="p-field p-grid">
-        <img *ngIf="activity" id="image-edit-activity" src="http://localhost:8090/images/{{activity.name}}/{{activity.pathImage}}" />
-      </div>
-      <div class="p-field">
-        <p-fileUpload name="myfile[]" accept="image/jpeg, image/png" maxFileSize="2000000"
-                      invalidFileTypeMessageDetail="{{ 'invalid_file_message_detail' | translate:{formats:'{0}'} }} "
-                      invalidFileTypeMessageSummary="{{ 'invalid_type_message_summary' | translate:{nameFile:'{0}'} }}"
-                      invalidFileSizeMessageDetail="{{ 'invalid_file_size_message_detail' | translate:{size:'{0}'} }}"
-                      invalidFileSizeMessageSummary="{{ 'invalid_file_size_message_summary' | translate:{file:'{0}'} }}"
-                      chooseLabel="{{ 'choose_file' | translate }}"
-                      cancelLabel="{{ 'remove_file' | translate }}"
-                      [showUploadButton]="false" (onSelect)="changeImage($event)">
-        </p-fileUpload>
-      </div>
-      <div class="p-field p-grid">
-        <label for="field-description" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{ 'description_activity' | translate }}*</label>
-        <div class="p-col-12 p-md-10">
-          <textarea id="field-description" pInputTextarea formControlName="description" [rows]="4" [cols]="30" autoResize="autoResize"></textarea>
-        </div>
-      </div>
-      <div class="p-field p-grid">
-        <label for="field-latitude" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{ 'latitude' | translate }}*</label>
-        <div class="p-col-12 p-md-10">
-          <p-inputNumber id="field-latitude" formControlName="latitude" mode="decimal" [minFractionDigits]="2" [maxFractionDigits]="7"></p-inputNumber>
-        </div>
-      </div>
-      <div class="p-field p-grid">
-        <label for="field-longitude" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{ 'longitude' | translate }}*</label>
-        <div class="p-col-12 p-md-10">
-          <p-inputNumber id="field-longitude" formControlName="longitude" mode="decimal" [minFractionDigits]="2" [maxFractionDigits]="7"></p-inputNumber>
-        </div>
-      </div>
-      <div class="p-field p-grid">
-        <label for="field-city" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{ 'city' | translate }}*</label>
-        <div class="p-col-12 p-md-10">
-          <p-dropdown id="field-city" [options]="cities" formControlName="city" appendTo="body"></p-dropdown>
-        </div>
-      </div>
-      <div class="p-field p-grid">
-        <label for="field-interest" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{ 'interest' | translate }}*</label>
-        <div class="p-col-12 p-md-10">
-          <p-dropdown id="field-interest" [options]="interest" formControlName="interest" appendTo="body">
-          </p-dropdown>
-        </div>
-      </div>
-      <button pButton type="button" label="Submit" type="submit"></button>
-    </div>
-  </form>-->
 </div>
 
 

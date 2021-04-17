@@ -18,7 +18,6 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class EditActivitiesComponent implements OnInit {
 
   editActivitiesForm: FormGroup;
-  cities: SelectItem[];
   interest: SelectItem[];
   activityId;
   activity;
@@ -52,32 +51,27 @@ export class EditActivitiesComponent implements OnInit {
     this.observeChanges();
 
     forkJoin([
-      this.cityService.getCities(),
       this.interestService.getInterests(),
       this.activityService.getActivity(this.activityId)
-    ]).subscribe(([response1, response2, response3]) => {
-      this.cities = [];
-      response1.forEach( i => {
-        this.cities.push({label: i.name, value: i.name});
-      });
+    ]).subscribe(([response1, response2]) => {
       this.interest = [];
-      response2.forEach( i => {
+      response1.forEach( i => {
         this.interest.push({label: i.nameInterest, value: i.nameInterest});
       });
-      this.activity = response3;
+      this.activity = response2;
       this.editActivitiesForm.patchValue(
         {
-          name: response3.name,
-          description: response3.description,
-          latitude: response3.latitude,
-          longitude: response3.longitude,
-          city: response3.city,
-          interest: response3.interest,
-          address: response3.address
+          name: response2.name,
+          description: response2.description,
+          latitude: response2.latitude,
+          longitude: response2.longitude,
+          city: response2.city,
+          interest: response2.interest,
+          address: response2.address
         }
       );
 
-      var map = L.map('mapActivityEdit').setView([response3.latitude, response3.longitude], 8);
+      var map = L.map('mapActivityEdit').setView([response2.latitude, response2.longitude], 8);
 
       const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -103,7 +97,7 @@ export class EditActivitiesComponent implements OnInit {
         this.editActivitiesForm.controls['address'].setValue(e.geocode.name);
       }.bind(this)).addTo(map);
 
-      control.options.geocoder.geocode(response3.address, function(results) {
+      control.options.geocoder.geocode(response2.address, function(results) {
           var resultado = results[0];
           if (resultado)
             control.markGeocode(resultado);
