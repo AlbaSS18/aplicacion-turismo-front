@@ -25,7 +25,7 @@ const routes: Routes = [
   {path: 'recommendation', component: RecommendationComponent,
     canActivate: [RoleGuardService],
     data: {
-      expectedRol: 'user'
+      expectedRol: ['user', 'admin']
   }},
   {path: 'map', component: MapComponent},
   {path: 'activities', component: TableActivitiesComponent,
@@ -64,8 +64,19 @@ const routes: Routes = [
       expectedRol: 'admin'
   }},
   {path: 'profile/edit', component: EditUserComponent, canActivate: [AuthGuardService]},
-  {path: 'recommendationMap', component: RecommendationMapComponent},
-  {path: 'activitiesEvaluate', component: ListActivitiesEvaluateComponent},
+  {path: 'recommendationMap', component: RecommendationMapComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRol: ['user', 'admin']
+    }
+  },
+  {
+    path: 'activitiesEvaluate', component: ListActivitiesEvaluateComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRol: ['user', 'admin']
+    }
+  },
   {path: '**', redirectTo: 'login', pathMatch: 'full'}
 ];
 
