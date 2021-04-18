@@ -17,15 +17,15 @@
       <div class="p-field p-grid">
         <label for="float-input-birthday" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{ 'date_birth' | translate }}</label>
         <div class="p-col-12 p-md-10">
-          <p-calendar id="float-input-birthday" formControlName="dateBirthday" dateFormat="dd/mm/yy" [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:2030"></p-calendar>
+          <p-calendar inputId="float-input-birthday" formControlName="dateBirthday" dateFormat="dd/mm/yy" [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:2030"></p-calendar>
         </div>
       </div>
       <div class="p-field p-grid">
         <label class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{ 'roles' | translate }}</label>
         <div *ngIf="this.roles">
           <div class="p-col-12 p-md-10" *ngFor="let rol of this.roles" class="p-field-checkbox">
-            <p-checkbox id="rol" [value]="rol.rolName" [formControl]="editUserForm.controls['roles']"></p-checkbox>
-            <label [for]="rol">{{rol.rolName}}</label>
+            <p-checkbox [inputId]="rol.rolName" [value]="rol.rolName" [formControl]="editUserForm.controls['roles']"></p-checkbox>
+            <label [for]="rol.rolName">{{rol.rolName}}</label>
           </div>
         </div>
       </div>

@@ -15,6 +15,7 @@ describe('02 - Sign Up Page', () => {
   });
 
   it('should add a new user', () => {
+    //Es posible que falle. El id del calendario ya no existe
     page.getInputName().sendKeys('newUser');
     page.getInputEmail().sendKeys('newUser@email.com');
     page.getInputPassword().sendKeys('1234567');

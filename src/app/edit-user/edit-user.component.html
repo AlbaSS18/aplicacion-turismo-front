@@ -18,7 +18,7 @@
       <div class="p-field p-grid">
         <label for="age" class="p-col-fixed" style="width:200px">{{ 'date_birth' | translate }}:</label>
         <div class="p-col">
-          <p-calendar appendTo="body" formControlName="dateBirthday" id="age" dateFormat="dd/mm/yy"
+          <p-calendar appendTo="body" formControlName="dateBirthday" inputId="age" dateFormat="dd/mm/yy"
                       [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:2030" ></p-calendar>
           <p-message class="message_error_age" severity="error" text="{{ 'age_invalid' | translate }}"
                      *ngIf="editUserProfile.get('dateBirthday').errors && editUserProfile.get('dateBirthday').dirty && editUserProfile.get('dateBirthday').errors.menorDeEdad"></p-message>
