@@ -20,7 +20,6 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RecommendationComponent } from './recommendation/recommendation.component';
 import {interceptorProvider} from './interceptors/interceptor.service';
 import { MapComponent } from './map/map.component';
-import { ModifyPreferencesComponent } from './modify-preferences/modify-preferences.component';
 import { TableActivitiesComponent } from './table-activities/table-activities.component';
 import {TableModule} from 'primeng/table';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
@@ -70,7 +69,6 @@ import {MultiSelectModule} from 'primeng/multiselect';
     MenuBarComponent,
     RecommendationComponent,
     MapComponent,
-    ModifyPreferencesComponent,
     TableActivitiesComponent,
     ListCitiesComponent,
     ListInterestComponent,

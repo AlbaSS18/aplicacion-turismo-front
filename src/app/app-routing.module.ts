@@ -6,7 +6,6 @@ import {RecommendationComponent} from './recommendation/recommendation.component
 import {AuthGuardService} from './guards/auth-guard/auth-guard.service';
 import {IsLogginInGuardService} from './guards/isLogginInGuard/is-loggin-in-guard.service';
 import {MapComponent} from './map/map.component';
-import {ModifyPreferencesComponent} from './modify-preferences/modify-preferences.component';
 import {TableActivitiesComponent} from './table-activities/table-activities.component';
 import {ListCitiesComponent} from './list-cities/list-cities.component';
 import {ListInterestComponent} from './list-interest/list-interest.component';
