@@ -139,5 +139,8 @@
   "message_file_required": "Please, select a image",
   "error_activity_repeated": "There is already an activity with that name",
   "activity_edit": "Activity modified",
-  "activity_edit_message": "The activity {{nameActivity}} has been successfully edited"
+  "activity_edit_message": "The activity {{nameActivity}} has been successfully edited",
+  "message-no-activities-match": "There are no activities matching your search criteria",
+  "message-no-user-match": "There are no users matching your search criteria",
+  "message-no-activities-evaluate-match": "No records found."
 }

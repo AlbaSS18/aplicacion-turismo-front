@@ -1,7 +1,7 @@
 <app-menu-bar></app-menu-bar>
 <div class="activities-evaluates-panel">
     <h1>{{ 'activities_valued' | translate }}</h1>
-    <p-dataView #dv [value]="listActivities" [paginator]="true" [rows]="3" filterBy="name" [sortField]="sortField" [sortOrder]="sortOrder">
+    <p-dataView #dv [value]="listActivities" [paginator]="true" [rows]="3" filterBy="name" [sortField]="sortField" [sortOrder]="sortOrder" emptyMessage="{{ 'message-no-activities-evaluate-match' | translate }}">
       <ng-template pTemplate="header">
         <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
           <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="{{ 'sort_by_rating' | translate }}" (onChange)="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0">
