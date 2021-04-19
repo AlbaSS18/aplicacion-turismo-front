@@ -18,21 +18,25 @@ export class InterceptorService implements HttpInterceptor{
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     let autReq = req;
+
     const token = this.localStorageService.getToken();
     if (token != null) {
       autReq = req.clone({ headers: req.headers.set('Authorization', 'Bearer ' + token) });
-    }
-    return next.handle(autReq).pipe(
-      catchError(
-        (err) => {
-          if (err.status === 401){
-            this.handleAuthError();
-            return of(err);
+      return next.handle(autReq).pipe(
+        catchError(
+          (err) => {
+            if (err.status === 401){
+              this.handleAuthError();
+              return of(err);
+            }
+            throw err;
           }
-          throw err;
-        }
-      )
-    )as any;
+        )
+      )as any;
+    }
+    else{
+      return next.handle(autReq);
+    }
   }
 
   private handleAuthError() {
