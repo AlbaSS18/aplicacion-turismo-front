@@ -97,8 +97,9 @@ export class EditUserAdminComponent implements OnInit {
     for (var i = 0; i < bProps.length; i++) {
       let propName = bProps[i];
       if (propName == "roles"){
-        this.valueUnchanged = a[propName].length === b[propName].length && a[propName].every((value, index) => value === b[propName][index]);
-        return a[propName].length === b[propName].length && a[propName].every((value, index) => value === b[propName][index]);
+        const array2Sorted = b[propName].slice().sort();
+        this.valueUnchanged = a[propName].length === b[propName].length && a[propName].slice().sort().every((value, index) => value === array2Sorted[index]);
+        return a[propName].length === b[propName].length && a[propName].slice().sort().every((value, index) => value === array2Sorted[index]);
       }
       else if (propName === "dateBirthday"){
         var d1 = new Date(new Date(a[propName]).toDateString());
