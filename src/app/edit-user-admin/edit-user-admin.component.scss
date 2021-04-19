@@ -11,12 +11,8 @@
   }
 }
 
-.buttonSave {
-  width: 120px;
-}
-
 .form-user-container{
-  width: 50%;
+  width: 55%;
   padding-bottom: 5px;
   /*Para centrar*/
   margin-left: auto;
@@ -27,4 +23,27 @@
 .group-buttons-edit-user{
   display: flex;
   justify-content: flex-end;
+
+  .buttonSave{
+    margin: 5px;
+  }
+}
+
+.fielset_edit_user{
+  border: 0;
+
+  .legend_fieldset{
+    border-bottom: 1px solid;
+    margin-bottom: 16px;
+    border-color: #c4c6c8;
+  }
+
+  legend {
+    font-size: 1.5em;
+  }
+}
+
+.message_error{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin-left: 5px;
 }

@@ -23,6 +23,8 @@ export class EditUserAdminComponent implements OnInit {
   roles: Rol[];
   valueUnchanged: boolean = true;
 
+  roleList: SelectItem[];
+
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
@@ -49,6 +51,9 @@ export class EditUserAdminComponent implements OnInit {
         dateBirthday: new Date(this.user.dateBirthday)
       });
       this.editUserForm.controls['roles'].setValue(this.user.roles);
+
+      this.roleList = this.roles.map((v) => {return {label: v.rolName, value: v.rolName}})
+
       this.observeChanges();
     });
   }

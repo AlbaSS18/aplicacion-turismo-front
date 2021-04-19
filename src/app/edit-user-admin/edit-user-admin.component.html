@@ -3,36 +3,46 @@
 <div class="edit-panel">
   <h1>{{ 'edit_title' | translate }}</h1>
   <form [formGroup]="editUserForm" #formEdit="ngForm" (ngSubmit)="sendForm()">
-    <div class="form-user-container p-fluid">
+    <fieldset class="fielset_edit_user form-user-container">
+      <div class="legend_fieldset">
+        <legend>{{ 'personal_info' | translate }}</legend>
+      </div>
       <div class="p-field p-grid">
-        <label for="float-input-username" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{ 'username' | translate }}</label>
-        <div class="p-col-12 p-md-10">
-          <input id="float-input-username" type="text" size="30" pInputText formControlName="userName">
-          <small id="username-help" class="p-error" *ngIf="editUserForm.controls['userName'].invalid&&(editUserForm.controls['userName'].dirty || editUserForm.controls['userName'].touched)">{{ 'name_required' | translate }}</small>
-          <!--<p-message class="message_error_username" severity="error" text="{{ 'name_required' | translate }}"
-                     *ngIf="editUserForm.controls['userName'].invalid&&(editUserForm.controls['userName'].dirty || editUserForm.controls['userName'].touched)"></p-message>
--->
+        <label for="float-input-username" class="p-col-fixed" style="width: 200px;">{{ 'username' | translate }}</label>
+        <div class="p-col">
+          <input id="float-input-username" type="text" pInputText formControlName="userName">
+          <small class="p-error message_error" *ngIf="editUserForm.controls['userName'].invalid&&(editUserForm.controls['userName'].dirty || editUserForm.controls['userName'].touched)">{{ 'name_required' | translate }}</small>
         </div>
       </div>
       <div class="p-field p-grid">
-        <label for="float-input-birthday" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{ 'date_birth' | translate }}</label>
-        <div class="p-col-12 p-md-10">
+        <label for="float-input-birthday" class="p-col-fixed" style="width: 200px;">{{ 'date_birth' | translate }}</label>
+        <div class="p-col">
           <p-calendar inputId="float-input-birthday" formControlName="dateBirthday" dateFormat="dd/mm/yy" [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:2030"></p-calendar>
+          <small class="p-error message_error" *ngIf="editUserForm.get('dateBirthday').errors?.required && (editUserForm.controls['dateBirthday'].dirty || editUserForm.controls['dateBirthday'].touched)">{{ 'birthday_required' | translate }}</small>
+          <small class="p-error message_error" *ngIf="editUserForm.get('dateBirthday').errors && editUserForm.get('dateBirthday').dirty && editUserForm.get('dateBirthday').errors.menorDeEdad">{{ 'age_invalid' | translate }}</small>
         </div>
       </div>
-      <div class="p-field p-grid">
-        <label class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{ 'roles' | translate }}</label>
-        <div *ngIf="this.roles">
-          <div class="p-col-12 p-md-10" *ngFor="let rol of this.roles" class="p-field-checkbox">
+    </fieldset>
+    <fieldset class="fielset_edit_user form-user-container">
+      <div class="legend_fieldset">
+        <legend>{{ 'roles' | translate }}</legend>
+      </div>
+      <!--<div class="p-field p-grid">
+        <label class="p-col-fixed" style="width: 200px;">{{ 'roles' | translate }}</label>
+        <div *ngIf="this.roles" class="p-formgroup-inline p-col">
+          <div *ngFor="let rol of this.roles" class="p-field-checkbox">
             <p-checkbox [inputId]="rol.rolName" [value]="rol.rolName" [formControl]="editUserForm.controls['roles']"></p-checkbox>
             <label [for]="rol.rolName">{{rol.rolName}}</label>
           </div>
         </div>
-      </div>
-      <div class="p-field p-grid group-buttons-edit-user">
-        <button pButton pRipple type="submit" label=" {{ 'save' | translate }}" icon="pi pi-check" class="buttonSave" [disabled]="valueUnchanged || editUserForm.invalid || formEdit.submitted" ></button>
-      </div>
+      </div>-->
+      <p-listbox [options]="roleList" formControlName="roles" multiple="multiple" checkbox="checkbox" [style]="{'margin-top':'10px','width':'100%'}" >
+      </p-listbox>
+    </fieldset>
+    <div class="group-buttons-edit-user">
+      <button pButton pRipple type="submit" class="buttonSave" label=" {{ 'save' | translate }}" icon="pi pi-check" [disabled]="valueUnchanged || editUserForm.invalid || formEdit.submitted" ></button>
     </div>
+
   </form>
 </div>
 
