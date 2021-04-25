@@ -142,5 +142,6 @@
   "activity_edit_message": "La actividad {{nameActivity}} ha sido añadida con éxito",
   "message-no-activities-match": "No hay actividades que coincidan con los criterios de búsqueda",
   "message-no-user-match": "No hay usuarios que coincidan con los criterios de búsqueda",
-  "message-no-activities-evaluate-match": "No se han encontrado entradas."
+  "message-no-activities-evaluate-match": "No se han encontrado entradas.",
+  "welcome": "¡Bienvenido!"
 }

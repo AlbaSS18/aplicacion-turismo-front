@@ -4,40 +4,45 @@
     <p-messages class="message_register_success" [(value)]="infoMessage">
     </p-messages>
   </div>
-  <div class="container-login-of-container">
-    <div class="left-container">
-      <div class="container-img-logo">
-        <img src="../../assets/images/diseno-logotipo-playa-vector-plantilla_56473-139.jpg" alt="Logo de la aplicación" id="img_logo"/>
-      </div>
-      <div class="container-login">
-        <p id="paragraph-login">Es una aplicación para recomendar sitios turísticosEs una aplicación para recomendar sitios turísticosEs una aplicación para recomendar sitios turísticosEs una aplicación para recomendar sitios turísticos</p>
-      </div>
+  <div class="p-grid">
+    <div class="p-col-12 p-md-12 p-lg-6 left-container">
+      <img src="../../assets/images/diseno-logotipo-playa-vector-plantilla_56473-139.jpg" alt="Logo de la aplicación" id="img_logo"/>
+      <h1>{{ 'welcome' | translate }}</h1>
+      <p id="paragraph-login">Aplicación de turismo basada en las preferencias del usuario</p>
     </div>
-    <div class="right-container">
-      <div class="container-img-logo">
-        <img id="img-icon-user" src="../../assets/images/user.png" alt="User icon"/>
-      </div>
-      <div class="container-form">
-        <form [formGroup]="loginForm" #myForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="p-col-12 p-md-12 p-lg-6 right-container">
+      <img id="img-icon-user" src="../../assets/images/user.png" alt="User icon"/>
+      <form [formGroup]="loginForm" #myForm="ngForm" (ngSubmit)="onSubmit()" class="p-fluid">
+        <div class="p-field">
           <span class="p-float-label">
             <input id="float-input-email" type="text" size="30" pInputText formControlName="email">
             <label for="float-input-email">Email</label>
           </span>
+        </div>
+        <div class="p-field">
           <p-message severity="error" text="{{ 'email_required' | translate }}"
                      *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].dirty"></p-message>
+        </div>
+        <div class="p-field">
           <span class="p-float-label">
             <input id="float-input-password" type="password" size="30" pPassword formControlName="password" promptLabel="{{ 'prompt_label' | translate }}"
                    weakLabel="{{ 'weak_label' | translate }}" mediumLabel="{{ 'medium_label' | translate }}" strongLabel="{{ 'strong_label' | translate }}">
             <label for="float-input-password">{{ 'password' | translate }}</label>
           </span>
+        </div>
+        <div class="p-field">
           <p-message severity="error" text="{{ 'password_required' | translate }}"
                      *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].dirty"></p-message>
+        </div>
+        <div class="p-field">
           <p-message id="message_error_login" severity="error" text="{{ 'data_incorrect' | translate }}"
                      *ngIf="myForm.submitted && isLoginFail"></p-message>
+        </div>
+        <div class="p-field">
           <button id="login_btn" pButton type="submit" icon="fas fa-sign-in-alt" label=" {{ 'log_in' | translate }}" [disabled]="loginForm.invalid"></button>
-        </form>
-        <a routerLink="/signup">{{ 'sign_up' | translate }}</a>
-      </div>
+        </div>
+      </form>
+      <a routerLink="/signup">{{ 'sign_up' | translate }}</a>
     </div>
   </div>
 </div>

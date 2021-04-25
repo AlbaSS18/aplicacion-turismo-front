@@ -142,5 +142,6 @@
   "activity_edit_message": "The activity {{nameActivity}} has been successfully edited",
   "message-no-activities-match": "There are no activities matching your search criteria",
   "message-no-user-match": "There are no users matching your search criteria",
-  "message-no-activities-evaluate-match": "No records found."
+  "message-no-activities-evaluate-match": "No records found.",
+  "welcome": "Welcome!"
 }
