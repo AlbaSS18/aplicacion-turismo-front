@@ -104,8 +104,14 @@ export class ListInterestComponent implements OnInit {
           this.messageService.add({key: 'interest', severity:'success', summary: this.translateService.instant('interest_delete'), detail: message });
           },
           (err) => {
-          var message = this.translateService.instant('error_delete_message');
-          this.messageService.add({key: 'interest', severity:'error', summary: this.translateService.instant('error'), detail: message });
+            if (err.status === 500){
+              var message = this.translateService.instant('interest_has_activities');
+              this.messageService.add({key: 'interest', severity:'error', summary: this.translateService.instant('error'), detail: message });
+            }
+            else{
+              var message = this.translateService.instant('error_delete_message');
+              this.messageService.add({key: 'interest', severity:'error', summary: this.translateService.instant('error'), detail: message });
+            }
           }
         );
       }

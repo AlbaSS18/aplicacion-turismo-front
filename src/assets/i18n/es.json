@@ -143,5 +143,7 @@
   "message-no-activities-match": "No hay actividades que coincidan con los criterios de búsqueda",
   "message-no-user-match": "No hay usuarios que coincidan con los criterios de búsqueda",
   "message-no-activities-evaluate-match": "No se han encontrado entradas.",
-  "welcome": "¡Bienvenido!"
+  "welcome": "¡Bienvenido!",
+  "city_has_activities": "La ciudad tiene actividades asociadas",
+  "interest_has_activities": "El interés tiene actividades asociadas"
 }

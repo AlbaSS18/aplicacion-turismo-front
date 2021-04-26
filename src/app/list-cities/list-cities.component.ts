@@ -93,8 +93,14 @@ export class ListCitiesComponent implements OnInit {
             this.messageService.add({key: 'city', severity:'success', summary: this.translateService.instant('city_delete'), detail: message });
           },
           (err) => {
-            var message = this.translateService.instant('error_delete_message');
-            this.messageService.add({key: 'city', severity:'error', summary: this.translateService.instant('error'), detail: message });
+            if (err.status === 500){
+              var message = this.translateService.instant('city_has_activities');
+              this.messageService.add({key: 'city', severity:'error', summary: this.translateService.instant('error'), detail: message });
+            }
+            else{
+              var message = this.translateService.instant('error_delete_message');
+              this.messageService.add({key: 'city', severity:'error', summary: this.translateService.instant('error'), detail: message });
+            }
           }
         );
       }

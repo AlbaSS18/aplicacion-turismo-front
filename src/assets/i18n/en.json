@@ -143,5 +143,7 @@
   "message-no-activities-match": "There are no activities matching your search criteria",
   "message-no-user-match": "There are no users matching your search criteria",
   "message-no-activities-evaluate-match": "No records found.",
-  "welcome": "Welcome!"
+  "welcome": "Welcome!",
+  "city_has_activities": "The city has associated activities",
+  "interest_has_activities": "The interest has associated activities"
 }
