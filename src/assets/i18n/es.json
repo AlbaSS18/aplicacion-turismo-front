@@ -139,7 +139,7 @@
   "message_file_required": "Por favor, seleccione una imagen",
   "error_activity_repeated": "Ya hay una actividad con ese nombre",
   "activity_edit": "Actividad modificada",
-  "activity_edit_message": "La actividad {{nameActivity}} ha sido añadida con éxito",
+  "activity_edit_message": "La actividad {{nameActivity}} ha sido modificada con éxito",
   "message-no-activities-match": "No hay actividades que coincidan con los criterios de búsqueda",
   "message-no-user-match": "No hay usuarios que coincidan con los criterios de búsqueda",
   "message-no-activities-evaluate-match": "No se han encontrado entradas.",
