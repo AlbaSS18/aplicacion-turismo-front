@@ -145,5 +145,6 @@
   "message-no-activities-evaluate-match": "No se han encontrado entradas.",
   "welcome": "¡Bienvenido!",
   "city_has_activities": "La ciudad tiene actividades asociadas",
-  "interest_has_activities": "El interés tiene actividades asociadas"
+  "interest_has_activities": "El interés tiene actividades asociadas",
+  "Formulario inválido": "Formulario inválido"
 }

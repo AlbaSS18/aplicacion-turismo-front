@@ -145,5 +145,6 @@
   "message-no-activities-evaluate-match": "No records found.",
   "welcome": "Welcome!",
   "city_has_activities": "The city has associated activities",
-  "interest_has_activities": "The interest has associated activities"
+  "interest_has_activities": "The interest has associated activities",
+  "Formulario inválido": "Invalid form"
 }
