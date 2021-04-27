@@ -9,6 +9,7 @@ import {RolService} from '../services/rol/rol.service';
 import {TranslateService} from '@ngx-translate/core';
 import {forkJoin} from 'rxjs';
 import {validadorAgeGreaterThan} from '../validators/validatorGreaterThan.directive';
+import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.directive';
 
 @Component({
   selector: 'app-edit-user-admin',
@@ -38,7 +39,7 @@ export class EditUserAdminComponent implements OnInit {
   ngOnInit(): void {
     this.userId = this.activatedRoute.snapshot.paramMap.get('id');
     this.editUserForm = this.fb.group({
-      userName: ['', [Validators.required]],
+      userName: ['', [Validators.required, validadorNonwhiteSpace()]],
       dateBirthday: ['', [Validators.required, validadorAgeGreaterThan()]],
       roles: ['', Validators.required]
     });
