@@ -5,6 +5,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import {catchError, map, mergeMap} from 'rxjs/operators';
 import {TranslateService} from '@ngx-translate/core';
+import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.directive';
 
 @Component({
   selector: 'app-list-cities',
@@ -31,11 +32,11 @@ export class ListCitiesComponent implements OnInit {
 
   ngOnInit(): void {
     this.formAddCity = this.formBuilder.group({
-      name: ['', Validators.required]
+      name: ['', [Validators.required, validadorNonwhiteSpace()]]
     });
     this.formEditCity = this.formBuilder.group({
       id: ['', Validators.required],
-      name: ['', Validators.required]
+      name: ['', [Validators.required, validadorNonwhiteSpace()]]
     });
     this.loadCities();
   }

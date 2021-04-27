@@ -4,6 +4,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import {map, mergeMap} from 'rxjs/operators';
 import {TranslateService} from '@ngx-translate/core';
+import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.directive';
 
 @Component({
   selector: 'app-list-interest',
@@ -30,11 +31,11 @@ export class ListInterestComponent implements OnInit {
 
   ngOnInit(): void {
     this.formAddInterest = this.formBuilder.group({
-      name: ['', Validators.required]
+      name: ['', [Validators.required, validadorNonwhiteSpace()]]
     });
     this.formEditInterest = this.formBuilder.group({
       id: ['', Validators.required],
-      name: ['', Validators.required]
+      name: ['', [Validators.required, validadorNonwhiteSpace()]]
     });
     this.loadInterest();
   }
@@ -43,9 +44,6 @@ export class ListInterestComponent implements OnInit {
     this.interestService.getInterests().subscribe(
       data => {
         this.interest = data;
-      },
-      err => {
-        console.log(err);
       }
     );
   }
