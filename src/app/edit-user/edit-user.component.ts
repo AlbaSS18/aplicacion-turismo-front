@@ -9,6 +9,7 @@ import {validadorAgeGreaterThan} from '../validators/validatorGreaterThan.direct
 import {MessageService, SelectItem} from 'primeng/api';
 import {validadorPriorityNumberOfInterest} from '../validators/validatorPriorityNumber.directive';
 import {LocalStorageService} from '../services/local-storage/local-storage.service';
+import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.directive';
 
 @Component({
   selector: 'app-edit-user',
@@ -34,7 +35,7 @@ export class EditUserComponent implements OnInit {
     this.editUserProfile = this.fb.group({
       dateBirthday: ['', [Validators.required, validadorAgeGreaterThan()]],
       interest: this.fb.array([]),
-      userName: ['', Validators.required]
+      userName: ['', [Validators.required, validadorNonwhiteSpace()]]
     });
     this.userService.getUsers().pipe(
       map (data => data.filter(p => p.email === this.localStorageService.getEmailUser())),
@@ -82,8 +83,8 @@ export class EditUserComponent implements OnInit {
       this.infoMessage = [];
       for (let message of aux){
         var mAux = message;
-        mAux.summary = this.translateService.instant("user_profile_edit");
-        mAux.detail = this.translateService.instant("user_profile_edit_message");
+        mAux.summary = this.translateService.instant(mAux.keySummary);
+        mAux.detail = this.translateService.instant(mAux.keyDetail);
         this.infoMessage.push(mAux);
       }
     });
@@ -92,7 +93,7 @@ export class EditUserComponent implements OnInit {
         this.valueUnchanged = true;
         var message = this.translateService.instant('user_profile_edit_message');
         this.infoMessage = [
-          {key: 'edit_profile_user', severity:'success', summary: this.translateService.instant('user_profile_edit'), detail: message}
+          {key: 'edit_profile_user', severity:'success', summary: this.translateService.instant('user_profile_edit'), detail: message, keySummary: 'user_profile_edit' , keyDetail: 'user_profile_edit_message'}
           ];
       }),
       mergeMap( () => {
@@ -105,7 +106,7 @@ export class EditUserComponent implements OnInit {
       (err) => {
         var message = this.translateService.instant('error_delete_message');
         this.infoMessage = [
-          { key: 'edit_profile_user', severity:'error', summary: this.translateService.instant('error'), detail: message}
+          { key: 'edit_profile_user', severity:'error', summary: this.translateService.instant('error'), detail: message, keySummary: 'error' , keyDetail: 'error_delete_message'}
         ];
       }
     );
