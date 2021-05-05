@@ -83,7 +83,7 @@
   "user_edit_message": "The user {{nameUser}} has been successfully edited",
   "user_edit": "User edit",
   "password_not_same": "Passwords do not match",
-  "age_invalid": "Age should be greater than 18",
+  "age_invalid": "You should be at least 18 years old",
   "sign_up_successful_message_detail": "Registration Successful! Please Login!",
   "sign_up_successful_message_summary": "Registration completed",
   "add_role": "Add role",
