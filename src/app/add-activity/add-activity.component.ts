@@ -10,6 +10,7 @@ import 'leaflet/dist/images/marker-icon-2x.png';
 import {ActivityService} from '../services/activity/activity.service';
 import {Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
+import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.directive';
 
 @Component({
   selector: 'app-add-activity',
@@ -37,8 +38,8 @@ export class AddActivityComponent implements OnInit {
 
   ngOnInit(): void {
     this.formAddActivity = this.formBuilder.group({
-      name: ['', Validators.required],
-      description: ['', [Validators.required]],
+      name: ['', [Validators.required, validadorNonwhiteSpace()]],
+      description: ['', [Validators.required, validadorNonwhiteSpace()]],
       latitude: ['', [Validators.required]],
       longitude: ['', [Validators.required]],
       city: ['', [Validators.required]],
@@ -82,9 +83,6 @@ export class AddActivityComponent implements OnInit {
         data.forEach( i => {
           this.interest.push({label: i.nameInterest, value: i.nameInterest});
         });
-      },
-      err => {
-        console.log(err);
       }
     );
   }

@@ -10,6 +10,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import * as L from 'leaflet';
 import {DomSanitizer} from '@angular/platform-browser';
 import {TranslateService} from '@ngx-translate/core';
+import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.directive';
 
 @Component({
   selector: 'app-edit-activities',
@@ -44,8 +45,8 @@ export class EditActivitiesComponent implements OnInit {
     this.activityId = this.activatedRoute.snapshot.paramMap.get('id');
 
     this.editActivitiesForm = this.fb.group({
-      name: ['', Validators.required],
-      description: ['', Validators.required],
+      name: ['', [Validators.required, validadorNonwhiteSpace()]],
+      description: ['', [Validators.required, validadorNonwhiteSpace()]],
       latitude: ['', Validators.required],
       longitude: ['', Validators.required],
       city: ['', Validators.required],

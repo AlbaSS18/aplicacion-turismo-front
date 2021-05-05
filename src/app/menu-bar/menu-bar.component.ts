@@ -34,7 +34,7 @@ export class MenuBarComponent implements OnInit {
       if (this.roles.includes("ROLE_ADMIN")){
         this.authority = 'admin';
       }
-      else{
+      else {
         this.authority = 'user';
       }
     }
