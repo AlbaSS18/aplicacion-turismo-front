@@ -1,31 +1,32 @@
 @import "~bootstrap/scss/bootstrap";
-//@import "~bootstrap/dist/css/bootstrap.css";
 
 :host ::ng-deep .menu-bar {
   min-width: 800px;
   border-radius: 3px;
 }
 
-.part-right{
-  float: right;
-}
-
-.container-name{
+/*.container-name{
   display: flex;
-  justify-content: center; /* align horizontal */
-  align-items: center; /* align vertical */
+  justify-content: center; !* align horizontal *!
+  align-items: center; !* align vertical *!
+}*/
+
+.navbar-light .navbar-nav .nav-link:hover{
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-// :host ::ng-deep .menu-bar,
-// :host ::ng-deep .p-menubar .p-submenu-list{
-//   background-color: black;
-// }
+.navbar-light .navbar-nav .nav-link.active{
+  color: #2196F3;
+}
 
-// :host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text,
-// :host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon,
-// :host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-submenu-icon,
-// :host ::ng-deep .p-menubar .p-menubar-button{
-//   color: white;
-// };
+.navbar-light .navbar-nav .nav-link{
+  color: rgba(0,0,0, 0.9);
+}
+
+.navbar-nav .nav-link{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 
 

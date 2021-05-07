@@ -34,7 +34,7 @@
           <a class="dropdown-item" (click)="switchLang('en')"><img src="../../assets/images/flag_english.png" alt="" width="20" height="20"> {{ 'english' | translate }}</a>
         </div>
       </li>
-      <div class="container-name" *ngIf="isLogin">
+      <div *ngIf="isLogin">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUserProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-user-circle"></i>
