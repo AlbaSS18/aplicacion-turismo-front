@@ -18,6 +18,9 @@
             <div class="activity-recommendation-list-detail">
               <div class="activity-name">{{activity.name}}</div>
               <div class="activity-description">{{activity.description}}</div>
+              <div class="activity-average"><span class="fas fa-star"></span>
+                <span class="average"> {{activity.average}}/5</span>
+              </div>
               <button pButton type="button" label="{{ 'rate_activity' | translate }}" class="p-button-link" (click)="openPanelToRating($event, activity)"></button>
             </div>
           </div>

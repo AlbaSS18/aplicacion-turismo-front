@@ -17,4 +17,5 @@ export class Activity {
 
 export class ActivityRecommended extends Activity{
   score: number;
+  average: number;
 }
