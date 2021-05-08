@@ -8,15 +8,15 @@
       <div class="p-fluid left_container">
         <div class="form-edit-activity-container">
           <div class="p-field">
-            <label for="field-name">{{ 'name_activity' | translate }}*</label>
+            <label for="field-name">{{ 'name_activity' | translate }}*:</label>
             <input id="field-name" type="text" pInputText formControlName="name">
           </div>
           <div class="p-field">
-            <label for="field-description">{{ 'description_activity' | translate }}*</label>
+            <label for="field-description">{{ 'description_activity' | translate }}*:</label>
             <textarea id="field-description" pInputTextarea formControlName="description" [rows]="4" [cols]="30" autoResize="autoResize"></textarea>
           </div>
           <div class="p-field">
-            <label for="field-interest">{{ 'interest' | translate }}*</label>
+            <label for="field-interest">{{ 'interest' | translate }}*:</label>
             <p-dropdown id="field-interest" [options]="interest" formControlName="interest" appendTo="body">
             </p-dropdown>
           </div>

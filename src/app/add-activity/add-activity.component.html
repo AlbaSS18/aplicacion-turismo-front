@@ -8,20 +8,20 @@
       <div class="p-fluid input_container">
         <div class="grid-container">
           <div class="p-field">
-            <label for="field-name-Activity">{{ 'name_activity' | translate }}*</label>
+            <label for="field-name-Activity">{{ 'name_activity' | translate }}*:</label>
             <input id="field-name-Activity" type="text" pInputText formControlName="name">
           </div>
           <div class="p-field">
-            <label for="field-description">{{ 'description_activity' | translate }}*</label>
+            <label for="field-description">{{ 'description_activity' | translate }}*:</label>
             <textarea id="field-description" pInputTextarea formControlName="description" [rows]="4" [cols]="30" autoResize="autoResize"></textarea>
           </div>
           <div class="p-field">
-            <label for="field-interest">{{ 'interest' | translate }}*</label>
+            <label for="field-interest">{{ 'interest' | translate }}*:</label>
             <p-dropdown id="field-interest" [options]="interest" formControlName="nameInterest" appendTo="body">
             </p-dropdown>
           </div>
           <div class="p-field">
-            <label>{{ 'image' | translate }}*</label>
+            <label>{{ 'image' | translate }}*:</label>
             <p-fileUpload name="myfile[]" accept="image/jpeg, image/png" maxFileSize="2000000" (onSelect)="dealWithFiles($event)" (onRemove)="deleteFiles($event)" (onClear)="deleteFiles($event)"
                           invalidFileTypeMessageDetail="{{ 'invalid_file_message_detail' | translate:{formats:'{0}'} }} "
                           invalidFileTypeMessageSummary="{{ 'invalid_type_message_summary' | translate:{nameFile:'{0}'} }}"

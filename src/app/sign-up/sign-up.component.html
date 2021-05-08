@@ -5,7 +5,7 @@
     <div *ngIf="!openSecondForm; else showSecondForm">
       <div class="form-signup-container p-fluid p-formgrid p-grid">
         <div class="p-field p-col-12 p-md-6">
-          <label for="field-name">{{ 'username' | translate }}*</label>
+          <label for="field-name">{{ 'username' | translate }}*:</label>
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="fas fa-user" style="line-height: 1.25;"></i></span>
             <input id="field-name" type="text" pInputText placeholder="{{ 'username' | translate }}" formControlName="name">
@@ -16,7 +16,7 @@
           </div>
         </div>
         <div class="p-field p-col-12 p-md-6">
-          <label for="field-birth">{{ 'date_birth' | translate }}*</label>
+          <label for="field-birth">{{ 'date_birth' | translate }}*:</label>
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="far fa-calendar-alt" style="line-height: 1.25;"></i></span>
             <p-calendar appendTo="body" inputId="field-birth" formControlName="dateBirthday" placeholder="dd/mm/yyyy" [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:2030" class="input-birth" dateFormat="dd/mm/yy"></p-calendar>
@@ -30,7 +30,7 @@
 
         </div>
         <div class="p-field p-col-12">
-          <label for="field-email">Email*</label>
+          <label for="field-email">Email*:</label>
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="fas fa-at" style="line-height: 1.25;"></i></span>
             <input id="field-email" type="text" pInputText placeholder="Email" formControlName="email">
@@ -41,7 +41,7 @@
           </div>
         </div>
         <div class="p-field p-col-12 p-md-6">
-          <label for="field-password">{{ 'password' | translate }}*</label>
+          <label for="field-password">{{ 'password' | translate }}*:</label>
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="fas fa-lock" style="line-height: 1.25;"></i></span>
             <input id="field-password" type="password" pPassword formControlName="password" placeholder="{{ 'password' | translate }}"
@@ -56,7 +56,7 @@
         </div>
 
         <div class="p-field p-col-12 p-md-6">
-          <label for="field-password-repeat">{{ 'repeat_password' | translate }}*</label>
+          <label for="field-password-repeat">{{ 'repeat_password' | translate }}*:</label>
           <div class="p-inputgroup">
             <span class="p-inputgroup-addon"><i class="fas fa-lock" style="line-height: 1.25;"></i></span>
             <input id="field-password-repeat" type="password" pPassword formControlName="repeatPassword" placeholder="{{ 'repeat_password' | translate }}"

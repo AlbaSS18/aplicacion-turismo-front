@@ -5,10 +5,10 @@
   <form (ngSubmit)="updateUserProfile()" [formGroup]="editUserProfile">
     <fieldset class="fieldset">
       <div class="legend-container">
-        <legend>{{ 'personal_info' | translate }}:</legend>
+        <legend>{{ 'personal_info' | translate }}</legend>
       </div>
       <div class="p-field p-grid">
-        <label for="username" class="p-col-fixed" style="width:200px">{{'username' | translate}}:</label>
+        <label for="username" class="p-col-fixed" style="width:200px">{{'username' | translate}}*:</label>
         <div class="p-col">
           <input id="username" type="text" pInputText formControlName="userName"/>
           <p-message class="message_error_username" severity="error" text="{{ 'name_required' | translate }}"
@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="p-field p-grid">
-        <label for="age" class="p-col-fixed" style="width:200px">{{ 'date_birth' | translate }}:</label>
+        <label for="age" class="p-col-fixed" style="width:200px">{{ 'date_birth' | translate }}*:</label>
         <div class="p-col">
           <p-calendar appendTo="body" formControlName="dateBirthday" inputId="age" dateFormat="dd/mm/yy"
                       [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:2030" ></p-calendar>
@@ -30,7 +30,7 @@
 
     <fieldset class="fieldset">
       <div class="legend-container">
-        <legend>{{ 'interests' | translate }}:</legend>
+        <legend>{{ 'interests' | translate }}</legend>
       </div>
       <div class="p-fluid form-edit-profile-container">
         <div formArrayName="interest" *ngFor="let item of interest.controls; let i = index;" class="p-field p-grid">

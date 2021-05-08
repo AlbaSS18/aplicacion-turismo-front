@@ -118,7 +118,7 @@
     "dayNamesShort": ["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"]
   },
   "message_valuation_one": "Por favor, valore de 0 (lo que menos) a 10 (lo que más) cada uno de los intereses mostrados a continuación para mejorar las recomendaciones.",
-  "message_valuation_two": "Si lo desea, podrá modificar estas valoraciones más tarde, en la sección \"Tú perfil\"",
+  "message_valuation_two": "Si lo desea, podrá modificar estas valoraciones más tarde, en la sección \"Tú perfil\".",
   "message_info_map": "Utilice el mapa para buscar la dirección de la actividad",
   "write_address": "Escriba la dirección...",
   "not_found_address": "No se han encontrado direcciones",

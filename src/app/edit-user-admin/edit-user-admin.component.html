@@ -8,14 +8,14 @@
         <legend>{{ 'personal_info' | translate }}</legend>
       </div>
       <div class="p-field p-grid">
-        <label for="float-input-username" class="p-col-fixed" style="width: 200px;">{{ 'username' | translate }}</label>
+        <label for="float-input-username" class="p-col-fixed" style="width: 200px;">{{ 'username' | translate }}*:</label>
         <div class="p-col">
           <input id="float-input-username" type="text" pInputText formControlName="userName">
           <small class="p-error message_error" *ngIf="editUserForm.controls['userName'].invalid&&(editUserForm.controls['userName'].dirty || editUserForm.controls['userName'].touched)">{{ 'name_required' | translate }}</small>
         </div>
       </div>
       <div class="p-field p-grid">
-        <label for="float-input-birthday" class="p-col-fixed" style="width: 200px;">{{ 'date_birth' | translate }}</label>
+        <label for="float-input-birthday" class="p-col-fixed" style="width: 200px;">{{ 'date_birth' | translate }}*:</label>
         <div class="p-col">
           <p-calendar inputId="float-input-birthday" formControlName="dateBirthday" dateFormat="dd/mm/yy" [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:2030"></p-calendar>
           <small class="p-error message_error" *ngIf="editUserForm.get('dateBirthday').errors?.required && (editUserForm.controls['dateBirthday'].dirty || editUserForm.controls['dateBirthday'].touched)">{{ 'birthday_required' | translate }}</small>
