@@ -93,6 +93,10 @@ export class RecommendationMapComponent implements OnInit {
           });
           this.markerList.push(marker);
         });
+
+        setTimeout(() => {
+          this.map.invalidateSize();
+        }, 300);
     });
   }
 
