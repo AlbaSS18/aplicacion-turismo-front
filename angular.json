@@ -21,7 +21,8 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/index.js"
             ],
             "styles": [
               "node_modules/primeng/resources/themes/saga-blue/theme.css",
