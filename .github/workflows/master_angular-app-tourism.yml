@@ -8,6 +8,12 @@ on:
     branches:
       - master
 
+env:
+  AZURE_WEBAPP_NAME: angular-app-tourism    # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: './dist/your-app-name'      # set this to the path to your web app project
+  NODE_VERSION: '12.x'                # set this to the node version to use
+
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -34,5 +40,5 @@ jobs:
         app-name: angular-app-tourism
         slot-name: Production
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8F997102444249A78B40A156C4FA3ECC }}
-        package: .
+        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
