@@ -50,8 +50,9 @@ export class RecommendationMapComponent implements OnInit {
   ngOnInit(): void {
 
     this.map = L.map('mapActivityRecommendation', {
-      center: [ 43.333333, -6 ],
-      zoom: 8
+      center: [ 43.333333, -5.826187 ],
+      zoom: 8.75,
+      zoomSnap: 0.25
     });
 
     const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

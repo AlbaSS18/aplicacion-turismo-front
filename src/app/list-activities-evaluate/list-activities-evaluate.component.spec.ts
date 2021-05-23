@@ -9,6 +9,7 @@ import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {TagModule} from 'primeng/tag';
 import {FormsModule} from '@angular/forms';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('ListActivitiesEvaluateComponent', () => {
   let component: ListActivitiesEvaluateComponent;
@@ -24,7 +25,8 @@ describe('ListActivitiesEvaluateComponent', () => {
         DropdownModule,
         RouterTestingModule,
         TagModule,
-        FormsModule
+        FormsModule,
+        HttpClientTestingModule
       ]
     })
     .compileComponents();

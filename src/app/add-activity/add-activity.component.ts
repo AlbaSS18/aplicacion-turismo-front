@@ -21,7 +21,7 @@ export class AddActivityComponent implements OnInit {
 
   formAddActivity: FormGroup;
   interest: SelectItem[];
-  files;
+  files = null;
   noFiles: boolean = true;
 
   infoMessage = [];
@@ -58,7 +58,7 @@ export class AddActivityComponent implements OnInit {
       errorMessage: 'No se han encontrado direcciones'
     };
 
-    var control = L.Control.geocoder(opciones).on('markgeocode', function(e) {
+    var control = L.Control.geocoder(opciones).on('markgeocode', function (e) {
 
       var latitud = e.geocode.center.lat;
       this.formAddActivity.controls['latitude'].setValue(latitud);
@@ -93,7 +93,7 @@ export class AddActivityComponent implements OnInit {
   }
 
   deleteFiles(event){
-    this.files = [];
+    this.files = null;
     this.noFiles = true;
   }
 

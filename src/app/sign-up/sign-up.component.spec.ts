@@ -19,7 +19,7 @@ import {MockAuthService} from '../services/auth/auth-service-mock';
 import {InterestService} from '../services/interest/interest.service';
 import {MockInterestService} from '../services/interest/interest-service-mock';
 
-fdescribe('SignUpComponent', () => {
+describe('SignUpComponent', () => {
   let component: SignUpComponent;
   let fixture: ComponentFixture<SignUpComponent>;
 
@@ -64,7 +64,7 @@ fdescribe('SignUpComponent', () => {
     expect(name.valid).toBeFalsy();
   });
 
-  fit('should submit the form', () => {
+  it('should submit the form', () => {
     expect(component.formGroup.valid).toBeFalsy();
     component.formGroup.controls['name'].setValue('Unit test');
     component.formGroup.controls['email'].setValue('unitTest@email.com');

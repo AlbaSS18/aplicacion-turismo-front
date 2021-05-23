@@ -6,7 +6,7 @@ import {TranslateModule} from '@ngx-translate/core';
 import {ButtonModule} from 'primeng/button';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 
-describe('InformationActivitiesComponent', () => {
+fdescribe('InformationActivitiesComponent', () => {
   let component: InformationActivitiesComponent;
   let fixture: ComponentFixture<InformationActivitiesComponent>;
 

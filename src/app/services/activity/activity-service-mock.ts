@@ -51,5 +51,9 @@ export class MockActivityService extends ActivityService {
     return of();
   }
 
+  addActivity(formData): Observable<any> {
+    return of();
+  }
+
 
 }
