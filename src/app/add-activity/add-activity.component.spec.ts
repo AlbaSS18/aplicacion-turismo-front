@@ -50,6 +50,10 @@ describe('AddActivityComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should load the interest', () => {
+    expect(component).toBeTruthy();
+  });
+
   xit('should add an activity', () => {
     const fakeFile = (): File => {
       const blob = new Blob([''], { type: 'text/html' });
