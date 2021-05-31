@@ -3,7 +3,7 @@ import {TestBed} from '@angular/core/testing';
 import {ActivityService} from './activity.service';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 
-fdescribe('ActivityService', () => {
+describe('ActivityService', () => {
   let service: ActivityService;
   let httpTestingController: HttpTestingController;
 

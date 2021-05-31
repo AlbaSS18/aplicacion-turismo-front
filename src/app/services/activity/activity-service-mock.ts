@@ -47,8 +47,10 @@ export class MockActivityService extends ActivityService {
   }
 
   deleteActivity(id): Observable<any> {
-    console.log(id)
-    return of();
+    this.listActivities = this.listActivities.filter(p => p.id !== id);
+    return of({
+      mensaje: 'La actividad ha sido eliminada'
+    });
   }
 
   addActivity(formData): Observable<any> {
