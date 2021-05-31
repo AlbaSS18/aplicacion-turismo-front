@@ -4,7 +4,7 @@ import { ListUserComponent } from './list-user.component';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {ToolbarModule} from 'primeng/toolbar';
 import {TableModule} from 'primeng/table';
-import {ConfirmationService, MessageService} from 'primeng/api';
+import {Confirmation, ConfirmationService, MessageService} from 'primeng/api';
 import {RouterTestingModule} from '@angular/router/testing';
 import {TabViewModule} from 'primeng/tabview';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
@@ -14,10 +14,12 @@ import {ToastModule} from 'primeng/toast';
 import {User} from '../models/user';
 import {UserService} from '../services/user/user.service';
 import {MockUserService} from '../services/user/user-service-mock';
+import {LocalStorageService} from '../services/local-storage/local-storage.service';
 
-describe('ListUserComponent', () => {
+fdescribe('ListUserComponent', () => {
   let component: ListUserComponent;
   let fixture: ComponentFixture<ListUserComponent>;
+  let localService: LocalStorageService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -39,6 +41,8 @@ describe('ListUserComponent', () => {
       ]
     })
     .compileComponents();
+
+    localService = TestBed.inject(LocalStorageService);
   });
 
   beforeEach(() => {
@@ -52,31 +56,22 @@ describe('ListUserComponent', () => {
   });
 
   it('should return all users', () => {
+    spyOn(localService, 'getEmailUser').and.returnValue(["ROLE_USER"]);
     expect(component.users.length).toBe(1);
-  });
-
-  it('should add a user', () => {
-    const newUser: User = {
-      id: 1,
-      userName: 'test',
-      email: 'test@email.com',
-      dateBirthday: new Date(),
-      roles: ['ROLE_ADMIN', 'ROLE_USER']
-    };
-    component.users.push(newUser);
-    expect(component.users.length).toBe(2);
   });
 
   it('should remove the user', () => {
-    const newUser: User = {
+    let confirmService = fixture.debugElement.injector.get(ConfirmationService);
+    spyOn(confirmService, 'confirm').and.callFake((confirmation: Confirmation) => { return confirmation.accept(); });
+    const deleteUser: User = {
       id: 1,
       userName: 'test',
       email: 'test@email.com',
       dateBirthday: new Date(),
       roles: ['ROLE_ADMIN', 'ROLE_USER']
     };
-    component.confirmDelete(newUser);
-    expect(component.users.length).toBe(1);
+    component.confirmDelete(deleteUser);
+    expect(component.users.length).toBe(0);
   });
 
 

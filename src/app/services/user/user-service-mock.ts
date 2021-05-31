@@ -13,6 +13,13 @@ export class MockUserService extends UserService {
       email: 'admin@email.com',
       userName: 'Admin',
       roles: ['ROLE_USER', 'ROLE_ADMIN'],
+    },
+    {
+      id: 2,
+      dateBirthday: new Date('1998-12-18T00:00:00.000+00:00'),
+      email: 'alba@email.com',
+      userName: 'Alba',
+      roles: ['ROLE_USER'],
     }
   ];
 
@@ -21,7 +28,10 @@ export class MockUserService extends UserService {
   }
 
   deleteUser(id): Observable<any> {
-    return of();
+    this.listUsers = this.listUsers.filter(us => us.id !== id);
+    return of({
+      mensaje: 'El usuario se ha eliminado'
+    });
   }
 
 
