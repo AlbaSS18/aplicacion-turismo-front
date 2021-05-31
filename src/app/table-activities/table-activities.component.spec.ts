@@ -2,7 +2,7 @@ import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing'
 
 import { TableActivitiesComponent } from './table-activities.component';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {ConfirmationService, MessageService, SharedModule} from 'primeng/api';
+import {Confirmation, ConfirmationService, MessageService, SharedModule} from 'primeng/api';
 import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ActivityService} from '../services/activity/activity.service';
 import {CityService} from '../services/city/city.service';
@@ -25,7 +25,7 @@ import {DebugElement} from '@angular/core';
 import {by, By} from 'protractor';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-xdescribe('TableActivitiesComponent', () => {
+describe('TableActivitiesComponent', () => {
   let component: TableActivitiesComponent;
   let fixture: ComponentFixture<TableActivitiesComponent>;
   let rootElement: DebugElement;
@@ -79,7 +79,7 @@ xdescribe('TableActivitiesComponent', () => {
     expect(component.activities.length).toBe(2);
   });
 
-  it('should remove the activity', fakeAsync(() => {
+  it('should remove the activity', () => {
     var activityToRemove = {
       id: 1,
       name: 'Universidad Laboral',
@@ -97,11 +97,10 @@ xdescribe('TableActivitiesComponent', () => {
       }
     };
 
-    /*component.confirm(activityToRemove);
+    let confirmService = fixture.debugElement.injector.get(ConfirmationService);
+    spyOn(confirmService, 'confirm').and.callFake((confirmation: Confirmation) => { return confirmation.accept(); });
+    component.confirm(activityToRemove);
     fixture.detectChanges();
-    fixture.debugElement.nativeElement.querySelector('.p-confirm-dialog-accept').click();
-    tick();
-    fixture.detectChanges();
-    expect(component.activities.length).toBe(1);*/
-  }));
+    expect(component.activities.length).toBe(1);
+  });
 });
