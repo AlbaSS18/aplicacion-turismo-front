@@ -18,10 +18,12 @@ import {AuthService} from '../services/auth/auth.service';
 import {MockAuthService} from '../services/auth/auth-service-mock';
 import {InterestService} from '../services/interest/interest.service';
 import {MockInterestService} from '../services/interest/interest-service-mock';
+import {Router} from '@angular/router';
 
 describe('SignUpComponent', () => {
   let component: SignUpComponent;
   let fixture: ComponentFixture<SignUpComponent>;
+  let router: Router;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -43,6 +45,8 @@ describe('SignUpComponent', () => {
       ]
     })
     .compileComponents();
+
+    router = TestBed.inject(Router);
   });
 
   beforeEach(() => {
@@ -55,17 +59,20 @@ describe('SignUpComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should load the interests', () => {
+    expect(component.interestArray.length).toBe(2);
+  });
+
+  it('should add two forms groups to formArray', () => {
+    expect(component.interest.length).toBe(2);
+  });
+
   it('should be invalid the form when empty', () => {
     expect(component.formGroup.valid).toBeFalsy();
   });
 
-  it('should be valid the email field', () => {
-    let name = component.formGroup.get('name');
-    expect(name.valid).toBeFalsy();
-  });
-
   it('should submit the form', () => {
-    expect(component.formGroup.valid).toBeFalsy();
+    const navigateSpy = spyOn(router, 'navigate');
     component.formGroup.controls['name'].setValue('Unit test');
     component.formGroup.controls['email'].setValue('unitTest@email.com');
     component.formGroup.controls['dateBirthday'].setValue(new Date('1998-07-18'));
@@ -84,6 +91,25 @@ describe('SignUpComponent', () => {
 
     component.onSubmit();
 
-    expect(component.isRegisterFail).toBe(false);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledWith(['login']);
+  });
+
+
+  it('should show the second panel when first part is valid', () => {
+    expect(component.openSecondForm).toBe(false);
+    component.formGroup.controls['name'].setValue('Unit test');
+    component.formGroup.controls['email'].setValue('unitTest@email.com');
+    component.formGroup.controls['dateBirthday'].setValue(new Date('1998-07-18'));
+    component.formGroup.controls['password'].setValue('1234567');
+    component.formGroup.controls['repeatPassword'].setValue('1234567');
+    component.continueSecondPartForm();
+    expect(component.openSecondForm).toBe(true);
+  });
+
+  it('should display the error message', () => {
+    expect(component.isContinueFail).toBe(false);
+    component.continueSecondPartForm();
+    expect(component.isContinueFail).toBe(true);
   });
 });
