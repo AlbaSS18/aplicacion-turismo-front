@@ -36,8 +36,7 @@ export class ListUserComponent implements OnInit {
       { field: 'roles', header: 'Role'}
     ];
     this.userService.getUsers().subscribe(response => {
-      this.users = response;
-      this.users = this.users.filter(user => user.email !== this.localStorageService.getEmailUser());
+      this.users = response.filter(user => user.email !== this.localStorageService.getEmailUser());
     });
   }
 

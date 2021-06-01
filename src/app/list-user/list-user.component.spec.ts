@@ -16,7 +16,7 @@ import {UserService} from '../services/user/user.service';
 import {MockUserService} from '../services/user/user-service-mock';
 import {LocalStorageService} from '../services/local-storage/local-storage.service';
 
-fdescribe('ListUserComponent', () => {
+describe('ListUserComponent', () => {
   let component: ListUserComponent;
   let fixture: ComponentFixture<ListUserComponent>;
   let localService: LocalStorageService;
@@ -37,7 +37,8 @@ fdescribe('ListUserComponent', () => {
       providers: [
         ConfirmationService,
         MessageService,
-        {provide: UserService, useClass: MockUserService}
+        {provide: UserService, useClass: MockUserService},
+        LocalStorageService
       ]
     })
     .compileComponents();
@@ -46,6 +47,7 @@ fdescribe('ListUserComponent', () => {
   });
 
   beforeEach(() => {
+    spyOn(localService, 'getEmailUser').and.returnValue('alba@email.com');
     fixture = TestBed.createComponent(ListUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -56,7 +58,6 @@ fdescribe('ListUserComponent', () => {
   });
 
   it('should return all users', () => {
-    spyOn(localService, 'getEmailUser').and.returnValue(["ROLE_USER"]);
     expect(component.users.length).toBe(1);
   });
 
@@ -65,9 +66,9 @@ fdescribe('ListUserComponent', () => {
     spyOn(confirmService, 'confirm').and.callFake((confirmation: Confirmation) => { return confirmation.accept(); });
     const deleteUser: User = {
       id: 1,
-      userName: 'test',
-      email: 'test@email.com',
-      dateBirthday: new Date(),
+      userName: 'Admin',
+      email: 'admin@email.com',
+      dateBirthday: new Date('1998-12-18T00:00:00.000+00:00'),
       roles: ['ROLE_ADMIN', 'ROLE_USER']
     };
     component.confirmDelete(deleteUser);
