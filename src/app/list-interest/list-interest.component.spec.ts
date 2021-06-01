@@ -9,12 +9,16 @@ import {ButtonModule} from 'primeng/button';
 import {CardModule} from 'primeng/card';
 import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 import {RouterTestingModule} from '@angular/router/testing';
-import {ConfirmationService, MessageService} from 'primeng/api';
+import {Confirmation, ConfirmationService, MessageService} from 'primeng/api';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ToastModule} from 'primeng/toast';
 import {TranslateModule} from '@ngx-translate/core';
+import {AuthService} from '../services/auth/auth.service';
+import {MockAuthService} from '../services/auth/auth-service-mock';
+import {InterestService} from '../services/interest/interest.service';
+import {MockInterestService} from '../services/interest/interest-service-mock';
 
-describe('ListInterestComponent', () => {
+fdescribe('ListInterestComponent', () => {
   let component: ListInterestComponent;
   let fixture: ComponentFixture<ListInterestComponent>;
 
@@ -36,7 +40,8 @@ describe('ListInterestComponent', () => {
       declarations: [ ListInterestComponent, MenuBarComponent ],
       providers: [
         ConfirmationService,
-        MessageService
+        MessageService,
+        {provide: InterestService, useClass: MockInterestService},
       ]
     })
     .compileComponents();
@@ -50,5 +55,30 @@ describe('ListInterestComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should load the interest', () => {
+    expect(component.interest.length).toBe(2);
+  });
+
+  it('should delete the interest', () => {
+    let confirmService = fixture.debugElement.injector.get(ConfirmationService);
+    spyOn(confirmService, 'confirm').and.callFake((confirmation: Confirmation) => { return confirmation.accept(); });
+    var interest = {
+      id: 2,
+      nameInterest: 'Iglesias'
+    };
+    component.deleteInterest(interest);
+    expect(component.interest.length).toBe(1);
+  });
+
+  it('should edit the interest', () => {
+    component.formEditInterest.controls['id'].setValue(2);
+    component.formEditInterest.controls['name'].setValue('Igles');
+    component.onEditSubmit();
+    expect(component.displayEditDialog).toBeFalse();
+
+    const updateItem = component.interest.find(inter => inter.id === 2);
+    expect(updateItem.nameInterest).toBe('Igles');
   });
 });

@@ -20,4 +20,28 @@ export class MockInterestService extends InterestService{
   getInterests(): Observable<Interest[]> {
     return of(this.interestList);
   }
+
+  addInterests(interest): Observable<any> {
+    this.interestList.push(interest);
+    return of({
+      mensaje: 'El interés ha sido añadido'
+    });
+  }
+
+  deleteInterest(interest): Observable<any> {
+    this.interestList = this.interestList.filter(p => p.id !== interest.id);
+    return of({
+      mensaje: 'El interés ha sido eliminado'
+    });
+  }
+
+  editInterest(id, interest): Observable<any> {
+    const updateItem = this.interestList.find(inter => inter.id === id);
+    const index = this.interestList.indexOf(updateItem);
+    this.interestList[index] = interest;
+
+    return of({
+      mensaje: 'El interés ha sido editado'
+    });
+  }
 }

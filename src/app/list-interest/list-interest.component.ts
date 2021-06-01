@@ -122,14 +122,12 @@ export class ListInterestComponent implements OnInit {
       id: interest.id,
       name: interest.nameInterest
     });
-    console.log(this.formEditInterest.value);
   }
 
   onEditSubmit(){
     var interest = {
       nameInterest: this.formEditInterest.get('name').value
     }
-    console.log(this.formEditInterest.get('id').value)
     this.interestService.editInterest(this.formEditInterest.get('id').value, interest).pipe(
       mergeMap( data => {
         return this.interestService.getInterests().pipe();
