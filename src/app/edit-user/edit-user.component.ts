@@ -3,10 +3,8 @@ import {UserService} from '../services/user/user.service';
 import {map, mergeMap} from 'rxjs/operators';
 import {forkJoin} from 'rxjs';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {InterestService} from '../services/interest/interest.service';
 import {LangChangeEvent, TranslateService} from '@ngx-translate/core';
 import {validadorAgeGreaterThan} from '../validators/validatorGreaterThan.directive';
-import {MessageService, SelectItem} from 'primeng/api';
 import {validadorPriorityNumberOfInterest} from '../validators/validatorPriorityNumber.directive';
 import {LocalStorageService} from '../services/local-storage/local-storage.service';
 import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.directive';
@@ -26,7 +24,6 @@ export class EditUserComponent implements OnInit {
   constructor(
     private userService: UserService,
     private localStorageService: LocalStorageService,
-    private interestService: InterestService,
     private fb: FormBuilder,
     private translateService: TranslateService
   ) { }
