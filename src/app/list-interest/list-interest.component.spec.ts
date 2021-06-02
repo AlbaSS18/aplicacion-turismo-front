@@ -83,7 +83,7 @@ describe('ListInterestComponent', () => {
   });
 
   it('should add a interest', () => {
-    component.formEditInterest.controls['name'].setValue('Playas');
+    component.formAddInterest.controls['name'].setValue('Playas');
     component.onSubmit();
 
     expect(component.display).toBeFalse();

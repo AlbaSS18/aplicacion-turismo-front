@@ -10,9 +10,11 @@ import {ButtonModule} from 'primeng/button';
 import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {TranslateModule} from '@ngx-translate/core';
-import {ConfirmationService, MessageService} from 'primeng/api';
+import {Confirmation, ConfirmationService, MessageService} from 'primeng/api';
 import {ToastModule} from 'primeng/toast';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import { CityService } from '../services/city/city.service';
+import { MockCityService } from '../services/city/city-service-mock';
 
 describe('ListCitiesComponent', () => {
   let component: ListCitiesComponent;
@@ -36,7 +38,8 @@ describe('ListCitiesComponent', () => {
       declarations: [ ListCitiesComponent, MenuBarComponent ],
       providers: [
         ConfirmationService,
-        MessageService
+        MessageService,
+        {provide: CityService, useClass: MockCityService},
       ]
     })
     .compileComponents();
@@ -50,5 +53,38 @@ describe('ListCitiesComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should load the cities', () => {
+    expect(component.cities.length).toBe(2);
+  });
+
+  it('should delete the city', () => {
+    let confirmService = fixture.debugElement.injector.get(ConfirmationService);
+    spyOn(confirmService, 'confirm').and.callFake((confirmation: Confirmation) => { return confirmation.accept(); });
+    var city = {
+      id: 2,
+      name: 'Oviedo'
+    };
+    component.removeCity(city);
+    expect(component.cities.length).toBe(1);
+  });
+
+
+  it('should edit the city', () => {
+    component.formEditCity.controls['id'].setValue(2);
+    component.formEditCity.controls['name'].setValue('Ov');
+    component.onEditSubmit();
+    expect(component.displayEditPanel).toBeFalse();
+    const updateItem = component.cities.find(city => city.id === 2);
+    expect(updateItem.name).toBe('Ov');
+  });
+
+  it('should add a city', () => {
+    component.formAddCity.controls['name'].setValue('Avilés');
+    component.onSubmit();
+
+    expect(component.display).toBeFalse();
+    expect(component.cities.length).toBe(3);
   });
 });
