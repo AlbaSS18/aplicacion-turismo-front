@@ -10,7 +10,7 @@ import {InputNumberModule} from 'primeng/inputnumber';
 import {DropdownModule} from 'primeng/dropdown';
 import {MenuBarComponent} from '../menu-bar/menu-bar.component';
 
-describe('EditActivitiesComponent', () => {
+xdescribe('EditActivitiesComponent', () => {
   let component: EditActivitiesComponent;
   let fixture: ComponentFixture<EditActivitiesComponent>;
 

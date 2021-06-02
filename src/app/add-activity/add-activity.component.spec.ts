@@ -14,7 +14,7 @@ import {MockActivityService} from '../services/activity/activity-service-mock';
 import {MessageService} from 'primeng/api';
 import {RouterTestingModule} from '@angular/router/testing';
 
-describe('AddActivityComponent', () => {
+xdescribe('AddActivityComponent', () => {
   let component: AddActivityComponent;
   let fixture: ComponentFixture<AddActivityComponent>;
 

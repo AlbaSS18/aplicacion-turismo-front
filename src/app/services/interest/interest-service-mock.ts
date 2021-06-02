@@ -3,7 +3,9 @@ import {UserSignUp} from '../../models/user';
 import {Observable, of} from 'rxjs';
 import {InterestService} from './interest.service';
 import {Interest} from '../../models/interest';
+import {Injectable} from '@angular/core';
 
+@Injectable()
 export class MockInterestService extends InterestService{
 
   interestList = [

@@ -69,5 +69,9 @@ export class MockUserService extends UserService {
     });
   }
 
+  getUserForAdmin(id): Observable<User> {
+    return of(this.user);
+  }
+
 
 }
