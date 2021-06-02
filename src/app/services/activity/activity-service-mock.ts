@@ -1,6 +1,6 @@
 import {ActivityService} from './activity.service';
 import {Injectable} from '@angular/core';
-import {Activity} from '../../models/activity';
+import {Activity, ActivityRecommended} from '../../models/activity';
 import {Observable, of} from 'rxjs';
 
 
@@ -42,6 +42,28 @@ export class MockActivityService extends ActivityService {
     }
   ];
 
+
+  listActivitiesRated = [
+    {
+      id: 8,
+      name: 'Estatua de Don Pelayo',
+      description: 'Escultura de Gijón',
+      latitude: 43.544993,
+      longitude: -5.664037,
+      pathImage: 'pelayo.jpg',
+      city: 'Gijón',
+      interest: 'Escultura',
+      address: 'Plaza del Marqués, 1, 33201 Gijón, Asturias',
+      metadataImage: {
+        filename: 'pelayo.jpg',
+        mimeType: 'image/jpg',
+        data: 'E3uTRf1oyGPBx0S5zlxdwQhA7WwLoNmf/9k=',
+      },
+      score: 5,
+      average: 2
+    }
+  ];
+
   getActivities(): Observable<Activity[]> {
     return of(this.listActivities);
   }
@@ -55,6 +77,10 @@ export class MockActivityService extends ActivityService {
 
   addActivity(formData): Observable<any> {
     return of();
+  }
+
+  getRatedActivities(user): Observable<ActivityRecommended[]>{
+    return of(this.listActivitiesRated);
   }
 
 

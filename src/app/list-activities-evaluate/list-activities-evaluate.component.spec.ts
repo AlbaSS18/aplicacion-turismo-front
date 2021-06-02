@@ -10,10 +10,12 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {TagModule} from 'primeng/tag';
 import {FormsModule} from '@angular/forms';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import { LocalStorageService } from '../services/local-storage/local-storage.service';
 
-describe('ListActivitiesEvaluateComponent', () => {
+fdescribe('ListActivitiesEvaluateComponent', () => {
   let component: ListActivitiesEvaluateComponent;
   let fixture: ComponentFixture<ListActivitiesEvaluateComponent>;
+  let localService: LocalStorageService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -27,12 +29,18 @@ describe('ListActivitiesEvaluateComponent', () => {
         TagModule,
         FormsModule,
         HttpClientTestingModule
+      ],
+      providers: [
+        LocalStorageService
       ]
     })
     .compileComponents();
+
+    localService = TestBed.inject(LocalStorageService);
   });
 
   beforeEach(() => {
+    spyOn(localService, 'getEmailUser').and.returnValue('alba@email.com');
     fixture = TestBed.createComponent(ListActivitiesEvaluateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -40,5 +48,9 @@ describe('ListActivitiesEvaluateComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should load the list of activities evaluated', () => {
+    expect(component.listActivities.length).toBe(1);
   });
 });
