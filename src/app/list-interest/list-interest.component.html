@@ -24,7 +24,7 @@
     <p-header>
       {{ 'add_interest' | translate }}
     </p-header>
-    <form [formGroup]="formAddInterest" #formInterest="ngForm" id="ngForm" (ngSubmit)="onSubmit(formAddInterest.value)" >
+    <form [formGroup]="formAddInterest" #formInterest="ngForm" id="ngForm" (ngSubmit)="onSubmit()" >
       <div class="p-field p-grid">
         <label for="field-name-interest" class="p-col-fixed">{{ 'name_interest' | translate }}*:</label>
         <div class="p-col buttons-add-interest">

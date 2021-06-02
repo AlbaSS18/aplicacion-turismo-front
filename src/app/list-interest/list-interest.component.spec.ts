@@ -18,7 +18,7 @@ import {MockAuthService} from '../services/auth/auth-service-mock';
 import {InterestService} from '../services/interest/interest.service';
 import {MockInterestService} from '../services/interest/interest-service-mock';
 
-fdescribe('ListInterestComponent', () => {
+describe('ListInterestComponent', () => {
   let component: ListInterestComponent;
   let fixture: ComponentFixture<ListInterestComponent>;
 
@@ -80,5 +80,13 @@ fdescribe('ListInterestComponent', () => {
 
     const updateItem = component.interest.find(inter => inter.id === 2);
     expect(updateItem.nameInterest).toBe('Igles');
+  });
+
+  it('should add a interest', () => {
+    component.formEditInterest.controls['name'].setValue('Playas');
+    component.onSubmit();
+
+    expect(component.display).toBeFalse();
+    expect(component.interest.length).toBe(3);
   });
 });

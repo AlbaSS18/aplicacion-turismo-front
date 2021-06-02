@@ -52,7 +52,7 @@ export class ListInterestComponent implements OnInit {
     this.display = true;
   }
 
-  onSubmit(value: string){
+  onSubmit(){
     var interest = {
       nameInterest: this.formAddInterest.get('name').value
     };
