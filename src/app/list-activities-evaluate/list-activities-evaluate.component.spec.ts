@@ -11,8 +11,14 @@ import {TagModule} from 'primeng/tag';
 import {FormsModule} from '@angular/forms';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import { LocalStorageService } from '../services/local-storage/local-storage.service';
+import {InterestService} from '../services/interest/interest.service';
+import {MockInterestService} from '../services/interest/interest-service-mock';
+import {UserService} from '../services/user/user.service';
+import {MockUserService} from '../services/user/user-service-mock';
+import {ActivityService} from '../services/activity/activity.service';
+import {MockActivityService} from '../services/activity/activity-service-mock';
 
-fdescribe('ListActivitiesEvaluateComponent', () => {
+describe('ListActivitiesEvaluateComponent', () => {
   let component: ListActivitiesEvaluateComponent;
   let fixture: ComponentFixture<ListActivitiesEvaluateComponent>;
   let localService: LocalStorageService;
@@ -31,7 +37,9 @@ fdescribe('ListActivitiesEvaluateComponent', () => {
         HttpClientTestingModule
       ],
       providers: [
-        LocalStorageService
+        LocalStorageService,
+        {provide: UserService, useClass: MockUserService},
+        {provide: ActivityService, useClass: MockActivityService}
       ]
     })
     .compileComponents();
