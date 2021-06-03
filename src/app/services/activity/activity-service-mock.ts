@@ -64,6 +64,45 @@ export class MockActivityService extends ActivityService {
     }
   ];
 
+  listRecommendedActivities = [
+    {
+      id: 1,
+      name: 'Universidad Laboral',
+      description: 'Universidad situada en Gijón',
+      latitude: 43.524088,
+      longitude: -5.614049,
+      pathImage: 'universidad.jpg',
+      city: 'Gijón',
+      interest: 'Iglesia',
+      address: 'Universidad Laboral, Calle José Luis Álvarez Margaride, Cabueñes, La Guía, Distrito Rural, Gijón, 33394, España',
+      metadataImage: {
+        filename: 'universidad.jpg',
+        mimeType: 'image/jpg',
+        data: 'E3uTRf1oyGPBx0S5zlxdwQhA7WwLoNmf/9k=',
+      },
+      score: 1.99999,
+      average: 2
+    },
+    {
+      id: 2,
+      name: 'Elogio del horizonte',
+      description: 'Elogio del horizonte es el nombre de una escultura de hormigón situada en la ciudad de Gijón, realizada por el escultor vasco Eduardo Chillida.​ Se trata de una obra de grandes proporciones erigida en el año 1990 en el Cerro de Santa Catalina.​',
+      latitude: 43.549,
+      longitude: -5.6631,
+      pathImage: 'elogio.jpg',
+      city: 'Gijón',
+      interest: 'Escultura',
+      address: 'Elogio del Horizonte, Parque del Cerro, Cimadevilla, Distrito Centro, Gijón, 33201, España',
+      metadataImage: {
+        filename: 'elogio.jpg',
+        mimeType: 'image/jpg',
+        data: 'E3uTRf1oyGPBx0S5zlxdwQhA7WwLoNmf/9k=',
+      },
+      score: 0.5,
+      average: 2
+    }
+  ];
+
   getActivities(): Observable<Activity[]> {
     return of(this.listActivities);
   }
@@ -102,6 +141,10 @@ export class MockActivityService extends ActivityService {
     return of(this.listActivitiesRated);
   }
 
+  getRecommendedActivities(idUser): Observable<ActivityRecommended[]> {
+    return of(this.listRecommendedActivities);
+  }
+
   editActivity(id, activity): Observable<any> {
     // ERROR. El observer se llamaba antes
     const updateItem = this.listActivities.find(acti => acti.id === id);
@@ -132,6 +175,13 @@ export class MockActivityService extends ActivityService {
   getActivity(id): Observable<Activity> {
     const activity = this.listActivities.find(p => p.id === id);
     return of(activity);
+  }
+
+  postRateActivity(activityRate): Observable<any> {
+    this.listRecommendedActivities.push(activityRate);
+    return of({
+      mensaje: 'La actividad ha sido valorada'
+    });
   }
 
 

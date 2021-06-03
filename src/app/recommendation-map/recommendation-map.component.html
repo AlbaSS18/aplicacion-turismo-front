@@ -21,7 +21,7 @@
               <div class="activity-average"><span class="fas fa-star"></span>
                 <span class="average"> {{activity.average}}/5</span>
               </div>
-              <button pButton type="button" label="{{ 'rate_activity' | translate }}" class="p-button-link" (click)="openPanelToRating($event, activity)"></button>
+              <button pButton type="button" label="{{ 'rate_activity' | translate }}" class="p-button-link" (click)="openPanelToRating(activity)"></button>
             </div>
           </div>
         </div>

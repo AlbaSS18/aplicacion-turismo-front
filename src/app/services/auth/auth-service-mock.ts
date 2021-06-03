@@ -2,7 +2,9 @@ import {AuthService} from './auth.service';
 import {Observable, of} from 'rxjs';
 import {UserLogin, UserSignUp} from '../../models/user';
 import {JwtModel} from '../../models/jwt_model';
+import {Injectable} from '@angular/core';
 
+@Injectable()
 export class MockAuthService extends AuthService{
 
   signUp(user: UserSignUp): Observable<any> {

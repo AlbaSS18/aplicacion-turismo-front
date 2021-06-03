@@ -31,8 +31,6 @@ export class RecommendationMapComponent implements OnInit {
   activitySelectedToRate: ActivityRecommended;
   userLogged: User;
 
-  @ViewChild('dv') dataView;
-
   constructor(
     private activitiesService: ActivityService,
     private fb: FormBuilder,
@@ -128,7 +126,7 @@ export class RecommendationMapComponent implements OnInit {
     }
   }
 
-  openPanelToRating(event, activity){
+  openPanelToRating(activity){
     this.formToRatingActivity.patchValue({
       rating: []
     });
