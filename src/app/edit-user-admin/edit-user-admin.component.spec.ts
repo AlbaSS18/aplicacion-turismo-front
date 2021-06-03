@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 
 import { EditUserAdminComponent } from './edit-user-admin.component';
 import {MenuBarComponent} from '../menu-bar/menu-bar.component';
@@ -6,7 +6,6 @@ import {UserService} from '../services/user/user.service';
 import {MessageService} from 'primeng/api';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {InputNumberModule} from 'primeng/inputnumber';
 import {DropdownModule} from 'primeng/dropdown';
 import {RouterTestingModule} from '@angular/router/testing';
 import {TranslateModule} from '@ngx-translate/core';
@@ -17,7 +16,6 @@ import {MockUserService} from '../services/user/user-service-mock';
 import {RolService} from '../services/rol/rol.service';
 import {MockRolService} from '../services/rol/rol-service-mock';
 import {ListboxModule} from 'primeng/listbox';
-import {of} from 'rxjs';
 import {ActivatedRoute, convertToParamMap, Router} from '@angular/router';
 
 describe('EditUserAdminComponent', () => {
@@ -99,20 +97,18 @@ describe('EditUserAdminComponent', () => {
     expect(component.user).toEqual(user);
   });
 
-  it('should send the form', () => {
+  it('should send the form', fakeAsync(() => {
     const navigateSpy = spyOn(router, 'navigate');
     component.editUserForm.controls['dateBirthday'].setValue(new Date('1998-12-17'));
     component.editUserForm.controls['roles'].setValue(['ROLE_USER']);
     component.editUserForm.controls['userName'].setValue('Administrador');
 
     component.sendForm();
+    tick(2500);
+    expect(navigateSpy).toHaveBeenCalledTimes(1);
+    expect(navigateSpy).toHaveBeenCalledWith(['/user']);
 
-    setTimeout(() => {
-      expect(navigateSpy).toHaveBeenCalledTimes(1);
-      expect(navigateSpy).toHaveBeenCalledWith(['/user']);
-    }, 251);
-
-  });
+  }));
 
   it('should compare json that are the different', () => {
     const json1 = {
