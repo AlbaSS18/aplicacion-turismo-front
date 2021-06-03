@@ -83,5 +83,37 @@ export class MockActivityService extends ActivityService {
     return of(this.listActivitiesRated);
   }
 
+  editActivity(id, activity): Observable<any> {
+    // ERROR. El observer se llamaba antes
+    const updateItem = this.listActivities.find(acti => acti.id === id);
+    const index = this.listActivities.indexOf(updateItem);
+
+    var cityToEdit = {
+      id: id,
+      name: activity.get('name'),
+      description:  activity.get('description'),
+      latitude: activity.get('latitude'),
+      longitude: activity.get('longitude'),
+      pathImage: updateItem.pathImage,
+      city: activity.get('city'),
+      interest: activity.get('interest'),
+      address: activity.get('address'),
+      metadataImage: {
+        filename: updateItem.metadataImage.filename,
+        mimeType: updateItem.metadataImage.mimeType,
+        data: updateItem.metadataImage.data,
+      }
+    }
+    this.listActivities[index] = cityToEdit;
+    return of({
+      mensaje: 'La actividad ha sido modificada'
+    });
+  }
+
+  getActivity(id): Observable<Activity> {
+    const activity = this.listActivities.find(p => p.id === id);
+    return of(activity);
+  }
+
 
 }

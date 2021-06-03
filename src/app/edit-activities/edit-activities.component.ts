@@ -54,8 +54,6 @@ export class EditActivitiesComponent implements OnInit {
       address: ['', Validators.required]
     });
 
-    this.observeChanges();
-
     forkJoin([
       this.interestService.getInterests(),
       this.activityService.getActivity(this.activityId)
@@ -114,6 +112,8 @@ export class EditActivitiesComponent implements OnInit {
       this.image = this.sanitizer.bypassSecurityTrustUrl(url);
 
       this.file = this.dataURItoBlob(url, this.activity.pathImage);
+
+      this.observeChanges();
     });
   }
 
