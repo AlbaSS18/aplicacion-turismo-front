@@ -76,7 +76,26 @@ export class MockActivityService extends ActivityService {
   }
 
   addActivity(formData): Observable<any> {
-    return of();
+    var activityToAdd = {
+      id: this.listActivities[this.listActivities.length - 1].id + 1,
+      name: formData.get('name'),
+      description:  formData.get('description'),
+      latitude: formData.get('latitude'),
+      longitude: formData.get('longitude'),
+      pathImage: '',
+      city: formData.get('city'),
+      interest: formData.get('interest'),
+      address: formData.get('address'),
+      metadataImage: {
+        filename: '',
+        mimeType: '',
+        data: '',
+      }
+    }
+    this.listActivities.push(activityToAdd);
+    return of({
+      mensaje: 'La actividad ha sido añadida'
+    });
   }
 
   getRatedActivities(user): Observable<ActivityRecommended[]>{

@@ -98,7 +98,7 @@ export class AddActivityComponent implements OnInit {
   }
 
   addActivity(){
-    if (this.files.length !== 0 && this.formAddActivity.valid){
+    if (this.files !== null && this.formAddActivity.valid){
       const formData = new FormData();
       formData.append('image', this.files);
       formData.append('name', this.formAddActivity.get('name').value);
