@@ -30,4 +30,42 @@ export class EditUserPage {
   getSendEditUserBtn(){
     return element(by.id('edit_user_profile_btn'));
   }
+
+  getInputUsername(){
+    return element(by.id('username'));
+  }
+
+  getRadioButton(n: number){
+    return element(by.id('four' + n));
+  }
+
+  getInputCalendar(){
+    return element(by.id('age'));
+  }
+
+  getSelectMonthCalendar(){
+    return element(by.css('.p-datepicker-month'));
+  }
+
+  getOptionMonth(){
+    return element(by.cssContainingText('option', 'Enero'));
+  }
+
+  getSelectYearCalendar(){
+    return element(by.css('.p-datepicker-year'));
+  }
+
+  getOptionYear(){
+    return element(by.cssContainingText('option', '1995'));
+  }
+
+  getErrorMessage(classMessage){
+    return element(by.css(classMessage));
+  }
+
+  getDateCalendar(){
+    return element.all(by.css('tbody tr td span'))
+      .get(6);
+  }
+
 }
