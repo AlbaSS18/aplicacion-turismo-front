@@ -31,4 +31,8 @@ export class LoginPage {
     return element(by.css('.dropdown-menu > a:nth-child(' + n + ')'));
   }
 
+  getNav(idName){
+    return element(by.id(idName));
+  }
+
 }

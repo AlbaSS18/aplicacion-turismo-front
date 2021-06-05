@@ -5,7 +5,7 @@
     <p-virtualScroller [value]="cities" scrollHeight="250px" [itemSize]="50">
       <p-header class="list-header">
         {{ 'cities' | translate }}
-        <button pButton pRipple label=" {{ 'add_city' | translate }}" icon="pi pi-plus" class="p-button-raised p-button-rounded" (click)="openPanel($event)"></button>
+        <button id="add_city_btn" pButton pRipple label=" {{ 'add_city' | translate }}" icon="pi pi-plus" class="p-button-raised p-button-rounded" (click)="openPanel($event)"></button>
       </p-header>
       <ng-template pTemplate="item" let-city>
         <div class="list-container-cities">
@@ -38,8 +38,8 @@
       </div>
     </form>
     <p-footer>
-      <button pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormCity" [disabled]="formAddCity.invalid"></button>
-      <button pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancel()"></button>
+      <button id="add_save_city_btn" pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormCity" [disabled]="formAddCity.invalid"></button>
+      <button id="add_cancel_city_btn" pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancel()"></button>
     </p-footer>
   </p-dialog>
 
@@ -58,8 +58,8 @@
       </div>
     </form>
     <p-footer>
-      <button pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormEditCity" [disabled]="formEditCity.invalid"></button>
-      <button pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancelEdit()"></button>
+      <button id="edit_save_city_btn" pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormEditCity" [disabled]="formEditCity.invalid"></button>
+      <button id="edit_cancel_city_btn" pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancelEdit()"></button>
     </p-footer>
   </p-dialog>
 </div>
