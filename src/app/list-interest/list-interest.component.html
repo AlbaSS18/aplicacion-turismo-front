@@ -5,7 +5,7 @@
     <p-virtualScroller [value]="interest" scrollHeight="250px" [itemSize]="50" >
       <p-header class="list-header-interest">
         {{ 'interest' | translate }}
-        <button pButton pRipple type="button" label=" {{ 'add_interest' | translate }}" icon="pi pi-plus" iconPos="left" class="p-button-raised p-button-rounded" (click)="openPanel($event)"></button>
+        <button id="add_interest_btn" pButton pRipple type="button" label=" {{ 'add_interest' | translate }}" icon="pi pi-plus" iconPos="left" class="p-button-raised p-button-rounded" (click)="openPanel($event)"></button>
       </p-header>
       <ng-template pTemplate="item" let-interest>
         <div class="list-container-interest">
@@ -36,8 +36,8 @@
       </div>
     </form>
     <p-footer>
-      <button pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngForm" [disabled]="formAddInterest.invalid"></button>
-      <button pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancel()"></button>
+      <button id="add_save_interest_btn" pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngForm" [disabled]="formAddInterest.invalid"></button>
+      <button id="add_cancel_interest_btn" pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancel()"></button>
     </p-footer>
   </p-dialog>
   <p-confirmDialog header="{{ 'delete_interest' | translate }}" acceptLabel="{{ 'delete' | translate }}" rejectLabel="{{ 'cancel' | translate }}" icon="pi pi-exclamation-triangle"></p-confirmDialog>
@@ -55,8 +55,8 @@
       </div>
     </form>
     <p-footer>
-      <button pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormEditInterest" [disabled]="formEditInterest.invalid"></button>
-      <button pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancelEdit()"></button>
+      <button id="edit_save_interest_btn" pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormEditInterest" [disabled]="formEditInterest.invalid"></button>
+      <button id="edit_cancel_interest_btn" pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancelEdit()"></button>
     </p-footer>
   </p-dialog>
 </div>

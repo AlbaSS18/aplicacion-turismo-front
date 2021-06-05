@@ -35,4 +35,8 @@ export class LoginPage {
     return element(by.id(idName));
   }
 
+  getMessageErrorInput(message){
+    return element(by.cssContainingText( 'p-message' , message));
+  }
+
 }

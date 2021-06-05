@@ -1,5 +1,5 @@
 import {LoginPage} from './login.po';
-import {browser} from 'protractor';
+import {browser, Key} from 'protractor';
 
 describe('01-login component', () => {
   let page: LoginPage;
@@ -7,6 +7,17 @@ describe('01-login component', () => {
   beforeEach(() => {
     page = new LoginPage();
     page.navigateTo();
+  });
+
+  it('should display a error message when email is not correct', () => {
+    page.getInputEmailForm().sendKeys('error');
+    expect(page.getMessageErrorInput('El email es obligatorio').isPresent()).toBe(true);
+  });
+
+  it('should display a error message when password is empty', () => {
+    page.getInputPasswordForm().sendKeys('1');
+    page.getInputPasswordForm().sendKeys(Key.chord(Key.BACK_SPACE));
+    expect(page.getMessageErrorInput('La contraseña es obligatoria').isPresent()).toBe(true);
   });
 
   it('should display a message when user is not correct', () => {
