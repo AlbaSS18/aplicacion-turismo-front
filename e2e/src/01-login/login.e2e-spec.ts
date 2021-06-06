@@ -40,11 +40,10 @@ describe('01-login component', () => {
 
     expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'recommendationMap');
     expect(page.getNav('recommendation_map_nav').isPresent()).toEqual(true);
-    expect(page.getNav('activities_evaluate').isPresent()).toEqual(true);
+    expect(page.getNav('activities_evaluate_nav').isPresent()).toEqual(true);
     expect(page.getNav('list_user_nav').isPresent()).toEqual(false);
     expect(page.getNav('list_city_nav').isPresent()).toEqual(false);
     expect(page.getNav('activities_nav').isPresent()).toEqual(false);
-    expect(page.getNav('interest_nav').isPresent()).toEqual(false);
     expect(page.getNav('interest_nav').isPresent()).toEqual(false);
   });
 
@@ -61,11 +60,10 @@ describe('01-login component', () => {
 
     expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'user');
     expect(page.getNav('recommendation_map_nav').isPresent()).toEqual(true);
-    expect(page.getNav('activities_evaluate').isPresent()).toEqual(true);
+    expect(page.getNav('activities_evaluate_nav').isPresent()).toEqual(true);
     expect(page.getNav('list_user_nav').isPresent()).toEqual(true);
     expect(page.getNav('list_city_nav').isPresent()).toEqual(true);
     expect(page.getNav('activities_nav').isPresent()).toEqual(true);
-    expect(page.getNav('interest_nav').isPresent()).toEqual(true);
     expect(page.getNav('interest_nav').isPresent()).toEqual(true);
   });
 });

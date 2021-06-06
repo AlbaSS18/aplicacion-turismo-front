@@ -4,7 +4,7 @@
     <p-dataView #dv [value]="listActivities" [paginator]="true" [rows]="3" filterBy="name" [sortField]="sortField" [sortOrder]="sortOrder" emptyMessage="{{ 'message-no-activities-evaluate-match' | translate }}">
       <ng-template pTemplate="header">
         <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
-          <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="{{ 'sort_by_rating' | translate }}" (onChange)="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0">
+          <p-dropdown inputId="dropdown_sort_activities_valued" [options]="sortOptions" [(ngModel)]="sortKey" placeholder="{{ 'sort_by_rating' | translate }}" (onChange)="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0">
             <ng-template pTemplate="item" let-item>
               {{item.label | translate}}
             </ng-template>
@@ -14,7 +14,7 @@
           </p-dropdown>
           <span class="p-input-icon-left">
             <i class="pi pi-search"></i>
-            <input type="search" pInputText placeholder="{{ 'placeholder_search_activities_evaluate' | translate }}" (input)="dv.filter($event.target.value)">
+            <input id="input_search_activities_evaluate" type="search" pInputText placeholder="{{ 'placeholder_search_activities_evaluate' | translate }}" (input)="dv.filter($event.target.value)">
           </span>
         </div>
       </ng-template>
