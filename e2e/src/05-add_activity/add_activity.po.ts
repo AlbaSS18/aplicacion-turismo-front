@@ -38,26 +38,6 @@ export class AddActivityPage {
     return element(by.css('#addActivityBtn button'));
   }
 
-  getDeleteActivityBtnWithTextSpecifyc(){
-    return element(by.xpath('//td[contains(text(), "Prueba de actividad")]/following-sibling::*[4]/button[3]'));
-  }
-
-  getTrWithNewActivity(){
-    return element(by.xpath('//td[contains(text(), "Prueba de actividad")]'));
-  }
-
-  getButtonRemoveFromDialog(){
-    return element(by.css('.p-dialog-footer .p-confirm-dialog-accept'));
-  }
-
-  getButtonInfoOfFirstRowOfTable(n: number){
-    return element.all(by.xpath('//*[contains(@class, "p-datatable-tbody")]/tr[1]/td[6]/button')).get(n);
-  }
-
-  getPanelWithActivityInfo(text){
-    return element(by.cssContainingText('.content-container', text));
-  }
-
   getDropdownEdit(){
     return element(by.id('field-name'));
   }

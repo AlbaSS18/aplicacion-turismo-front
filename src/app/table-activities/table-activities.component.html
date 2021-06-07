@@ -19,7 +19,7 @@
           <h2 class="p-m-0">{{ 'list_activities' | translate }}</h2>
           <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
-                    <input pInputText type="text" (input)="tableActivities.filterGlobal($event.target.value, 'contains')" placeholder="{{ 'search' | translate }}" />
+                    <input id="input_search_activities_table" pInputText type="text" (input)="tableActivities.filterGlobal($event.target.value, 'contains')" placeholder="{{ 'search' | translate }}" />
           </span>
         </div>
       </ng-template>
