@@ -1,4 +1,3 @@
-import {AppPage} from '../app.po';
 import {browser, by, element, Key, logging} from 'protractor';
 import {AddActivityPage} from './add_activity.po';
 import * as path from 'path';

@@ -11,15 +11,15 @@ export class AddActivityPage {
   }
 
   getFieldNameActivity(){
-    return element(by.id('field-name-Activity'));
+    return element(by.id('field-name-add-activity'));
   }
 
   getFieldDescription(){
-    return element(by.id('field-description'));
+    return element(by.id('field-description-add-activity'));
   }
 
   getDropdownInterest(){
-    return element(by.id('field-interest'));
+    return element(by.id('field-interest-add-activity'));
   }
 
   getOptionFromDropdown(){

@@ -8,16 +8,16 @@
       <div class="p-fluid input_container">
         <div class="grid-container">
           <div class="p-field">
-            <label for="field-name-Activity">{{ 'name_activity' | translate }}*:</label>
-            <input id="field-name-Activity" type="text" pInputText formControlName="name">
+            <label for="field-name-add-activity">{{ 'name_activity' | translate }}*:</label>
+            <input id="field-name-add-activity" type="text" pInputText formControlName="name">
           </div>
           <div class="p-field">
-            <label for="field-description">{{ 'description_activity' | translate }}*:</label>
-            <textarea id="field-description" pInputTextarea formControlName="description" [rows]="4" [cols]="30" autoResize="autoResize"></textarea>
+            <label for="field-description-add-activity">{{ 'description_activity' | translate }}*:</label>
+            <textarea id="field-description-add-activity" pInputTextarea formControlName="description" [rows]="4" [cols]="30" autoResize="autoResize"></textarea>
           </div>
           <div class="p-field">
-            <label for="field-interest">{{ 'interest' | translate }}*:</label>
-            <p-dropdown id="field-interest" [options]="interest" formControlName="nameInterest" appendTo="body">
+            <label for="field-interest-add-activity">{{ 'interest' | translate }}*:</label>
+            <p-dropdown id="field-interest-add-activity" [options]="interest" formControlName="nameInterest" appendTo="body">
             </p-dropdown>
           </div>
           <div class="p-field">
