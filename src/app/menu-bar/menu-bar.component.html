@@ -26,10 +26,10 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLanguage" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {{ 'language' | translate }}
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownLanguage">
           <a class="dropdown-item" (click)="switchLang('es')"><img src="../../assets/images/flag_spain.png" alt="" width="20" height="20"> {{ 'spanish' | translate }}</a>
           <a class="dropdown-item" (click)="switchLang('en')"><img src="../../assets/images/flag_english.png" alt="" width="20" height="20"> {{ 'english' | translate }}</a>
         </div>
@@ -40,7 +40,7 @@
             <i class="fas fa-user-circle"></i>
             {{email}}
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownUserProfile">
             <a class="dropdown-item" routerLink="/profile/edit"><i class="fas fa-edit"></i> {{ 'yourPerfile' | translate }}</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" (click)="logOut()"><i class="fas fa-sign-out-alt"></i> {{ 'log_out' | translate }}</a>

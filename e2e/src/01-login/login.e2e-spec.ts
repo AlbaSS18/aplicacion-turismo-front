@@ -9,6 +9,12 @@ describe('01-login component', () => {
     page.navigateTo();
   });
 
+  it('should can be able to change the language', () => {
+    page.getNavDropdownToChangeTheLanguage().click();
+    page.getDropdownItem(2).click();
+    expect(page.getTitle().getText()).toEqual('Welcome!');
+  });
+
   it('should display a error message when email is not correct', () => {
     page.getInputEmailForm().sendKeys('error');
     expect(page.getMessageErrorInput('El email es obligatorio').isPresent()).toBe(true);

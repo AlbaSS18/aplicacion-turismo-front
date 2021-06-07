@@ -39,4 +39,12 @@ export class LoginPage {
     return element(by.cssContainingText( 'p-message' , message));
   }
 
+  getNavDropdownToChangeTheLanguage(){
+    return element(by.id('navbarDropdownLanguage'));
+  }
+
+  getTitle(){
+    return element(by.css('h1'));
+  }
+
 }
