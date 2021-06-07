@@ -44,6 +44,10 @@ export class EditUserAdminPage {
   }
 
   getRoles(text){
-    return element(by.xpath('//ul[@class="p-listbox-list"]/li[contains(@area-label,"ROLE_ADMIN")]'));
+    return element(by.xpath('//ul[@class="p-listbox-list"]/li[@aria-label="ROLE_ADMIN"]/div'));
+  }
+
+  getMessageError(text){
+    return element(by.cssContainingText('.p-error', text));
   }
 }

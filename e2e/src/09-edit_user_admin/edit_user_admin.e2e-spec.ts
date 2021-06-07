@@ -1,5 +1,5 @@
 import {EditUserAdminPage} from './edit_user_admin.po';
-import {browser} from 'protractor';
+import {browser, Key} from 'protractor';
 
 describe('08-edit-user-admin component', () => {
   let page: EditUserAdminPage;
@@ -26,10 +26,16 @@ describe('08-edit-user-admin component', () => {
     page.getSelectYearCalendar().click();
     page.getOptionYear().click();
     page.getDateCalendar().click();
-   /* page.getRoles('ROLE_ADMIN').click();*/
-    browser.sleep(5000);
-    expect(page.getRoles('ROLE_ADMIN').isPresent()).toBe(true);
-    //expect(page.getEditUserBtnWithTextSpecifyc().isEnabled()).toBe(true);
+    page.getRoles('ROLE_ADMIN').click();
+    expect(page.getSendEditUserBtn().isEnabled()).toBe(true);
+  });
+
+  it('should display the error message', () => {
+    page.getInputUsername().clear();
+    page.getInputUsername().sendKeys(Key.chord('a', Key.BACK_SPACE));
+    page.getInputCalendar().sendKeys(Key.chord(Key.BACK_SPACE));
+    expect(page.getMessageError('El nombre de usuario es obligatorio').isPresent()).toBe(true);
+    expect(page.getMessageError('La fecha de nacimiento es obligatoria').isPresent()).toBe(true);
   });
 
 
