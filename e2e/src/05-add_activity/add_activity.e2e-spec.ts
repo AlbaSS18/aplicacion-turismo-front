@@ -26,8 +26,14 @@ describe('05 - Add activity component', () => {
     page.getOptionFromDropdown().click();
     page.getGeocoderButton().click();
     page.getGeocoderInput().sendKeys(Key.chord('calle corrida gijon asturias', Key.ENTER));
-    var absolutePath = path.resolve(__dirname, '../../../src/assets/images/user.png');
+    var absolutePath = path.resolve(__dirname, '../../../src/assets/teste2e/user.png');
     element(by.css('input[type="file"]')).sendKeys(absolutePath);
     expect(page.getAddActivityBtn().isEnabled()).toEqual(true);
+  });
+
+  it('should display a message error when file upper 2MB', () => {
+    var absolutePath = path.resolve(__dirname, '../../../src/assets/teste2e/imgUpper2.jpg');
+    element(by.css('input[type="file"]')).sendKeys(absolutePath);
+    expect(page.getErrorMessageImage()).toEqual('Tamaño inválido del archivo: imgUpper2.jpg');
   });
 });

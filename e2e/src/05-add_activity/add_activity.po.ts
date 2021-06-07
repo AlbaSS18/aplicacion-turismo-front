@@ -41,4 +41,8 @@ export class AddActivityPage {
   getDropdownEdit(){
     return element(by.id('field-name'));
   }
+
+  getErrorMessageImage(){
+    return element(by.css('.p-message-summary')).getText();
+  }
 }
