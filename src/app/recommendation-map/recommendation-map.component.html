@@ -39,7 +39,7 @@
       <p>{{ 'submessage_rate_activity' | translate }}</p>
     </form>
     <ng-template pTemplate="footer">
-      <button pButton icon="pi pi-check" label="{{ 'submit' | translate }}" class="p-button-text" form="ratingForm" [disabled]="formToRatingActivity.invalid"></button>
+      <button id="rate_btn" pButton icon="pi pi-check" label="{{ 'submit' | translate }}" class="p-button-text" form="ratingForm" [disabled]="formToRatingActivity.invalid"></button>
     </ng-template>
   </p-dialog>
 </div>
