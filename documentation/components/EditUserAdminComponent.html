@@ -1,0 +1,1001 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>proyecto-turismo-front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">proyecto-turismo-front documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>EditUserAdminComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/edit-user-admin/edit-user-admin.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-edit-user-admin</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./edit-user-admin.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./edit-user-admin.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#editUserForm">editUserForm</a>
+                            </li>
+                            <li>
+                                <a href="#roleList">roleList</a>
+                            </li>
+                            <li>
+                                <a href="#roles">roles</a>
+                            </li>
+                            <li>
+                                <a href="#user">user</a>
+                            </li>
+                            <li>
+                                <a href="#userId">userId</a>
+                            </li>
+                            <li>
+                                <a href="#valueUnchanged">valueUnchanged</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#isEquivalent">isEquivalent</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#observeChanges">observeChanges</a>
+                            </li>
+                            <li>
+                                <a href="#sendForm">sendForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, userService: <a href="../injectables/UserService.html">UserService</a>, activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, rolesService: <a href="../injectables/RolService.html">RolService</a>, messageService: MessageService, translateService: TranslateService, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/edit-user-admin/edit-user-admin.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>activatedRoute</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>rolesService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RolService.html" target="_self" >RolService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>messageService</td>
+                                                  
+                                                        <td>
+                                                                    <code>MessageService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>translateService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isEquivalent"></a>
+                    <span class="name">
+                        <b>
+                            isEquivalent
+                        </b>
+                        <a href="#isEquivalent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isEquivalent(a, b)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/app/edit-user-admin/edit-user-admin.component.ts:94</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>a</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>b</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/edit-user-admin/edit-user-admin.component.ts:39</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="observeChanges"></a>
+                    <span class="name">
+                        <b>
+                            observeChanges
+                        </b>
+                        <a href="#observeChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>observeChanges()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/app/edit-user-admin/edit-user-admin.component.ts:88</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendForm"></a>
+                    <span class="name">
+                        <b>
+                            sendForm
+                        </b>
+                        <a href="#sendForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sendForm()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/edit-user-admin/edit-user-admin.component.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="editUserForm"></a>
+                        <span class="name">
+                            <b>
+                            editUserForm</b>
+                            <a href="#editUserForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/edit-user-admin/edit-user-admin.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="roleList"></a>
+                        <span class="name">
+                            <b>
+                            roleList</b>
+                            <a href="#roleList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>SelectItem[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/edit-user-admin/edit-user-admin.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="roles"></a>
+                        <span class="name">
+                            <b>
+                            roles</b>
+                            <a href="#roles"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Rol.html" target="_self" >Rol[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/edit-user-admin/edit-user-admin.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user"></a>
+                        <span class="name">
+                            <b>
+                            user</b>
+                            <a href="#user"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/User.html" target="_self" >User</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/edit-user-admin/edit-user-admin.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userId"></a>
+                        <span class="name">
+                            <b>
+                            userId</b>
+                            <a href="#userId"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/edit-user-admin/edit-user-admin.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valueUnchanged"></a>
+                        <span class="name">
+                            <b>
+                            valueUnchanged</b>
+                            <a href="#valueUnchanged"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/edit-user-admin/edit-user-admin.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import {FormBuilder, FormGroup, Validators} from &#x27;@angular/forms&#x27;;
+import {MessageService, SelectItem} from &#x27;primeng/api&#x27;;
+import {User} from &#x27;../models/user&#x27;;
+import {Rol} from &#x27;../models/rol&#x27;;
+import {UserService} from &#x27;../services/user/user.service&#x27;;
+import {ActivatedRoute, Router} from &#x27;@angular/router&#x27;;
+import {RolService} from &#x27;../services/rol/rol.service&#x27;;
+import {TranslateService} from &#x27;@ngx-translate/core&#x27;;
+import {forkJoin} from &#x27;rxjs&#x27;;
+import {validadorAgeGreaterThan} from &#x27;../validators/validatorGreaterThan.directive&#x27;;
+import {validadorNonwhiteSpace} from &#x27;../validators/validatorNonWhiteSpace.directive&#x27;;
+
+@Component({
+  selector: &#x27;app-edit-user-admin&#x27;,
+  templateUrl: &#x27;./edit-user-admin.component.html&#x27;,
+  styleUrls: [&#x27;./edit-user-admin.component.scss&#x27;]
+})
+export class EditUserAdminComponent implements OnInit {
+
+  editUserForm: FormGroup;
+  user: User;
+  userId;
+  roles: Rol[];
+  valueUnchanged: boolean &#x3D; true;
+
+  roleList: SelectItem[];
+
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private activatedRoute: ActivatedRoute,
+    private rolesService: RolService,
+    private messageService: MessageService,
+    private translateService: TranslateService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.userId &#x3D; this.activatedRoute.snapshot.paramMap.get(&#x27;id&#x27;);
+    this.editUserForm &#x3D; this.fb.group({
+      userName: [&#x27;&#x27;, [Validators.required, validadorNonwhiteSpace()]],
+      dateBirthday: [&#x27;&#x27;, [Validators.required, validadorAgeGreaterThan()]],
+      roles: [&#x27;&#x27;, Validators.required]
+    });
+
+    forkJoin([this.rolesService.getRoles(), this.userService.getUserForAdmin(this.userId)]).subscribe(results &#x3D;&gt; {
+      this.roles &#x3D; results[0];
+      this.user &#x3D; results[1];
+      this.editUserForm.patchValue({
+        userName: this.user.userName,
+        dateBirthday: new Date(this.user.dateBirthday)
+      });
+      this.editUserForm.controls[&#x27;roles&#x27;].setValue(this.user.roles);
+
+      this.roleList &#x3D; this.roles.map((v) &#x3D;&gt; {return {label: v.rolName, value: v.rolName}})
+
+      this.observeChanges();
+    });
+  }
+
+  sendForm(){
+    var dateBirthday &#x3D; new Date(this.editUserForm.get(&#x27;dateBirthday&#x27;).value);
+    const offset &#x3D; dateBirthday.getTimezoneOffset()
+    dateBirthday &#x3D; new Date(dateBirthday.getTime() - (offset * 60 * 1000))
+
+    var user &#x3D; {
+      userName: this.editUserForm.get(&quot;userName&quot;).value,
+      dateBirthday: dateBirthday.toISOString().split(&#x27;T&#x27;)[0],
+      roles: this.editUserForm.get(&quot;roles&quot;).value
+    };
+    this.userService.editUser(this.userId, user).subscribe(
+      data &#x3D;&gt; {
+        var message &#x3D; this.translateService.instant(&#x27;user_edit_message&#x27;,{ &#x27;nameUser&#x27;: this.editUserForm.get(&#x27;userName&#x27;).value });
+        this.messageService.add({key: &#x27;edit-user&#x27;, severity:&#x27;success&#x27;, summary: this.translateService.instant(&#x27;user_edit&#x27;), detail: message});
+        // Para que se muestre el mensaje
+        setTimeout(() &#x3D;&gt; {
+          this.router.navigate([&#x27;/user&#x27;]);
+        }, 1500);
+      },
+      err &#x3D;&gt; {
+        var message &#x3D; this.translateService.instant(&#x27;error_delete_message&#x27;);
+        this.messageService.add({key: &#x27;edit-user&#x27;, severity:&#x27;error&#x27;, summary: this.translateService.instant(&#x27;error&#x27;), detail: message});
+      }
+    );
+  }
+
+  observeChanges() {
+    this.editUserForm.valueChanges.subscribe((values) &#x3D;&gt; {
+      this.isEquivalent(this.user, values);
+    });
+  }
+
+  isEquivalent(a, b) {
+    this.valueUnchanged &#x3D; true;
+    var aProps &#x3D; Object.keys(a);
+    var bProps &#x3D; Object.keys(b);
+    for (var i &#x3D; 0; i &lt; bProps.length; i++) {
+      let propName &#x3D; bProps[i];
+      if (propName &#x3D;&#x3D; &quot;roles&quot;){
+        const array2Sorted &#x3D; b[propName].slice().sort();
+        this.valueUnchanged &#x3D; a[propName].length &#x3D;&#x3D;&#x3D; b[propName].length &amp;&amp; a[propName].slice().sort().every((value, index) &#x3D;&gt; value &#x3D;&#x3D;&#x3D; array2Sorted[index]);
+        return a[propName].length &#x3D;&#x3D;&#x3D; b[propName].length &amp;&amp; a[propName].slice().sort().every((value, index) &#x3D;&gt; value &#x3D;&#x3D;&#x3D; array2Sorted[index]);
+      }
+      else if (propName &#x3D;&#x3D;&#x3D; &quot;dateBirthday&quot;){
+        var d1 &#x3D; new Date(new Date(a[propName]).toDateString());
+        var d2 &#x3D; new Date(b[propName]?.toDateString());
+        if (d1.getTime() !&#x3D;&#x3D; d2.getTime()){
+          this.valueUnchanged &#x3D; false;
+          return false;
+        }
+      }
+      else{
+        if (a[propName] !&#x3D;&#x3D; b[propName]) {
+          this.valueUnchanged &#x3D; false;
+          return false;
+        }
+      }
+    }
+  }
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-menu-bar&gt;&lt;/app-menu-bar&gt;
+&lt;p-toast key&#x3D;&quot;edit-user&quot;&gt;&lt;/p-toast&gt;
+&lt;div class&#x3D;&quot;edit-panel&quot;&gt;
+  &lt;h1&gt;{{ &#x27;edit_title&#x27; | translate }}&lt;/h1&gt;
+  &lt;form [formGroup]&#x3D;&quot;editUserForm&quot; #formEdit&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D;&quot;sendForm()&quot;&gt;
+    &lt;fieldset class&#x3D;&quot;fielset_edit_user form-user-container&quot;&gt;
+      &lt;div class&#x3D;&quot;legend_fieldset&quot;&gt;
+        &lt;legend&gt;{{ &#x27;personal_info&#x27; | translate }}&lt;/legend&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;p-field p-grid&quot;&gt;
+        &lt;label for&#x3D;&quot;float-input-username&quot; class&#x3D;&quot;p-col-fixed&quot; style&#x3D;&quot;width: 200px;&quot;&gt;{{ &#x27;username&#x27; | translate }}*:&lt;/label&gt;
+        &lt;div class&#x3D;&quot;p-col&quot;&gt;
+          &lt;input id&#x3D;&quot;float-input-username&quot; type&#x3D;&quot;text&quot; pInputText formControlName&#x3D;&quot;userName&quot;&gt;
+          &lt;small class&#x3D;&quot;p-error message_error&quot; *ngIf&#x3D;&quot;editUserForm.controls[&#x27;userName&#x27;].invalid&amp;&amp;(editUserForm.controls[&#x27;userName&#x27;].dirty || editUserForm.controls[&#x27;userName&#x27;].touched)&quot;&gt;{{ &#x27;name_required&#x27; | translate }}&lt;/small&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;p-field p-grid&quot;&gt;
+        &lt;label for&#x3D;&quot;float-input-birthday&quot; class&#x3D;&quot;p-col-fixed&quot; style&#x3D;&quot;width: 200px;&quot;&gt;{{ &#x27;date_birth&#x27; | translate }}*:&lt;/label&gt;
+        &lt;div class&#x3D;&quot;p-col&quot;&gt;
+          &lt;p-calendar inputId&#x3D;&quot;float-input-birthday&quot; formControlName&#x3D;&quot;dateBirthday&quot; dateFormat&#x3D;&quot;dd/mm/yy&quot; [monthNavigator]&#x3D;&quot;true&quot; [yearNavigator]&#x3D;&quot;true&quot; yearRange&#x3D;&quot;1900:2030&quot;&gt;&lt;/p-calendar&gt;
+          &lt;small class&#x3D;&quot;p-error message_error&quot; *ngIf&#x3D;&quot;editUserForm.get(&#x27;dateBirthday&#x27;).errors?.required &amp;&amp; (editUserForm.controls[&#x27;dateBirthday&#x27;].dirty || editUserForm.controls[&#x27;dateBirthday&#x27;].touched)&quot;&gt;{{ &#x27;birthday_required&#x27; | translate }}&lt;/small&gt;
+          &lt;small class&#x3D;&quot;p-error message_error&quot; *ngIf&#x3D;&quot;editUserForm.get(&#x27;dateBirthday&#x27;).errors &amp;&amp; editUserForm.get(&#x27;dateBirthday&#x27;).dirty &amp;&amp; editUserForm.get(&#x27;dateBirthday&#x27;).errors.menorDeEdad&quot;&gt;{{ &#x27;age_invalid&#x27; | translate }}&lt;/small&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset class&#x3D;&quot;fielset_edit_user form-user-container&quot;&gt;
+      &lt;div class&#x3D;&quot;legend_fieldset&quot;&gt;
+        &lt;legend&gt;{{ &#x27;roles&#x27; | translate }}&lt;/legend&gt;
+      &lt;/div&gt;
+      &lt;p-listbox [options]&#x3D;&quot;roleList&quot; formControlName&#x3D;&quot;roles&quot; multiple&#x3D;&quot;multiple&quot; checkbox&#x3D;&quot;checkbox&quot; [style]&#x3D;&quot;{&#x27;margin-top&#x27;:&#x27;10px&#x27;,&#x27;width&#x27;:&#x27;100%&#x27;}&quot; [filter]&#x3D;&quot;true&quot;&gt;
+      &lt;/p-listbox&gt;
+    &lt;/fieldset&gt;
+    &lt;div class&#x3D;&quot;group-buttons-edit-user&quot;&gt;
+      &lt;button id&#x3D;&quot;edit_user_admin_btn&quot; pButton pRipple type&#x3D;&quot;submit&quot; class&#x3D;&quot;buttonSave&quot; label&#x3D;&quot; {{ &#x27;save&#x27; | translate }}&quot; icon&#x3D;&quot;pi pi-check&quot; [disabled]&#x3D;&quot;valueUnchanged || editUserForm.invalid || formEdit.submitted&quot; &gt;&lt;/button&gt;
+    &lt;/div&gt;
+
+  &lt;/form&gt;
+&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./edit-user-admin.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &quot;src/assets/sass/utility/_mixins.scss&quot;;
+
+.edit-panel {
+  @include custom-panel;
+  width: 100%;
+  min-height: 300px;
+  min-width: 800px;
+
+  h1{
+    text-align:center;
+  }
+}
+
+.form-user-container{
+  width: 55%;
+  padding-bottom: 5px;
+  /*Para centrar*/
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5px;
+}
+
+.group-buttons-edit-user{
+  display: flex;
+  justify-content: flex-end;
+
+  .buttonSave{
+    margin: 5px;
+  }
+}
+
+.fielset_edit_user{
+  border: 0;
+
+  .legend_fieldset{
+    border-bottom: 1px solid;
+    margin-bottom: 16px;
+    border-color: #c4c6c8;
+  }
+
+  legend {
+    font-size: 1.5em;
+  }
+}
+
+.message_error{
+  font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;
+  margin-left: 5px;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-menu-bar></app-menu-bar><p-toast key="edit-user"></p-toast><div class="edit-panel">  <h1>{{ \'edit_title\' | translate }}</h1>  <form [formGroup]="editUserForm" #formEdit="ngForm" (ngSubmit)="sendForm()">    <fieldset class="fielset_edit_user form-user-container">      <div class="legend_fieldset">        <legend>{{ \'personal_info\' | translate }}</legend>      </div>      <div class="p-field p-grid">        <label for="float-input-username" class="p-col-fixed" style="width: 200px;">{{ \'username\' | translate }}*:</label>        <div class="p-col">          <input id="float-input-username" type="text" pInputText formControlName="userName">          <small class="p-error message_error" *ngIf="editUserForm.controls[\'userName\'].invalid&&(editUserForm.controls[\'userName\'].dirty || editUserForm.controls[\'userName\'].touched)">{{ \'name_required\' | translate }}</small>        </div>      </div>      <div class="p-field p-grid">        <label for="float-input-birthday" class="p-col-fixed" style="width: 200px;">{{ \'date_birth\' | translate }}*:</label>        <div class="p-col">          <p-calendar inputId="float-input-birthday" formControlName="dateBirthday" dateFormat="dd/mm/yy" [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:2030"></p-calendar>          <small class="p-error message_error" *ngIf="editUserForm.get(\'dateBirthday\').errors?.required && (editUserForm.controls[\'dateBirthday\'].dirty || editUserForm.controls[\'dateBirthday\'].touched)">{{ \'birthday_required\' | translate }}</small>          <small class="p-error message_error" *ngIf="editUserForm.get(\'dateBirthday\').errors && editUserForm.get(\'dateBirthday\').dirty && editUserForm.get(\'dateBirthday\').errors.menorDeEdad">{{ \'age_invalid\' | translate }}</small>        </div>      </div>    </fieldset>    <fieldset class="fielset_edit_user form-user-container">      <div class="legend_fieldset">        <legend>{{ \'roles\' | translate }}</legend>      </div>      <p-listbox [options]="roleList" formControlName="roles" multiple="multiple" checkbox="checkbox" [style]="{\'margin-top\':\'10px\',\'width\':\'100%\'}" [filter]="true">      </p-listbox>    </fieldset>    <div class="group-buttons-edit-user">      <button id="edit_user_admin_btn" pButton pRipple type="submit" class="buttonSave" label=" {{ \'save\' | translate }}" icon="pi pi-check" [disabled]="valueUnchanged || editUserForm.invalid || formEdit.submitted" ></button>    </div>  </form></div></div>'
+    var COMPONENTS = [{'name': 'AddActivityComponent', 'selector': 'app-add-activity'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EditActivitiesComponent', 'selector': 'app-edit-activities'},{'name': 'EditUserAdminComponent', 'selector': 'app-edit-user-admin'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'InformationActivitiesComponent', 'selector': 'app-information-activities'},{'name': 'ListActivitiesEvaluateComponent', 'selector': 'app-list-activities-evaluate'},{'name': 'ListCitiesComponent', 'selector': 'app-list-cities'},{'name': 'ListInterestComponent', 'selector': 'app-list-interest'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapComponent', 'selector': 'app-map'},{'name': 'MenuBarComponent', 'selector': 'app-menu-bar'},{'name': 'RecommendationComponent', 'selector': 'app-recommendation'},{'name': 'RecommendationMapComponent', 'selector': 'app-recommendation-map'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'TableActivitiesComponent', 'selector': 'app-table-activities'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'EditUserAdminComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'EditUserAdminComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1142 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>proyecto-turismo-front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">proyecto-turismo-front documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>SignUpComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/sign-up/sign-up.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-sign-up</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./sign-up.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./sign-up.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#formGroup">formGroup</a>
+                            </li>
+                            <li>
+                                <a href="#interestArray">interestArray</a>
+                            </li>
+                            <li>
+                                <a href="#isContinueFail">isContinueFail</a>
+                            </li>
+                            <li>
+                                <a href="#isRegisterFail">isRegisterFail</a>
+                            </li>
+                            <li>
+                                <a href="#message">message</a>
+                            </li>
+                            <li>
+                                <a href="#openSecondForm">openSecondForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#continueSecondPartForm">continueSecondPartForm</a>
+                            </li>
+                            <li>
+                                <a href="#loadInterest">loadInterest</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit">onSubmit</a>
+                            </li>
+                            <li>
+                                <a href="#returnFirstPartForm">returnFirstPartForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#interest">interest</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, interestService: <a href="../injectables/InterestService.html">InterestService</a>, authService: <a href="../injectables/AuthService.html">AuthService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, notificationService: <a href="../injectables/NotificationService.html">NotificationService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/sign-up/sign-up.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>interestService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/InterestService.html" target="_self" >InterestService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>notificationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/NotificationService.html" target="_self" >NotificationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="continueSecondPartForm"></a>
+                    <span class="name">
+                        <b>
+                            continueSecondPartForm
+                        </b>
+                        <a href="#continueSecondPartForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>continueSecondPartForm()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/app/sign-up/sign-up.component.ts:103</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadInterest"></a>
+                    <span class="name">
+                        <b>
+                            loadInterest
+                        </b>
+                        <a href="#loadInterest"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadInterest()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/sign-up/sign-up.component.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/sign-up/sign-up.component.ts:37</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <b>
+                            onSubmit
+                        </b>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/sign-up/sign-up.component.ts:78</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="returnFirstPartForm"></a>
+                    <span class="name">
+                        <b>
+                            returnFirstPartForm
+                        </b>
+                        <a href="#returnFirstPartForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>returnFirstPartForm()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="114"
+                            class="link-to-prism">src/app/sign-up/sign-up.component.ts:114</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formGroup"></a>
+                        <span class="name">
+                            <b>
+                            formGroup</b>
+                            <a href="#formGroup"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/sign-up/sign-up.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="interestArray"></a>
+                        <span class="name">
+                            <b>
+                            interestArray</b>
+                            <a href="#interestArray"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/sign-up/sign-up.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isContinueFail"></a>
+                        <span class="name">
+                            <b>
+                            isContinueFail</b>
+                            <a href="#isContinueFail"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/sign-up/sign-up.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isRegisterFail"></a>
+                        <span class="name">
+                            <b>
+                            isRegisterFail</b>
+                            <a href="#isRegisterFail"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/sign-up/sign-up.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="message"></a>
+                        <span class="name">
+                            <b>
+                            message</b>
+                            <a href="#message"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/sign-up/sign-up.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="openSecondForm"></a>
+                        <span class="name">
+                            <b>
+                            openSecondForm</b>
+                            <a href="#openSecondForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/sign-up/sign-up.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="interest"></a>
+                        <span class="name"><b>interest</b><a href="#interest"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>interest()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/sign-up/sign-up.component.ts:58</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit, ViewEncapsulation} from &#x27;@angular/core&#x27;;
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from &#x27;@angular/forms&#x27;;
+import {InterestService} from &#x27;../services/interest/interest.service&#x27;;
+import {AuthService} from &#x27;../services/auth/auth.service&#x27;;
+import {MenuItem, MessageService, PrimeNGConfig, SelectItem} from &#x27;primeng/api&#x27;;
+import {validadorPasswordSame} from &#x27;../validators/validatorPasswordSame.directive&#x27;;
+import {validadorAgeGreaterThan} from &#x27;../validators/validatorGreaterThan.directive&#x27;;
+import {ActivatedRoute, Router} from &#x27;@angular/router&#x27;;
+import {NotificationService} from &#x27;../services/message/notification.service&#x27;;
+import {validadorPriorityNumberOfInterest} from &#x27;../validators/validatorPriorityNumber.directive&#x27;;
+import {TranslateService} from &#x27;@ngx-translate/core&#x27;;
+
+
+@Component({
+  selector: &#x27;app-sign-up&#x27;,
+  templateUrl: &#x27;./sign-up.component.html&#x27;,
+  styleUrls: [&#x27;./sign-up.component.scss&#x27;],
+})
+
+export class SignUpComponent implements OnInit {
+  formGroup: FormGroup;
+  interestArray;
+  isRegisterFail &#x3D; false;
+  openSecondForm &#x3D; false;
+  isContinueFail &#x3D; false;
+  message;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private interestService: InterestService,
+    private authService: AuthService,
+    private router: Router,
+    private notificationService: NotificationService
+  ) {
+  }
+
+  ngOnInit(): void {
+    const minPassLength &#x3D; 7;
+    this.formGroup &#x3D; this.formBuilder.group({
+      name: [&#x27;&#x27;, Validators.required],
+      email: [&#x27;&#x27;, [Validators.required, Validators.email]],
+      dateBirthday: [&#x27;&#x27;, [Validators.required, validadorAgeGreaterThan()]],
+      password: [&#x27;&#x27;, [Validators.required, Validators.minLength(minPassLength)]],
+      repeatPassword: [&#x27;&#x27;, [Validators.required, Validators.minLength(minPassLength)]],
+      interest: new FormArray([])
+    },
+      {
+        validators: validadorPasswordSame()
+      });
+    this.loadInterest();
+
+    // Podría sobrar si actualizo a Angular 11 (no sé si lo necesito)
+    this.formGroup.valueChanges.subscribe(e &#x3D;&gt; {
+      this.formGroup.setValue(e, {emitEvent: false});
+    });
+  }
+
+  get interest(): FormArray {
+    return this.formGroup.get(&#x27;interest&#x27;) as FormArray;
+  }
+
+  loadInterest() {
+    this.interestService.getInterests().subscribe(data &#x3D;&gt; {
+        this.interestArray &#x3D; data;
+        this.interestArray.forEach(interest &#x3D;&gt; {
+          const control &#x3D; new FormGroup({
+            nameInterest: new FormControl(interest.nameInterest, Validators.required),
+            priority: new FormControl(0, [Validators.required, validadorPriorityNumberOfInterest()])
+          });
+          this.interest.push(control);
+        });
+      },
+      err &#x3D;&gt; {
+        console.log(err);
+      });
+  }
+
+  onSubmit() {
+    var dateBirthday &#x3D; new Date(this.formGroup.get(&#x27;dateBirthday&#x27;).value);
+    const offset &#x3D; dateBirthday.getTimezoneOffset()
+    dateBirthday &#x3D; new Date(dateBirthday.getTime() - (offset * 60 * 1000))
+    const user &#x3D; {
+      userName: this.formGroup.get(&#x27;name&#x27;).value,
+      email: this.formGroup.get(&#x27;email&#x27;).value,
+      dateBirthday: dateBirthday.toISOString().split(&#x27;T&#x27;)[0],
+      password: this.formGroup.get(&#x27;password&#x27;).value,
+      passwordConfirm: this.formGroup.get(&#x27;repeatPassword&#x27;).value,
+      roles: [&#x27;user&#x27;],
+      interest: this.interest.value
+    };
+    this.authService.signUp(user).subscribe(
+      data &#x3D;&gt; {
+        this.isRegisterFail &#x3D; false;
+        this.notificationService.success(&quot;sign_up_successful_message_detail&quot;, &quot;sign_up_successful_message_summary&quot;);
+        this.router.navigate([&#x27;login&#x27;]);
+      },
+      (err) &#x3D;&gt; {
+        this.isRegisterFail &#x3D; true;
+        this.message &#x3D; err.error.mensaje;
+      });
+  }
+
+  continueSecondPartForm(){
+    if (this.formGroup.get(&#x27;name&#x27;).valid &amp;&amp; this.formGroup.get(&#x27;email&#x27;).valid &amp;&amp; this.formGroup.get(&#x27;dateBirthday&#x27;).valid &amp;&amp;
+      this.formGroup.get(&#x27;password&#x27;).valid &amp;&amp; this.formGroup.get(&#x27;repeatPassword&#x27;).valid){
+      this.openSecondForm &#x3D; true;
+      this.isContinueFail &#x3D; false;
+    }
+    else{
+      this.isContinueFail &#x3D; true;
+    }
+  }
+
+  returnFirstPartForm(){
+    this.openSecondForm &#x3D; false;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-menu-bar&gt;&lt;/app-menu-bar&gt;
+&lt;div class&#x3D;&quot;signup-panel&quot;&gt;
+  &lt;h1&gt;{{ &#x27;sign_up&#x27; | translate }}&lt;/h1&gt;
+  &lt;form [formGroup]&#x3D;&quot;formGroup&quot; #formSign&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot;&gt;
+    &lt;div *ngIf&#x3D;&quot;!openSecondForm; else showSecondForm&quot;&gt;
+      &lt;div class&#x3D;&quot;form-signup-container p-fluid p-formgrid p-grid&quot;&gt;
+        &lt;div class&#x3D;&quot;p-field p-col-12 p-md-6&quot;&gt;
+          &lt;label for&#x3D;&quot;field-name&quot;&gt;{{ &#x27;username&#x27; | translate }}*:&lt;/label&gt;
+          &lt;div class&#x3D;&quot;p-inputgroup&quot;&gt;
+            &lt;span class&#x3D;&quot;p-inputgroup-addon&quot;&gt;&lt;i class&#x3D;&quot;fas fa-user&quot; style&#x3D;&quot;line-height: 1.25;&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;input id&#x3D;&quot;field-name&quot; type&#x3D;&quot;text&quot; pInputText placeholder&#x3D;&quot;{{ &#x27;username&#x27; | translate }}&quot; formControlName&#x3D;&quot;name&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;message_error_sign_container&quot;&gt;
+            &lt;p-message severity&#x3D;&quot;error&quot; text&#x3D;&quot;{{ &#x27;name_required&#x27; | translate }}&quot;
+                       *ngIf&#x3D;&quot;formGroup.controls[&#x27;name&#x27;].invalid&amp;&amp;(formGroup.controls[&#x27;name&#x27;].dirty || formGroup.controls[&#x27;name&#x27;].touched)&quot;&gt;&lt;/p-message&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;p-field p-col-12 p-md-6&quot;&gt;
+          &lt;label for&#x3D;&quot;field-birth&quot;&gt;{{ &#x27;date_birth&#x27; | translate }}*:&lt;/label&gt;
+          &lt;div class&#x3D;&quot;p-inputgroup&quot;&gt;
+            &lt;span class&#x3D;&quot;p-inputgroup-addon&quot;&gt;&lt;i class&#x3D;&quot;far fa-calendar-alt&quot; style&#x3D;&quot;line-height: 1.25;&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;p-calendar appendTo&#x3D;&quot;body&quot; inputId&#x3D;&quot;field-birth&quot; formControlName&#x3D;&quot;dateBirthday&quot; placeholder&#x3D;&quot;dd/mm/yyyy&quot; [monthNavigator]&#x3D;&quot;true&quot; [yearNavigator]&#x3D;&quot;true&quot; yearRange&#x3D;&quot;1900:2030&quot; class&#x3D;&quot;input-birth&quot; dateFormat&#x3D;&quot;dd/mm/yy&quot;&gt;&lt;/p-calendar&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;message_error_sign_container&quot;&gt;
+            &lt;p-message severity&#x3D;&quot;error&quot; text&#x3D;&quot;{{ &#x27;age_invalid&#x27; | translate }}&quot;
+                       *ngIf&#x3D;&quot;formGroup.get(&#x27;dateBirthday&#x27;).errors &amp;&amp; formGroup.get(&#x27;dateBirthday&#x27;).dirty &amp;&amp; formGroup.get(&#x27;dateBirthday&#x27;).errors.menorDeEdad&quot;&gt;&lt;/p-message&gt;
+            &lt;p-message severity&#x3D;&quot;error&quot; text&#x3D;&quot;{{ &#x27;birthday_required&#x27; | translate }}&quot;
+                       *ngIf&#x3D;&quot;formGroup.get(&#x27;dateBirthday&#x27;).errors?.required &amp;&amp; (formGroup.controls[&#x27;dateBirthday&#x27;].dirty || formGroup.controls[&#x27;dateBirthday&#x27;].touched )&quot;&gt;&lt;/p-message&gt;
+          &lt;/div&gt;
+
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;p-field p-col-12&quot;&gt;
+          &lt;label for&#x3D;&quot;field-email&quot;&gt;Email*:&lt;/label&gt;
+          &lt;div class&#x3D;&quot;p-inputgroup&quot;&gt;
+            &lt;span class&#x3D;&quot;p-inputgroup-addon&quot;&gt;&lt;i class&#x3D;&quot;fas fa-at&quot; style&#x3D;&quot;line-height: 1.25;&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;input id&#x3D;&quot;field-email&quot; type&#x3D;&quot;text&quot; pInputText placeholder&#x3D;&quot;Email&quot; formControlName&#x3D;&quot;email&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;message_error_sign_container&quot;&gt;
+            &lt;p-message severity&#x3D;&quot;error&quot; text&#x3D;&quot;{{ &#x27;email_required&#x27; | translate }}&quot;
+                       *ngIf&#x3D;&quot;!formGroup.controls[&#x27;email&#x27;].valid&amp;&amp;(formGroup.controls[&#x27;email&#x27;].dirty || formGroup.controls[&#x27;email&#x27;].touched)&quot;&gt;&lt;/p-message&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;p-field p-col-12 p-md-6&quot;&gt;
+          &lt;label for&#x3D;&quot;field-password&quot;&gt;{{ &#x27;password&#x27; | translate }}*:&lt;/label&gt;
+          &lt;div class&#x3D;&quot;p-inputgroup&quot;&gt;
+            &lt;span class&#x3D;&quot;p-inputgroup-addon&quot;&gt;&lt;i class&#x3D;&quot;fas fa-lock&quot; style&#x3D;&quot;line-height: 1.25;&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;input id&#x3D;&quot;field-password&quot; type&#x3D;&quot;password&quot; pPassword formControlName&#x3D;&quot;password&quot; placeholder&#x3D;&quot;{{ &#x27;password&#x27; | translate }}&quot;
+                   promptLabel&#x3D;&quot;{{ &#x27;prompt_label&#x27; | translate }}&quot; weakLabel&#x3D;&quot;{{ &#x27;weak_label&#x27; | translate }}&quot; mediumLabel&#x3D;&quot;{{ &#x27;medium_label&#x27; | translate }}&quot; strongLabel&#x3D;&quot;{{ &#x27;strong_label&#x27; | translate }}&quot;/&gt;
+           &lt;/div&gt;
+          &lt;div class&#x3D;&quot;message_error_sign_container&quot;&gt;
+            &lt;p-message severity&#x3D;&quot;error&quot;
+                       text&#x3D;&quot;{{(formGroup.controls[&#x27;password&#x27;].errors[&#x27;required&#x27;] ? &#x27;password_required&#x27; :
+                       formGroup.controls[&#x27;password&#x27;].errors[&#x27;minlength&#x27;] ? &#x27;password_length&#x27; : &#x27;&#x27;)| translate}}&quot;
+                       *ngIf&#x3D;&quot;!formGroup.controls[&#x27;password&#x27;].valid&amp;&amp; (formGroup.controls[&#x27;password&#x27;].dirty || formGroup.controls[&#x27;password&#x27;].touched )&quot;&gt;&lt;/p-message&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;p-field p-col-12 p-md-6&quot;&gt;
+          &lt;label for&#x3D;&quot;field-password-repeat&quot;&gt;{{ &#x27;repeat_password&#x27; | translate }}*:&lt;/label&gt;
+          &lt;div class&#x3D;&quot;p-inputgroup&quot;&gt;
+            &lt;span class&#x3D;&quot;p-inputgroup-addon&quot;&gt;&lt;i class&#x3D;&quot;fas fa-lock&quot; style&#x3D;&quot;line-height: 1.25;&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;input id&#x3D;&quot;field-password-repeat&quot; type&#x3D;&quot;password&quot; pPassword formControlName&#x3D;&quot;repeatPassword&quot; placeholder&#x3D;&quot;{{ &#x27;repeat_password&#x27; | translate }}&quot;
+                   promptLabel&#x3D;&quot;{{ &#x27;prompt_label&#x27; | translate }}&quot; weakLabel&#x3D;&quot;{{ &#x27;weak_label&#x27; | translate }}&quot; mediumLabel&#x3D;&quot;{{ &#x27;medium_label&#x27; | translate }}&quot; strongLabel&#x3D;&quot;{{ &#x27;strong_label&#x27; | translate }}&quot;/&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;message_error_sign_container&quot;&gt;
+            &lt;p-message severity&#x3D;&quot;error&quot;
+                       text&#x3D;&quot;{{ &#x27;password_not_same&#x27;| translate}}&quot;
+                       *ngIf&#x3D;&quot;this.formGroup.hasError(&#x27;noSonIguales&#x27;) &amp;&amp; this.formGroup.get(&#x27;password&#x27;).dirty &amp;&amp; this.formGroup.get(&#x27;repeatPassword&#x27;).dirty;&quot;&gt;&lt;/p-message&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;p-field p-col-12&quot;&gt;
+          &lt;p-message severity&#x3D;&quot;error&quot; text&#x3D;&quot;{{ &#x27;data_incorrect&#x27; | translate }}&quot; *ngIf&#x3D;&quot;(this.formGroup.get(&#x27;name&#x27;).invalid || this.formGroup.get(&#x27;email&#x27;).invalid ||
+      this.formGroup.get(&#x27;password&#x27;).invalid || this.formGroup.get(&#x27;repeatPassword&#x27;).invalid || this.formGroup.get(&#x27;dateBirthday&#x27;).invalid) &amp;&amp; isContinueFail&quot;&gt;&lt;/p-message&gt;
+          &lt;button pButton type&#x3D;&quot;button&quot; label&#x3D;&quot; {{ &#x27;continue&#x27; | translate }}&quot; icon&#x3D;&quot;fas fa-arrow-right&quot; class&#x3D;&quot;button_signup&quot; (click)&#x3D;&quot;continueSecondPartForm()&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;ng-template #showSecondForm&gt;
+      &lt;div class&#x3D;&quot;message_valuation_container&quot;&gt;
+        &lt;p&gt;{{ &#x27;message_valuation_one&#x27; | translate }}&lt;/p&gt;
+        &lt;p&gt;{{ &#x27;message_valuation_two&#x27; | translate }}&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;form-signup-second-container p-fluid&quot;&gt;
+        &lt;ng-container formArrayName&#x3D;&quot;interest&quot;&gt;
+          &lt;div *ngFor&#x3D;&quot;let interest of interest.controls; let i&#x3D;index&quot; class&#x3D;&quot;p-field p-grid&quot;&gt;
+            &lt;label class&#x3D;&quot;p-col-12 p-mb-2 p-md-2 p-mb-md-0&quot;&gt;{{interestArray[i].nameInterest}}&lt;/label&gt;
+            &lt;ng-container [formGroupName]&#x3D;&quot;i&quot;&gt;
+              &lt;div class&#x3D;&quot;p-col-12 p-md-10&quot;&gt;
+                &lt;!--&lt;p-radioButton name&#x3D;&quot;{{interestArray[i]}}&quot; value&#x3D;&quot;0&quot; formControlName&#x3D;&quot;priority&quot; label&#x3D;&quot;0&quot;&gt;&lt;/p-radioButton&gt;
+                &lt;p-radioButton name&#x3D;&quot;{{interestArray[i]}}&quot; value&#x3D;&quot;1&quot; formControlName&#x3D;&quot;priority&quot; label&#x3D;&quot;1&quot;&gt;&lt;/p-radioButton&gt;
+                &lt;p-radioButton name&#x3D;&quot;{{interestArray[i]}}&quot; value&#x3D;&quot;2&quot; formControlName&#x3D;&quot;priority&quot; label&#x3D;&quot;2&quot;&gt;&lt;/p-radioButton&gt;
+                &lt;p-radioButton name&#x3D;&quot;{{interestArray[i]}}&quot; value&#x3D;&quot;3&quot; formControlName&#x3D;&quot;priority&quot; label&#x3D;&quot;3&quot;&gt;&lt;/p-radioButton&gt;
+                &lt;p-radioButton name&#x3D;&quot;{{interestArray[i]}}&quot; value&#x3D;&quot;4&quot; formControlName&#x3D;&quot;priority&quot; label&#x3D;&quot;4&quot;&gt;&lt;/p-radioButton&gt;
+                &lt;p-radioButton name&#x3D;&quot;{{interestArray[i]}}&quot; value&#x3D;&quot;5&quot; formControlName&#x3D;&quot;priority&quot; label&#x3D;&quot;5&quot;&gt;&lt;/p-radioButton&gt;
+                &lt;p-radioButton name&#x3D;&quot;{{interestArray[i]}}&quot; value&#x3D;&quot;6&quot; formControlName&#x3D;&quot;priority&quot; label&#x3D;&quot;6&quot;&gt;&lt;/p-radioButton&gt;
+                &lt;p-radioButton name&#x3D;&quot;{{interestArray[i]}}&quot; value&#x3D;&quot;7&quot; formControlName&#x3D;&quot;priority&quot; label&#x3D;&quot;7&quot;&gt;&lt;/p-radioButton&gt;
+                &lt;p-radioButton name&#x3D;&quot;{{interestArray[i]}}&quot; value&#x3D;&quot;8&quot; formControlName&#x3D;&quot;priority&quot; label&#x3D;&quot;8&quot;&gt;&lt;/p-radioButton&gt;
+                &lt;p-radioButton name&#x3D;&quot;{{interestArray[i]}}&quot; value&#x3D;&quot;9&quot; formControlName&#x3D;&quot;priority&quot; label&#x3D;&quot;9&quot;&gt;&lt;/p-radioButton&gt;
+                &lt;p-radioButton name&#x3D;&quot;{{interestArray[i]}}&quot; value&#x3D;&quot;10&quot; formControlName&#x3D;&quot;priority&quot; label&#x3D;&quot;10&quot;&gt;&lt;/p-radioButton&gt;--&gt;
+                &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; [value]&#x3D;&quot;0&quot; formControlName&#x3D;&quot;priority&quot; id&#x3D;&quot;{{&#x27;zero&#x27; + i}}&quot;&gt;
+                &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;{{&#x27;zero&#x27; + i}}&quot;&gt;
+                  0
+                &lt;/label&gt;
+
+                &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; [value]&#x3D;&quot;1&quot; formControlName&#x3D;&quot;priority&quot; id&#x3D;&quot;{{&#x27;one&#x27; + i}}&quot;&gt;
+                &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;{{&#x27;one&#x27; + i}}&quot;&gt;
+                  1
+                &lt;/label&gt;
+
+                &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; [value]&#x3D;&quot;2&quot; formControlName&#x3D;&quot;priority&quot; id&#x3D;&quot;{{&#x27;two&#x27; + i}}&quot;&gt;
+                &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;{{&#x27;two&#x27; + i}}&quot;&gt;
+                  2
+                &lt;/label&gt;
+
+                &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; [value]&#x3D;&quot;3&quot; formControlName&#x3D;&quot;priority&quot; id&#x3D;&quot;{{&#x27;three&#x27; + i}}&quot;&gt;
+                &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;{{&#x27;three&#x27; + i}}&quot;&gt;
+                  3
+                &lt;/label&gt;
+
+                &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; [value]&#x3D;&quot;4&quot; formControlName&#x3D;&quot;priority&quot; id&#x3D;&quot;{{&#x27;four&#x27; + i}}&quot;&gt;
+                &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;{{&#x27;four&#x27; + i}}&quot;&gt;
+                  4
+                &lt;/label&gt;
+
+                &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; [value]&#x3D;&quot;5&quot; formControlName&#x3D;&quot;priority&quot; id&#x3D;&quot;{{&#x27;five&#x27; + i}}&quot;&gt;
+                &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;{{&#x27;five&#x27; + i}}&quot;&gt;
+                  5
+                &lt;/label&gt;
+
+                &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; [value]&#x3D;&quot;6&quot; formControlName&#x3D;&quot;priority&quot; id&#x3D;&quot;{{&#x27;six&#x27; + i}}&quot;&gt;
+                &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;{{&#x27;six&#x27; + i}}&quot;&gt;
+                  6
+                &lt;/label&gt;
+
+                &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; [value]&#x3D;&quot;7&quot; formControlName&#x3D;&quot;priority&quot; id&#x3D;&quot;{{&#x27;seven&#x27; + i}}&quot;&gt;
+                &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;{{&#x27;seven&#x27; + i}}&quot;&gt;
+                  7
+                &lt;/label&gt;
+
+                &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; [value]&#x3D;&quot;8&quot; formControlName&#x3D;&quot;priority&quot; id&#x3D;&quot;{{&#x27;eight&#x27; + i}}&quot;&gt;
+                &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;{{&#x27;eight&#x27; + i}}&quot;&gt;
+                  8
+                &lt;/label&gt;
+
+                &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; [value]&#x3D;&quot;9&quot; formControlName&#x3D;&quot;priority&quot; id&#x3D;&quot;{{&#x27;nine&#x27; + i}}&quot;&gt;
+                &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;{{&#x27;nine&#x27; + i}}&quot;&gt;
+                  9
+                &lt;/label&gt;
+
+                &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; [value]&#x3D;&quot;10&quot; formControlName&#x3D;&quot;priority&quot; id&#x3D;&quot;{{&#x27;ten&#x27; + i}}&quot;&gt;
+                &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;{{&#x27;ten&#x27; + i}}&quot;&gt;
+                  10
+                &lt;/label&gt;
+              &lt;/div&gt;
+            &lt;/ng-container&gt;
+          &lt;/div&gt;
+        &lt;/ng-container&gt;
+        &lt;p-message severity&#x3D;&quot;error&quot; text&#x3D;&quot;{{ &#x27;data_incorrect&#x27; | translate }}: {{message | translate}}&quot;
+                   *ngIf&#x3D;&quot;formSign.submitted &amp;&amp; isRegisterFail&quot;&gt;&lt;/p-message&gt;
+        &lt;div class&#x3D;&quot;p-field p-col-12&quot;&gt;
+          &lt;button pButton type&#x3D;&quot;button&quot; label&#x3D;&quot;{{ &#x27;return&#x27; | translate }}&quot; icon&#x3D;&quot;fas fa-arrow-left&quot; class&#x3D;&quot;button_return p-button-outlined p-button-secondary&quot; (click)&#x3D;&quot;returnFirstPartForm()&quot;&gt;&lt;/button&gt;
+          &lt;button pButton type&#x3D;&quot;submit&quot; label&#x3D;&quot;{{ &#x27;submit&#x27; | translate }}&quot; icon&#x3D;&quot;pi pi-check&quot; [disabled]&#x3D;&quot;!formGroup.valid&quot; class&#x3D;&quot;button_signup&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/ng-template&gt;
+
+  &lt;/form&gt;
+&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./sign-up.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &quot;src/assets/sass/utility/_mixins.scss&quot;;
+
+.signup-panel{
+  @include custom-panel;
+  width: 100%;
+  min-height: 300px;
+  min-width: 800px;
+
+  h1{
+    text-align:center;
+  }
+}
+
+.button_signup{
+  float: right;
+}
+
+.sign_up_btns{
+
+}
+
+.button_return, .button_signup{
+  width: auto;
+}
+
+.form-signup-container{
+  width: 60%;
+}
+
+.form-signup-container, .form-signup-second-container{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-signup-second-container{
+  width: 70%;
+
+  .form-check-label{
+    margin: 10px;
+  }
+}
+
+.message_error_sign_container{
+  padding-top: 5px;
+}
+
+.input-birth{
+  width: 100%;
+}
+
+.message_valuation_container{
+  text-align: center;
+}
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-menu-bar></app-menu-bar><div class="signup-panel">  <h1>{{ \'sign_up\' | translate }}</h1>  <form [formGroup]="formGroup" #formSign="ngForm" (ngSubmit)="onSubmit()">    <div *ngIf="!openSecondForm; else showSecondForm">      <div class="form-signup-container p-fluid p-formgrid p-grid">        <div class="p-field p-col-12 p-md-6">          <label for="field-name">{{ \'username\' | translate }}*:</label>          <div class="p-inputgroup">            <span class="p-inputgroup-addon"><i class="fas fa-user" style="line-height: 1.25;"></i></span>            <input id="field-name" type="text" pInputText placeholder="{{ \'username\' | translate }}" formControlName="name">          </div>          <div class="message_error_sign_container">            <p-message severity="error" text="{{ \'name_required\' | translate }}"                       *ngIf="formGroup.controls[\'name\'].invalid&&(formGroup.controls[\'name\'].dirty || formGroup.controls[\'name\'].touched)"></p-message>          </div>        </div>        <div class="p-field p-col-12 p-md-6">          <label for="field-birth">{{ \'date_birth\' | translate }}*:</label>          <div class="p-inputgroup">            <span class="p-inputgroup-addon"><i class="far fa-calendar-alt" style="line-height: 1.25;"></i></span>            <p-calendar appendTo="body" inputId="field-birth" formControlName="dateBirthday" placeholder="dd/mm/yyyy" [monthNavigator]="true" [yearNavigator]="true" yearRange="1900:2030" class="input-birth" dateFormat="dd/mm/yy"></p-calendar>          </div>          <div class="message_error_sign_container">            <p-message severity="error" text="{{ \'age_invalid\' | translate }}"                       *ngIf="formGroup.get(\'dateBirthday\').errors && formGroup.get(\'dateBirthday\').dirty && formGroup.get(\'dateBirthday\').errors.menorDeEdad"></p-message>            <p-message severity="error" text="{{ \'birthday_required\' | translate }}"                       *ngIf="formGroup.get(\'dateBirthday\').errors?.required && (formGroup.controls[\'dateBirthday\'].dirty || formGroup.controls[\'dateBirthday\'].touched )"></p-message>          </div>        </div>        <div class="p-field p-col-12">          <label for="field-email">Email*:</label>          <div class="p-inputgroup">            <span class="p-inputgroup-addon"><i class="fas fa-at" style="line-height: 1.25;"></i></span>            <input id="field-email" type="text" pInputText placeholder="Email" formControlName="email">          </div>          <div class="message_error_sign_container">            <p-message severity="error" text="{{ \'email_required\' | translate }}"                       *ngIf="!formGroup.controls[\'email\'].valid&&(formGroup.controls[\'email\'].dirty || formGroup.controls[\'email\'].touched)"></p-message>          </div>        </div>        <div class="p-field p-col-12 p-md-6">          <label for="field-password">{{ \'password\' | translate }}*:</label>          <div class="p-inputgroup">            <span class="p-inputgroup-addon"><i class="fas fa-lock" style="line-height: 1.25;"></i></span>            <input id="field-password" type="password" pPassword formControlName="password" placeholder="{{ \'password\' | translate }}"                   promptLabel="{{ \'prompt_label\' | translate }}" weakLabel="{{ \'weak_label\' | translate }}" mediumLabel="{{ \'medium_label\' | translate }}" strongLabel="{{ \'strong_label\' | translate }}"/>           </div>          <div class="message_error_sign_container">            <p-message severity="error"                       text="{{(formGroup.controls[\'password\'].errors[\'required\'] ? \'password_required\' :                       formGroup.controls[\'password\'].errors[\'minlength\'] ? \'password_length\' : \'\')| translate}}"                       *ngIf="!formGroup.controls[\'password\'].valid&& (formGroup.controls[\'password\'].dirty || formGroup.controls[\'password\'].touched )"></p-message>          </div>        </div>        <div class="p-field p-col-12 p-md-6">          <label for="field-password-repeat">{{ \'repeat_password\' | translate }}*:</label>          <div class="p-inputgroup">            <span class="p-inputgroup-addon"><i class="fas fa-lock" style="line-height: 1.25;"></i></span>            <input id="field-password-repeat" type="password" pPassword formControlName="repeatPassword" placeholder="{{ \'repeat_password\' | translate }}"                   promptLabel="{{ \'prompt_label\' | translate }}" weakLabel="{{ \'weak_label\' | translate }}" mediumLabel="{{ \'medium_label\' | translate }}" strongLabel="{{ \'strong_label\' | translate }}"/>          </div>          <div class="message_error_sign_container">            <p-message severity="error"                       text="{{ \'password_not_same\'| translate}}"                       *ngIf="this.formGroup.hasError(\'noSonIguales\') && this.formGroup.get(\'password\').dirty && this.formGroup.get(\'repeatPassword\').dirty;"></p-message>          </div>        </div>        <div class="p-field p-col-12">          <p-message severity="error" text="{{ \'data_incorrect\' | translate }}" *ngIf="(this.formGroup.get(\'name\').invalid || this.formGroup.get(\'email\').invalid ||      this.formGroup.get(\'password\').invalid || this.formGroup.get(\'repeatPassword\').invalid || this.formGroup.get(\'dateBirthday\').invalid) && isContinueFail"></p-message>          <button pButton type="button" label=" {{ \'continue\' | translate }}" icon="fas fa-arrow-right" class="button_signup" (click)="continueSecondPartForm()"></button>        </div>      </div>    </div>    <ng-template #showSecondForm>      <div class="message_valuation_container">        <p>{{ \'message_valuation_one\' | translate }}</p>        <p>{{ \'message_valuation_two\' | translate }}</p>      </div>      <div class="form-signup-second-container p-fluid">        <ng-container formArrayName="interest">          <div *ngFor="let interest of interest.controls; let i=index" class="p-field p-grid">            <label class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">{{interestArray[i].nameInterest}}</label>            <ng-container [formGroupName]="i">              <div class="p-col-12 p-md-10">                <!--<p-radioButton name="{{interestArray[i]}}" value="0" formControlName="priority" label="0"></p-radioButton>                <p-radioButton name="{{interestArray[i]}}" value="1" formControlName="priority" label="1"></p-radioButton>                <p-radioButton name="{{interestArray[i]}}" value="2" formControlName="priority" label="2"></p-radioButton>                <p-radioButton name="{{interestArray[i]}}" value="3" formControlName="priority" label="3"></p-radioButton>                <p-radioButton name="{{interestArray[i]}}" value="4" formControlName="priority" label="4"></p-radioButton>                <p-radioButton name="{{interestArray[i]}}" value="5" formControlName="priority" label="5"></p-radioButton>                <p-radioButton name="{{interestArray[i]}}" value="6" formControlName="priority" label="6"></p-radioButton>                <p-radioButton name="{{interestArray[i]}}" value="7" formControlName="priority" label="7"></p-radioButton>                <p-radioButton name="{{interestArray[i]}}" value="8" formControlName="priority" label="8"></p-radioButton>                <p-radioButton name="{{interestArray[i]}}" value="9" formControlName="priority" label="9"></p-radioButton>                <p-radioButton name="{{interestArray[i]}}" value="10" formControlName="priority" label="10"></p-radioButton>-->                <input class="form-check-input" type="radio" [value]="0" formControlName="priority" id="{{\'zero\' + i}}">                <label class="form-check-label" for="{{\'zero\' + i}}">                  0                </label>                <input class="form-check-input" type="radio" [value]="1" formControlName="priority" id="{{\'one\' + i}}">                <label class="form-check-label" for="{{\'one\' + i}}">                  1                </label>                <input class="form-check-input" type="radio" [value]="2" formControlName="priority" id="{{\'two\' + i}}">                <label class="form-check-label" for="{{\'two\' + i}}">                  2                </label>                <input class="form-check-input" type="radio" [value]="3" formControlName="priority" id="{{\'three\' + i}}">                <label class="form-check-label" for="{{\'three\' + i}}">                  3                </label>                <input class="form-check-input" type="radio" [value]="4" formControlName="priority" id="{{\'four\' + i}}">                <label class="form-check-label" for="{{\'four\' + i}}">                  4                </label>                <input class="form-check-input" type="radio" [value]="5" formControlName="priority" id="{{\'five\' + i}}">                <label class="form-check-label" for="{{\'five\' + i}}">                  5                </label>                <input class="form-check-input" type="radio" [value]="6" formControlName="priority" id="{{\'six\' + i}}">                <label class="form-check-label" for="{{\'six\' + i}}">                  6                </label>                <input class="form-check-input" type="radio" [value]="7" formControlName="priority" id="{{\'seven\' + i}}">                <label class="form-check-label" for="{{\'seven\' + i}}">                  7                </label>                <input class="form-check-input" type="radio" [value]="8" formControlName="priority" id="{{\'eight\' + i}}">                <label class="form-check-label" for="{{\'eight\' + i}}">                  8                </label>                <input class="form-check-input" type="radio" [value]="9" formControlName="priority" id="{{\'nine\' + i}}">                <label class="form-check-label" for="{{\'nine\' + i}}">                  9                </label>                <input class="form-check-input" type="radio" [value]="10" formControlName="priority" id="{{\'ten\' + i}}">                <label class="form-check-label" for="{{\'ten\' + i}}">                  10                </label>              </div>            </ng-container>          </div>        </ng-container>        <p-message severity="error" text="{{ \'data_incorrect\' | translate }}: {{message | translate}}"                   *ngIf="formSign.submitted && isRegisterFail"></p-message>        <div class="p-field p-col-12">          <button pButton type="button" label="{{ \'return\' | translate }}" icon="fas fa-arrow-left" class="button_return p-button-outlined p-button-secondary" (click)="returnFirstPartForm()"></button>          <button pButton type="submit" label="{{ \'submit\' | translate }}" icon="pi pi-check" [disabled]="!formGroup.valid" class="button_signup"></button>        </div>      </div>    </ng-template>  </form></div></div>'
+    var COMPONENTS = [{'name': 'AddActivityComponent', 'selector': 'app-add-activity'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EditActivitiesComponent', 'selector': 'app-edit-activities'},{'name': 'EditUserAdminComponent', 'selector': 'app-edit-user-admin'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'InformationActivitiesComponent', 'selector': 'app-information-activities'},{'name': 'ListActivitiesEvaluateComponent', 'selector': 'app-list-activities-evaluate'},{'name': 'ListCitiesComponent', 'selector': 'app-list-cities'},{'name': 'ListInterestComponent', 'selector': 'app-list-interest'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapComponent', 'selector': 'app-map'},{'name': 'MenuBarComponent', 'selector': 'app-menu-bar'},{'name': 'RecommendationComponent', 'selector': 'app-recommendation'},{'name': 'RecommendationMapComponent', 'selector': 'app-recommendation-map'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'TableActivitiesComponent', 'selector': 'app-table-activities'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SignUpComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SignUpComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
