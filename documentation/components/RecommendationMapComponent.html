@@ -206,12 +206,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:32</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:59</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor de la clase RecommendationMapComponent</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -220,6 +222,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -234,6 +237,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio de actividades.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>fb</td>
@@ -246,6 +253,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Clase que permite crear objetos de la clase FormGroup y FormControl.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>interestService</td>
@@ -258,6 +269,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio de intereses.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>cityService</td>
@@ -270,6 +285,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio de localidades.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>sanitizer</td>
@@ -282,6 +301,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>filterService</td>
@@ -294,6 +317,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio propocionado por la librería PrimeNG que permite acceder a la API para registrar filtros personalizados.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>localStorageService</td>
@@ -306,6 +333,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio que consta de métodos para acceder al objeto LocalStorage del navegador.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>userService</td>
@@ -318,6 +349,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio de usuarios.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -359,14 +394,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="102"
-                            class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:102</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="162"
+                            class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:162</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método que modifica la aparición de los marcadores en el mapa según la selección del usuario.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -375,6 +412,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -386,6 +424,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Evento que se produce cuando el usuario hace click en alguna casilla de verificación.</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>activity</td>
@@ -395,6 +437,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>La actividad cuyo marcador se quiere mostrar o eliminar del mapa.</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -434,14 +480,20 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:48</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:101</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método que permite inicializar los datos del componente.
+  <ul>
+      <li>Creará el mapa con los correspondientes marcadores.</li>
+      <li>Cargará las actividades recomendadas al usuario autenticado.</li>
+  </ul></p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -473,14 +525,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="129"
-                            class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:129</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="194"
+                            class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:194</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método que abre un diálogo para que el usuario autenticado pueda valorar una actividad.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -489,6 +543,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -500,6 +555,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Actividad a valorar.</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -539,14 +598,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="173"
-                            class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:173</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="252"
+                            class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:252</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método que sanea la URL de la imagen asociada a la actividad.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -555,6 +616,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -566,6 +628,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Actividad cuya url de la imagen asociada se quiere sanear.</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -605,14 +671,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="159"
-                            class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:159</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="233"
+                            class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:233</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método que elimina un marcador del mapa.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -621,6 +689,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -632,6 +701,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Actividad cuyo marcador asociado se quiere eliminar del mapa.</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -671,14 +744,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="137"
-                            class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:137</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="206"
+                            class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:206</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método que envía una valoración de una actividad recomendada.
+Una vez enviado, también se encargará de cargar las nuevas recomendaciones y de modificar los marcadores del mapa.</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -714,10 +790,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:31</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Almacena las actividades recomendadas.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -746,10 +828,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:35</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Almacena la lista de actividades que se muestran en el mapa.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -773,10 +861,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:55</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Almacena la actividad que el usuario quiere valorar.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -805,10 +899,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:47</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Indica si el usuario ha seleccionado alguna actividad para valorar.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -832,10 +932,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:51</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Formulario para valorar una actividad.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -853,10 +959,16 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:39</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Mapa</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -885,10 +997,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:43</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Array que almacena la lista de marcadores del mapa.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -912,10 +1030,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/recommendation-map/recommendation-map.component.ts:59</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Almacena el usuario autenticado</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -925,16 +1049,14 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, ElementRef, OnInit, ViewChild} from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
 import {ActivityService} from &#x27;../services/activity/activity.service&#x27;;
 import * as L from &#x27;leaflet&#x27;;
 import {FormBuilder, FormGroup, Validators} from &#x27;@angular/forms&#x27;;
 import {InterestService} from &#x27;../services/interest/interest.service&#x27;;
-import {Interest} from &#x27;../models/interest&#x27;;
-import {FilterService, SelectItem} from &#x27;primeng/api&#x27;;
+import {FilterService} from &#x27;primeng/api&#x27;;
 import {CityService} from &#x27;../services/city/city.service&#x27;;
 import {DomSanitizer} from &#x27;@angular/platform-browser&#x27;;
-import {ObjectUtils} from &#x27;primeng/utils&#x27;;
 import {UserService} from &#x27;../services/user/user.service&#x27;;
 import {map, mergeMap} from &#x27;rxjs/operators&#x27;;
 import {forkJoin} from &#x27;rxjs&#x27;;
@@ -947,17 +1069,65 @@ import {User} from &#x27;../models/user&#x27;;
   templateUrl: &#x27;./recommendation-map.component.html&#x27;,
   styleUrls: [&#x27;./recommendation-map.component.scss&#x27;]
 })
+/**
+ * Clase RecommendationMapComponent
+ *
+ * Clase que obtiene las actividades recomendadas al usuario autenticado.
+ */
 export class RecommendationMapComponent implements OnInit {
 
+  /**
+   * Almacena las actividades recomendadas.
+   */
   activitiesRecommendation: ActivityRecommended[];
+  /**
+   * Almacena la lista de actividades que se muestran en el mapa.
+   */
   activitiesSelected: string[] &#x3D; [];
+  /**
+   * Mapa
+   */
   map;
+  /**
+   * Array que almacena la lista de marcadores del mapa.
+   */
   markerList &#x3D; [];
+  /**
+   * Indica si el usuario ha seleccionado alguna actividad para valorar.
+   */
   displayPanelRating: boolean &#x3D; false;
+  /**
+   * Formulario para valorar una actividad.
+   */
   formToRatingActivity: FormGroup;
+  /**
+   * Almacena la actividad que el usuario quiere valorar.
+   */
   activitySelectedToRate: ActivityRecommended;
+  /**
+   * Almacena el usuario autenticado
+   */
   userLogged: User;
 
+  /**
+   * Constructor de la clase RecommendationMapComponent
+   * @param activitiesService
+   * Servicio de actividades.
+   * @param fb
+   * Clase que permite crear objetos de la clase FormGroup y FormControl.
+   * @param interestService
+   * Servicio de intereses.
+   * @param cityService
+   * Servicio de localidades.
+   * @param sanitizer
+   * Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM
+   * @param filterService
+   * Servicio propocionado por la librería PrimeNG que permite acceder a la API para registrar filtros personalizados.
+   * @param localStorageService
+   * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador.
+   * @param userService
+     Servicio de usuarios.
+   */
   constructor(
     private activitiesService: ActivityService,
     private fb: FormBuilder,
@@ -972,6 +1142,13 @@ export class RecommendationMapComponent implements OnInit {
     });
   }
 
+  /**
+   * Método que permite inicializar los datos del componente.
+   *  &lt;ul&gt;
+   *      &lt;li&gt;Creará el mapa con los correspondientes marcadores.&lt;/li&gt;
+   *      &lt;li&gt;Cargará las actividades recomendadas al usuario autenticado.&lt;/li&gt;
+   *  &lt;/ul&gt;
+   */
   ngOnInit(): void {
 
     this.map &#x3D; L.map(&#x27;mapActivityRecommendation&#x27;, {
@@ -1026,6 +1203,13 @@ export class RecommendationMapComponent implements OnInit {
     });
   }
 
+  /**
+   * Método que modifica la aparición de los marcadores en el mapa según la selección del usuario.
+   * @param event
+   * Evento que se produce cuando el usuario hace click en alguna casilla de verificación.
+   * @param activity
+   * La actividad cuyo marcador se quiere mostrar o eliminar del mapa.
+   */
   changeMap(event, activity){
     if (event.checked){
       var greenIcon &#x3D; L.icon({
@@ -1053,6 +1237,11 @@ export class RecommendationMapComponent implements OnInit {
     }
   }
 
+  /**
+   * Método que abre un diálogo para que el usuario autenticado pueda valorar una actividad.
+   * @param activity
+   * Actividad a valorar.
+   */
   openPanelToRating(activity){
     this.formToRatingActivity.patchValue({
       rating: []
@@ -1061,6 +1250,10 @@ export class RecommendationMapComponent implements OnInit {
     this.displayPanelRating &#x3D; true;
   }
 
+  /**
+   * Método que envía una valoración de una actividad recomendada.
+   * Una vez enviado, también se encargará de cargar las nuevas recomendaciones y de modificar los marcadores del mapa.
+   */
   sendRatingActivity(){
     var rateActivity &#x3D; {
       activity_id : this.activitySelectedToRate.id,
@@ -1083,6 +1276,11 @@ export class RecommendationMapComponent implements OnInit {
     );
   }
 
+  /**
+   * Método que elimina un marcador del mapa.
+   * @param activity
+   * Actividad cuyo marcador asociado se quiere eliminar del mapa.
+   */
   removeMarkerFromMap(activity){
     var f &#x3D; this.markerList.filter((act) &#x3D;&gt; {
       return act._latlng.lat &#x3D;&#x3D;&#x3D; activity.latitude &amp;&amp; act._latlng.lng &#x3D;&#x3D;&#x3D; activity.longitude;
@@ -1097,6 +1295,11 @@ export class RecommendationMapComponent implements OnInit {
     }
   }
 
+  /**
+   * Método que sanea la URL de la imagen asociada a la actividad.
+   * @param activity
+   * Actividad cuya url de la imagen asociada se quiere sanear.
+   */
   photoURL(activity){
     var url &#x3D; &#x27;data:&#x27; + activity.metadataImage.mimeType + &#x27;;base64,&#x27; + activity.metadataImage.data;
     return this.sanitizer.bypassSecurityTrustUrl(url);

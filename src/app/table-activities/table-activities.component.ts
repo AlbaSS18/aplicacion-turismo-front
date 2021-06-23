@@ -13,12 +13,47 @@ import {DomSanitizer} from '@angular/platform-browser';
   templateUrl: './table-activities.component.html',
   styleUrls: ['./table-activities.component.scss']
 })
+/**
+ * Clase TableActivitiesComponent
+ *
+ * Clase que muestra la lista de actividades del sistema.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
+ */
 export class TableActivitiesComponent implements OnInit {
 
+  /**
+   * Array de objetos que representan las columnas del componente tabla.
+   */
   cols: any[];
+  /**
+   * Almacena las actividades.
+   */
   activities;
+  /**
+   * Servicio propocionado por la librería PrimeNG que permite pasar información a los componentes dinámicos.
+   */
   ref: DynamicDialogRef;
 
+  /**
+   * Constructor de la clase EditActivitiesComponent
+   *
+   * @param activityService
+   * Servicio de actividades.
+   * @param confirmationService
+   * Servicio propocionado por la librería PrimeNG que permite mostrar un diálogo de confirmación.
+   * @param dialogService
+   * Servicio propocionado por la librería PrimeNG que permite mostrar un diálogo.
+   * @param translateService
+   * Servicio proporcionado por la librería ngx-translate que se utiliza para la internacionalización de la aplicación.
+   * @param messageService
+   * Servicio propocionado por la librería PrimeNG que permite almacenar los mensajes que serán mostrados al usuario.
+   * @param router
+   * Servicio que permite la navegación entre vistas
+   * @param sanitizer
+   * Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM
+   */
   constructor(
     private activityService: ActivityService,
     private confirmationService: ConfirmationService,
@@ -29,6 +64,13 @@ export class TableActivitiesComponent implements OnInit {
     private sanitizer: DomSanitizer
   ) { }
 
+  /**
+   * Método que permite inicializar los datos del componente.
+   *  <ul>
+   *      <li>Inicializará los objetos que representan una columna de la tabla.</li>
+   *      <li>Cargará las actividades.</li>
+   *  </ul>
+   */
   ngOnInit(): void {
     this.cols = [
       { field: 'name', header: 'name_activity' },
@@ -39,6 +81,9 @@ export class TableActivitiesComponent implements OnInit {
     this.loadActivities();
   }
 
+  /**
+   * Método que obtiene las actividades de la API y las almacena.
+   */
   loadActivities(){
     this.activityService.getActivities().subscribe(
       data => {
@@ -49,6 +94,12 @@ export class TableActivitiesComponent implements OnInit {
       });
   }
 
+  /**
+   * Método que elimina una actividad del sistema a través de la API.
+   * Una vez enviado, también será el encargado de mostrar un mensaje al usuario.
+   * @param activity
+   * Actividad que se desea eliminar.
+   */
   confirm(activity){
     this.confirmationService.confirm({
       message: this.translateService.instant('message_delete_activity'),
@@ -74,10 +125,18 @@ export class TableActivitiesComponent implements OnInit {
     });
   }
 
+  /**
+   * Método que redirige al usuario al componente AddActivity.
+   */
   openNew(){
     this.router.navigate(['activities/add']);
   }
 
+  /**
+   * Método que abre el componente InformationActivities para mostrar información adicional de la actividad.
+   * @param activity
+   * Actividad de la que se quiere obtener información adicional.
+   */
   seeMoreInfo(activity){
     this.ref = this.dialogService.open(InformationActivitiesComponent,
       {
@@ -93,16 +152,27 @@ export class TableActivitiesComponent implements OnInit {
     });
   }
 
+  /**
+   * Método que se ejecuta al destruir un componente.
+   */
   ngOnDestroy() {
     if (this.ref){
       this.ref.close();
     }
   }
 
+  /**
+   * Método que redirige al usuario al componente EditActivities.
+   */
   editActivity(activity){
     this.router.navigateByUrl('activities/edit/' + activity.id);
   }
 
+  /**
+   * Método que sanea la URL de la imagen asociada a la actividad.
+   * @param activity
+   * Actividad cuya url de la imagen asociada se quiere sanear.
+   */
   photoURL(activity){
     var url = 'data:' + activity.metadataImage.mimeType + ';base64,' + activity.metadataImage.data;
     return this.sanitizer.bypassSecurityTrustUrl(url);

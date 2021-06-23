@@ -1,14 +1,12 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {InterestService} from '../services/interest/interest.service';
 import {AuthService} from '../services/auth/auth.service';
-import {MenuItem, MessageService, PrimeNGConfig, SelectItem} from 'primeng/api';
 import {validadorPasswordSame} from '../validators/validatorPasswordSame.directive';
 import {validadorAgeGreaterThan} from '../validators/validatorGreaterThan.directive';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Router} from '@angular/router';
 import {NotificationService} from '../services/message/notification.service';
 import {validadorPriorityNumberOfInterest} from '../validators/validatorPriorityNumber.directive';
-import {TranslateService} from '@ngx-translate/core';
 
 
 @Component({
@@ -16,15 +14,54 @@ import {TranslateService} from '@ngx-translate/core';
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss'],
 })
-
+/**
+ * Clase SignUpComponent
+ *
+ * Clase que permite el registro de un usuario.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
+ */
 export class SignUpComponent implements OnInit {
+  /**
+   * Formulario para registrar a un usuario.
+   */
   formGroup: FormGroup;
+  /**
+   * Array de objetos Interest para almacenar los distintos intereses.
+   */
   interestArray;
+  /**
+   * Indica si el registro falló.
+   */
   isRegisterFail = false;
+  /**
+   * Indica que la primera parte del formulario es correcta y visualiza el segundo bloque.
+   */
   openSecondForm = false;
+  /**
+   * Indica que en la primera parte del formulario hay algún error e impide visualizar el segundo bloque.
+   */
   isContinueFail = false;
+  /**
+   * Almacena el mensaje de error devuelto por la API.
+   */
   message;
 
+  /**
+   * Constructor de la clase EditActivitiesComponent
+   *
+   * @param formBuilder
+   * Clase que permite crear objetos de la clase FormGroup y FormControl.
+   * @param interestService
+   * Servicio de intereses.
+   * @param authService
+   * Servicio de autenticación.
+   * @param router
+   * Servicio que permite la navegación entre vistas
+   * @param notificationService
+   * Servicio que permite almacenar notificaciones.
+   */
   constructor(
     private formBuilder: FormBuilder,
     private interestService: InterestService,
@@ -34,6 +71,13 @@ export class SignUpComponent implements OnInit {
   ) {
   }
 
+  /**
+   * Método que permite inicializar los datos del componente.
+   * <ul>
+   *      <li>Inicializará el formulario</li>
+   *      <li>Cargará los dintintos intereses.</li>
+   *  </ul>
+   */
   ngOnInit(): void {
     const minPassLength = 7;
     this.formGroup = this.formBuilder.group({
@@ -59,6 +103,9 @@ export class SignUpComponent implements OnInit {
     return this.formGroup.get('interest') as FormArray;
   }
 
+  /**
+   * Método que obtiene los intereses de la API y los almacena.
+   */
   loadInterest() {
     this.interestService.getInterests().subscribe(data => {
         this.interestArray = data;
@@ -75,6 +122,10 @@ export class SignUpComponent implements OnInit {
       });
   }
 
+  /**
+   * Método que crea un objeto user a partir de los datos del formulario y se lo envía a la API.
+   * Una vez enviado, también será el encargado de redirigir al usuario al componente Login y de mostrar un mensaje al usuario.
+   */
   onSubmit() {
     var dateBirthday = new Date(this.formGroup.get('dateBirthday').value);
     const offset = dateBirthday.getTimezoneOffset()
@@ -100,6 +151,9 @@ export class SignUpComponent implements OnInit {
       });
   }
 
+  /**
+   * Método que muestra al usuario el segundo bloque del formulario.
+   */
   continueSecondPartForm(){
     if (this.formGroup.get('name').valid && this.formGroup.get('email').valid && this.formGroup.get('dateBirthday').valid &&
       this.formGroup.get('password').valid && this.formGroup.get('repeatPassword').valid){
@@ -111,6 +165,9 @@ export class SignUpComponent implements OnInit {
     }
   }
 
+  /**
+   * Método que permite al usuario regresar al primer bloque del formulario.
+   */
   returnFirstPartForm(){
     this.openSecondForm = false;
   }

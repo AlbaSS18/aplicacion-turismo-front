@@ -660,8 +660,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Método que crea un objeto FormData a partir de los del formulario y se lo envía a la API.
-Una vez enviado, también será el encargado de redirigir al usuario al component TableActivities y de mostrar un mensaje al usuario.</p>
+                    <div class="io-description"><p>Método que crea un objeto FormData a partir de los datos del formulario y se lo envía a la API.
+Una vez enviado, también será el encargado de redirigir al usuario al componente TableActivities y de mostrar un mensaje al usuario.</p>
 </div>
 
                     <div class="io-description">
@@ -790,11 +790,11 @@ Una vez enviado, también será el encargado de redirigir al usuario al componen
                 <td class="col-md-4">
                     <div class="io-description"><p>Método que permite inicializar los datos del componente.
   <ul>
-      <li>El id de la actividad</li>
-      <li>Inicializará el formulario con los campos</li>
+      <li>El id de la actividad.</li>
+      <li>Inicializará el formulario con los datos de la actividad.</li>
       <li>Creará el mapa con el correspondiente marcador.</li>
       <li>Cargará los dintintos intereses y la información de la actividad.</li>
-      <li>Saneará la URL de la imagen asociada a la actividad</li>
+      <li>Saneará la URL de la imagen asociada a la actividad.</li>
   </ul></p>
 </div>
 
@@ -933,7 +933,7 @@ Una vez enviado, también será el encargado de redirigir al usuario al componen
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Formulario para editar una actividad.</p>
+                        <div class="io-description"><p>Formulario para editar la información de una actividad.</p>
 </div>
                     </td>
                 </tr>
@@ -1096,7 +1096,7 @@ Una vez enviado, también será el encargado de redirigir al usuario al componen
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Indica si el usuario ha seleccionado una imagen o la ha eliminado.</p>
+                        <div class="io-description"><p>Indica si el formulario tiene algún cambio o no.</p>
 </div>
                     </td>
                 </tr>
@@ -1138,7 +1138,7 @@ import {validadorNonwhiteSpace} from &#x27;../validators/validatorNonWhiteSpace.
 export class EditActivitiesComponent implements OnInit {
 
   /**
-   * Formulario para editar una actividad.
+   * Formulario para editar la información de una actividad.
    */
   editActivitiesForm: FormGroup;
   /**
@@ -1162,7 +1162,7 @@ export class EditActivitiesComponent implements OnInit {
    */
   image;
   /**
-   * Indica si el usuario ha seleccionado una imagen o la ha eliminado.
+   * Indica si el formulario tiene algún cambio o no.
    */
   valueUnchanged: boolean &#x3D; true;
   /**
@@ -1207,11 +1207,11 @@ export class EditActivitiesComponent implements OnInit {
   /**
    * Método que permite inicializar los datos del componente.
    *  &lt;ul&gt;
-   *      &lt;li&gt;El id de la actividad&lt;/li&gt;
-   *      &lt;li&gt;Inicializará el formulario con los campos&lt;/li&gt;
+   *      &lt;li&gt;El id de la actividad.&lt;/li&gt;
+   *      &lt;li&gt;Inicializará el formulario con los datos de la actividad.&lt;/li&gt;
    *      &lt;li&gt;Creará el mapa con el correspondiente marcador.&lt;/li&gt;
    *      &lt;li&gt;Cargará los dintintos intereses y la información de la actividad.&lt;/li&gt;
-   *      &lt;li&gt;Saneará la URL de la imagen asociada a la actividad&lt;/li&gt;
+   *      &lt;li&gt;Saneará la URL de la imagen asociada a la actividad.&lt;/li&gt;
    *  &lt;/ul&gt;
    */
   ngOnInit(): void {
@@ -1348,8 +1348,8 @@ export class EditActivitiesComponent implements OnInit {
   }
 
   /**
-   * Método que crea un objeto FormData a partir de los del formulario y se lo envía a la API.
-   * Una vez enviado, también será el encargado de redirigir al usuario al component TableActivities y de mostrar un mensaje al usuario.
+   * Método que crea un objeto FormData a partir de los datos del formulario y se lo envía a la API.
+   * Una vez enviado, también será el encargado de redirigir al usuario al componente TableActivities y de mostrar un mensaje al usuario.
    */
   editActivity(){
     const formData &#x3D; new FormData();

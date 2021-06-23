@@ -9,6 +9,14 @@ import {validadorPriorityNumberOfInterest} from '../validators/validatorPriority
 import {LocalStorageService} from '../services/local-storage/local-storage.service';
 import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.directive';
 
+/**
+ * Clase EditUserComponent
+ *
+ * Clase que permite editar la información del usuario autenticado.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
+ */
 @Component({
   selector: 'app-edit-user',
   templateUrl: './edit-user.component.html',
@@ -16,11 +24,35 @@ import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.direc
 })
 export class EditUserComponent implements OnInit {
 
+  /**
+   * Formulario para editar la información del usuario autenticado.
+   */
   editUserProfile: FormGroup;
+  /**
+   * Almacena el usuario.
+   */
   user;
+  /**
+   * Indica si el formulario tiene algún cambio o no.
+   */
   valueUnchanged: boolean = true;
+  /**
+   * Almacena el mensaje que se muestra al usuario.
+   */
   infoMessage = [];
 
+  /**
+   * Constructor de la clase EditUserComponent
+   *
+   * @param userService
+   * Servicio de usuarios
+   * @param localStorageService
+   * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador.
+   * @param fb
+   * Clase que permite crear objetos de la clase FormGroup y FormControl.
+   * @param translateService
+   * Servicio proporcionado por la librería ngx-translate que se utiliza para la internacionalización de la aplicación.
+   */
   constructor(
     private userService: UserService,
     private localStorageService: LocalStorageService,
@@ -28,6 +60,14 @@ export class EditUserComponent implements OnInit {
     private translateService: TranslateService
   ) { }
 
+  /**
+   * Método que permite inicializar los datos del componente.
+   *
+   * <ul>
+   *      <li>Inicializará el formulario con los datos del usuario.</li>
+   *      <li>Cargará la información del usuario autenticado</li>
+   *  </ul>
+   */
   ngOnInit(): void {
     this.editUserProfile = this.fb.group({
       dateBirthday: ['', [Validators.required, validadorAgeGreaterThan()]],
@@ -65,6 +105,10 @@ export class EditUserComponent implements OnInit {
     return this.editUserProfile.get('interest') as FormArray;
   }
 
+  /**
+   * Método que crea un objeto usuario y se lo envía a la API.
+   * Una vez enviado, también será el encargado de mostrar un mensaje al usuario.
+   */
   updateUserProfile(){
     var dateBirthday = new Date(this.editUserProfile.get('dateBirthday').value);
     const offset = dateBirthday.getTimezoneOffset()
@@ -109,12 +153,23 @@ export class EditUserComponent implements OnInit {
     );
   }
 
+  /**
+   * Método que se ejecuta cuando algún valor del formulario cambia.
+   */
   observeChanges() {
     this.editUserProfile.valueChanges.subscribe((values) => {
       this.isEquivalent(this.user, values);
     });
   }
 
+  /**
+   * Método que compara dos objetos JSON. Devuelve true si son iguales y false en caso contrario.
+   *
+   * @param a
+   * Primer objeto a comparar.
+   * @param b
+   * Segundo objeto a comparar.
+   */
   isEquivalent(a, b) {
     this.valueUnchanged = true;
     var aProps = Object.keys(a);

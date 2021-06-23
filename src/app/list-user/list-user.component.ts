@@ -13,11 +13,43 @@ import {User} from '../models/user';
   templateUrl: './list-user.component.html',
   styleUrls: ['./list-user.component.scss']
 })
+/**
+ * Clase ListUserComponent
+ *
+ * Clase que muestra la lista de usuarios registrados en el sistema.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
+ */
 export class ListUserComponent implements OnInit {
 
+  /**
+   * Almacena los usuarios
+   */
   users: User[] = [];
+  /**
+   * Array de objetos que representan las columnas del componente tabla.
+   */
   cols: any[];
 
+  /**
+   * Constructor de la clase ListUserComponent
+   *
+   * @param userService
+   * Servicio de usuarios.
+   * @param confirmationService
+   * Servicio propocionado por la librería PrimeNG que permite mostrar un diálogo de confirmación.
+   * @param router
+   * Servicio que permite la navegación entre vistas.
+   * @param rolService
+   * Servicio de roles.
+   * @param translateService
+   * Servicio proporcionado por la librería ngx-translate que se utiliza para la internacionalización de la aplicación.
+   * @param localStorageService
+   * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador.
+   * @param messageService
+   * Servicio propocionado por la librería PrimeNG que permite almacenar los mensajes que serán mostrados al usuario.
+   */
   constructor(
     private userService: UserService,
     private confirmationService: ConfirmationService,
@@ -28,6 +60,13 @@ export class ListUserComponent implements OnInit {
     private messageService: MessageService
   ) { }
 
+  /**
+   * Método que permite inicializar los datos del componente.
+   *  <ul>
+   *      <li>Inicializará los objetos que representan una columna de la tabla.</li>
+   *      <li>Cargará los dintintos usuarios.</li>
+   *  </ul>
+   */
   ngOnInit(): void {
     this.cols = [
       { field: 'userName', header: 'username' },
@@ -40,6 +79,12 @@ export class ListUserComponent implements OnInit {
     });
   }
 
+  /**
+   * Método que elimina un usuario del sistema a través de la API.
+   * Una vez enviado, también será el encargado de mostrar un mensaje al usuario.
+   * @param user
+   * Usuario que se desea eliminar.
+   */
   confirmDelete(user){
     this.confirmationService.confirm({
       message: this.translateService.instant('message_delete_user'),
@@ -66,6 +111,11 @@ export class ListUserComponent implements OnInit {
     });
   }
 
+  /**
+   * Método que redirige al usuario al componente EditUserAdmin.
+   * @param user
+   * Usuario cuya información se quiere editar.
+   */
   editUser(user){
     this.router.navigateByUrl('admin/user/edit/' + user.id);
   }

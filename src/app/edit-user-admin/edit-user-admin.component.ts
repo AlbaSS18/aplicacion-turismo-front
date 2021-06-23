@@ -16,16 +16,59 @@ import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.direc
   templateUrl: './edit-user-admin.component.html',
   styleUrls: ['./edit-user-admin.component.scss']
 })
+/**
+ * Clase EditUserAdminComponent
+ *
+ * Clase que permite editar la información de un usuario.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
+ */
 export class EditUserAdminComponent implements OnInit {
 
+  /**
+   * Formulario para editar la información de un usuario.
+   */
   editUserForm: FormGroup;
+  /**
+   * Almacena el usuario seleccionado para editar.
+   */
   user: User;
+  /**
+   * Almacena el id del usuario seleccionado para editar.
+   */
   userId;
+  /**
+   * Array de objetos Rol para almacenar los distintos roles.
+   */
   roles: Rol[];
+  /**
+   * Indica si el formulario tiene algún cambio o no.
+   */
   valueUnchanged: boolean = true;
-
+  /**
+   * Array de objetos SelectItem para almacenar las distintas opciones del componente listbox de roles.
+   */
   roleList: SelectItem[];
 
+  /**
+   * Constructor de la clase EditUserAdminComponent
+   *
+   * @param fb
+   * Clase que permite crear objetos de la clase FormGroup y FormControl.
+   * @param userService
+   * Servicio de usuarios
+   * @param activatedRoute
+   * Proporciona acceso a la información sobre una ruta asociada a un componente que se carga.
+   * @param rolesService
+   * Servicio de roles
+   * @param messageService
+   * Servicio propocionado por la librería PrimeNG que permite almacenar los mensajes que serán mostrados al usuario.
+   * @param translateService
+   * Servicio proporcionado por la librería ngx-translate que se utiliza para la internacionalización de la aplicación.
+   * @param router
+   * Servicio que permite la navegación entre vistas
+   */
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
@@ -36,6 +79,14 @@ export class EditUserAdminComponent implements OnInit {
     private router: Router
   ) {}
 
+  /**
+   * Método que permite inicializar los datos del componente.
+   * <ul>
+   *      <li>El id del usuario.</li>
+   *      <li>Inicializará el formulario con los datos del usuario.</li>
+   *      <li>Cargará los dintintos roles y la información del usuario.</li>
+   *  </ul>
+   */
   ngOnInit(): void {
     this.userId = this.activatedRoute.snapshot.paramMap.get('id');
     this.editUserForm = this.fb.group({
@@ -59,6 +110,10 @@ export class EditUserAdminComponent implements OnInit {
     });
   }
 
+  /**
+   * Método que crea un objeto usuario y se lo envía a la API.
+   * Una vez enviado, también será el encargado de redirigir al usuario al componente ListUser y de mostrar un mensaje al usuario.
+   */
   sendForm(){
     var dateBirthday = new Date(this.editUserForm.get('dateBirthday').value);
     const offset = dateBirthday.getTimezoneOffset()
@@ -85,12 +140,23 @@ export class EditUserAdminComponent implements OnInit {
     );
   }
 
+  /**
+   * Método que se ejecuta cuando algún valor del formulario cambia.
+   */
   observeChanges() {
     this.editUserForm.valueChanges.subscribe((values) => {
       this.isEquivalent(this.user, values);
     });
   }
 
+  /**
+   * Método que compara dos objetos JSON. Devuelve true si son iguales y false en caso contrario.
+   *
+   * @param a
+   * Primer objeto a comparar.
+   * @param b
+   * Segundo objeto a comparar.
+   */
   isEquivalent(a, b) {
     this.valueUnchanged = true;
     var aProps = Object.keys(a);

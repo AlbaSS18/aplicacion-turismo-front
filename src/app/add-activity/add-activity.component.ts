@@ -17,15 +17,55 @@ import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.direc
   templateUrl: './add-activity.component.html',
   styleUrls: ['./add-activity.component.scss']
 })
+/**
+ * Clase AddActivityComponent.
+ *
+ * Clase que permite añadir una nueva actividad.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
+ */
 export class AddActivityComponent implements OnInit {
 
+  /**
+   * Formulario para añadir una actividad.
+   */
   formAddActivity: FormGroup;
+  /**
+   * Array de objetos SelectItem para almacenar las distintas opciones del componente dropdown de intereses.
+   */
   interest: SelectItem[];
+  /**
+   * Almacena el archivo imagen seleccionado por el usuario.
+   */
   files = null;
+  /**
+   * Indica si el usuario ha seleccionado una imagen o la ha eliminado.
+   */
   noFiles: boolean = true;
-
+  /**
+   * Almacena el mensaje que se muestra al usuario.
+   */
   infoMessage = [];
 
+  /**
+   * Constructor de la clase AddActivityComponent
+   *
+   * @param formBuilder
+   * Clase que permite crear objetos de la clase FormGroup y FormControl.
+   * @param cityService
+   * Servicio de localidades
+   * @param interestService
+   * Servicio de intereses
+   * @param activityService
+   * Servicio de actividades
+   * @param router
+   * Servicio que permite la navegación entre vistas
+   * @param translateService
+   * Servicio proporcionado por la librería ngx-translate que se utiliza para la internacionalización de la aplicación.
+   * @param messageService
+   * Servicio propocionado por la librería PrimeNG que permite almacenar los mensajes que serán mostrados al usuario.
+   */
   constructor(
     private formBuilder: FormBuilder,
     private cityService: CityService,
@@ -36,6 +76,14 @@ export class AddActivityComponent implements OnInit {
     private messageService: MessageService,
   ) { }
 
+  /**
+   * Método que permite inicializar los datos del componente.
+   *  <ul>
+   *      <li>Inicializará el formulario con los campos.</li>
+   *      <li>Creará el mapa.</li>
+   *      <li>Cargará los distintos intereses.</li>
+   *  </ul>
+   */
   ngOnInit(): void {
     this.formAddActivity = this.formBuilder.group({
       name: ['', [Validators.required, validadorNonwhiteSpace()]],
@@ -75,6 +123,9 @@ export class AddActivityComponent implements OnInit {
     this.loadInterest();
   }
 
+  /**
+   * Método que obtiene los intereses de la API y los almacena.
+   */
   loadInterest(){
     this.interestService.getInterests().subscribe(
       data => {
@@ -87,16 +138,32 @@ export class AddActivityComponent implements OnInit {
     );
   }
 
+  /**
+   * Método que guarda en una variable el archivo seleccionado.
+   *
+   * @param event
+   * Evento que se produce cuando un archivo es seleccionado.
+   */
   dealWithFiles(event){
     this.files = event.files[0];
     this.noFiles = false;
   }
 
+  /**
+   * Método que deshabilita el botón enviar cuando el usuario elimina el archivo imagen del campo de selección de ficheros.
+   *
+   * @param event
+   * Evento que se produce cuando un archivo es eliminado utilizando el botón correspondiente.
+   */
   deleteFiles(event){
     this.files = null;
     this.noFiles = true;
   }
 
+  /**
+   * Método que crea un objeto FormData a partir de los datos introducidos en el formulario y se lo envía a la API.
+   * Una vez enviado, también será el encargado de redirigir al usuario al component TableActivities y de mostrar un mensaje al usuario.
+   */
   addActivity(){
     if (this.files !== null && this.formAddActivity.valid){
       const formData = new FormData();

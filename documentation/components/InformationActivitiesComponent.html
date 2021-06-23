@@ -177,12 +177,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/information-activities/information-activities.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/information-activities/information-activities.component.ts:29</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor de la clase InformationActivitiesComponent</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -191,6 +193,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -205,6 +208,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio propocionado por la librería PrimeNG que permite devolver un valor al componente que lo creó.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>config</td>
@@ -217,6 +224,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio propocionado por la librería PrimeNG que permite pasar información a los componentes dinámicos.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>activityService</td>
@@ -229,6 +240,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio de actividades.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>sanitizer</td>
@@ -241,6 +256,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -282,14 +301,19 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/information-activities/information-activities.component.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/information-activities/information-activities.component.ts:52</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método que permite inicializar los datos del componente.</p>
+<ul>
+      <li>La actividad</li>
+      <li>Saneará la URL de la imagen asociada a la actividad.</li>
+</ul></div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -325,10 +349,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/information-activities/information-activities.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/information-activities/information-activities.component.ts:25</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Almacena la actividad seleccionada.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -353,10 +383,15 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/information-activities/information-activities.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/information-activities/information-activities.component.ts:43</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">Servicio propocionado por la librería PrimeNG que permite pasar información a los componentes dinámicos.</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -374,10 +409,16 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/information-activities/information-activities.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/information-activities/information-activities.component.ts:29</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Almacena la url de la imagen saneada.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -398,13 +439,46 @@ import {DomSanitizer} from &#x27;@angular/platform-browser&#x27;;
   templateUrl: &#x27;./information-activities.component.html&#x27;,
   styleUrls: [&#x27;./information-activities.component.scss&#x27;]
 })
+/**
+ * Clase InformationActivitiesComponent
+ *
+ * Clase que muestra información adicional de una actividad.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
+ */
 export class InformationActivitiesComponent implements OnInit {
 
+  /**
+   * Almacena la actividad seleccionada.
+   */
   activity: Activity;
+  /**
+   * Almacena la url de la imagen saneada.
+   */
   image;
 
+  /**
+   * Constructor de la clase InformationActivitiesComponent
+   *
+   * @param ref
+   * Servicio propocionado por la librería PrimeNG que permite devolver un valor al componente que lo creó.
+   * @param config
+   * Servicio propocionado por la librería PrimeNG que permite pasar información a los componentes dinámicos.
+   * @param activityService
+   * Servicio de actividades.
+   * @param sanitizer
+     Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM
+   */
   constructor(private ref: DynamicDialogRef, public config: DynamicDialogConfig, private activityService: ActivityService,  private sanitizer: DomSanitizer) { }
 
+  /**
+   * Método que permite inicializar los datos del componente.
+   * &lt;ul&gt;
+   *      &lt;li&gt;La actividad&lt;/li&gt;
+   *      &lt;li&gt;Saneará la URL de la imagen asociada a la actividad.&lt;/li&gt;
+   * &lt;/ul&gt;
+   */
   ngOnInit(): void {
     if (this.config.data){
       this.activity &#x3D; this.config.data.activity;

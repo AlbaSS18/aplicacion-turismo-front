@@ -11,20 +11,58 @@ import {PrimeNGConfig} from 'primeng/api';
     './menu-bar.component.scss'
   ],
 })
+/**
+ * Clase MenuBarComponent
+ *
+ * Clase que proporciona enlaces a las diferentes páginas de la aplicación.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
+ */
 export class MenuBarComponent implements OnInit {
+  /**
+   * Indica si el usuario está autenticado o no.
+   */
   isLogin = false;
+  /**
+   * Roles del usuario autenticado.
+   */
   roles: string[];
+  /**
+   * Rol que identifica al usuario.
+   */
   authority: string;
+  /**
+   * Email del usuario autenticado.
+   */
   email;
 
+  /**
+   * Constructor de la clase MenuBarComponent
+   *
+   * @param router
+   * Servicio que permite la navegación entre vistas
+   * @param translate
+   * Servicio proporcionado por la librería ngx-translate que se utiliza para la internacionalización de la aplicación.
+   * @param localStorageService
+   * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador.
+   * @param config
+     Servicio propocionado por la librería PrimeNG que permite tener acceso a la API I18N proporcionada por dicha librería.
+   */
   constructor(
     private router: Router,
     public translate: TranslateService,
     private localStorageService: LocalStorageService,
     private config: PrimeNGConfig
-  ) {
-  }
+  ) {}
 
+  /**
+   * Método que permite inicializar los datos del componente.
+   * <ul>
+   *      <li>El email del usuario autenticado</li>
+   *      <li>Los roles del usuario autenticado</li>
+   *  </ul>
+   */
   ngOnInit(): void {
     this.email = this.localStorageService.getEmailUser();
     if (this.localStorageService.getToken()){
@@ -40,6 +78,9 @@ export class MenuBarComponent implements OnInit {
     }
   }
 
+  /**
+   * Método que permite cerrar sesión a un usuario autenticado y le redirige de vuelta a la página de inicio de sesión.
+   */
   logOut(): void {
     this.localStorageService.logOut();
     this.isLogin = false;
@@ -47,6 +88,12 @@ export class MenuBarComponent implements OnInit {
     this.router.navigateByUrl('/login');
   }
 
+  /**
+   * Método que permite cambiar el idioma a la aplicación.
+   *
+   * @param lang
+   * El idioma a utilizar
+   */
   switchLang(lang: string) {
     this.translate.use(lang);
     this.translate.get('primeng').subscribe(res => this.config.setTranslation(res));

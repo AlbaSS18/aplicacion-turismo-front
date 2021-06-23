@@ -1,5 +1,8 @@
 import {AbstractControl, ValidationErrors, Validator, ValidatorFn} from '@angular/forms';
 
+/**
+ * Función que valida que la edad de un usuario sea mayor de 18 años.
+ */
 export function validadorAgeGreaterThan(): ValidatorFn {
   return (control: AbstractControl): {[key: string]: any} | null => {
     var timeDiff = Math.abs(Date.now() - new Date(control.value).getTime());

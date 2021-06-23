@@ -185,12 +185,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/list-activities-evaluate/list-activities-evaluate.component.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/list-activities-evaluate/list-activities-evaluate.component.ts:41</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor de la clase ListActivitiesEvaluateComponent</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -199,6 +201,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -213,6 +216,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio de usuarios.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>activityService</td>
@@ -225,6 +232,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio de actividades.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>localStorageService</td>
@@ -237,6 +248,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio que consta de métodos para acceder al objeto LocalStorage del navegador.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>sanitizer</td>
@@ -249,6 +264,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -290,14 +309,19 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/list-activities-evaluate/list-activities-evaluate.component.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="69"
+                            class="link-to-prism">src/app/list-activities-evaluate/list-activities-evaluate.component.ts:69</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método que permite inicializar los datos del componente.</p>
+<ul>
+      <li>Inicializará las opciones del dropdown para ordenar las actividades por valoración.</li>
+      <li>Cargará la lista de actividades valoradas por el usuario autenticado.</li>
+  </ul></div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -329,14 +353,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/app/list-activities-evaluate/list-activities-evaluate.component.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="102"
+                            class="link-to-prism">src/app/list-activities-evaluate/list-activities-evaluate.component.ts:102</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método que ordena las actividades por valoración.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -345,6 +371,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -356,6 +383,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Evento que se produce cuando una opción es seleccionada en el componente.</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -395,14 +426,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/app/list-activities-evaluate/list-activities-evaluate.component.ts:48</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="91"
+                            class="link-to-prism">src/app/list-activities-evaluate/list-activities-evaluate.component.ts:91</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método que sanea la URL de la imagen asociada a la actividad.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -411,6 +444,7 @@
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -422,6 +456,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Actividad cuya url de la imagen asociada se quiere sanear.</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -465,10 +503,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/list-activities-evaluate/list-activities-evaluate.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/list-activities-evaluate/list-activities-evaluate.component.ts:29</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Almacena las actividades valoradas por el usuario autenticado.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -492,10 +536,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/list-activities-evaluate/list-activities-evaluate.component.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/list-activities-evaluate/list-activities-evaluate.component.ts:41</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Almacena el campo por el que se tiene que ordenar la información.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -519,10 +569,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/list-activities-evaluate/list-activities-evaluate.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/list-activities-evaluate/list-activities-evaluate.component.ts:33</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Almacena las opciones para ordenar.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -546,10 +602,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/list-activities-evaluate/list-activities-evaluate.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/list-activities-evaluate/list-activities-evaluate.component.ts:37</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Indica el orden seleccionado por el usuario. Tendrá dos posibles valores: -1 y 1.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -574,14 +636,45 @@ import {DomSanitizer} from &#x27;@angular/platform-browser&#x27;;
   templateUrl: &#x27;./list-activities-evaluate.component.html&#x27;,
   styleUrls: [&#x27;./list-activities-evaluate.component.scss&#x27;]
 })
+/**
+ * Clase ListActivitiesEvaluateComponent
+ *
+ * Clase que permite visualizar la lista de actividades valoradas por el usuario autenticado.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
+ */
 export class ListActivitiesEvaluateComponent implements OnInit {
 
+  /**
+   * Almacena las actividades valoradas por el usuario autenticado.
+   */
   listActivities: ActivityRecommended[];
-
+  /**
+   * Almacena las opciones para ordenar.
+   */
   sortOptions: SelectItem[];
+  /**
+   * Indica el orden seleccionado por el usuario. Tendrá dos posibles valores: -1 y 1.
+   */
   sortOrder: number;
+  /**
+   * Almacena el campo por el que se tiene que ordenar la información.
+   */
   sortField: string;
 
+  /**
+   * Constructor de la clase ListActivitiesEvaluateComponent
+   *
+   * @param userService
+   * Servicio de usuarios.
+   * @param activityService
+   * Servicio de actividades.
+   * @param localStorageService
+   * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador.
+   * @param sanitizer
+   * Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM
+   */
   constructor(
     private userService: UserService,
     private activityService: ActivityService,
@@ -589,11 +682,18 @@ export class ListActivitiesEvaluateComponent implements OnInit {
     private sanitizer: DomSanitizer
   ) { }
 
+  /**
+   * Método que permite inicializar los datos del componente.
+   * &lt;ul&gt;
+   *      &lt;li&gt;Inicializará las opciones del dropdown para ordenar las actividades por valoración.&lt;/li&gt;
+   *      &lt;li&gt;Cargará la lista de actividades valoradas por el usuario autenticado.&lt;/li&gt;
+   *  &lt;/ul&gt;
+   */
   ngOnInit(): void {
     this.sortOptions &#x3D; [
       {label: &#x27;rating_down&#x27;, value: &#x27;!score&#x27;},
       {label: &#x27;rating_up&#x27;, value: &#x27;score&#x27;}
-  ];
+    ];
     this.userService.getUsers().pipe(
       map (data &#x3D;&gt; data.filter(p &#x3D;&gt; p.email &#x3D;&#x3D;&#x3D; this.localStorageService.getEmailUser())),
       mergeMap ( user &#x3D;&gt; {
@@ -606,11 +706,22 @@ export class ListActivitiesEvaluateComponent implements OnInit {
     );
   }
 
+  /**
+   * Método que sanea la URL de la imagen asociada a la actividad.
+   * @param activity
+   * Actividad cuya url de la imagen asociada se quiere sanear.
+   */
   photoURL(activity){
     var url &#x3D; &#x27;data:&#x27; + activity.metadataImage.mimeType + &#x27;;base64,&#x27; + activity.metadataImage.data;
     return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 
+  /**
+   * Método que ordena las actividades por valoración.
+   *
+   * @param event
+   * Evento que se produce cuando una opción es seleccionada en el componente.
+   */
   onSortChange(event) {
     let value &#x3D; event.value;
 
