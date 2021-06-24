@@ -11,16 +11,56 @@ import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.direc
   templateUrl: './list-interest.component.html',
   styleUrls: ['./list-interest.component.scss']
 })
+/**
+ * Clase ListInterestComponent
+ * 
+ * Clase que muestra la lista de intereses.
+ */
 export class ListInterestComponent implements OnInit {
 
+  /**
+   * Almacena los intereses
+   */
   interest;
+  /**
+   * Indica si el usuario quiere añadir un nuevo interés.
+   */
   display: boolean = false;
+  /**
+   * Formulario para añadir un interés.
+   */
   formAddInterest: FormGroup;
+  /**
+   * Indica si se ha producido algún error al añadir un nuevo interés.
+   */
   errorAddInterest: boolean = false;
+  /**
+   * Indica si el usuario ha seleccionado algún interés para editar.
+   */
   displayEditDialog: boolean = false;
+  /**
+   * Formulario para editar la información de un interés.
+   */
   formEditInterest: FormGroup;
+  /**
+   * Indica si se ha producido algún error al modificar un interés.
+   */
   errorEditInterest: boolean = false;
 
+  /**
+   * Constructor de la clase ListInterestComponent
+   *
+   * @param interestService 
+   * Servicio de intereses.
+   * @param formBuilder 
+   * Clase que permite crear objetos de la clase FormGroup y FormControl.
+   * @param confirmationService 
+   * Servicio propocionado por la librería PrimeNG que permite mostrar un diálogo de confirmación.
+   * @param messageService 
+   * Servicio propocionado por la librería PrimeNG que permite almacenar los mensajes que serán mostrados al usuario.
+   * @param translateService 
+   * Servicio proporcionado por la librería ngx-translate que se utiliza para la internacionalización de la aplicación.
+   */
   constructor(
     private interestService: InterestService,
     private formBuilder: FormBuilder,
@@ -29,6 +69,13 @@ export class ListInterestComponent implements OnInit {
     private translateService: TranslateService
   ) { }
 
+  /**
+   * Método que permite inicializar los datos del componente.
+   * <ul>
+   *      <li>Inicializará el formulario para añadir un interés y para editar un interés.</li>
+   *      <li>Cargará los dintintos intereses.</li>
+   * </ul>
+   */
   ngOnInit(): void {
     this.formAddInterest = this.formBuilder.group({
       name: ['', [Validators.required, validadorNonwhiteSpace()]]
@@ -40,6 +87,9 @@ export class ListInterestComponent implements OnInit {
     this.loadInterest();
   }
 
+  /**
+   * Método que obtiene los intereses de la API y los almacena.
+   */
   loadInterest(){
     this.interestService.getInterests().subscribe(
       data => {
@@ -85,6 +135,12 @@ export class ListInterestComponent implements OnInit {
     this.display = false;
   }
 
+  /**
+   * Método que elimina un interés del sistema a través de la API.
+   * Una vez enviado, también será el encargado de mostrar un mensaje al usuario.
+   * @param interest 
+   * Interés que se desea eliminar
+   */
   deleteInterest(interest) {
     this.confirmationService.confirm({
       message: this.translateService.instant('message_delete_interest'),
