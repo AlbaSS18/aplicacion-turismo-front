@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://david-dm.org/compodoc/compodoc?type=dev"><img src="documentation/images/coverage-badge-documentation.svg" alt="coverage documentation"></a>
+  <a href="documentation/index.html"><img src="documentation/images/coverage-badge-documentation.svg" alt="coverage documentation"></a>
 </p>
 
 
