@@ -43,22 +43,22 @@ export class ListInterestComponent implements OnInit {
    */
   formEditInterest: FormGroup;
   /**
-   * Indica si se ha producido algún error al modificar un interés.
+   * Indica si se ha producido algún error al modificar la información de un interés.
    */
   errorEditInterest: boolean = false;
 
   /**
    * Constructor de la clase ListInterestComponent
    *
-   * @param interestService 
+   * @param interestService
    * Servicio de intereses.
-   * @param formBuilder 
+   * @param formBuilder
    * Clase que permite crear objetos de la clase FormGroup y FormControl.
-   * @param confirmationService 
+   * @param confirmationService
    * Servicio propocionado por la librería PrimeNG que permite mostrar un diálogo de confirmación.
-   * @param messageService 
+   * @param messageService
    * Servicio propocionado por la librería PrimeNG que permite almacenar los mensajes que serán mostrados al usuario.
-   * @param translateService 
+   * @param translateService
    * Servicio proporcionado por la librería ngx-translate que se utiliza para la internacionalización de la aplicación.
    */
   constructor(
@@ -98,10 +98,19 @@ export class ListInterestComponent implements OnInit {
     );
   }
 
+  /**
+   * Método que muestra el diálogo para añadir un nuevo interés.
+   * @param $event
+   * Evento que se produce cuando el usuario quiere añadir un nuevo interés.
+   */
   openPanel($event){
     this.display = true;
   }
 
+  /**
+   * Método que crea un objeto interest a partir de los datos del formulario y se lo envía a la API.
+   * Una vez enviado, también será el encargado de resetear el formulario y de mostrar un mensaje al usuario.
+   */
   onSubmit(){
     var interest = {
       nameInterest: this.formAddInterest.get('name').value
@@ -126,11 +135,17 @@ export class ListInterestComponent implements OnInit {
     );
   }
 
+  /**
+   * Método que se invoca cuando el diálogo que se utiliza para añadir un nuevo interés, se oculta.
+   */
   hideDialogInterest(){
     this.formAddInterest.reset();
     this.errorAddInterest = false;
   }
 
+  /**
+   * Método que se invoca cuando el usuario cancela la opción de añadir un nuevo interés.
+   */
   cancel(){
     this.display = false;
   }
@@ -138,7 +153,7 @@ export class ListInterestComponent implements OnInit {
   /**
    * Método que elimina un interés del sistema a través de la API.
    * Una vez enviado, también será el encargado de mostrar un mensaje al usuario.
-   * @param interest 
+   * @param interest
    * Interés que se desea eliminar
    */
   deleteInterest(interest) {
@@ -172,6 +187,11 @@ export class ListInterestComponent implements OnInit {
     });
   }
 
+  /**
+   * Método que muestra el diálogo para editar la información de una localidad.
+   * @param interest
+   * Interés cuya información se desea modificar.
+   */
   editInterest(interest){
     this.displayEditDialog = true;
     this.formEditInterest.patchValue({
@@ -180,6 +200,10 @@ export class ListInterestComponent implements OnInit {
     });
   }
 
+  /**
+   * Método que crea un objeto interest a partir de los datos del formulario y se lo envía a la API.
+   * Una vez enviado, también será el encargado de mostrar un mensaje al usuario.
+   */
   onEditSubmit(){
     var interest = {
       nameInterest: this.formEditInterest.get('name').value
@@ -201,10 +225,16 @@ export class ListInterestComponent implements OnInit {
     );
   }
 
+  /**
+   * Método que se invoca cuando el usuario cancela la opción de modificar la información de un interés.
+   */
   cancelEdit(){
     this.displayEditDialog = false;
   }
 
+  /**
+   * Método que se invoca cuando el diálogo que se utiliza para modificar la información de un interés, se oculta.
+   */
   hideDialogEditInterest(){
     this.errorEditInterest = false;
   }

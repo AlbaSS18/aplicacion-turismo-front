@@ -91,7 +91,7 @@ import {RecommendationMapComponent} from &#x27;./recommendation-map/recommendati
 const routes: Routes &#x3D; [
   {path: &#x27;&#x27;, redirectTo: &#x27;login&#x27;, pathMatch: &#x27;full&#x27;},
   {path: &#x27;login&#x27;, component: LoginComponent, resolve: [IsLogginInGuardService]},
-  {path: &#x27;signup&#x27;, component: SignUpComponent},
+  {path: &#x27;signup&#x27;, component: SignUpComponent, resolve: [IsLogginInGuardService]},
   {path: &#x27;activities&#x27;, component: TableActivitiesComponent,
     canActivate: [RoleGuardService],
     data: {
