@@ -64,8 +64,6 @@ export class EditActivitiesComponent implements OnInit {
    *
    * @param fb
    * Clase que permite crear objetos de la clase FormGroup y FormControl.
-   * @param cityService
-   * Servicio de localidades
    * @param interestService
    * Servicio de intereses
    * @param activityService
@@ -83,7 +81,6 @@ export class EditActivitiesComponent implements OnInit {
    */
   constructor(
     private fb: FormBuilder,
-    private cityService: CityService,
     private interestService: InterestService,
     private activityService: ActivityService,
     private activatedRoute: ActivatedRoute,

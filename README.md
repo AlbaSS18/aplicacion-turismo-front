@@ -1,3 +1,8 @@
+<p align="center">
+  <a href="documentation/index.html"><img src="documentation/images/coverage-badge-documentation.svg" alt="coverage documentation"></a>
+</p>
+
+
 # ProyectoTurismoFRONT
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
