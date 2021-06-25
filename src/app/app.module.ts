@@ -17,9 +17,7 @@ import {InputNumberModule} from 'primeng/inputnumber';
 import {DropdownModule} from 'primeng/dropdown';
 import {MessageModule} from 'primeng/message';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { RecommendationComponent } from './recommendation/recommendation.component';
 import {interceptorProvider} from './interceptors/interceptor.service';
-import { MapComponent } from './map/map.component';
 import { TableActivitiesComponent } from './table-activities/table-activities.component';
 import {TableModule} from 'primeng/table';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
@@ -68,8 +66,6 @@ import {ListboxModule} from 'primeng/listbox';
     LoginComponent,
     SignUpComponent,
     MenuBarComponent,
-    RecommendationComponent,
-    MapComponent,
     TableActivitiesComponent,
     ListCitiesComponent,
     ListInterestComponent,

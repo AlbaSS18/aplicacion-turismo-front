@@ -74,10 +74,8 @@
 import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
 import {LoginComponent} from &#x27;./login/login.component&#x27;;
 import {SignUpComponent} from &#x27;./sign-up/sign-up.component&#x27;;
-import {RecommendationComponent} from &#x27;./recommendation/recommendation.component&#x27;;
 import {AuthGuardService} from &#x27;./guards/auth-guard/auth-guard.service&#x27;;
 import {IsLogginInGuardService} from &#x27;./guards/isLogginInGuard/is-loggin-in-guard.service&#x27;;
-import {MapComponent} from &#x27;./map/map.component&#x27;;
 import {TableActivitiesComponent} from &#x27;./table-activities/table-activities.component&#x27;;
 import {ListCitiesComponent} from &#x27;./list-cities/list-cities.component&#x27;;
 import {ListInterestComponent} from &#x27;./list-interest/list-interest.component&#x27;;
@@ -94,12 +92,6 @@ const routes: Routes &#x3D; [
   {path: &#x27;&#x27;, redirectTo: &#x27;login&#x27;, pathMatch: &#x27;full&#x27;},
   {path: &#x27;login&#x27;, component: LoginComponent, resolve: [IsLogginInGuardService]},
   {path: &#x27;signup&#x27;, component: SignUpComponent},
-  {path: &#x27;recommendation&#x27;, component: RecommendationComponent,
-    canActivate: [RoleGuardService],
-    data: {
-      expectedRol: [&#x27;user&#x27;, &#x27;admin&#x27;]
-  }},
-  {path: &#x27;map&#x27;, component: MapComponent},
   {path: &#x27;activities&#x27;, component: TableActivitiesComponent,
     canActivate: [RoleGuardService],
     data: {
