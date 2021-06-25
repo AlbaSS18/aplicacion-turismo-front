@@ -118,7 +118,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/message/notification.service.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/services/message/notification.service.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -153,14 +153,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/services/message/notification.service.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/services/message/notification.service.ts:36</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método que vacía el array de notificaciones</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -192,14 +194,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/services/message/notification.service.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/services/message/notification.service.ts:27</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método para incluir una nueva notificación en el array</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -209,6 +213,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -223,6 +228,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>detalle de la notificación</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>summary</td>
@@ -235,6 +244,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>mensaje de la notificación</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -283,10 +296,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/message/notification.service.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/services/message/notification.service.ts:18</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Array de objetos Message para almacenar las notificaciones</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -303,18 +322,34 @@ import {TranslateService} from &#x27;@ngx-translate/core&#x27;;
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
+/**
+ * Clase NotificationService
+ * 
+ * Clase que se encarga de almacenar notificaciones que serán mostradas al usuario.
+ */
 export class NotificationService {
 
+  /**
+   * Array de objetos Message para almacenar las notificaciones
+   */
   message: Message[] &#x3D; [];
 
   constructor() { }
 
+  /**
+   * Método para incluir una nueva notificación en el array
+   * @param detail detalle de la notificación
+   * @param summary mensaje de la notificación
+   */
   success(detail: string, summary?: string): void {
     this.message.push({
       severity: &#x27;success&#x27;, summary: summary, detail: detail
     });
   }
 
+  /**
+   * Método que vacía el array de notificaciones
+   */
   clearService(): void {
     this.message &#x3D; [];
   }
