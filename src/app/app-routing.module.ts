@@ -19,7 +19,7 @@ import {RecommendationMapComponent} from './recommendation-map/recommendation-ma
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent, resolve: [IsLogginInGuardService]},
-  {path: 'signup', component: SignUpComponent},
+  {path: 'signup', component: SignUpComponent, resolve: [IsLogginInGuardService]},
   {path: 'activities', component: TableActivitiesComponent,
     canActivate: [RoleGuardService],
     data: {
