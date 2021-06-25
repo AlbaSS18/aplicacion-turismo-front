@@ -104,12 +104,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/guards/isLogginInGuard/is-loggin-in-guard.service.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/guards/isLogginInGuard/is-loggin-in-guard.service.ts:13</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor de la clase IsLogginInGuardService</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -118,6 +120,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -132,6 +135,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio que permite la navegación entre vistas</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>localStorageService</td>
@@ -144,6 +151,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio que consta de métodos para acceder al objeto LocalStorage del navegador</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -181,14 +192,18 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/guards/isLogginInGuard/is-loggin-in-guard.service.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/guards/isLogginInGuard/is-loggin-in-guard.service.ts:29</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método que realiza comprobaciones antes de navegar a la ruta.
+En este caso, si el usuario se encuentra autenticado e intenta acceder a una vista a la que acceden únicamente usuarios no identificados,
+se le redirigirá a una de las páginas iniciales.</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -210,10 +225,27 @@ import {LocalStorageService} from &#x27;../../services/local-storage/local-stora
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
+/**
+ * Clase IsLogginInGuardService
+ *
+ * Clase que impide a los usuarios acceder a las vistas cuando ya se encuentran autenticados.
+ */
 export class IsLogginInGuardService implements Resolve&lt;any&gt;{
 
+  /**
+   * Constructor de la clase IsLogginInGuardService
+   * @param router
+   * Servicio que permite la navegación entre vistas
+   * @param localStorageService
+   * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador
+   */
   constructor(private router: Router, private localStorageService: LocalStorageService) { }
 
+  /**
+   * Método que realiza comprobaciones antes de navegar a la ruta.
+   * En este caso, si el usuario se encuentra autenticado e intenta acceder a una vista a la que acceden únicamente usuarios no identificados,
+   * se le redirigirá a una de las páginas iniciales.
+   */
   resolve() {
     if (this.localStorageService.getToken()) {
       const roles &#x3D; this.localStorageService.getRolesUser();

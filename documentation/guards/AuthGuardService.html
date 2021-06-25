@@ -104,12 +104,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/guards/auth-guard/auth-guard.service.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/guards/auth-guard/auth-guard.service.ts:13</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor de la clase AuthGuardService</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -118,6 +120,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -132,6 +135,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio que permite la navegación entre vistas</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>localStorageService</td>
@@ -144,6 +151,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio que consta de métodos para acceder al objeto LocalStorage del navegador</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -181,14 +192,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/guards/auth-guard/auth-guard.service.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/guards/auth-guard/auth-guard.service.ts:37</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método que determina si el usuario puede acceder a la vista o no.
+Si el usuario está autenticado, entonces puede acceder a la vista. En caso contrario, se le deniega el acceso y se le redirige al login.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -198,6 +212,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -212,6 +227,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Contiene la información sobre una ruta asociada a un componente cargado en una salida en un momento determinado.</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>state</td>
@@ -224,6 +243,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Estructura de datos inmutable que representa el estado del enrutador en un momento determinado.</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -235,7 +258,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>true si el usuario puede acceder a la vista, false en caso contrario</p>
+
                     </div>
                 </td>
             </tr>
@@ -253,10 +277,35 @@ import {LocalStorageService} from &#x27;../../services/local-storage/local-stora
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
+/**
+ * Clase AuthGuardService
+ *
+ * Clase que permite acceder a las vistas a aquellos usuarios logueados
+ */
 export class AuthGuardService implements CanActivate{
 
+  /**
+   * Constructor de la clase AuthGuardService
+   * @param router
+   * Servicio que permite la navegación entre vistas
+   * @param localStorageService
+   * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador
+   */
   constructor(private router: Router, private localStorageService: LocalStorageService) { }
 
+  /**
+   * Método que determina si el usuario puede acceder a la vista o no.
+   * Si el usuario está autenticado, entonces puede acceder a la vista. En caso contrario, se le deniega el acceso y se le redirige al login.
+   * @param route
+   * Contiene la información sobre una ruta asociada a un componente cargado en una salida en un momento determinado.
+   * @param state
+   * Estructura de datos inmutable que representa el estado del enrutador en un momento determinado.
+   *
+   * @return
+   * true si el usuario puede acceder a la vista, false en caso contrario
+   *
+   * @see https://vsavkin.com/angular-router-understanding-router-state-7b5b95a12eab
+   */
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     if (this.localStorageService.getToken()){
       return true;

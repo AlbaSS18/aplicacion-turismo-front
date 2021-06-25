@@ -118,12 +118,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/guards/RoleGuard/role-guard.service.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/guards/RoleGuard/role-guard.service.ts:18</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor de la clase RoleGuardService</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -132,6 +134,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -146,6 +149,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio que consta de métodos para acceder al objeto LocalStorage del navegador</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -158,6 +165,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio que permite la navegación entre vistas</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -195,14 +206,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/guards/RoleGuard/role-guard.service.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/guards/RoleGuard/role-guard.service.ts:42</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método que determina si el usuario puede acceder a la vista o no.
+Si el usuario está autenticado y su rol coincide con el esperado, entonces puede acceder a la vista. En caso contrario, se le deniega el acceso y se le redirige al login.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -212,6 +226,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -226,6 +241,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Contiene la información sobre una ruta asociada a un componente cargado en una salida en un momento determinado.</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>state</td>
@@ -238,6 +257,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Estructura de datos inmutable que representa el estado del enrutador en un momento determinado.</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -249,7 +272,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>true si el usuario puede acceder a la vista, false en caso contrario</p>
+
                     </div>
                 </td>
             </tr>
@@ -267,12 +291,40 @@ import {LocalStorageService} from &#x27;../../services/local-storage/local-stora
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
+/**
+ * Clase RoleGuardService
+ *
+ * Clase que permite acceder a las vistas a aquellos usuarios cuyo rol coincida con el esperado.
+ */
 export class RoleGuardService implements CanActivate{
 
+  /**
+   * Rol del usuario
+   */
   rol: string;
 
+  /**
+   * Constructor de la clase RoleGuardService
+   * @param localStorageService
+   * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador
+   * @param router
+   * Servicio que permite la navegación entre vistas
+   */
   constructor(private localStorageService: LocalStorageService, private router: Router) { }
 
+  /**
+   * Método que determina si el usuario puede acceder a la vista o no.
+   * Si el usuario está autenticado y su rol coincide con el esperado, entonces puede acceder a la vista. En caso contrario, se le deniega el acceso y se le redirige al login.
+   * @param route
+   * Contiene la información sobre una ruta asociada a un componente cargado en una salida en un momento determinado.
+   * @param state
+   * Estructura de datos inmutable que representa el estado del enrutador en un momento determinado.
+   *
+   * @return
+   * true si el usuario puede acceder a la vista, false en caso contrario
+   *
+   * @see https://vsavkin.com/angular-router-understanding-router-state-7b5b95a12eab
+   */
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const expectedRol &#x3D; route.data.expectedRol;
     const roles &#x3D; this.localStorageService.getRolesUser();
