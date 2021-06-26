@@ -22,7 +22,7 @@ export class ListLocalitiesComponent implements OnInit {
   /**
    * Almacena las localidades.
    */
-  cities: Locality[];
+  localities: Locality[];
   /**
    * Indica si el usuario quiere añadir una nueva localidad.
    */
@@ -50,7 +50,7 @@ export class ListLocalitiesComponent implements OnInit {
 
   /**
    * Constructor de la clase ListLocalitiesComponent
-   * @param cityService
+   * @param localityService
    * Servicio de localidades.
    * @param formBuilder
    * Clase que permite crear objetos de la clase FormGroup y FormControl.
@@ -62,7 +62,7 @@ export class ListLocalitiesComponent implements OnInit {
    * Servicio propocionado por la librería PrimeNG que permite almacenar los mensajes que serán mostrados al usuario.
    */
   constructor(
-    private cityService: LocalityService,
+    private localityService: LocalityService,
     private formBuilder: FormBuilder,
     private confirmationService: ConfirmationService,
     private translateService: TranslateService,
@@ -100,9 +100,9 @@ export class ListLocalitiesComponent implements OnInit {
    * Método que obtiene las localidades de la API y los almacena.
    */
   loadCities(){
-    this.cityService.getLocalities().subscribe(
+    this.localityService.getLocalities().subscribe(
       (data) => {
-        this.cities = data;
+        this.localities = data;
       }
     );
   }
@@ -112,14 +112,14 @@ export class ListLocalitiesComponent implements OnInit {
    * Una vez enviado, también será el encargado de resetear el formulario y de mostrar un mensaje al usuario.
    */
   onSubmit(){
-    var city = {
+    var locality = {
       name: this.formAddCity.get('name').value
     };
-    this.cityService.addLocality(city).pipe(
+    this.localityService.addLocality(locality).pipe(
       mergeMap( message => {
-        return this.cityService.getLocalities().pipe(
+        return this.localityService.getLocalities().pipe(
           map(data => {
-            this.cities = data;
+            this.localities = data;
           })
         );
       })
@@ -138,23 +138,23 @@ export class ListLocalitiesComponent implements OnInit {
   /**
    * Método que elimina una localidad del sistema a través de la API.
    * Una vez enviado, también será el encargado de mostrar un mensaje al usuario.
-   * @param city
+   * @param locality
    * Localidad que se desea eliminar
    */
-  removeCity(city){
+  removeCity(locality){
     this.confirmationService.confirm({
       message: this.translateService.instant('message_delete_city'),
       accept: () => {
-        this.cityService.deleteLocality(city).pipe(
+        this.localityService.deleteLocality(locality).pipe(
           mergeMap( message => {
-            return this.cityService.getLocalities().pipe(
+            return this.localityService.getLocalities().pipe(
               map(data => {
-                this.cities = data;
+                this.localities = data;
               })
             );
           })
         ).subscribe( data => {
-            var message = this.translateService.instant('city_delete_message',{ 'nameCity': city.name });
+            var message = this.translateService.instant('city_delete_message',{ 'nameCity': locality.name });
             this.messageService.add({key: 'city', severity:'success', summary: this.translateService.instant('city_delete'), detail: message });
           },
           (err) => {
@@ -196,20 +196,20 @@ export class ListLocalitiesComponent implements OnInit {
 
   /**
    * Método que muestra el diálogo para editar la información de una localidad.
-   * @param city
+   * @param locality
    * Localidad cuya información se desea modificar.
    */
-  editCity(city){
+  editCity(locality){
     this.displayEditPanel = true;
     this.formEditCity.patchValue({
-        id: city.id,
-        name : city.name
+        id: locality.id,
+        name : locality.name
       }
     );
   }
 
   /**
-   * Método que crea un objeto city a partir de los datos del formulario y se lo envía a la API.
+   * Método que crea un objeto locality a partir de los datos del formulario y se lo envía a la API.
    * Una vez enviado, también será el encargado de mostrar un mensaje al usuario.
    */
   onEditSubmit(){
@@ -217,15 +217,15 @@ export class ListLocalitiesComponent implements OnInit {
       name : this.formEditCity.get('name').value
     };
 
-    this.cityService.editLocality(this.formEditCity.get('id').value, locality).pipe(
+    this.localityService.editLocality(this.formEditCity.get('id').value, locality).pipe(
       mergeMap(message => {
-        return this.cityService.getLocalities().pipe();
+        return this.localityService.getLocalities().pipe();
       })
     ).subscribe( data => {
       this.displayEditPanel = false;
       var message = this.translateService.instant('city_edit_message',{ 'nameCity': locality.name });
       this.messageService.add({key: 'city', severity:'success', summary: this.translateService.instant('city_edit'), detail: message });
-      this.cities = data;
+      this.localities = data;
     },
       err => {
         this.errorEditCity = true;

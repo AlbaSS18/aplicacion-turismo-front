@@ -55,8 +55,8 @@ describe('ListLocalitiesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should load the cities', () => {
-    expect(component.cities.length).toBe(2);
+  it('should load the localities', () => {
+    expect(component.localities.length).toBe(2);
   });
 
   it('should delete the city', () => {
@@ -67,7 +67,7 @@ describe('ListLocalitiesComponent', () => {
       name: 'Oviedo'
     };
     component.removeCity(city);
-    expect(component.cities.length).toBe(1);
+    expect(component.localities.length).toBe(1);
   });
 
 
@@ -76,7 +76,7 @@ describe('ListLocalitiesComponent', () => {
     component.formEditCity.controls['name'].setValue('Ov');
     component.onEditSubmit();
     expect(component.displayEditPanel).toBeFalse();
-    const updateItem = component.cities.find(city => city.id === 2);
+    const updateItem = component.localities.find(city => city.id === 2);
     expect(updateItem.name).toBe('Ov');
   });
 
@@ -85,6 +85,6 @@ describe('ListLocalitiesComponent', () => {
     component.onSubmit();
 
     expect(component.display).toBeFalse();
-    expect(component.cities.length).toBe(3);
+    expect(component.localities.length).toBe(3);
   });
 });

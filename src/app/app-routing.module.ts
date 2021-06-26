@@ -5,7 +5,7 @@ import {SignUpComponent} from './sign-up/sign-up.component';
 import {AuthGuardService} from './guards/auth-guard/auth-guard.service';
 import {IsLogginInGuardService} from './guards/isLogginInGuard/is-loggin-in-guard.service';
 import {TableActivitiesComponent} from './table-activities/table-activities.component';
-import {ListLocalitiesComponent} from './list-cities/list-localities.component';
+import {ListLocalitiesComponent} from './list-localities/list-localities.component';
 import {ListInterestComponent} from './list-interest/list-interest.component';
 import {ListUserComponent} from './list-user/list-user.component';
 import {EditUserComponent} from './edit-user/edit-user.component';

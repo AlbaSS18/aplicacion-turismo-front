@@ -2,7 +2,7 @@
 <p-toast key="city"></p-toast>
 <div class="cities-panel">
   <p-card header="{{ 'list_cities' | translate }}">
-    <p-virtualScroller [value]="cities" scrollHeight="250px" [itemSize]="50">
+    <p-virtualScroller [value]="localities" scrollHeight="250px" [itemSize]="50">
       <p-header class="list-header">
         {{ 'cities' | translate }}
         <button id="add_city_btn" pButton pRipple label=" {{ 'add_city' | translate }}" icon="pi pi-plus" class="p-button-raised p-button-rounded" (click)="openPanel($event)"></button>

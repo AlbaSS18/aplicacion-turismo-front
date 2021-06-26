@@ -26,7 +26,7 @@ import {ToolbarModule} from 'primeng/toolbar';
 import {DialogModule} from 'primeng/dialog';
 import {FileUploadModule} from 'primeng/fileupload';
 import {InputTextareaModule} from 'primeng/inputtextarea';
-import { ListLocalitiesComponent } from './list-cities/list-localities.component';
+import { ListLocalitiesComponent } from './list-localities/list-localities.component';
 import {VirtualScrollerModule} from 'primeng/virtualscroller';
 import {OrderListModule} from 'primeng/orderlist';
 import { ListInterestComponent } from './list-interest/list-interest.component';
