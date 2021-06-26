@@ -34,11 +34,11 @@ export class ListLocalitiesComponent implements OnInit {
   /**
    * Indica si se ha producido algún error al añadir una nueva localidad.
    */
-  errorAddCity: boolean = false;
+  errorAddLocality: boolean = false;
   /**
    * Indica si se ha producido algún error al modificar la información de una localidad.
    */
-  errorEditCity: boolean = false;
+  errorEditLocality: boolean = false;
   /**
    * Indica si el usuario ha selecciona alguna localidad para editar.
    */
@@ -46,7 +46,7 @@ export class ListLocalitiesComponent implements OnInit {
   /**
    * Formulario para editar la información de una localidad.
    */
-  formEditCity: FormGroup;
+  formEditLocality: FormGroup;
 
   /**
    * Constructor de la clase ListLocalitiesComponent
@@ -80,7 +80,7 @@ export class ListLocalitiesComponent implements OnInit {
     this.formAddLocality = this.formBuilder.group({
       name: ['', [Validators.required, validadorNonwhiteSpace()]]
     });
-    this.formEditCity = this.formBuilder.group({
+    this.formEditLocality = this.formBuilder.group({
       id: ['', Validators.required],
       name: ['', [Validators.required, validadorNonwhiteSpace()]]
     });
@@ -130,7 +130,7 @@ export class ListLocalitiesComponent implements OnInit {
         this.messageService.add({key: 'city', severity:'success', summary: this.translateService.instant('city_add'), detail: message });
       },
       err => {
-        this.errorAddCity = true;
+        this.errorAddLocality = true;
       }
     );
   }
@@ -177,14 +177,14 @@ export class ListLocalitiesComponent implements OnInit {
    */
   hideDialogCity(){
     this.formAddLocality.reset();
-    this.errorAddCity = false;
+    this.errorAddLocality = false;
   }
 
   /**
    * Método que se invoca cuando el diálogo que se utiliza para modificar la información de una localidad, se oculta.
    */
   hideDialogEditCity(){
-    this.errorEditCity = false;
+    this.errorEditLocality = false;
   }
 
   /**
@@ -201,7 +201,7 @@ export class ListLocalitiesComponent implements OnInit {
    */
   editCity(locality){
     this.displayEditPanel = true;
-    this.formEditCity.patchValue({
+    this.formEditLocality.patchValue({
         id: locality.id,
         name : locality.name
       }
@@ -214,10 +214,10 @@ export class ListLocalitiesComponent implements OnInit {
    */
   onEditSubmit(){
     var locality = {
-      name : this.formEditCity.get('name').value
+      name : this.formEditLocality.get('name').value
     };
 
-    this.localityService.editLocality(this.formEditCity.get('id').value, locality).pipe(
+    this.localityService.editLocality(this.formEditLocality.get('id').value, locality).pipe(
       mergeMap(message => {
         return this.localityService.getLocalities().pipe();
       })
@@ -228,7 +228,7 @@ export class ListLocalitiesComponent implements OnInit {
       this.localities = data;
     },
       err => {
-        this.errorEditCity = true;
+        this.errorEditLocality = true;
       });
   }
 

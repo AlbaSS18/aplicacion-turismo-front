@@ -33,7 +33,7 @@
           <input id="field-name-city" type="text" pInputText formControlName="name">
           <small *ngIf="formAddLocality.controls['name'].invalid &&
             (formAddLocality.controls['name'].dirty || formAddLocality.controls['name'].touched)" class="p-error">{{ 'name_city_required' | translate }}</small>
-          <small *ngIf="formCity.submitted && errorAddCity" class="p-error">{{ 'name_city_repetead' | translate }}</small>
+          <small *ngIf="formCity.submitted && errorAddLocality" class="p-error">{{ 'name_city_repetead' | translate }}</small>
         </div>
       </div>
     </form>
@@ -46,19 +46,19 @@
   <p-confirmDialog header="{{ 'delete_city' | translate }}" icon="pi pi-exclamation-triangle" acceptLabel="{{ 'delete' | translate }}" rejectLabel="{{ 'cancel' | translate }}"></p-confirmDialog>
 
   <p-dialog header="{{ 'edit_title_city' | translate }}" [draggable]="false" [(visible)]="displayEditPanel" [modal]="true" (onHide)="hideDialogEditCity()">
-    <form [formGroup]="formEditCity" #formCityToEdit="ngForm" id="ngFormEditCity" (ngSubmit)="onEditSubmit()">
+    <form [formGroup]="formEditLocality" #formCityToEdit="ngForm" id="ngFormEditCity" (ngSubmit)="onEditSubmit()">
       <div class="p-field p-grid">
         <label for="field-edit-name-city" class="p-col-fixed">{{ 'name_city' | translate }}*:</label>
         <div class="p-col buttons-add-city">
           <input id="field-edit-name-city" type="text" pInputText formControlName="name">
-          <small *ngIf="formEditCity.controls['name'].invalid &&
-            (formEditCity.controls['name'].dirty || formEditCity.controls['name'].touched)" class="p-error">{{ 'name_city_required' | translate }}</small>
-          <small *ngIf="formCityToEdit.submitted && errorEditCity" class="p-error">{{ 'name_city_repetead' | translate }}</small>
+          <small *ngIf="formEditLocality.controls['name'].invalid &&
+            (formEditLocality.controls['name'].dirty || formEditLocality.controls['name'].touched)" class="p-error">{{ 'name_city_required' | translate }}</small>
+          <small *ngIf="formCityToEdit.submitted && errorEditLocality" class="p-error">{{ 'name_city_repetead' | translate }}</small>
         </div>
       </div>
     </form>
     <p-footer>
-      <button id="edit_save_city_btn" pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormEditCity" [disabled]="formEditCity.invalid"></button>
+      <button id="edit_save_city_btn" pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormEditCity" [disabled]="formEditLocality.invalid"></button>
       <button id="edit_cancel_city_btn" pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancelEdit()"></button>
     </p-footer>
   </p-dialog>

@@ -72,8 +72,8 @@ describe('ListLocalitiesComponent', () => {
 
 
   it('should edit the city', () => {
-    component.formEditCity.controls['id'].setValue(2);
-    component.formEditCity.controls['name'].setValue('Ov');
+    component.formEditLocality.controls['id'].setValue(2);
+    component.formEditLocality.controls['name'].setValue('Ov');
     component.onEditSubmit();
     expect(component.displayEditPanel).toBeFalse();
     const updateItem = component.localities.find(city => city.id === 2);
