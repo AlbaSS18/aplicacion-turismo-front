@@ -35,7 +35,7 @@ const routes: Routes = [
     data: {
       expectedRol: 'admin'
     }},
-  {path: 'cities', component: ListCitiesComponent,
+  {path: 'localities', component: ListCitiesComponent,
     canActivate: [RoleGuardService],
     data: {
       expectedRol: 'admin'
