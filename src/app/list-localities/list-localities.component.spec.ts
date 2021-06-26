@@ -81,7 +81,7 @@ describe('ListLocalitiesComponent', () => {
   });
 
   it('should add a city', () => {
-    component.formAddCity.controls['name'].setValue('Avilés');
+    component.formAddLocality.controls['name'].setValue('Avilés');
     component.onSubmit();
 
     expect(component.display).toBeFalse();

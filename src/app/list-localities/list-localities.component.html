@@ -26,19 +26,19 @@
     <p-header>
       {{ 'add_city' | translate }}
     </p-header>
-    <form [formGroup]="formAddCity" #formCity="ngForm" id="ngFormCity" (ngSubmit)="onSubmit()">
+    <form [formGroup]="formAddLocality" #formCity="ngForm" id="ngFormCity" (ngSubmit)="onSubmit()">
       <div class="p-field p-grid">
         <label for="field-name-city" class="p-col-fixed">{{ 'name_city' | translate }}*:</label>
         <div class="p-col buttons-add-city">
           <input id="field-name-city" type="text" pInputText formControlName="name">
-          <small *ngIf="formAddCity.controls['name'].invalid &&
-            (formAddCity.controls['name'].dirty || formAddCity.controls['name'].touched)" class="p-error">{{ 'name_city_required' | translate }}</small>
+          <small *ngIf="formAddLocality.controls['name'].invalid &&
+            (formAddLocality.controls['name'].dirty || formAddLocality.controls['name'].touched)" class="p-error">{{ 'name_city_required' | translate }}</small>
           <small *ngIf="formCity.submitted && errorAddCity" class="p-error">{{ 'name_city_repetead' | translate }}</small>
         </div>
       </div>
     </form>
     <p-footer>
-      <button id="add_save_city_btn" pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormCity" [disabled]="formAddCity.invalid"></button>
+      <button id="add_save_city_btn" pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormCity" [disabled]="formAddLocality.invalid"></button>
       <button id="add_cancel_city_btn" pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancel()"></button>
     </p-footer>
   </p-dialog>

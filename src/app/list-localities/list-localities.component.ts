@@ -30,7 +30,7 @@ export class ListLocalitiesComponent implements OnInit {
   /**
    * Formulario para añadir una localidad.
    */
-  formAddCity: FormGroup;
+  formAddLocality: FormGroup;
   /**
    * Indica si se ha producido algún error al añadir una nueva localidad.
    */
@@ -77,7 +77,7 @@ export class ListLocalitiesComponent implements OnInit {
    * </ul>
    */
   ngOnInit(): void {
-    this.formAddCity = this.formBuilder.group({
+    this.formAddLocality = this.formBuilder.group({
       name: ['', [Validators.required, validadorNonwhiteSpace()]]
     });
     this.formEditCity = this.formBuilder.group({
@@ -113,7 +113,7 @@ export class ListLocalitiesComponent implements OnInit {
    */
   onSubmit(){
     var locality = {
-      name: this.formAddCity.get('name').value
+      name: this.formAddLocality.get('name').value
     };
     this.localityService.addLocality(locality).pipe(
       mergeMap( message => {
@@ -124,9 +124,9 @@ export class ListLocalitiesComponent implements OnInit {
         );
       })
     ).subscribe( data => {
-        var message = this.translateService.instant('city_add_message',{ 'nameCity': this.formAddCity.get('name').value });
+        var message = this.translateService.instant('city_add_message',{ 'nameCity': this.formAddLocality.get('name').value });
         this.display = false;
-        this.formAddCity.reset();
+        this.formAddLocality.reset();
         this.messageService.add({key: 'city', severity:'success', summary: this.translateService.instant('city_add'), detail: message });
       },
       err => {
@@ -176,7 +176,7 @@ export class ListLocalitiesComponent implements OnInit {
    * Método que se invoca cuando el diálogo que se utiliza para añadir una nueva localidad, se oculta.
    */
   hideDialogCity(){
-    this.formAddCity.reset();
+    this.formAddLocality.reset();
     this.errorAddCity = false;
   }
 
