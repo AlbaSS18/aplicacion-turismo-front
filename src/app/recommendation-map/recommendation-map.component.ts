@@ -4,7 +4,7 @@ import * as L from 'leaflet';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {InterestService} from '../services/interest/interest.service';
 import {FilterService} from 'primeng/api';
-import {LocalityService} from '../services/city/locality.service';
+import {LocalityService} from '../services/locality/locality.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {UserService} from '../services/user/user.service';
 import {map, mergeMap} from 'rxjs/operators';

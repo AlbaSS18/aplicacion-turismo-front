@@ -5,7 +5,7 @@ import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {Confirmation, ConfirmationService, MessageService, SharedModule} from 'primeng/api';
 import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ActivityService} from '../services/activity/activity.service';
-import {LocalityService} from '../services/city/locality.service';
+import {LocalityService} from '../services/locality/locality.service';
 import {InterestService} from '../services/interest/interest.service';
 import {MenubarModule} from 'primeng/menubar';
 import {TableModule} from 'primeng/table';

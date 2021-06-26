@@ -13,8 +13,8 @@ import {TranslateModule} from '@ngx-translate/core';
 import {Confirmation, ConfirmationService, MessageService} from 'primeng/api';
 import {ToastModule} from 'primeng/toast';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
-import { LocalityService } from '../services/city/locality.service';
-import { MockCityService } from '../services/city/locality-service-mock';
+import { LocalityService } from '../services/locality/locality.service';
+import { MockCityService } from '../services/locality/locality-service-mock';
 
 describe('ListLocalitiesComponent', () => {
   let component: ListLocalitiesComponent;
@@ -59,7 +59,7 @@ describe('ListLocalitiesComponent', () => {
     expect(component.localities.length).toBe(2);
   });
 
-  it('should delete the city', () => {
+  it('should delete the locality', () => {
     let confirmService = fixture.debugElement.injector.get(ConfirmationService);
     spyOn(confirmService, 'confirm').and.callFake((confirmation: Confirmation) => { return confirmation.accept(); });
     var city = {
@@ -71,7 +71,7 @@ describe('ListLocalitiesComponent', () => {
   });
 
 
-  it('should edit the city', () => {
+  it('should edit the locality', () => {
     component.formEditLocality.controls['id'].setValue(2);
     component.formEditLocality.controls['name'].setValue('Ov');
     component.onEditSubmit();
@@ -80,7 +80,7 @@ describe('ListLocalitiesComponent', () => {
     expect(updateItem.name).toBe('Ov');
   });
 
-  it('should add a city', () => {
+  it('should add a locality', () => {
     component.formAddLocality.controls['name'].setValue('Avilés');
     component.onSubmit();
 

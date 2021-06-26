@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {LocalityService} from '../services/city/locality.service';
+import {LocalityService} from '../services/locality/locality.service';
 import {Locality} from '../models/locality';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ConfirmationService, MessageService} from 'primeng/api';

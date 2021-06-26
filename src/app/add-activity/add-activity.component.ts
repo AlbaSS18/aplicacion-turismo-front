@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {LocalityService} from '../services/city/locality.service';
+import {LocalityService} from '../services/locality/locality.service';
 import {InterestService} from '../services/interest/interest.service';
 import {MessageService, SelectItem} from 'primeng/api';
 import * as L from 'leaflet';
