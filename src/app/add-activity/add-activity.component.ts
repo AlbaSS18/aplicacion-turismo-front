@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {CityService} from '../services/city/city.service';
+import {LocalityService} from '../services/city/locality.service';
 import {InterestService} from '../services/interest/interest.service';
 import {MessageService, SelectItem} from 'primeng/api';
 import * as L from 'leaflet';
@@ -68,7 +68,7 @@ export class AddActivityComponent implements OnInit {
    */
   constructor(
     private formBuilder: FormBuilder,
-    private cityService: CityService,
+    private cityService: LocalityService,
     private interestService: InterestService,
     private activityService: ActivityService,
     private router: Router,

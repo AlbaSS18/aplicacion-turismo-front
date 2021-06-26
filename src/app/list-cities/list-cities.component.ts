@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CityService} from '../services/city/city.service';
+import {LocalityService} from '../services/city/locality.service';
 import {City} from '../models/city';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ConfirmationService, MessageService} from 'primeng/api';
@@ -62,7 +62,7 @@ export class ListCitiesComponent implements OnInit {
    * Servicio propocionado por la librería PrimeNG que permite almacenar los mensajes que serán mostrados al usuario.
    */
   constructor(
-    private cityService: CityService,
+    private cityService: LocalityService,
     private formBuilder: FormBuilder,
     private confirmationService: ConfirmationService,
     private translateService: TranslateService,

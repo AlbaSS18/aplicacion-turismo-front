@@ -13,8 +13,8 @@ import {TranslateModule} from '@ngx-translate/core';
 import {Confirmation, ConfirmationService, MessageService} from 'primeng/api';
 import {ToastModule} from 'primeng/toast';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
-import { CityService } from '../services/city/city.service';
-import { MockCityService } from '../services/city/city-service-mock';
+import { LocalityService } from '../services/city/locality.service';
+import { MockCityService } from '../services/city/locality-service-mock';
 
 describe('ListCitiesComponent', () => {
   let component: ListCitiesComponent;
@@ -39,7 +39,7 @@ describe('ListCitiesComponent', () => {
       providers: [
         ConfirmationService,
         MessageService,
-        {provide: CityService, useClass: MockCityService},
+        {provide: LocalityService, useClass: MockCityService},
       ]
     })
     .compileComponents();

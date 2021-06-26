@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MessageService, SelectItem} from 'primeng/api';
 import {forkJoin} from 'rxjs';
-import {CityService} from '../services/city/city.service';
 import {InterestService} from '../services/interest/interest.service';
 import {ActivityService} from '../services/activity/activity.service';
 import {ActivatedRoute, Router} from '@angular/router';

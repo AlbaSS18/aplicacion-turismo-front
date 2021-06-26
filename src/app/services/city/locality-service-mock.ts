@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { City } from "src/app/models/city";
-import { CityService } from "./city.service";
+import { LocalityService } from "./locality.service";
 
 @Injectable()
-export class MockCityService extends CityService {
+export class MockCityService extends LocalityService {
 
     listCities = [
         {

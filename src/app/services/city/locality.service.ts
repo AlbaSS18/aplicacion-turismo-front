@@ -14,11 +14,11 @@ const cabecera = {headers: new HttpHeaders({'Content-Type': 'application/json'})
   providedIn: 'root'
 })
 /**
- * Clase CityService
+ * Clase LocalityService
  * 
  * Clase que se encarga de realizar peticiones a la API relacionadas con las localidades.
  */
-export class CityService {
+export class LocalityService {
 
   /**
    * Almacena la url del endpoint
@@ -26,7 +26,7 @@ export class CityService {
   cityURL = 'http://localhost:8090/api/city';
 
   /**
-   * Constructor de la clase CityService
+   * Constructor de la clase LocalityService
    * @param httpClient objeto que permite hacer peticiones a la API y obtener resultados de la misma
    */
   constructor(private httpClient: HttpClient) { }

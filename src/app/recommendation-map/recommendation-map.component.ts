@@ -4,7 +4,7 @@ import * as L from 'leaflet';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {InterestService} from '../services/interest/interest.service';
 import {FilterService} from 'primeng/api';
-import {CityService} from '../services/city/city.service';
+import {LocalityService} from '../services/city/locality.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {UserService} from '../services/user/user.service';
 import {map, mergeMap} from 'rxjs/operators';
@@ -81,7 +81,7 @@ export class RecommendationMapComponent implements OnInit {
     private activitiesService: ActivityService,
     private fb: FormBuilder,
     private interestService: InterestService,
-    private cityService: CityService,
+    private cityService: LocalityService,
     private sanitizer: DomSanitizer,
     private filterService: FilterService,
     private localStorageService: LocalStorageService,
