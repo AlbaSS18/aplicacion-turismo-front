@@ -199,9 +199,9 @@ export class AddActivityComponent implements OnInit {
         },
         err => {
           if (err.error.mensaje === "La ciudad no existe"){
-            var message = this.translateService.instant('error_city_council');
+            var message = this.translateService.instant('error_locality');
             this.infoMessage = [
-              { key: 'add_activity_error', severity:'error', summary: this.translateService.instant('error'), detail: message, keyTranslate: 'error_city_council'}
+              { key: 'add_activity_error', severity:'error', summary: this.translateService.instant('error'), detail: message, keyTranslate: 'error_locality'}
             ];
           }
           else if (err.error.mensaje.includes("Ya existe una actividad con el nombre")){

@@ -270,14 +270,14 @@ export class EditActivitiesComponent implements OnInit {
       },
       err => {
         if (err.error.mensaje === "La ciudad no existe"){
-          var message = this.translateService.instant('error_city_council');
+          var message = this.translateService.instant('error_locality');
           this.infoMessage = [
             {
               key: 'edit_activity_error',
               severity: 'error',
               summary: this.translateService.instant('error'),
               detail: message,
-              keyTranslate: 'error_city_council'
+              keyTranslate: 'error_locality'
             }
           ];
         }

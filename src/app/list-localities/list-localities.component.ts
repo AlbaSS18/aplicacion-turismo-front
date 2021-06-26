@@ -124,10 +124,10 @@ export class ListLocalitiesComponent implements OnInit {
         );
       })
     ).subscribe( data => {
-        var message = this.translateService.instant('city_add_message',{ 'nameCity': this.formAddLocality.get('name').value });
+        var message = this.translateService.instant('locality_add_message',{ 'nameLocality': this.formAddLocality.get('name').value });
         this.display = false;
         this.formAddLocality.reset();
-        this.messageService.add({key: 'city', severity:'success', summary: this.translateService.instant('city_add'), detail: message });
+        this.messageService.add({key: 'city', severity:'success', summary: this.translateService.instant('locality_add'), detail: message });
       },
       err => {
         this.errorAddLocality = true;
@@ -143,7 +143,7 @@ export class ListLocalitiesComponent implements OnInit {
    */
   removeLocality(locality){
     this.confirmationService.confirm({
-      message: this.translateService.instant('message_delete_city'),
+      message: this.translateService.instant('message_delete_locality'),
       accept: () => {
         this.localityService.deleteLocality(locality).pipe(
           mergeMap( message => {
@@ -154,12 +154,12 @@ export class ListLocalitiesComponent implements OnInit {
             );
           })
         ).subscribe( data => {
-            var message = this.translateService.instant('city_delete_message',{ 'nameCity': locality.name });
-            this.messageService.add({key: 'city', severity:'success', summary: this.translateService.instant('city_delete'), detail: message });
+            var message = this.translateService.instant('locality_delete_message',{ 'nameLocality': locality.name });
+            this.messageService.add({key: 'city', severity:'success', summary: this.translateService.instant('locality_delete'), detail: message });
           },
           (err) => {
             if (err.status === 500){
-              var message = this.translateService.instant('city_has_activities');
+              var message = this.translateService.instant('locality_has_activities');
               this.messageService.add({key: 'city', severity:'error', summary: this.translateService.instant('error'), detail: message });
             }
             else{
@@ -223,8 +223,8 @@ export class ListLocalitiesComponent implements OnInit {
       })
     ).subscribe( data => {
       this.displayEditPanel = false;
-      var message = this.translateService.instant('city_edit_message',{ 'nameCity': locality.name });
-      this.messageService.add({key: 'city', severity:'success', summary: this.translateService.instant('city_edit'), detail: message });
+      var message = this.translateService.instant('locality_edit_message',{ 'nameLocality': locality.name });
+      this.messageService.add({key: 'city', severity:'success', summary: this.translateService.instant('locality_edit'), detail: message });
       this.localities = data;
     },
       err => {
