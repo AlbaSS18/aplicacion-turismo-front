@@ -1,5 +1,5 @@
 <app-menu-bar></app-menu-bar>
-<p-toast key="city"></p-toast>
+<p-toast key="locality"></p-toast>
 <div class="cities-panel">
   <p-card header="{{ 'list_localities' | translate }}">
     <p-virtualScroller [value]="localities" scrollHeight="250px" [itemSize]="50">
@@ -7,14 +7,14 @@
         {{ 'localities' | translate }}
         <button id="add_city_btn" pButton pRipple label=" {{ 'add_locality' | translate }}" icon="pi pi-plus" class="p-button-raised p-button-rounded" (click)="openPanel($event)"></button>
       </p-header>
-      <ng-template pTemplate="item" let-city>
+      <ng-template pTemplate="item" let-locality>
         <div class="list-container-cities">
           <div class="city-details">
-            <b>{{city.name}}</b>
+            <b>{{locality.name}}</b>
           </div>
           <div class="group-buttons">
-            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editLocality(city)"></button>
-            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="removeLocality(city)"></button>
+            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editLocality(locality)"></button>
+            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="removeLocality(locality)"></button>
           </div>
         </div>
       </ng-template>

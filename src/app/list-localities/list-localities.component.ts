@@ -127,7 +127,7 @@ export class ListLocalitiesComponent implements OnInit {
         var message = this.translateService.instant('locality_add_message',{ 'nameLocality': this.formAddLocality.get('name').value });
         this.display = false;
         this.formAddLocality.reset();
-        this.messageService.add({key: 'city', severity:'success', summary: this.translateService.instant('locality_add'), detail: message });
+        this.messageService.add({key: 'locality', severity:'success', summary: this.translateService.instant('locality_add'), detail: message });
       },
       err => {
         this.errorAddLocality = true;
@@ -155,16 +155,16 @@ export class ListLocalitiesComponent implements OnInit {
           })
         ).subscribe( data => {
             var message = this.translateService.instant('locality_delete_message',{ 'nameLocality': locality.name });
-            this.messageService.add({key: 'city', severity:'success', summary: this.translateService.instant('locality_delete'), detail: message });
+            this.messageService.add({key: 'locality', severity:'success', summary: this.translateService.instant('locality_delete'), detail: message });
           },
           (err) => {
             if (err.status === 500){
               var message = this.translateService.instant('locality_has_activities');
-              this.messageService.add({key: 'city', severity:'error', summary: this.translateService.instant('error'), detail: message });
+              this.messageService.add({key: 'locality', severity:'error', summary: this.translateService.instant('error'), detail: message });
             }
             else{
               var message = this.translateService.instant('error_delete_message');
-              this.messageService.add({key: 'city', severity:'error', summary: this.translateService.instant('error'), detail: message });
+              this.messageService.add({key: 'locality', severity:'error', summary: this.translateService.instant('error'), detail: message });
             }
           }
         );
@@ -224,7 +224,7 @@ export class ListLocalitiesComponent implements OnInit {
     ).subscribe( data => {
       this.displayEditPanel = false;
       var message = this.translateService.instant('locality_edit_message',{ 'nameLocality': locality.name });
-      this.messageService.add({key: 'city', severity:'success', summary: this.translateService.instant('locality_edit'), detail: message });
+      this.messageService.add({key: 'locality', severity:'success', summary: this.translateService.instant('locality_edit'), detail: message });
       this.localities = data;
     },
       err => {
