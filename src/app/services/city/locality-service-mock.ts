@@ -17,11 +17,11 @@ export class MockCityService extends LocalityService {
         },
     ];
 
-    getCities(): Observable<City[]> {
+    getLocalities(): Observable<City[]> {
         return of(this.listCities);
     }
 
-    addCity(city): Observable<any> {
+    addLocality(city): Observable<any> {
         var cityToAdd = {
             id: this.listCities[this.listCities.length - 1].id + 1,
             name: city.name
@@ -32,14 +32,14 @@ export class MockCityService extends LocalityService {
         });
     }
 
-    deleteCity(city): Observable<any> {
+    deleteLocality(city): Observable<any> {
         this.listCities = this.listCities.filter(p => p.id !== city.id);
         return of({
             mensaje: 'La ciudad ha sido eliminada'
         });
     }
 
-    editCity(id, city): Observable<any> {
+    editLocality(id, city): Observable<any> {
         const updateItem = this.listCities.find(ci => ci.id === id);
         const index = this.listCities.indexOf(updateItem);
 

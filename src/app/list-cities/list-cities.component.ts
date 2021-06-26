@@ -100,7 +100,7 @@ export class ListCitiesComponent implements OnInit {
    * Método que obtiene las localidades de la API y los almacena.
    */
   loadCities(){
-    this.cityService.getCities().subscribe(
+    this.cityService.getLocalities().subscribe(
       (data) => {
         this.cities = data;
       }
@@ -115,9 +115,9 @@ export class ListCitiesComponent implements OnInit {
     var city = {
       name: this.formAddCity.get('name').value
     };
-    this.cityService.addCity(city).pipe(
+    this.cityService.addLocality(city).pipe(
       mergeMap( message => {
-        return this.cityService.getCities().pipe(
+        return this.cityService.getLocalities().pipe(
           map(data => {
             this.cities = data;
           })
@@ -145,9 +145,9 @@ export class ListCitiesComponent implements OnInit {
     this.confirmationService.confirm({
       message: this.translateService.instant('message_delete_city'),
       accept: () => {
-        this.cityService.deleteCity(city).pipe(
+        this.cityService.deleteLocality(city).pipe(
           mergeMap( message => {
-            return this.cityService.getCities().pipe(
+            return this.cityService.getLocalities().pipe(
               map(data => {
                 this.cities = data;
               })
@@ -217,9 +217,9 @@ export class ListCitiesComponent implements OnInit {
       name : this.formEditCity.get('name').value
     };
 
-    this.cityService.editCity(this.formEditCity.get('id').value, city).pipe(
+    this.cityService.editLocality(this.formEditCity.get('id').value, city).pipe(
       mergeMap(message => {
-        return this.cityService.getCities().pipe();
+        return this.cityService.getLocalities().pipe();
       })
     ).subscribe( data => {
       this.displayEditPanel = false;

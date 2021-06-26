@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {UserLogin} from '../../models/user';
 import {Observable} from 'rxjs';
-import {JwtModel} from '../../models/jwt_model';
 import {City} from '../../models/city';
 
 /**
@@ -35,7 +33,7 @@ export class LocalityService {
    * Método que realiza una petición GET para obtener la lista de localidades.
    * @returns el observable con la información enviada por la API
    */
-  public getCities(): Observable<City[]> {
+  public getLocalities(): Observable<City[]> {
     return this.httpClient.get<City[]>(this.cityURL + '/list', cabecera);
   }
 
@@ -44,7 +42,7 @@ export class LocalityService {
    * @param city  objeto interés que incluye la información de la nueva localidad
    * @returns el observable con la información enviada por la API
    */
-  public addCity(city): Observable<any> {
+  public addLocality(city): Observable<any> {
     return this.httpClient.post<any>(this.cityURL + '/add', city, cabecera);
   }
 
@@ -53,7 +51,7 @@ export class LocalityService {
    * @param city objeto localidad que se quiere eliminar
    * @returns el observable con la información enviada por la API
    */
-  public deleteCity(city): Observable<any> {
+  public deleteLocality(city): Observable<any> {
     return this.httpClient.delete<any>(this.cityURL + '/delete/' + city.id, cabecera);
   }
 
@@ -63,7 +61,7 @@ export class LocalityService {
    * @param city objeto localidad con la información actualizada. 
    * @returns el observable con la información enviada por la API
    */
-  public editCity(id, city): Observable<any> {
+  public editLocality(id, city): Observable<any> {
     return this.httpClient.put<any>(this.cityURL + '/update/' + id, city, cabecera);
   }
 }
