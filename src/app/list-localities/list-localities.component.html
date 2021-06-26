@@ -1,15 +1,15 @@
 <app-menu-bar></app-menu-bar>
 <p-toast key="locality"></p-toast>
-<div class="cities-panel">
+<div class="localities-panel">
   <p-card header="{{ 'list_localities' | translate }}">
     <p-virtualScroller [value]="localities" scrollHeight="250px" [itemSize]="50">
       <p-header class="list-header">
         {{ 'localities' | translate }}
-        <button id="add_city_btn" pButton pRipple label=" {{ 'add_locality' | translate }}" icon="pi pi-plus" class="p-button-raised p-button-rounded" (click)="openPanel($event)"></button>
+        <button id="add_locality_btn" pButton pRipple label=" {{ 'add_locality' | translate }}" icon="pi pi-plus" class="p-button-raised p-button-rounded" (click)="openPanel($event)"></button>
       </p-header>
       <ng-template pTemplate="item" let-locality>
-        <div class="list-container-cities">
-          <div class="city-details">
+        <div class="list-container-localities">
+          <div class="locality-details">
             <b>{{locality.name}}</b>
           </div>
           <div class="group-buttons">
@@ -28,9 +28,9 @@
     </p-header>
     <form [formGroup]="formAddLocality" #formLocality="ngForm" id="ngFormLocality" (ngSubmit)="onSubmit()">
       <div class="p-field p-grid">
-        <label for="field-name-city" class="p-col-fixed">{{ 'name_locality' | translate }}*:</label>
-        <div class="p-col buttons-add-city">
-          <input id="field-name-city" type="text" pInputText formControlName="name">
+        <label for="field-name-locality" class="p-col-fixed">{{ 'name_locality' | translate }}*:</label>
+        <div class="p-col buttons-add-locality">
+          <input id="field-name-locality" type="text" pInputText formControlName="name">
           <small *ngIf="formAddLocality.controls['name'].invalid &&
             (formAddLocality.controls['name'].dirty || formAddLocality.controls['name'].touched)" class="p-error">{{ 'name_locality_required' | translate }}</small>
           <small *ngIf="formLocality.submitted && errorAddLocality" class="p-error">{{ 'name_locality_repeated' | translate }}</small>
@@ -38,8 +38,8 @@
       </div>
     </form>
     <p-footer>
-      <button id="add_save_city_btn" pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormLocality" [disabled]="formAddLocality.invalid"></button>
-      <button id="add_cancel_city_btn" pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancel()"></button>
+      <button id="add_save_locality_btn" pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormLocality" [disabled]="formAddLocality.invalid"></button>
+      <button id="add_cancel_locality_btn" pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancel()"></button>
     </p-footer>
   </p-dialog>
 
@@ -48,9 +48,9 @@
   <p-dialog header="{{ 'edit_title_locality' | translate }}" [draggable]="false" [(visible)]="displayEditPanel" [modal]="true" (onHide)="hideDialogEditLocality()">
     <form [formGroup]="formEditLocality" #formLocalityToEdit="ngForm" id="ngFormEditLocality" (ngSubmit)="onEditSubmit()">
       <div class="p-field p-grid">
-        <label for="field-edit-name-city" class="p-col-fixed">{{ 'name_locality' | translate }}*:</label>
-        <div class="p-col buttons-add-city">
-          <input id="field-edit-name-city" type="text" pInputText formControlName="name">
+        <label for="field-edit-name-locality" class="p-col-fixed">{{ 'name_locality' | translate }}*:</label>
+        <div class="p-col buttons-add-locality">
+          <input id="field-edit-name-locality" type="text" pInputText formControlName="name">
           <small *ngIf="formEditLocality.controls['name'].invalid &&
             (formEditLocality.controls['name'].dirty || formEditLocality.controls['name'].touched)" class="p-error">{{ 'name_locality_required' | translate }}</small>
           <small *ngIf="formLocalityToEdit.submitted && errorEditLocality" class="p-error">{{ 'name_locality_repeated' | translate }}</small>
@@ -58,8 +58,8 @@
       </div>
     </form>
     <p-footer>
-      <button id="edit_save_city_btn" pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormEditLocality" [disabled]="formEditLocality.invalid"></button>
-      <button id="edit_cancel_city_btn" pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancelEdit()"></button>
+      <button id="edit_save_locality_btn" pButton pRipple label=" {{ 'save' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormEditLocality" [disabled]="formEditLocality.invalid"></button>
+      <button id="edit_cancel_locality_btn" pButton pRipple label=" {{ 'cancel' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancelEdit()"></button>
     </p-footer>
   </p-dialog>
 </div>

@@ -1,19 +1,19 @@
 @import "src/assets/sass/utility/_mixins.scss";
 
-.list-container-cities, .list-header {
+.list-container-localities, .list-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.cities-panel {
+.localities-panel {
   @include custom-panel;
   width: 100%;
   min-height: 300px;
   min-width: 800px;
 }
 
-.buttons-add-city{
+.buttons-add-locality{
   display: flex;
   flex-direction: column;
 }

@@ -1,17 +1,17 @@
 import {by, element} from 'protractor';
 
-export class ListCitiesPage{
+export class ListLocalitiesPage{
 
   navigateTo() {
     return element(by.id('list_city_nav'));
   }
 
-  listCities(){
+  listLocality(){
     return element(by.css('.p-virtualscroller .p-component'));
   }
 
-  getAddCityBtn(){
-    return element(by.id('add_city_btn'));
+  getAddLocalityBtn(){
+    return element(by.id('add_locality_btn'));
   }
 
   getNameInput(idInput){
@@ -22,16 +22,16 @@ export class ListCitiesPage{
     return element(by.cssContainingText('.p-error', message));
   }
 
-  getSaveCityBtn(idBtn){
+  getSaveLocalityBtn(idBtn){
     return element(by.id(idBtn));
   }
 
-  getCancelCityBtn(idBtn){
+  getCancelLocalityBtn(idBtn){
     return element(by.id(idBtn));
   }
 
   getDeleteBtn(){
-    return element(by.xpath('//div[@class="city-details" and ./b[contains(text(),"Oviedo")]]/following-sibling::*[1]/button[2]'));
+    return element(by.xpath('//div[@class="locality-details" and ./b[contains(text(),"Oviedo")]]/following-sibling::*[1]/button[2]'));
   }
 
   getDeleteMessage(message){
@@ -39,7 +39,7 @@ export class ListCitiesPage{
   }
 
   getEditButton(){
-    return element(by.xpath('//div[@class="city-details" and ./b[contains(text(),"Oviedo")]]/following-sibling::*[1]/button[1]'));
+    return element(by.xpath('//div[@class="locality-details" and ./b[contains(text(),"Oviedo")]]/following-sibling::*[1]/button[1]'));
   }
 
   getCloseBtnConfirmDialog(){
