@@ -3,21 +3,21 @@ import {LocalityService} from '../services/city/locality.service';
 import {Locality} from '../models/locality';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ConfirmationService, MessageService} from 'primeng/api';
-import {catchError, map, mergeMap} from 'rxjs/operators';
+import {map, mergeMap} from 'rxjs/operators';
 import {TranslateService} from '@ngx-translate/core';
 import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.directive';
 
 @Component({
   selector: 'app-list-cities',
-  templateUrl: './list-cities.component.html',
-  styleUrls: ['./list-cities.component.scss']
+  templateUrl: './list-localities.component.html',
+  styleUrls: ['./list-localities.component.scss']
 })
 /**
- * Clase ListCitiesComponent
+ * Clase ListLocalitiesComponent
  *
  * Clase que muestra la lista de localidades.
  */
-export class ListCitiesComponent implements OnInit {
+export class ListLocalitiesComponent implements OnInit {
 
   /**
    * Almacena las localidades.
@@ -49,7 +49,7 @@ export class ListCitiesComponent implements OnInit {
   formEditCity: FormGroup;
 
   /**
-   * Constructor de la clase ListCitiesComponent
+   * Constructor de la clase ListLocalitiesComponent
    * @param cityService
    * Servicio de localidades.
    * @param formBuilder

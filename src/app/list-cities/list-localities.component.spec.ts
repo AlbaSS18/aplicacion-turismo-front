@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListCitiesComponent } from './list-cities.component';
+import { ListLocalitiesComponent } from './list-localities.component';
 import {DialogModule} from 'primeng/dialog';
 import {VirtualScrollerModule} from 'primeng/virtualscroller';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
@@ -16,9 +16,9 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import { LocalityService } from '../services/city/locality.service';
 import { MockCityService } from '../services/city/locality-service-mock';
 
-describe('ListCitiesComponent', () => {
-  let component: ListCitiesComponent;
-  let fixture: ComponentFixture<ListCitiesComponent>;
+describe('ListLocalitiesComponent', () => {
+  let component: ListLocalitiesComponent;
+  let fixture: ComponentFixture<ListLocalitiesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -35,7 +35,7 @@ describe('ListCitiesComponent', () => {
         ToastModule,
         ConfirmDialogModule
       ],
-      declarations: [ ListCitiesComponent, MenuBarComponent ],
+      declarations: [ ListLocalitiesComponent, MenuBarComponent ],
       providers: [
         ConfirmationService,
         MessageService,
@@ -46,7 +46,7 @@ describe('ListCitiesComponent', () => {
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListCitiesComponent);
+    fixture = TestBed.createComponent(ListLocalitiesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
