@@ -66,7 +66,7 @@ describe('ListLocalitiesComponent', () => {
       id: 2,
       name: 'Oviedo'
     };
-    component.removeCity(city);
+    component.removeLocality(city);
     expect(component.localities.length).toBe(1);
   });
 

@@ -84,7 +84,7 @@ export class ListLocalitiesComponent implements OnInit {
       id: ['', Validators.required],
       name: ['', [Validators.required, validadorNonwhiteSpace()]]
     });
-    this.loadCities();
+    this.loadLocalities();
   }
 
   /**
@@ -99,7 +99,7 @@ export class ListLocalitiesComponent implements OnInit {
   /**
    * Método que obtiene las localidades de la API y los almacena.
    */
-  loadCities(){
+  loadLocalities(){
     this.localityService.getLocalities().subscribe(
       (data) => {
         this.localities = data;
@@ -108,7 +108,7 @@ export class ListLocalitiesComponent implements OnInit {
   }
 
   /**
-   * Método que crea un objeto city a partir de los datos del formulario y se lo envía a la API.
+   * Método que crea un objeto locality a partir de los datos del formulario y se lo envía a la API.
    * Una vez enviado, también será el encargado de resetear el formulario y de mostrar un mensaje al usuario.
    */
   onSubmit(){
@@ -141,7 +141,7 @@ export class ListLocalitiesComponent implements OnInit {
    * @param locality
    * Localidad que se desea eliminar
    */
-  removeCity(locality){
+  removeLocality(locality){
     this.confirmationService.confirm({
       message: this.translateService.instant('message_delete_city'),
       accept: () => {
@@ -175,7 +175,7 @@ export class ListLocalitiesComponent implements OnInit {
   /**
    * Método que se invoca cuando el diálogo que se utiliza para añadir una nueva localidad, se oculta.
    */
-  hideDialogCity(){
+  hideDialogLocality(){
     this.formAddLocality.reset();
     this.errorAddLocality = false;
   }
@@ -183,7 +183,7 @@ export class ListLocalitiesComponent implements OnInit {
   /**
    * Método que se invoca cuando el diálogo que se utiliza para modificar la información de una localidad, se oculta.
    */
-  hideDialogEditCity(){
+  hideDialogEditLocality(){
     this.errorEditLocality = false;
   }
 
@@ -199,7 +199,7 @@ export class ListLocalitiesComponent implements OnInit {
    * @param locality
    * Localidad cuya información se desea modificar.
    */
-  editCity(locality){
+  editLocality(locality){
     this.displayEditPanel = true;
     this.formEditLocality.patchValue({
         id: locality.id,

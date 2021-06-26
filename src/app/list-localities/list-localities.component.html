@@ -13,8 +13,8 @@
             <b>{{city.name}}</b>
           </div>
           <div class="group-buttons">
-            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editCity(city)"></button>
-            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="removeCity(city)"></button>
+            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editLocality(city)"></button>
+            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="removeLocality(city)"></button>
           </div>
         </div>
       </ng-template>
@@ -22,7 +22,7 @@
   </p-card>
 
 
-  <p-dialog [(visible)]="display" modal="true" [draggable]="false" (onHide)="hideDialogCity()">
+  <p-dialog [(visible)]="display" modal="true" [draggable]="false" (onHide)="hideDialogLocality()">
     <p-header>
       {{ 'add_city' | translate }}
     </p-header>
@@ -45,7 +45,7 @@
 
   <p-confirmDialog header="{{ 'delete_city' | translate }}" icon="pi pi-exclamation-triangle" acceptLabel="{{ 'delete' | translate }}" rejectLabel="{{ 'cancel' | translate }}"></p-confirmDialog>
 
-  <p-dialog header="{{ 'edit_title_city' | translate }}" [draggable]="false" [(visible)]="displayEditPanel" [modal]="true" (onHide)="hideDialogEditCity()">
+  <p-dialog header="{{ 'edit_title_city' | translate }}" [draggable]="false" [(visible)]="displayEditPanel" [modal]="true" (onHide)="hideDialogEditLocality()">
     <form [formGroup]="formEditLocality" #formCityToEdit="ngForm" id="ngFormEditCity" (ngSubmit)="onEditSubmit()">
       <div class="p-field p-grid">
         <label for="field-edit-name-city" class="p-col-fixed">{{ 'name_city' | translate }}*:</label>
