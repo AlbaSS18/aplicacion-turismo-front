@@ -213,17 +213,17 @@ export class ListCitiesComponent implements OnInit {
    * Una vez enviado, también será el encargado de mostrar un mensaje al usuario.
    */
   onEditSubmit(){
-    var city = {
+    var locality = {
       name : this.formEditCity.get('name').value
     };
 
-    this.cityService.editLocality(this.formEditCity.get('id').value, city).pipe(
+    this.cityService.editLocality(this.formEditCity.get('id').value, locality).pipe(
       mergeMap(message => {
         return this.cityService.getLocalities().pipe();
       })
     ).subscribe( data => {
       this.displayEditPanel = false;
-      var message = this.translateService.instant('city_edit_message',{ 'nameCity': city.name });
+      var message = this.translateService.instant('city_edit_message',{ 'nameCity': locality.name });
       this.messageService.add({key: 'city', severity:'success', summary: this.translateService.instant('city_edit'), detail: message });
       this.cities = data;
     },
