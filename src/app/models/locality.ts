@@ -1,7 +1,7 @@
 /**
  * Clase que define el tipo de entidad Localidad.
  */
-export class City {
+export class Locality {
   /**
    * Identificador de la localidad
    */

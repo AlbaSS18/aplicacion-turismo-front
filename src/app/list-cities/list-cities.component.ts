@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LocalityService} from '../services/city/locality.service';
-import {City} from '../models/city';
+import {Locality} from '../models/locality';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import {catchError, map, mergeMap} from 'rxjs/operators';
@@ -22,7 +22,7 @@ export class ListCitiesComponent implements OnInit {
   /**
    * Almacena las localidades.
    */
-  cities: City[];
+  cities: Locality[];
   /**
    * Indica si el usuario quiere añadir una nueva localidad.
    */

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
-import { City } from "src/app/models/city";
+import { Locality } from "src/app/models/locality";
 import { LocalityService } from "./locality.service";
 
 @Injectable()
@@ -17,7 +17,7 @@ export class MockCityService extends LocalityService {
         },
     ];
 
-    getLocalities(): Observable<City[]> {
+    getLocalities(): Observable<Locality[]> {
         return of(this.listCities);
     }
 

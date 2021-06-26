@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {City} from '../../models/city';
+import {Locality} from '../../models/locality';
 
 /**
  * Encabezado para las peticiones y respuestas HTTP
@@ -21,7 +21,7 @@ export class LocalityService {
   /**
    * Almacena la url del endpoint
    */
-  cityURL = 'http://localhost:8090/api/city';
+  localityURL = 'http://localhost:8090/api/city';
 
   /**
    * Constructor de la clase LocalityService
@@ -33,35 +33,35 @@ export class LocalityService {
    * Método que realiza una petición GET para obtener la lista de localidades.
    * @returns el observable con la información enviada por la API
    */
-  public getLocalities(): Observable<City[]> {
-    return this.httpClient.get<City[]>(this.cityURL + '/list', cabecera);
+  public getLocalities(): Observable<Locality[]> {
+    return this.httpClient.get<Locality[]>(this.localityURL + '/list', cabecera);
   }
 
   /**
    * Método que realiza una petición POST para añadir una nueva localidad.
-   * @param city  objeto interés que incluye la información de la nueva localidad
+   * @param locality  objeto interés que incluye la información de la nueva localidad
    * @returns el observable con la información enviada por la API
    */
-  public addLocality(city): Observable<any> {
-    return this.httpClient.post<any>(this.cityURL + '/add', city, cabecera);
+  public addLocality(locality): Observable<any> {
+    return this.httpClient.post<any>(this.localityURL + '/add', locality, cabecera);
   }
 
   /**
    * Método que realiza una petición DELETE para eliminar una localidad.
-   * @param city objeto localidad que se quiere eliminar
+   * @param locality objeto localidad que se quiere eliminar
    * @returns el observable con la información enviada por la API
    */
-  public deleteLocality(city): Observable<any> {
-    return this.httpClient.delete<any>(this.cityURL + '/delete/' + city.id, cabecera);
+  public deleteLocality(locality): Observable<any> {
+    return this.httpClient.delete<any>(this.localityURL + '/delete/' + locality.id, cabecera);
   }
 
   /**
    * Método que realiza una petición PUT para modificar la información de una localidad.
    * @param id identificador de la localidad
-   * @param city objeto localidad con la información actualizada. 
+   * @param locality objeto localidad con la información actualizada.
    * @returns el observable con la información enviada por la API
    */
-  public editLocality(id, city): Observable<any> {
-    return this.httpClient.put<any>(this.cityURL + '/update/' + id, city, cabecera);
+  public editLocality(id, locality): Observable<any> {
+    return this.httpClient.put<any>(this.localityURL + '/update/' + id, locality, cabecera);
   }
 }
