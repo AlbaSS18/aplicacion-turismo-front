@@ -91,7 +91,7 @@ describe('AddActivityComponent', () => {
     component.formAddActivity.controls['description'].setValue('El Campo de San Francisco es un parque urbano situado en el centro de la ciudad Oviedo (España).');
     component.formAddActivity.controls['latitude'].setValue(43.361178800000005);
     component.formAddActivity.controls['longitude'].setValue(-5.850675357790575);
-    component.formAddActivity.controls['city'].setValue('Oviedo');
+    component.formAddActivity.controls['locality'].setValue('Oviedo');
     component.formAddActivity.controls['nameInterest'].setValue('Parques');
     component.formAddActivity.controls['address'].setValue('Parque de San Francisco, Llamaquique, Centro y casco histórico, Oviedo, España');
 

@@ -90,7 +90,7 @@ export class AddActivityComponent implements OnInit {
       description: ['', [Validators.required, validadorNonwhiteSpace()]],
       latitude: ['', [Validators.required]],
       longitude: ['', [Validators.required]],
-      city: ['', [Validators.required]],
+      locality: ['', [Validators.required]],
       nameInterest: ['', [Validators.required]],
       address: ['', Validators.required]
     });
@@ -115,7 +115,7 @@ export class AddActivityComponent implements OnInit {
       this.formAddActivity.controls['longitude'].setValue(longitud);
 
       var council = e.geocode.properties.address.city || e.geocode.properties.address.town || e.geocode.properties.address.village;
-      this.formAddActivity.controls['city'].setValue(council);
+      this.formAddActivity.controls['locality'].setValue(council);
 
       this.formAddActivity.controls['address'].setValue(e.geocode.name);
     }.bind(this)).addTo(map);
@@ -172,7 +172,7 @@ export class AddActivityComponent implements OnInit {
       formData.append('description', this.formAddActivity.get('description').value);
       formData.append('latitude', this.formAddActivity.get('latitude').value);
       formData.append('longitude', this.formAddActivity.get('longitude').value);
-      formData.append('city', this.formAddActivity.get('city').value);
+      formData.append('locality', this.formAddActivity.get('locality').value);
       formData.append('interest', this.formAddActivity.get('nameInterest').value);
       formData.append('address', this.formAddActivity.get('address').value);
 

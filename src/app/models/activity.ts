@@ -31,7 +31,7 @@ export class Activity {
   /**
    * Localidad donde se encuentra localizada la actividad
    */
-  city: string;
+  locality: string;
   /**
    * Tipo de interés asociado a la actividad
    */

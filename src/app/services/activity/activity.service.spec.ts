@@ -16,7 +16,7 @@ describe('ActivityService', () => {
         latitude: 5.90,
         longitude: 49.89,
         pathImage: 'ferrocarril.jpg',
-        city: 'Gijón',
+        locality: 'Gijón',
         interest: 'Museo',
         address: 'Plaza Estación del Nte., s/n, 33212 Gijón, Asturias',
         metadataImage: {
@@ -32,7 +32,7 @@ describe('ActivityService', () => {
         latitude: 5.20,
         longitude: 48.89,
         pathImage: 'catedral-oviedo.jpg',
-        city: 'Oviedo',
+        locality: 'Oviedo',
         interest: 'Iglesia',
         address: 'Pl. Alfonso II el Casto, s/n, 33003 Oviedo, Asturias',
         metadataImage: {
@@ -103,7 +103,7 @@ describe('ActivityService', () => {
       latitude: 5.90,
       longitude: 49.89,
       pathImage: 'ferrocarril.jpg',
-      city: 'Gijón',
+      locality: 'Gijón',
       interest: 'Museo',
       address: 'Plaza Estación del Nte., s/n, 33212 Gijón, Asturias',
       metadataImage: {
@@ -175,7 +175,7 @@ describe('ActivityService', () => {
         latitude: 5.90,
         longitude: 49.89,
         pathImage: 'ferrocarril.jpg',
-        city: 'Gijón',
+        locality: 'Gijón',
         interest: 'Museo',
         address: 'Plaza Estación del Nte., s/n, 33212 Gijón, Asturias',
         metadataImage: {

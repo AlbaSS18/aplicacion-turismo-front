@@ -75,7 +75,7 @@ export class TableActivitiesComponent implements OnInit {
     this.cols = [
       { field: 'name', header: 'name_activity' },
       { field: 'description', header: 'description_activity' },
-      { field: 'city', header: 'locality' },
+      { field: 'locality', header: 'locality' },
       { field: 'interest', header: 'interest'}
     ];
     this.loadActivities();

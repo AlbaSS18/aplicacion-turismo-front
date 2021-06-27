@@ -88,7 +88,7 @@ describe('EditActivitiesComponent', () => {
       latitude: 43.549,
       longitude: -5.6631,
       pathImage: 'elogio.jpg',
-      city: 'Gijón',
+      locality: 'Gijón',
       interest: 'Escultura',
       address: 'Elogio del Horizonte, Parque del Cerro, Cimadevilla, Distrito Centro, Gijón, 33201, España',
       metadataImage: {
@@ -106,7 +106,7 @@ describe('EditActivitiesComponent', () => {
       name: "Campo de San Francisco",
       description: "El Campo de San Francisco es un parque urbano situado en el centro de la ciudad Oviedo (España).",
       address: "Parque de San Francisco, Llamaquique, Centro y casco histórico, Oviedo, España",
-      city: "Oviedo",
+      locality: "Oviedo",
       interest: "Parques",
       latitude: 43.361178800000005,
       longitude: -5.850675357790575,
@@ -122,7 +122,7 @@ describe('EditActivitiesComponent', () => {
       name: "San Francisco",
       description: "El Campo de San Francisco es un parque urbano situado en el centro de la ciudad Oviedo (España). Es uno de los lugares más emblemáticos de la ciudad",
       address: "Universidad Laboral, Calle José Luis Álvarez Margaride, Cabueñes, La Guía, Distrito Rural, Gijón, 33394, España",
-      city: "Gijón",
+      locality: "Gijón",
       interest: "Iglesia",
       latitude: 43.524088,
       longitude: -5.614049
@@ -138,7 +138,7 @@ describe('EditActivitiesComponent', () => {
       name: "Campo de San Francisco",
       description: "El Campo de San Francisco es un parque urbano situado en el centro de la ciudad Oviedo (España).",
       address: "Parque de San Francisco, Llamaquique, Centro y casco histórico, Oviedo, España",
-      city: "Oviedo",
+      locality: "Oviedo",
       interest: "Parques",
       latitude: 43.361178800000005,
       longitude: -5.850675357790575,
@@ -154,7 +154,7 @@ describe('EditActivitiesComponent', () => {
       name: "Campo de San Francisco",
       description: "El Campo de San Francisco es un parque urbano situado en el centro de la ciudad Oviedo (España).",
       address: "Parque de San Francisco, Llamaquique, Centro y casco histórico, Oviedo, España",
-      city: "Oviedo",
+      locality: "Oviedo",
       interest: "Parques",
       latitude: 43.361178800000005,
       longitude: -5.850675357790575
@@ -170,7 +170,7 @@ describe('EditActivitiesComponent', () => {
     component.editActivitiesForm.controls['description'].setValue('El Campo de San Francisco es un parque urbano situado en el centro de la ciudad Oviedo (España).');
     component.editActivitiesForm.controls['latitude'].setValue(43.361178800000005);
     component.editActivitiesForm.controls['longitude'].setValue(-5.850675357790575);
-    component.editActivitiesForm.controls['city'].setValue('Oviedo');
+    component.editActivitiesForm.controls['locality'].setValue('Oviedo');
     component.editActivitiesForm.controls['interest'].setValue('Parques');
     component.editActivitiesForm.controls['address'].setValue('Parque de San Francisco, Llamaquique, Centro y casco histórico, Oviedo, España');
 

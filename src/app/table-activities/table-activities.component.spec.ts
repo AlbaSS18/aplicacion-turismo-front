@@ -87,7 +87,7 @@ describe('TableActivitiesComponent', () => {
       latitude: 43.524088,
       longitude: -5.614049,
       pathImage: 'universidad.jpg',
-      city: 'Gijón',
+      locality: 'Gijón',
       interest: 'Iglesia',
       address: 'Universidad Laboral, Calle José Luis Álvarez Margaride, Cabueñes, La Guía, Distrito Rural, Gijón, 33394, España',
       metadataImage: {

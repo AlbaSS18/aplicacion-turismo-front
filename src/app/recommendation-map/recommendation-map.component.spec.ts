@@ -73,7 +73,7 @@ describe('RecommendationMapComponent', () => {
     const activity = {
       address: "Teatro Campoamor, 1, Calle Progreso, Casco Antiguo, Centro y casco histórico, Oviedo, 33003, España",
       average: 0,
-      city: "Oviedo",
+      locality: "Oviedo",
       description: "El teatro Campoamor es el teatro de ópera de Oviedo, fundado en 1892 y conocido entre otras cosas por ser el escenario de la entrega de los Premios Princesa de Asturias.",
       id: 99,
       interest: "Teatros",
@@ -99,7 +99,7 @@ describe('RecommendationMapComponent', () => {
     component.activitySelectedToRate = {
       address: "Teatro Campoamor, 1, Calle Progreso, Casco Antiguo, Centro y casco histórico, Oviedo, 33003, España",
       average: 0,
-      city: "Oviedo",
+      locality: "Oviedo",
       description: "El teatro Campoamor es el teatro de ópera de Oviedo, fundado en 1892 y conocido entre otras cosas por ser el escenario de la entrega de los Premios Princesa de Asturias.",
       id: 99,
       interest: "Teatros",

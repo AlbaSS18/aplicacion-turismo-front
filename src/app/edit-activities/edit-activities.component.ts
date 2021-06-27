@@ -107,7 +107,7 @@ export class EditActivitiesComponent implements OnInit {
       description: ['', [Validators.required, validadorNonwhiteSpace()]],
       latitude: ['', Validators.required],
       longitude: ['', Validators.required],
-      city: ['', Validators.required],
+      locality: ['', Validators.required],
       interest: ['', Validators.required],
       address: ['', Validators.required]
     });
@@ -127,7 +127,7 @@ export class EditActivitiesComponent implements OnInit {
           description: response2.description,
           latitude: response2.latitude,
           longitude: response2.longitude,
-          city: response2.city,
+          locality: response2.locality,
           interest: response2.interest,
           address: response2.address
         }
@@ -154,7 +154,7 @@ export class EditActivitiesComponent implements OnInit {
 
         var council = e.geocode.properties.address.city || e.geocode.properties.address.town || e.geocode.properties.address.village;
         console.log(council);
-        this.editActivitiesForm.controls['city'].setValue(council);
+        this.editActivitiesForm.controls['locality'].setValue(council);
 
         this.editActivitiesForm.controls['address'].setValue(e.geocode.name);
       }.bind(this)).addTo(map);
@@ -243,7 +243,7 @@ export class EditActivitiesComponent implements OnInit {
     formData.append('description', this.editActivitiesForm.get('description').value);
     formData.append('latitude', this.editActivitiesForm.get('latitude').value);
     formData.append('longitude', this.editActivitiesForm.get('longitude').value);
-    formData.append('city', this.editActivitiesForm.get('city').value);
+    formData.append('locality', this.editActivitiesForm.get('locality').value);
     formData.append('interest', this.editActivitiesForm.get('interest').value);
     formData.append('address', this.editActivitiesForm.get('address').value);
 

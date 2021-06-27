@@ -15,7 +15,7 @@ export class MockActivityService extends ActivityService {
       latitude: 43.524088,
       longitude: -5.614049,
       pathImage: 'universidad.jpg',
-      city: 'Gijón',
+      locality: 'Gijón',
       interest: 'Iglesia',
       address: 'Universidad Laboral, Calle José Luis Álvarez Margaride, Cabueñes, La Guía, Distrito Rural, Gijón, 33394, España',
       metadataImage: {
@@ -31,7 +31,7 @@ export class MockActivityService extends ActivityService {
       latitude: 43.549,
       longitude: -5.6631,
       pathImage: 'elogio.jpg',
-      city: 'Gijón',
+      locality: 'Gijón',
       interest: 'Escultura',
       address: 'Elogio del Horizonte, Parque del Cerro, Cimadevilla, Distrito Centro, Gijón, 33201, España',
       metadataImage: {
@@ -51,7 +51,7 @@ export class MockActivityService extends ActivityService {
       latitude: 43.544993,
       longitude: -5.664037,
       pathImage: 'pelayo.jpg',
-      city: 'Gijón',
+      locality: 'Gijón',
       interest: 'Escultura',
       address: 'Plaza del Marqués, 1, 33201 Gijón, Asturias',
       metadataImage: {
@@ -72,7 +72,7 @@ export class MockActivityService extends ActivityService {
       latitude: 43.524088,
       longitude: -5.614049,
       pathImage: 'universidad.jpg',
-      city: 'Gijón',
+      locality: 'Gijón',
       interest: 'Iglesia',
       address: 'Universidad Laboral, Calle José Luis Álvarez Margaride, Cabueñes, La Guía, Distrito Rural, Gijón, 33394, España',
       metadataImage: {
@@ -90,7 +90,7 @@ export class MockActivityService extends ActivityService {
       latitude: 43.549,
       longitude: -5.6631,
       pathImage: 'elogio.jpg',
-      city: 'Gijón',
+      locality: 'Gijón',
       interest: 'Escultura',
       address: 'Elogio del Horizonte, Parque del Cerro, Cimadevilla, Distrito Centro, Gijón, 33201, España',
       metadataImage: {
@@ -122,7 +122,7 @@ export class MockActivityService extends ActivityService {
       latitude: formData.get('latitude'),
       longitude: formData.get('longitude'),
       pathImage: '',
-      city: formData.get('city'),
+      locality: formData.get('city'),
       interest: formData.get('interest'),
       address: formData.get('address'),
       metadataImage: {
@@ -157,7 +157,7 @@ export class MockActivityService extends ActivityService {
       latitude: activity.get('latitude'),
       longitude: activity.get('longitude'),
       pathImage: updateItem.pathImage,
-      city: activity.get('city'),
+      locality: activity.get('city'),
       interest: activity.get('interest'),
       address: activity.get('address'),
       metadataImage: {
