@@ -16,7 +16,7 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import { LocalityService } from '../services/locality/locality.service';
 import { MockLocalityService } from '../services/locality/locality-service-mock';
 
-describe('ListLocalitiesComponent', () => {
+fdescribe('ListLocalitiesComponent', () => {
   let component: ListLocalitiesComponent;
   let fixture: ComponentFixture<ListLocalitiesComponent>;
 
@@ -62,11 +62,11 @@ describe('ListLocalitiesComponent', () => {
   it('should delete the locality', () => {
     let confirmService = fixture.debugElement.injector.get(ConfirmationService);
     spyOn(confirmService, 'confirm').and.callFake((confirmation: Confirmation) => { return confirmation.accept(); });
-    var city = {
+    var locality = {
       id: 2,
       name: 'Oviedo'
     };
-    component.removeLocality(city);
+    component.removeLocality(locality);
     expect(component.localities.length).toBe(1);
   });
 
@@ -76,7 +76,7 @@ describe('ListLocalitiesComponent', () => {
     component.formEditLocality.controls['name'].setValue('Ov');
     component.onEditSubmit();
     expect(component.displayEditPanel).toBeFalse();
-    const updateItem = component.localities.find(city => city.id === 2);
+    const updateItem = component.localities.find(locality => locality.id === 2);
     expect(updateItem.name).toBe('Ov');
   });
 
