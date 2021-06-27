@@ -51,7 +51,7 @@ describe('InterestService', () => {
       nameInterest: 'Catedrales'
     }
     service.addInterests(newInterest).subscribe(data => {
-      expect(data.nameInterest).toEqual('Catedrales');
+      expect(data).toEqual(newInterest);
     });
 
     const req = httpTestingController.expectOne('http://localhost:8090/api/interest/add');

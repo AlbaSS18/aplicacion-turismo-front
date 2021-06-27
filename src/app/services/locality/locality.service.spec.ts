@@ -49,7 +49,7 @@ describe('LocalityService', () => {
       name: 'Oviedo'
     }
     service.addLocality(newLocality).subscribe(data => {
-      expect(data.name).toEqual('Oviedo');
+      expect(data).toEqual(newLocality);
     });
 
     const req = httpTestingController.expectOne('http://localhost:8090/api/locality/add');

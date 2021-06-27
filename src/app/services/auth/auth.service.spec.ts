@@ -41,7 +41,7 @@ describe('AuthService', () => {
       ]
     }
     service.signUp(newUser).subscribe(data => {
-      expect(data.userName).toBe('Alba');
+      expect(data).toBe(newUser);
     });
 
     const req = httpTestingController.expectOne('http://localhost:8090/api/auth/signup');
