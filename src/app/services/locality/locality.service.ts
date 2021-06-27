@@ -21,7 +21,7 @@ export class LocalityService {
   /**
    * Almacena la url del endpoint
    */
-  localityURL = 'http://localhost:8090/api/city';
+  localityURL = 'http://localhost:8090/api/locality';
 
   /**
    * Constructor de la clase LocalityService
