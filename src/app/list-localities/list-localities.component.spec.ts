@@ -14,7 +14,7 @@ import {Confirmation, ConfirmationService, MessageService} from 'primeng/api';
 import {ToastModule} from 'primeng/toast';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import { LocalityService } from '../services/locality/locality.service';
-import { MockCityService } from '../services/locality/locality-service-mock';
+import { MockLocalityService } from '../services/locality/locality-service-mock';
 
 describe('ListLocalitiesComponent', () => {
   let component: ListLocalitiesComponent;
@@ -39,7 +39,7 @@ describe('ListLocalitiesComponent', () => {
       providers: [
         ConfirmationService,
         MessageService,
-        {provide: LocalityService, useClass: MockCityService},
+        {provide: LocalityService, useClass: MockLocalityService},
       ]
     })
     .compileComponents();

@@ -4,9 +4,9 @@ import { Locality } from "src/app/models/locality";
 import { LocalityService } from "./locality.service";
 
 @Injectable()
-export class MockCityService extends LocalityService {
+export class MockLocalityService extends LocalityService {
 
-    listCities = [
+    listLocalities = [
         {
             id: 1,
             name: "Gijón"
@@ -18,39 +18,39 @@ export class MockCityService extends LocalityService {
     ];
 
     getLocalities(): Observable<Locality[]> {
-        return of(this.listCities);
+        return of(this.listLocalities);
     }
 
-    addLocality(city): Observable<any> {
-        var cityToAdd = {
-            id: this.listCities[this.listCities.length - 1].id + 1,
-            name: city.name
+    addLocality(localities): Observable<any> {
+        var localityToAdd = {
+            id: this.listLocalities[this.listLocalities.length - 1].id + 1,
+            name: localities.name
         }
-        this.listCities.push(cityToAdd);
+        this.listLocalities.push(localityToAdd);
         return of({
-            mensaje: 'La ciudad ha sido añadida'
+            mensaje: 'La localidad ha sido añadida'
         });
     }
 
-    deleteLocality(city): Observable<any> {
-        this.listCities = this.listCities.filter(p => p.id !== city.id);
+    deleteLocality(locality): Observable<any> {
+        this.listLocalities = this.listLocalities.filter(p => p.id !== locality.id);
         return of({
-            mensaje: 'La ciudad ha sido eliminada'
+            mensaje: 'La localidad ha sido eliminada'
         });
     }
 
-    editLocality(id, city): Observable<any> {
-        const updateItem = this.listCities.find(ci => ci.id === id);
-        const index = this.listCities.indexOf(updateItem);
+    editLocality(id, locality): Observable<any> {
+        const updateItem = this.listLocalities.find(ci => ci.id === id);
+        const index = this.listLocalities.indexOf(updateItem);
 
-        var cityToEdit = {
+        var localityToEdit = {
             id: id,
-            name: city.name
+            name: locality.name
         }
-        this.listCities[index] = cityToEdit;
+        this.listLocalities[index] = localityToEdit;
 
         return of({
-            mensaje: 'La ciudad ha sido editada'
+            mensaje: 'La localidad ha sido editada'
         });
     }
 }
