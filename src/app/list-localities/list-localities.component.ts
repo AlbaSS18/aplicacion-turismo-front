@@ -8,7 +8,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.directive';
 
 @Component({
-  selector: 'app-list-cities',
+  selector: 'app-list-locaties',
   templateUrl: './list-localities.component.html',
   styleUrls: ['./list-localities.component.scss']
 })
