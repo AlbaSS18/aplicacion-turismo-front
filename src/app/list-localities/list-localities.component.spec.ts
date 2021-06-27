@@ -16,7 +16,7 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import { LocalityService } from '../services/locality/locality.service';
 import { MockLocalityService } from '../services/locality/locality-service-mock';
 
-fdescribe('ListLocalitiesComponent', () => {
+describe('ListLocalitiesComponent', () => {
   let component: ListLocalitiesComponent;
   let fixture: ComponentFixture<ListLocalitiesComponent>;
 
