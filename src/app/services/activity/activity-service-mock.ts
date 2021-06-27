@@ -122,7 +122,7 @@ export class MockActivityService extends ActivityService {
       latitude: formData.get('latitude'),
       longitude: formData.get('longitude'),
       pathImage: '',
-      locality: formData.get('city'),
+      locality: formData.get('locality'),
       interest: formData.get('interest'),
       address: formData.get('address'),
       metadataImage: {
@@ -150,14 +150,14 @@ export class MockActivityService extends ActivityService {
     const updateItem = this.listActivities.find(acti => acti.id === id);
     const index = this.listActivities.indexOf(updateItem);
 
-    var cityToEdit = {
+    var localityToEdit = {
       id: id,
       name: activity.get('name'),
       description:  activity.get('description'),
       latitude: activity.get('latitude'),
       longitude: activity.get('longitude'),
       pathImage: updateItem.pathImage,
-      locality: activity.get('city'),
+      locality: activity.get('locality'),
       interest: activity.get('interest'),
       address: activity.get('address'),
       metadataImage: {
@@ -166,7 +166,7 @@ export class MockActivityService extends ActivityService {
         data: updateItem.metadataImage.data,
       }
     }
-    this.listActivities[index] = cityToEdit;
+    this.listActivities[index] = localityToEdit;
     return of({
       mensaje: 'La actividad ha sido modificada'
     });
