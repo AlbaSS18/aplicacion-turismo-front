@@ -66,7 +66,7 @@ export class RecommendationMapComponent implements OnInit {
    * Clase que permite crear objetos de la clase FormGroup y FormControl.
    * @param interestService
    * Servicio de intereses.
-   * @param cityService
+   * @param localityService
    * Servicio de localidades.
    * @param sanitizer
    * Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM
@@ -81,7 +81,7 @@ export class RecommendationMapComponent implements OnInit {
     private activitiesService: ActivityService,
     private fb: FormBuilder,
     private interestService: InterestService,
-    private cityService: LocalityService,
+    private localityService: LocalityService,
     private sanitizer: DomSanitizer,
     private filterService: FilterService,
     private localStorageService: LocalStorageService,

@@ -53,7 +53,7 @@ export class AddActivityComponent implements OnInit {
    *
    * @param formBuilder
    * Clase que permite crear objetos de la clase FormGroup y FormControl.
-   * @param cityService
+   * @param localityService
    * Servicio de localidades
    * @param interestService
    * Servicio de intereses
@@ -68,7 +68,7 @@ export class AddActivityComponent implements OnInit {
    */
   constructor(
     private formBuilder: FormBuilder,
-    private cityService: LocalityService,
+    private localityService: LocalityService,
     private interestService: InterestService,
     private activityService: ActivityService,
     private router: Router,
