@@ -77,7 +77,7 @@ describe('InterestService', () => {
     req.flush(mockInterest.filter((interest => interest.id !== 1)));
   });
 
-  it('should delete an interest', () => {
+  it('should edit an interest', () => {
     const interestEdit = {
       id: 1,
       nameInterest: 'Museoss'

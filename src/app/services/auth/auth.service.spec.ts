@@ -4,7 +4,7 @@ import { AuthService } from './auth.service';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {RouterTestingModule} from '@angular/router/testing';
 
-fdescribe('AuthService', () => {
+describe('AuthService', () => {
   let service: AuthService;
   let httpTestingController: HttpTestingController;
 
