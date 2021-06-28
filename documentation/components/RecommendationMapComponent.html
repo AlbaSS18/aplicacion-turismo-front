@@ -201,7 +201,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(activitiesService: <a href="../injectables/ActivityService.html">ActivityService</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, interestService: <a href="../injectables/InterestService.html">InterestService</a>, cityService: <a href="../injectables/CityService.html">CityService</a>, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, filterService: FilterService, localStorageService: <a href="../injectables/LocalStorageService.html">LocalStorageService</a>, userService: <a href="../injectables/UserService.html">UserService</a>)</code>
+<code>constructor(activitiesService: <a href="../injectables/ActivityService.html">ActivityService</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, interestService: <a href="../injectables/InterestService.html">InterestService</a>, localityService: <a href="../injectables/LocalityService.html">LocalityService</a>, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, filterService: FilterService, localStorageService: <a href="../injectables/LocalStorageService.html">LocalStorageService</a>, userService: <a href="../injectables/UserService.html">UserService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -275,10 +275,10 @@
                                                         </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>cityService</td>
+                                                        <td>localityService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/CityService.html" target="_self" >CityService</a></code>
+                                                                        <code><a href="../injectables/LocalityService.html" target="_self" >LocalityService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -1055,7 +1055,7 @@ import * as L from &#x27;leaflet&#x27;;
 import {FormBuilder, FormGroup, Validators} from &#x27;@angular/forms&#x27;;
 import {InterestService} from &#x27;../services/interest/interest.service&#x27;;
 import {FilterService} from &#x27;primeng/api&#x27;;
-import {CityService} from &#x27;../services/city/city.service&#x27;;
+import {LocalityService} from &#x27;../services/locality/locality.service&#x27;;
 import {DomSanitizer} from &#x27;@angular/platform-browser&#x27;;
 import {UserService} from &#x27;../services/user/user.service&#x27;;
 import {map, mergeMap} from &#x27;rxjs/operators&#x27;;
@@ -1117,7 +1117,7 @@ export class RecommendationMapComponent implements OnInit {
    * Clase que permite crear objetos de la clase FormGroup y FormControl.
    * @param interestService
    * Servicio de intereses.
-   * @param cityService
+   * @param localityService
    * Servicio de localidades.
    * @param sanitizer
    * Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM
@@ -1132,7 +1132,7 @@ export class RecommendationMapComponent implements OnInit {
     private activitiesService: ActivityService,
     private fb: FormBuilder,
     private interestService: InterestService,
-    private cityService: CityService,
+    private localityService: LocalityService,
     private sanitizer: DomSanitizer,
     private filterService: FilterService,
     private localStorageService: LocalStorageService,
@@ -1467,7 +1467,7 @@ export class RecommendationMapComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><app-menu-bar></app-menu-bar><div class="recommendation-map-panel">  <div class="table_recommendation">    <p-dataView #dv [value]="activitiesRecommendation" [paginator]="true" [rows]="3" filterBy="name" emptyMessage="{{ \'message-no-activities-evaluate-match\' | translate }}">      <ng-template pTemplate="header">        <div class="filter_container">          <span class="p-input-icon-left p-mb-2 p-mb-md-0">            <i class="pi pi-search"></i>            <input type="search" pInputText placeholder="{{ \'placeholder_search_activities_evaluate\' | translate }}" (input)="dv.filter($event.target.value)">          </span>        </div>      </ng-template>      <ng-template let-activity pTemplate="listItem">        <div class="p-col-12">          <div class="activity-recommendation-list-item">            <p-checkbox class="checkBoxActivityRecommendation" name="group1" [value]="activity.name" [(ngModel)]="activitiesSelected" (onChange)="changeMap($event, activity)" ></p-checkbox>            <img [src]=\'photoURL(activity)\'/>            <div class="activity-recommendation-list-detail">              <div class="activity-name">{{activity.name}}</div>              <div class="activity-description">{{activity.description}}</div>              <div class="activity-average"><span class="fas fa-star"></span>                <span class="average"> {{activity.average}}/5</span>              </div>              <button pButton type="button" label="{{ \'rate_activity\' | translate }}" class="p-button-link" (click)="openPanelToRating(activity)"></button>            </div>          </div>        </div>      </ng-template>    </p-dataView>  </div>  <div class="map_recommendation">    <div id="mapActivityRecommendation"></div>  </div>  <p-dialog header="{{ \'rate_activity\' | translate }}" [(visible)]="displayPanelRating" modal="true" [draggable]="false" >    <form [formGroup]="formToRatingActivity" (ngSubmit)="sendRatingActivity()" id="ratingForm">      <p class="messageRateActivity">{{ \'message_rate_activity\' | translate }}</p>      <p-rating class="rateActivity" formControlName="rating" [cancel]="false"></p-rating>      <p>{{ \'submessage_rate_activity\' | translate }}</p>    </form>    <ng-template pTemplate="footer">      <button id="rate_btn" pButton icon="pi pi-check" label="{{ \'submit\' | translate }}" class="p-button-text" form="ratingForm" [disabled]="formToRatingActivity.invalid"></button>    </ng-template>  </p-dialog></div></div>'
-    var COMPONENTS = [{'name': 'AddActivityComponent', 'selector': 'app-add-activity'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EditActivitiesComponent', 'selector': 'app-edit-activities'},{'name': 'EditUserAdminComponent', 'selector': 'app-edit-user-admin'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'InformationActivitiesComponent', 'selector': 'app-information-activities'},{'name': 'ListActivitiesEvaluateComponent', 'selector': 'app-list-activities-evaluate'},{'name': 'ListCitiesComponent', 'selector': 'app-list-cities'},{'name': 'ListInterestComponent', 'selector': 'app-list-interest'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuBarComponent', 'selector': 'app-menu-bar'},{'name': 'RecommendationMapComponent', 'selector': 'app-recommendation-map'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'TableActivitiesComponent', 'selector': 'app-table-activities'}];
+    var COMPONENTS = [{'name': 'AddActivityComponent', 'selector': 'app-add-activity'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EditActivitiesComponent', 'selector': 'app-edit-activities'},{'name': 'EditUserAdminComponent', 'selector': 'app-edit-user-admin'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'InformationActivitiesComponent', 'selector': 'app-information-activities'},{'name': 'ListActivitiesEvaluateComponent', 'selector': 'app-list-activities-evaluate'},{'name': 'ListInterestComponent', 'selector': 'app-list-interest'},{'name': 'ListLocalitiesComponent', 'selector': 'app-list-locaties'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuBarComponent', 'selector': 'app-menu-bar'},{'name': 'RecommendationMapComponent', 'selector': 'app-recommendation-map'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'TableActivitiesComponent', 'selector': 'app-table-activities'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'RecommendationMapComponent'};
 </script>

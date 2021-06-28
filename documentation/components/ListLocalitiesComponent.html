@@ -35,7 +35,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>ListCitiesComponent</li>
+  <li>ListLocalitiesComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -61,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/list-cities/list-cities.component.ts</code>
+    <code>src/app/list-localities/list-localities.component.ts</code>
 </p>
 
 
@@ -91,19 +91,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-list-cities</code></td>
+                <td class="col-md-9"><code>app-list-locaties</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./list-cities.component.scss</code></td>
+                <td class="col-md-9"><code>./list-localities.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./list-cities.component.html</code></td>
+                <td class="col-md-9"><code>./list-localities.component.html</code></td>
             </tr>
 
 
@@ -130,25 +130,25 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#cities">cities</a>
-                            </li>
-                            <li>
                                 <a href="#display">display</a>
                             </li>
                             <li>
                                 <a href="#displayEditPanel">displayEditPanel</a>
                             </li>
                             <li>
-                                <a href="#errorAddCity">errorAddCity</a>
+                                <a href="#errorAddLocality">errorAddLocality</a>
                             </li>
                             <li>
-                                <a href="#errorEditCity">errorEditCity</a>
+                                <a href="#errorEditLocality">errorEditLocality</a>
                             </li>
                             <li>
-                                <a href="#formAddCity">formAddCity</a>
+                                <a href="#formAddLocality">formAddLocality</a>
                             </li>
                             <li>
-                                <a href="#formEditCity">formEditCity</a>
+                                <a href="#formEditLocality">formEditLocality</a>
+                            </li>
+                            <li>
+                                <a href="#localities">localities</a>
                             </li>
                         </ul>
                     </td>
@@ -169,16 +169,16 @@
                                 <a href="#cancelEdit">cancelEdit</a>
                             </li>
                             <li>
-                                <a href="#editCity">editCity</a>
+                                <a href="#editLocality">editLocality</a>
                             </li>
                             <li>
-                                <a href="#hideDialogCity">hideDialogCity</a>
+                                <a href="#hideDialogEditLocality">hideDialogEditLocality</a>
                             </li>
                             <li>
-                                <a href="#hideDialogEditCity">hideDialogEditCity</a>
+                                <a href="#hideDialogLocality">hideDialogLocality</a>
                             </li>
                             <li>
-                                <a href="#loadCities">loadCities</a>
+                                <a href="#loadLocalities">loadLocalities</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
@@ -193,7 +193,7 @@
                                 <a href="#openPanel">openPanel</a>
                             </li>
                             <li>
-                                <a href="#removeCity">removeCity</a>
+                                <a href="#removeLocality">removeLocality</a>
                             </li>
                         </ul>
                     </td>
@@ -213,18 +213,18 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(cityService: <a href="../injectables/CityService.html">CityService</a>, formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, confirmationService: ConfirmationService, translateService: TranslateService, messageService: MessageService)</code>
+<code>constructor(localityService: <a href="../injectables/LocalityService.html">LocalityService</a>, formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, confirmationService: ConfirmationService, translateService: TranslateService, messageService: MessageService)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/list-cities/list-cities.component.ts:49</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/list-localities/list-localities.component.ts:49</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor de la clase ListCitiesComponent</p>
+                            <div class="io-description"><p>Constructor de la clase ListLocalitiesComponent</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -239,10 +239,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>cityService</td>
+                                                        <td>localityService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/CityService.html" target="_self" >CityService</a></code>
+                                                                        <code><a href="../injectables/LocalityService.html" target="_self" >LocalityService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -359,7 +359,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="193"
-                            class="link-to-prism">src/app/list-cities/list-cities.component.ts:193</a></div>
+                            class="link-to-prism">src/app/list-localities/list-localities.component.ts:193</a></div>
                 </td>
             </tr>
 
@@ -400,7 +400,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="238"
-                            class="link-to-prism">src/app/list-cities/list-cities.component.ts:238</a></div>
+                            class="link-to-prism">src/app/list-localities/list-localities.component.ts:238</a></div>
                 </td>
             </tr>
 
@@ -422,18 +422,18 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="editCity"></a>
+                    <a name="editLocality"></a>
                     <span class="name">
                         <b>
-                            editCity
+                            editLocality
                         </b>
-                        <a href="#editCity"><span class="icon ion-ios-link"></span></a>
+                        <a href="#editLocality"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>editCity(city)</code>
+<code>editLocality(locality)</code>
                 </td>
             </tr>
 
@@ -441,7 +441,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="202"
-                            class="link-to-prism">src/app/list-cities/list-cities.component.ts:202</a></div>
+                            class="link-to-prism">src/app/list-localities/list-localities.component.ts:202</a></div>
                 </td>
             </tr>
 
@@ -463,7 +463,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>city</td>
+                                    <td>locality</td>
 
                                     <td>
                                         No
@@ -495,59 +495,18 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="hideDialogCity"></a>
+                    <a name="hideDialogEditLocality"></a>
                     <span class="name">
                         <b>
-                            hideDialogCity
+                            hideDialogEditLocality
                         </b>
-                        <a href="#hideDialogCity"><span class="icon ion-ios-link"></span></a>
+                        <a href="#hideDialogEditLocality"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>hideDialogCity()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="178"
-                            class="link-to-prism">src/app/list-cities/list-cities.component.ts:178</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Método que se invoca cuando el diálogo que se utiliza para añadir una nueva localidad, se oculta.</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="hideDialogEditCity"></a>
-                    <span class="name">
-                        <b>
-                            hideDialogEditCity
-                        </b>
-                        <a href="#hideDialogEditCity"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>hideDialogEditCity()</code>
+<code>hideDialogEditLocality()</code>
                 </td>
             </tr>
 
@@ -555,7 +514,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="186"
-                            class="link-to-prism">src/app/list-cities/list-cities.component.ts:186</a></div>
+                            class="link-to-prism">src/app/list-localities/list-localities.component.ts:186</a></div>
                 </td>
             </tr>
 
@@ -577,18 +536,59 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="loadCities"></a>
+                    <a name="hideDialogLocality"></a>
                     <span class="name">
                         <b>
-                            loadCities
+                            hideDialogLocality
                         </b>
-                        <a href="#loadCities"><span class="icon ion-ios-link"></span></a>
+                        <a href="#hideDialogLocality"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>loadCities()</code>
+<code>hideDialogLocality()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="178"
+                            class="link-to-prism">src/app/list-localities/list-localities.component.ts:178</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Método que se invoca cuando el diálogo que se utiliza para añadir una nueva localidad, se oculta.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadLocalities"></a>
+                    <span class="name">
+                        <b>
+                            loadLocalities
+                        </b>
+                        <a href="#loadLocalities"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadLocalities()</code>
                 </td>
             </tr>
 
@@ -596,7 +596,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="102"
-                            class="link-to-prism">src/app/list-cities/list-cities.component.ts:102</a></div>
+                            class="link-to-prism">src/app/list-localities/list-localities.component.ts:102</a></div>
                 </td>
             </tr>
 
@@ -637,7 +637,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="79"
-                            class="link-to-prism">src/app/list-cities/list-cities.component.ts:79</a></div>
+                            class="link-to-prism">src/app/list-localities/list-localities.component.ts:79</a></div>
                 </td>
             </tr>
 
@@ -681,14 +681,14 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="215"
-                            class="link-to-prism">src/app/list-cities/list-cities.component.ts:215</a></div>
+                            class="link-to-prism">src/app/list-localities/list-localities.component.ts:215</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Método que crea un objeto city a partir de los datos del formulario y se lo envía a la API.
+                    <div class="io-description"><p>Método que crea un objeto locality a partir de los datos del formulario y se lo envía a la API.
 Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</p>
 </div>
 
@@ -723,14 +723,14 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="114"
-                            class="link-to-prism">src/app/list-cities/list-cities.component.ts:114</a></div>
+                            class="link-to-prism">src/app/list-localities/list-localities.component.ts:114</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Método que crea un objeto city a partir de los datos del formulario y se lo envía a la API.
+                    <div class="io-description"><p>Método que crea un objeto locality a partir de los datos del formulario y se lo envía a la API.
 Una vez enviado, también será el encargado de resetear el formulario y de mostrar un mensaje al usuario.</p>
 </div>
 
@@ -765,7 +765,7 @@ Una vez enviado, también será el encargado de resetear el formulario y de most
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="95"
-                            class="link-to-prism">src/app/list-cities/list-cities.component.ts:95</a></div>
+                            class="link-to-prism">src/app/list-localities/list-localities.component.ts:95</a></div>
                 </td>
             </tr>
 
@@ -819,18 +819,18 @@ Una vez enviado, también será el encargado de resetear el formulario y de most
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="removeCity"></a>
+                    <a name="removeLocality"></a>
                     <span class="name">
                         <b>
-                            removeCity
+                            removeLocality
                         </b>
-                        <a href="#removeCity"><span class="icon ion-ios-link"></span></a>
+                        <a href="#removeLocality"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>removeCity(city)</code>
+<code>removeLocality(locality)</code>
                 </td>
             </tr>
 
@@ -838,7 +838,7 @@ Una vez enviado, también será el encargado de resetear el formulario y de most
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="144"
-                            class="link-to-prism">src/app/list-cities/list-cities.component.ts:144</a></div>
+                            class="link-to-prism">src/app/list-localities/list-localities.component.ts:144</a></div>
                 </td>
             </tr>
 
@@ -861,7 +861,7 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>city</td>
+                                    <td>locality</td>
 
                                     <td>
                                         No
@@ -899,39 +899,6 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="cities"></a>
-                        <span class="name">
-                            <b>
-                            cities</b>
-                            <a href="#cities"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="../classes/City.html" target="_self" >City[]</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/list-cities/list-cities.component.ts:25</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Almacena las localidades.</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="display"></a>
                         <span class="name">
                             <b>
@@ -953,7 +920,7 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/list-cities/list-cities.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/list-localities/list-localities.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -991,7 +958,7 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/list-cities/list-cities.component.ts:45</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/list-localities/list-localities.component.ts:45</a></div>
                             </td>
                         </tr>
 
@@ -1008,11 +975,11 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="errorAddCity"></a>
+                        <a name="errorAddLocality"></a>
                         <span class="name">
                             <b>
-                            errorAddCity</b>
-                            <a href="#errorAddCity"><span class="icon ion-ios-link"></span></a>
+                            errorAddLocality</b>
+                            <a href="#errorAddLocality"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -1029,7 +996,7 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/list-cities/list-cities.component.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/list-localities/list-localities.component.ts:37</a></div>
                             </td>
                         </tr>
 
@@ -1046,11 +1013,11 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="errorEditCity"></a>
+                        <a name="errorEditLocality"></a>
                         <span class="name">
                             <b>
-                            errorEditCity</b>
-                            <a href="#errorEditCity"><span class="icon ion-ios-link"></span></a>
+                            errorEditLocality</b>
+                            <a href="#errorEditLocality"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -1067,7 +1034,7 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/list-cities/list-cities.component.ts:41</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/list-localities/list-localities.component.ts:41</a></div>
                             </td>
                         </tr>
 
@@ -1084,11 +1051,11 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="formAddCity"></a>
+                        <a name="formAddLocality"></a>
                         <span class="name">
                             <b>
-                            formAddCity</b>
-                            <a href="#formAddCity"><span class="icon ion-ios-link"></span></a>
+                            formAddLocality</b>
+                            <a href="#formAddLocality"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -1100,7 +1067,7 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/list-cities/list-cities.component.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/list-localities/list-localities.component.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -1117,11 +1084,11 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="formEditCity"></a>
+                        <a name="formEditLocality"></a>
                         <span class="name">
                             <b>
-                            formEditCity</b>
-                            <a href="#formEditCity"><span class="icon ion-ios-link"></span></a>
+                            formEditLocality</b>
+                            <a href="#formEditLocality"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -1133,13 +1100,46 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/list-cities/list-cities.component.ts:49</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/list-localities/list-localities.component.ts:49</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
                         <div class="io-description"><p>Formulario para editar la información de una localidad.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="localities"></a>
+                        <span class="name">
+                            <b>
+                            localities</b>
+                            <a href="#localities"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Locality.html" target="_self" >Locality[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/list-localities/list-localities.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Almacena las localidades.</p>
 </div>
                     </td>
                 </tr>
@@ -1153,30 +1153,30 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import {CityService} from &#x27;../services/city/city.service&#x27;;
-import {City} from &#x27;../models/city&#x27;;
+import {LocalityService} from &#x27;../services/locality/locality.service&#x27;;
+import {Locality} from &#x27;../models/locality&#x27;;
 import {FormBuilder, FormGroup, Validators} from &#x27;@angular/forms&#x27;;
 import {ConfirmationService, MessageService} from &#x27;primeng/api&#x27;;
-import {catchError, map, mergeMap} from &#x27;rxjs/operators&#x27;;
+import {map, mergeMap} from &#x27;rxjs/operators&#x27;;
 import {TranslateService} from &#x27;@ngx-translate/core&#x27;;
 import {validadorNonwhiteSpace} from &#x27;../validators/validatorNonWhiteSpace.directive&#x27;;
 
 @Component({
-  selector: &#x27;app-list-cities&#x27;,
-  templateUrl: &#x27;./list-cities.component.html&#x27;,
-  styleUrls: [&#x27;./list-cities.component.scss&#x27;]
+  selector: &#x27;app-list-locaties&#x27;,
+  templateUrl: &#x27;./list-localities.component.html&#x27;,
+  styleUrls: [&#x27;./list-localities.component.scss&#x27;]
 })
 /**
- * Clase ListCitiesComponent
+ * Clase ListLocalitiesComponent
  *
  * Clase que muestra la lista de localidades.
  */
-export class ListCitiesComponent implements OnInit {
+export class ListLocalitiesComponent implements OnInit {
 
   /**
    * Almacena las localidades.
    */
-  cities: City[];
+  localities: Locality[];
   /**
    * Indica si el usuario quiere añadir una nueva localidad.
    */
@@ -1184,15 +1184,15 @@ export class ListCitiesComponent implements OnInit {
   /**
    * Formulario para añadir una localidad.
    */
-  formAddCity: FormGroup;
+  formAddLocality: FormGroup;
   /**
    * Indica si se ha producido algún error al añadir una nueva localidad.
    */
-  errorAddCity: boolean &#x3D; false;
+  errorAddLocality: boolean &#x3D; false;
   /**
    * Indica si se ha producido algún error al modificar la información de una localidad.
    */
-  errorEditCity: boolean &#x3D; false;
+  errorEditLocality: boolean &#x3D; false;
   /**
    * Indica si el usuario ha selecciona alguna localidad para editar.
    */
@@ -1200,11 +1200,11 @@ export class ListCitiesComponent implements OnInit {
   /**
    * Formulario para editar la información de una localidad.
    */
-  formEditCity: FormGroup;
+  formEditLocality: FormGroup;
 
   /**
-   * Constructor de la clase ListCitiesComponent
-   * @param cityService
+   * Constructor de la clase ListLocalitiesComponent
+   * @param localityService
    * Servicio de localidades.
    * @param formBuilder
    * Clase que permite crear objetos de la clase FormGroup y FormControl.
@@ -1216,7 +1216,7 @@ export class ListCitiesComponent implements OnInit {
    * Servicio propocionado por la librería PrimeNG que permite almacenar los mensajes que serán mostrados al usuario.
    */
   constructor(
-    private cityService: CityService,
+    private localityService: LocalityService,
     private formBuilder: FormBuilder,
     private confirmationService: ConfirmationService,
     private translateService: TranslateService,
@@ -1231,14 +1231,14 @@ export class ListCitiesComponent implements OnInit {
    * &lt;/ul&gt;
    */
   ngOnInit(): void {
-    this.formAddCity &#x3D; this.formBuilder.group({
+    this.formAddLocality &#x3D; this.formBuilder.group({
       name: [&#x27;&#x27;, [Validators.required, validadorNonwhiteSpace()]]
     });
-    this.formEditCity &#x3D; this.formBuilder.group({
+    this.formEditLocality &#x3D; this.formBuilder.group({
       id: [&#x27;&#x27;, Validators.required],
       name: [&#x27;&#x27;, [Validators.required, validadorNonwhiteSpace()]]
     });
-    this.loadCities();
+    this.loadLocalities();
   }
 
   /**
@@ -1253,38 +1253,38 @@ export class ListCitiesComponent implements OnInit {
   /**
    * Método que obtiene las localidades de la API y los almacena.
    */
-  loadCities(){
-    this.cityService.getCities().subscribe(
+  loadLocalities(){
+    this.localityService.getLocalities().subscribe(
       (data) &#x3D;&gt; {
-        this.cities &#x3D; data;
+        this.localities &#x3D; data;
       }
     );
   }
 
   /**
-   * Método que crea un objeto city a partir de los datos del formulario y se lo envía a la API.
+   * Método que crea un objeto locality a partir de los datos del formulario y se lo envía a la API.
    * Una vez enviado, también será el encargado de resetear el formulario y de mostrar un mensaje al usuario.
    */
   onSubmit(){
-    var city &#x3D; {
-      name: this.formAddCity.get(&#x27;name&#x27;).value
+    var locality &#x3D; {
+      name: this.formAddLocality.get(&#x27;name&#x27;).value
     };
-    this.cityService.addCity(city).pipe(
+    this.localityService.addLocality(locality).pipe(
       mergeMap( message &#x3D;&gt; {
-        return this.cityService.getCities().pipe(
+        return this.localityService.getLocalities().pipe(
           map(data &#x3D;&gt; {
-            this.cities &#x3D; data;
+            this.localities &#x3D; data;
           })
         );
       })
     ).subscribe( data &#x3D;&gt; {
-        var message &#x3D; this.translateService.instant(&#x27;city_add_message&#x27;,{ &#x27;nameCity&#x27;: this.formAddCity.get(&#x27;name&#x27;).value });
+        var message &#x3D; this.translateService.instant(&#x27;locality_add_message&#x27;,{ &#x27;nameLocality&#x27;: this.formAddLocality.get(&#x27;name&#x27;).value });
         this.display &#x3D; false;
-        this.formAddCity.reset();
-        this.messageService.add({key: &#x27;city&#x27;, severity:&#x27;success&#x27;, summary: this.translateService.instant(&#x27;city_add&#x27;), detail: message });
+        this.formAddLocality.reset();
+        this.messageService.add({key: &#x27;locality&#x27;, severity:&#x27;success&#x27;, summary: this.translateService.instant(&#x27;locality_add&#x27;), detail: message });
       },
       err &#x3D;&gt; {
-        this.errorAddCity &#x3D; true;
+        this.errorAddLocality &#x3D; true;
       }
     );
   }
@@ -1292,33 +1292,33 @@ export class ListCitiesComponent implements OnInit {
   /**
    * Método que elimina una localidad del sistema a través de la API.
    * Una vez enviado, también será el encargado de mostrar un mensaje al usuario.
-   * @param city
+   * @param locality
    * Localidad que se desea eliminar
    */
-  removeCity(city){
+  removeLocality(locality){
     this.confirmationService.confirm({
-      message: this.translateService.instant(&#x27;message_delete_city&#x27;),
+      message: this.translateService.instant(&#x27;message_delete_locality&#x27;),
       accept: () &#x3D;&gt; {
-        this.cityService.deleteCity(city).pipe(
+        this.localityService.deleteLocality(locality).pipe(
           mergeMap( message &#x3D;&gt; {
-            return this.cityService.getCities().pipe(
+            return this.localityService.getLocalities().pipe(
               map(data &#x3D;&gt; {
-                this.cities &#x3D; data;
+                this.localities &#x3D; data;
               })
             );
           })
         ).subscribe( data &#x3D;&gt; {
-            var message &#x3D; this.translateService.instant(&#x27;city_delete_message&#x27;,{ &#x27;nameCity&#x27;: city.name });
-            this.messageService.add({key: &#x27;city&#x27;, severity:&#x27;success&#x27;, summary: this.translateService.instant(&#x27;city_delete&#x27;), detail: message });
+            var message &#x3D; this.translateService.instant(&#x27;locality_delete_message&#x27;,{ &#x27;nameLocality&#x27;: locality.name });
+            this.messageService.add({key: &#x27;locality&#x27;, severity:&#x27;success&#x27;, summary: this.translateService.instant(&#x27;locality_delete&#x27;), detail: message });
           },
           (err) &#x3D;&gt; {
             if (err.status &#x3D;&#x3D;&#x3D; 500){
-              var message &#x3D; this.translateService.instant(&#x27;city_has_activities&#x27;);
-              this.messageService.add({key: &#x27;city&#x27;, severity:&#x27;error&#x27;, summary: this.translateService.instant(&#x27;error&#x27;), detail: message });
+              var message &#x3D; this.translateService.instant(&#x27;locality_has_activities&#x27;);
+              this.messageService.add({key: &#x27;locality&#x27;, severity:&#x27;error&#x27;, summary: this.translateService.instant(&#x27;error&#x27;), detail: message });
             }
             else{
               var message &#x3D; this.translateService.instant(&#x27;error_delete_message&#x27;);
-              this.messageService.add({key: &#x27;city&#x27;, severity:&#x27;error&#x27;, summary: this.translateService.instant(&#x27;error&#x27;), detail: message });
+              this.messageService.add({key: &#x27;locality&#x27;, severity:&#x27;error&#x27;, summary: this.translateService.instant(&#x27;error&#x27;), detail: message });
             }
           }
         );
@@ -1329,16 +1329,16 @@ export class ListCitiesComponent implements OnInit {
   /**
    * Método que se invoca cuando el diálogo que se utiliza para añadir una nueva localidad, se oculta.
    */
-  hideDialogCity(){
-    this.formAddCity.reset();
-    this.errorAddCity &#x3D; false;
+  hideDialogLocality(){
+    this.formAddLocality.reset();
+    this.errorAddLocality &#x3D; false;
   }
 
   /**
    * Método que se invoca cuando el diálogo que se utiliza para modificar la información de una localidad, se oculta.
    */
-  hideDialogEditCity(){
-    this.errorEditCity &#x3D; false;
+  hideDialogEditLocality(){
+    this.errorEditLocality &#x3D; false;
   }
 
   /**
@@ -1350,39 +1350,39 @@ export class ListCitiesComponent implements OnInit {
 
   /**
    * Método que muestra el diálogo para editar la información de una localidad.
-   * @param city
+   * @param locality
    * Localidad cuya información se desea modificar.
    */
-  editCity(city){
+  editLocality(locality){
     this.displayEditPanel &#x3D; true;
-    this.formEditCity.patchValue({
-        id: city.id,
-        name : city.name
+    this.formEditLocality.patchValue({
+        id: locality.id,
+        name : locality.name
       }
     );
   }
 
   /**
-   * Método que crea un objeto city a partir de los datos del formulario y se lo envía a la API.
+   * Método que crea un objeto locality a partir de los datos del formulario y se lo envía a la API.
    * Una vez enviado, también será el encargado de mostrar un mensaje al usuario.
    */
   onEditSubmit(){
-    var city &#x3D; {
-      name : this.formEditCity.get(&#x27;name&#x27;).value
+    var locality &#x3D; {
+      name : this.formEditLocality.get(&#x27;name&#x27;).value
     };
 
-    this.cityService.editCity(this.formEditCity.get(&#x27;id&#x27;).value, city).pipe(
+    this.localityService.editLocality(this.formEditLocality.get(&#x27;id&#x27;).value, locality).pipe(
       mergeMap(message &#x3D;&gt; {
-        return this.cityService.getCities().pipe();
+        return this.localityService.getLocalities().pipe();
       })
     ).subscribe( data &#x3D;&gt; {
       this.displayEditPanel &#x3D; false;
-      var message &#x3D; this.translateService.instant(&#x27;city_edit_message&#x27;,{ &#x27;nameCity&#x27;: city.name });
-      this.messageService.add({key: &#x27;city&#x27;, severity:&#x27;success&#x27;, summary: this.translateService.instant(&#x27;city_edit&#x27;), detail: message });
-      this.cities &#x3D; data;
+      var message &#x3D; this.translateService.instant(&#x27;locality_edit_message&#x27;,{ &#x27;nameLocality&#x27;: locality.name });
+      this.messageService.add({key: &#x27;locality&#x27;, severity:&#x27;success&#x27;, summary: this.translateService.instant(&#x27;locality_edit&#x27;), detail: message });
+      this.localities &#x3D; data;
     },
       err &#x3D;&gt; {
-        this.errorEditCity &#x3D; true;
+        this.errorEditLocality &#x3D; true;
       });
   }
 
@@ -1400,22 +1400,22 @@ export class ListCitiesComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;app-menu-bar&gt;&lt;/app-menu-bar&gt;
-&lt;p-toast key&#x3D;&quot;city&quot;&gt;&lt;/p-toast&gt;
-&lt;div class&#x3D;&quot;cities-panel&quot;&gt;
-  &lt;p-card header&#x3D;&quot;{{ &#x27;list_cities&#x27; | translate }}&quot;&gt;
-    &lt;p-virtualScroller [value]&#x3D;&quot;cities&quot; scrollHeight&#x3D;&quot;250px&quot; [itemSize]&#x3D;&quot;50&quot;&gt;
+&lt;p-toast key&#x3D;&quot;locality&quot;&gt;&lt;/p-toast&gt;
+&lt;div class&#x3D;&quot;localities-panel&quot;&gt;
+  &lt;p-card header&#x3D;&quot;{{ &#x27;list_localities&#x27; | translate }}&quot;&gt;
+    &lt;p-virtualScroller [value]&#x3D;&quot;localities&quot; scrollHeight&#x3D;&quot;250px&quot; [itemSize]&#x3D;&quot;50&quot;&gt;
       &lt;p-header class&#x3D;&quot;list-header&quot;&gt;
-        {{ &#x27;cities&#x27; | translate }}
-        &lt;button id&#x3D;&quot;add_city_btn&quot; pButton pRipple label&#x3D;&quot; {{ &#x27;add_city&#x27; | translate }}&quot; icon&#x3D;&quot;pi pi-plus&quot; class&#x3D;&quot;p-button-raised p-button-rounded&quot; (click)&#x3D;&quot;openPanel($event)&quot;&gt;&lt;/button&gt;
+        {{ &#x27;localities&#x27; | translate }}
+        &lt;button id&#x3D;&quot;add_locality_btn&quot; pButton pRipple label&#x3D;&quot; {{ &#x27;add_locality&#x27; | translate }}&quot; icon&#x3D;&quot;pi pi-plus&quot; class&#x3D;&quot;p-button-raised p-button-rounded&quot; (click)&#x3D;&quot;openPanel($event)&quot;&gt;&lt;/button&gt;
       &lt;/p-header&gt;
-      &lt;ng-template pTemplate&#x3D;&quot;item&quot; let-city&gt;
-        &lt;div class&#x3D;&quot;list-container-cities&quot;&gt;
-          &lt;div class&#x3D;&quot;city-details&quot;&gt;
-            &lt;b&gt;{{city.name}}&lt;/b&gt;
+      &lt;ng-template pTemplate&#x3D;&quot;item&quot; let-locality&gt;
+        &lt;div class&#x3D;&quot;list-container-localities&quot;&gt;
+          &lt;div class&#x3D;&quot;locality-details&quot;&gt;
+            &lt;b&gt;{{locality.name}}&lt;/b&gt;
           &lt;/div&gt;
           &lt;div class&#x3D;&quot;group-buttons&quot;&gt;
-            &lt;button pButton pRipple type&#x3D;&quot;button&quot; icon&#x3D;&quot;fas fa-pen&quot; class&#x3D;&quot;p-button-rounded p-button-text&quot; (click)&#x3D;&quot;editCity(city)&quot;&gt;&lt;/button&gt;
-            &lt;button pButton pRipple type&#x3D;&quot;button&quot; icon&#x3D;&quot;fas fa-trash-alt&quot; class&#x3D;&quot;p-button-rounded p-button-text&quot; (click)&#x3D;&quot;removeCity(city)&quot;&gt;&lt;/button&gt;
+            &lt;button pButton pRipple type&#x3D;&quot;button&quot; icon&#x3D;&quot;fas fa-pen&quot; class&#x3D;&quot;p-button-rounded p-button-text&quot; (click)&#x3D;&quot;editLocality(locality)&quot;&gt;&lt;/button&gt;
+            &lt;button pButton pRipple type&#x3D;&quot;button&quot; icon&#x3D;&quot;fas fa-trash-alt&quot; class&#x3D;&quot;p-button-rounded p-button-text&quot; (click)&#x3D;&quot;removeLocality(locality)&quot;&gt;&lt;/button&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/ng-template&gt;
@@ -1423,44 +1423,44 @@ export class ListCitiesComponent implements OnInit {
   &lt;/p-card&gt;
 
 
-  &lt;p-dialog [(visible)]&#x3D;&quot;display&quot; modal&#x3D;&quot;true&quot; [draggable]&#x3D;&quot;false&quot; (onHide)&#x3D;&quot;hideDialogCity()&quot;&gt;
+  &lt;p-dialog [(visible)]&#x3D;&quot;display&quot; modal&#x3D;&quot;true&quot; [draggable]&#x3D;&quot;false&quot; (onHide)&#x3D;&quot;hideDialogLocality()&quot;&gt;
     &lt;p-header&gt;
-      {{ &#x27;add_city&#x27; | translate }}
+      {{ &#x27;add_locality&#x27; | translate }}
     &lt;/p-header&gt;
-    &lt;form [formGroup]&#x3D;&quot;formAddCity&quot; #formCity&#x3D;&quot;ngForm&quot; id&#x3D;&quot;ngFormCity&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot;&gt;
+    &lt;form [formGroup]&#x3D;&quot;formAddLocality&quot; #formLocality&#x3D;&quot;ngForm&quot; id&#x3D;&quot;ngFormLocality&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot;&gt;
       &lt;div class&#x3D;&quot;p-field p-grid&quot;&gt;
-        &lt;label for&#x3D;&quot;field-name-city&quot; class&#x3D;&quot;p-col-fixed&quot;&gt;{{ &#x27;name_city&#x27; | translate }}*:&lt;/label&gt;
-        &lt;div class&#x3D;&quot;p-col buttons-add-city&quot;&gt;
-          &lt;input id&#x3D;&quot;field-name-city&quot; type&#x3D;&quot;text&quot; pInputText formControlName&#x3D;&quot;name&quot;&gt;
-          &lt;small *ngIf&#x3D;&quot;formAddCity.controls[&#x27;name&#x27;].invalid &amp;&amp;
-            (formAddCity.controls[&#x27;name&#x27;].dirty || formAddCity.controls[&#x27;name&#x27;].touched)&quot; class&#x3D;&quot;p-error&quot;&gt;{{ &#x27;name_city_required&#x27; | translate }}&lt;/small&gt;
-          &lt;small *ngIf&#x3D;&quot;formCity.submitted &amp;&amp; errorAddCity&quot; class&#x3D;&quot;p-error&quot;&gt;{{ &#x27;name_city_repetead&#x27; | translate }}&lt;/small&gt;
+        &lt;label for&#x3D;&quot;field-name-locality&quot; class&#x3D;&quot;p-col-fixed&quot;&gt;{{ &#x27;name_locality&#x27; | translate }}*:&lt;/label&gt;
+        &lt;div class&#x3D;&quot;p-col buttons-add-locality&quot;&gt;
+          &lt;input id&#x3D;&quot;field-name-locality&quot; type&#x3D;&quot;text&quot; pInputText formControlName&#x3D;&quot;name&quot;&gt;
+          &lt;small *ngIf&#x3D;&quot;formAddLocality.controls[&#x27;name&#x27;].invalid &amp;&amp;
+            (formAddLocality.controls[&#x27;name&#x27;].dirty || formAddLocality.controls[&#x27;name&#x27;].touched)&quot; class&#x3D;&quot;p-error&quot;&gt;{{ &#x27;name_locality_required&#x27; | translate }}&lt;/small&gt;
+          &lt;small *ngIf&#x3D;&quot;formLocality.submitted &amp;&amp; errorAddLocality&quot; class&#x3D;&quot;p-error&quot;&gt;{{ &#x27;name_locality_repeated&#x27; | translate }}&lt;/small&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/form&gt;
     &lt;p-footer&gt;
-      &lt;button id&#x3D;&quot;add_save_city_btn&quot; pButton pRipple label&#x3D;&quot; {{ &#x27;save&#x27; | translate }}&quot; icon&#x3D;&quot;pi pi-check&quot; class&#x3D;&quot;p-button-text&quot; form&#x3D;&quot;ngFormCity&quot; [disabled]&#x3D;&quot;formAddCity.invalid&quot;&gt;&lt;/button&gt;
-      &lt;button id&#x3D;&quot;add_cancel_city_btn&quot; pButton pRipple label&#x3D;&quot; {{ &#x27;cancel&#x27; | translate }}&quot; icon&#x3D;&quot;pi pi-times&quot; class&#x3D;&quot;p-button-text&quot; (click)&#x3D;&quot;cancel()&quot;&gt;&lt;/button&gt;
+      &lt;button id&#x3D;&quot;add_save_locality_btn&quot; pButton pRipple label&#x3D;&quot; {{ &#x27;save&#x27; | translate }}&quot; icon&#x3D;&quot;pi pi-check&quot; class&#x3D;&quot;p-button-text&quot; form&#x3D;&quot;ngFormLocality&quot; [disabled]&#x3D;&quot;formAddLocality.invalid&quot;&gt;&lt;/button&gt;
+      &lt;button id&#x3D;&quot;add_cancel_locality_btn&quot; pButton pRipple label&#x3D;&quot; {{ &#x27;cancel&#x27; | translate }}&quot; icon&#x3D;&quot;pi pi-times&quot; class&#x3D;&quot;p-button-text&quot; (click)&#x3D;&quot;cancel()&quot;&gt;&lt;/button&gt;
     &lt;/p-footer&gt;
   &lt;/p-dialog&gt;
 
-  &lt;p-confirmDialog header&#x3D;&quot;{{ &#x27;delete_city&#x27; | translate }}&quot; icon&#x3D;&quot;pi pi-exclamation-triangle&quot; acceptLabel&#x3D;&quot;{{ &#x27;delete&#x27; | translate }}&quot; rejectLabel&#x3D;&quot;{{ &#x27;cancel&#x27; | translate }}&quot;&gt;&lt;/p-confirmDialog&gt;
+  &lt;p-confirmDialog header&#x3D;&quot;{{ &#x27;delete_locality&#x27; | translate }}&quot; icon&#x3D;&quot;pi pi-exclamation-triangle&quot; acceptLabel&#x3D;&quot;{{ &#x27;delete&#x27; | translate }}&quot; rejectLabel&#x3D;&quot;{{ &#x27;cancel&#x27; | translate }}&quot;&gt;&lt;/p-confirmDialog&gt;
 
-  &lt;p-dialog header&#x3D;&quot;{{ &#x27;edit_title_city&#x27; | translate }}&quot; [draggable]&#x3D;&quot;false&quot; [(visible)]&#x3D;&quot;displayEditPanel&quot; [modal]&#x3D;&quot;true&quot; (onHide)&#x3D;&quot;hideDialogEditCity()&quot;&gt;
-    &lt;form [formGroup]&#x3D;&quot;formEditCity&quot; #formCityToEdit&#x3D;&quot;ngForm&quot; id&#x3D;&quot;ngFormEditCity&quot; (ngSubmit)&#x3D;&quot;onEditSubmit()&quot;&gt;
+  &lt;p-dialog header&#x3D;&quot;{{ &#x27;edit_title_locality&#x27; | translate }}&quot; [draggable]&#x3D;&quot;false&quot; [(visible)]&#x3D;&quot;displayEditPanel&quot; [modal]&#x3D;&quot;true&quot; (onHide)&#x3D;&quot;hideDialogEditLocality()&quot;&gt;
+    &lt;form [formGroup]&#x3D;&quot;formEditLocality&quot; #formLocalityToEdit&#x3D;&quot;ngForm&quot; id&#x3D;&quot;ngFormEditLocality&quot; (ngSubmit)&#x3D;&quot;onEditSubmit()&quot;&gt;
       &lt;div class&#x3D;&quot;p-field p-grid&quot;&gt;
-        &lt;label for&#x3D;&quot;field-edit-name-city&quot; class&#x3D;&quot;p-col-fixed&quot;&gt;{{ &#x27;name_city&#x27; | translate }}*:&lt;/label&gt;
-        &lt;div class&#x3D;&quot;p-col buttons-add-city&quot;&gt;
-          &lt;input id&#x3D;&quot;field-edit-name-city&quot; type&#x3D;&quot;text&quot; pInputText formControlName&#x3D;&quot;name&quot;&gt;
-          &lt;small *ngIf&#x3D;&quot;formEditCity.controls[&#x27;name&#x27;].invalid &amp;&amp;
-            (formEditCity.controls[&#x27;name&#x27;].dirty || formEditCity.controls[&#x27;name&#x27;].touched)&quot; class&#x3D;&quot;p-error&quot;&gt;{{ &#x27;name_city_required&#x27; | translate }}&lt;/small&gt;
-          &lt;small *ngIf&#x3D;&quot;formCityToEdit.submitted &amp;&amp; errorEditCity&quot; class&#x3D;&quot;p-error&quot;&gt;{{ &#x27;name_city_repetead&#x27; | translate }}&lt;/small&gt;
+        &lt;label for&#x3D;&quot;field-edit-name-locality&quot; class&#x3D;&quot;p-col-fixed&quot;&gt;{{ &#x27;name_locality&#x27; | translate }}*:&lt;/label&gt;
+        &lt;div class&#x3D;&quot;p-col buttons-add-locality&quot;&gt;
+          &lt;input id&#x3D;&quot;field-edit-name-locality&quot; type&#x3D;&quot;text&quot; pInputText formControlName&#x3D;&quot;name&quot;&gt;
+          &lt;small *ngIf&#x3D;&quot;formEditLocality.controls[&#x27;name&#x27;].invalid &amp;&amp;
+            (formEditLocality.controls[&#x27;name&#x27;].dirty || formEditLocality.controls[&#x27;name&#x27;].touched)&quot; class&#x3D;&quot;p-error&quot;&gt;{{ &#x27;name_locality_required&#x27; | translate }}&lt;/small&gt;
+          &lt;small *ngIf&#x3D;&quot;formLocalityToEdit.submitted &amp;&amp; errorEditLocality&quot; class&#x3D;&quot;p-error&quot;&gt;{{ &#x27;name_locality_repeated&#x27; | translate }}&lt;/small&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/form&gt;
     &lt;p-footer&gt;
-      &lt;button id&#x3D;&quot;edit_save_city_btn&quot; pButton pRipple label&#x3D;&quot; {{ &#x27;save&#x27; | translate }}&quot; icon&#x3D;&quot;pi pi-check&quot; class&#x3D;&quot;p-button-text&quot; form&#x3D;&quot;ngFormEditCity&quot; [disabled]&#x3D;&quot;formEditCity.invalid&quot;&gt;&lt;/button&gt;
-      &lt;button id&#x3D;&quot;edit_cancel_city_btn&quot; pButton pRipple label&#x3D;&quot; {{ &#x27;cancel&#x27; | translate }}&quot; icon&#x3D;&quot;pi pi-times&quot; class&#x3D;&quot;p-button-text&quot; (click)&#x3D;&quot;cancelEdit()&quot;&gt;&lt;/button&gt;
+      &lt;button id&#x3D;&quot;edit_save_locality_btn&quot; pButton pRipple label&#x3D;&quot; {{ &#x27;save&#x27; | translate }}&quot; icon&#x3D;&quot;pi pi-check&quot; class&#x3D;&quot;p-button-text&quot; form&#x3D;&quot;ngFormEditLocality&quot; [disabled]&#x3D;&quot;formEditLocality.invalid&quot;&gt;&lt;/button&gt;
+      &lt;button id&#x3D;&quot;edit_cancel_locality_btn&quot; pButton pRipple label&#x3D;&quot; {{ &#x27;cancel&#x27; | translate }}&quot; icon&#x3D;&quot;pi pi-times&quot; class&#x3D;&quot;p-button-text&quot; (click)&#x3D;&quot;cancelEdit()&quot;&gt;&lt;/button&gt;
     &lt;/p-footer&gt;
   &lt;/p-dialog&gt;
 &lt;/div&gt;
@@ -1470,24 +1470,24 @@ export class ListCitiesComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./list-cities.component.scss</code>
+                    <code>./list-localities.component.scss</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">@import &quot;src/assets/sass/utility/_mixins.scss&quot;;
 
-.list-container-cities, .list-header {
+.list-container-localities, .list-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.cities-panel {
+.localities-panel {
   @include custom-panel;
   width: 100%;
   min-height: 300px;
   min-width: 800px;
 }
 
-.buttons-add-city{
+.buttons-add-locality{
   display: flex;
   flex-direction: column;
 }
@@ -1520,10 +1520,10 @@ export class ListCitiesComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-menu-bar></app-menu-bar><p-toast key="city"></p-toast><div class="cities-panel">  <p-card header="{{ \'list_cities\' | translate }}">    <p-virtualScroller [value]="cities" scrollHeight="250px" [itemSize]="50">      <p-header class="list-header">        {{ \'cities\' | translate }}        <button id="add_city_btn" pButton pRipple label=" {{ \'add_city\' | translate }}" icon="pi pi-plus" class="p-button-raised p-button-rounded" (click)="openPanel($event)"></button>      </p-header>      <ng-template pTemplate="item" let-city>        <div class="list-container-cities">          <div class="city-details">            <b>{{city.name}}</b>          </div>          <div class="group-buttons">            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editCity(city)"></button>            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="removeCity(city)"></button>          </div>        </div>      </ng-template>    </p-virtualScroller>  </p-card>  <p-dialog [(visible)]="display" modal="true" [draggable]="false" (onHide)="hideDialogCity()">    <p-header>      {{ \'add_city\' | translate }}    </p-header>    <form [formGroup]="formAddCity" #formCity="ngForm" id="ngFormCity" (ngSubmit)="onSubmit()">      <div class="p-field p-grid">        <label for="field-name-city" class="p-col-fixed">{{ \'name_city\' | translate }}*:</label>        <div class="p-col buttons-add-city">          <input id="field-name-city" type="text" pInputText formControlName="name">          <small *ngIf="formAddCity.controls[\'name\'].invalid &&            (formAddCity.controls[\'name\'].dirty || formAddCity.controls[\'name\'].touched)" class="p-error">{{ \'name_city_required\' | translate }}</small>          <small *ngIf="formCity.submitted && errorAddCity" class="p-error">{{ \'name_city_repetead\' | translate }}</small>        </div>      </div>    </form>    <p-footer>      <button id="add_save_city_btn" pButton pRipple label=" {{ \'save\' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormCity" [disabled]="formAddCity.invalid"></button>      <button id="add_cancel_city_btn" pButton pRipple label=" {{ \'cancel\' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancel()"></button>    </p-footer>  </p-dialog>  <p-confirmDialog header="{{ \'delete_city\' | translate }}" icon="pi pi-exclamation-triangle" acceptLabel="{{ \'delete\' | translate }}" rejectLabel="{{ \'cancel\' | translate }}"></p-confirmDialog>  <p-dialog header="{{ \'edit_title_city\' | translate }}" [draggable]="false" [(visible)]="displayEditPanel" [modal]="true" (onHide)="hideDialogEditCity()">    <form [formGroup]="formEditCity" #formCityToEdit="ngForm" id="ngFormEditCity" (ngSubmit)="onEditSubmit()">      <div class="p-field p-grid">        <label for="field-edit-name-city" class="p-col-fixed">{{ \'name_city\' | translate }}*:</label>        <div class="p-col buttons-add-city">          <input id="field-edit-name-city" type="text" pInputText formControlName="name">          <small *ngIf="formEditCity.controls[\'name\'].invalid &&            (formEditCity.controls[\'name\'].dirty || formEditCity.controls[\'name\'].touched)" class="p-error">{{ \'name_city_required\' | translate }}</small>          <small *ngIf="formCityToEdit.submitted && errorEditCity" class="p-error">{{ \'name_city_repetead\' | translate }}</small>        </div>      </div>    </form>    <p-footer>      <button id="edit_save_city_btn" pButton pRipple label=" {{ \'save\' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormEditCity" [disabled]="formEditCity.invalid"></button>      <button id="edit_cancel_city_btn" pButton pRipple label=" {{ \'cancel\' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancelEdit()"></button>    </p-footer>  </p-dialog></div></div>'
-    var COMPONENTS = [{'name': 'AddActivityComponent', 'selector': 'app-add-activity'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EditActivitiesComponent', 'selector': 'app-edit-activities'},{'name': 'EditUserAdminComponent', 'selector': 'app-edit-user-admin'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'InformationActivitiesComponent', 'selector': 'app-information-activities'},{'name': 'ListActivitiesEvaluateComponent', 'selector': 'app-list-activities-evaluate'},{'name': 'ListCitiesComponent', 'selector': 'app-list-cities'},{'name': 'ListInterestComponent', 'selector': 'app-list-interest'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuBarComponent', 'selector': 'app-menu-bar'},{'name': 'RecommendationMapComponent', 'selector': 'app-recommendation-map'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'TableActivitiesComponent', 'selector': 'app-table-activities'}];
+        var COMPONENT_TEMPLATE = '<div><app-menu-bar></app-menu-bar><p-toast key="locality"></p-toast><div class="localities-panel">  <p-card header="{{ \'list_localities\' | translate }}">    <p-virtualScroller [value]="localities" scrollHeight="250px" [itemSize]="50">      <p-header class="list-header">        {{ \'localities\' | translate }}        <button id="add_locality_btn" pButton pRipple label=" {{ \'add_locality\' | translate }}" icon="pi pi-plus" class="p-button-raised p-button-rounded" (click)="openPanel($event)"></button>      </p-header>      <ng-template pTemplate="item" let-locality>        <div class="list-container-localities">          <div class="locality-details">            <b>{{locality.name}}</b>          </div>          <div class="group-buttons">            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editLocality(locality)"></button>            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="removeLocality(locality)"></button>          </div>        </div>      </ng-template>    </p-virtualScroller>  </p-card>  <p-dialog [(visible)]="display" modal="true" [draggable]="false" (onHide)="hideDialogLocality()">    <p-header>      {{ \'add_locality\' | translate }}    </p-header>    <form [formGroup]="formAddLocality" #formLocality="ngForm" id="ngFormLocality" (ngSubmit)="onSubmit()">      <div class="p-field p-grid">        <label for="field-name-locality" class="p-col-fixed">{{ \'name_locality\' | translate }}*:</label>        <div class="p-col buttons-add-locality">          <input id="field-name-locality" type="text" pInputText formControlName="name">          <small *ngIf="formAddLocality.controls[\'name\'].invalid &&            (formAddLocality.controls[\'name\'].dirty || formAddLocality.controls[\'name\'].touched)" class="p-error">{{ \'name_locality_required\' | translate }}</small>          <small *ngIf="formLocality.submitted && errorAddLocality" class="p-error">{{ \'name_locality_repeated\' | translate }}</small>        </div>      </div>    </form>    <p-footer>      <button id="add_save_locality_btn" pButton pRipple label=" {{ \'save\' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormLocality" [disabled]="formAddLocality.invalid"></button>      <button id="add_cancel_locality_btn" pButton pRipple label=" {{ \'cancel\' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancel()"></button>    </p-footer>  </p-dialog>  <p-confirmDialog header="{{ \'delete_locality\' | translate }}" icon="pi pi-exclamation-triangle" acceptLabel="{{ \'delete\' | translate }}" rejectLabel="{{ \'cancel\' | translate }}"></p-confirmDialog>  <p-dialog header="{{ \'edit_title_locality\' | translate }}" [draggable]="false" [(visible)]="displayEditPanel" [modal]="true" (onHide)="hideDialogEditLocality()">    <form [formGroup]="formEditLocality" #formLocalityToEdit="ngForm" id="ngFormEditLocality" (ngSubmit)="onEditSubmit()">      <div class="p-field p-grid">        <label for="field-edit-name-locality" class="p-col-fixed">{{ \'name_locality\' | translate }}*:</label>        <div class="p-col buttons-add-locality">          <input id="field-edit-name-locality" type="text" pInputText formControlName="name">          <small *ngIf="formEditLocality.controls[\'name\'].invalid &&            (formEditLocality.controls[\'name\'].dirty || formEditLocality.controls[\'name\'].touched)" class="p-error">{{ \'name_locality_required\' | translate }}</small>          <small *ngIf="formLocalityToEdit.submitted && errorEditLocality" class="p-error">{{ \'name_locality_repeated\' | translate }}</small>        </div>      </div>    </form>    <p-footer>      <button id="edit_save_locality_btn" pButton pRipple label=" {{ \'save\' | translate }}" icon="pi pi-check" class="p-button-text" form="ngFormEditLocality" [disabled]="formEditLocality.invalid"></button>      <button id="edit_cancel_locality_btn" pButton pRipple label=" {{ \'cancel\' | translate }}" icon="pi pi-times" class="p-button-text" (click)="cancelEdit()"></button>    </p-footer>  </p-dialog></div></div>'
+    var COMPONENTS = [{'name': 'AddActivityComponent', 'selector': 'app-add-activity'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EditActivitiesComponent', 'selector': 'app-edit-activities'},{'name': 'EditUserAdminComponent', 'selector': 'app-edit-user-admin'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'InformationActivitiesComponent', 'selector': 'app-information-activities'},{'name': 'ListActivitiesEvaluateComponent', 'selector': 'app-list-activities-evaluate'},{'name': 'ListInterestComponent', 'selector': 'app-list-interest'},{'name': 'ListLocalitiesComponent', 'selector': 'app-list-locaties'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuBarComponent', 'selector': 'app-menu-bar'},{'name': 'RecommendationMapComponent', 'selector': 'app-recommendation-map'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'TableActivitiesComponent', 'selector': 'app-table-activities'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'ListCitiesComponent'};
+    var ACTUAL_COMPONENT = {'name': 'ListLocalitiesComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -1558,7 +1558,7 @@ export class ListCitiesComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'ListCitiesComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ListLocalitiesComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

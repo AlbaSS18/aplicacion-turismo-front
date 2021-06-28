@@ -77,7 +77,7 @@ import {SignUpComponent} from &#x27;./sign-up/sign-up.component&#x27;;
 import {AuthGuardService} from &#x27;./guards/auth-guard/auth-guard.service&#x27;;
 import {IsLogginInGuardService} from &#x27;./guards/isLogginInGuard/is-loggin-in-guard.service&#x27;;
 import {TableActivitiesComponent} from &#x27;./table-activities/table-activities.component&#x27;;
-import {ListCitiesComponent} from &#x27;./list-cities/list-cities.component&#x27;;
+import {ListLocalitiesComponent} from &#x27;./list-localities/list-localities.component&#x27;;
 import {ListInterestComponent} from &#x27;./list-interest/list-interest.component&#x27;;
 import {ListUserComponent} from &#x27;./list-user/list-user.component&#x27;;
 import {EditUserComponent} from &#x27;./edit-user/edit-user.component&#x27;;
@@ -107,7 +107,7 @@ const routes: Routes &#x3D; [
     data: {
       expectedRol: &#x27;admin&#x27;
     }},
-  {path: &#x27;cities&#x27;, component: ListCitiesComponent,
+  {path: &#x27;localities&#x27;, component: ListLocalitiesComponent,
     canActivate: [RoleGuardService],
     data: {
       expectedRol: &#x27;admin&#x27;
