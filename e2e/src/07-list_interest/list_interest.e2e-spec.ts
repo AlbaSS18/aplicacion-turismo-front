@@ -44,6 +44,7 @@ describe('07 - List interest component', () => {
   it('should be able to edit the name of the interest', () => {
     page.getEditButton().click();
     page.getNameInput('field-edit-name-interest').sendKeys('Mus');
+    expect(page.getNameInput('field-edit-name-interest').getAttribute('value')).toBe('MuseosMus');
     page.getCancelInterestBtn('edit_cancel_interest_btn').click();
   });
 

@@ -45,6 +45,7 @@ describe('06 - List localities component', () => {
   it('should be able to edit the name of the locality', () => {
     page.getEditButton().click();
     page.getNameInput('field-edit-name-locality').sendKeys('Gij');
+    expect(page.getNameInput('field-edit-name-locality').getAttribute('value')).toBe('OviedoGij');
     page.getCancelLocalityBtn('edit_cancel_locality_btn').click();
   });
 
