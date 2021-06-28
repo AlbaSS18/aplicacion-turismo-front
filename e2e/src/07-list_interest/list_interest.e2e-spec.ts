@@ -9,7 +9,7 @@ describe('07 - List interest component', () => {
     page.navigateTo().click();
   });
 
-  it('should display a virtual scroller with cities', () => {
+  it('should display a virtual scroller with interests', () => {
     expect(page.listInterest().isPresent()).toBe(true);
   });
 
@@ -27,7 +27,7 @@ describe('07 - List interest component', () => {
     page.getCancelInterestBtn('add_cancel_interest_btn').click();
   });
 
-  it('should display a error message when city is repeated', () => {
+  it('should display a error message when interest is repeated', () => {
     page.getAddInterestBtn().click();
     page.getNameInput('field-name-interest').sendKeys('Museos');
     page.getSaveInterestBtn('add_save_interest_btn').click();
@@ -41,13 +41,13 @@ describe('07 - List interest component', () => {
     page.getCloseBtnConfirmDialog().click();
   });
 
-  it('should be able to edit the name of the city', () => {
+  it('should be able to edit the name of the interest', () => {
     page.getEditButton().click();
     page.getNameInput('field-edit-name-interest').sendKeys('Mus');
     page.getCancelInterestBtn('edit_cancel_interest_btn').click();
   });
 
-  it('should display message error when input edit city is empty', () => {
+  it('should display message error when input edit interest is empty', () => {
     page.getEditButton().click();
     page.getNameInput('field-edit-name-interest').sendKeys(Key.chord(Key.BACK_SPACE, Key.BACK_SPACE, Key.BACK_SPACE, Key.BACK_SPACE, Key.BACK_SPACE, Key.BACK_SPACE ));
     expect(page.getErrorMessage('El nombre es obligatorio').isPresent()).toBe(true);
