@@ -2,8 +2,11 @@ import {browser, by, element} from 'protractor';
 
 export class SignUpPage {
 
+  openPage(){
+    return browser.get(browser.baseUrl) as Promise<unknown>;
+  }
   navigateTo() {
-    return element(by.css('.container-form a'));
+    return element(by.css('.right-container a'));
   }
 
   getInputName(){
@@ -61,5 +64,13 @@ export class SignUpPage {
 
   getMessageSuccessLogin(){
     return element(by.css('p-messages .p-messages'));
+  }
+
+  getMessageEmailRepeated(){
+    return element(by.cssContainingText('.p-inline-message-text', 'Ya existe ese email'));
+  }
+
+  getMessage(message){
+    return element(by.cssContainingText('.p-inline-message-text', message));
   }
 }

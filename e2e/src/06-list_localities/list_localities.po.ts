@@ -3,7 +3,7 @@ import {by, element} from 'protractor';
 export class ListLocalitiesPage{
 
   navigateTo() {
-    return element(by.id('list_city_nav'));
+    return element(by.id('list_locality_nav'));
   }
 
   listLocality(){

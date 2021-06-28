@@ -11,7 +11,7 @@ describe('08-edit-user-admin component', () => {
   });
 
   it('should show the edit component', () => {
-    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'admin/user/edit/73');
+    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'admin/user/edit/40');
   });
 
   it('should be disable the send button', () => {

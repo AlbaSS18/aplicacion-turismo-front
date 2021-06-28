@@ -13,7 +13,7 @@ describe('11 - Edit activities component', () => {
   });
 
   it('should show the edit component', () => {
-    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'activities/edit/102');
+    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'activities/edit/21');
   });
 
   it('should be disable the button', () => {

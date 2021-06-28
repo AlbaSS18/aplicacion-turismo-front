@@ -1,7 +1,7 @@
 import {LoginPage} from './login.po';
 import {browser, Key} from 'protractor';
 
-describe('01-login component', () => {
+describe('02-login component', () => {
   let page: LoginPage;
 
   beforeEach(() => {
@@ -41,14 +41,14 @@ describe('01-login component', () => {
 
   it('should can login with user with ROLE_USER', () => {
     page.getInputPasswordForm().sendKeys('1234567');
-    page.getInputEmailForm().sendKeys('luis@email.com');
+    page.getInputEmailForm().sendKeys('maria@email.com');
     page.getLoginBtn().click();
 
     expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + 'recommendationMap');
     expect(page.getNav('recommendation_map_nav').isPresent()).toEqual(true);
     expect(page.getNav('activities_evaluate_nav').isPresent()).toEqual(true);
     expect(page.getNav('list_user_nav').isPresent()).toEqual(false);
-    expect(page.getNav('list_city_nav').isPresent()).toEqual(false);
+    expect(page.getNav('list_locality_nav').isPresent()).toEqual(false);
     expect(page.getNav('activities_nav').isPresent()).toEqual(false);
     expect(page.getNav('interest_nav').isPresent()).toEqual(false);
   });
@@ -68,7 +68,7 @@ describe('01-login component', () => {
     expect(page.getNav('recommendation_map_nav').isPresent()).toEqual(true);
     expect(page.getNav('activities_evaluate_nav').isPresent()).toEqual(true);
     expect(page.getNav('list_user_nav').isPresent()).toEqual(true);
-    expect(page.getNav('list_city_nav').isPresent()).toEqual(true);
+    expect(page.getNav('list_locality_nav').isPresent()).toEqual(true);
     expect(page.getNav('activities_nav').isPresent()).toEqual(true);
     expect(page.getNav('interest_nav').isPresent()).toEqual(true);
   });

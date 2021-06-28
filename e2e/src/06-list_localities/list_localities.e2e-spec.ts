@@ -32,13 +32,13 @@ describe('06 - List localities component', () => {
     page.getAddLocalityBtn().click();
     page.getNameInput('field-name-locality').sendKeys('Oviedo');
     page.getSaveLocalityBtn('add_save_locality_btn').click();
-    expect(page.getErrorMessage('Ya hay una ciudad con ese nombre').isPresent()).toBe(true);
+    expect(page.getErrorMessage('Ya hay una localidad con ese nombre').isPresent()).toBe(true);
     page.getCancelLocalityBtn('add_cancel_locality_btn').click();
   });
 
   it('should display a dialog when delete button is clicked', () => {
     page.getDeleteBtn().click();
-    expect(page.getDeleteMessage('¿Estás seguro de qué quieres eliminar esta ciudad? Se eliminarán todos los datos relacionados').isPresent()).toBe(true);
+    expect(page.getDeleteMessage('¿Estás seguro de qué quieres eliminar esta localidad? Se eliminarán todos los datos relacionados').isPresent()).toBe(true);
     page.getCloseBtnConfirmDialog().click();
   });
 

@@ -1,6 +1,6 @@
 import {RecommendationMapPage} from './recommendation_map.po';
 
-describe('workspace-project App', () => {
+describe('12 - Recommendation map component', () => {
   let page: RecommendationMapPage;
 
   beforeEach(() => {
