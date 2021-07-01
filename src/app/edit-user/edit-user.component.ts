@@ -10,7 +10,7 @@ import {LocalStorageService} from '../services/local-storage/local-storage.servi
 import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.directive';
 
 /**
- * Clase EditUserComponent
+ * Clase EditUserComponent.
  *
  * Clase que permite editar la información del usuario autenticado.
  *
@@ -42,10 +42,10 @@ export class EditUserComponent implements OnInit {
   infoMessage = [];
 
   /**
-   * Constructor de la clase EditUserComponent
+   * Constructor de la clase EditUserComponent.
    *
    * @param userService
-   * Servicio de usuarios
+   * Servicio de usuarios.
    * @param localStorageService
    * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador.
    * @param fb

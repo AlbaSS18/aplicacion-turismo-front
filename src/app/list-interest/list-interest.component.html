@@ -13,8 +13,8 @@
             <b>{{interest.nameInterest}}</b>
           </div>
           <div class="group-buttons-interest">
-            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editInterest(interest)"></button>
-            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="deleteInterest(interest)"></button>
+            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" title="{{ 'edit_title_interest' | translate }}" (click)="editInterest(interest)"></button>
+            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" title="{{ 'delete_interest' | translate }}" (click)="deleteInterest(interest)"></button>
           </div>
         </div>
       </ng-template>

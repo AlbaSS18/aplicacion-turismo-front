@@ -6,23 +6,23 @@ import {LocalStorageService} from '../../services/local-storage/local-storage.se
   providedIn: 'root'
 })
 /**
- * Clase RoleGuardService
+ * Clase RoleGuardService.
  *
  * Clase que permite acceder a las vistas a aquellos usuarios cuyo rol coincida con el esperado.
  */
 export class RoleGuardService implements CanActivate{
 
   /**
-   * Rol del usuario
+   * Rol del usuario.
    */
   rol: string;
 
   /**
-   * Constructor de la clase RoleGuardService
+   * Constructor de la clase RoleGuardService.
    * @param localStorageService
-   * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador
+   * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador.
    * @param router
-   * Servicio que permite la navegación entre vistas
+   * Servicio que permite la navegación entre vistas.
    */
   constructor(private localStorageService: LocalStorageService, private router: Router) { }
 

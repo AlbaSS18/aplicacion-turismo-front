@@ -17,7 +17,7 @@ import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.direc
   styleUrls: ['./edit-user-admin.component.scss']
 })
 /**
- * Clase EditUserAdminComponent
+ * Clase EditUserAdminComponent.
  *
  * Clase que permite editar la información de un usuario.
  *
@@ -52,22 +52,22 @@ export class EditUserAdminComponent implements OnInit {
   roleList: SelectItem[];
 
   /**
-   * Constructor de la clase EditUserAdminComponent
+   * Constructor de la clase EditUserAdminComponent.
    *
    * @param fb
    * Clase que permite crear objetos de la clase FormGroup y FormControl.
    * @param userService
-   * Servicio de usuarios
+   * Servicio de usuarios.
    * @param activatedRoute
    * Proporciona acceso a la información sobre una ruta asociada a un componente que se carga.
    * @param rolesService
-   * Servicio de roles
+   * Servicio de roles.
    * @param messageService
    * Servicio propocionado por la librería PrimeNG que permite almacenar los mensajes que serán mostrados al usuario.
    * @param translateService
    * Servicio proporcionado por la librería ngx-translate que se utiliza para la internacionalización de la aplicación.
    * @param router
-   * Servicio que permite la navegación entre vistas
+   * Servicio que permite la navegación entre vistas.
    */
   constructor(
     private fb: FormBuilder,

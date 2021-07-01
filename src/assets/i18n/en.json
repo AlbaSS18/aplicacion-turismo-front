@@ -145,5 +145,7 @@
   "welcome": "Welcome!",
   "locality_has_activities": "The locality has associated activities",
   "interest_has_activities": "The interest has associated activities",
-  "Formulario inválido": "Invalid form"
+  "Formulario inválido": "Invalid form",
+  "edit-user": "Edit user",
+  "additional_information": "Additional information"
 }

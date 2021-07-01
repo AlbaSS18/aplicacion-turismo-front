@@ -6,18 +6,21 @@ import {LocalStorageService} from '../../services/local-storage/local-storage.se
   providedIn: 'root'
 })
 /**
- * Clase AuthGuardService
+ * Clase AuthGuardService.
  *
- * Clase que permite acceder a las vistas a aquellos usuarios logueados
+ * Clase que permite acceder a las vistas a aquellos usuarios logueados.
+ *
+ * @author Alba Serena Suárez
+ * @version %I% %G%
  */
 export class AuthGuardService implements CanActivate{
 
   /**
-   * Constructor de la clase AuthGuardService
+   * Constructor de la clase AuthGuardService.
    * @param router
-   * Servicio que permite la navegación entre vistas
+   * Servicio que permite la navegación entre vistas.
    * @param localStorageService
-   * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador
+   * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador.
    */
   constructor(private router: Router, private localStorageService: LocalStorageService) { }
 
@@ -30,7 +33,7 @@ export class AuthGuardService implements CanActivate{
    * Estructura de datos inmutable que representa el estado del enrutador en un momento determinado.
    *
    * @return
-   * true si el usuario puede acceder a la vista, false en caso contrario
+   * true si el usuario puede acceder a la vista, false en caso contrario.
    *
    * @see https://vsavkin.com/angular-router-understanding-router-state-7b5b95a12eab
    */

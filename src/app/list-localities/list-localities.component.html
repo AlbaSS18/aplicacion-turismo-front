@@ -13,8 +13,8 @@
             <b>{{locality.name}}</b>
           </div>
           <div class="group-buttons">
-            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editLocality(locality)"></button>
-            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="removeLocality(locality)"></button>
+            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" title="{{ 'edit_title_locality' | translate }}" (click)="editLocality(locality)"></button>
+            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" title="{{ 'delete_locality' | translate }}" (click)="removeLocality(locality)"></button>
           </div>
         </div>
       </ng-template>

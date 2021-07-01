@@ -16,7 +16,7 @@ import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.direc
   styleUrls: ['./edit-activities.component.scss']
 })
 /**
- * Clase EditActivitiesComponent
+ * Clase EditActivitiesComponent.
  *
  * Clase que permite editar la información de una actividad.
  *
@@ -59,20 +59,20 @@ export class EditActivitiesComponent implements OnInit {
   infoMessage = [];
 
   /**
-   * Constructor de la clase EditActivitiesComponent
+   * Constructor de la clase EditActivitiesComponent.
    *
    * @param fb
    * Clase que permite crear objetos de la clase FormGroup y FormControl.
    * @param interestService
-   * Servicio de intereses
+   * Servicio de intereses.
    * @param activityService
-   * Servicio de actividades
+   * Servicio de actividades.
    * @param activatedRoute
    * Proporciona acceso a la información sobre una ruta asociada a un componente que se carga.
    * @param router
-   * Servicio que permite la navegación entre vistas
+   * Servicio que permite la navegación entre vistas.
    * @param sanitizer
-   * Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM
+   * Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM.
    * @param translateService
    * Servicio proporcionado por la librería ngx-translate que se utiliza para la internacionalización de la aplicación.
    * @param messageService
@@ -178,9 +178,9 @@ export class EditActivitiesComponent implements OnInit {
   /**
    * Método que convierte la información codificada en base64 en un objeto File.
    * @param dataURI
-   * Url con la información codificada en base64
+   * Url con la información codificada en base64.
    * @param fileName
-   * Nombre del archivo
+   * Nombre del archivo.
    */
   dataURItoBlob(dataURI: any, fileName: string): File{
 
@@ -298,7 +298,7 @@ export class EditActivitiesComponent implements OnInit {
   }
 
   /**
-   * Método que cambia dinámicamente el src de una etiqueta img en el DOM
+   * Método que cambia dinámicamente el src de una etiqueta img en el DOM.
    * @param event
    * Evento que se produce cuando un archivo es seleccionado.
    */

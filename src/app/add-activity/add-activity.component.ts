@@ -49,18 +49,18 @@ export class AddActivityComponent implements OnInit {
   infoMessage = [];
 
   /**
-   * Constructor de la clase AddActivityComponent
+   * Constructor de la clase AddActivityComponent.
    *
    * @param formBuilder
    * Clase que permite crear objetos de la clase FormGroup y FormControl.
    * @param localityService
-   * Servicio de localidades
+   * Servicio de localidades.
    * @param interestService
-   * Servicio de intereses
+   * Servicio de intereses.
    * @param activityService
-   * Servicio de actividades
+   * Servicio de actividades.
    * @param router
-   * Servicio que permite la navegación entre vistas
+   * Servicio que permite la navegación entre vistas.
    * @param translateService
    * Servicio proporcionado por la librería ngx-translate que se utiliza para la internacionalización de la aplicación.
    * @param messageService

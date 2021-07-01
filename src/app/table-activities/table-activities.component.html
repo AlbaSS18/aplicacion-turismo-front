@@ -44,9 +44,9 @@
           <td class="td-text-wrap">{{activity.locality}}</td>
           <td class="td-text-wrap">{{activity.interest}}</td>
           <td>
-            <button pButton pRipple type="button" icon="fas fa-info" class="p-button-rounded p-button-text" (click)="seeMoreInfo(activity)"></button>
-            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editActivity(activity)"></button>
-            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="confirm(activity)"></button>
+            <button pButton pRipple type="button" icon="fas fa-info" class="p-button-rounded p-button-text" title="{{ 'additional_information' | translate }}" (click)="seeMoreInfo(activity)"></button>
+            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" title="{{ 'edit_title_activity' | translate }}" (click)="editActivity(activity)"></button>
+            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" title="{{ 'delete_activity' | translate }}"  (click)="confirm(activity)"></button>
           </td>
         </tr>
       </ng-template>

@@ -34,8 +34,8 @@
                   </span>
           </td>
           <td>
-            <button id="edit_user_btn" pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editUser(user)"></button>
-            <button id="delete_user_btn" pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="confirmDelete(user)"></button>
+            <button id="edit_user_btn" pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" title="{{ 'edit-user' | translate }}" (click)="editUser(user)"></button>
+            <button id="delete_user_btn" pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" title="{{ 'delete_user' | translate }}" (click)="confirmDelete(user)"></button>
           </td>
         </tr>
       </ng-template>

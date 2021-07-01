@@ -145,5 +145,7 @@
   "welcome": "¡Bienvenido!",
   "locality_has_activities": "La localidad tiene actividades asociadas",
   "interest_has_activities": "El interés tiene actividades asociadas",
-  "Formulario inválido": "Formulario inválido"
+  "Formulario inválido": "Formulario inválido",
+  "edit-user": "Editar usuario",
+  "additional_information": "Información adicional"
 }
