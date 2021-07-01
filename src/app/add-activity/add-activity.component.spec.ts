@@ -77,7 +77,6 @@ describe('AddActivityComponent', () => {
   });
 
   it('should add an activity', fakeAsync(() => {
-    // ERROR
     const fakeFile = (): File => {
       const blob = new Blob([''], { type: 'image/jpg' });
       blob['lastModifiedDate'] = "";

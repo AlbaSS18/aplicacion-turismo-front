@@ -146,7 +146,6 @@ export class MockActivityService extends ActivityService {
   }
 
   editActivity(id, activity): Observable<any> {
-    // ERROR. El observer se llamaba antes
     const updateItem = this.listActivities.find(acti => acti.id === id);
     const index = this.listActivities.indexOf(updateItem);
 
