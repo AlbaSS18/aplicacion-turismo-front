@@ -13,7 +13,7 @@ import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.direc
   styleUrls: ['./list-localities.component.scss']
 })
 /**
- * Clase ListLocalitiesComponent
+ * Clase ListLocalitiesComponent.
  *
  * Clase que muestra la lista de localidades.
  */
@@ -49,7 +49,7 @@ export class ListLocalitiesComponent implements OnInit {
   formEditLocality: FormGroup;
 
   /**
-   * Constructor de la clase ListLocalitiesComponent
+   * Constructor de la clase ListLocalitiesComponent.
    * @param localityService
    * Servicio de localidades.
    * @param formBuilder
@@ -139,7 +139,7 @@ export class ListLocalitiesComponent implements OnInit {
    * Método que elimina una localidad del sistema a través de la API.
    * Una vez enviado, también será el encargado de mostrar un mensaje al usuario.
    * @param locality
-   * Localidad que se desea eliminar
+   * Localidad que se desea eliminar.
    */
   removeLocality(locality){
     this.confirmationService.confirm({

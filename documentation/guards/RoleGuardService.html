@@ -118,13 +118,13 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/guards/RoleGuard/role-guard.service.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/guards/RoleGuard/role-guard.service.ts:21</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor de la clase RoleGuardService</p>
+                            <div class="io-description"><p>Constructor de la clase RoleGuardService.</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -150,7 +150,7 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>Servicio que consta de métodos para acceder al objeto LocalStorage del navegador</p>
+                                                                <code><p>Servicio que consta de métodos para acceder al objeto LocalStorage del navegador.</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -166,7 +166,7 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>Servicio que permite la navegación entre vistas</p>
+                                                                <code><p>Servicio que permite la navegación entre vistas.</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -206,8 +206,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">src/app/guards/RoleGuard/role-guard.service.ts:42</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/app/guards/RoleGuard/role-guard.service.ts:45</a></div>
                 </td>
             </tr>
 
@@ -292,23 +292,26 @@ import {LocalStorageService} from &#x27;../../services/local-storage/local-stora
   providedIn: &#x27;root&#x27;
 })
 /**
- * Clase RoleGuardService
+ * Clase RoleGuardService.
  *
  * Clase que permite acceder a las vistas a aquellos usuarios cuyo rol coincida con el esperado.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
  */
 export class RoleGuardService implements CanActivate{
 
   /**
-   * Rol del usuario
+   * Rol del usuario.
    */
   rol: string;
 
   /**
-   * Constructor de la clase RoleGuardService
+   * Constructor de la clase RoleGuardService.
    * @param localStorageService
-   * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador
+   * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador.
    * @param router
-   * Servicio que permite la navegación entre vistas
+   * Servicio que permite la navegación entre vistas.
    */
   constructor(private localStorageService: LocalStorageService, private router: Router) { }
 

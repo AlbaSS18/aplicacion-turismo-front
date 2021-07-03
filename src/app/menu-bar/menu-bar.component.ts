@@ -12,7 +12,7 @@ import {PrimeNGConfig} from 'primeng/api';
   ],
 })
 /**
- * Clase MenuBarComponent
+ * Clase MenuBarComponent.
  *
  * Clase que proporciona enlaces a las diferentes páginas de la aplicación.
  *
@@ -38,10 +38,10 @@ export class MenuBarComponent implements OnInit {
   email;
 
   /**
-   * Constructor de la clase MenuBarComponent
+   * Constructor de la clase MenuBarComponent.
    *
    * @param router
-   * Servicio que permite la navegación entre vistas
+   * Servicio que permite la navegación entre vistas.
    * @param translate
    * Servicio proporcionado por la librería ngx-translate que se utiliza para la internacionalización de la aplicación.
    * @param localStorageService
@@ -59,8 +59,8 @@ export class MenuBarComponent implements OnInit {
   /**
    * Método que permite inicializar los datos del componente.
    * <ul>
-   *      <li>El email del usuario autenticado</li>
-   *      <li>Los roles del usuario autenticado</li>
+   *      <li>El email del usuario autenticado.</li>
+   *      <li>Los roles del usuario autenticado.</li>
    *  </ul>
    */
   ngOnInit(): void {
@@ -92,7 +92,7 @@ export class MenuBarComponent implements OnInit {
    * Método que permite cambiar el idioma a la aplicación.
    *
    * @param lang
-   * El idioma a utilizar
+   * El idioma a utilizar.
    */
   switchLang(lang: string) {
     this.translate.use(lang);

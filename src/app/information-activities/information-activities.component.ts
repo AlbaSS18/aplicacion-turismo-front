@@ -10,7 +10,7 @@ import {DomSanitizer} from '@angular/platform-browser';
   styleUrls: ['./information-activities.component.scss']
 })
 /**
- * Clase InformationActivitiesComponent
+ * Clase InformationActivitiesComponent.
  *
  * Clase que muestra información adicional de una actividad.
  *
@@ -29,7 +29,7 @@ export class InformationActivitiesComponent implements OnInit {
   image;
 
   /**
-   * Constructor de la clase InformationActivitiesComponent
+   * Constructor de la clase InformationActivitiesComponent.
    *
    * @param ref
    * Servicio propocionado por la librería PrimeNG que permite devolver un valor al componente que lo creó.
@@ -38,14 +38,14 @@ export class InformationActivitiesComponent implements OnInit {
    * @param activityService
    * Servicio de actividades.
    * @param sanitizer
-     Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM
+     Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM.
    */
   constructor(private ref: DynamicDialogRef, public config: DynamicDialogConfig, private activityService: ActivityService,  private sanitizer: DomSanitizer) { }
 
   /**
    * Método que permite inicializar los datos del componente.
    * <ul>
-   *      <li>La actividad</li>
+   *      <li>La actividad.</li>
    *      <li>Saneará la URL de la imagen asociada a la actividad.</li>
    * </ul>
    */

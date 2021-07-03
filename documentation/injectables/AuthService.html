@@ -120,13 +120,13 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/services/auth/auth.service.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/services/auth/auth.service.ts:28</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor de la clase AuthService</p>
+                            <div class="io-description"><p>Constructor de la clase AuthService.</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -152,7 +152,7 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>objeto que permite hacer peticiones a la API y obtener resultados de la misma</p>
+                                                                <code><p>objeto que permite hacer peticiones a la API y obtener resultados de la misma.</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -194,8 +194,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/services/auth/auth.service.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/services/auth/auth.service.ts:41</a></div>
                 </td>
             </tr>
 
@@ -229,7 +229,7 @@
 
 
                                     <td>
-                                        <p>objeto usuario que incluye la información del usuario que se intenta autenticar</p>
+                                        <p>objeto usuario que incluye la información del usuario que se intenta autenticar.</p>
 
                                     </td>
                                 </tr>
@@ -243,7 +243,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>el observable con la información enviada por la API</p>
+                        <p>el observable con la información enviada por la API.</p>
 
                     </div>
                 </td>
@@ -274,8 +274,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">src/app/services/auth/auth.service.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/services/auth/auth.service.ts:50</a></div>
                 </td>
             </tr>
 
@@ -309,7 +309,7 @@
 
 
                                     <td>
-                                        <p>objeto usuario que incluye la información del usuario que se registra</p>
+                                        <p>objeto usuario que incluye la información del usuario que se registra.</p>
 
                                     </td>
                                 </tr>
@@ -323,7 +323,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>el observable con la información enviada por la API</p>
+                        <p>el observable con la información enviada por la API.</p>
 
                     </div>
                 </td>
@@ -361,13 +361,13 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/services/auth/auth.service.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/services/auth/auth.service.ts:28</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Almacena la url del endpoint</p>
+                        <div class="io-description"><p>Almacena la url del endpoint.</p>
 </div>
                     </td>
                 </tr>
@@ -387,7 +387,7 @@ import {UserLogin, UserSignUp} from &#x27;../../models/user&#x27;;
 import {JwtModel} from &#x27;../../models/jwt_model&#x27;;
 
 /**
- * Encabezado para las peticiones y respuestas HTTP
+ * Encabezado para las peticiones y respuestas HTTP.
  */
 const cabecera &#x3D; {headers: new HttpHeaders({&#x27;Content-Type&#x27;: &#x27;application/json&#x27;})};
 
@@ -395,27 +395,30 @@ const cabecera &#x3D; {headers: new HttpHeaders({&#x27;Content-Type&#x27;: &#x27
   providedIn: &#x27;root&#x27;
 })
 /**
- * Clase AuthService
- * 
+ * Clase AuthService.
+ *
  * Clase que se encarga de realizar peticiones a la API relacionadas con la autenticación.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
  */
 export class AuthService {
 
   /**
-   * Almacena la url del endpoint
+   * Almacena la url del endpoint.
    */
   authURL &#x3D; &#x27;http://localhost:8090/api/auth&#x27;;
 
   /**
-   * Constructor de la clase AuthService
-   * @param httpClient objeto que permite hacer peticiones a la API y obtener resultados de la misma
+   * Constructor de la clase AuthService.
+   * @param httpClient objeto que permite hacer peticiones a la API y obtener resultados de la misma.
    */
   constructor(private httpClient: HttpClient) { }
 
   /**
    * Método que realiza una petición POST para autenticar al usuario.
-   * @param user objeto usuario que incluye la información del usuario que se intenta autenticar
-   * @returns el observable con la información enviada por la API
+   * @param user objeto usuario que incluye la información del usuario que se intenta autenticar.
+   * @returns el observable con la información enviada por la API.
    */
   public login(user: UserLogin): Observable&lt;JwtModel&gt; {
     return this.httpClient.post&lt;JwtModel&gt;(this.authURL + &#x27;/login&#x27;, user, cabecera);
@@ -423,8 +426,8 @@ export class AuthService {
 
   /**
    * Método que realiza una petición POST para registrar a un usuario.
-   * @param user objeto usuario que incluye la información del usuario que se registra
-   * @returns el observable con la información enviada por la API
+   * @param user objeto usuario que incluye la información del usuario que se registra.
+   * @returns el observable con la información enviada por la API.
    */
   public signUp(user: UserSignUp): Observable&lt;any&gt; {
     return this.httpClient.post&lt;any&gt;(this.authURL + &#x27;/signup&#x27;, user, cabecera);

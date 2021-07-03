@@ -197,7 +197,7 @@
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor de la clase LoginComponent</p>
+                            <div class="io-description"><p>Constructor de la clase LoginComponent.</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -255,7 +255,7 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>Servicio que permite la navegación entre vistas</p>
+                                                                <code><p>Servicio que permite la navegación entre vistas.</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -271,6 +271,8 @@
                                                     </td>
                                                     
                                                         <td>
+                                                                <code><p>Proporciona acceso a la información sobre una ruta asociada a un componente que se carga.</p>
+</code>
                                                         </td>
                                                 </tr>
                                                 <tr>
@@ -469,8 +471,8 @@
                 <td class="col-md-4">
                     <div class="io-description"><p>Método que permite inicializar los datos del componente.</p>
 <ul>
-      <li>Inicializará el formulario</li>
-      <li>Si el usuario fue redirigido al Login desde SignUp, se inicializará el mensaje de éxito</li>
+      <li>Inicializará el formulario.</li>
+      <li>Si el usuario fue redirigido al Login desde SignUp, se inicializará el mensaje de éxito.</li>
   </ul></div>
 
                     <div class="io-description">
@@ -766,7 +768,7 @@ import {LocalStorageService} from &#x27;../services/local-storage/local-storage.
   styleUrls: [&#x27;./login.component.scss&#x27;]
 })
 /**
- * Clase LoginComponent
+ * Clase LoginComponent.
  *
  * Clase que permite iniciar sesión a un usuario.
  *
@@ -793,16 +795,16 @@ export class LoginComponent implements OnInit {
   infoMessage &#x3D; [];
 
   /**
-   * Constructor de la clase LoginComponent
+   * Constructor de la clase LoginComponent.
    *
    * @param authService
    * Servicio de autenticación.
    * @param formBuilder
    * Clase que permite crear objetos de la clase FormGroup y FormControl.
    * @param router
-   * Servicio que permite la navegación entre vistas
+   * Servicio que permite la navegación entre vistas.
    * @param route
-   *
+   * Proporciona acceso a la información sobre una ruta asociada a un componente que se carga.
    * @param messageService
    * Servicio propocionado por la librería PrimeNG que permite almacenar los mensajes que serán mostrados al usuario.
    * @param translateService
@@ -825,8 +827,8 @@ export class LoginComponent implements OnInit {
   /**
    * Método que permite inicializar los datos del componente.
    * &lt;ul&gt;
-   *      &lt;li&gt;Inicializará el formulario&lt;/li&gt;
-   *      &lt;li&gt;Si el usuario fue redirigido al Login desde SignUp, se inicializará el mensaje de éxito&lt;/li&gt;
+   *      &lt;li&gt;Inicializará el formulario.&lt;/li&gt;
+   *      &lt;li&gt;Si el usuario fue redirigido al Login desde SignUp, se inicializará el mensaje de éxito.&lt;/li&gt;
    *  &lt;/ul&gt;
     */
   ngOnInit(): void {
@@ -944,7 +946,7 @@ export class LoginComponent implements OnInit {
           &lt;button id&#x3D;&quot;login_btn&quot; pButton type&#x3D;&quot;submit&quot; icon&#x3D;&quot;fas fa-sign-in-alt&quot; label&#x3D;&quot; {{ &#x27;log_in&#x27; | translate }}&quot; [disabled]&#x3D;&quot;loginForm.invalid&quot;&gt;&lt;/button&gt;
         &lt;/div&gt;
       &lt;/form&gt;
-      &lt;a routerLink&#x3D;&quot;/signup&quot;&gt;{{ &#x27;sign_up&#x27; | translate }}&lt;/a&gt;
+      &lt;a class&#x3D;&quot;linkSingUp&quot; routerLink&#x3D;&quot;/signup&quot;&gt;{{ &#x27;sign_up&#x27; | translate }}&lt;/a&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -997,6 +999,10 @@ form {
   }
 }
 
+.linkSingUp{
+  font-size: 18px;
+}
+
 
 
 </code></pre>
@@ -1027,7 +1033,7 @@ form {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-menu-bar></app-menu-bar><div class="login-component">  <div>    <p-messages class="message_register_success" [(value)]="infoMessage">    </p-messages>  </div>  <div class="p-grid">    <div class="p-col-12 p-md-12 p-lg-6 left-container">      <img src="../../assets/images/diseno-logotipo-playa-vector-plantilla_56473-139.jpg" alt="Logo de la aplicación" id="img_logo"/>      <h1>{{ \'welcome\' | translate }}</h1>      <p id="paragraph-login">Aplicación de turismo basada en las preferencias del usuario</p>    </div>    <div class="p-col-12 p-md-12 p-lg-6 right-container">      <img id="img-icon-user" src="../../assets/images/user.png" alt="User icon"/>      <form [formGroup]="loginForm" #myForm="ngForm" (ngSubmit)="onSubmit()" class="p-fluid">        <div class="p-field">          <span class="p-float-label">            <input id="float-input-email" type="text" size="30" pInputText formControlName="email">            <label for="float-input-email">Email</label>          </span>        </div>        <div class="p-field">          <p-message severity="error" text="{{ \'email_required\' | translate }}"                     *ngIf="!loginForm.controls[\'email\'].valid && loginForm.controls[\'email\'].dirty"></p-message>        </div>        <div class="p-field">          <span class="p-float-label">            <input id="float-input-password" type="password" size="30" pPassword formControlName="password" promptLabel="{{ \'prompt_label\' | translate }}"                   weakLabel="{{ \'weak_label\' | translate }}" mediumLabel="{{ \'medium_label\' | translate }}" strongLabel="{{ \'strong_label\' | translate }}">            <label for="float-input-password">{{ \'password\' | translate }}</label>          </span>        </div>        <div class="p-field">          <p-message severity="error" text="{{ \'password_required\' | translate }}"                     *ngIf="!loginForm.controls[\'password\'].valid && loginForm.controls[\'password\'].dirty"></p-message>        </div>        <div class="p-field">          <p-message id="message_error_login" severity="error" text="{{ \'data_incorrect\' | translate }}"                     *ngIf="myForm.submitted && isLoginFail"></p-message>        </div>        <div class="p-field">          <button id="login_btn" pButton type="submit" icon="fas fa-sign-in-alt" label=" {{ \'log_in\' | translate }}" [disabled]="loginForm.invalid"></button>        </div>      </form>      <a routerLink="/signup">{{ \'sign_up\' | translate }}</a>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><app-menu-bar></app-menu-bar><div class="login-component">  <div>    <p-messages class="message_register_success" [(value)]="infoMessage">    </p-messages>  </div>  <div class="p-grid">    <div class="p-col-12 p-md-12 p-lg-6 left-container">      <img src="../../assets/images/diseno-logotipo-playa-vector-plantilla_56473-139.jpg" alt="Logo de la aplicación" id="img_logo"/>      <h1>{{ \'welcome\' | translate }}</h1>      <p id="paragraph-login">Aplicación de turismo basada en las preferencias del usuario</p>    </div>    <div class="p-col-12 p-md-12 p-lg-6 right-container">      <img id="img-icon-user" src="../../assets/images/user.png" alt="User icon"/>      <form [formGroup]="loginForm" #myForm="ngForm" (ngSubmit)="onSubmit()" class="p-fluid">        <div class="p-field">          <span class="p-float-label">            <input id="float-input-email" type="text" size="30" pInputText formControlName="email">            <label for="float-input-email">Email</label>          </span>        </div>        <div class="p-field">          <p-message severity="error" text="{{ \'email_required\' | translate }}"                     *ngIf="!loginForm.controls[\'email\'].valid && loginForm.controls[\'email\'].dirty"></p-message>        </div>        <div class="p-field">          <span class="p-float-label">            <input id="float-input-password" type="password" size="30" pPassword formControlName="password" promptLabel="{{ \'prompt_label\' | translate }}"                   weakLabel="{{ \'weak_label\' | translate }}" mediumLabel="{{ \'medium_label\' | translate }}" strongLabel="{{ \'strong_label\' | translate }}">            <label for="float-input-password">{{ \'password\' | translate }}</label>          </span>        </div>        <div class="p-field">          <p-message severity="error" text="{{ \'password_required\' | translate }}"                     *ngIf="!loginForm.controls[\'password\'].valid && loginForm.controls[\'password\'].dirty"></p-message>        </div>        <div class="p-field">          <p-message id="message_error_login" severity="error" text="{{ \'data_incorrect\' | translate }}"                     *ngIf="myForm.submitted && isLoginFail"></p-message>        </div>        <div class="p-field">          <button id="login_btn" pButton type="submit" icon="fas fa-sign-in-alt" label=" {{ \'log_in\' | translate }}" [disabled]="loginForm.invalid"></button>        </div>      </form>      <a class="linkSingUp" routerLink="/signup">{{ \'sign_up\' | translate }}</a>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AddActivityComponent', 'selector': 'app-add-activity'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EditActivitiesComponent', 'selector': 'app-edit-activities'},{'name': 'EditUserAdminComponent', 'selector': 'app-edit-user-admin'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'InformationActivitiesComponent', 'selector': 'app-information-activities'},{'name': 'ListActivitiesEvaluateComponent', 'selector': 'app-list-activities-evaluate'},{'name': 'ListInterestComponent', 'selector': 'app-list-interest'},{'name': 'ListLocalitiesComponent', 'selector': 'app-list-locaties'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuBarComponent', 'selector': 'app-menu-bar'},{'name': 'RecommendationMapComponent', 'selector': 'app-recommendation-map'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'TableActivitiesComponent', 'selector': 'app-table-activities'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};

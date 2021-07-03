@@ -14,7 +14,7 @@ import {DomSanitizer} from '@angular/platform-browser';
   styleUrls: ['./list-activities-evaluate.component.scss']
 })
 /**
- * Clase ListActivitiesEvaluateComponent
+ * Clase ListActivitiesEvaluateComponent.
  *
  * Clase que permite visualizar la lista de actividades valoradas por el usuario autenticado.
  *
@@ -41,7 +41,7 @@ export class ListActivitiesEvaluateComponent implements OnInit {
   sortField: string;
 
   /**
-   * Constructor de la clase ListActivitiesEvaluateComponent
+   * Constructor de la clase ListActivitiesEvaluateComponent.
    *
    * @param userService
    * Servicio de usuarios.
@@ -50,7 +50,7 @@ export class ListActivitiesEvaluateComponent implements OnInit {
    * @param localStorageService
    * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador.
    * @param sanitizer
-   * Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM
+   * Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM.
    */
   constructor(
     private userService: UserService,

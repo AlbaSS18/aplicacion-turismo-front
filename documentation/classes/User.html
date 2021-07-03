@@ -67,13 +67,18 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Clase User</p>
+                <p>Clase User.</p>
 <p>Clase que define el tipo de entidad Usuario.</p>
 
             </p>
 
 
 
+            <p class="comment">
+                <h3>Example</h3>
+            </p>
+            <div class="io-description">
+            </div>
 
             <section>
     <h3 id="index">Index</h3>
@@ -141,13 +146,13 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/models/user.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/models/user.ts:25</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Fecha de nacimiento del usuario</p>
+                        <div class="io-description"><p>Fecha de nacimiento del usuario.</p>
 </div>
                     </td>
                 </tr>
@@ -174,13 +179,13 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/models/user.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/models/user.ts:21</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Correo electrónico del usuario</p>
+                        <div class="io-description"><p>Correo electrónico del usuario.</p>
 </div>
                     </td>
                 </tr>
@@ -207,13 +212,13 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/models/user.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/models/user.ts:13</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Identificador del usuario</p>
+                        <div class="io-description"><p>Identificador del usuario.</p>
 </div>
                     </td>
                 </tr>
@@ -240,13 +245,13 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/models/user.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/models/user.ts:29</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Roles del usuario</p>
+                        <div class="io-description"><p>Roles del usuario.</p>
 </div>
                     </td>
                 </tr>
@@ -273,13 +278,13 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/models/user.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/models/user.ts:17</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Nombre de usuario</p>
+                        <div class="io-description"><p>Nombre de usuario.</p>
 </div>
                     </td>
                 </tr>
@@ -300,91 +305,100 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export class User {
   /**
-   * Identificador del usuario
+   * Identificador del usuario.
    */
   id: number;
   /**
-   * Nombre de usuario
+   * Nombre de usuario.
    */
   userName: string;
   /**
-   * Correo electrónico del usuario
+   * Correo electrónico del usuario.
    */
   email: string;
   /**
-   * Fecha de nacimiento del usuario
+   * Fecha de nacimiento del usuario.
    */
   dateBirthday: Date;
   /**
-   * Roles del usuario
+   * Roles del usuario.
    */
   roles: string[];
 }
 
 /**
- * Clase UserLogin
- * 
+ * Clase UserLogin.
+ *
  * Clase que define el tipo de entidad Usuario que intenta autenticarse en el sistema.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
  */
 export class UserLogin {
   /**
-   * Correo electrónico del usuario
+   * Correo electrónico del usuario.
    */
   email: string;
   /**
-   * Contraseña
+   * Contraseña.
    */
   password: string;
 }
 
 /**
- * Clase UserSignUp
- * 
+ * Clase UserSignUp.
+ *
  * Clase que define el tipo de entidad Usuario que intenta registrarse en el sistema.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
  */
 export class UserSignUp {
   /**
-   *  Nombre de usuario
+   *  Nombre de usuario.
    */
   userName: string;
   /**
-   * Correo electrónico del usuario
+   * Correo electrónico del usuario.
    */
   email: string;
   /**
-   * Fecha de nacimiento del usuario
+   * Fecha de nacimiento del usuario.
    */
   dateBirthday: string;
   /**
-   * Contraseña
+   * Contraseña.
    */
   password: string;
   /**
-   * Contraseña repetida
+   * Contraseña repetida.
    */
   passwordConfirm: string;
   /**
-   * Roles del usuario
+   * Roles del usuario.
    */
   roles: string[];
   /**
-   * Lista de puntuaciones dadas por el usuario a los tipos de intereses
+   * Lista de puntuaciones dadas por el usuario a los tipos de intereses.
    */
   interest: Interest[];
 }
 
 /**
- * Clase Interest
+ * Clase Interest.
  * 
  * Clase que define el tipo de entidad Interés que puntúa el usuario.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
  */
 export class Interest {
   /**
-   * Nombre del tipo de interés
+   * Nombre del tipo de interés.
    */
   nameInterest: string;
   /**
-   * Puntuación dada por el usuario al tipo de interés
+   * Puntuación dada por el usuario al tipo de interés.
    */
   priority: number;
 }

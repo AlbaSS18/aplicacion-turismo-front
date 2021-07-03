@@ -104,13 +104,13 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/guards/auth-guard/auth-guard.service.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/guards/auth-guard/auth-guard.service.ts:16</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor de la clase AuthGuardService</p>
+                            <div class="io-description"><p>Constructor de la clase AuthGuardService.</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -136,7 +136,7 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>Servicio que permite la navegación entre vistas</p>
+                                                                <code><p>Servicio que permite la navegación entre vistas.</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -152,7 +152,7 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>Servicio que consta de métodos para acceder al objeto LocalStorage del navegador</p>
+                                                                <code><p>Servicio que consta de métodos para acceder al objeto LocalStorage del navegador.</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -192,8 +192,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/guards/auth-guard/auth-guard.service.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/guards/auth-guard/auth-guard.service.ts:40</a></div>
                 </td>
             </tr>
 
@@ -258,7 +258,7 @@ Si el usuario está autenticado, entonces puede acceder a la vista. En caso cont
 
                     </div>
                     <div class="io-description">
-                        <p>true si el usuario puede acceder a la vista, false en caso contrario</p>
+                        <p>true si el usuario puede acceder a la vista, false en caso contrario.</p>
 
                     </div>
                 </td>
@@ -278,18 +278,21 @@ import {LocalStorageService} from &#x27;../../services/local-storage/local-stora
   providedIn: &#x27;root&#x27;
 })
 /**
- * Clase AuthGuardService
+ * Clase AuthGuardService.
  *
- * Clase que permite acceder a las vistas a aquellos usuarios logueados
+ * Clase que permite acceder a las vistas a aquellos usuarios logueados.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
  */
 export class AuthGuardService implements CanActivate{
 
   /**
-   * Constructor de la clase AuthGuardService
+   * Constructor de la clase AuthGuardService.
    * @param router
-   * Servicio que permite la navegación entre vistas
+   * Servicio que permite la navegación entre vistas.
    * @param localStorageService
-   * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador
+   * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador.
    */
   constructor(private router: Router, private localStorageService: LocalStorageService) { }
 
@@ -302,7 +305,7 @@ export class AuthGuardService implements CanActivate{
    * Estructura de datos inmutable que representa el estado del enrutador en un momento determinado.
    *
    * @return
-   * true si el usuario puede acceder a la vista, false en caso contrario
+   * true si el usuario puede acceder a la vista, false en caso contrario.
    *
    * @see https://vsavkin.com/angular-router-understanding-router-state-7b5b95a12eab
    */

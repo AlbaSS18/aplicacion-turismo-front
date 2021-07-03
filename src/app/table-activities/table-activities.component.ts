@@ -14,7 +14,7 @@ import {DomSanitizer} from '@angular/platform-browser';
   styleUrls: ['./table-activities.component.scss']
 })
 /**
- * Clase TableActivitiesComponent
+ * Clase TableActivitiesComponent.
  *
  * Clase que muestra la lista de actividades del sistema.
  *
@@ -37,7 +37,7 @@ export class TableActivitiesComponent implements OnInit {
   ref: DynamicDialogRef;
 
   /**
-   * Constructor de la clase EditActivitiesComponent
+   * Constructor de la clase EditActivitiesComponent.
    *
    * @param activityService
    * Servicio de actividades.
@@ -50,9 +50,9 @@ export class TableActivitiesComponent implements OnInit {
    * @param messageService
    * Servicio propocionado por la librería PrimeNG que permite almacenar los mensajes que serán mostrados al usuario.
    * @param router
-   * Servicio que permite la navegación entre vistas
+   * Servicio que permite la navegación entre vistas.
    * @param sanitizer
-   * Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM
+   * Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM.
    */
   constructor(
     private activityService: ActivityService,

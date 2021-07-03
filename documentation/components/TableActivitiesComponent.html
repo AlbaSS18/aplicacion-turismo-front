@@ -203,7 +203,7 @@
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor de la clase EditActivitiesComponent</p>
+                            <div class="io-description"><p>Constructor de la clase EditActivitiesComponent.</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -309,7 +309,7 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>Servicio que permite la navegación entre vistas</p>
+                                                                <code><p>Servicio que permite la navegación entre vistas.</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -325,7 +325,7 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM</p>
+                                                                <code><p>Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM.</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -924,7 +924,7 @@ import {DomSanitizer} from &#x27;@angular/platform-browser&#x27;;
   styleUrls: [&#x27;./table-activities.component.scss&#x27;]
 })
 /**
- * Clase TableActivitiesComponent
+ * Clase TableActivitiesComponent.
  *
  * Clase que muestra la lista de actividades del sistema.
  *
@@ -947,7 +947,7 @@ export class TableActivitiesComponent implements OnInit {
   ref: DynamicDialogRef;
 
   /**
-   * Constructor de la clase EditActivitiesComponent
+   * Constructor de la clase EditActivitiesComponent.
    *
    * @param activityService
    * Servicio de actividades.
@@ -960,9 +960,9 @@ export class TableActivitiesComponent implements OnInit {
    * @param messageService
    * Servicio propocionado por la librería PrimeNG que permite almacenar los mensajes que serán mostrados al usuario.
    * @param router
-   * Servicio que permite la navegación entre vistas
+   * Servicio que permite la navegación entre vistas.
    * @param sanitizer
-   * Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM
+   * Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM.
    */
   constructor(
     private activityService: ActivityService,
@@ -1139,9 +1139,9 @@ export class TableActivitiesComponent implements OnInit {
           &lt;td class&#x3D;&quot;td-text-wrap&quot;&gt;{{activity.locality}}&lt;/td&gt;
           &lt;td class&#x3D;&quot;td-text-wrap&quot;&gt;{{activity.interest}}&lt;/td&gt;
           &lt;td&gt;
-            &lt;button pButton pRipple type&#x3D;&quot;button&quot; icon&#x3D;&quot;fas fa-info&quot; class&#x3D;&quot;p-button-rounded p-button-text&quot; (click)&#x3D;&quot;seeMoreInfo(activity)&quot;&gt;&lt;/button&gt;
-            &lt;button pButton pRipple type&#x3D;&quot;button&quot; icon&#x3D;&quot;fas fa-pen&quot; class&#x3D;&quot;p-button-rounded p-button-text&quot; (click)&#x3D;&quot;editActivity(activity)&quot;&gt;&lt;/button&gt;
-            &lt;button pButton pRipple type&#x3D;&quot;button&quot; icon&#x3D;&quot;fas fa-trash-alt&quot; class&#x3D;&quot;p-button-rounded p-button-text&quot; (click)&#x3D;&quot;confirm(activity)&quot;&gt;&lt;/button&gt;
+            &lt;button pButton pRipple type&#x3D;&quot;button&quot; icon&#x3D;&quot;fas fa-info&quot; class&#x3D;&quot;p-button-rounded p-button-text&quot; title&#x3D;&quot;{{ &#x27;additional_information&#x27; | translate }}&quot; (click)&#x3D;&quot;seeMoreInfo(activity)&quot;&gt;&lt;/button&gt;
+            &lt;button pButton pRipple type&#x3D;&quot;button&quot; icon&#x3D;&quot;fas fa-pen&quot; class&#x3D;&quot;p-button-rounded p-button-text&quot; title&#x3D;&quot;{{ &#x27;edit_title_activity&#x27; | translate }}&quot; (click)&#x3D;&quot;editActivity(activity)&quot;&gt;&lt;/button&gt;
+            &lt;button pButton pRipple type&#x3D;&quot;button&quot; icon&#x3D;&quot;fas fa-trash-alt&quot; class&#x3D;&quot;p-button-rounded p-button-text&quot; title&#x3D;&quot;{{ &#x27;delete_activity&#x27; | translate }}&quot;  (click)&#x3D;&quot;confirm(activity)&quot;&gt;&lt;/button&gt;
           &lt;/td&gt;
         &lt;/tr&gt;
       &lt;/ng-template&gt;
@@ -1224,7 +1224,7 @@ export class TableActivitiesComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-menu-bar></app-menu-bar><p-toast  key="activity"></p-toast><div class="imgview-panel">  <div class="card p-d-flex p-flex-column">    <p-toolbar class="toolbar-activities">      <div class="p-toolbar-group-left"></div>      <div class="p-toolbar-group-right">        <button pButton pRipple label=" {{ \'add_activity\' | translate }}" icon="pi pi-plus" class="p-button-raised p-button-rounded" (click)="openNew()"></button>      </div>    </p-toolbar>    <p-table #tableActivities [value]="activities" class="table-activities" [scrollable]="true" scrollHeight="350px" sortField="name"             [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]"             currentPageReportTemplate="{{ \'current_page\' | translate:{\'first\': \'{first}\', \'last\': \'{last}\', \'totalRecords\': \'{totalRecords}\' } }}"             [globalFilterFields]="[\'name\',\'locality\',\'interest\']">      <ng-template pTemplate="caption">        <div class="p-d-flex p-ai-center p-jc-between">          <h2 class="p-m-0">{{ \'list_activities\' | translate }}</h2>          <span class="p-input-icon-left">                    <i class="pi pi-search"></i>                    <input id="input_search_activities_table" pInputText type="text" (input)="tableActivities.filterGlobal($event.target.value, \'contains\')" placeholder="{{ \'search\' | translate }}" />          </span>        </div>      </ng-template>      <ng-template pTemplate="header">        <tr>          <th>            {{ \'image\' | translate }}          </th>          <th *ngFor="let col of cols" [pSortableColumn]="col.field">            {{ col.header | translate }}            <p-sortIcon [field]="col.field"></p-sortIcon>          </th>          <th>          </th>        </tr>      </ng-template>      <ng-template pTemplate="body" let-activity>        <tr>          <td><img id="image-activity-table" [src]=\'photoURL(activity)\' /></td>          <td class="td-text-wrap">{{activity.name}}</td>          <td class="p-text-nowrap p-text-truncate">{{activity.description}}</td>          <td class="td-text-wrap">{{activity.locality}}</td>          <td class="td-text-wrap">{{activity.interest}}</td>          <td>            <button pButton pRipple type="button" icon="fas fa-info" class="p-button-rounded p-button-text" (click)="seeMoreInfo(activity)"></button>            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editActivity(activity)"></button>            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="confirm(activity)"></button>          </td>        </tr>      </ng-template>      <ng-template pTemplate="emptymessage">        {{ \'message-no-activities-match\' | translate }}      </ng-template>    </p-table>  </div>  <p-confirmDialog header="{{ \'delete_activity\' | translate }}" icon="pi pi-info-circle" acceptLabel="{{ \'delete\' | translate }}" rejectLabel="{{ \'cancel\' | translate }}"></p-confirmDialog></div></div>'
+        var COMPONENT_TEMPLATE = '<div><app-menu-bar></app-menu-bar><p-toast  key="activity"></p-toast><div class="imgview-panel">  <div class="card p-d-flex p-flex-column">    <p-toolbar class="toolbar-activities">      <div class="p-toolbar-group-left"></div>      <div class="p-toolbar-group-right">        <button pButton pRipple label=" {{ \'add_activity\' | translate }}" icon="pi pi-plus" class="p-button-raised p-button-rounded" (click)="openNew()"></button>      </div>    </p-toolbar>    <p-table #tableActivities [value]="activities" class="table-activities" [scrollable]="true" scrollHeight="350px" sortField="name"             [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]"             currentPageReportTemplate="{{ \'current_page\' | translate:{\'first\': \'{first}\', \'last\': \'{last}\', \'totalRecords\': \'{totalRecords}\' } }}"             [globalFilterFields]="[\'name\',\'locality\',\'interest\']">      <ng-template pTemplate="caption">        <div class="p-d-flex p-ai-center p-jc-between">          <h2 class="p-m-0">{{ \'list_activities\' | translate }}</h2>          <span class="p-input-icon-left">                    <i class="pi pi-search"></i>                    <input id="input_search_activities_table" pInputText type="text" (input)="tableActivities.filterGlobal($event.target.value, \'contains\')" placeholder="{{ \'search\' | translate }}" />          </span>        </div>      </ng-template>      <ng-template pTemplate="header">        <tr>          <th>            {{ \'image\' | translate }}          </th>          <th *ngFor="let col of cols" [pSortableColumn]="col.field">            {{ col.header | translate }}            <p-sortIcon [field]="col.field"></p-sortIcon>          </th>          <th>          </th>        </tr>      </ng-template>      <ng-template pTemplate="body" let-activity>        <tr>          <td><img id="image-activity-table" [src]=\'photoURL(activity)\' /></td>          <td class="td-text-wrap">{{activity.name}}</td>          <td class="p-text-nowrap p-text-truncate">{{activity.description}}</td>          <td class="td-text-wrap">{{activity.locality}}</td>          <td class="td-text-wrap">{{activity.interest}}</td>          <td>            <button pButton pRipple type="button" icon="fas fa-info" class="p-button-rounded p-button-text" title="{{ \'additional_information\' | translate }}" (click)="seeMoreInfo(activity)"></button>            <button pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" title="{{ \'edit_title_activity\' | translate }}" (click)="editActivity(activity)"></button>            <button pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" title="{{ \'delete_activity\' | translate }}"  (click)="confirm(activity)"></button>          </td>        </tr>      </ng-template>      <ng-template pTemplate="emptymessage">        {{ \'message-no-activities-match\' | translate }}      </ng-template>    </p-table>  </div>  <p-confirmDialog header="{{ \'delete_activity\' | translate }}" icon="pi pi-info-circle" acceptLabel="{{ \'delete\' | translate }}" rejectLabel="{{ \'cancel\' | translate }}"></p-confirmDialog></div></div>'
     var COMPONENTS = [{'name': 'AddActivityComponent', 'selector': 'app-add-activity'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EditActivitiesComponent', 'selector': 'app-edit-activities'},{'name': 'EditUserAdminComponent', 'selector': 'app-edit-user-admin'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'InformationActivitiesComponent', 'selector': 'app-information-activities'},{'name': 'ListActivitiesEvaluateComponent', 'selector': 'app-list-activities-evaluate'},{'name': 'ListInterestComponent', 'selector': 'app-list-interest'},{'name': 'ListLocalitiesComponent', 'selector': 'app-list-locaties'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuBarComponent', 'selector': 'app-menu-bar'},{'name': 'RecommendationMapComponent', 'selector': 'app-recommendation-map'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'TableActivitiesComponent', 'selector': 'app-table-activities'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TableActivitiesComponent'};

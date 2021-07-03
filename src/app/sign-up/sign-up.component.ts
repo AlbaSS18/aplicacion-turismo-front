@@ -15,7 +15,7 @@ import {validadorPriorityNumberOfInterest} from '../validators/validatorPriority
   styleUrls: ['./sign-up.component.scss'],
 })
 /**
- * Clase SignUpComponent
+ * Clase SignUpComponent.
  *
  * Clase que permite el registro de un usuario.
  *
@@ -49,7 +49,7 @@ export class SignUpComponent implements OnInit {
   message;
 
   /**
-   * Constructor de la clase EditActivitiesComponent
+   * Constructor de la clase EditActivitiesComponent.
    *
    * @param formBuilder
    * Clase que permite crear objetos de la clase FormGroup y FormControl.
@@ -58,7 +58,7 @@ export class SignUpComponent implements OnInit {
    * @param authService
    * Servicio de autenticación.
    * @param router
-   * Servicio que permite la navegación entre vistas
+   * Servicio que permite la navegación entre vistas.
    * @param notificationService
    * Servicio que permite almacenar notificaciones.
    */
@@ -74,7 +74,7 @@ export class SignUpComponent implements OnInit {
   /**
    * Método que permite inicializar los datos del componente.
    * <ul>
-   *      <li>Inicializará el formulario</li>
+   *      <li>Inicializará el formulario.</li>
    *      <li>Cargará los dintintos intereses.</li>
    *  </ul>
    */

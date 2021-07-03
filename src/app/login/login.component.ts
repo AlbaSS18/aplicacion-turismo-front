@@ -14,7 +14,7 @@ import {LocalStorageService} from '../services/local-storage/local-storage.servi
   styleUrls: ['./login.component.scss']
 })
 /**
- * Clase LoginComponent
+ * Clase LoginComponent.
  *
  * Clase que permite iniciar sesión a un usuario.
  *
@@ -41,16 +41,16 @@ export class LoginComponent implements OnInit {
   infoMessage = [];
 
   /**
-   * Constructor de la clase LoginComponent
+   * Constructor de la clase LoginComponent.
    *
    * @param authService
    * Servicio de autenticación.
    * @param formBuilder
    * Clase que permite crear objetos de la clase FormGroup y FormControl.
    * @param router
-   * Servicio que permite la navegación entre vistas
+   * Servicio que permite la navegación entre vistas.
    * @param route
-   *
+   * Proporciona acceso a la información sobre una ruta asociada a un componente que se carga.
    * @param messageService
    * Servicio propocionado por la librería PrimeNG que permite almacenar los mensajes que serán mostrados al usuario.
    * @param translateService
@@ -73,8 +73,8 @@ export class LoginComponent implements OnInit {
   /**
    * Método que permite inicializar los datos del componente.
    * <ul>
-   *      <li>Inicializará el formulario</li>
-   *      <li>Si el usuario fue redirigido al Login desde SignUp, se inicializará el mensaje de éxito</li>
+   *      <li>Inicializará el formulario.</li>
+   *      <li>Si el usuario fue redirigido al Login desde SignUp, se inicializará el mensaje de éxito.</li>
    *  </ul>
     */
   ngOnInit(): void {

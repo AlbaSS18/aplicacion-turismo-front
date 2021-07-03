@@ -12,14 +12,14 @@ import {validadorNonwhiteSpace} from '../validators/validatorNonWhiteSpace.direc
   styleUrls: ['./list-interest.component.scss']
 })
 /**
- * Clase ListInterestComponent
+ * Clase ListInterestComponent.
  * 
  * Clase que muestra la lista de intereses.
  */
 export class ListInterestComponent implements OnInit {
 
   /**
-   * Almacena los intereses
+   * Almacena los intereses.
    */
   interest;
   /**
@@ -48,7 +48,7 @@ export class ListInterestComponent implements OnInit {
   errorEditInterest: boolean = false;
 
   /**
-   * Constructor de la clase ListInterestComponent
+   * Constructor de la clase ListInterestComponent.
    *
    * @param interestService
    * Servicio de intereses.

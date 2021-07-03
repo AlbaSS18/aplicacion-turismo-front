@@ -185,7 +185,7 @@
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor de la clase ListUserComponent</p>
+                            <div class="io-description"><p>Constructor de la clase ListUserComponent.</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -591,7 +591,7 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Almacena los usuarios</p>
+                        <div class="io-description"><p>Almacena los usuarios.</p>
 </div>
                     </td>
                 </tr>
@@ -620,7 +620,7 @@ import {User} from &#x27;../models/user&#x27;;
   styleUrls: [&#x27;./list-user.component.scss&#x27;]
 })
 /**
- * Clase ListUserComponent
+ * Clase ListUserComponent.
  *
  * Clase que muestra la lista de usuarios registrados en el sistema.
  *
@@ -630,7 +630,7 @@ import {User} from &#x27;../models/user&#x27;;
 export class ListUserComponent implements OnInit {
 
   /**
-   * Almacena los usuarios
+   * Almacena los usuarios.
    */
   users: User[] &#x3D; [];
   /**
@@ -639,7 +639,7 @@ export class ListUserComponent implements OnInit {
   cols: any[];
 
   /**
-   * Constructor de la clase ListUserComponent
+   * Constructor de la clase ListUserComponent.
    *
    * @param userService
    * Servicio de usuarios.
@@ -768,8 +768,8 @@ export class ListUserComponent implements OnInit {
                   &lt;/span&gt;
           &lt;/td&gt;
           &lt;td&gt;
-            &lt;button id&#x3D;&quot;edit_user_btn&quot; pButton pRipple type&#x3D;&quot;button&quot; icon&#x3D;&quot;fas fa-pen&quot; class&#x3D;&quot;p-button-rounded p-button-text&quot; (click)&#x3D;&quot;editUser(user)&quot;&gt;&lt;/button&gt;
-            &lt;button id&#x3D;&quot;delete_user_btn&quot; pButton pRipple type&#x3D;&quot;button&quot; icon&#x3D;&quot;fas fa-trash-alt&quot; class&#x3D;&quot;p-button-rounded p-button-text&quot; (click)&#x3D;&quot;confirmDelete(user)&quot;&gt;&lt;/button&gt;
+            &lt;button id&#x3D;&quot;edit_user_btn&quot; pButton pRipple type&#x3D;&quot;button&quot; icon&#x3D;&quot;fas fa-pen&quot; class&#x3D;&quot;p-button-rounded p-button-text&quot; title&#x3D;&quot;{{ &#x27;edit-user&#x27; | translate }}&quot; (click)&#x3D;&quot;editUser(user)&quot;&gt;&lt;/button&gt;
+            &lt;button id&#x3D;&quot;delete_user_btn&quot; pButton pRipple type&#x3D;&quot;button&quot; icon&#x3D;&quot;fas fa-trash-alt&quot; class&#x3D;&quot;p-button-rounded p-button-text&quot; title&#x3D;&quot;{{ &#x27;delete_user&#x27; | translate }}&quot; (click)&#x3D;&quot;confirmDelete(user)&quot;&gt;&lt;/button&gt;
           &lt;/td&gt;
         &lt;/tr&gt;
       &lt;/ng-template&gt;
@@ -843,7 +843,7 @@ export class ListUserComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-menu-bar></app-menu-bar><p-toast  key="user"></p-toast><div class="user-panel">  <div class="user-container">    <p-table #dt [value]="users" class="table-user" [scrollable]="true" scrollHeight="250px" sortField="userName"             [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]" [globalFilterFields]="[\'userName\',\'email\',\'roles\']" >      <ng-template pTemplate="caption">        <div class="p-d-flex p-ai-center p-jc-between">          <h2 class="p-m-0">{{ \'list_user\' | translate }}</h2>          <span class="p-input-icon-left">                    <i class="pi pi-search"></i>                    <input id="input_search_user_table" pInputText type="text" (input)="dt.filterGlobal($event.target.value, \'contains\')" placeholder="{{ \'search\' | translate }}" />                </span>        </div>      </ng-template>      <ng-template pTemplate="header">        <tr>          <th *ngFor="let col of cols" [pSortableColumn]="col.field">            {{ col.header | translate }}            <p-sortIcon [field]="col.field"></p-sortIcon>          </th>          <th>          </th>        </tr>      </ng-template>      <ng-template pTemplate="body" let-user>        <tr>          <td>{{user.userName}}</td>          <td>{{user.email}}</td>          <td>{{user.dateBirthday| date: \'dd/MM/yyyy\'}}</td>          <td>                  <span *ngFor="let rol of user.roles">                      {{rol}}                  </span>          </td>          <td>            <button id="edit_user_btn" pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" (click)="editUser(user)"></button>            <button id="delete_user_btn" pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" (click)="confirmDelete(user)"></button>          </td>        </tr>      </ng-template>      <ng-template pTemplate="emptymessage">        {{ \'message-no-user-match\' | translate }}      </ng-template>    </p-table>  </div><p-confirmDialog header="{{ \'delete_user\' | translate }}" icon="pi pi-info-circle" acceptLabel="{{ \'delete\' | translate }}" rejectLabel="{{ \'cancel\' | translate }}"></p-confirmDialog></div></div>'
+        var COMPONENT_TEMPLATE = '<div><app-menu-bar></app-menu-bar><p-toast  key="user"></p-toast><div class="user-panel">  <div class="user-container">    <p-table #dt [value]="users" class="table-user" [scrollable]="true" scrollHeight="250px" sortField="userName"             [paginator]="true" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,20]" [globalFilterFields]="[\'userName\',\'email\',\'roles\']" >      <ng-template pTemplate="caption">        <div class="p-d-flex p-ai-center p-jc-between">          <h2 class="p-m-0">{{ \'list_user\' | translate }}</h2>          <span class="p-input-icon-left">                    <i class="pi pi-search"></i>                    <input id="input_search_user_table" pInputText type="text" (input)="dt.filterGlobal($event.target.value, \'contains\')" placeholder="{{ \'search\' | translate }}" />                </span>        </div>      </ng-template>      <ng-template pTemplate="header">        <tr>          <th *ngFor="let col of cols" [pSortableColumn]="col.field">            {{ col.header | translate }}            <p-sortIcon [field]="col.field"></p-sortIcon>          </th>          <th>          </th>        </tr>      </ng-template>      <ng-template pTemplate="body" let-user>        <tr>          <td>{{user.userName}}</td>          <td>{{user.email}}</td>          <td>{{user.dateBirthday| date: \'dd/MM/yyyy\'}}</td>          <td>                  <span *ngFor="let rol of user.roles">                      {{rol}}                  </span>          </td>          <td>            <button id="edit_user_btn" pButton pRipple type="button" icon="fas fa-pen" class="p-button-rounded p-button-text" title="{{ \'edit-user\' | translate }}" (click)="editUser(user)"></button>            <button id="delete_user_btn" pButton pRipple type="button" icon="fas fa-trash-alt" class="p-button-rounded p-button-text" title="{{ \'delete_user\' | translate }}" (click)="confirmDelete(user)"></button>          </td>        </tr>      </ng-template>      <ng-template pTemplate="emptymessage">        {{ \'message-no-user-match\' | translate }}      </ng-template>    </p-table>  </div><p-confirmDialog header="{{ \'delete_user\' | translate }}" icon="pi pi-info-circle" acceptLabel="{{ \'delete\' | translate }}" rejectLabel="{{ \'cancel\' | translate }}"></p-confirmDialog></div></div>'
     var COMPONENTS = [{'name': 'AddActivityComponent', 'selector': 'app-add-activity'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EditActivitiesComponent', 'selector': 'app-edit-activities'},{'name': 'EditUserAdminComponent', 'selector': 'app-edit-user-admin'},{'name': 'EditUserComponent', 'selector': 'app-edit-user'},{'name': 'InformationActivitiesComponent', 'selector': 'app-information-activities'},{'name': 'ListActivitiesEvaluateComponent', 'selector': 'app-list-activities-evaluate'},{'name': 'ListInterestComponent', 'selector': 'app-list-interest'},{'name': 'ListLocalitiesComponent', 'selector': 'app-list-locaties'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuBarComponent', 'selector': 'app-menu-bar'},{'name': 'RecommendationMapComponent', 'selector': 'app-recommendation-map'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'TableActivitiesComponent', 'selector': 'app-table-activities'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ListUserComponent'};

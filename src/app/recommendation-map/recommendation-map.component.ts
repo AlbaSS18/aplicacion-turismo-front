@@ -19,9 +19,12 @@ import {User} from '../models/user';
   styleUrls: ['./recommendation-map.component.scss']
 })
 /**
- * Clase RecommendationMapComponent
+ * Clase RecommendationMapComponent.
  *
  * Clase que obtiene las actividades recomendadas al usuario autenticado.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
  */
 export class RecommendationMapComponent implements OnInit {
 
@@ -34,7 +37,7 @@ export class RecommendationMapComponent implements OnInit {
    */
   activitiesSelected: string[] = [];
   /**
-   * Mapa
+   * Mapa.
    */
   map;
   /**
@@ -54,12 +57,12 @@ export class RecommendationMapComponent implements OnInit {
    */
   activitySelectedToRate: ActivityRecommended;
   /**
-   * Almacena el usuario autenticado
+   * Almacena el usuario autenticado.
    */
   userLogged: User;
 
   /**
-   * Constructor de la clase RecommendationMapComponent
+   * Constructor de la clase RecommendationMapComponent.
    * @param activitiesService
    * Servicio de actividades.
    * @param fb
@@ -69,7 +72,7 @@ export class RecommendationMapComponent implements OnInit {
    * @param localityService
    * Servicio de localidades.
    * @param sanitizer
-   * Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM
+   * Ayuda a prevenir los fallos de seguridad de Cross Site Scripting (XSS) saneando los valores para que sean seguros de usar en los diferentes contextos del DOM.
    * @param filterService
    * Servicio propocionado por la librería PrimeNG que permite acceder a la API para registrar filtros personalizados.
    * @param localStorageService

@@ -116,13 +116,13 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/services/rol/rol.service.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/services/rol/rol.service.ts:28</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor de la clase RolService</p>
+                            <div class="io-description"><p>Constructor de la clase RolService.</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -148,7 +148,7 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>objeto que permite hacer peticiones a la API y obtener resultados de la misma</p>
+                                                                <code><p>objeto que permite hacer peticiones a la API y obtener resultados de la misma.</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -190,8 +190,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/services/rol/rol.service.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/services/rol/rol.service.ts:40</a></div>
                 </td>
             </tr>
 
@@ -208,7 +208,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>el observable con la información enviada por la API.</p>
+
                     </div>
                 </td>
             </tr>
@@ -245,13 +246,13 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/services/rol/rol.service.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/services/rol/rol.service.ts:28</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Almacena la url del endpoint</p>
+                        <div class="io-description"><p>Almacena la url del endpoint.</p>
 </div>
                     </td>
                 </tr>
@@ -271,7 +272,7 @@ import {Interest} from &#x27;../../models/interest&#x27;;
 import {Rol} from &#x27;../../models/rol&#x27;;
 
 /**
- * Encabezado para las peticiones y respuestas HTTP
+ * Encabezado para las peticiones y respuestas HTTP.
  */
 const cabecera &#x3D; {headers: new HttpHeaders({&#x27;Content-Type&#x27;: &#x27;application/json&#x27;})};
 
@@ -279,31 +280,35 @@ const cabecera &#x3D; {headers: new HttpHeaders({&#x27;Content-Type&#x27;: &#x27
   providedIn: &#x27;root&#x27;
 })
 /**
- * Clase RolService
- * 
+ * Clase RolService.
+ *
  * Clase que se encarga de realizar peticiones a la API relacionadas con los tipos de roles.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
  */
 export class RolService {
 
   /**
-   * Almacena la url del endpoint
+   * Almacena la url del endpoint.
    */
   rolURL &#x3D; &#x27;http://localhost:8090/api/rol&#x27;;
 
   /**
-   * Constructor de la clase RolService
-   * @param httpClient objeto que permite hacer peticiones a la API y obtener resultados de la misma
+   * Constructor de la clase RolService.
+   * @param httpClient objeto que permite hacer peticiones a la API y obtener resultados de la misma.
    */
   constructor(private httpClient: HttpClient) { }
 
   /**
    * Método que realiza una petición GET para obtener la lista de los tipos de roles.
-   * @returns 
+   * @return el observable con la información enviada por la API.
    */
   public getRoles(): Observable&lt;Rol[]&gt; {
     return this.httpClient.get&lt;Rol[]&gt;(this.rolURL + &#x27;/list&#x27;, cabecera);
   }
 }
+
 </code></pre>
     </div>
 

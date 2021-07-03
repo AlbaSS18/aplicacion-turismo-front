@@ -118,7 +118,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/services/message/notification.service.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/services/message/notification.service.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -153,15 +153,15 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/app/services/message/notification.service.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/app/services/message/notification.service.ts:38</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Método que vacía el array de notificaciones</p>
+                    <div class="io-description"><p>Método que vacía el array de notificaciones.</p>
 </div>
 
                     <div class="io-description">
@@ -194,15 +194,15 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/services/message/notification.service.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/services/message/notification.service.ts:29</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Método para incluir una nueva notificación en el array</p>
+                    <div class="io-description"><p>Método para incluir una nueva notificación en el array.</p>
 </div>
 
                     <div class="io-description">
@@ -229,7 +229,7 @@
 
 
                                     <td>
-                                        <p>detalle de la notificación</p>
+                                        <p>detalle de la notificación.</p>
 
                                     </td>
                                 </tr>
@@ -245,7 +245,7 @@
 
 
                                     <td>
-                                        <p>mensaje de la notificación</p>
+                                        <p>mensaje de la notificación.</p>
 
                                     </td>
                                 </tr>
@@ -296,13 +296,13 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/services/message/notification.service.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/services/message/notification.service.ts:20</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Array de objetos Message para almacenar las notificaciones</p>
+                        <div class="io-description"><p>Array de objetos Message para almacenar las notificaciones.</p>
 </div>
                     </td>
                 </tr>
@@ -317,29 +317,31 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import {Message} from &#x27;primeng/api&#x27;;
-import {TranslateService} from &#x27;@ngx-translate/core&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 /**
- * Clase NotificationService
- * 
+ * Clase NotificationService.
+ *
  * Clase que se encarga de almacenar notificaciones que serán mostradas al usuario.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
  */
 export class NotificationService {
 
   /**
-   * Array de objetos Message para almacenar las notificaciones
+   * Array de objetos Message para almacenar las notificaciones.
    */
   message: Message[] &#x3D; [];
 
   constructor() { }
 
   /**
-   * Método para incluir una nueva notificación en el array
-   * @param detail detalle de la notificación
-   * @param summary mensaje de la notificación
+   * Método para incluir una nueva notificación en el array.
+   * @param detail detalle de la notificación.
+   * @param summary mensaje de la notificación.
    */
   success(detail: string, summary?: string): void {
     this.message.push({
@@ -348,7 +350,7 @@ export class NotificationService {
   }
 
   /**
-   * Método que vacía el array de notificaciones
+   * Método que vacía el array de notificaciones.
    */
   clearService(): void {
     this.message &#x3D; [];

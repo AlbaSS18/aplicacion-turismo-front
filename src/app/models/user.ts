@@ -1,95 +1,107 @@
 /**
- * Clase User
- * 
+ * Clase User.
+ *
  * Clase que define el tipo de entidad Usuario.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
  */
 export class User {
   /**
-   * Identificador del usuario
+   * Identificador del usuario.
    */
   id: number;
   /**
-   * Nombre de usuario
+   * Nombre de usuario.
    */
   userName: string;
   /**
-   * Correo electrónico del usuario
+   * Correo electrónico del usuario.
    */
   email: string;
   /**
-   * Fecha de nacimiento del usuario
+   * Fecha de nacimiento del usuario.
    */
   dateBirthday: Date;
   /**
-   * Roles del usuario
+   * Roles del usuario.
    */
   roles: string[];
 }
 
 /**
- * Clase UserLogin
- * 
+ * Clase UserLogin.
+ *
  * Clase que define el tipo de entidad Usuario que intenta autenticarse en el sistema.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
  */
 export class UserLogin {
   /**
-   * Correo electrónico del usuario
+   * Correo electrónico del usuario.
    */
   email: string;
   /**
-   * Contraseña
+   * Contraseña.
    */
   password: string;
 }
 
 /**
- * Clase UserSignUp
- * 
+ * Clase UserSignUp.
+ *
  * Clase que define el tipo de entidad Usuario que intenta registrarse en el sistema.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
  */
 export class UserSignUp {
   /**
-   *  Nombre de usuario
+   *  Nombre de usuario.
    */
   userName: string;
   /**
-   * Correo electrónico del usuario
+   * Correo electrónico del usuario.
    */
   email: string;
   /**
-   * Fecha de nacimiento del usuario
+   * Fecha de nacimiento del usuario.
    */
   dateBirthday: string;
   /**
-   * Contraseña
+   * Contraseña.
    */
   password: string;
   /**
-   * Contraseña repetida
+   * Contraseña repetida.
    */
   passwordConfirm: string;
   /**
-   * Roles del usuario
+   * Roles del usuario.
    */
   roles: string[];
   /**
-   * Lista de puntuaciones dadas por el usuario a los tipos de intereses
+   * Lista de puntuaciones dadas por el usuario a los tipos de intereses.
    */
   interest: Interest[];
 }
 
 /**
- * Clase Interest
+ * Clase Interest.
  * 
  * Clase que define el tipo de entidad Interés que puntúa el usuario.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
  */
 export class Interest {
   /**
-   * Nombre del tipo de interés
+   * Nombre del tipo de interés.
    */
   nameInterest: string;
   /**
-   * Puntuación dada por el usuario al tipo de interés
+   * Puntuación dada por el usuario al tipo de interés.
    */
   priority: number;
 }

@@ -14,7 +14,7 @@ import {User} from '../models/user';
   styleUrls: ['./list-user.component.scss']
 })
 /**
- * Clase ListUserComponent
+ * Clase ListUserComponent.
  *
  * Clase que muestra la lista de usuarios registrados en el sistema.
  *
@@ -24,7 +24,7 @@ import {User} from '../models/user';
 export class ListUserComponent implements OnInit {
 
   /**
-   * Almacena los usuarios
+   * Almacena los usuarios.
    */
   users: User[] = [];
   /**
@@ -33,7 +33,7 @@ export class ListUserComponent implements OnInit {
   cols: any[];
 
   /**
-   * Constructor de la clase ListUserComponent
+   * Constructor de la clase ListUserComponent.
    *
    * @param userService
    * Servicio de usuarios.

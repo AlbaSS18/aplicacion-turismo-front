@@ -6,18 +6,21 @@ import {LocalStorageService} from '../../services/local-storage/local-storage.se
   providedIn: 'root'
 })
 /**
- * Clase IsLogginInGuardService
+ * Clase IsLogginInGuardService.
  *
  * Clase que impide a los usuarios acceder a las vistas cuando ya se encuentran autenticados.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
  */
 export class IsLogginInGuardService implements Resolve<any>{
 
   /**
-   * Constructor de la clase IsLogginInGuardService
+   * Constructor de la clase IsLogginInGuardService.
    * @param router
-   * Servicio que permite la navegación entre vistas
+   * Servicio que permite la navegación entre vistas.
    * @param localStorageService
-   * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador
+   * Servicio que consta de métodos para acceder al objeto LocalStorage del navegador.
    */
   constructor(private router: Router, private localStorageService: LocalStorageService) { }
 

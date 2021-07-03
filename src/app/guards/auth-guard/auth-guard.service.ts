@@ -11,7 +11,7 @@ import {LocalStorageService} from '../../services/local-storage/local-storage.se
  * Clase que permite acceder a las vistas a aquellos usuarios logueados.
  *
  * @author Alba Serena Suárez
- * @version %I% %G%
+ * @version 1.0
  */
 export class AuthGuardService implements CanActivate{
 

@@ -9,6 +9,9 @@ import {LocalStorageService} from '../../services/local-storage/local-storage.se
  * Clase RoleGuardService.
  *
  * Clase que permite acceder a las vistas a aquellos usuarios cuyo rol coincida con el esperado.
+ *
+ * @author Alba Serena Suárez
+ * @version 1.0
  */
 export class RoleGuardService implements CanActivate{
 
