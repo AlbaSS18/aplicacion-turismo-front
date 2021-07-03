@@ -28,13 +28,13 @@ export class LocalityService {
 
   /**
    * Constructor de la clase LocalityService.
-   * @param httpClient objeto que permite hacer peticiones a la API y obtener resultados de la misma.
+   * @param httpClient Objeto que permite hacer peticiones a la API y obtener resultados de la misma.
    */
   constructor(private httpClient: HttpClient) { }
 
   /**
    * Método que realiza una petición GET para obtener la lista de localidades.
-   * @returns el observable con la información enviada por la API.
+   * @returns El observable con la información enviada por la API.
    */
   public getLocalities(): Observable<Locality[]> {
     return this.httpClient.get<Locality[]>(this.localityURL + '/list', cabecera);
@@ -42,8 +42,8 @@ export class LocalityService {
 
   /**
    * Método que realiza una petición POST para añadir una nueva localidad.
-   * @param locality  objeto interés que incluye la información de la nueva localidad.
-   * @returns el observable con la información enviada por la API.
+   * @param locality Objeto interés que incluye la información de la nueva localidad.
+   * @returns El observable con la información enviada por la API.
    */
   public addLocality(locality): Observable<any> {
     return this.httpClient.post<any>(this.localityURL + '/add', locality, cabecera);
@@ -51,8 +51,8 @@ export class LocalityService {
 
   /**
    * Método que realiza una petición DELETE para eliminar una localidad.
-   * @param locality objeto localidad que se quiere eliminar.
-   * @returns el observable con la información enviada por la API.
+   * @param locality Objeto localidad que se quiere eliminar.
+   * @returns El observable con la información enviada por la API.
    */
   public deleteLocality(locality): Observable<any> {
     return this.httpClient.delete<any>(this.localityURL + '/delete/' + locality.id, cabecera);
@@ -60,9 +60,9 @@ export class LocalityService {
 
   /**
    * Método que realiza una petición PUT para modificar la información de una localidad.
-   * @param id identificador de la localidad.
-   * @param locality objeto localidad con la información actualizada.
-   * @returns el observable con la información enviada por la API.
+   * @param id Identificador de la localidad.
+   * @param locality Objeto localidad con la información actualizada.
+   * @returns El observable con la información enviada por la API.
    */
   public editLocality(id, locality): Observable<any> {
     return this.httpClient.put<any>(this.localityURL + '/update/' + id, locality, cabecera);

@@ -217,7 +217,7 @@
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor de la clase EditActivitiesComponent.</p>
+                            <div class="io-description"><p>Constructor de la clase SignUpComponent.</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -351,8 +351,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="157"
-                            class="link-to-prism">src/app/sign-up/sign-up.component.ts:157</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="160"
+                            class="link-to-prism">src/app/sign-up/sign-up.component.ts:160</a></div>
                 </td>
             </tr>
 
@@ -392,8 +392,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="109"
-                            class="link-to-prism">src/app/sign-up/sign-up.component.ts:109</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="112"
+                            class="link-to-prism">src/app/sign-up/sign-up.component.ts:112</a></div>
                 </td>
             </tr>
 
@@ -477,8 +477,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="129"
-                            class="link-to-prism">src/app/sign-up/sign-up.component.ts:129</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="132"
+                            class="link-to-prism">src/app/sign-up/sign-up.component.ts:132</a></div>
                 </td>
             </tr>
 
@@ -519,8 +519,8 @@ Una vez enviado, también será el encargado de redirigir al usuario al componen
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="171"
-                            class="link-to-prism">src/app/sign-up/sign-up.component.ts:171</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="174"
+                            class="link-to-prism">src/app/sign-up/sign-up.component.ts:174</a></div>
                 </td>
             </tr>
 
@@ -749,9 +749,20 @@ Una vez enviado, también será el encargado de redirigir al usuario al componen
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/app/sign-up/sign-up.component.ts:102</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/app/sign-up/sign-up.component.ts:105</a></div>
                                 </td>
                             </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Método que obtiene el array de intereses del formulario.</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://angular.io/api/forms/FormArray" target="_blank" >FormArray</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
 
             </tbody>
         </table>
@@ -811,7 +822,7 @@ export class SignUpComponent implements OnInit {
   message;
 
   /**
-   * Constructor de la clase EditActivitiesComponent.
+   * Constructor de la clase SignUpComponent.
    *
    * @param formBuilder
    * Clase que permite crear objetos de la clase FormGroup y FormControl.
@@ -861,6 +872,9 @@ export class SignUpComponent implements OnInit {
     });
   }
 
+  /**
+   * Método que obtiene el array de intereses del formulario.
+   */
   get interest(): FormArray {
     return this.formGroup.get(&#x27;interest&#x27;) as FormArray;
   }

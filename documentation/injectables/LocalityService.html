@@ -160,7 +160,7 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>objeto que permite hacer peticiones a la API y obtener resultados de la misma.</p>
+                                                                <code><p>Objeto que permite hacer peticiones a la API y obtener resultados de la misma.</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -233,7 +233,7 @@
 
 
                                     <td>
-                                        <p>objeto interés que incluye la información de la nueva localidad.</p>
+                                        <p>Objeto interés que incluye la información de la nueva localidad.</p>
 
                                     </td>
                                 </tr>
@@ -247,7 +247,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>el observable con la información enviada por la API.</p>
+                        <p>El observable con la información enviada por la API.</p>
 
                     </div>
                 </td>
@@ -309,7 +309,7 @@
 
 
                                     <td>
-                                        <p>objeto localidad que se quiere eliminar.</p>
+                                        <p>Objeto localidad que se quiere eliminar.</p>
 
                                     </td>
                                 </tr>
@@ -323,7 +323,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>el observable con la información enviada por la API.</p>
+                        <p>El observable con la información enviada por la API.</p>
 
                     </div>
                 </td>
@@ -385,7 +385,7 @@
 
 
                                     <td>
-                                        <p>identificador de la localidad.</p>
+                                        <p>Identificador de la localidad.</p>
 
                                     </td>
                                 </tr>
@@ -398,7 +398,7 @@
 
 
                                     <td>
-                                        <p>objeto localidad con la información actualizada.</p>
+                                        <p>Objeto localidad con la información actualizada.</p>
 
                                     </td>
                                 </tr>
@@ -412,7 +412,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>el observable con la información enviada por la API.</p>
+                        <p>El observable con la información enviada por la API.</p>
 
                     </div>
                 </td>
@@ -461,7 +461,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>el observable con la información enviada por la API.</p>
+                        <p>El observable con la información enviada por la API.</p>
 
                     </div>
                 </td>
@@ -548,13 +548,13 @@ export class LocalityService {
 
   /**
    * Constructor de la clase LocalityService.
-   * @param httpClient objeto que permite hacer peticiones a la API y obtener resultados de la misma.
+   * @param httpClient Objeto que permite hacer peticiones a la API y obtener resultados de la misma.
    */
   constructor(private httpClient: HttpClient) { }
 
   /**
    * Método que realiza una petición GET para obtener la lista de localidades.
-   * @returns el observable con la información enviada por la API.
+   * @returns El observable con la información enviada por la API.
    */
   public getLocalities(): Observable&lt;Locality[]&gt; {
     return this.httpClient.get&lt;Locality[]&gt;(this.localityURL + &#x27;/list&#x27;, cabecera);
@@ -562,8 +562,8 @@ export class LocalityService {
 
   /**
    * Método que realiza una petición POST para añadir una nueva localidad.
-   * @param locality  objeto interés que incluye la información de la nueva localidad.
-   * @returns el observable con la información enviada por la API.
+   * @param locality Objeto interés que incluye la información de la nueva localidad.
+   * @returns El observable con la información enviada por la API.
    */
   public addLocality(locality): Observable&lt;any&gt; {
     return this.httpClient.post&lt;any&gt;(this.localityURL + &#x27;/add&#x27;, locality, cabecera);
@@ -571,8 +571,8 @@ export class LocalityService {
 
   /**
    * Método que realiza una petición DELETE para eliminar una localidad.
-   * @param locality objeto localidad que se quiere eliminar.
-   * @returns el observable con la información enviada por la API.
+   * @param locality Objeto localidad que se quiere eliminar.
+   * @returns El observable con la información enviada por la API.
    */
   public deleteLocality(locality): Observable&lt;any&gt; {
     return this.httpClient.delete&lt;any&gt;(this.localityURL + &#x27;/delete/&#x27; + locality.id, cabecera);
@@ -580,9 +580,9 @@ export class LocalityService {
 
   /**
    * Método que realiza una petición PUT para modificar la información de una localidad.
-   * @param id identificador de la localidad.
-   * @param locality objeto localidad con la información actualizada.
-   * @returns el observable con la información enviada por la API.
+   * @param id Identificador de la localidad.
+   * @param locality Objeto localidad con la información actualizada.
+   * @returns El observable con la información enviada por la API.
    */
   public editLocality(id, locality): Observable&lt;any&gt; {
     return this.httpClient.put&lt;any&gt;(this.localityURL + &#x27;/update/&#x27; + id, locality, cabecera);

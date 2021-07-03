@@ -49,7 +49,7 @@ export class SignUpComponent implements OnInit {
   message;
 
   /**
-   * Constructor de la clase EditActivitiesComponent.
+   * Constructor de la clase SignUpComponent.
    *
    * @param formBuilder
    * Clase que permite crear objetos de la clase FormGroup y FormControl.
@@ -99,6 +99,9 @@ export class SignUpComponent implements OnInit {
     });
   }
 
+  /**
+   * Método que obtiene el array de intereses del formulario.
+   */
   get interest(): FormArray {
     return this.formGroup.get('interest') as FormArray;
   }

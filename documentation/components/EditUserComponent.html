@@ -339,8 +339,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="173"
-                            class="link-to-prism">src/app/edit-user/edit-user.component.ts:173</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="176"
+                            class="link-to-prism">src/app/edit-user/edit-user.component.ts:176</a></div>
                 </td>
             </tr>
 
@@ -436,7 +436,7 @@
                     <div class="io-description"><p>Método que permite inicializar los datos del componente.</p>
 <ul>
       <li>Inicializará el formulario con los datos del usuario.</li>
-      <li>Cargará la información del usuario autenticado</li>
+      <li>Cargará la información del usuario autenticado.</li>
   </ul></div>
 
                     <div class="io-description">
@@ -469,8 +469,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="159"
-                            class="link-to-prism">src/app/edit-user/edit-user.component.ts:159</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="162"
+                            class="link-to-prism">src/app/edit-user/edit-user.component.ts:162</a></div>
                 </td>
             </tr>
 
@@ -510,8 +510,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="112"
-                            class="link-to-prism">src/app/edit-user/edit-user.component.ts:112</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">src/app/edit-user/edit-user.component.ts:115</a></div>
                 </td>
             </tr>
 
@@ -694,9 +694,20 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/app/edit-user/edit-user.component.ts:104</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">src/app/edit-user/edit-user.component.ts:107</a></div>
                                 </td>
                             </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Método que obtiene el array de intereses del formulario.</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://angular.io/api/forms/FormArray" target="_blank" >FormArray</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
 
             </tbody>
         </table>
@@ -772,7 +783,7 @@ export class EditUserComponent implements OnInit {
    *
    * &lt;ul&gt;
    *      &lt;li&gt;Inicializará el formulario con los datos del usuario.&lt;/li&gt;
-   *      &lt;li&gt;Cargará la información del usuario autenticado&lt;/li&gt;
+   *      &lt;li&gt;Cargará la información del usuario autenticado.&lt;/li&gt;
    *  &lt;/ul&gt;
    */
   ngOnInit(): void {
@@ -808,6 +819,9 @@ export class EditUserComponent implements OnInit {
     );
   }
 
+  /**
+   * Método que obtiene el array de intereses del formulario.
+   */
   get interest(): FormArray {
     return this.editUserProfile.get(&#x27;interest&#x27;) as FormArray;
   }

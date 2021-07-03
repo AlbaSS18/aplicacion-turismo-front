@@ -164,7 +164,7 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>objeto que permite hacer peticiones a la API y obtener resultados de la misma.</p>
+                                                                <code><p>Objeto que permite hacer peticiones a la API y obtener resultados de la misma.</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -237,7 +237,7 @@
 
 
                                     <td>
-                                        <p>identificador del usuario.</p>
+                                        <p>Identificador del usuario.</p>
 
                                     </td>
                                 </tr>
@@ -251,7 +251,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>el observable con la información enviada por la API.</p>
+                        <p>El observable con la información enviada por la API.</p>
 
                     </div>
                 </td>
@@ -313,7 +313,7 @@
 
 
                                     <td>
-                                        <p>identificador del usuario.</p>
+                                        <p>Identificador del usuario.</p>
 
                                     </td>
                                 </tr>
@@ -326,7 +326,7 @@
 
 
                                     <td>
-                                        <p>objeto usuario con la información actualizada.</p>
+                                        <p>Objeto usuario con la información actualizada.</p>
 
                                     </td>
                                 </tr>
@@ -340,7 +340,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>el observable con la información enviada por la API.</p>
+                        <p>El observable con la información enviada por la API.</p>
 
                     </div>
                 </td>
@@ -402,7 +402,7 @@
 
 
                                     <td>
-                                        <p>identificador del usuario.</p>
+                                        <p>Identificador del usuario.</p>
 
                                     </td>
                                 </tr>
@@ -416,7 +416,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>el observable con la información enviada por la API.</p>
+                        <p>El observable con la información enviada por la API.</p>
 
                     </div>
                 </td>
@@ -478,7 +478,7 @@
 
 
                                     <td>
-                                        <p>identificador del usuario.</p>
+                                        <p>Identificador del usuario.</p>
 
                                     </td>
                                 </tr>
@@ -492,7 +492,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>el observable con la información enviada por la API.</p>
+                        <p>El observable con la información enviada por la API.</p>
 
                     </div>
                 </td>
@@ -541,7 +541,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>el observable con la información enviada por la API.</p>
+                        <p>El observable con la información enviada por la API.</p>
 
                     </div>
                 </td>
@@ -629,13 +629,13 @@ export class UserService {
 
   /**
    * Constructor de la clase UserService.
-   * @param httpClient objeto que permite hacer peticiones a la API y obtener resultados de la misma.
+   * @param httpClient Objeto que permite hacer peticiones a la API y obtener resultados de la misma.
    */
   constructor(private httpClient: HttpClient) { }
 
   /**
    * Método que realiza una petición GET para obtener la lista de usuarios registrados en el sistema.
-   * @returns el observable con la información enviada por la API.
+   * @returns El observable con la información enviada por la API.
    */
   public getUsers(): Observable&lt;User[]&gt; {
     return this.httpClient.get&lt;User[]&gt;(this.userURL + &#x27;/list&#x27;, cabecera);
@@ -643,8 +643,8 @@ export class UserService {
 
   /**
    * Método que realiza una petición GET para obtener un usuario.
-   * @param id identificador del usuario.
-   * @returns el observable con la información enviada por la API.
+   * @param id Identificador del usuario.
+   * @returns El observable con la información enviada por la API.
    */
   public getUserForAdmin(id): Observable&lt;User&gt; {
     return this.httpClient.get&lt;User&gt;(this.userURL + &#x27;/details/&#x27; + id, cabecera);
@@ -652,8 +652,8 @@ export class UserService {
 
   /**
    * Método que realiza una petición GET para obtener un usuario.
-   * @param id identificador del usuario.
-   * @returns el observable con la información enviada por la API.
+   * @param id Identificador del usuario.
+   * @returns El observable con la información enviada por la API.
    */
   public getUser(id): Observable&lt;User&gt; {
     return this.httpClient.get&lt;User&gt;(this.userURL + &#x27;/details/&#x27; + id, cabecera);
@@ -661,9 +661,9 @@ export class UserService {
 
   /**
    * Método que realiza una petición PUT para modificar la información de un usuario.
-   * @param id identificador del usuario.
-   * @param user objeto usuario con la información actualizada.
-   * @returns el observable con la información enviada por la API.
+   * @param id Identificador del usuario.
+   * @param user Objeto usuario con la información actualizada.
+   * @returns El observable con la información enviada por la API.
    */
   public editUser(id, user): Observable&lt;any&gt; {
     return this.httpClient.put&lt;any&gt;(this.userURL + &#x27;/update/&#x27; + id, user, cabecera);
@@ -671,8 +671,8 @@ export class UserService {
 
   /**
    * Método que realiza una petición DELETE para eliminar un usuario.
-   * @param id identificador del usuario.
-   * @returns el observable con la información enviada por la API.
+   * @param id Identificador del usuario.
+   * @returns El observable con la información enviada por la API.
    */
   public deleteUser(id): Observable&lt;any&gt; {
     return this.httpClient.delete&lt;any&gt;(this.userURL + &#x27;/delete/&#x27; + id, cabecera);

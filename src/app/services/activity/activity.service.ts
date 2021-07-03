@@ -28,13 +28,13 @@ export class ActivityService {
 
   /**
    * Constructor de la clase ActivityService.
-   * @param httpClient objeto que permite hacer peticiones a la API y obtener resultados de la misma.
+   * @param httpClient Objeto que permite hacer peticiones a la API y obtener resultados de la misma.
    */
   constructor(private httpClient: HttpClient) { }
 
   /**
    * Método que realiza una petición GET para obtener la lista de actividades.
-   * @returns el observable con la información enviada por la API.
+   * @returns El observable con la información enviada por la API.
    */
   public getActivities(): Observable<Activity[]> {
     return this.httpClient.get<Activity[]>(this.activityUrl + '/list', cabecera);
@@ -42,8 +42,8 @@ export class ActivityService {
   
   /**
    * Método que realiza una petición GET para obtener una actividad.
-   * @param id identificador de la actividad.
-   * @returns el observable con la información enviada por la API.
+   * @param id Identificador de la actividad.
+   * @returns El observable con la información enviada por la API.
    */
   public getActivity(id): Observable<Activity> {
     return this.httpClient.get<Activity>(this.activityUrl + '/details/' + id, cabecera);
@@ -51,8 +51,8 @@ export class ActivityService {
 
   /**
    * Método que realiza una petición POST para añadir una nueva actividad.
-   * @param formData objeto FormData que incluye la información de la nueva actividad.
-   * @returns el observable con la información enviada por la API.
+   * @param formData Objeto FormData que incluye la información de la nueva actividad.
+   * @returns El observable con la información enviada por la API.
    */
   public addActivity(formData): Observable<any> {
     return this.httpClient.post<any>(this.activityUrl + '/add', formData);
@@ -60,8 +60,8 @@ export class ActivityService {
 
   /**
    * Método que realiza una petición DELETE para eliminar una actividad.
-   * @param id identificador de la actividad
-   * @returns el observable con la información enviada por la API.
+   * @param id Identificador de la actividad
+   * @returns El observable con la información enviada por la API.
    */
   public deleteActivity(id): Observable<any> {
     return this.httpClient.delete<any>(this.activityUrl + '/delete/' + id, cabecera);
@@ -70,9 +70,9 @@ export class ActivityService {
 
   /**
    * Método que realiza una petición PUT para modificar la información de una actividad.
-   * @param id identificador de la actividad.
-   * @param activity objeto actividad con la información actualizada.
-   * @returns el observable con la información enviada por la API.
+   * @param id Identificador de la actividad.
+   * @param activity Objeto actividad con la información actualizada.
+   * @returns El observable con la información enviada por la API.
    */
   public editActivity(id, activity): Observable<any> {
     return this.httpClient.put<any>(this.activityUrl + '/update/' + id, activity);
@@ -80,8 +80,8 @@ export class ActivityService {
 
   /**
    * Método que realiza una petición POST para añadir una nueva valoración a una actividad.
-   * @param activityRate objeto con la valoración del usuario a una actividad.
-   * @returns el observable con la información enviada por la API.
+   * @param activityRate Objeto con la valoración del usuario a una actividad.
+   * @returns El observable con la información enviada por la API.
    */
   public postRateActivity(activityRate): Observable<any>{
     return this.httpClient.post<any>(this.activityUrl + '/rate', activityRate);
@@ -89,8 +89,8 @@ export class ActivityService {
 
   /**
    * Método que realiza una petición GET para obtener la lista de actividades recomendadas al usuario.
-   * @param idUser identificador del usuario.
-   * @returns el observable con la información enviada por la API.
+   * @param idUser Identificador del usuario.
+   * @returns El observable con la información enviada por la API.
    */
   public getRecommendedActivities(idUser): Observable<ActivityRecommended[]> {
     return this.httpClient.get<ActivityRecommended[]>(this.activityUrl + '/recommedation/' + idUser, cabecera);
@@ -98,8 +98,8 @@ export class ActivityService {
 
   /**
    * Método que realiza una petición GET para obtener la lista de actividades valoradas por el usuario.
-   * @param idUser identificador del usuario.
-   * @returns el observable con la información enviada por la API.
+   * @param idUser Identificador del usuario.
+   * @returns El observable con la información enviada por la API.
    */
   public getRatedActivities(idUser): Observable<ActivityRecommended[]> {
     return this.httpClient.get<ActivityRecommended[]>(this.activityUrl + '/ratedActivities/' + idUser, cabecera);

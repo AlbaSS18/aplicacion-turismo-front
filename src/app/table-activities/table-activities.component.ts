@@ -37,7 +37,7 @@ export class TableActivitiesComponent implements OnInit {
   ref: DynamicDialogRef;
 
   /**
-   * Constructor de la clase EditActivitiesComponent.
+   * Constructor de la clase TableActivitiesComponent.
    *
    * @param activityService
    * Servicio de actividades.
@@ -162,7 +162,10 @@ export class TableActivitiesComponent implements OnInit {
   }
 
   /**
+   *
    * Método que redirige al usuario al componente EditActivities.
+   * @param activity
+   * Actividad cuya información se quiere editar.
    */
   editActivity(activity){
     this.router.navigateByUrl('activities/edit/' + activity.id);

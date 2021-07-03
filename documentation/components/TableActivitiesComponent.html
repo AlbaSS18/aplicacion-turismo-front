@@ -203,7 +203,7 @@
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor de la clase EditActivitiesComponent.</p>
+                            <div class="io-description"><p>Constructor de la clase TableActivitiesComponent.</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -443,8 +443,8 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="167"
-                            class="link-to-prism">src/app/table-activities/table-activities.component.ts:167</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="170"
+                            class="link-to-prism">src/app/table-activities/table-activities.component.ts:170</a></div>
                 </td>
             </tr>
 
@@ -461,6 +461,7 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
                                 <tr>
                                     <td>Name</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -472,6 +473,10 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
                                     </td>
 
 
+                                    <td>
+                                        <p>Actividad cuya información se quiere editar.</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -679,8 +684,8 @@ Una vez enviado, también será el encargado de mostrar un mensaje al usuario.</
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="176"
-                            class="link-to-prism">src/app/table-activities/table-activities.component.ts:176</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="179"
+                            class="link-to-prism">src/app/table-activities/table-activities.component.ts:179</a></div>
                 </td>
             </tr>
 
@@ -947,7 +952,7 @@ export class TableActivitiesComponent implements OnInit {
   ref: DynamicDialogRef;
 
   /**
-   * Constructor de la clase EditActivitiesComponent.
+   * Constructor de la clase TableActivitiesComponent.
    *
    * @param activityService
    * Servicio de actividades.
@@ -1072,7 +1077,10 @@ export class TableActivitiesComponent implements OnInit {
   }
 
   /**
+   *
    * Método que redirige al usuario al componente EditActivities.
+   * @param activity
+   * Actividad cuya información se quiere editar.
    */
   editActivity(activity){
     this.router.navigateByUrl(&#x27;activities/edit/&#x27; + activity.id);

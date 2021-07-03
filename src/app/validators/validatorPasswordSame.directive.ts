@@ -1,7 +1,7 @@
 import {AbstractControl, ValidationErrors, Validator, ValidatorFn} from '@angular/forms';
 
 /**
- * Función que valida que el campo password y repeatPassword sean igual.
+ * Función que valida que el campo password y repeatPassword sean iguales.
  */
 export function validadorPasswordSame(): ValidatorFn {
   return (control: AbstractControl): {[key: string]: any} | null => {

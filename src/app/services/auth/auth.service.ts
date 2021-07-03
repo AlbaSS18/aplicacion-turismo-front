@@ -29,14 +29,14 @@ export class AuthService {
 
   /**
    * Constructor de la clase AuthService.
-   * @param httpClient objeto que permite hacer peticiones a la API y obtener resultados de la misma.
+   * @param httpClient Objeto que permite hacer peticiones a la API y obtener resultados de la misma.
    */
   constructor(private httpClient: HttpClient) { }
 
   /**
    * Método que realiza una petición POST para autenticar al usuario.
-   * @param user objeto usuario que incluye la información del usuario que se intenta autenticar.
-   * @returns el observable con la información enviada por la API.
+   * @param user Objeto usuario que incluye la información del usuario que se intenta autenticar.
+   * @returns El observable con la información enviada por la API.
    */
   public login(user: UserLogin): Observable<JwtModel> {
     return this.httpClient.post<JwtModel>(this.authURL + '/login', user, cabecera);
@@ -44,8 +44,8 @@ export class AuthService {
 
   /**
    * Método que realiza una petición POST para registrar a un usuario.
-   * @param user objeto usuario que incluye la información del usuario que se registra.
-   * @returns el observable con la información enviada por la API.
+   * @param user Objeto usuario que incluye la información del usuario que se registra.
+   * @returns El observable con la información enviada por la API.
    */
   public signUp(user: UserSignUp): Observable<any> {
     return this.httpClient.post<any>(this.authURL + '/signup', user, cabecera);

@@ -29,13 +29,13 @@ export class RolService {
 
   /**
    * Constructor de la clase RolService.
-   * @param httpClient objeto que permite hacer peticiones a la API y obtener resultados de la misma.
+   * @param httpClient Objeto que permite hacer peticiones a la API y obtener resultados de la misma.
    */
   constructor(private httpClient: HttpClient) { }
 
   /**
    * Método que realiza una petición GET para obtener la lista de los tipos de roles.
-   * @return el observable con la información enviada por la API.
+   * @return El observable con la información enviada por la API.
    */
   public getRoles(): Observable<Rol[]> {
     return this.httpClient.get<Rol[]>(this.rolURL + '/list', cabecera);

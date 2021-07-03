@@ -23,8 +23,8 @@ export class NotificationService {
 
   /**
    * Método para incluir una nueva notificación en el array.
-   * @param detail detalle de la notificación.
-   * @param summary mensaje de la notificación.
+   * @param detail Detalle de la notificación.
+   * @param summary Mensaje de la notificación.
    */
   success(detail: string, summary?: string): void {
     this.message.push({

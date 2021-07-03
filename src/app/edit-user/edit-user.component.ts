@@ -65,7 +65,7 @@ export class EditUserComponent implements OnInit {
    *
    * <ul>
    *      <li>Inicializará el formulario con los datos del usuario.</li>
-   *      <li>Cargará la información del usuario autenticado</li>
+   *      <li>Cargará la información del usuario autenticado.</li>
    *  </ul>
    */
   ngOnInit(): void {
@@ -101,6 +101,9 @@ export class EditUserComponent implements OnInit {
     );
   }
 
+  /**
+   * Método que obtiene el array de intereses del formulario.
+   */
   get interest(): FormArray {
     return this.editUserProfile.get('interest') as FormArray;
   }

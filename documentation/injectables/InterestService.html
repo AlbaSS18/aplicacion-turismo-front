@@ -164,7 +164,7 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>objeto que permite hacer peticiones a la API y obtener resultados de la misma.</p>
+                                                                <code><p>Objeto que permite hacer peticiones a la API y obtener resultados de la misma.</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -237,7 +237,7 @@
 
 
                                     <td>
-                                        <p>objeto interés que incluye la información del nuevo tipo de interés.</p>
+                                        <p>Objeto interés que incluye la información del nuevo tipo de interés.</p>
 
                                     </td>
                                 </tr>
@@ -251,7 +251,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>el observable con la información enviada por la API.</p>
+                        <p>El observable con la información enviada por la API.</p>
 
                     </div>
                 </td>
@@ -313,7 +313,7 @@
 
 
                                     <td>
-                                        <p>objeto interés que se quiere eliminar.</p>
+                                        <p>Objeto interés que se quiere eliminar.</p>
 
                                     </td>
                                 </tr>
@@ -327,7 +327,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>el observable con la información enviada por la API.</p>
+                        <p>El observable con la información enviada por la API.</p>
 
                     </div>
                 </td>
@@ -389,7 +389,7 @@
 
 
                                     <td>
-                                        <p>identificador del tipo de interés.</p>
+                                        <p>Identificador del tipo de interés.</p>
 
                                     </td>
                                 </tr>
@@ -402,7 +402,7 @@
 
 
                                     <td>
-                                        <p>objeto actividad con la información actualizada.</p>
+                                        <p>Objeto actividad con la información actualizada.</p>
 
                                     </td>
                                 </tr>
@@ -416,7 +416,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>el observable con la información enviada por la API.</p>
+                        <p>El observable con la información enviada por la API.</p>
 
                     </div>
                 </td>
@@ -478,7 +478,7 @@
 
 
                                     <td>
-                                        <p>identificador del usuario.</p>
+                                        <p>Identificador del usuario.</p>
 
                                     </td>
                                 </tr>
@@ -492,7 +492,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>el observable con la información enviada por la API.</p>
+                        <p>El observable con la información enviada por la API.</p>
 
                     </div>
                 </td>
@@ -541,7 +541,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>el observable con la información enviada por la API.</p>
+                        <p>El observable con la información enviada por la API.</p>
 
                     </div>
                 </td>
@@ -613,7 +613,7 @@ const cabecera &#x3D; {headers: new HttpHeaders({&#x27;Content-Type&#x27;: &#x27
 })
 /**
  * Clase InterestService.
- * 
+ *
  * Clase que se encarga de realizar peticiones a la API relacionadas con los tipos de intereses.
  *
  * @author Alba Serena Suárez
@@ -628,13 +628,13 @@ export class InterestService {
 
   /**
    * Constructor de la clase InterestService.
-   * @param httpClient objeto que permite hacer peticiones a la API y obtener resultados de la misma.
+   * @param httpClient Objeto que permite hacer peticiones a la API y obtener resultados de la misma.
    */
   constructor(private httpClient: HttpClient) { }
 
   /**
    * Método que realiza una petición GET para obtener la lista de los tipos de intereses.
-   * @returns el observable con la información enviada por la API.
+   * @returns El observable con la información enviada por la API.
    */
   public getInterests(): Observable&lt;Interest[]&gt; {
     return this.httpClient.get&lt;Interest[]&gt;(this.interestURL + &#x27;/list&#x27;, cabecera);
@@ -642,8 +642,8 @@ export class InterestService {
 
   /**
    * Método que realiza una petición POST para añadir un nuevo tipo de interés.
-   * @param interest objeto interés que incluye la información del nuevo tipo de interés.
-   * @returns el observable con la información enviada por la API.
+   * @param interest Objeto interés que incluye la información del nuevo tipo de interés.
+   * @returns El observable con la información enviada por la API.
    */
   public addInterests(interest): Observable&lt;any&gt; {
     return this.httpClient.post&lt;any&gt;(this.interestURL + &#x27;/add&#x27;, interest, cabecera);
@@ -651,8 +651,8 @@ export class InterestService {
 
   /**
    * Método que realiza una petición DELETE para eliminar un tipo de interés.
-   * @param interest objeto interés que se quiere eliminar.
-   * @returns el observable con la información enviada por la API.
+   * @param interest Objeto interés que se quiere eliminar.
+   * @returns El observable con la información enviada por la API.
    */
   public deleteInterest(interest): Observable&lt;any&gt; {
     return this.httpClient.delete&lt;any&gt;(this.interestURL + &#x27;/delete/&#x27; + interest.id, cabecera);
@@ -660,8 +660,8 @@ export class InterestService {
 
   /**
    * Método que realiza una petición GET para obtener las puntuaciones dadas por el usuario a un tipo de interés.
-   * @param id identificador del usuario.
-   * @returns el observable con la información enviada por la API.
+   * @param id Identificador del usuario.
+   * @returns El observable con la información enviada por la API.
    */
   public getInterestByUser(id): Observable&lt;InterestByUser[]&gt; {
     return this.httpClient.get&lt;InterestByUser[]&gt;(this.interestURL + &#x27;/list/user/&#x27; + id, cabecera);
@@ -669,9 +669,9 @@ export class InterestService {
 
   /**
    * Método que realiza una petición PUT para modificar la información de un tipo de interés.
-   * @param id identificador del tipo de interés.
-   * @param interest objeto actividad con la información actualizada.
-   * @returns el observable con la información enviada por la API.
+   * @param id Identificador del tipo de interés.
+   * @param interest Objeto actividad con la información actualizada.
+   * @returns El observable con la información enviada por la API.
    */
   public editInterest(id, interest): Observable&lt;any&gt; {
     return this.httpClient.put&lt;any&gt;(this.interestURL + &#x27;/update/&#x27; + id, interest, cabecera);

@@ -84,7 +84,7 @@ export class EditUserAdminComponent implements OnInit {
    * <ul>
    *      <li>El id del usuario.</li>
    *      <li>Inicializará el formulario con los datos del usuario.</li>
-   *      <li>Cargará los dintintos roles y la información del usuario.</li>
+   *      <li>Cargará los distintos roles y la información del usuario.</li>
    *  </ul>
    */
   ngOnInit(): void {

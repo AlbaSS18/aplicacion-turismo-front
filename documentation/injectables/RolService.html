@@ -148,7 +148,7 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>objeto que permite hacer peticiones a la API y obtener resultados de la misma.</p>
+                                                                <code><p>Objeto que permite hacer peticiones a la API y obtener resultados de la misma.</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -208,7 +208,7 @@
 
                     </div>
                     <div class="io-description">
-                        <p>el observable con la información enviada por la API.</p>
+                        <p>El observable con la información enviada por la API.</p>
 
                     </div>
                 </td>
@@ -296,13 +296,13 @@ export class RolService {
 
   /**
    * Constructor de la clase RolService.
-   * @param httpClient objeto que permite hacer peticiones a la API y obtener resultados de la misma.
+   * @param httpClient Objeto que permite hacer peticiones a la API y obtener resultados de la misma.
    */
   constructor(private httpClient: HttpClient) { }
 
   /**
    * Método que realiza una petición GET para obtener la lista de los tipos de roles.
-   * @return el observable con la información enviada por la API.
+   * @return El observable con la información enviada por la API.
    */
   public getRoles(): Observable&lt;Rol[]&gt; {
     return this.httpClient.get&lt;Rol[]&gt;(this.rolURL + &#x27;/list&#x27;, cabecera);
