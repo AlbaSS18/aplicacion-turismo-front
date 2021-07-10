@@ -147,5 +147,6 @@
   "interest_has_activities": "El interés tiene actividades asociadas",
   "Formulario inválido": "Formulario inválido",
   "edit-user": "Editar usuario",
-  "additional_information": "Información adicional"
+  "additional_information": "Información adicional",
+  "activity_delete": "Actividad eliminada"
 }

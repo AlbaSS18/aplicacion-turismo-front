@@ -114,7 +114,7 @@ export class TableActivitiesComponent implements OnInit {
           })
         ).subscribe( data => {
             var message = this.translateService.instant('activity_delete_message',{ 'nameActivity': activity.name });
-            this.messageService.add({key: 'activity', severity:'success', summary: this.translateService.instant('interest_delete'), detail: message });
+            this.messageService.add({key: 'activity', severity:'success', summary: this.translateService.instant('activity_delete'), detail: message });
           },
           (err) => {
             var message = this.translateService.instant('error_delete_message');
