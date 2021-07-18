@@ -105,7 +105,7 @@ export class RecommendationMapComponent implements OnInit {
 
     this.map = L.map('mapActivityRecommendation', {
       center: [ 43.333333, -5.826187 ],
-      zoom: 8.75,
+      zoom: 10.75,
       zoomSnap: 0.25
     });
 
